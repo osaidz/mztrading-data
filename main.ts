@@ -43,6 +43,7 @@ router.get("/", async (context) => {
     context.response.type = "application/json";
   })
   .get("/images", async (context) => {
+    console.log(`getting image`)
     const { dt, s } = getQuery(context);
     if (!dt || !s) throw new Error(`empty query provided. Use with ?dt=YOUR_QUERY&s=aapl`);
     const { assets } = await ky(`https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${dt.substr(0, 10)}`).json<{ assets: { url: string, name: string }[] }>();
