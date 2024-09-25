@@ -67,7 +67,7 @@ router.get("/", async (context) => {
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        }).json<{ name: string }[]>();
+        }).json<{ name: string }[]>().map(j => { return { name: j.name } });
         context.response.body = releases;
         context.response.type = "application/json";
     });
