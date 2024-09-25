@@ -70,6 +70,21 @@ router.get("/", async (context) => {
         }).json<{ name: string }[]>();
         context.response.body = releases.map(j => { return { name: j.name } });
         context.response.type = "application/json";
+    })
+    .get("/releases/symbols", async (context) => {
+        const { r } = getQuery(context);
+        const { assets } = await ky(`https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${r}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).json<{ assets: { url: string, name: string }[] }>();
+
+        context.response.body = assets.map(j => {
+            return {
+                name: j.name.split('.').at(0)
+            }
+        })
+        context.response.type = "application/json";
     });
 
 const app = new Application();
