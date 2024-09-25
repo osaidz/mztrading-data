@@ -53,7 +53,7 @@ router.get("/", async (context) => {
       }
     }).json<{ assets: { url: string, name: string }[] }>();
     console.log(`found assets ${JSON.stringify(assets)}`);
-    const { url } = assets.filter(j => j.name == `${s.toUpperCase}.png`)
+    const { url } = assets.find(j => j.name == `${s.toUpperCase}.png`)
     console.log(`found url: ${url}`);
     const data = await ky(url, {
       headers: {
