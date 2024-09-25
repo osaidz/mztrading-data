@@ -61,6 +61,15 @@ router.get("/", async (context) => {
         }).blob()
         context.response.body = data;
         context.response.type = "image/png";
+    })
+    .get("/releases", async (context) => {
+        const releases = await ky(`https://api.github.com/repos/mnsrulz/mytradingview-data/tags`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).json<{ name: string }[]>();
+        context.response.body = releases;
+        context.response.type = "application/json";
     });
 
 const app = new Application();
