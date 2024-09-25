@@ -52,7 +52,7 @@ router.get("/", async (context) => {
         Authorization: `Bearer ${token}`
       }
     }).json<{ assets: { url: string, name: string }[] }>();
-    console.log(`found assets`);
+    console.log(`found assets ${JSON.stringify(assets)}`);
     const { url } = assets.filter(j => j.name == `${s.toUpperCase}.png`)
     console.log(`found url: ${url}`);
     const data = await ky(url, {
