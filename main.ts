@@ -9,17 +9,17 @@ const token = Deno.env.get("ghtoken");
 const router = new Router();
 
 router.get("/", async (context) => {
-    context.response.body = 'hello';
-  })
+  context.response.body = 'hello';
+})
   .get("/summary", async (context) => {
     const { s } = getQuery(context);
     const data = await ky(`https://raw.githubusercontent.com/mnsrulz/mytradingview-data/main/summary/data.json`, {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     }).json();
-    const filteredData = s ? data.filter(j=>j.symbol.toUpperCase()== s.toUpperCase()) : data;
-    
+    const filteredData = s ? data.filter(j => j.symbol.toUpperCase() == s.toUpperCase()) : data;
+
     const sortedByDates = sortBy(filteredData, (it) => it.dt, { order: "desc" });
 
     context.response.body = sortedByDates;
@@ -35,12 +35,22 @@ router.get("/", async (context) => {
     // })
     // const currentPrice = cu.at(0)?.open;
     const data = await ky(`https://raw.githubusercontent.com/mnsrulz/mytradingview-data/main/data/dt=${dt}/symbol=${s.toUpperCase()}/data.json`, {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     }).json();
-    context.response.body = {data};
+    context.response.body = { data };
     context.response.type = "application/json";
+  })
+  .get("/images", async (context) => {
+    const { dt, s } = getQuery(context);
+    if (!dt || !s) throw new Error(`empty query provided. Use with ?dt=YOUR_QUERY&s=aapl`);
+    const data = await ky(`https://github.com/mnsrulz/mytradingview-data/releases/download/${dt.substr(0, 10)}/${s.toUpperCase}.png`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).blob()
+    context.response.body = data;
   });
 
 const app = new Application();
