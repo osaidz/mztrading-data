@@ -34,7 +34,7 @@ router.get("/", async (context) => {
     //     period2: dayjs(dt.substr(0, 10)).add(1, 'days').toDate()
     // })
     // const currentPrice = cu.at(0)?.open;
-    const data = await ky(`https://github.com/mnsrulz/mytradingview-data/releases/download/${dt}/${s.toUpperCase()}.png`, {
+    const data = await ky(`https://raw.githubusercontent.com/mnsrulz/mytradingview-data/main/data/dt=${dt}/symbol=${s.toUpperCase()}/data.json`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
