@@ -45,7 +45,9 @@ router.get("/", async (context) => {
   .get("/images", async (context) => {
     const { dt, s } = getQuery(context);
     if (!dt || !s) throw new Error(`empty query provided. Use with ?dt=YOUR_QUERY&s=aapl`);
-    const data = await ky(`https://github.com/mnsrulz/mytradingview-data/releases/download/${dt.substr(0, 10)}/${s.toUpperCase}.png`, {
+    const { assets } = await ky(`https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${dt.substr(0, 10)}`).json<{ assets: { url: string, name: string }[] }>();
+    const { url } = assets.filter(j => j.name == `${s.toUpperCase}.png`)
+    const data = await ky(url, {
       headers: {
         Authorization: `Bearer ${token}`
       }
