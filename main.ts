@@ -46,6 +46,7 @@ router.get("/", async (context) => {
     console.log(`getting image`)
     const { dt, s } = getQuery(context);
     if (!dt || !s) throw new Error(`empty query provided. Use with ?dt=YOUR_QUERY&s=aapl`);
+    console.log(`calling endpoint: https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${dt.substr(0, 10)}`)
     const { assets } = await ky(`https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${dt.substr(0, 10)}`).json<{ assets: { url: string, name: string }[] }>();
     console.log(`found assets`);
     const { url } = assets.filter(j => j.name == `${s.toUpperCase}.png`)
