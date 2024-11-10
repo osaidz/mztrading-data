@@ -10,7 +10,7 @@ console.log(`found ${tickers.items.length} tickers...`);
 const items = tickers.items.slice(0, 3); //for testing work only with 3 items
 const dataFolder = `temp/options-historical`;
 const data = getOptionsDataSummary();
-const releaseName = Deno.env.get("RELEASE_DATE") ||
+const releaseName = Deno.env.get("RELEASE_NAME") ||
     `OPTIONS_DATA_${format(new Date(), "yyyy-MM-dd HH:mm")}`;
 data[releaseName] = {
     displayName: format(new Date(), "yyyy-MM-dd HH:mm"),

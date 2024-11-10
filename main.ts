@@ -27,8 +27,10 @@ router.get("/", async (context) => {
         const { s, r } = getQuery(context);
         const data = getOptionsDataSummary();
         const { assetUrl } = data[r].symbols[s];
-        const assetData = await ky(assetUrl);
-        context.response.body = assetData;        
+        console.log(`making http call to access: ${assetUrl}`);
+        const assetData = await ky(assetUrl).json();
+        context.response.body = assetData;
+        context.response.type = "application/json";
     })
     .get("/summary", async (context) => {
         const { s } = getQuery(context);
