@@ -7,7 +7,7 @@ const tickers = await ky("https://mztrading.netlify.app/api/watchlist").json<
 >();
 
 console.log(`found ${tickers.items.length} tickers...`);
-const items = tickers.items.slice(0, 3); //for testing work only with 3 items
+const items = tickers.items; //.slice(0, 3); //for testing work only with 3 items
 const dataFolder = `temp/options-historical`;
 const data = getOptionsDataSummary();
 const releaseName = Deno.env.get("RELEASE_NAME") ||
@@ -15,25 +15,32 @@ const releaseName = Deno.env.get("RELEASE_NAME") ||
 data[releaseName] = {
     displayName: format(new Date(), "yyyy-MM-dd HH:mm"),
     created: new Date(),
-    published: false,
     symbols: {},
 };
 for (const ticker of items) {
-    const fileName = `${ticker.symbol}.json`;
-    await ensureDir(dataFolder);
-    const { raw } = await ky(
-        `https://mztrading.netlify.app/api/symbols/${ticker.symbol}/options/analyze/tradier?dte=90&sc=30`,
-        {
-            retry: {
-                limit: 10,
+    try {
+        const fileName = `${ticker.symbol}.json`;
+        await ensureDir(dataFolder);
+        const { raw } = await ky(
+            `https://mztrading.netlify.app/api/symbols/${ticker.symbol}/options/analyze/tradier?dte=90&sc=30`,
+            {
+                retry: {
+                    limit: 10,
+                },
             },
-        },
-    ).json<{ raw: any }>();
-    await Deno.writeTextFile(`${dataFolder}/${fileName}`, JSON.stringify(raw)); //it'll overwrite if it already exists
-    data[releaseName].symbols[ticker.symbol] = {
-        fileName: fileName,
-        assetUrl: `https://github.com/mnsrulz/mztrading-data/releases/download/${releaseName}/${fileName}`,
-    };
+        ).json<{ raw: any }>();
+        await Deno.writeTextFile(
+            `${dataFolder}/${fileName}`,
+            JSON.stringify(raw),
+        ); //it'll overwrite if it already exists
+        data[releaseName].symbols[ticker.symbol] = {
+            fileName: fileName,
+            assetUrl:
+                `https://github.com/mnsrulz/mztrading-data/releases/download/${releaseName}/${fileName}`,
+        };
+    } catch (error) {
+        console.log(`error occurred while loading data for symbol: ${ticker.symbol}`);
+    }
 }
 
 console.log(`Finished generating data files!`);
