@@ -32,7 +32,7 @@ for (const ticker of items) {
     await Deno.writeTextFile(`${dataFolder}/${fileName}`, JSON.stringify(raw)); //it'll overwrite if it already exists
     data[releaseName].symbols[ticker.symbol] = {
         fileName: fileName,
-        assetUrl: "",
+        assetUrl: `https://github.com/mnsrulz/mztrading-data/releases/download/${releaseName}/${fileName}`,
     };
 }
 
