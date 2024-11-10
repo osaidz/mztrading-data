@@ -16,9 +16,19 @@ const router = new Router();
 router.get("/", async (context) => {
     context.response.body = "hello";
 })
-    .get("/optionsdatasummary", (context) => {
+    .get("/beta/optionsdatasummary", (context) => {
         const data = getOptionsDataSummary();
-        context.response.body = data;
+        context.response.body = Object.keys(data).map((j) => ({
+            name: j,
+            displayName: data[j].displayName,
+        }));
+    })
+    .get("/beta/optionsdata", async (context) => {
+        const { s, r } = getQuery(context);
+        const data = getOptionsDataSummary();
+        const { assetUrl } = data[r].symbols[s];
+        const assetData = await ky(assetUrl);
+        context.response.body = assetData;        
     })
     .get("/summary", async (context) => {
         const { s } = getQuery(context);
