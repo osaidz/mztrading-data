@@ -6,12 +6,29 @@ import {
 import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
 import ky from "https://esm.sh/ky@1.2.3";
-import yf from "npm:yahoo-finance2";
-import dayjs from "https://cdn.skypack.dev/dayjs@1.10.4";
-import { getOptionsDataSummary } from "./lib/data.ts";
+import { getOptionsDataSummary, mapDataToLegacy } from "./lib/data.ts";
 
 const token = Deno.env.get("ghtoken");
 const router = new Router();
+
+const getHistoricalOptionsData = async (s: string, dt: string) => {
+    const memData = getOptionsDataSummary();
+    const assetUrl = Object.values(memData).find(j=> j.displayName == dt)?.symbols[s.toUpperCase()].assetUrl;
+    if(assetUrl) {
+        return await ky(assetUrl).json();
+    }
+
+    const data = await ky(
+        `https://raw.githubusercontent.com/mnsrulz/mytradingview-data/main/data/dt=${dt}/symbol=${s.toUpperCase()}/data.json`,
+        {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        },
+    ).json();
+    return data;
+};
+
 
 router.get("/", async (context) => {
     context.response.body = "hello";
@@ -41,10 +58,14 @@ router.get("/", async (context) => {
                     Authorization: `Bearer ${token}`,
                 },
             },
-        ).json();
+        ).json<{symbol: string, dt: string}[]>();
+        const newReleaseData = mapDataToLegacy();
+
+        const mergedDataset = [...data, ...newReleaseData];
+
         const filteredData = s
-            ? data.filter((j) => j.symbol.toUpperCase() == s.toUpperCase())
-            : data;
+            ? mergedDataset.filter((j) => j.symbol.toUpperCase() == s.toUpperCase())
+            : mergedDataset;
 
         const sortedByDates = sortBy(filteredData, (it) => it.dt, {
             order: "desc",
@@ -66,14 +87,8 @@ router.get("/", async (context) => {
         //     period2: dayjs(dt.substr(0, 10)).add(1, 'days').toDate()
         // })
         // const currentPrice = cu.at(0)?.open;
-        const data = await ky(
-            `https://raw.githubusercontent.com/mnsrulz/mytradingview-data/main/data/dt=${dt}/symbol=${s.toUpperCase()}/data.json`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            },
-        ).json();
+
+        const data = await getHistoricalOptionsData(s, dt);
         context.response.body = { data };
         context.response.type = "application/json";
     })

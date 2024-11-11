@@ -17,10 +17,11 @@ data[releaseName] = {
     created: new Date(),
     symbols: {},
 };
+await ensureDir(dataFolder);
 for (const ticker of items) {
     try {
+        console.log(`Processing ticker: ${ticker.symbol}`);
         const fileName = `${ticker.symbol}.json`;
-        await ensureDir(dataFolder);
         const { raw } = await ky(
             `https://mztrading.netlify.app/api/symbols/${ticker.symbol}/options/analyze/tradier?dte=90&sc=30`,
             {

@@ -3,7 +3,7 @@ import optionsDataSummary from "./../data/options-data.summary.json" with {
 };
 
 type OptionsDataSummary = Record<string, {
-    displayName: string,
+    displayName: string;
     created: Date;
     symbols: Record<string, {
         fileName: string;
@@ -13,5 +13,15 @@ type OptionsDataSummary = Record<string, {
 
 export const getOptionsDataSummary = () => {
     return optionsDataSummary as OptionsDataSummary;
+};
+
+export const mapDataToLegacy = () => {
+    const intermediateData = getOptionsDataSummary();
+    return Object.keys(intermediateData).flatMap((j) => {
+        return Object.keys(intermediateData[j].symbols).map((k) => ({
+            symbol: k,
+            dt: intermediateData[j].displayName,
+        }));
+    });
 };
 
