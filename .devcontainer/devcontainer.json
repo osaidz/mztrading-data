@@ -1,0 +1,15 @@
+{
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/deno": {
+            "version": "1"
+        }
+    },    
+    "customizations": {
+        "vscode": {
+            "extensions": ["denoland.vscode-deno", "humao.rest-client"],
+            "settings": {
+                "deno.enable": true
+            }
+        }
+    }
+}
