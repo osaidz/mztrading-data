@@ -21,7 +21,7 @@ const tickers = await ky("https://mztrading.netlify.app/api/watchlist").json<
 >();
 
 console.log(`found ${tickers.items.length} tickers...`);
-const items = tickers.items.slice(0, 3); //for testing work only with 3 items
+const items = tickers.items; //.slice(0, 3); //for testing work only with 3 items
 for (const ticker of items) {
     console.log(`Fetching dex/gex page for ${ticker.symbol}`);
 
