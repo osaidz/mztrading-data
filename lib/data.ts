@@ -42,7 +42,7 @@ export const OptionsSnapshotSummary= (optionsSnapshotSummary as OptionsSnapshotS
 
 
 
-export const OptionsSnapshotSummaryLegacy = Object.fromEntries(Object.keys(OptionsSnapshotSummary).map(j=> [OptionsSnapshotSummary[j].displayName, OptionsSnapshotSummary[j].symbols ]));
+export const OptionsSnapshotSummaryLegacy = Object.fromEntries(Object.keys(OptionsSnapshotSummary).map(j=> [OptionsSnapshotSummary[j].displayName, { symbols: OptionsSnapshotSummary[j].symbols} ]));
 
 export const mapDataToLegacy = () => {
     const intermediateData = getOptionsDataSummary();

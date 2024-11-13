@@ -127,13 +127,10 @@ router.get("/", (context) => {
             );
         }
 
+        console.log(`finding ${dt} in ${JSON.stringify(Object.keys(OptionsSnapshotSummaryLegacy))}`);
         if(Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)){
-            const data = await ky(OptionsSnapshotSummaryLegacy[dt][s].dex.hdAssetUrl, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    Accept: "application/octet-stream",
-                },
-            }).blob();
+            console.log(`asset url found: ${OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl}`);
+            const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
             context.response.body = data;
             context.response.type = "image/png";
         } else {
