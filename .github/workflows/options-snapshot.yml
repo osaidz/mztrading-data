@@ -11,7 +11,7 @@ name: Publish option snampshot images
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * 1-6'
+    - cron: '0 13 * * 1-6'
 
 permissions:
   contents: write
