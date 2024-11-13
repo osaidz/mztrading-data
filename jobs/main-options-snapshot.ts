@@ -8,7 +8,7 @@ await ensureDir(dataFolder);
 const data = getOptionsSnapshotSummary();
 
 const releaseName = Deno.env.get("RELEASE_NAME") ||
-    `OPTIONS_SNAPSHOT_${format(new Date(), "yyyy-MM-dd")}`;
+    `DEX_GEX_SNAPSHOT_${format(new Date(), "yyyy-MM-dd")}`;
 data[releaseName] = {
     displayName: format(new Date(), "yyyy-MM-dd"),
     created: new Date(),
