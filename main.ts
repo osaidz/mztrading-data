@@ -189,7 +189,7 @@ router.get("/", (context) => {
             ).json<{ assets: { url: string; name: string }[] }>();
             symbols.push(...assets.map((j) => j.name.split(".").at(0)));
         }
-        context.response.body = symbols.map((j) => ({ name: j }));
+        context.response.body = symbols.sort().map((j) => ({ name: j }));
         context.response.type = "application/json";
     });
 
