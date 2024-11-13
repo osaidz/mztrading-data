@@ -40,7 +40,7 @@ router.get("/", (context) => {
     .get("/beta/releases", async (context) => {
         const newReleases = Object.values(OptionsSnapshotSummary).map((j) => ({
             name: j.displayName,
-        }));
+        })).reverse();
         const releases = await ky(
             `https://api.github.com/repos/mnsrulz/mytradingview-data/tags`,
             {
@@ -50,7 +50,7 @@ router.get("/", (context) => {
             },
         ).json<{ name: string }[]>();
 
-        const finalResponse = [...releases, ...newReleases].sort().reverse().map((j) => ({
+        const finalResponse = [...newReleases, ...releases].map((j) => ({
             name: j.name,
         }));
         context.response.body = finalResponse;
