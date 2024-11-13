@@ -38,6 +38,8 @@ export const getOptionsSnapshotSummary = () => {
     return optionsSnapshotSummary as OptionsSnapshotSummary;
 };
 
+export const OptionsSnapshotSummary= (optionsSnapshotSummary as OptionsSnapshotSummary);
+
 export const mapDataToLegacy = () => {
     const intermediateData = getOptionsDataSummary();
     return Object.keys(intermediateData).flatMap((j) => {

@@ -6,15 +6,20 @@ import {
 import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
 import ky from "https://esm.sh/ky@1.2.3";
-import { getOptionsDataSummary, mapDataToLegacy } from "./lib/data.ts";
+import {
+    getOptionsDataSummary,
+    mapDataToLegacy,
+    OptionsSnapshotSummary,
+} from "./lib/data.ts";
 
 const token = Deno.env.get("ghtoken");
 const router = new Router();
 
 const getHistoricalOptionsData = async (s: string, dt: string) => {
     const memData = getOptionsDataSummary();
-    const assetUrl = Object.values(memData).find(j=> j.displayName == dt)?.symbols[s.toUpperCase()].assetUrl;
-    if(assetUrl) {
+    const assetUrl = Object.values(memData).find((j) => j.displayName == dt)
+        ?.symbols[s.toUpperCase()].assetUrl;
+    if (assetUrl) {
         return await ky(assetUrl).json();
     }
 
@@ -29,10 +34,28 @@ const getHistoricalOptionsData = async (s: string, dt: string) => {
     return data;
 };
 
-
-router.get("/", async (context) => {
+router.get("/", (context) => {
     context.response.body = "hello";
 })
+    .get("/beta/releases", async (context) => {
+        const newReleases = Object.values(OptionsSnapshotSummary).map((j) => ({
+            name: j.displayName,
+        }));
+        const releases = await ky(
+            `https://api.github.com/repos/mnsrulz/mytradingview-data/tags`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
+        ).json<{ name: string }[]>();
+
+        const finalResponse = [...releases, ...newReleases].map((j) => ({
+            name: j.name,
+        }));
+        context.response.body = finalResponse;
+        context.response.type = "application/json";
+    })
     .get("/beta/optionsdatasummary", (context) => {
         const data = getOptionsDataSummary();
         context.response.body = Object.keys(data).map((j) => ({
@@ -58,13 +81,15 @@ router.get("/", async (context) => {
                     Authorization: `Bearer ${token}`,
                 },
             },
-        ).json<{symbol: string, dt: string}[]>();
+        ).json<{ symbol: string; dt: string }[]>();
         const newReleaseData = mapDataToLegacy();
 
         const mergedDataset = [...data, ...newReleaseData];
 
         const filteredData = s
-            ? mergedDataset.filter((j) => j.symbol.toUpperCase() == s.toUpperCase())
+            ? mergedDataset.filter((j) =>
+                j.symbol.toUpperCase() == s.toUpperCase()
+            )
             : mergedDataset;
 
         const sortedByDates = sortBy(filteredData, (it) => it.dt, {
