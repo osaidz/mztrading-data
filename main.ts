@@ -38,7 +38,7 @@ const getHistoricalOptionsData = async (s: string, dt: string) => {
 router.get("/", (context) => {
     context.response.body = "hello";
 })
-    .get("/beta/releases", async (context) => {
+    .get("/releases", async (context) => {
         const newReleases = Object.values(OptionsSnapshotSummary).map((j) => ({
             name: j.displayName,
         })).reverse();
@@ -161,7 +161,7 @@ router.get("/", (context) => {
             context.response.type = "image/png";
         }
     })
-    .get("/releases", async (context) => {
+    .get("/legacy/releases", async (context) => {
         const releases = await ky(
             `https://api.github.com/repos/mnsrulz/mytradingview-data/tags`,
             {
@@ -175,7 +175,7 @@ router.get("/", (context) => {
     })
     .get("/releases/symbols", async (context) => {
         const { r } = getQuery(context);
-        const symbols = [];
+        const symbols: string[] = [];
         if (Object.keys(OptionsSnapshotSummaryLegacy).includes(r)) {
             symbols.push(...Object.keys(OptionsSnapshotSummaryLegacy[r].symbols));
         } else {
