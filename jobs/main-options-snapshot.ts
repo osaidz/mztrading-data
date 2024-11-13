@@ -53,12 +53,16 @@ for (const ticker of items) {
     ); // replace
 
     console.log(`Generating high definition DEX snapshot page for ${ticker.symbol}`);
+    
+    await page.waitForNetworkIdle();    
     await page.screenshot({
         path: `${dataFolder}/${currentSymbol.dex.hdFileName}`,
     }); // take a screenshot and save it to a file
     
     console.log(`Generating standard definition DEX snapshot page for ${ticker.symbol}`);
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 1 }); // set the viewport size
+    
+    await page.waitForNetworkIdle();
     await page.screenshot({
         path: `${dataFolder}/${currentSymbol.dex.sdFileName}`,
     }); // take a screenshot and save it to a file
@@ -67,15 +71,18 @@ for (const ticker of items) {
         const url = new URL(location.href);
         url.searchParams.set("dgextab", "GEX");
         history.replaceState(null, "", url);
-        `);
-        
+        `);        
     console.log(`Generating standard definition GEX snapshot page for ${ticker.symbol}`);
+    
+    await page.waitForNetworkIdle();
     await page.screenshot({
         path: `${dataFolder}/${currentSymbol.gex.sdFileName}`,
     }); // take a screenshot and save it to a file
     
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
     console.log(`Generating high definition GEX snapshot page for ${ticker.symbol}`);
+
+    await page.waitForNetworkIdle();
     await page.screenshot({
         path: `${dataFolder}/${currentSymbol.gex.hdFileName}`,
     }); // take a screenshot and save it to a file
