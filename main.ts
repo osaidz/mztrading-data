@@ -50,7 +50,7 @@ router.get("/", (context) => {
             },
         ).json<{ name: string }[]>();
 
-        const finalResponse = [...releases, ...newReleases].map((j) => ({
+        const finalResponse = [...releases, ...newReleases].sort().reverse().map((j) => ({
             name: j.name,
         }));
         context.response.body = finalResponse;
@@ -68,7 +68,7 @@ router.get("/", (context) => {
         const data = getOptionsDataSummary();
         const { assetUrl } = data[r].symbols[s];
         console.log(`making http call to access: ${assetUrl}`);
-        const assetData = await ky(assetUrl).json();
+        const assetData = await ky(assetUrl).json<{}>();
         context.response.body = assetData;
         context.response.type = "application/json";
     })
@@ -159,27 +159,27 @@ router.get("/", (context) => {
                 },
             },
         ).json<{ name: string }[]>();
-        context.response.body = releases.map((j) => {
-            return { name: j.name };
-        });
+        context.response.body = releases.map((j) => ({ name: j.name }));
         context.response.type = "application/json";
     })
     .get("/releases/symbols", async (context) => {
         const { r } = getQuery(context);
-        const { assets } = await ky(
-            `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${r}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
+        const symbols = [];
+        const memrelease = Object.values(OptionsSnapshotSummary).find(j=>j.displayName == r);
+        if (memrelease) {
+            symbols.push(...Object.keys(memrelease.symbols));
+        } else {
+            const { assets } = await ky(
+                `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${r}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
                 },
-            },
-        ).json<{ assets: { url: string; name: string }[] }>();
-
-        context.response.body = assets.map((j) => {
-            return {
-                name: j.name.split(".").at(0),
-            };
-        });
+            ).json<{ assets: { url: string; name: string }[] }>();
+            symbols.push(...assets.map((j) => j.name.split(".").at(0)));
+        }
+        context.response.body = symbols.map((j) => ({ name: j }));
         context.response.type = "application/json";
     });
 
