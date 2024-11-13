@@ -10,6 +10,7 @@ import {
     getOptionsDataSummary,
     mapDataToLegacy,
     OptionsSnapshotSummary,
+    OptionsSnapshotSummaryLegacy,
 } from "./lib/data.ts";
 
 const token = Deno.env.get("ghtoken");
@@ -125,30 +126,43 @@ router.get("/", (context) => {
                 `empty query provided. Use with ?dt=YOUR_QUERY&s=aapl`,
             );
         }
-        console.log(
-            `calling endpoint: https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
-                dt.substring(0, 10)
-            }`,
-        );
-        const { assets } = await ky(
-            `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
-                dt.substring(0, 10)
-            }`,
-            {
+
+        if(Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)){
+            const data = await ky(OptionsSnapshotSummaryLegacy[dt][s].dex.hdAssetUrl, {
                 headers: {
                     Authorization: `Bearer ${token}`,
+                    Accept: "application/octet-stream",
                 },
-            },
-        ).json<{ assets: { url: string; name: string }[] }>();
-        const { url } = assets.find((j) => j.name == `${s.toUpperCase()}.png`);
-        const data = await ky(url, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                Accept: "application/octet-stream",
-            },
-        }).blob();
-        context.response.body = data;
-        context.response.type = "image/png";
+            }).blob();
+            context.response.body = data;
+            context.response.type = "image/png";
+        } else {
+            // console.log(
+            // `calling endpoint: https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
+            //     dt.substring(0, 10)
+            //     }`,
+            // );
+            const { assets } = await ky(
+                `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
+                    dt.substring(0, 10)
+                }`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                },
+            ).json<{ assets: { url: string; name: string }[] }>();
+            const url = assets.find((j) => j.name == `${s.toUpperCase()}.png`)?.url;
+            if(!url) throw new Error('no asset found');
+            const data = await ky(url, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    Accept: "application/octet-stream",
+                },
+            }).blob();
+            context.response.body = data;
+            context.response.type = "image/png";
+        }
     })
     .get("/releases", async (context) => {
         const releases = await ky(
@@ -165,9 +179,8 @@ router.get("/", (context) => {
     .get("/releases/symbols", async (context) => {
         const { r } = getQuery(context);
         const symbols = [];
-        const memrelease = Object.values(OptionsSnapshotSummary).find(j=>j.displayName == r);
-        if (memrelease) {
-            symbols.push(...Object.keys(memrelease.symbols));
+        if (Object.keys(OptionsSnapshotSummaryLegacy).includes(r)) {
+            symbols.push(...Object.keys(OptionsSnapshotSummaryLegacy[r].symbols));
         } else {
             const { assets } = await ky(
                 `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${r}`,
