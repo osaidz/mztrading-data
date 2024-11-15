@@ -131,11 +131,11 @@ router.get("/", (context) => {
         if(Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)){
             console.log(`asset url found: ${OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl}`);
             
-            context.response.redirect(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl);
+            //context.response.redirect(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl);
 
-            // const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
-            // context.response.body = data;
-            // context.response.type = "image/png";
+            const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
+            context.response.body = data;
+            context.response.type = "image/png";
         } else {
             // console.log(
             // `calling endpoint: https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
