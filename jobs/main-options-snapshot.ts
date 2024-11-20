@@ -2,7 +2,7 @@ import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 import { format } from "https://deno.land/std@0.224.0/datetime/format.ts";
 import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import ky from "https://esm.sh/ky@1.2.3";
-import { getOptionsSnapshotSummary, ghRepoBaseUrl } from "../lib/data.ts";
+import { getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol } from "../lib/data.ts";
 const dataFolder = `temp`;
 await ensureDir(dataFolder);
 const data = getOptionsSnapshotSummary();
@@ -23,43 +23,45 @@ const tickers = await ky("https://mztrading.netlify.app/api/watchlist").json<
 console.log(`found ${tickers.items.length} tickers...`);
 const items = tickers.items; //.slice(0, 3); //for testing work only with 3 items
 for (const ticker of items) {
-    console.log(`Fetching dex/gex page for ${ticker.symbol}`);
+    const { symbol } = ticker;
+    const cleanedSymbol = cleanSymbol(symbol)
+    console.log(`Fetching dex/gex page for ${symbol}`);
 
-    currentRelease.symbols[ticker.symbol] = {
+    currentRelease.symbols[symbol] = {
         dex: {
-            sdFileName: `${ticker.symbol}_DEX_620.png`,
-            hdFileName: `${ticker.symbol}_DEX_1240.png`,
-            sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${ticker.symbol}_DEX_620.png`,
-            hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${ticker.symbol}_DEX_1240.png`
+            sdFileName: `${cleanedSymbol}_DEX_620.png`,
+            hdFileName: `${cleanedSymbol}_DEX_1240.png`,
+            sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_DEX_620.png`,
+            hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_DEX_1240.png`
         },
         gex: {
-            sdFileName: `${ticker.symbol}_GEX_620.png`,
-            hdFileName: `${ticker.symbol}_GEX_1240.png`,
-            sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${ticker.symbol}_GEX_620.png`,
-            hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${ticker.symbol}_GEX_1240.png`
+            sdFileName: `${cleanedSymbol}_GEX_620.png`,
+            hdFileName: `${cleanedSymbol}_GEX_1240.png`,
+            sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_GEX_620.png`,
+            hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_GEX_1240.png`
         }
     }
 
-    const currentSymbol = currentRelease.symbols[ticker.symbol];
+    const currentSymbol = currentRelease.symbols[symbol];
 
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
     await page.goto(
-        `https://mztrading.netlify.app/options/analyze/${ticker.symbol}/dh?showDexGex=true&dgextab=DEX&print=true`,
+        `https://mztrading.netlify.app/options/analyze/${symbol}/dh?showDexGex=true&dgextab=DEX&print=true`,
         {
             waitUntil: "networkidle2",
         },
     ); // replace
 
-    console.log(`Generating high definition DEX snapshot page for ${ticker.symbol}`);
+    console.log(`Generating high definition DEX snapshot page for ${symbol}`);
     
     await page.waitForNetworkIdle();    
     await page.screenshot({
         path: `${dataFolder}/${currentSymbol.dex.hdFileName}`,
     }); // take a screenshot and save it to a file
     
-    console.log(`Generating standard definition DEX snapshot page for ${ticker.symbol}`);
+    console.log(`Generating standard definition DEX snapshot page for ${symbol}`);
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 1 }); // set the viewport size
     
     await page.waitForNetworkIdle();
@@ -72,7 +74,7 @@ for (const ticker of items) {
         url.searchParams.set("dgextab", "GEX");
         history.replaceState(null, "", url);
         `);        
-    console.log(`Generating standard definition GEX snapshot page for ${ticker.symbol}`);
+    console.log(`Generating standard definition GEX snapshot page for ${symbol}`);
     
     await page.waitForNetworkIdle();
     await page.screenshot({
@@ -80,7 +82,7 @@ for (const ticker of items) {
     }); // take a screenshot and save it to a file
     
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
-    console.log(`Generating high definition GEX snapshot page for ${ticker.symbol}`);
+    console.log(`Generating high definition GEX snapshot page for ${symbol}`);
 
     await page.waitForNetworkIdle();
     await page.screenshot({

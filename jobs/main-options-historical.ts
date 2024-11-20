@@ -1,7 +1,7 @@
 import ky from "https://esm.sh/ky@1.2.3";
 import { format } from "https://deno.land/std@0.224.0/datetime/format.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
-import { getOptionsDataSummary } from "../lib/data.ts";
+import { getOptionsDataSummary, cleanSymbol } from "../lib/data.ts";
 const tickers = await ky("https://mztrading.netlify.app/api/watchlist").json<
     { items: { symbol: string; name: string }[] }
 >();
@@ -19,11 +19,13 @@ data[releaseName] = {
 };
 await ensureDir(dataFolder);
 for (const ticker of items) {
+    const { symbol } = ticker;
+    const cleanedSymbol = cleanSymbol(symbol)
     try {
-        console.log(`Processing ticker: ${ticker.symbol}`);
-        const fileName = `${ticker.symbol}.json`;
+        console.log(`Processing ticker: ${symbol}`);
+        const fileName = `${cleanedSymbol}.json`;
         const { raw } = await ky(
-            `https://mztrading.netlify.app/api/symbols/${ticker.symbol}/options/analyze/tradier?dte=90&sc=30`,
+            `https://mztrading.netlify.app/api/symbols/${symbol}/options/analyze/tradier?dte=90&sc=30`,
             {
                 retry: {
                     limit: 10,
@@ -34,13 +36,13 @@ for (const ticker of items) {
             `${dataFolder}/${fileName}`,
             JSON.stringify(raw),
         ); //it'll overwrite if it already exists
-        data[releaseName].symbols[ticker.symbol] = {
+        data[releaseName].symbols[symbol] = {
             fileName: fileName,
             assetUrl:
                 `https://github.com/mnsrulz/mztrading-data/releases/download/${releaseName}/${fileName}`,
         };
     } catch (error) {
-        console.log(`error occurred while loading data for symbol: ${ticker.symbol}`);
+        console.log(`error occurred while loading data for symbol: ${symbol}`);
     }
 }
 
