@@ -129,7 +129,7 @@ router.get("/", (context) => {
 
         // console.log(`finding ${dt} in ${JSON.stringify(Object.keys(OptionsSnapshotSummaryLegacy))}`);
         if(Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)){
-            const u = OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl;
+            const u = OptionsSnapshotSummaryLegacy[dt].symbols[decodeURIComponent(s)].dex.hdAssetUrl;
 
             //console.log(`asset url found: ${u}`);
             
