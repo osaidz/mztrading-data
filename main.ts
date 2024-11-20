@@ -133,15 +133,15 @@ router.get("/", (context) => {
             
             //context.response.redirect(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl);
 
-            const {headers} = await ky.head(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl, { redirect: 'manual' });
-            const s3Location = headers.get('location');
-            if(s3Location) {
-                context.response.redirect(s3Location);
-            } 
-            
-            // const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
-            // context.response.body = data;
-            // context.response.type = "image/png";
+            // const {headers} = await ky.head(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl, { redirect: 'manual' });
+            // const s3Location = headers.get('location');
+            // if(s3Location) {
+            //     context.response.redirect(s3Location);
+            // } 
+
+            const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
+            context.response.body = data;
+            context.response.type = "image/png";
         } else {
             // console.log(
             // `calling endpoint: https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
