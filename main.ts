@@ -129,7 +129,9 @@ router.get("/", (context) => {
 
         // console.log(`finding ${dt} in ${JSON.stringify(Object.keys(OptionsSnapshotSummaryLegacy))}`);
         if(Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)){
-            const u = OptionsSnapshotSummaryLegacy[dt].symbols[decodeURIComponent(s)].dex.hdAssetUrl;
+            const cleanSymbol = decodeURIComponent(s).replace(/\W/g, '')
+            console.log(`Requested symbol: ${s}. Cleaned symbol: ${cleanSymbol}`);
+            const u = OptionsSnapshotSummaryLegacy[dt].symbols[decodeURIComponent(cleanSymbol)].dex.hdAssetUrl;
 
             //console.log(`asset url found: ${u}`);
             
