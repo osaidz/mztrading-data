@@ -129,8 +129,18 @@ router.get("/", (context) => {
 
         // console.log(`finding ${dt} in ${JSON.stringify(Object.keys(OptionsSnapshotSummaryLegacy))}`);
         if(Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)){
-            console.log(`asset url found: ${OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl}`);
+            const u = OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl;
+
+            //console.log(`asset url found: ${u}`);
             
+            const { headers, status } = await ky.head(u, { redirect: 'manual', throwHttpErrors: false });
+            if(status < 400) {
+                const s3Location = headers.get('location');
+                context.response.redirect(s3Location);
+            } else {
+                throw new Error('error loading image!');
+            }
+
             //context.response.redirect(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl);
 
             // const {headers} = await ky.head(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl, { redirect: 'manual' });
@@ -139,9 +149,9 @@ router.get("/", (context) => {
             //     context.response.redirect(s3Location);
             // } 
 
-            const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
-            context.response.body = data;
-            context.response.type = "image/png";
+            // const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
+            // context.response.body = data;
+            // context.response.type = "image/png";
         } else {
             // console.log(
             // `calling endpoint: https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
