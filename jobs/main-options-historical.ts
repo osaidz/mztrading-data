@@ -24,14 +24,7 @@ for (const ticker of items) {
     try {
         console.log(`Processing ticker: ${symbol}`);
         const fileName = `${cleanedSymbol}.json`;
-        const { raw } = await ky(
-            `https://mztrading.netlify.app/api/symbols/${symbol}/options/analyze/tradier?dte=90&sc=30`,
-            {
-                retry: {
-                    limit: 10,
-                },
-            },
-        ).json<{ raw: any }>();
+        const { raw } = await ky(`https://mztrading.netlify.app/api/symbols/${symbol}/options/analyze/tradier?dte=90&sc=30`).json<{ raw: any }>();
         await Deno.writeTextFile(
             `${dataFolder}/${fileName}`,
             JSON.stringify(raw),
