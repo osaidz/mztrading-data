@@ -118,6 +118,11 @@ router.get("/", (context) => {
         context.response.body = { data };
         context.response.type = "application/json";
     })
+    .get("/beta/images/dates", (context) => {
+        const { s } = getQuery(context);
+        context.response.body = { data : Object.keys(OptionsSnapshotSummaryLegacy).filter(j=> Object.keys(OptionsSnapshotSummaryLegacy[j].symbols).includes(s)) };
+        context.response.type = "application/json";        
+    })
     .get("/images", async (context) => {
         console.log(`getting image`);
         const { dt, s } = getQuery(context);
