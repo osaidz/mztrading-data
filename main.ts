@@ -12,6 +12,7 @@ import {
     OptionsSnapshotSummary,
     OptionsSnapshotSummaryLegacy,
 } from "./lib/data.ts";
+import { join } from "https://deno.land/std@0.200.0/path/join.ts";
 
 const token = Deno.env.get("ghtoken");
 const router = new Router();
@@ -118,10 +119,26 @@ router.get("/", (context) => {
         context.response.body = { data };
         context.response.type = "application/json";
     })
-    .get("/beta/images/dates", (context) => {
-        const { s } = getQuery(context);
-        context.response.body = { data : Object.keys(OptionsSnapshotSummaryLegacy).filter(j=> Object.keys(OptionsSnapshotSummaryLegacy[j].symbols).includes(s)) };
-        context.response.type = "application/json";        
+    .get("/symbols/:symbol/historical/snapshots", (context) => {
+        const { symbol } = context.params;
+        const result = Object.keys(OptionsSnapshotSummaryLegacy)
+            .filter((j) =>
+                Object.keys(OptionsSnapshotSummaryLegacy[j].symbols).includes(
+                    symbol,
+                )
+            )
+            .map((k) => ({ date: k, data: OptionsSnapshotSummaryLegacy[k].symbols[symbol]}))
+            .map(({data, date}) => ({
+                date: date,
+                dex: {
+                    hdAssetUrl: data.dex.hdAssetUrl,
+                },
+                gex: {
+                    hdAssetUrl: data.gex.hdAssetUrl,
+                },
+            }));
+        context.response.body = { items: result };
+        context.response.type = "application/json";
     })
     .get("/images", async (context) => {
         console.log(`getting image`);
@@ -133,17 +150,21 @@ router.get("/", (context) => {
         }
 
         // console.log(`finding ${dt} in ${JSON.stringify(Object.keys(OptionsSnapshotSummaryLegacy))}`);
-        if(Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)){
-            const u = OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl;
+        if (Object.keys(OptionsSnapshotSummaryLegacy).includes(dt)) {
+            const u =
+                OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl;
 
             //console.log(`asset url found: ${u}`);
-            
-            const { headers, status } = await ky.head(u, { redirect: 'manual', throwHttpErrors: false });
-            if(status < 400) {
-                const s3Location = headers.get('location');
+
+            const { headers, status } = await ky.head(u, {
+                redirect: "manual",
+                throwHttpErrors: false,
+            });
+            if (status < 400) {
+                const s3Location = headers.get("location");
                 context.response.redirect(s3Location);
             } else {
-                throw new Error('error loading image!');
+                throw new Error("error loading image!");
             }
 
             //context.response.redirect(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl);
@@ -152,7 +173,7 @@ router.get("/", (context) => {
             // const s3Location = headers.get('location');
             // if(s3Location) {
             //     context.response.redirect(s3Location);
-            // } 
+            // }
 
             // const data = await ky(OptionsSnapshotSummaryLegacy[dt].symbols[s].dex.hdAssetUrl).blob();
             // context.response.body = data;
@@ -173,8 +194,9 @@ router.get("/", (context) => {
                     },
                 },
             ).json<{ assets: { url: string; name: string }[] }>();
-            const url = assets.find((j) => j.name == `${s.toUpperCase()}.png`)?.url;
-            if(!url) throw new Error('no asset found');
+            const url = assets.find((j) => j.name == `${s.toUpperCase()}.png`)
+                ?.url;
+            if (!url) throw new Error("no asset found");
             const data = await ky(url, {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -201,7 +223,9 @@ router.get("/", (context) => {
         const { r } = getQuery(context);
         const symbols: string[] = [];
         if (Object.keys(OptionsSnapshotSummaryLegacy).includes(r)) {
-            symbols.push(...Object.keys(OptionsSnapshotSummaryLegacy[r].symbols));
+            symbols.push(
+                ...Object.keys(OptionsSnapshotSummaryLegacy[r].symbols),
+            );
         } else {
             const { assets } = await ky(
                 `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${r}`,
@@ -211,7 +235,7 @@ router.get("/", (context) => {
                     },
                 },
             ).json<{ assets: { url: string; name: string }[] }>();
-            symbols.push(...assets.map((j) => j.name.split(".").at(0) || ''));
+            symbols.push(...assets.map((j) => j.name.split(".").at(0) || ""));
         }
         context.response.body = symbols.sort().map((j) => ({ name: j }));
         context.response.type = "application/json";
