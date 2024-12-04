@@ -1,8 +1,14 @@
+import Fuse from "https://esm.sh/fuse.js@7.0.0";
+
 import optionsDataSummary from "./../data/options-data.summary.json" with {
     type: "json",
 };
 
 import optionsSnapshotSummary from "./../data/options-snapshot.summary.json" with {
+    type: "json",
+};
+
+import symbols from "./../data/symbols.json" with {
     type: "json",
 };
 
@@ -29,6 +35,8 @@ type OptionsSnapshotSummary = Record<string, {
         "dex": OptionsSnapshotSummaryFileType;
     }>;
 }>;
+
+type TickerSymbol = { name: string, symbol: string}
 
 export const getOptionsDataSummary = () => {
     return optionsDataSummary as OptionsDataSummary;
@@ -57,3 +65,15 @@ export const mapDataToLegacy = () => {
 export const ghRepoBaseUrl = 'https://github.com/mnsrulz/mztrading-data/releases/download';
 
 export const cleanSymbol = (symbol: string) => decodeURIComponent(symbol).replace(/\W/g, '');
+
+const allTickerSymbols = symbols as TickerSymbol[]
+
+const fuse = new Fuse(allTickerSymbols, {
+    keys: ["symbol", "name"],
+    threshold: 0.2,
+});
+
+export const searchTicker = (q: string) => {
+    const filtered = fuse.search(q, { limit: 25 }).map((x) => x.item);
+    return filtered;
+}

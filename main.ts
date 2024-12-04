@@ -11,8 +11,8 @@ import {
     mapDataToLegacy,
     OptionsSnapshotSummary,
     OptionsSnapshotSummaryLegacy,
+    searchTicker,
 } from "./lib/data.ts";
-import { join } from "https://deno.land/std@0.200.0/path/join.ts";
 
 const token = Deno.env.get("ghtoken");
 const router = new Router();
@@ -118,6 +118,12 @@ router.get("/", (context) => {
         const data = await getHistoricalOptionsData(s, dt);
         context.response.body = { data };
         context.response.type = "application/json";
+    })
+    .get("/symbols", (context) => {
+        //api/symbols/search?q=t
+        const { q } = getQuery(context);
+        const items = searchTicker(q);
+        context.response.body = items;
     })
     .get("/symbols/:symbol/historical/snapshots", (context) => {
         const { symbol } = context.params;
