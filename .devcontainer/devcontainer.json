@@ -1,7 +1,7 @@
 {
     "features": {
         "ghcr.io/devcontainers-contrib/features/deno": {
-            "version": "1.0.2"
+            "version": "1.46.3"
         }
     },    
     "customizations": {
