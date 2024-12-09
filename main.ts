@@ -14,6 +14,8 @@ import {
     searchTicker,
 } from "./lib/data.ts";
 
+import {getPriceAtDate} from './lib/historicalPrice.ts'
+
 const token = Deno.env.get("ghtoken");
 const router = new Router();
 
@@ -116,7 +118,8 @@ router.get("/", (context) => {
         // const currentPrice = cu.at(0)?.open;
 
         const data = await getHistoricalOptionsData(s, dt);
-        context.response.body = { data };
+        const priceAtDate = await getPriceAtDate(s, dt)
+        context.response.body = { data, price: priceAtDate };
         context.response.type = "application/json";
     })
     .get("/symbols", (context) => {
