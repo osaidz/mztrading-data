@@ -100,7 +100,7 @@ if (latestDate) {
 
         // await browser.close();
     }
-
+    await browser.close();
     console.log(`Finished generating snapshot files!`);
 
     Deno.writeTextFileSync(
