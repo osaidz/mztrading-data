@@ -20,7 +20,7 @@ const data = parseData.map(({ name, symbol }) => ({ name, symbol }));
 
 Deno.writeTextFileSync(
     "./data/symbols.json",
-    JSON.stringify(data),
+    JSON.stringify(data, null, 4),
 );
 
 console.log(`Symbols downloaded successfully!`);
