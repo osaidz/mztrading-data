@@ -2,7 +2,8 @@ import ky from "https://esm.sh/ky@1.2.3";
 import { parse } from "jsr:@std/csv";
 
 console.log(`Downloading symbols from cboe.`);
-
+//the below feed is also available.
+//https://marketdata.theocc.com/delo-download?prodType=EU&downloadFields=OS;US&format=txt
 const symobolsText = await ky(
     "https://www.cboe.com/us/options/symboldir/equity_index_options/?download=csv",
 ).text();
