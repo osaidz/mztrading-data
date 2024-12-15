@@ -1,0 +1,68 @@
+name: Sync tickers
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: '0 1 * * 1-6'
+
+permissions: 
+  contents: write
+  pull-requests: write
+
+jobs:
+  run-deno-and-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Run TypeScript file
+        id: run-script
+        run: deno run --allow-all jobs/main-symbols-cboe-download.ts
+
+      - name: Configure git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Create new branch
+        id: create-branch
+        run: |
+          BRANCH_NAME=$(date +'%Y-%m-%d')
+          git checkout -b "$BRANCH_NAME"
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Check for file changes
+        id: check-changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes detected. Exiting."
+            exit 0
+          else
+            echo "Changes detected."
+          fi
+
+      - name: Commit and push changes
+        if: steps.check-changes.outcome == 'success'
+        run: |
+          git add .
+          git commit -m "Update cboe symbols"
+          git push origin "$BRANCH_NAME"
+
+      - name: Create pull request
+        if: steps.check-changes.outcome == 'success'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.branch_name }}
+          base: main
+          title: "Automated PR - Updates from ${{ env.branch_name }}"
+          body: |
+            This pull request contains updates made by running the Deno script on branch `${{ env.branch_name }}`.
+          labels: automated, deno
