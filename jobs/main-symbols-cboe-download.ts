@@ -17,7 +17,7 @@ const parseData = parse(symobolsText, {
     strip: true,
 });
 
-const data = parseData.map(({ name, symbol }) => ({ name, symbol }));
+const data = parseData.map(({ name, symbol }) => ({ name, symbol })).sort((a, b) => a.symbol.localeCompare(b.symbol) || a.name.localeCompare(b.name));
 
 Deno.writeTextFileSync(
     "./data/symbols.json",
