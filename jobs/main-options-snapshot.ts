@@ -3,7 +3,7 @@ import { format } from "https://deno.land/std@0.224.0/datetime/format.ts";
 import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import ky from "https://esm.sh/ky@1.2.3";
 import { getOptionsDataSummary, getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol } from "../lib/data.ts";
-const dataFolder = `temp`;
+const dataFolder = `temp/options-snapshots`;
 await ensureDir(dataFolder);
 const data = getOptionsSnapshotSummary();
 
