@@ -141,9 +141,11 @@ router.get("/", (context) => {
                 date: date,
                 dex: {
                     hdAssetUrl: data.dex.hdAssetUrl,
+                    sdAssetUrl: data.dex.sdAssetUrl
                 },
                 gex: {
                     hdAssetUrl: data.gex.hdAssetUrl,
+                    sdAssetUrl: data.dex.sdAssetUrl
                 },
             }));
         context.response.body = { items: result };
