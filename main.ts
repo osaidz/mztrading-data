@@ -145,7 +145,7 @@ router.get("/", (context) => {
                 },
                 gex: {
                     hdAssetUrl: data.gex.hdAssetUrl,
-                    sdAssetUrl: data.dex.sdAssetUrl
+                    sdAssetUrl: data.gex.sdAssetUrl
                 },
             }));
         context.response.body = { items: result };
