@@ -1,0 +1,59 @@
+name: CBOE options daily parquet
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-6'
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  cboe-options-daily-parquet:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Put current date into a variable
+        run: |
+            echo "RELEASE_NAME=CBOE_OPTIONS_DATA_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_ENV}
+  
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9" # Specify your Python version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests pyarrow
+
+      # Step 4: Run the Python script
+      - name: Run the Python script
+        # env:  # Pass environment variables
+        #   RELEASENAME: ${{ env.RELEASE_NAME }}  # Replace with your release name
+        run: python jobs/main-options-cboe.py
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "temp/*.parquet"
+          tag: ${{ env.RELEASE_NAME }}
+          commit: "main"
+          allowUpdates: "true"
+      # Step 5: Commit and push changes (if any)
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add --all
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update data/cboe-options-summary.json (via GitHub Actions)"
+            git push
+          fi
