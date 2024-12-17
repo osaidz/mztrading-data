@@ -8,6 +8,10 @@ import optionsSnapshotSummary from "./../data/options-snapshot.summary.json" wit
     type: "json",
 };
 
+import cboeOptionsSummary from "./../data/cboe-options-summary.json" with {
+    type: "json",
+};
+
 import symbols from "./../data/symbols.json" with {
     type: "json",
 };
@@ -35,6 +39,11 @@ type OptionsSnapshotSummary = Record<string, {
         "dex": OptionsSnapshotSummaryFileType;
     }>;
 }>;
+
+type CboeOptionSummaryType = {
+    name: string,
+    optionsAssetUrl: string
+}
 
 type TickerSymbol = { name: string, symbol: string}
 
@@ -77,3 +86,5 @@ export const searchTicker = (q: string) => {
     const filtered = fuse.search(q, { limit: 25 }).map((x) => x.item);
     return filtered;
 }
+
+export const CboeOptionsRawSummary =  (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl })=> ({ name, optionsAssetUrl }));

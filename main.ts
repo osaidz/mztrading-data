@@ -7,6 +7,7 @@ import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
 import ky from "https://esm.sh/ky@1.2.3";
 import {
+CboeOptionsRawSummary,
     getOptionsDataSummary,
     mapDataToLegacy,
     OptionsSnapshotSummary,
@@ -249,6 +250,10 @@ router.get("/", (context) => {
             symbols.push(...assets.map((j) => j.name.split(".").at(0) || ""));
         }
         context.response.body = symbols.sort().map((j) => ({ name: j }));
+        context.response.type = "application/json";
+    })
+    .get("/beta/historical/cboesummary", (context)=>{        //make the resource name more appropriate
+        context.response.body = CboeOptionsRawSummary;
         context.response.type = "application/json";
     });
 
