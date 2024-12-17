@@ -43,7 +43,7 @@ console.log(`Finished generating data files!`);
 
 Deno.writeTextFileSync(
     "./data/options-data.summary.json",
-    JSON.stringify(data),
+    JSON.stringify(data, null, 2),
 );
 
 console.log(`Summary file generated successfully!`);
