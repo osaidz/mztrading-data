@@ -104,7 +104,7 @@ else:
     summary_data = []
 
 # Add a new record with the current timestamp
-summary_data.append({"name": release_name})
+summary_data.append({"name": release_name, "optionsAssetUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/options_data.parquet", "stocksAssetUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/stock_data.parquet"})
 
 # Write updated summary back to the JSON file
 with open(summary_file, "w") as file:
