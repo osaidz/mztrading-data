@@ -1,22 +1,27 @@
 [
     {
         "name": "CBOE_OPTIONS_DATA_2024-12-10-13-33-16",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/archives/options_data_2024-12-10-13-33-16.parquet", 
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/archives/options_data_2024-12-10-13-33-16.parquet",
         "stocksAssetUrl": ""
     },
     {
         "name": "CBOE_OPTIONS_DATA_2024-12-12-13-32-35",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/archives/options_data_2024-12-12-13-32-35.parquet", 
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/archives/options_data_2024-12-12-13-32-35.parquet",
         "stocksAssetUrl": ""
     },
     {
         "name": "CBOE_OPTIONS_DATA_2024-12-13-13-31-51",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/archives/options_data_2024-12-13-13-31-51.parquet", 
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/archives/options_data_2024-12-13-13-31-51.parquet",
         "stocksAssetUrl": ""
     },
     {
         "name": "CBOE_OPTIONS_DATA_2024-12-16-13-29-18",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2024-12-16-13-29-18/options_data.parquet", 
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2024-12-16-13-29-18/options_data.parquet",
         "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2024-12-16-13-29-18/stock_data.parquet"
+    },
+    {
+        "name": "CBOE_OPTIONS_DATA_2024-12-17-13-29-08",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2024-12-17-13-29-08/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2024-12-17-13-29-08/stock_data.parquet"
     }
 ]
