@@ -40,7 +40,7 @@ jobs:
           name: tradier-data
           if-no-files-found: error
           path: |
-            ${{ github.workspace}}/data/*.json
+            ${{ github.workspace}}/data/options-data.summary.json
             ${{ github.workspace}}/temp/options-historical/*.json
   release-tradier-data:
     runs-on: ubuntu-latest
@@ -99,7 +99,7 @@ jobs:
           name: snapshot-data
           if-no-files-found: error
           path: |
-            ${{ github.workspace}}/data/*.json
+            ${{ github.workspace}}/data/options-snapshot.summary.json
             ${{ github.workspace}}/temp/options-snapshots/*.png
 
   release-snapshot-data:
