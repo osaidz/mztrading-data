@@ -87,4 +87,4 @@ export const searchTicker = (q: string) => {
     return filtered;
 }
 
-export const CboeOptionsRawSummary =  (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl })=> ({ name, optionsAssetUrl }));
+export const CboeOptionsRawSummary =  (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl })=> ({ name, optionsAssetUrl, dt: name.replace('CBOE_OPTIONS_DATA_', '').substring(0, 10) }));
