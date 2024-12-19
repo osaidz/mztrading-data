@@ -105,7 +105,7 @@ if (latestDate) {
 
     Deno.writeTextFileSync(
         "./data/options-snapshot.summary.json",
-        JSON.stringify(data),
+        JSON.stringify(data, null , 2),
     );
 
     console.log(`Summary file generated successfully!`);
