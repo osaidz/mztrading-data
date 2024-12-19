@@ -569,7 +569,7 @@
     },
     {
         "name": "AKOUSTIS TECHNOLOGIES INC COM",
-        "symbol": "AKTS"
+        "symbol": "AKTSQ"
     },
     {
         "name": "AKOYA BIOSCIENCES INC COM",
@@ -1076,7 +1076,7 @@
         "symbol": "APT"
     },
     {
-        "name": "APTIV PLC SHS",
+        "name": "APTIV HOLDINGS LTD",
         "symbol": "APTV"
     },
     {
@@ -4102,10 +4102,6 @@
     {
         "name": "CANTALOUPE INC COM",
         "symbol": "CTLP"
-    },
-    {
-        "name": "CATALENT INC COM",
-        "symbol": "CTLT"
     },
     {
         "name": "CTO RLTY GROWTH INC NEW COM",
@@ -7194,10 +7190,6 @@
     {
         "name": "GENCOR INDS INC COM",
         "symbol": "GENC"
-    },
-    {
-        "name": "GENETIC TECHNOLOGIES LTD SPONSORED ADS",
-        "symbol": "GENE"
     },
     {
         "name": "GENIUS SPORTS LIMITED SHARES CL A",
@@ -13232,10 +13224,6 @@
         "symbol": "PFLT"
     },
     {
-        "name": "PERFORMANT HEALTHCARE INC COM",
-        "symbol": "PFMT"
-    },
-    {
         "name": "PROVIDENT FINL SVCS INC COM",
         "symbol": "PFS"
     },
@@ -13302,6 +13290,10 @@
     {
         "name": "PHINIA INC COMMON STOCK",
         "symbol": "PHIN"
+    },
+    {
+        "name": "PERFORMANT HEALTHCARE INC COM",
+        "symbol": "PHLT"
     },
     {
         "name": "PULTE GROUP INC COM",
@@ -13888,7 +13880,7 @@
         "symbol": "PVL"
     },
     {
-        "name": "PALVELLA THERAPEUTICS INC",
+        "name": "PALVELLA THERAPEUTICS INC NEW COM",
         "symbol": "PVLA"
     },
     {
@@ -15838,6 +15830,10 @@
     {
         "name": "ISHARES TR US SML CAP EQT",
         "symbol": "SMLF"
+    },
+    {
+        "name": "SEMLER SCIENTIFIC INC COM",
+        "symbol": "SMLR"
     },
     {
         "name": "SUMMIT THERAPEUTICS INC COM",
@@ -18188,7 +18184,7 @@
         "symbol": "VC"
     },
     {
-        "name": "SIMPLIFY VOLT TSLA REVOLUTION",
+        "name": "SIMPLIFY EXCHANGE TRADED FUNDS VOLT TSLA REVOLU",
         "symbol": "VCAR"
     },
     {
@@ -19492,7 +19488,7 @@
         "symbol": "XTN"
     },
     {
-        "name": "22ND CENTY GROUP INC COM",
+        "name": "22ND CENTY GROUP INC COM NEW",
         "symbol": "XXII"
     },
     {
