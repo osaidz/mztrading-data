@@ -50,6 +50,9 @@ jobs:
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Fetch all commits to ensure the latest state is available
+          ref: main
       - name: Download Tradier Artifact
         uses: actions/download-artifact@v4
         with:
