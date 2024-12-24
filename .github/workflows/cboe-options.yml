@@ -12,10 +12,10 @@ jobs:
   set-release-vars:
     runs-on: ubuntu-latest    
     outputs:
-      cboe-tag: ${{ steps.cboedata.outputs.RELEASE_NAME }}
+      cboe-tag: ${{ steps.cboedata.outputs.RELEASE_NAME }}      
     steps:
       - id: cboedata
-        run: echo "RELEASE_NAME=CBOE_OPTIONS_DATA_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_ENV}
+        run: echo "RELEASE_NAME=CBOE_OPTIONS_DATA_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_OUTPUT}
 
   cboe-options-daily-parquet:
     runs-on: ubuntu-latest

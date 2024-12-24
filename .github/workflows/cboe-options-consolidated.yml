@@ -15,10 +15,10 @@ jobs:
   set-release-vars:
     runs-on: ubuntu-latest    
     outputs:
-      cboerolling-tag: ${{ steps.cboerollingdata.outputs.RELEASE_NAME }}
+      cboerolling-tag: ${{ steps.cboerollingdata.outputs.RELEASE_NAME }}      
     steps:
       - id: cboerollingdata
-        run: echo "RELEASE_NAME=CBOE_ROLLING_DATA_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_ENV}
+        run: echo "RELEASE_NAME=CBOE_ROLLING_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_OUTPUT}
 
   cboe-options-rolling-parquet:
     runs-on: ubuntu-latest
