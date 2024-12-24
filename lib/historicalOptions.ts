@@ -1,5 +1,5 @@
 
-// @deno-types="https://esm.sh/@duckdb/duckdb-wasm@1.28.0/dist/duckdb-browser-blocking.d.ts"
+// @deno-types="https://esm.sh/v135/@duckdb/duckdb-wasm@1.28.0/dist/duckdb-browser-blocking.d.ts"
 import { createDuckDB, getJsDelivrBundles, ConsoleLogger, DEFAULT_RUNTIME } from 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.28.0/dist/duckdb-browser-blocking.mjs/+esm';
 
 import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
@@ -32,23 +32,15 @@ export const getConnection = async ()=> {
     return dbPromiseVal.connect();
 }
 
-// Deno.serve(async (req: Request) => {
-//     const conn = dbPromise.connect();
-//     const arrowResult = await conn.send(`select * from "db.parquet" WHERE option_symbol='NVDA'`);
-//     const result = JSON.stringify(arrowResult.readAll()[0].toArray().map((row) => row.toJSON()));
-//     return new Response(result)
-// });
-
+//find a way to parametrize the query
 export const getHistoricalSnapshotDatesFromParquet = async (symbol: string) => { 
     const conn = await getConnection();
-    const arrowResult = await conn.send("SELECT DISTINCT dt FROM 'db.parquet' WHERE option_symbol = '" + symbol + "'");
-    return JSON.stringify(arrowResult.readAll()[0].toArray().map((row) => row.toJSON()));
+    const arrowResult = await conn.send("SELECT DISTINCT CAST(dt as STRING) as dt FROM 'db.parquet' WHERE option_symbol = '" + symbol + "'");
+    return arrowResult.readAll()[0].toArray().map((row) => row.toJSON());
 }
 
 export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: string) => { 
     const conn = await getConnection();
-    const arrowResult = await conn.send("SELECT * FROM 'db.parquet' WHERE option_symbol = '" + symbol + "' AND dt = '" + dt + "'");
-    return JSON.stringify(arrowResult.readAll()[0].toArray().map((row) => row.toJSON()));
+    const arrowResult = await conn.send("SELECT cast(expiration as string) as expiration, delta, option_type, gamma, strike, open_interest, volume FROM 'db.parquet' WHERE option_symbol = '" + symbol + "' AND dt = '" + dt + "'");
+    return arrowResult.readAll()[0].toArray().map((row) => row.toJSON());
 }
-
-
