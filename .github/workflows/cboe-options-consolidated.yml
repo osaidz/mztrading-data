@@ -1,8 +1,11 @@
-name: CBOE options daily parquet
+name: CBOE options rolling parquet
 
 on:
-  schedule:
-    - cron: '0 13 * * 1-6'
+  workflow_run:
+    workflows: ["CBOE options daily parquet"]
+    branches: [main]
+    types: 
+      - completed
   workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 permissions:
@@ -12,16 +15,16 @@ jobs:
   set-release-vars:
     runs-on: ubuntu-latest    
     outputs:
-      cboe-tag: ${{ steps.cboedata.outputs.RELEASE_NAME }}
+      cboerolling-tag: ${{ steps.cboerollingdata.outputs.RELEASE_NAME }}
     steps:
-      - id: cboedata
-        run: echo "RELEASE_NAME=CBOE_OPTIONS_DATA_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_ENV}
+      - id: cboerollingdata
+        run: echo "RELEASE_NAME=CBOE_ROLLING_DATA_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_ENV}
 
-  cboe-options-daily-parquet:
+  cboe-options-rolling-parquet:
     runs-on: ubuntu-latest
     needs: set-release-vars
     env:
-      RELEASE_NAME: ${{needs.set-release-vars.outputs.cboe-tag}}
+      RELEASE_NAME: ${{needs.set-release-vars.outputs.cboerolling-tag}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -32,22 +35,22 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas requests pyarrow
+          pip install pandas requests pyarrow duckdb
       - name: Run the Python script
-        run: python jobs/main-options-cboe.py
+        run: python jobs/main-options-cboe-consolidate.py
       - name: Upload artifacts 
         uses: actions/upload-artifact@v4
         with:
-          name: cboe-data
+          name: cboe-rolling-data
           if-no-files-found: error
           path: |
             ${{ github.workspace}}/temp/*.parquet
-            ${{ github.workspace}}/data/cboe-options-summary.json
-  release-cboe-data:
+            ${{ github.workspace}}/data/cboe-options-rolling.json            
+  release-cboe-rolling-data:
     runs-on: ubuntu-latest
-    needs: [set-release-vars, cboe-options-daily-parquet]
+    needs: [set-release-vars, cboe-options-rolling-parquet]
     env:
-      RELEASE_NAME: ${{needs.set-release-vars.outputs.cboe-tag}}
+      RELEASE_NAME: ${{needs.set-release-vars.outputs.cboerolling-tag}}
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
@@ -57,7 +60,7 @@ jobs:
       - name: Download snapshot images Artifact
         uses: actions/download-artifact@v4
         with:
-          name: cboe-data
+          name: cboe-rolling-data
       - name: Release
         uses: ncipollo/release-action@v1
         with:
@@ -73,6 +76,6 @@ jobs:
           if git diff-index --quiet HEAD; then
             echo "No changes to commit."
           else
-            git commit -m "Update data/cboe-options-summary.json (via GitHub Actions)"
+            git commit -m "Update data/cboe-options-consolidated.json (via GitHub Actions)"
             git push
           fi
