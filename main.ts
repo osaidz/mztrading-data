@@ -267,9 +267,9 @@ router.get("/", (context) => {
         context.response.body = await getHistoricalOptionDataFromParquet(symbol, dt);
         context.response.type = "application/json";
     })
-    .get("/beta/misc/lastrollingcontract", (context)=>{        //make the resource name more appropriate
-        context.response.body = lastHistoricalOptionDataFromParquet();
-        context.response.type = "application/json";
+    .get("/beta/misc/last30rolling.parquet", (context)=>{        //make the resource name more appropriate
+        const {assetUrl} = lastHistoricalOptionDataFromParquet();
+        context.response.redirect(assetUrl);        
     });
 
 const app = new Application();
