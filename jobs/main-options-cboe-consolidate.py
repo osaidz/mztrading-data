@@ -41,6 +41,6 @@ duckdb.sql(f"""COPY (select dt, option_symbol, CAST(strptime(expiration, '%Y%m%d
 summary_file = "data/cboe-options-rolling.json"
 # Write updated summary back to the JSON file
 with open(summary_file, "w") as file:
-    json.dump({"name": release_name, "assetUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/cboe_rolling_data.parquet"}, file, indent=4)
+    json.dump({"name": release_name, "assetUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/options_cboe_rolling_30.parquet"}, file, indent=4)
 
 print(f"Updated summary file: {summary_file}")
