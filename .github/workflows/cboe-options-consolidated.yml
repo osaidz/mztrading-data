@@ -12,8 +12,9 @@ permissions:
   contents: write
 
 jobs:
-  set-release-vars:
-    runs-on: ubuntu-latest    
+  set-release-vars:    
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     outputs:
       cboerolling-tag: ${{ steps.cboerollingdata.outputs.RELEASE_NAME }}      
     steps:
