@@ -44,3 +44,7 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
     const arrowResult = await conn.send("SELECT cast(expiration as string) as expiration, delta, option_type, gamma, strike, open_interest, volume FROM 'db.parquet' WHERE option_symbol = '" + symbol + "' AND dt = '" + dt + "'");
     return arrowResult.readAll()[0].toArray().map((row) => row.toJSON());
 }
+
+export const lastHistoricalOptionDataFromParquet = ()=>{
+    return optionsRollingSummary;
+}
