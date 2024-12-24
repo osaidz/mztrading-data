@@ -40,10 +40,6 @@
         "symbol": "AAPU"
     },
     {
-        "name": "T-Rex 2X Long Apple Daily Target ETF",
-        "symbol": "AAPX"
-    },
-    {
         "name": "AMERICAN ASSETS TR INC COM",
         "symbol": "AAT"
     },
@@ -440,10 +436,6 @@
         "symbol": "AGQ"
     },
     {
-        "name": "AVANGRID INC COM",
-        "symbol": "AGR"
-    },
-    {
         "name": "ADECOAGRO S A COM",
         "symbol": "AGRO"
     },
@@ -569,7 +561,7 @@
     },
     {
         "name": "AKOUSTIS TECHNOLOGIES INC COM",
-        "symbol": "AKTS"
+        "symbol": "AKTSQ"
     },
     {
         "name": "AKOYA BIOSCIENCES INC COM",
@@ -904,10 +896,6 @@
         "symbol": "AMZN"
     },
     {
-        "name": "Kurv Yield Premium Strategy Amazon (AMZN) ETF",
-        "symbol": "AMZP"
-    },
-    {
         "name": "DIREXION SHS ETF TR DIREXION 2X SHAR",
         "symbol": "AMZU"
     },
@@ -1076,7 +1064,7 @@
         "symbol": "APT"
     },
     {
-        "name": "APTIV PLC SHS",
+        "name": "APTIV PLC COM SHS",
         "symbol": "APTV"
     },
     {
@@ -1446,10 +1434,6 @@
     {
         "name": "APTARGROUP INC COM",
         "symbol": "ATR"
-    },
-    {
-        "name": "ATARA BIOTHERAPEUTICS INC COM NEW",
-        "symbol": "ATRA"
     },
     {
         "name": "ATRICURE INC COM",
@@ -3080,10 +3064,6 @@
         "symbol": "CDRE"
     },
     {
-        "name": "CIDARA THERAPEUTICS INC COM NEW",
-        "symbol": "CDTX"
-    },
-    {
         "name": "CDW CORP COM",
         "symbol": "CDW"
     },
@@ -4104,10 +4084,6 @@
         "symbol": "CTLP"
     },
     {
-        "name": "CATALENT INC COM",
-        "symbol": "CTLT"
-    },
-    {
         "name": "CTO RLTY GROWTH INC NEW COM",
         "symbol": "CTO"
     },
@@ -4540,7 +4516,7 @@
         "symbol": "DECK"
     },
     {
-        "name": "ETF SER SOLUTIONS ROUNDHILL ACQUI",
+        "name": "ETF SER SOLUTIONS ACQUIRERS DEEP V",
         "symbol": "DEEP"
     },
     {
@@ -4806,10 +4782,6 @@
     {
         "name": "DIGIMARC CORP NEW COM",
         "symbol": "DMRC"
-    },
-    {
-        "name": "DERMTECH INC COM",
-        "symbol": "DMTKQ"
     },
     {
         "name": "GINKGO BIOWORKS HOLDINGS INC CL A NEW",
@@ -7196,10 +7168,6 @@
         "symbol": "GENC"
     },
     {
-        "name": "GENETIC TECHNOLOGIES LTD SPONSORED ADS",
-        "symbol": "GENE"
-    },
-    {
         "name": "GENIUS SPORTS LIMITED SHARES CL A",
         "symbol": "GENI"
     },
@@ -7520,10 +7488,6 @@
         "symbol": "GOOS"
     },
     {
-        "name": "T-Rex 2X Long Alphabet Daily Target ETF",
-        "symbol": "GOOX"
-    },
-    {
         "name": "TIDAL TR II YIELDMAX GOOGL",
         "symbol": "GOOY"
     },
@@ -7580,7 +7544,7 @@
         "symbol": "GPN"
     },
     {
-        "name": "GULFPORT ENERGY OPERATING CORP COMMON SHARES",
+        "name": "GULFPORT ENERGY CORP COMMON SHARES",
         "symbol": "GPOR"
     },
     {
@@ -7658,10 +7622,6 @@
     {
         "name": "GRITSTONE BIO INC COM",
         "symbol": "GRTSQ"
-    },
-    {
-        "name": "GALERA THERAPEUTICS INC COM",
-        "symbol": "GRTX"
     },
     {
         "name": "GROWGENERATION CORP COM",
@@ -10205,7 +10165,7 @@
     },
     {
         "name": "THE LION ELECTRIC COMPANY COMMON STOCK",
-        "symbol": "LEV"
+        "symbol": "LEVGQ"
     },
     {
         "name": "LEVI STRAUSS & CO NEW CL A COM STK",
@@ -11676,10 +11636,6 @@
         "symbol": "MZZ"
     },
     {
-        "name": "NAAS TECHNOLOGY INC SPONSORED ADS",
-        "symbol": "NAAS"
-    },
-    {
         "name": "N-ABLE INC COMMON STOCK",
         "symbol": "NABL"
     },
@@ -12096,16 +12052,16 @@
         "symbol": "NPCE"
     },
     {
+        "name": "NPK INTERNATIONAL INC COM SHS",
+        "symbol": "NPKI"
+    },
+    {
         "name": "ENPRO INC COM",
         "symbol": "NPO"
     },
     {
         "name": "NET POWER INC COM CL A",
         "symbol": "NPWR"
-    },
-    {
-        "name": "NEWPARK RES INC COM PAR $.01NEW",
-        "symbol": "NR"
     },
     {
         "name": "NATIONAL RESH CORP COM NEW",
@@ -12282,10 +12238,6 @@
     {
         "name": "INVESTMENT MANAGERS SER TR II TRADR 1.75X LNG",
         "symbol": "NVDW"
-    },
-    {
-        "name": "T-Rex 2X Long NVIDIA Daily Target ETF",
-        "symbol": "NVDX"
     },
     {
         "name": "TIDAL TR II YIELDMAX NVDA",
@@ -13232,10 +13184,6 @@
         "symbol": "PFLT"
     },
     {
-        "name": "PERFORMANT HEALTHCARE INC COM",
-        "symbol": "PFMT"
-    },
-    {
         "name": "PROVIDENT FINL SVCS INC COM",
         "symbol": "PFS"
     },
@@ -13302,6 +13250,10 @@
     {
         "name": "PHINIA INC COMMON STOCK",
         "symbol": "PHIN"
+    },
+    {
+        "name": "PERFORMANT HEALTHCARE INC COM",
+        "symbol": "PHLT"
     },
     {
         "name": "PULTE GROUP INC COM",
@@ -13886,10 +13838,6 @@
     {
         "name": "PERMIANVILLE RTY TR TR UNIT",
         "symbol": "PVL"
-    },
-    {
-        "name": "PALVELLA THERAPEUTICS INC",
-        "symbol": "PVLA"
     },
     {
         "name": "PERELLA WEINBERG PARTNERS CLASS A COM",
@@ -15840,6 +15788,10 @@
         "symbol": "SMLF"
     },
     {
+        "name": "SEMLER SCIENTIFIC INC COM",
+        "symbol": "SMLR"
+    },
+    {
         "name": "SUMMIT THERAPEUTICS INC COM",
         "symbol": "SMMT"
     },
@@ -16844,8 +16796,8 @@
         "symbol": "TCPC"
     },
     {
-        "name": "CONTAINER STORE GROUP INC COM NEW",
-        "symbol": "TCSG"
+        "name": "--Placeholder--",
+        "symbol": "TCSGQ"
     },
     {
         "name": "TUCOWS INC COM NEW",
@@ -17532,6 +17484,10 @@
         "symbol": "TT"
     },
     {
+        "name": "SERVICETITAN INC SHS CL A",
+        "symbol": "TTAN"
+    },
+    {
         "name": "TORO CO COM",
         "symbol": "TTC"
     },
@@ -18188,7 +18144,7 @@
         "symbol": "VC"
     },
     {
-        "name": "SIMPLIFY VOLT TSLA REVOLUTION",
+        "name": "SIMPLIFY EXCHANGE TRADED FUNDS VOLT TSLA REVOLU",
         "symbol": "VCAR"
     },
     {
@@ -19492,7 +19448,7 @@
         "symbol": "XTN"
     },
     {
-        "name": "22ND CENTY GROUP INC COM",
+        "name": "22ND CENTY GROUP INC COM NEW",
         "symbol": "XXII"
     },
     {
