@@ -3620,10 +3620,6 @@
         "symbol": "CNS"
     },
     {
-        "name": "CONSOLIDATED COMM HLDGS INC COM",
-        "symbol": "CNSL"
-    },
-    {
         "name": "CENTESSA PHARMACEUTICALS PLC SPONSORED ADS",
         "symbol": "CNTA"
     },
@@ -4596,10 +4592,6 @@
         "symbol": "DFJ"
     },
     {
-        "name": "Davis Select Financial ETF",
-        "symbol": "DFNL"
-    },
-    {
         "name": "DISCOVER FINL SVCS COM",
         "symbol": "DFS"
     },
@@ -4698,10 +4690,6 @@
     {
         "name": "AMPLIFY ETF TR CWP ENHANCED DIV",
         "symbol": "DIVO"
-    },
-    {
-        "name": "GLOBAL X FDS DOW 30 COVERED C",
-        "symbol": "DJIA"
     },
     {
         "name": "BARCLAYS BANK PLC DJUBS CMDT ETN36",
@@ -5100,10 +5088,6 @@
         "symbol": "DYAI"
     },
     {
-        "name": "GLOBAL X FDS GLOBAL X DOW 30",
-        "symbol": "DYLG"
-    },
-    {
         "name": "DYNE THERAPEUTICS INC COM",
         "symbol": "DYN"
     },
@@ -5414,10 +5398,6 @@
     {
         "name": "ENLIVEN THERAPEUTICS INC COM",
         "symbol": "ELVN"
-    },
-    {
-        "name": "ISHARES TR JPMORGAN USD EMG",
-        "symbol": "EMB"
     },
     {
         "name": "EMBECTA CORP COMMON STOCK",
@@ -14096,18 +14076,6 @@
         "symbol": "QXO"
     },
     {
-        "name": "GLOBAL X FDS NASDAQ 100 COVER",
-        "symbol": "QYLD"
-    },
-    {
-        "name": "GLOBAL X FDS NASDAQ 100 ESG",
-        "symbol": "QYLE"
-    },
-    {
-        "name": "GLOBAL X FDS NASDQ 100 CVRDGW",
-        "symbol": "QYLG"
-    },
-    {
         "name": "RYDER SYS INC COM",
         "symbol": "R"
     },
@@ -14886,10 +14854,6 @@
     {
         "name": "GLOBAL X FDS RUSSELL 2000",
         "symbol": "RYLD"
-    },
-    {
-        "name": "GLOBAL X FDS RUSSELL 2000 COV",
-        "symbol": "RYLG"
     },
     {
         "name": "RAYONIER INC COM",
@@ -19458,14 +19422,6 @@
     {
         "name": "XYLEM INC COM",
         "symbol": "XYL"
-    },
-    {
-        "name": "GLOBAL X FDS S&P 500 COVERED",
-        "symbol": "XYLD"
-    },
-    {
-        "name": "GLOBAL X FDS S&P 500 COVERED",
-        "symbol": "XYLG"
     },
     {
         "name": "YALLA GROUP LTD ADS",
