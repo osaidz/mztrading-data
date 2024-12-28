@@ -440,10 +440,6 @@
         "symbol": "AGQ"
     },
     {
-        "name": "AVANGRID INC COM",
-        "symbol": "AGR"
-    },
-    {
         "name": "ADECOAGRO S A COM",
         "symbol": "AGRO"
     },
@@ -466,10 +462,6 @@
     {
         "name": "ARMADA HOFFLER PPTYS INC COM",
         "symbol": "AHH"
-    },
-    {
-        "name": "TIDAL ETF TR NEWDAY OCN HEALT",
-        "symbol": "AHOY"
     },
     {
         "name": "AMERICAN HEALTHCARE REIT INC COM SHS",
@@ -569,7 +561,7 @@
     },
     {
         "name": "AKOUSTIS TECHNOLOGIES INC COM",
-        "symbol": "AKTS"
+        "symbol": "AKTSQ"
     },
     {
         "name": "AKOYA BIOSCIENCES INC COM",
@@ -1076,7 +1068,7 @@
         "symbol": "APT"
     },
     {
-        "name": "APTIV PLC SHS",
+        "name": "APTIV PLC COM SHS",
         "symbol": "APTV"
     },
     {
@@ -1446,10 +1438,6 @@
     {
         "name": "APTARGROUP INC COM",
         "symbol": "ATR"
-    },
-    {
-        "name": "ATARA BIOTHERAPEUTICS INC COM NEW",
-        "symbol": "ATRA"
     },
     {
         "name": "ATRICURE INC COM",
@@ -3080,10 +3068,6 @@
         "symbol": "CDRE"
     },
     {
-        "name": "CIDARA THERAPEUTICS INC COM NEW",
-        "symbol": "CDTX"
-    },
-    {
         "name": "CDW CORP COM",
         "symbol": "CDW"
     },
@@ -3636,10 +3620,6 @@
         "symbol": "CNS"
     },
     {
-        "name": "CONSOLIDATED COMM HLDGS INC COM",
-        "symbol": "CNSL"
-    },
-    {
         "name": "CENTESSA PHARMACEUTICALS PLC SPONSORED ADS",
         "symbol": "CNTA"
     },
@@ -4104,10 +4084,6 @@
         "symbol": "CTLP"
     },
     {
-        "name": "CATALENT INC COM",
-        "symbol": "CTLT"
-    },
-    {
         "name": "CTO RLTY GROWTH INC NEW COM",
         "symbol": "CTO"
     },
@@ -4540,7 +4516,7 @@
         "symbol": "DECK"
     },
     {
-        "name": "ETF SER SOLUTIONS ROUNDHILL ACQUI",
+        "name": "ETF SER SOLUTIONS ACQUIRERS DEEP V",
         "symbol": "DEEP"
     },
     {
@@ -4614,10 +4590,6 @@
     {
         "name": "WISDOMTREE TR JP SMALLCP DIV",
         "symbol": "DFJ"
-    },
-    {
-        "name": "Davis Select Financial ETF",
-        "symbol": "DFNL"
     },
     {
         "name": "DISCOVER FINL SVCS COM",
@@ -4720,10 +4692,6 @@
         "symbol": "DIVO"
     },
     {
-        "name": "GLOBAL X FDS DOW 30 COVERED C",
-        "symbol": "DJIA"
-    },
-    {
         "name": "BARCLAYS BANK PLC DJUBS CMDT ETN36",
         "symbol": "DJP"
     },
@@ -4806,10 +4774,6 @@
     {
         "name": "DIGIMARC CORP NEW COM",
         "symbol": "DMRC"
-    },
-    {
-        "name": "DERMTECH INC COM",
-        "symbol": "DMTKQ"
     },
     {
         "name": "GINKGO BIOWORKS HOLDINGS INC CL A NEW",
@@ -5124,10 +5088,6 @@
         "symbol": "DYAI"
     },
     {
-        "name": "GLOBAL X FDS GLOBAL X DOW 30",
-        "symbol": "DYLG"
-    },
-    {
         "name": "DYNE THERAPEUTICS INC COM",
         "symbol": "DYN"
     },
@@ -5438,10 +5398,6 @@
     {
         "name": "ENLIVEN THERAPEUTICS INC COM",
         "symbol": "ELVN"
-    },
-    {
-        "name": "ISHARES TR JPMORGAN USD EMG",
-        "symbol": "EMB"
     },
     {
         "name": "EMBECTA CORP COMMON STOCK",
@@ -7196,10 +7152,6 @@
         "symbol": "GENC"
     },
     {
-        "name": "GENETIC TECHNOLOGIES LTD SPONSORED ADS",
-        "symbol": "GENE"
-    },
-    {
         "name": "GENIUS SPORTS LIMITED SHARES CL A",
         "symbol": "GENI"
     },
@@ -7580,7 +7532,7 @@
         "symbol": "GPN"
     },
     {
-        "name": "GULFPORT ENERGY OPERATING CORP COMMON SHARES",
+        "name": "GULFPORT ENERGY CORP COMMON SHARES",
         "symbol": "GPOR"
     },
     {
@@ -7658,10 +7610,6 @@
     {
         "name": "GRITSTONE BIO INC COM",
         "symbol": "GRTSQ"
-    },
-    {
-        "name": "GALERA THERAPEUTICS INC COM",
-        "symbol": "GRTX"
     },
     {
         "name": "GROWGENERATION CORP COM",
@@ -10205,7 +10153,7 @@
     },
     {
         "name": "THE LION ELECTRIC COMPANY COMMON STOCK",
-        "symbol": "LEV"
+        "symbol": "LEVGQ"
     },
     {
         "name": "LEVI STRAUSS & CO NEW CL A COM STK",
@@ -10326,10 +10274,6 @@
     {
         "name": "LKQ CORP COM",
         "symbol": "LKQ"
-    },
-    {
-        "name": "LL FLOORING HOLDINGS INC COM",
-        "symbol": "LLFLQ"
     },
     {
         "name": "ELI LILLY & CO COM",
@@ -11676,10 +11620,6 @@
         "symbol": "MZZ"
     },
     {
-        "name": "NAAS TECHNOLOGY INC SPONSORED ADS",
-        "symbol": "NAAS"
-    },
-    {
         "name": "N-ABLE INC COMMON STOCK",
         "symbol": "NABL"
     },
@@ -11710,10 +11650,6 @@
     {
         "name": "SPDR INDEX SHS FDS S&P NORTH AMER",
         "symbol": "NANR"
-    },
-    {
-        "name": "DUCKHORN PORTFOLIO INC COM",
-        "symbol": "NAPA"
     },
     {
         "name": "INARI MED INC COM",
@@ -12096,16 +12032,16 @@
         "symbol": "NPCE"
     },
     {
+        "name": "NPK INTERNATIONAL INC COM SHS",
+        "symbol": "NPKI"
+    },
+    {
         "name": "ENPRO INC COM",
         "symbol": "NPO"
     },
     {
         "name": "NET POWER INC COM CL A",
         "symbol": "NPWR"
-    },
-    {
-        "name": "NEWPARK RES INC COM PAR $.01NEW",
-        "symbol": "NR"
     },
     {
         "name": "NATIONAL RESH CORP COM NEW",
@@ -13232,10 +13168,6 @@
         "symbol": "PFLT"
     },
     {
-        "name": "PERFORMANT HEALTHCARE INC COM",
-        "symbol": "PFMT"
-    },
-    {
         "name": "PROVIDENT FINL SVCS INC COM",
         "symbol": "PFS"
     },
@@ -13302,6 +13234,10 @@
     {
         "name": "PHINIA INC COMMON STOCK",
         "symbol": "PHIN"
+    },
+    {
+        "name": "PERFORMANT HEALTHCARE INC COM",
+        "symbol": "PHLT"
     },
     {
         "name": "PULTE GROUP INC COM",
@@ -13888,10 +13824,6 @@
         "symbol": "PVL"
     },
     {
-        "name": "PALVELLA THERAPEUTICS INC",
-        "symbol": "PVLA"
-    },
-    {
         "name": "PERELLA WEINBERG PARTNERS CLASS A COM",
         "symbol": "PWP"
     },
@@ -14142,18 +14074,6 @@
     {
         "name": "QXO INC COM NEW",
         "symbol": "QXO"
-    },
-    {
-        "name": "GLOBAL X FDS NASDAQ 100 COVER",
-        "symbol": "QYLD"
-    },
-    {
-        "name": "GLOBAL X FDS NASDAQ 100 ESG",
-        "symbol": "QYLE"
-    },
-    {
-        "name": "GLOBAL X FDS NASDQ 100 CVRDGW",
-        "symbol": "QYLG"
     },
     {
         "name": "RYDER SYS INC COM",
@@ -14934,10 +14854,6 @@
     {
         "name": "GLOBAL X FDS RUSSELL 2000",
         "symbol": "RYLD"
-    },
-    {
-        "name": "GLOBAL X FDS RUSSELL 2000 COV",
-        "symbol": "RYLG"
     },
     {
         "name": "RAYONIER INC COM",
@@ -15838,6 +15754,10 @@
     {
         "name": "ISHARES TR US SML CAP EQT",
         "symbol": "SMLF"
+    },
+    {
+        "name": "SEMLER SCIENTIFIC INC COM",
+        "symbol": "SMLR"
     },
     {
         "name": "SUMMIT THERAPEUTICS INC COM",
@@ -16845,7 +16765,7 @@
     },
     {
         "name": "CONTAINER STORE GROUP INC COM NEW",
-        "symbol": "TCSG"
+        "symbol": "TCSGQ"
     },
     {
         "name": "TUCOWS INC COM NEW",
@@ -17532,6 +17452,10 @@
         "symbol": "TT"
     },
     {
+        "name": "SERVICETITAN INC SHS CL A",
+        "symbol": "TTAN"
+    },
+    {
         "name": "TORO CO COM",
         "symbol": "TTC"
     },
@@ -18188,7 +18112,7 @@
         "symbol": "VC"
     },
     {
-        "name": "SIMPLIFY VOLT TSLA REVOLUTION",
+        "name": "SIMPLIFY EXCHANGE TRADED FUNDS VOLT TSLA REVOLU",
         "symbol": "VCAR"
     },
     {
@@ -19492,20 +19416,12 @@
         "symbol": "XTN"
     },
     {
-        "name": "22ND CENTY GROUP INC COM",
+        "name": "22ND CENTY GROUP INC COM NEW",
         "symbol": "XXII"
     },
     {
         "name": "XYLEM INC COM",
         "symbol": "XYL"
-    },
-    {
-        "name": "GLOBAL X FDS S&P 500 COVERED",
-        "symbol": "XYLD"
-    },
-    {
-        "name": "GLOBAL X FDS S&P 500 COVERED",
-        "symbol": "XYLG"
     },
     {
         "name": "YALLA GROUP LTD ADS",
