@@ -13,6 +13,7 @@ const client = ky.create({
 });
 
 const kvindexmap = 'cboe-options-index-map';
+const kvcboeanalytics = 'cboe-options-analytics';
 
 const kv = await Deno.openKv();
 const indexMap = new Set<string>(['SPX']);    //store the symbols which requires _ to be prefixed in the url. Add a job later on which will fetch the list of symbols from the kv store and persist in json file.
@@ -27,13 +28,13 @@ const fetchOptionChainFromCboe = async (symbol: string) => {
         response = await client(`https://cdn.cboe.com/api/global/delayed_quotes/options/_${symbol}.json`);
         if (response.ok) {
             indexMap.add(symbol);
-            await kv.set(['cboe-options-index-map', symbol], symbol);
+            await kv.set([kvindexmap, symbol], symbol);
         }
     }
 
     if (!response.ok) throw new Error('error fetching options data');
 
-    await kv.atomic().sum([kvindexmap, symbol], 1n).commit();
+    await kv.atomic().sum([kvcboeanalytics, symbol], 1n).commit();
 
     return await response.json<{
         data: {
@@ -71,5 +72,5 @@ export const getOptionsChain = async (symbol: string) => {
         }
     });
     console.timeEnd(`getOptionsChain-mapping-${symbol}`)
-    return { mappedOptions, currentPrice }
+    return { data: mappedOptions, currentPrice }
 }
