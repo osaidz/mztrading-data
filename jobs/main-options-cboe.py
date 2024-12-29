@@ -39,7 +39,7 @@ print(f"Found {len(symbols)} symbols: {symbols}")
 # Initialize lists to collect all stock and options data
 all_stock_data = []
 all_options_data = []
-retries = 20
+retries = 5
 retry_codes = [
     HTTPStatus.TOO_MANY_REQUESTS,
     HTTPStatus.INTERNAL_SERVER_ERROR,
@@ -47,13 +47,24 @@ retry_codes = [
     HTTPStatus.SERVICE_UNAVAILABLE,
     HTTPStatus.GATEWAY_TIMEOUT,
 ]
+
+with open("data/cboe-exception-symbols.json", "r") as file:
+    exception_symbols = json.load(file)
+    print(f"Loaded {len(exception_symbols)} exception symbols: {exception_symbols}")
+# exception_symbols = ['VIX', 'SPX', 'NDX', 'RUT']    # Symbols that need to be prefixed with "_" Perhaps load it from a file
+
 # Loop through each symbol and fetch data
 for symbol in symbols:
     try:
         for n in range(retries):
             try:
-                print(f"Fetching data for symbol: {symbol}...")
-                response = requests.get(f"https://cdn.cboe.com/api/global/delayed_quotes/options/{symbol}.json")
+                print(f"Fetching data for symbol: {symbol}")
+                
+                # if the symbol is one of the exception_symbols, then prefix it with _                
+                url_to_fetch = f"https://cdn.cboe.com/api/global/delayed_quotes/options/{symbol}.json"
+                if symbol in exception_symbols:
+                    url_to_fetch = f"https://cdn.cboe.com/api/global/delayed_quotes/options/_{symbol}.json"
+                response = requests.get(url_to_fetch)
                 response.raise_for_status()
                 json_data = response.json()
                 
@@ -69,10 +80,16 @@ for symbol in symbols:
                 break
             except HTTPError as exc:
                 code = exc.response.status_code            
-                if code in retry_codes:
+                if code in retry_codes:                    
+                    retry_after = exc.response.headers.get('Retry-After')
+                    if retry_after:
+                        print(f"Retry-After header present with value: {retry_after}")
+                        sleep_time = int(retry_after)
+                    else:
+                        sleep_time = 10*(n+1)
                     # retry after n seconds
-                    print(f"Http error occurred while fetching data for symbol: {symbol}... Sleeping for {n} seconds")
-                    time.sleep(n)
+                    print(f"Http error '{code}' occurred while fetching data for symbol: {symbol}... Sleeping for {sleep_time} seconds")
+                    time.sleep(sleep_time)
                     continue    
                 raise
     except Exception as e:
