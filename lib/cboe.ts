@@ -74,3 +74,12 @@ export const getOptionsChain = async (symbol: string) => {
     console.timeEnd(`getOptionsChain-mapping-${symbol}`)
     return { data: mappedOptions, currentPrice }
 }
+
+export const getOptionsAnalytics = async () => {
+    const data = new Map<string, number>();
+    for await (const res of kv.list<number>({ prefix: [kvcboeanalytics] })) {
+        const k = res.key.at(-1);
+        k && data.set(k.toString(), res.value);
+    }
+    return data;
+}
