@@ -7,7 +7,7 @@ import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
 import ky from "https://esm.sh/ky@1.2.3";
 import {
-CboeOptionsRawSummary,
+    CboeOptionsRawSummary,
     getOptionsDataSummary,
     mapDataToLegacy,
     OptionsSnapshotSummary,
@@ -15,8 +15,9 @@ CboeOptionsRawSummary,
     searchTicker,
 } from "./lib/data.ts";
 
-import {getPriceAtDate} from './lib/historicalPrice.ts'
+import { getPriceAtDate } from './lib/historicalPrice.ts'
 import { getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
+import { getOptionsChain } from "./lib/cboe.ts";
 
 const token = Deno.env.get("ghtoken");
 const router = new Router();
@@ -138,8 +139,8 @@ router.get("/", (context) => {
                     symbol,
                 )
             )
-            .map((k) => ({ date: k, data: OptionsSnapshotSummaryLegacy[k].symbols[symbol]}))
-            .map(({data, date}) => ({
+            .map((k) => ({ date: k, data: OptionsSnapshotSummaryLegacy[k].symbols[symbol] }))
+            .map(({ data, date }) => ({
                 date: date,
                 dex: {
                     hdAssetUrl: data.dex.hdAssetUrl,
@@ -198,8 +199,7 @@ router.get("/", (context) => {
             //     }`,
             // );
             const { assets } = await ky(
-                `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${
-                    dt.substring(0, 10)
+                `https://api.github.com/repos/mnsrulz/mytradingview-data/releases/tags/${dt.substring(0, 10)
                 }`,
                 {
                     headers: {
@@ -253,23 +253,29 @@ router.get("/", (context) => {
         context.response.body = symbols.sort().map((j) => ({ name: j }));
         context.response.type = "application/json";
     })
-    .get("/beta/historical/cboesummary", (context)=>{        //make the resource name more appropriate
+    .get("/beta/historical/cboesummary", (context) => {        //make the resource name more appropriate
         context.response.body = CboeOptionsRawSummary;
         context.response.type = "application/json";
     })
-    .get("/beta/symbols/:symbol/historical/snapshots", async (context)=>{        //make the resource name more appropriate
+    .get("/beta/symbols/:symbol/historical/snapshots", async (context) => {        //make the resource name more appropriate
         const { symbol } = context.params;
         context.response.body = await getHistoricalSnapshotDatesFromParquet(symbol);
         context.response.type = "application/json";
     })
-    .get("/beta/symbols/:symbol/historical/snapshots/:dt", async (context)=>{        //make the resource name more appropriate
-        const { symbol, dt } = context.params;        
+    .get("/beta/symbols/:symbol/historical/snapshots/:dt", async (context) => {        //make the resource name more appropriate
+        const { symbol, dt } = context.params;
         context.response.body = await getHistoricalOptionDataFromParquet(symbol, dt);
         context.response.type = "application/json";
     })
-    .get("/beta/misc/last30rolling.parquet", (context)=>{        //make the resource name more appropriate
-        const {assetUrl} = lastHistoricalOptionDataFromParquet();
-        context.response.redirect(assetUrl);        
+    .get("/beta/misc/last30rolling.parquet", (context) => {        //make the resource name more appropriate
+        const { assetUrl } = lastHistoricalOptionDataFromParquet();
+        context.response.redirect(assetUrl);
+    })
+    .get("/beta/symbols/:symbol/cboeoptionchain", async (context) => {        //make the resource name more appropriate
+        const { symbol } = context.params;
+        const data = await getOptionsChain(symbol);
+        context.response.body = data;
+        context.response.type = "application/json";
     });
 
 const app = new Application();
