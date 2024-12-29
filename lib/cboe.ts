@@ -79,7 +79,7 @@ export const getOptionsAnalytics = async () => {
     const data = new Map<string, number>();
     for await (const res of kv.list<number>({ prefix: [kvcboeanalytics] })) {
         const k = res.key.at(-1);
-        k && data.set(k.toString(), res.value);
+        k && data.set(k.toString(), Number(res.value));
     }
-    return data;
+    return Object.fromEntries(data);
 }
