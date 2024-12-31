@@ -1956,7 +1956,7 @@
         "symbol": "BEP"
     },
     {
-        "name": "BROOKFIELD RENEWABLE CORP CL A SUB VTG",
+        "name": "BROOKFIELD RENEWABLE CORP CL A EX SUB VTG",
         "symbol": "BEPC"
     },
     {
@@ -2104,8 +2104,8 @@
         "symbol": "BIO"
     },
     {
-        "name": "BIORA THERAPEUTICS INC COM",
-        "symbol": "BIOR"
+        "name": "--Placeholder--",
+        "symbol": "BIORQ"
     },
     {
         "name": "BIOCERES CROP SOLUTIONS CORP SHS",
@@ -2116,7 +2116,7 @@
         "symbol": "BIP"
     },
     {
-        "name": "BROOKFIELD INFRASTRUCTURE CORP COM SB VTG SHS A",
+        "name": "BROOKFIELD INFRASTRUCTURE CORP COM SUB VTG A",
         "symbol": "BIPC"
     },
     {
@@ -2846,10 +2846,6 @@
     {
         "name": "AVIS BUDGET GROUP COM",
         "symbol": "CAR"
-    },
-    {
-        "name": "CARA THERAPEUTICS INC COM",
-        "symbol": "CARA"
     },
     {
         "name": "CARTER BANKSHARES INC COM NEW",
@@ -4592,6 +4588,10 @@
         "symbol": "DFJ"
     },
     {
+        "name": "Davis Select Financial ETF",
+        "symbol": "DFNL"
+    },
+    {
         "name": "DISCOVER FINL SVCS COM",
         "symbol": "DFS"
     },
@@ -4690,6 +4690,10 @@
     {
         "name": "AMPLIFY ETF TR CWP ENHANCED DIV",
         "symbol": "DIVO"
+    },
+    {
+        "name": "GLOBAL X FDS DOW 30 COVERED C",
+        "symbol": "DJIA"
     },
     {
         "name": "BARCLAYS BANK PLC DJUBS CMDT ETN36",
@@ -5088,6 +5092,10 @@
         "symbol": "DYAI"
     },
     {
+        "name": "GLOBAL X FDS GLOBAL X DOW 30",
+        "symbol": "DYLG"
+    },
+    {
         "name": "DYNE THERAPEUTICS INC COM",
         "symbol": "DYN"
     },
@@ -5398,6 +5406,10 @@
     {
         "name": "ENLIVEN THERAPEUTICS INC COM",
         "symbol": "ELVN"
+    },
+    {
+        "name": "ISHARES TR JPMORGAN USD EMG",
+        "symbol": "EMB"
     },
     {
         "name": "EMBECTA CORP COMMON STOCK",
@@ -14076,11 +14088,23 @@
         "symbol": "QXO"
     },
     {
+        "name": "GLOBAL X FDS NASDAQ 100 COVER",
+        "symbol": "QYLD"
+    },
+    {
+        "name": "GLOBAL X FDS NASDAQ 100 ESG",
+        "symbol": "QYLE"
+    },
+    {
+        "name": "GLOBAL X FDS NASDQ 100 CVRDGW",
+        "symbol": "QYLG"
+    },
+    {
         "name": "RYDER SYS INC COM",
         "symbol": "R"
     },
     {
-        "name": "VANECK ETF TRUST INFLATION ALLOCA",
+        "name": "VANECK ETF TRUST REAL ASSETS ETF",
         "symbol": "RAAX"
     },
     {
@@ -14230,10 +14254,6 @@
     {
         "name": "ISHARES TR GLOBAL REIT ETF",
         "symbol": "REET"
-    },
-    {
-        "name": "CHICAGO ATLANTIC REAL ESTATE F COM",
-        "symbol": "REFI"
     },
     {
         "name": "RESEARCH FRONTIERS INC COM",
@@ -14854,6 +14874,10 @@
     {
         "name": "GLOBAL X FDS RUSSELL 2000",
         "symbol": "RYLD"
+    },
+    {
+        "name": "GLOBAL X FDS RUSSELL 2000 COV",
+        "symbol": "RYLG"
     },
     {
         "name": "RAYONIER INC COM",
@@ -19422,6 +19446,14 @@
     {
         "name": "XYLEM INC COM",
         "symbol": "XYL"
+    },
+    {
+        "name": "GLOBAL X FDS S&P 500 COVERED",
+        "symbol": "XYLD"
+    },
+    {
+        "name": "GLOBAL X FDS S&P 500 COVERED",
+        "symbol": "XYLG"
     },
     {
         "name": "YALLA GROUP LTD ADS",
