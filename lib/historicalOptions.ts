@@ -86,6 +86,8 @@ export const getExposureData = async (symbol: string, dt: string) => {
 
     const expirations = Object.keys(indexedObject);
     for (const expiration of expirations) {
+        const dte = dayjs(expiration).diff(spotDate, 'day');
+        if (dte < 0) continue;  //skip if expiration is in the past
         const strikes = Object.keys(indexedObject[expiration]);
         const callOpenInterestData = new Array<number>(strikes.length).fill(0);
         const putOpenInterestData = new Array<number>(strikes.length).fill(0);
@@ -127,7 +129,7 @@ export const getExposureData = async (symbol: string, dt: string) => {
             netGamma: netGammaData,
             strikes: strikes,
             expiration,
-            dte: dayjs(expiration).diff(spotDate, 'day')
+            dte: dte
         });
     }
     return dataToPersist;
