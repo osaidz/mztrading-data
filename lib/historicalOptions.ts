@@ -37,13 +37,16 @@ export const getConnection = async () => {
 //find a way to parametrize the query
 export const getHistoricalSnapshotDatesFromParquet = async (symbol: string) => {
     const conn = await getConnection();
-    const arrowResult = await conn.send("SELECT DISTINCT CAST(dt as STRING) as dt FROM 'db.parquet' WHERE option_symbol = '" + symbol + "'");
-    return arrowResult.readAll()[0].toArray().map((row) => row.toJSON());
+    const arrowResult = await conn.send(`SELECT DISTINCT CAST(dt as STRING) as dt FROM 'db.parquet' WHERE option_symbol = '${symbol.toUpperCase()}'`);
+    return arrowResult.readAll().flatMap(k=> k.toArray().map((row) => row.toJSON()));
 }
 
 export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: string) => {
     const conn = await getConnection();
-    const arrowResult = await conn.send("SELECT cast(expiration as string) as expiration, delta, option_type, gamma, cast(strike as string) strike, open_interest, volume FROM 'db.parquet' WHERE option_symbol = '" + symbol + "' AND dt = '" + dt + "'");
+    const arrowResult = await conn.send(`SELECT cast(expiration as string) as expiration, delta, option_type, gamma, cast(strike as string) strike, open_interest, volume 
+            FROM 'db.parquet' 
+            WHERE option_symbol = '${symbol.toUpperCase()}' 
+            AND dt = '${dt}'`);
     return arrowResult.readAll().flatMap(k=> k.toArray().map((row) => row.toJSON()));
 }
 
