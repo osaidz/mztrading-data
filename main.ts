@@ -16,7 +16,7 @@ import {
 } from "./lib/data.ts";
 
 import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
+import { getExposureData, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 
 const token = Deno.env.get("ghtoken");
@@ -280,6 +280,11 @@ router.get("/", (context) => {
     .get("/beta/cboeoptionchainanalytics", async (context) => {        //make the resource name more appropriate
         const data = await getOptionsAnalytics();
         context.response.body = data;
+        context.response.type = "application/json";
+    })
+    .get("/beta/symbols/:symbol/historical/snapshots/:dt/exposure", (context) => {
+        const { symbol, dt } = context.params;
+        context.response.body = getExposureData(symbol, dt);
         context.response.type = "application/json";
     });
 

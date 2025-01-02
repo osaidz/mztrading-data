@@ -11,7 +11,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(isToday);
 
-export const getPriceAtDate = async (symbol: string, dt: string) => {
+export const getPriceAtDate = async (symbol: string, dt: string, keepOriginalValue: boolean = false) => {
     try {
         const start = dayjs(dt.substring(0, 10)).format('YYYY-MM-DD');
         const resp = await yf.chart(symbol, {
@@ -19,7 +19,7 @@ export const getPriceAtDate = async (symbol: string, dt: string) => {
             period1: dayjs(start).add(-7, 'day').toDate(),
             period2: dayjs(start).toDate()
         })
-        return resp.quotes.at(-1)?.close?.toFixed(2);
+        return keepOriginalValue ? resp.quotes.at(-1)?.close : resp.quotes.at(-1)?.close?.toFixed(2);
     } catch (error) {
         return null;
     }    
