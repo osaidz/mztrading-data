@@ -282,9 +282,9 @@ router.get("/", (context) => {
         context.response.body = data;
         context.response.type = "application/json";
     })
-    .get("/beta/symbols/:symbol/historical/snapshots/:dt/exposure", (context) => {
+    .get("/beta/symbols/:symbol/historical/snapshots/:dt/exposure", async (context) => {
         const { symbol, dt } = context.params;
-        context.response.body = getExposureData(symbol, dt);
+        context.response.body = await getExposureData(symbol, dt);
         context.response.type = "application/json";
     });
 

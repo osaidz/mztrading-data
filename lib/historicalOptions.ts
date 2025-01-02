@@ -6,7 +6,7 @@ import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
     type: "json",
 };
 import { getPriceAtDate } from './historicalPrice.ts';
-import dayjs from 'https://esm.sh/v135/dayjs@1.11.13/index.js';
+import dayjs from "https://esm.sh/dayjs@1.11.13";
 
 const logger = new ConsoleLogger();
 const JSDELIVR_BUNDLES = getJsDelivrBundles();
@@ -43,7 +43,7 @@ export const getHistoricalSnapshotDatesFromParquet = async (symbol: string) => {
 
 export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: string) => {
     const conn = await getConnection();
-    const arrowResult = await conn.send("SELECT cast(expiration as string) as expiration, delta, option_type, gamma, strike, open_interest, volume FROM 'db.parquet' WHERE option_symbol = '" + symbol + "' AND dt = '" + dt + "'");
+    const arrowResult = await conn.send("SELECT cast(expiration as string) as expiration, delta, option_type, gamma, cast(strike as string) strike, open_interest, volume FROM 'db.parquet' WHERE option_symbol = '" + symbol + "' AND dt = '" + dt + "'");
     return arrowResult.readAll()[0].toArray().map((row) => row.toJSON());
 }
 
@@ -59,13 +59,15 @@ export const getExposureData = async (symbol: string, dt: string) => {
     const spotDate = dayjs(dt).format('YYYY-MM-DD');
     const historicalData = await getHistoricalOptionDataFromParquet(symbol, dt);
     const indexedObject = historicalData.reduce((previous, current) => {
-        previous[current.expiration_date] = previous[current.expiration_date] || {};
-        previous[current.expiration_date][current.strike] = previous[current.expiration_date][current.strike] || {};
+        previous[current.expiration] = previous[current.expiration] || {};
+        previous[current.expiration][current.strike] = previous[current.expiration][current.strike] || {};
         //does it make sense to throw exception if delta/gamma values doesn't seem accurate? like gamma being negative or delta being greater than 1?
-        if (current.option_type == 'call') {
-            previous[current.expiration_date][current.strike].call = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
+        if (current.option_type == 'C') {
+            previous[current.expiration][current.strike].call = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
+        } else if(current.option_type == 'P') {
+            previous[current.expiration][current.strike].put = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
         } else {
-            previous[current.expiration_date][current.strike].put = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
+            throw new Error("Invalid option type");
         }
         return previous;
     }, {} as Record<string, Record<string, MicroOptionContract>>)
@@ -125,4 +127,5 @@ export const getExposureData = async (symbol: string, dt: string) => {
             dte: dayjs(expiration).diff(spotDate, 'day')
         });
     }
+    return dataToPersist;
 }

@@ -1,11 +1,11 @@
-import dayjs from 'https://esm.sh/dayjs';
-import utc from 'https://esm.sh/dayjs/plugin/utc';
-import isToday from 'https://esm.sh/dayjs/plugin/isToday';
-import timezone from 'https://esm.sh/dayjs/plugin/timezone';
+import dayjs from "https://esm.sh/dayjs@1.11.13";
+import utc from "https://esm.sh/dayjs@1.11.13/plugin/utc";
+import isToday from "https://esm.sh/dayjs@1.11.13/plugin/isToday";
+import timezone from "https://esm.sh/dayjs@1.11.13/plugin/timezone";
 
 import yf from 'npm:yahoo-finance2@2.11.3';
 
-import 'https://esm.sh/dayjs/locale/en';
+import "https://esm.sh/dayjs@1.11.13/locale/en";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
