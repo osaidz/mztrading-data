@@ -108,7 +108,7 @@ export const getExposureData = async (symbol: string, dt: string) => {
             putVolumeData[ix] = indexedObject[expiration][strikes[ix]]?.put?.volume || 0;
 
             callDeltaData[ix] = Math.trunc((indexedObject[expiration][strikes[ix]]?.call?.delta || 0) * 100 * callOpenInterestData[ix] * spotPrice);
-            putDeltaData[ix] = Math.trunc((indexedObject[expiration][strikes[ix]]?.put?.volume || 0) * 100 * putOpenInterestData[ix] * spotPrice);
+            putDeltaData[ix] = Math.trunc((indexedObject[expiration][strikes[ix]]?.put?.delta || 0) * 100 * putOpenInterestData[ix] * spotPrice);
 
             const callGamma = (indexedObject[expiration][strikes[ix]]?.call?.gamma || 0) * 100 * callOpenInterestData[ix] * spotPrice;
             const putGamma = (indexedObject[expiration][strikes[ix]]?.put?.gamma || 0) * 100 * putOpenInterestData[ix] * spotPrice;
