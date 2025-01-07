@@ -11,10 +11,15 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(isToday);
 
+const EXCEPTION_SYMBOLS = {
+    'SPX': '^SPX',
+    'VIX': '^VIX',
+} as Record<string, string>
+
 export const getPriceAtDate = async (symbol: string, dt: string, keepOriginalValue: boolean = false) => {
     try {
         const start = dayjs(dt.substring(0, 10)).format('YYYY-MM-DD');
-        const resp = await yf.chart(symbol, {
+        const resp = await yf.chart(EXCEPTION_SYMBOLS[symbol.toUpperCase()] || symbol, {
             interval: '1d',
             period1: dayjs(start).add(-7, 'day').toDate(),
             period2: dayjs(start).toDate()
