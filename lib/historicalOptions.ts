@@ -117,6 +117,7 @@ export const getExposureData = async (symbol: string, dt: string | 'LIVE') => {
             dte: dte
         });
     }
+    dataToPersist.data.sort((a, b) => a.dte - b.dte);
     return dataToPersist;
 }
 
