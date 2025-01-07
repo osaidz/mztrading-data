@@ -286,6 +286,11 @@ router.get("/", (context) => {
         const { symbol, dt } = context.params;
         context.response.body = await getExposureData(symbol, dt);
         context.response.type = "application/json";
+    })
+    .get("/beta/symbols/:symbol/exposure", async (context) => {
+        const { symbol } = context.params;
+        context.response.body = await getExposureData(symbol, 'LIVE');
+        context.response.type = "application/json";
     });
 
 const app = new Application();

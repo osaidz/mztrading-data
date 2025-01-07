@@ -7,6 +7,7 @@ import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
 };
 import { getPriceAtDate } from './historicalPrice.ts';
 import dayjs from "https://esm.sh/dayjs@1.11.13";
+import { getOptionsChain } from './cboe.ts';
 
 const logger = new ConsoleLogger();
 const JSDELIVR_BUNDLES = getJsDelivrBundles();
@@ -38,7 +39,7 @@ export const getConnection = async () => {
 export const getHistoricalSnapshotDatesFromParquet = async (symbol: string) => {
     const conn = await getConnection();
     const arrowResult = await conn.send(`SELECT DISTINCT CAST(dt as STRING) as dt FROM 'db.parquet' WHERE option_symbol = '${symbol.toUpperCase()}'`);
-    return arrowResult.readAll().flatMap(k=> k.toArray().map((row) => row.toJSON()));
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
 }
 
 export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: string) => {
@@ -47,7 +48,7 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
             FROM 'db.parquet' 
             WHERE option_symbol = '${symbol.toUpperCase()}' 
             AND dt = '${dt}'`);
-    return arrowResult.readAll().flatMap(k=> k.toArray().map((row) => row.toJSON()));
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
 }
 
 export const lastHistoricalOptionDataFromParquet = () => {
@@ -58,26 +59,10 @@ type MicroOptionContractItem = { oi: number, volume: number, delta: number, gamm
 type MicroOptionContract = { call: MicroOptionContractItem, put: MicroOptionContractItem }
 type ExposureDataItem = { absDelta: number[], openInterest: number[], volume: number[] }
 type ExposureDataType = { call: ExposureDataItem, put: ExposureDataItem, netGamma: number[], strikes: string[], expiration: string, dte: number }
-export const getExposureData = async (symbol: string, dt: string) => {
-    const spotDate = dayjs(dt).format('YYYY-MM-DD');
-    const historicalData = await getHistoricalOptionDataFromParquet(symbol, dt);
-    const indexedObject = historicalData.reduce((previous, current) => {
-        previous[current.expiration] = previous[current.expiration] || {};
-        previous[current.expiration][current.strike] = previous[current.expiration][current.strike] || {};
-        //does it make sense to throw exception if delta/gamma values doesn't seem accurate? like gamma being negative or delta being greater than 1?
-        if (current.option_type == 'C') {
-            previous[current.expiration][current.strike].call = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
-        } else if(current.option_type == 'P') {
-            previous[current.expiration][current.strike].put = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
-        } else {
-            throw new Error("Invalid option type");
-        }
-        return previous;
-    }, {} as Record<string, Record<string, MicroOptionContract>>)
 
-    const _spotPrice = await getPriceAtDate(symbol, dt, true);
-    if (!_spotPrice || Number.isNaN(_spotPrice)) throw new Error("Invalid spot price");
-    const spotPrice = Number(_spotPrice);
+export const getExposureData = async (symbol: string, dt: string | 'LIVE') => {
+    const spotDate = dayjs(dt).format('YYYY-MM-DD');
+    const { spotPrice, indexedObject } = dt == 'LIVE' ? await getLiveCboeOptionData(symbol) : await getHistoricalOptionData(symbol, dt);
 
     const dataToPersist = {
         data: [] as ExposureDataType[],
@@ -133,4 +118,44 @@ export const getExposureData = async (symbol: string, dt: string) => {
         });
     }
     return dataToPersist;
+}
+
+async function getHistoricalOptionData(symbol: string, dt: string) {
+    const historicalData = await getHistoricalOptionDataFromParquet(symbol, dt);
+    const indexedObject = historicalData.reduce((previous, current) => {
+        previous[current.expiration] = previous[current.expiration] || {};
+        previous[current.expiration][current.strike] = previous[current.expiration][current.strike] || {};
+        //does it make sense to throw exception if delta/gamma values doesn't seem accurate? like gamma being negative or delta being greater than 1?
+        if (current.option_type == 'C') {
+            previous[current.expiration][current.strike].call = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
+        } else if (current.option_type == 'P') {
+            previous[current.expiration][current.strike].put = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
+        } else {
+            throw new Error("Invalid option type");
+        }
+        return previous;
+    }, {} as Record<string, Record<string, MicroOptionContract>>);
+
+    const _spotPrice = await getPriceAtDate(symbol, dt, true);
+    if (!_spotPrice || Number.isNaN(_spotPrice)) throw new Error("Invalid spot price");
+    const spotPrice = Number(_spotPrice);
+    return { spotPrice, indexedObject };
+}
+
+async function getLiveCboeOptionData(symbol: string) {
+    const { data, currentPrice } = await getOptionsChain(symbol);
+    const indexedObject = data.reduce((previous, current) => {
+        previous[current.expiration] = previous[current.expiration] || {};
+        previous[current.expiration][current.strike] = previous[current.expiration][current.strike] || {};
+        //does it make sense to throw exception if delta/gamma values doesn't seem accurate? like gamma being negative or delta being greater than 1?
+        if (current.option_type == 'C') {
+            previous[current.expiration][current.strike].call = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
+        } else if (current.option_type == 'P') {
+            previous[current.expiration][current.strike].put = { oi: current.open_interest, volume: current.volume, delta: current.delta, gamma: current.gamma };
+        } else {
+            throw new Error("Invalid option type");
+        }
+        return previous;
+    }, {} as Record<string, Record<string, MicroOptionContract>>);
+    return { spotPrice: currentPrice, indexedObject };
 }

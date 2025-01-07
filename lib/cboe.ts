@@ -63,9 +63,9 @@ export const getOptionsChain = async (symbol: string) => {
 
         return {
             strike: Number(`${rxMatch[4]}`) / 1000,
-            expiration_date: `20${rxMatch[2].substring(0, 2)}-${rxMatch[2].substring(2, 4)}-${rxMatch[2].substring(4, 6)}`,
+            expiration: `20${rxMatch[2].substring(0, 2)}-${rxMatch[2].substring(2, 4)}-${rxMatch[2].substring(4, 6)}`,
             open_interest,
-            option_type: (rxMatch[3] == 'C' ? 'call' : 'put') as 'call' | 'put',
+            option_type: (rxMatch[3] == 'C' ? 'C' : 'P') as 'C' | 'P',
             volume,
             delta,
             gamma
