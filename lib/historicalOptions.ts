@@ -61,7 +61,7 @@ type ExposureDataItem = { absDelta: number[], openInterest: number[], volume: nu
 type ExposureDataType = { call: ExposureDataItem, put: ExposureDataItem, netGamma: number[], strikes: string[], expiration: string, dte: number }
 
 export const getExposureData = async (symbol: string, dt: string | 'LIVE') => {
-    const spotDate = dayjs(dt).format('YYYY-MM-DD');
+    const spotDate = (dt == 'LIVE' ? dayjs() : dayjs(dt)).format('YYYY-MM-DD');
     const { spotPrice, indexedObject } = dt == 'LIVE' ? await getLiveCboeOptionData(symbol) : await getHistoricalOptionData(symbol, dt);
 
     const dataToPersist = {
