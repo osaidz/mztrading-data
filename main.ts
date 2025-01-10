@@ -16,7 +16,7 @@ import {
 } from "./lib/data.ts";
 
 import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { getExposureData, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
+import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 
 const token = Deno.env.get("ghtoken");
@@ -290,6 +290,14 @@ router.get("/", (context) => {
     .get("/beta/symbols/:symbol/exposure", async (context) => {
         const { symbol } = context.params;
         context.response.body = await getExposureData(symbol, 'LIVE');
+        context.response.type = "application/json";
+    })
+    .post("/beta/tools/exposure", async (context) => {
+        if (!context.request.hasBody) {
+            context.throw(415);
+        }
+        const { data, spotPrice, spotDate } = await context.request.body().value as ExposureDataRequest;
+        context.response.body = calculateExpsoure(spotPrice, data, spotDate);
         context.response.type = "application/json";
     });
 

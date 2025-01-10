@@ -48,7 +48,7 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
             FROM 'db.parquet' 
             WHERE option_symbol = '${symbol.toUpperCase()}' 
             AND dt = '${dt}'`);
-    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, delta: number, gamma: number, option_type: 'C' | 'P', strike: string, open_interest: number, volume: number }[];
 }
 
 export const lastHistoricalOptionDataFromParquet = () => {
@@ -60,19 +60,25 @@ type MicroOptionContract = { call: MicroOptionContractItem, put: MicroOptionCont
 type ExposureDataItem = { absDelta: number[], openInterest: number[], volume: number[] }
 type ExposureDataType = { call: ExposureDataItem, put: ExposureDataItem, netGamma: number[], strikes: string[], expiration: string, dte: number }
 
+export type ExposureDataRequest = { data: Record<string, Record<string, MicroOptionContract>>, spotPrice: number, spotDate: string }
+
 export const getExposureData = async (symbol: string, dt: string | 'LIVE') => {
     const spotDate = (dt == 'LIVE' ? dayjs() : dayjs(dt)).format('YYYY-MM-DD');
     const { spotPrice, indexedObject } = dt == 'LIVE' ? await getLiveCboeOptionData(symbol) : await getHistoricalOptionData(symbol, dt);
 
+    return calculateExpsoure(spotPrice, indexedObject, spotDate);
+}
+
+export const calculateExpsoure = (spotPrice: number, indexedObject: Record<string, Record<string, MicroOptionContract>>, spotDate: string) => {
     const dataToPersist = {
         data: [] as ExposureDataType[],
         spotPrice: spotPrice
-    }
+    };
 
     const expirations = Object.keys(indexedObject);
     for (const expiration of expirations) {
         const dte = dayjs(expiration).diff(spotDate, 'day');
-        if (dte < 0) continue;  //skip if expiration is in the past
+        if (dte < 0) continue; //skip if expiration is in the past
         const strikes = Object.keys(indexedObject[expiration]);
         const callOpenInterestData = new Array<number>(strikes.length).fill(0);
         const putOpenInterestData = new Array<number>(strikes.length).fill(0);
