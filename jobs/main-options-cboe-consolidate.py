@@ -2,6 +2,7 @@ import json
 import os
 import duckdb
 import re
+import pandas as pd
 from datetime import datetime
 file_path = './data/cboe-options-summary.json'
 
@@ -37,6 +38,11 @@ os.makedirs("temp", exist_ok=True)  # Ensure the 'data' folder exists
 output_file = "temp/options_cboe_rolling_30.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
 
 duckdb.sql(f"""COPY (select dt, option_symbol, CAST(strptime(expiration, '%Y%m%d') as date) expiration, delta, gamma, option_type, strike, open_interest, volume  from OPDATA) to '{output_file}' (FORMAT PARQUET)""")
+
+# Let's use some magic of parquet compression.
+df = pd.read_parquet(output_file)
+df = df.sort_values(by=['option_symbol', 'dt', 'expiration', 'option_type'])
+df.to_parquet(output_file, compression='zstd', index=False)
 
 summary_file = "data/cboe-options-rolling.json"
 # Write updated summary back to the JSON file
