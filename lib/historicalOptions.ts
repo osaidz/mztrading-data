@@ -128,6 +128,7 @@ export const calculateExpsoure = (spotPrice: number, indexedObject: Record<strin
 }
 
 async function getHistoricalOptionData(symbol: string, dt: string) {
+    console.time(`getHistoricalOptionData-${symbol}-${dt}`)
     const historicalData = await getHistoricalOptionDataFromParquet(symbol, dt);
     const indexedObject = historicalData.reduce((previous, current) => {
         previous[current.expiration] = previous[current.expiration] || {};
@@ -142,6 +143,7 @@ async function getHistoricalOptionData(symbol: string, dt: string) {
         }
         return previous;
     }, {} as Record<string, Record<string, MicroOptionContract>>);
+    console.timeEnd(`getHistoricalOptionData-${symbol}-${dt}`)
 
     const _spotPrice = await getPriceAtDate(symbol, dt, true);
     if (!_spotPrice || Number.isNaN(_spotPrice)) throw new Error("Invalid spot price");
