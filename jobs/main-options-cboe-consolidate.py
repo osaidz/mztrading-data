@@ -44,6 +44,12 @@ df = pd.read_parquet(output_file)
 df = df.sort_values(by=['option_symbol', 'dt', 'expiration', 'option_type'])
 df.to_parquet(output_file, compression='zstd', index=False)
 
+# Get the file size in bytes
+file_size_bytes = os.path.getsize(output_file)
+file_size_mb = file_size_bytes / (1024 * 1024)
+print(f"File size after compression: {file_size_mb:.2f} MB")
+
+
 summary_file = "data/cboe-options-rolling.json"
 # Write updated summary back to the JSON file
 with open(summary_file, "w") as file:
