@@ -18,6 +18,7 @@ import {
 import { getPriceAtDate } from './lib/historicalPrice.ts'
 import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
+import { getIndicatorValues } from "./lib/ta.ts";
 
 const token = Deno.env.get("ghtoken");
 const router = new Router();
@@ -176,7 +177,11 @@ router.get("/", (context) => {
             });
             if (status < 400) {
                 const s3Location = headers.get("location");
-                context.response.redirect(s3Location);
+                if (s3Location) {
+                    context.response.redirect(s3Location);
+                } else {
+                    throw new Error("empty s3 location received!");
+                }
             } else {
                 throw new Error("error loading image!");
             }
@@ -298,6 +303,14 @@ router.get("/", (context) => {
         }
         const { data, spotPrice, spotDate } = await context.request.body().value as ExposureDataRequest;
         context.response.body = calculateExpsoure(spotPrice, data, spotDate);
+        context.response.type = "application/json";
+    })
+    .get("/symbols/:symbol/indicators", async (context) => {
+        const { symbol } = context.params;
+        const { q } = getQuery(context);
+        const indicators = q.split(',');
+
+        context.response.body = await getIndicatorValues(symbol, indicators)
         context.response.type = "application/json";
     });
 

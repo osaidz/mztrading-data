@@ -27,5 +27,16 @@ export const getPriceAtDate = async (symbol: string, dt: string, keepOriginalVal
         return keepOriginalValue ? resp.quotes.at(-1)?.close : resp.quotes.at(-1)?.close?.toFixed(2);
     } catch (error) {
         return null;
-    }    
+    }
+}
+
+export const getLastNPrices = async (symbol: string, lastN: number, interval: 'd' | 'h') => {
+    const t = (interval == 'h' ? (lastN + 24) / 8 : (lastN + 2));       //take extra couple days of data just to be sure we have enough data
+    const start = dayjs().format('YYYY-MM-DD');
+    const resp = await yf.chart(EXCEPTION_SYMBOLS[symbol.toUpperCase()] || symbol, {
+        interval: '1d',
+        period1: dayjs(start).add(-t, 'day').toDate(),
+        period2: dayjs(start).toDate()
+    })
+    return resp.quotes.map(j => j.close).filter(k => k != null).slice(-lastN);
 }
