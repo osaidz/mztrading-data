@@ -28,26 +28,23 @@ const calculateEma = (closingPrices: number[], period: number) => {
 }
 
 export const getHourlyEma = async (symbol: string, intervals: number[]) => {
+    if (intervals.length <= 0) return {};
     const maxInterval = Math.max(...intervals);
     const prices = await getLastNPrices(symbol, maxInterval, 'h');
-    return intervals.map(i => {
-        return {
-            interval: `${i}`,
-            ema: calculateEma(prices, i)
-        }
-    })
+    return intervals.reduce((p, i) => {
+        p[`ema${i}h`] = calculateEma(prices, i)
+        return p;
+    }, {} as Record<string, number>)
 }
 
 export const getDailyEma = async (symbol: string, intervals: number[]) => {
+    if (intervals.length <= 0) return {};
     const maxInterval = Math.max(...intervals);
     const prices = await getLastNPrices(symbol, maxInterval, 'd');
-    return intervals.map(i => {
-        const k = `ema${i}d`;
-        const v = calculateEma(prices, i)
-        const o = {} as Record<string, number>
-        o[k] = v;
-        return o
-    })
+    return intervals.reduce((p, i) => {
+        p[`ema${i}d`] = calculateEma(prices, i);
+        return p
+    }, {} as Record<string, number>)
 }
 
 export const getIndicatorValues = async (symbol: string, i: string[]) => {
@@ -59,5 +56,16 @@ export const getIndicatorValues = async (symbol: string, i: string[]) => {
         return p;
     }, [] as number[])
 
-    return await getDailyEma(symbol, dailyEmas)
+    const hourlyEmas = i.reduce((p, c) => {
+        const valid = indicatorMap[c as indicators];
+        if (valid && valid.type == 'emaHourly') {
+            p.push(valid.interval)
+        }
+        return p;
+    }, [] as number[])
+
+    const dailyEmaIndicators = await getDailyEma(symbol, dailyEmas);
+    const hourlyEmaIndicators = await getHourlyEma(symbol, hourlyEmas);
+
+    return { ...dailyEmaIndicators, ...hourlyEmaIndicators };
 }

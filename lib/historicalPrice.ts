@@ -31,11 +31,11 @@ export const getPriceAtDate = async (symbol: string, dt: string, keepOriginalVal
 }
 
 export const getLastNPrices = async (symbol: string, lastN: number, interval: 'd' | 'h') => {
-    const t = (interval == 'h' ? (lastN + 24) / 8 : (lastN + 2));       //take extra couple days of data just to be sure we have enough data
+    const t = Math.ceil(interval == 'h' ? Math.ceil((lastN * 1.2) / 40) : Math.ceil((lastN * 1.2) / 5));       //take extra couple days of data just to be sure we have enough data
     const start = dayjs().format('YYYY-MM-DD');
     const resp = await yf.chart(EXCEPTION_SYMBOLS[symbol.toUpperCase()] || symbol, {
-        interval: '1d',
-        period1: dayjs(start).add(-t, 'day').toDate(),
+        interval: interval == 'd' ? '1d' : '1h',
+        period1: dayjs(start).add(-t, 'week').toDate(),
         period2: dayjs(start).toDate()
     })
     return resp.quotes.map(j => j.close).filter(k => k != null).slice(-lastN);
