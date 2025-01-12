@@ -38,5 +38,5 @@ export const getLastNPrices = async (symbol: string, lastN: number, interval: 'd
         period1: dayjs(start).add(-t, 'week').toDate(),
         period2: dayjs(start).toDate()
     })
-    return resp.quotes.map(j => j.close).filter(k => k != null).slice(-lastN);
+    return resp.quotes.map(({ close, date }) => ({ close, date })).filter(k => k.close != null).map(({ close, date }) => ({ date, close: Number(close) })).slice(-lastN);
 }

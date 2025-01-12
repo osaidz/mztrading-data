@@ -18,11 +18,12 @@ const indicatorMap: indicatorMapType = {
     }
 }
 
-const calculateEma = (closingPrices: number[], period: number) => {
+const calculateEma = (data: { close: number, date: Date }[], period: number) => {
     const k = 2 / (period + 1);
-    let ema = closingPrices[0];
-    for (let i = 1; i < closingPrices.length; i++) {
-        ema = (closingPrices[i] * k) + (ema * (1 - k));
+    let ema = data[0].close;
+    for (let i = 1; i < data.length; i++) {
+        ema = (data[i].close * k) + (ema * (1 - k));
+        // console.log(`${i}d -- ${data[i].close}  -- ${data[i].date} -- ${ema}`);
     }
     return ema;
 }
@@ -30,7 +31,7 @@ const calculateEma = (closingPrices: number[], period: number) => {
 export const getHourlyEma = async (symbol: string, intervals: number[]) => {
     if (intervals.length <= 0) return {};
     const maxInterval = Math.max(...intervals);
-    const prices = await getLastNPrices(symbol, maxInterval, 'h');
+    const prices = await getLastNPrices(symbol, maxInterval * 4, 'h');
     return intervals.reduce((p, i) => {
         p[`ema${i}h`] = calculateEma(prices, i)
         return p;
@@ -38,9 +39,10 @@ export const getHourlyEma = async (symbol: string, intervals: number[]) => {
 }
 
 export const getDailyEma = async (symbol: string, intervals: number[]) => {
+
     if (intervals.length <= 0) return {};
     const maxInterval = Math.max(...intervals);
-    const prices = await getLastNPrices(symbol, maxInterval, 'd');
+    const prices = await getLastNPrices(symbol, maxInterval * 4, 'd');
     return intervals.reduce((p, i) => {
         p[`ema${i}d`] = calculateEma(prices, i);
         return p
