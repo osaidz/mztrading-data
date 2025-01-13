@@ -76,7 +76,7 @@ jobs:
             git push
           fi
   publish_options_snapshot_images:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [set-release-vars, release-tradier-data]
     env:
       RELEASE_NAME: ${{needs.set-release-vars.outputs.snapshot-data-tag}}
