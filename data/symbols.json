@@ -528,10 +528,6 @@
         "symbol": "AIT"
     },
     {
-        "name": "APARTMENT INVT & MGMT CO CL A",
-        "symbol": "AIV"
-    },
-    {
         "name": "AMPLIFY ETF TR AMPLIFY BLOOMBER",
         "symbol": "AIVC"
     },
@@ -1274,6 +1270,10 @@
     {
         "name": "ASA GOLD AND PRECIOUS MTLS LMT SHS",
         "symbol": "ASA"
+    },
+    {
+        "name": "SENDAS DISTRIBUIDORA S A SPON ADS",
+        "symbol": "ASAIY"
     },
     {
         "name": "ASANA INC CL A",
@@ -7720,7 +7720,7 @@
         "symbol": "GTLS"
     },
     {
-        "name": "GRAY MEDIA INC",
+        "name": "GRAY MEDIA INC COM",
         "symbol": "GTN"
     },
     {
@@ -17036,7 +17036,7 @@
         "symbol": "THC"
     },
     {
-        "name": "TH INTERNATIONAL LIMITED ORDINARY SHARES",
+        "name": "TH INTERNATIONAL LIMITED SHS NEW",
         "symbol": "THCH"
     },
     {
