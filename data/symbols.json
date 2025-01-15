@@ -1124,10 +1124,6 @@
         "symbol": "ARCC"
     },
     {
-        "name": "ARCH RESOURCES INC CL A",
-        "symbol": "ARCH"
-    },
-    {
         "name": "ARCOS DORADOS HOLDINGS INC SHS CLASS -A -",
         "symbol": "ARCO"
     },
@@ -1274,6 +1270,10 @@
     {
         "name": "ASA GOLD AND PRECIOUS MTLS LMT SHS",
         "symbol": "ASA"
+    },
+    {
+        "name": "SENDAS DISTRIBUIDORA S A SPON ADS",
+        "symbol": "ASAIY"
     },
     {
         "name": "ASANA INC CL A",
@@ -2204,10 +2204,6 @@
         "symbol": "BKD"
     },
     {
-        "name": "BUCKLE INC COM",
-        "symbol": "BKE"
-    },
-    {
         "name": "ISHARES INC MSCI BIC ETF",
         "symbol": "BKF"
     },
@@ -3098,10 +3094,6 @@
     {
         "name": "CONSTELLATION ENERGY CORP COM",
         "symbol": "CEG"
-    },
-    {
-        "name": "CONSOL ENERGY INC NEW COM",
-        "symbol": "CEIX"
     },
     {
         "name": "CELCUITY INC COM",
@@ -7720,7 +7712,7 @@
         "symbol": "GTLS"
     },
     {
-        "name": "GRAY MEDIA INC",
+        "name": "GRAY MEDIA INC COM",
         "symbol": "GTN"
     },
     {
@@ -16128,10 +16120,6 @@
         "symbol": "SPHY"
     },
     {
-        "name": "SPI ENERGY CO LTD SHS NEW",
-        "symbol": "SPI"
-    },
-    {
         "name": "SPDR SER TR PORTFOLIO INTRMD",
         "symbol": "SPIB"
     },
@@ -17036,7 +17024,7 @@
         "symbol": "THC"
     },
     {
-        "name": "TH INTERNATIONAL LIMITED ORDINARY SHARES",
+        "name": "TH INTERNATIONAL LIMITED SHS NEW",
         "symbol": "THCH"
     },
     {
@@ -18600,8 +18588,8 @@
         "symbol": "VREX"
     },
     {
-        "name": "VROOM INC COM NEW",
-        "symbol": "VRMMQ"
+        "name": "--Placeholder--",
+        "symbol": "VRMMW"
     },
     {
         "name": "VEREN INC COM NEW",
