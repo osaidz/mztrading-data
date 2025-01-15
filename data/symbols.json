@@ -2204,10 +2204,6 @@
         "symbol": "BKD"
     },
     {
-        "name": "BUCKLE INC COM",
-        "symbol": "BKE"
-    },
-    {
         "name": "ISHARES INC MSCI BIC ETF",
         "symbol": "BKF"
     },
@@ -3098,10 +3094,6 @@
     {
         "name": "CONSTELLATION ENERGY CORP COM",
         "symbol": "CEG"
-    },
-    {
-        "name": "CONSOL ENERGY INC NEW COM",
-        "symbol": "CEIX"
     },
     {
         "name": "CELCUITY INC COM",
@@ -16128,10 +16120,6 @@
         "symbol": "SPHY"
     },
     {
-        "name": "SPI ENERGY CO LTD SHS NEW",
-        "symbol": "SPI"
-    },
-    {
         "name": "SPDR SER TR PORTFOLIO INTRMD",
         "symbol": "SPIB"
     },
@@ -18600,8 +18588,8 @@
         "symbol": "VREX"
     },
     {
-        "name": "VROOM INC COM NEW",
-        "symbol": "VRMMQ"
+        "name": "--Placeholder--",
+        "symbol": "VRMMW"
     },
     {
         "name": "VEREN INC COM NEW",
