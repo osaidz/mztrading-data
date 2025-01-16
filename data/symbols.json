@@ -728,10 +728,6 @@
         "symbol": "ALV"
     },
     {
-        "name": "ALLOVIR INC COM",
-        "symbol": "ALVR"
-    },
-    {
         "name": "ALX ONCOLOGY HLDGS INC COM",
         "symbol": "ALXO"
     },
@@ -2204,6 +2200,10 @@
         "symbol": "BKD"
     },
     {
+        "name": "BUCKLE INC COM",
+        "symbol": "BKE"
+    },
+    {
         "name": "ISHARES INC MSCI BIC ETF",
         "symbol": "BKF"
     },
@@ -3618,6 +3618,10 @@
     {
         "name": "CANADIAN NAT RES LTD COM",
         "symbol": "CNQ"
+    },
+    {
+        "name": "CORE NATURAL RESOURCES INC COM SHS",
+        "symbol": "CNR"
     },
     {
         "name": "COHEN & STEERS INC COM",
@@ -14518,10 +14522,6 @@
     {
         "name": "RADIANT LOGISTICS INC COM",
         "symbol": "RLGT"
-    },
-    {
-        "name": "RLI CORP COM",
-        "symbol": "RLI"
     },
     {
         "name": "RLJ LODGING TR COM",
