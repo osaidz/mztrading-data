@@ -84,7 +84,7 @@
         "symbol": "ABEV"
     },
     {
-        "name": "Abacus FCF Leaders ETF",
+        "name": "Abacus FCF ETF Trust",
         "symbol": "ABFL"
     },
     {
@@ -728,7 +728,7 @@
         "symbol": "ALV"
     },
     {
-        "name": "ALLOVIR INC COM",
+        "name": "ALLOVIR INC COM NEW",
         "symbol": "ALVR"
     },
     {
@@ -2204,6 +2204,10 @@
         "symbol": "BKD"
     },
     {
+        "name": "BUCKLE INC COM",
+        "symbol": "BKE"
+    },
+    {
         "name": "ISHARES INC MSCI BIC ETF",
         "symbol": "BKF"
     },
@@ -3618,6 +3622,10 @@
     {
         "name": "CANADIAN NAT RES LTD COM",
         "symbol": "CNQ"
+    },
+    {
+        "name": "CORE NATURAL RESOURCES INC COM SHS",
+        "symbol": "CNR"
     },
     {
         "name": "COHEN & STEERS INC COM",
@@ -7030,10 +7038,6 @@
     {
         "name": "STEALTHGAS INC SHS",
         "symbol": "GASS"
-    },
-    {
-        "name": "GATOS SILVER INC COM",
-        "symbol": "GATO"
     },
     {
         "name": "GATX CORP COM",
