@@ -72832,5 +72832,1555 @@
         "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-24/QSI.json"
       }
     }
+  },
+  "OPTIONS_DATA_2025-01-25": {
+    "displayName": "2025-01-25 12:32",
+    "created": "2025-01-25T12:32:55.571Z",
+    "symbols": {
+      "FLR": {
+        "fileName": "FLR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FLR.json"
+      },
+      "WULF": {
+        "fileName": "WULF.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/WULF.json"
+      },
+      "LUMN": {
+        "fileName": "LUMN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LUMN.json"
+      },
+      "VKTX": {
+        "fileName": "VKTX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VKTX.json"
+      },
+      "SOFI": {
+        "fileName": "SOFI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SOFI.json"
+      },
+      "ARMK": {
+        "fileName": "ARMK.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ARMK.json"
+      },
+      "RMTI": {
+        "fileName": "RMTI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RMTI.json"
+      },
+      "IONQ": {
+        "fileName": "IONQ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IONQ.json"
+      },
+      "AMD": {
+        "fileName": "AMD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AMD.json"
+      },
+      "ABNB": {
+        "fileName": "ABNB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ABNB.json"
+      },
+      "ACHR": {
+        "fileName": "ACHR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ACHR.json"
+      },
+      "AFRM": {
+        "fileName": "AFRM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AFRM.json"
+      },
+      "AI": {
+        "fileName": "AI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AI.json"
+      },
+      "ALB": {
+        "fileName": "ALB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ALB.json"
+      },
+      "AMZN": {
+        "fileName": "AMZN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AMZN.json"
+      },
+      "ARM": {
+        "fileName": "ARM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ARM.json"
+      },
+      "ASTS": {
+        "fileName": "ASTS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ASTS.json"
+      },
+      "AVGO": {
+        "fileName": "AVGO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AVGO.json"
+      },
+      "BA": {
+        "fileName": "BA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BA.json"
+      },
+      "BABA": {
+        "fileName": "BABA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BABA.json"
+      },
+      "BAC": {
+        "fileName": "BAC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BAC.json"
+      },
+      "BBY": {
+        "fileName": "BBY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BBY.json"
+      },
+      "BIDU": {
+        "fileName": "BIDU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BIDU.json"
+      },
+      "BITO": {
+        "fileName": "BITO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BITO.json"
+      },
+      "BITX": {
+        "fileName": "BITX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BITX.json"
+      },
+      "CAT": {
+        "fileName": "CAT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CAT.json"
+      },
+      "CLSK": {
+        "fileName": "CLSK.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CLSK.json"
+      },
+      "CMCSA": {
+        "fileName": "CMCSA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CMCSA.json"
+      },
+      "COIN": {
+        "fileName": "COIN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/COIN.json"
+      },
+      "CONL": {
+        "fileName": "CONL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CONL.json"
+      },
+      "CORZ": {
+        "fileName": "CORZ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CORZ.json"
+      },
+      "CRM": {
+        "fileName": "CRM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CRM.json"
+      },
+      "CRWD": {
+        "fileName": "CRWD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CRWD.json"
+      },
+      "CVS": {
+        "fileName": "CVS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CVS.json"
+      },
+      "DASH": {
+        "fileName": "DASH.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DASH.json"
+      },
+      "DELL": {
+        "fileName": "DELL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DELL.json"
+      },
+      "DIS": {
+        "fileName": "DIS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DIS.json"
+      },
+      "DJT": {
+        "fileName": "DJT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DJT.json"
+      },
+      "ETHU": {
+        "fileName": "ETHU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ETHU.json"
+      },
+      "F": {
+        "fileName": "F.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/F.json"
+      },
+      "FDX": {
+        "fileName": "FDX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FDX.json"
+      },
+      "GOOGL": {
+        "fileName": "GOOGL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GOOGL.json"
+      },
+      "HOOD": {
+        "fileName": "HOOD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HOOD.json"
+      },
+      "HPE": {
+        "fileName": "HPE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HPE.json"
+      },
+      "HPQ": {
+        "fileName": "HPQ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HPQ.json"
+      },
+      "INTC": {
+        "fileName": "INTC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/INTC.json"
+      },
+      "ITA": {
+        "fileName": "ITA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ITA.json"
+      },
+      "IWM": {
+        "fileName": "IWM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IWM.json"
+      },
+      "JNJ": {
+        "fileName": "JNJ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/JNJ.json"
+      },
+      "KR": {
+        "fileName": "KR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KR.json"
+      },
+      "KSS": {
+        "fileName": "KSS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KSS.json"
+      },
+      "META": {
+        "fileName": "META.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/META.json"
+      },
+      "MSFT": {
+        "fileName": "MSFT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MSFT.json"
+      },
+      "MSTR": {
+        "fileName": "MSTR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MSTR.json"
+      },
+      "MU": {
+        "fileName": "MU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MU.json"
+      },
+      "MUSA": {
+        "fileName": "MUSA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MUSA.json"
+      },
+      "NFLX": {
+        "fileName": "NFLX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NFLX.json"
+      },
+      "NKE": {
+        "fileName": "NKE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NKE.json"
+      },
+      "NVDA": {
+        "fileName": "NVDA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NVDA.json"
+      },
+      "NVDL": {
+        "fileName": "NVDL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NVDL.json"
+      },
+      "PFE": {
+        "fileName": "PFE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PFE.json"
+      },
+      "PLTR": {
+        "fileName": "PLTR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PLTR.json"
+      },
+      "PM": {
+        "fileName": "PM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PM.json"
+      },
+      "QQQ": {
+        "fileName": "QQQ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/QQQ.json"
+      },
+      "RBLX": {
+        "fileName": "RBLX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RBLX.json"
+      },
+      "RDDT": {
+        "fileName": "RDDT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RDDT.json"
+      },
+      "RIOT": {
+        "fileName": "RIOT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RIOT.json"
+      },
+      "SBUX": {
+        "fileName": "SBUX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SBUX.json"
+      },
+      "SMCI": {
+        "fileName": "SMCI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SMCI.json"
+      },
+      "SMH": {
+        "fileName": "SMH.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SMH.json"
+      },
+      "SNAP": {
+        "fileName": "SNAP.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SNAP.json"
+      },
+      "SNOW": {
+        "fileName": "SNOW.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SNOW.json"
+      },
+      "SONY": {
+        "fileName": "SONY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SONY.json"
+      },
+      "SOXL": {
+        "fileName": "SOXL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SOXL.json"
+      },
+      "SPY": {
+        "fileName": "SPY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SPY.json"
+      },
+      "TGT": {
+        "fileName": "TGT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TGT.json"
+      },
+      "TMUS": {
+        "fileName": "TMUS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TMUS.json"
+      },
+      "TSLA": {
+        "fileName": "TSLA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TSLA.json"
+      },
+      "TSLL": {
+        "fileName": "TSLL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TSLL.json"
+      },
+      "TSM": {
+        "fileName": "TSM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TSM.json"
+      },
+      "U": {
+        "fileName": "U.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/U.json"
+      },
+      "UNH": {
+        "fileName": "UNH.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UNH.json"
+      },
+      "UPST": {
+        "fileName": "UPST.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UPST.json"
+      },
+      "VT": {
+        "fileName": "VT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VT.json"
+      },
+      "W": {
+        "fileName": "W.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/W.json"
+      },
+      "WMT": {
+        "fileName": "WMT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/WMT.json"
+      },
+      "XBI": {
+        "fileName": "XBI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XBI.json"
+      },
+      "XEL": {
+        "fileName": "XEL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XEL.json"
+      },
+      "XLB": {
+        "fileName": "XLB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLB.json"
+      },
+      "XLC": {
+        "fileName": "XLC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLC.json"
+      },
+      "XLE": {
+        "fileName": "XLE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLE.json"
+      },
+      "XLF": {
+        "fileName": "XLF.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLF.json"
+      },
+      "XLI": {
+        "fileName": "XLI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLI.json"
+      },
+      "XLK": {
+        "fileName": "XLK.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLK.json"
+      },
+      "XLP": {
+        "fileName": "XLP.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLP.json"
+      },
+      "XLV": {
+        "fileName": "XLV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLV.json"
+      },
+      "XLY": {
+        "fileName": "XLY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XLY.json"
+      },
+      "AAPL": {
+        "fileName": "AAPL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AAPL.json"
+      },
+      "GLD": {
+        "fileName": "GLD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GLD.json"
+      },
+      "UBER": {
+        "fileName": "UBER.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UBER.json"
+      },
+      "SNPS": {
+        "fileName": "SNPS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SNPS.json"
+      },
+      "IBM": {
+        "fileName": "IBM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IBM.json"
+      },
+      "LUNR": {
+        "fileName": "LUNR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LUNR.json"
+      },
+      "RKLB": {
+        "fileName": "RKLB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RKLB.json"
+      },
+      "GTLB": {
+        "fileName": "GTLB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GTLB.json"
+      },
+      "GME": {
+        "fileName": "GME.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GME.json"
+      },
+      "BTI": {
+        "fileName": "BTI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BTI.json"
+      },
+      "HIMS": {
+        "fileName": "HIMS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HIMS.json"
+      },
+      "ONON": {
+        "fileName": "ONON.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ONON.json"
+      },
+      "MSTX": {
+        "fileName": "MSTX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MSTX.json"
+      },
+      "SHOP": {
+        "fileName": "SHOP.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SHOP.json"
+      },
+      "HCC": {
+        "fileName": "HCC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HCC.json"
+      },
+      "PTON": {
+        "fileName": "PTON.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PTON.json"
+      },
+      "BSX": {
+        "fileName": "BSX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BSX.json"
+      },
+      "ACCD": {
+        "fileName": "ACCD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ACCD.json"
+      },
+      "CSCO": {
+        "fileName": "CSCO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CSCO.json"
+      },
+      "MCD": {
+        "fileName": "MCD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MCD.json"
+      },
+      "ASPI": {
+        "fileName": "ASPI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ASPI.json"
+      },
+      "EVGO": {
+        "fileName": "EVGO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/EVGO.json"
+      },
+      "AVAV": {
+        "fileName": "AVAV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AVAV.json"
+      },
+      "TLT": {
+        "fileName": "TLT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TLT.json"
+      },
+      "DDOG": {
+        "fileName": "DDOG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DDOG.json"
+      },
+      "NOV": {
+        "fileName": "NOV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NOV.json"
+      },
+      "RSI": {
+        "fileName": "RSI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RSI.json"
+      },
+      "DXCM": {
+        "fileName": "DXCM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DXCM.json"
+      },
+      "LRMR": {
+        "fileName": "LRMR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LRMR.json"
+      },
+      "SMR": {
+        "fileName": "SMR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SMR.json"
+      },
+      "CVNA": {
+        "fileName": "CVNA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CVNA.json"
+      },
+      "LEU": {
+        "fileName": "LEU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LEU.json"
+      },
+      "BE": {
+        "fileName": "BE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BE.json"
+      },
+      "OKLO": {
+        "fileName": "OKLO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/OKLO.json"
+      },
+      "LE": {
+        "fileName": "LE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LE.json"
+      },
+      "AA": {
+        "fileName": "AA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AA.json"
+      },
+      "AAL": {
+        "fileName": "AAL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AAL.json"
+      },
+      "AAOI": {
+        "fileName": "AAOI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AAOI.json"
+      },
+      "ABBV": {
+        "fileName": "ABBV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ABBV.json"
+      },
+      "ABT": {
+        "fileName": "ABT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ABT.json"
+      },
+      "ACAD": {
+        "fileName": "ACAD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ACAD.json"
+      },
+      "ACN": {
+        "fileName": "ACN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ACN.json"
+      },
+      "ADBE": {
+        "fileName": "ADBE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ADBE.json"
+      },
+      "ADI": {
+        "fileName": "ADI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ADI.json"
+      },
+      "AGG": {
+        "fileName": "AGG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AGG.json"
+      },
+      "AIG": {
+        "fileName": "AIG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AIG.json"
+      },
+      "ALGM": {
+        "fileName": "ALGM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ALGM.json"
+      },
+      "AMAT": {
+        "fileName": "AMAT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AMAT.json"
+      },
+      "AMC": {
+        "fileName": "AMC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AMC.json"
+      },
+      "AMGN": {
+        "fileName": "AMGN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AMGN.json"
+      },
+      "AMSC": {
+        "fileName": "AMSC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AMSC.json"
+      },
+      "AMT": {
+        "fileName": "AMT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AMT.json"
+      },
+      "ARHS": {
+        "fileName": "ARHS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ARHS.json"
+      },
+      "ARKK": {
+        "fileName": "ARKK.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ARKK.json"
+      },
+      "ASML": {
+        "fileName": "ASML.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ASML.json"
+      },
+      "AX": {
+        "fileName": "AX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AX.json"
+      },
+      "AXP": {
+        "fileName": "AXP.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AXP.json"
+      },
+      "AZN": {
+        "fileName": "AZN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AZN.json"
+      },
+      "CHWY": {
+        "fileName": "CHWY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CHWY.json"
+      },
+      "MARA": {
+        "fileName": "MARA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MARA.json"
+      },
+      "SQ": {
+        "fileName": "SQ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SQ.json"
+      },
+      "SOUN": {
+        "fileName": "SOUN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SOUN.json"
+      },
+      "CTAS": {
+        "fileName": "CTAS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CTAS.json"
+      },
+      "IBIT": {
+        "fileName": "IBIT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IBIT.json"
+      },
+      "BYND": {
+        "fileName": "BYND.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BYND.json"
+      },
+      "BKSY": {
+        "fileName": "BKSY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BKSY.json"
+      },
+      "PINS": {
+        "fileName": "PINS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PINS.json"
+      },
+      "CCJ": {
+        "fileName": "CCJ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CCJ.json"
+      },
+      "CRS": {
+        "fileName": "CRS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CRS.json"
+      },
+      "AXON": {
+        "fileName": "AXON.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AXON.json"
+      },
+      "GEO": {
+        "fileName": "GEO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GEO.json"
+      },
+      "EBS": {
+        "fileName": "EBS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/EBS.json"
+      },
+      "GOOG": {
+        "fileName": "GOOG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GOOG.json"
+      },
+      "GOLD": {
+        "fileName": "GOLD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GOLD.json"
+      },
+      "DKNG": {
+        "fileName": "DKNG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DKNG.json"
+      },
+      "MNDY": {
+        "fileName": "MNDY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MNDY.json"
+      },
+      "HON": {
+        "fileName": "HON.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HON.json"
+      },
+      "COST": {
+        "fileName": "COST.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/COST.json"
+      },
+      "JPM": {
+        "fileName": "JPM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/JPM.json"
+      },
+      "FOUR": {
+        "fileName": "FOUR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FOUR.json"
+      },
+      "ETN": {
+        "fileName": "ETN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ETN.json"
+      },
+      "AAON": {
+        "fileName": "AAON.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AAON.json"
+      },
+      "LAZR": {
+        "fileName": "LAZR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LAZR.json"
+      },
+      "FTNT": {
+        "fileName": "FTNT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FTNT.json"
+      },
+      "QBTS": {
+        "fileName": "QBTS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/QBTS.json"
+      },
+      "CECO": {
+        "fileName": "CECO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CECO.json"
+      },
+      "ORCL": {
+        "fileName": "ORCL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ORCL.json"
+      },
+      "INTU": {
+        "fileName": "INTU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/INTU.json"
+      },
+      "BMY": {
+        "fileName": "BMY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BMY.json"
+      },
+      "ROAD": {
+        "fileName": "ROAD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ROAD.json"
+      },
+      "MBLY": {
+        "fileName": "MBLY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MBLY.json"
+      },
+      "PATH": {
+        "fileName": "PATH.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PATH.json"
+      },
+      "CATY": {
+        "fileName": "CATY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CATY.json"
+      },
+      "GS": {
+        "fileName": "GS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GS.json"
+      },
+      "WFC": {
+        "fileName": "WFC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/WFC.json"
+      },
+      "V": {
+        "fileName": "V.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/V.json"
+      },
+      "CASY": {
+        "fileName": "CASY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CASY.json"
+      },
+      "JOBY": {
+        "fileName": "JOBY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/JOBY.json"
+      },
+      "ANF": {
+        "fileName": "ANF.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ANF.json"
+      },
+      "CMG": {
+        "fileName": "CMG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CMG.json"
+      },
+      "KRE": {
+        "fileName": "KRE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KRE.json"
+      },
+      "RL": {
+        "fileName": "RL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RL.json"
+      },
+      "PH": {
+        "fileName": "PH.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PH.json"
+      },
+      "RIVN": {
+        "fileName": "RIVN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RIVN.json"
+      },
+      "ZS": {
+        "fileName": "ZS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ZS.json"
+      },
+      "APLD": {
+        "fileName": "APLD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/APLD.json"
+      },
+      "ALAB": {
+        "fileName": "ALAB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ALAB.json"
+      },
+      "MS": {
+        "fileName": "MS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MS.json"
+      },
+      "NU": {
+        "fileName": "NU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NU.json"
+      },
+      "BKNG": {
+        "fileName": "BKNG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BKNG.json"
+      },
+      "HD": {
+        "fileName": "HD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HD.json"
+      },
+      "PYPL": {
+        "fileName": "PYPL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PYPL.json"
+      },
+      "KULR": {
+        "fileName": "KULR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KULR.json"
+      },
+      "RGTI": {
+        "fileName": "RGTI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RGTI.json"
+      },
+      "ZETA": {
+        "fileName": "ZETA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ZETA.json"
+      },
+      "CCL": {
+        "fileName": "CCL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CCL.json"
+      },
+      "CRNT": {
+        "fileName": "CRNT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CRNT.json"
+      },
+      "CABA": {
+        "fileName": "CABA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CABA.json"
+      },
+      "OPEN": {
+        "fileName": "OPEN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/OPEN.json"
+      },
+      "WOLF": {
+        "fileName": "WOLF.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/WOLF.json"
+      },
+      "FINV": {
+        "fileName": "FINV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FINV.json"
+      },
+      "PL": {
+        "fileName": "PL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PL.json"
+      },
+      "LMND": {
+        "fileName": "LMND.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LMND.json"
+      },
+      "MRVL": {
+        "fileName": "MRVL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MRVL.json"
+      },
+      "YINN": {
+        "fileName": "YINN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/YINN.json"
+      },
+      "SPOT": {
+        "fileName": "SPOT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SPOT.json"
+      },
+      "PSTG": {
+        "fileName": "PSTG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PSTG.json"
+      },
+      "S": {
+        "fileName": "S.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/S.json"
+      },
+      "TMDX": {
+        "fileName": "TMDX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TMDX.json"
+      },
+      "OKTA": {
+        "fileName": "OKTA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/OKTA.json"
+      },
+      "PANW": {
+        "fileName": "PANW.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PANW.json"
+      },
+      "PSNY": {
+        "fileName": "PSNY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PSNY.json"
+      },
+      "NIO": {
+        "fileName": "NIO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NIO.json"
+      },
+      "HUT": {
+        "fileName": "HUT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/HUT.json"
+      },
+      "APP": {
+        "fileName": "APP.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/APP.json"
+      },
+      "NVO": {
+        "fileName": "NVO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NVO.json"
+      },
+      "KO": {
+        "fileName": "KO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KO.json"
+      },
+      "CNTA": {
+        "fileName": "CNTA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CNTA.json"
+      },
+      "ASND": {
+        "fileName": "ASND.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ASND.json"
+      },
+      "CPNG": {
+        "fileName": "CPNG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CPNG.json"
+      },
+      "GMED": {
+        "fileName": "GMED.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GMED.json"
+      },
+      "ULTA": {
+        "fileName": "ULTA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ULTA.json"
+      },
+      "LULU": {
+        "fileName": "LULU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LULU.json"
+      },
+      "CLOV": {
+        "fileName": "CLOV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CLOV.json"
+      },
+      "SE": {
+        "fileName": "SE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SE.json"
+      },
+      "UEC": {
+        "fileName": "UEC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UEC.json"
+      },
+      "BTBT": {
+        "fileName": "BTBT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BTBT.json"
+      },
+      "BTC": {
+        "fileName": "BTC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BTC.json"
+      },
+      "OPTT": {
+        "fileName": "OPTT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/OPTT.json"
+      },
+      "APPN": {
+        "fileName": "APPN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/APPN.json"
+      },
+      "PDD": {
+        "fileName": "PDD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PDD.json"
+      },
+      "NVMI": {
+        "fileName": "NVMI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NVMI.json"
+      },
+      "SATL": {
+        "fileName": "SATL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SATL.json"
+      },
+      "TIGR": {
+        "fileName": "TIGR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TIGR.json"
+      },
+      "IREN": {
+        "fileName": "IREN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IREN.json"
+      },
+      "CHRS": {
+        "fileName": "CHRS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CHRS.json"
+      },
+      "TQQQ": {
+        "fileName": "TQQQ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TQQQ.json"
+      },
+      "COHR": {
+        "fileName": "COHR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/COHR.json"
+      },
+      "JD": {
+        "fileName": "JD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/JD.json"
+      },
+      "NVTS": {
+        "fileName": "NVTS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NVTS.json"
+      },
+      "TCOM": {
+        "fileName": "TCOM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TCOM.json"
+      },
+      "NNE": {
+        "fileName": "NNE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NNE.json"
+      },
+      "CAVA": {
+        "fileName": "CAVA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CAVA.json"
+      },
+      "CELH": {
+        "fileName": "CELH.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CELH.json"
+      },
+      "SPX": {
+        "fileName": "SPX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SPX.json"
+      },
+      "NDX": {
+        "fileName": "NDX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NDX.json"
+      },
+      "DHR": {
+        "fileName": "DHR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/DHR.json"
+      },
+      "CIBR": {
+        "fileName": "CIBR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CIBR.json"
+      },
+      "VLTO": {
+        "fileName": "VLTO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VLTO.json"
+      },
+      "CARR": {
+        "fileName": "CARR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CARR.json"
+      },
+      "VRAR": {
+        "fileName": "VRAR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VRAR.json"
+      },
+      "LITE": {
+        "fileName": "LITE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LITE.json"
+      },
+      "SMTC": {
+        "fileName": "SMTC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SMTC.json"
+      },
+      "NBIS": {
+        "fileName": "NBIS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NBIS.json"
+      },
+      "KTOS": {
+        "fileName": "KTOS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KTOS.json"
+      },
+      "IRDM": {
+        "fileName": "IRDM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IRDM.json"
+      },
+      "ISRG": {
+        "fileName": "ISRG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ISRG.json"
+      },
+      "MVST": {
+        "fileName": "MVST.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MVST.json"
+      },
+      "UAVS": {
+        "fileName": "UAVS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UAVS.json"
+      },
+      "VUZI": {
+        "fileName": "VUZI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VUZI.json"
+      },
+      "RCAT": {
+        "fileName": "RCAT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RCAT.json"
+      },
+      "BBAI": {
+        "fileName": "BBAI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BBAI.json"
+      },
+      "EVEX": {
+        "fileName": "EVEX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/EVEX.json"
+      },
+      "CRDO": {
+        "fileName": "CRDO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CRDO.json"
+      },
+      "TSAT": {
+        "fileName": "TSAT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TSAT.json"
+      },
+      "AUR": {
+        "fileName": "AUR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AUR.json"
+      },
+      "POET": {
+        "fileName": "POET.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/POET.json"
+      },
+      "EOSE": {
+        "fileName": "EOSE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/EOSE.json"
+      },
+      "SERV": {
+        "fileName": "SERV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SERV.json"
+      },
+      "BLDE": {
+        "fileName": "BLDE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BLDE.json"
+      },
+      "RDW": {
+        "fileName": "RDW.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RDW.json"
+      },
+      "NNOX": {
+        "fileName": "NNOX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NNOX.json"
+      },
+      "ODD": {
+        "fileName": "ODD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ODD.json"
+      },
+      "RXRX": {
+        "fileName": "RXRX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RXRX.json"
+      },
+      "GSAT": {
+        "fileName": "GSAT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GSAT.json"
+      },
+      "VEEV": {
+        "fileName": "VEEV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VEEV.json"
+      },
+      "MTSI": {
+        "fileName": "MTSI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MTSI.json"
+      },
+      "IOT": {
+        "fileName": "IOT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IOT.json"
+      },
+      "PRCT": {
+        "fileName": "PRCT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PRCT.json"
+      },
+      "AGX": {
+        "fileName": "AGX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AGX.json"
+      },
+      "GSK": {
+        "fileName": "GSK.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GSK.json"
+      },
+      "IQ": {
+        "fileName": "IQ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/IQ.json"
+      },
+      "SENS": {
+        "fileName": "SENS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SENS.json"
+      },
+      "QUBT": {
+        "fileName": "QUBT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/QUBT.json"
+      },
+      "TEM": {
+        "fileName": "TEM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/TEM.json"
+      },
+      "GRRR": {
+        "fileName": "GRRR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/GRRR.json"
+      },
+      "ROKU": {
+        "fileName": "ROKU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ROKU.json"
+      },
+      "ITB": {
+        "fileName": "ITB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ITB.json"
+      },
+      "LMT": {
+        "fileName": "LMT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LMT.json"
+      },
+      "VRT": {
+        "fileName": "VRT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VRT.json"
+      },
+      "BIRK": {
+        "fileName": "BIRK.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BIRK.json"
+      },
+      "VIX": {
+        "fileName": "VIX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VIX.json"
+      },
+      "MAGS": {
+        "fileName": "MAGS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MAGS.json"
+      },
+      "AISP": {
+        "fileName": "AISP.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AISP.json"
+      },
+      "UVXY": {
+        "fileName": "UVXY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UVXY.json"
+      },
+      "SVXY": {
+        "fileName": "SVXY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SVXY.json"
+      },
+      "BYRN": {
+        "fileName": "BYRN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BYRN.json"
+      },
+      "LLY": {
+        "fileName": "LLY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LLY.json"
+      },
+      "ANET": {
+        "fileName": "ANET.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ANET.json"
+      },
+      "FIX": {
+        "fileName": "FIX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FIX.json"
+      },
+      "SCHD": {
+        "fileName": "SCHD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SCHD.json"
+      },
+      "RKT": {
+        "fileName": "RKT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RKT.json"
+      },
+      "CLS": {
+        "fileName": "CLS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CLS.json"
+      },
+      "KODK": {
+        "fileName": "KODK.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KODK.json"
+      },
+      "SPXL": {
+        "fileName": "SPXL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SPXL.json"
+      },
+      "UPRO": {
+        "fileName": "UPRO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UPRO.json"
+      },
+      "UAL": {
+        "fileName": "UAL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UAL.json"
+      },
+      "RTX": {
+        "fileName": "RTX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RTX.json"
+      },
+      "SES": {
+        "fileName": "SES.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SES.json"
+      },
+      "INVZ": {
+        "fileName": "INVZ.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/INVZ.json"
+      },
+      "MELI": {
+        "fileName": "MELI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MELI.json"
+      },
+      "FF": {
+        "fileName": "FF.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FF.json"
+      },
+      "LODE": {
+        "fileName": "LODE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LODE.json"
+      },
+      "UAA": {
+        "fileName": "UAA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UAA.json"
+      },
+      "SMHI": {
+        "fileName": "SMHI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SMHI.json"
+      },
+      "PAYO": {
+        "fileName": "PAYO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PAYO.json"
+      },
+      "PLAY": {
+        "fileName": "PLAY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PLAY.json"
+      },
+      "WBA": {
+        "fileName": "WBA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/WBA.json"
+      },
+      "ATAI": {
+        "fileName": "ATAI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ATAI.json"
+      },
+      "FFIE": {
+        "fileName": "FFIE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FFIE.json"
+      },
+      "LYFT": {
+        "fileName": "LYFT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LYFT.json"
+      },
+      "SLV": {
+        "fileName": "SLV.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SLV.json"
+      },
+      "KMI": {
+        "fileName": "KMI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/KMI.json"
+      },
+      "AEVA": {
+        "fileName": "AEVA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AEVA.json"
+      },
+      "INSW": {
+        "fileName": "INSW.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/INSW.json"
+      },
+      "MNMD": {
+        "fileName": "MNMD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MNMD.json"
+      },
+      "NGG": {
+        "fileName": "NGG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NGG.json"
+      },
+      "FUBO": {
+        "fileName": "FUBO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FUBO.json"
+      },
+      "MRNA": {
+        "fileName": "MRNA.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MRNA.json"
+      },
+      "PACB": {
+        "fileName": "PACB.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PACB.json"
+      },
+      "PGNY": {
+        "fileName": "PGNY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PGNY.json"
+      },
+      "VTI": {
+        "fileName": "VTI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VTI.json"
+      },
+      "VGT": {
+        "fileName": "VGT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VGT.json"
+      },
+      "ON": {
+        "fileName": "ON.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ON.json"
+      },
+      "C": {
+        "fileName": "C.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/C.json"
+      },
+      "CXM": {
+        "fileName": "CXM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CXM.json"
+      },
+      "CRNC": {
+        "fileName": "CRNC.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CRNC.json"
+      },
+      "LPSN": {
+        "fileName": "LPSN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LPSN.json"
+      },
+      "VERI": {
+        "fileName": "VERI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VERI.json"
+      },
+      "CAG": {
+        "fileName": "CAG.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CAG.json"
+      },
+      "NEM": {
+        "fileName": "NEM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/NEM.json"
+      },
+      "LOVE": {
+        "fileName": "LOVE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LOVE.json"
+      },
+      "UAMY": {
+        "fileName": "UAMY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/UAMY.json"
+      },
+      "ONDS": {
+        "fileName": "ONDS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ONDS.json"
+      },
+      "OXY": {
+        "fileName": "OXY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/OXY.json"
+      },
+      "LQDT": {
+        "fileName": "LQDT.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/LQDT.json"
+      },
+      "XOM": {
+        "fileName": "XOM.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/XOM.json"
+      },
+      "ACI": {
+        "fileName": "ACI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ACI.json"
+      },
+      "FARO": {
+        "fileName": "FARO.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FARO.json"
+      },
+      "SPXU": {
+        "fileName": "SPXU.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SPXU.json"
+      },
+      "BRZE": {
+        "fileName": "BRZE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/BRZE.json"
+      },
+      "VCEL": {
+        "fileName": "VCEL.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/VCEL.json"
+      },
+      "CMPS": {
+        "fileName": "CMPS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/CMPS.json"
+      },
+      "SIRI": {
+        "fileName": "SIRI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/SIRI.json"
+      },
+      "MRX": {
+        "fileName": "MRX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MRX.json"
+      },
+      "AR": {
+        "fileName": "AR.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/AR.json"
+      },
+      "PHUN": {
+        "fileName": "PHUN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PHUN.json"
+      },
+      "WWD": {
+        "fileName": "WWD.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/WWD.json"
+      },
+      "ETSY": {
+        "fileName": "ETSY.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ETSY.json"
+      },
+      "RUN": {
+        "fileName": "RUN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RUN.json"
+      },
+      "WEN": {
+        "fileName": "WEN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/WEN.json"
+      },
+      "PGRE": {
+        "fileName": "PGRE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/PGRE.json"
+      },
+      "RDFN": {
+        "fileName": "RDFN.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/RDFN.json"
+      },
+      "MGNI": {
+        "fileName": "MGNI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/MGNI.json"
+      },
+      "M": {
+        "fileName": "M.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/M.json"
+      },
+      "ARBE": {
+        "fileName": "ARBE.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ARBE.json"
+      },
+      "QSI": {
+        "fileName": "QSI.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/QSI.json"
+      },
+      "ENVX": {
+        "fileName": "ENVX.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/ENVX.json"
+      },
+      "FNGS": {
+        "fileName": "FNGS.json",
+        "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/OPTIONS_DATA_2025-01-25/FNGS.json"
+      }
+    }
   }
 }
