@@ -7,6 +7,7 @@ const dataFolder = `temp/options-snapshots`;
 await ensureDir(dataFolder);
 const data = getOptionsSnapshotSummary();
 
+const timeoutInMS = 3000;
 const releaseName = Deno.env.get("RELEASE_NAME") ||
     `DEX_GEX_SNAPSHOT_${format(new Date(), "yyyy-MM-dd")}`;
 data[releaseName] = {
@@ -33,59 +34,12 @@ if (latestDate) {
 
 
     for (const symbol of allSymbols) {
-        const cleanedSymbol = cleanSymbol(symbol)
-        console.log(`(${allSymbols.indexOf(symbol) + 1}/${allSymbols.length}) Fetching dex/gex page for ${symbol}`);
-
-        currentRelease.symbols[symbol] = {
-            dex: {
-                sdFileName: `${cleanedSymbol}_DEX_620.png`,
-                hdFileName: `${cleanedSymbol}_DEX_1240.png`,
-                sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_DEX_620.png`,
-                hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_DEX_1240.png`
-            },
-            gex: {
-                sdFileName: `${cleanedSymbol}_GEX_620.png`,
-                hdFileName: `${cleanedSymbol}_GEX_1240.png`,
-                sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_GEX_620.png`,
-                hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_GEX_1240.png`
-            }
-        }
-
-        const currentSymbol = currentRelease.symbols[symbol];
-
-        await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
-        let varurlname = `urldex${allSymbols.indexOf(symbol)}`
-        await page.evaluate(`
-            let ${varurlname} = new URL(location.href);
-            ${varurlname}.searchParams.set("dgextab", "DEX");
-            ${varurlname}.searchParams.set("symbol", "${symbol}");
-            history.replaceState(null, "", ${varurlname});
-        `);
-
-        console.log(`Generating high definition DEX snapshot page for ${symbol}`);
-
-        await page.waitForNetworkIdle();
-        await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.hdFileName}`); // take a screenshot and save it to a file
-
-        console.log(`Generating standard definition DEX snapshot page for ${symbol}`);
-        await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 1 }); // set the viewport size
-
-        await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.sdFileName}`); // take a screenshot and save it to a file
-
-        varurlname = `urlgex${allSymbols.indexOf(symbol)}`
-        await page.evaluate(`
-        let ${varurlname} = new URL(location.href);
-        ${varurlname}.searchParams.set("dgextab", "GEX");
-        history.replaceState(null, "", ${varurlname});
-        `);
-        console.log(`Generating standard definition GEX snapshot page for ${symbol}`);
-
-        await captureScreenshot(page, `${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file
-
-        await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
-        console.log(`Generating high definition GEX snapshot page for ${symbol}`);
-
-        await captureScreenshot(page, `${dataFolder}/${currentSymbol.gex.hdFileName}`); // take a screenshot and save it to a file                
+        await pretry(async (n: number) => {
+            if (n > 1) console.log(`Main retry attempt: ${n}`)
+            await processSymbol(page, allSymbols, symbol);
+        }, {
+            retries: 3
+        })        
     }
     await browser.close();
     console.log(`Finished generating snapshot files!`);
@@ -100,11 +54,70 @@ if (latestDate) {
     console.log(`Unable to find any latest date in the data summary file!`);
 }
 
+async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
+    const cleanedSymbol = cleanSymbol(symbol)
+    console.log(`(${allSymbols.indexOf(symbol) + 1}/${allSymbols.length}) Fetching dex/gex page for ${symbol}`);
+
+    currentRelease.symbols[symbol] = {
+        dex: {
+            sdFileName: `${cleanedSymbol}_DEX_620.png`,
+            hdFileName: `${cleanedSymbol}_DEX_1240.png`,
+            sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_DEX_620.png`,
+            hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_DEX_1240.png`
+        },
+        gex: {
+            sdFileName: `${cleanedSymbol}_GEX_620.png`,
+            hdFileName: `${cleanedSymbol}_GEX_1240.png`,
+            sdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_GEX_620.png`,
+            hdAssetUrl: `${ghRepoBaseUrl}/${releaseName}/${cleanedSymbol}_GEX_1240.png`
+        }
+    }
+
+    const currentSymbol = currentRelease.symbols[symbol];
+
+    await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
+    let varurlname = `urldex${allSymbols.indexOf(symbol)}`
+    await page.evaluate(`
+            let ${varurlname} = new URL(location.href);
+            ${varurlname}.searchParams.set("dgextab", "DEX");
+            ${varurlname}.searchParams.set("symbol", "${symbol}");
+            history.replaceState(null, "", ${varurlname});
+        `);
+
+    console.log(`Generating high definition DEX snapshot page for ${symbol}`);
+
+    await page.waitForNetworkIdle({
+        timeout: timeoutInMS
+    });
+    await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.hdFileName}`); // take a screenshot and save it to a file
+
+    console.log(`Generating standard definition DEX snapshot page for ${symbol}`);
+    await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 1 }); // set the viewport size
+
+    await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.sdFileName}`); // take a screenshot and save it to a file
+
+    varurlname = `urlgex${allSymbols.indexOf(symbol)}`
+    await page.evaluate(`
+        let ${varurlname} = new URL(location.href);
+        ${varurlname}.searchParams.set("dgextab", "GEX");
+        history.replaceState(null, "", ${varurlname});
+        `);
+    console.log(`Generating standard definition GEX snapshot page for ${symbol}`);
+
+    await captureScreenshot(page, `${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file
+
+    await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
+    console.log(`Generating high definition GEX snapshot page for ${symbol}`);
+
+    await captureScreenshot(page, `${dataFolder}/${currentSymbol.gex.hdFileName}`); // take a screenshot and save it to a file      
+}
 
 async function captureScreenshot(page: Page, path: string) {
     await pretry(async (n: number) => {
         if (n > 1) console.log(`Retry attempt: ${n}`)
-        await page.waitForNetworkIdle();
+        await page.waitForNetworkIdle({
+            timeout: timeoutInMS
+        });
         await page.screenshot({
             path: path
         }); // take a screenshot and save it to a file
