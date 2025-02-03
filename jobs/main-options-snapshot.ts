@@ -2,7 +2,7 @@ import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 import { format } from "https://deno.land/std@0.224.0/datetime/format.ts";
 import puppeteer, { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import pretry from "https://esm.sh/p-retry@6.2.1";
-import pMap from 'https://esm.sh/p-map';
+import pMap from "https://esm.sh/p-map@7.0.3";
 import { chunk } from "jsr:@std/collections";
 
 const maxBatches = 10;
@@ -74,7 +74,7 @@ async function processBatch(batchSymbols: string[]) {
 async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
     const cleanedSymbol = cleanSymbol(symbol)
     
-    console.log(`(${processingCounter++}/${totalSymbols}) Fetching dex/gex page for ${symbol}`);
+    console.log(`(${++processingCounter}/${totalSymbols}) Fetching dex/gex page for ${symbol}`);
 
     currentRelease.symbols[symbol] = {
         dex: {
