@@ -76,7 +76,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
     const currentSymbol = currentRelease.symbols[symbol];
 
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
-    let varurlname = `urldex${allSymbols.indexOf(symbol)}`
+    let varurlname = `urldex${allSymbols.indexOf(symbol)}${new Date().getTime()}`
     await page.evaluate(`
             let ${varurlname} = new URL(location.href);
             ${varurlname}.searchParams.set("dgextab", "DEX");
@@ -96,7 +96,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
 
     await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.sdFileName}`); // take a screenshot and save it to a file
 
-    varurlname = `urlgex${allSymbols.indexOf(symbol)}`
+    varurlname = `urlgex${allSymbols.indexOf(symbol)}${new Date().getTime()}`
     await page.evaluate(`
         let ${varurlname} = new URL(location.href);
         ${varurlname}.searchParams.set("dgextab", "GEX");
