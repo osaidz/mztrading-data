@@ -13,12 +13,10 @@ jobs:
     runs-on: ubuntu-latest    
     outputs:
       options-data-tag: ${{ steps.tradierdata.outputs.RELEASE_NAME }}
-      snapshot-data-tag: ${{ steps.snapshotimages.outputs.RELEASE_NAME }}
+      
     steps:
       - id: tradierdata
         run: echo "RELEASE_NAME=OPTIONS_DATA_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
-      - id: snapshotimages
-        run: echo "RELEASE_NAME=DEX_GEX_SNAPSHOT_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
 
   publish_options_data:
     runs-on: ubuntu-latest
@@ -73,68 +71,5 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "publish options data (via GitHub Actions)"
-            git push
-          fi
-  publish_options_snapshot_images:
-    runs-on: ubuntu-22.04
-    needs: [set-release-vars, release-tradier-data]
-    env:
-      RELEASE_NAME: ${{needs.set-release-vars.outputs.snapshot-data-tag}}
-    steps:
-      - name: Setup repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0   # Fetch all commits to ensure the latest state is available
-          ref: main        # Ensure the latest state from the main branch is checked out
-      - name: Install puppeteer deps
-        run: sudo apt-get install -y ca-certificates fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-      - name: Setup puppeteer
-        run: PUPPETEER_PRODUCT=chrome deno run -A https://deno.land/x/puppeteer@16.2.0/install.ts
-      - name: Run
-        run: deno run --allow-all jobs/main-options-snapshot.ts
-      - name: Upload artifacts 
-        uses: actions/upload-artifact@v4
-        with:
-          name: snapshot-data
-          if-no-files-found: error
-          path: |
-            ${{ github.workspace}}/data/options-snapshot.summary.json
-            ${{ github.workspace}}/temp/options-snapshots/*.png
-
-  release-snapshot-data:
-    runs-on: ubuntu-latest
-    needs: [set-release-vars, publish_options_snapshot_images]
-    env:
-      RELEASE_NAME: ${{needs.set-release-vars.outputs.snapshot-data-tag}}
-    steps:
-      - name: Setup repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0   # Fetch all commits to ensure the latest state is available
-          ref: main        # Ensure the latest state from the main branch is checked out
-      - name: Download snapshot images Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: snapshot-data
-      - name: Release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "temp/options-snapshots/*.png"
-          tag: ${{ env.RELEASE_NAME }}
-          commit: "main"
-          allowUpdates: "true"
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add --all
-          if git diff-index --quiet HEAD; then
-            echo "No changes to commit."
-          else
-            git commit -m "publish snapshot images data (via GitHub Actions)"
             git push
           fi
