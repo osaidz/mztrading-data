@@ -57,7 +57,7 @@ export const lastHistoricalOptionDataFromParquet = () => {
 
 type MicroOptionContractItem = { oi: number, volume: number, delta: number, gamma: number }
 type MicroOptionContract = { call: MicroOptionContractItem, put: MicroOptionContractItem }
-type ExposureDataItem = { absDelta: number[], openInterest: number[], volume: number[] }
+type ExposureDataItem = { absDelta: number[], absGamma: number[], openInterest: number[], volume: number[] }
 type ExposureDataType = { call: ExposureDataItem, put: ExposureDataItem, netGamma: number[], strikes: string[], expiration: string, dte: number }
 
 export type ExposureDataRequest = { data: Record<string, Record<string, MicroOptionContract>>, spotPrice: number, spotDate: string }
@@ -72,9 +72,7 @@ export const getExposureData = async (symbol: string, dt: string | 'LIVE') => {
 export const calculateExpsoure = (spotPrice: number, indexedObject: Record<string, Record<string, MicroOptionContract>>, spotDate: string) => {
     const dataToPersist = {
         data: [] as ExposureDataType[],
-        spotPrice: spotPrice,
-        callWall: '0',
-        putWall: '0'
+        spotPrice: spotPrice
     };
 
     const expirations = Object.keys(indexedObject);
@@ -94,6 +92,9 @@ export const calculateExpsoure = (spotPrice: number, indexedObject: Record<strin
         const callDeltaData = new Array<number>(strikes.length).fill(0);
         const putDeltaData = new Array<number>(strikes.length).fill(0);
 
+        const callGammaData = new Array<number>(strikes.length).fill(0);
+        const putGammaData = new Array<number>(strikes.length).fill(0);
+
         const netGammaData = new Array<number>(strikes.length).fill(0);
 
         for (let ix = 0; ix < strikes.length; ix++) {
@@ -105,6 +106,9 @@ export const calculateExpsoure = (spotPrice: number, indexedObject: Record<strin
 
             callDeltaData[ix] = Math.trunc((indexedObject[expiration][strikes[ix]]?.call?.delta || 0) * 100 * callOpenInterestData[ix] * spotPrice);
             putDeltaData[ix] = Math.trunc((indexedObject[expiration][strikes[ix]]?.put?.delta || 0) * 100 * putOpenInterestData[ix] * spotPrice);
+
+            callGammaData[ix] = Math.trunc((indexedObject[expiration][strikes[ix]]?.call?.gamma || 0) * 100 * callOpenInterestData[ix] * spotPrice);
+            putGammaData[ix] = Math.trunc((indexedObject[expiration][strikes[ix]]?.put?.gamma || 0) * 100 * putOpenInterestData[ix] * spotPrice);
 
             const callGamma = (indexedObject[expiration][strikes[ix]]?.call?.gamma || 0) * 100 * callOpenInterestData[ix] * spotPrice;
             const putGamma = (indexedObject[expiration][strikes[ix]]?.put?.gamma || 0) * 100 * putOpenInterestData[ix] * spotPrice;
@@ -118,11 +122,13 @@ export const calculateExpsoure = (spotPrice: number, indexedObject: Record<strin
         dataToPersist.data.push({
             call: {
                 absDelta: callDeltaData,
+                absGamma: callGammaData,
                 openInterest: callOpenInterestData,
                 volume: callVolumeData
             },
             put: {
                 absDelta: putDeltaData,
+                absGamma: putGammaData,
                 openInterest: putOpenInterestData,
                 volume: putVolumeData
             },
@@ -132,9 +138,12 @@ export const calculateExpsoure = (spotPrice: number, indexedObject: Record<strin
             dte: dte
         });
     }
-    
-    dataToPersist.callWall = Object.keys(callWallMap).reduce((a, b) => callWallMap[a] > callWallMap[b] ? a : b);
-    dataToPersist.putWall = Object.keys(putWallMap).reduce((a, b) => putWallMap[a] > putWallMap[b] ? a : b);
+
+    // dataToPersist.callWall = Object.keys(callWallMap).reduce((a, b) => callWallMap[a] > callWallMap[b] ? a : b);
+    // dataToPersist.putWall = Object.keys(putWallMap).reduce((a, b) => putWallMap[a] > putWallMap[b] ? a : b);
+
+    // dataToPersist['cw'] = callWallMap;
+    // dataToPersist['pw'] = putWallMap;
 
     dataToPersist.data.sort((a, b) => a.dte - b.dte);
     return dataToPersist;
