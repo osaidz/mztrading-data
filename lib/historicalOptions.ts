@@ -72,10 +72,15 @@ export const getExposureData = async (symbol: string, dt: string | 'LIVE') => {
 export const calculateExpsoure = (spotPrice: number, indexedObject: Record<string, Record<string, MicroOptionContract>>, spotDate: string) => {
     const dataToPersist = {
         data: [] as ExposureDataType[],
-        spotPrice: spotPrice
+        spotPrice: spotPrice,
+        callWall: '0',
+        putWall: '0'
     };
 
     const expirations = Object.keys(indexedObject);
+    const callWallMap = {} as Record<string, number>;
+    const putWallMap = {} as Record<string, number>;
+
     for (const expiration of expirations) {
         const dte = dayjs(expiration).diff(spotDate, 'day');
         if (dte < 0) continue; //skip if expiration is in the past
@@ -104,6 +109,10 @@ export const calculateExpsoure = (spotPrice: number, indexedObject: Record<strin
             const callGamma = (indexedObject[expiration][strikes[ix]]?.call?.gamma || 0) * 100 * callOpenInterestData[ix] * spotPrice;
             const putGamma = (indexedObject[expiration][strikes[ix]]?.put?.gamma || 0) * 100 * putOpenInterestData[ix] * spotPrice;
             netGammaData[ix] = Math.trunc(callGamma - putGamma);
+
+            const strikePrice = Number(strikes[ix])
+            callWallMap[strikePrice] = (callWallMap[strikePrice] || 0) + callGamma;
+            putWallMap[strikePrice] = (putWallMap[strikePrice] || 0) + putGamma;
         }
 
         dataToPersist.data.push({
@@ -123,6 +132,10 @@ export const calculateExpsoure = (spotPrice: number, indexedObject: Record<strin
             dte: dte
         });
     }
+    
+    dataToPersist.callWall = Object.keys(callWallMap).reduce((a, b) => callWallMap[a] > callWallMap[b] ? a : b);
+    dataToPersist.putWall = Object.keys(putWallMap).reduce((a, b) => putWallMap[a] > putWallMap[b] ? a : b);
+
     dataToPersist.data.sort((a, b) => a.dte - b.dte);
     return dataToPersist;
 }
