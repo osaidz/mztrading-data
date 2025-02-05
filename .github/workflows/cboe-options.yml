@@ -65,6 +65,7 @@ jobs:
           tag: ${{ env.RELEASE_NAME }}
           commit: "main"
           allowUpdates: "true"
+          artifactErrorsFailBuild: "true"
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
