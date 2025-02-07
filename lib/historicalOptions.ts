@@ -56,7 +56,6 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string) => {
     const arrowResult = await conn.send(`
             SELECT
                 option_symbol,
-                dt,
                 round(SUM(IF(option_type = 'C', open_interest * delta, 0))) as call_delta,
                 round(SUM(IF(option_type = 'P', open_interest * abs(delta), 0))) as put_delta,
                 round(SUM(IF(option_type = 'C', open_interest * gamma, 0))) as call_gamma,
