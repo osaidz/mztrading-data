@@ -16,7 +16,7 @@ import {
 } from "./lib/data.ts";
 
 import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
+import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
 
@@ -290,6 +290,12 @@ router.get("/", (context) => {
     .get("/beta/symbols/:symbol/historical/snapshots/:dt/exposure", async (context) => {
         const { symbol, dt } = context.params;
         context.response.body = await getExposureData(symbol, dt);
+        context.response.type = "application/json";
+    })
+    .get("/beta/reports/optionsgreekssummary", async (context) => {
+        const { dt } = getQuery(context);
+        if(!dt) throw new Error("dt parameter is missing!");
+        context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt);
         context.response.type = "application/json";
     })
     .get("/beta/symbols/:symbol/exposure", async (context) => {
