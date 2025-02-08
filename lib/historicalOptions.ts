@@ -82,6 +82,9 @@ export const lastHistoricalOptionDataFromParquet = () => {
     return optionsRollingSummary;
 }
 
+type MicroOptionPricingItem = { oi: number, b: number, a: number, v: number, l: number }
+type MicroOptionPricingContract = { c: Record<string, MicroOptionPricingItem>, p: Record<string, MicroOptionPricingItem> }
+
 type MicroOptionContractItem = { oi: number, volume: number, delta: number, gamma: number }
 type MicroOptionContract = { call: MicroOptionContractItem, put: MicroOptionContractItem }
 type ExposureDataItem = { absDelta: number[], absGamma: number[], openInterest: number[], volume: number[] }
@@ -216,4 +219,20 @@ async function getLiveCboeOptionData(symbol: string) {
         return previous;
     }, {} as Record<string, Record<string, MicroOptionContract>>);
     return { spotPrice: currentPrice, indexedObject };
+}
+
+export async function getLiveCboeOptionsPricingData(symbol: string) {    
+    const { data, currentPrice } = await getOptionsChain(symbol);
+    const options = data.reduce((previous, current) => {
+        previous[current.expiration] = previous[current.expiration] || {c: {}, p: {}};        
+        if (current.option_type == 'C') {
+            previous[current.expiration].c[current.strike] = { oi: current.open_interest, v: current.volume, l: current.last_trade_price, a: current.ask, b: current.bid };
+        } else if (current.option_type == 'P') {
+            previous[current.expiration].p[current.strike] = { oi: current.open_interest, v: current.volume, l: current.last_trade_price, a: current.ask, b: current.bid };
+        } else {
+            throw new Error("Invalid option type");
+        }
+        return previous;
+    }, {} as Record<string, MicroOptionPricingContract>);
+    return { spotPrice: currentPrice, options };
 }

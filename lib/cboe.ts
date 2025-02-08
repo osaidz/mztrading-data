@@ -44,6 +44,9 @@ const fetchOptionChainFromCboe = async (symbol: string) => {
                 delta: number,
                 volume: number,
                 gamma: number,
+                last_trade_price: number,
+                ask: number,
+                bid: number
             }[],
             close: number
         }
@@ -56,7 +59,7 @@ export const getOptionsChain = async (symbol: string) => {
     const currentPrice = optionChain.data.close;    //TODO: is this the close price which remains same if the market is open??
 
     console.time(`getOptionsChain-mapping-${symbol}`)
-    const mappedOptions = optionChain.data.options.map(({ option, open_interest, volume, delta, gamma }) => {
+    const mappedOptions = optionChain.data.options.map(({ option, open_interest, volume, delta, gamma, last_trade_price, ask, bid }) => {
         //implement mem cache for regex match??
         const rxMatch = /(\w+)(\d{6})([CP])(\d+)/.exec(option);
         if (!rxMatch) throw new Error('error parsing option')
@@ -68,7 +71,10 @@ export const getOptionsChain = async (symbol: string) => {
             option_type: (rxMatch[3] == 'C' ? 'C' : 'P') as 'C' | 'P',
             volume,
             delta,
-            gamma
+            gamma,
+            last_trade_price, 
+            ask, 
+            bid
         }
     });
     console.timeEnd(`getOptionsChain-mapping-${symbol}`)

@@ -16,7 +16,7 @@ import {
 } from "./lib/data.ts";
 
 import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet } from "./lib/historicalOptions.ts";
+import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet, getLiveCboeOptionsPricingData } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
 
@@ -301,6 +301,11 @@ router.get("/", (context) => {
     .get("/beta/symbols/:symbol/exposure", async (context) => {
         const { symbol } = context.params;
         context.response.body = await getExposureData(symbol, 'LIVE');
+        context.response.type = "application/json";
+    })
+    .get("/beta/symbols/:symbol/optionspricing", async (context) => {
+        const { symbol } = context.params;
+        context.response.body = await getLiveCboeOptionsPricingData(symbol);
         context.response.type = "application/json";
     })
     .post("/beta/tools/exposure", async (context) => {
