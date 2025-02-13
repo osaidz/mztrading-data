@@ -720,6 +720,10 @@
         "symbol": "ALTR"
     },
     {
+        "name": "ALT5 SIGMA CORP COM",
+        "symbol": "ALTS"
+    },
+    {
         "name": "ALLURION TECHNOLOGIES INC COMMON STOCK",
         "symbol": "ALUR"
     },
@@ -2094,6 +2098,10 @@
     {
         "name": "BIO RAD LABS INC CL A",
         "symbol": "BIO"
+    },
+    {
+        "name": "BIOAGE LABS INC COM",
+        "symbol": "BIOA"
     },
     {
         "name": "BIORA THERAPEUTICS INC COM",
@@ -3516,6 +3524,10 @@
         "symbol": "CMPS"
     },
     {
+        "name": "COMPASS THERAPEUTICS INC COM",
+        "symbol": "CMPX"
+    },
+    {
         "name": "COSTAMARE INC SHS",
         "symbol": "CMRE"
     },
@@ -3610,6 +3622,10 @@
     {
         "name": "CENTURY CASINOS INC COM",
         "symbol": "CNTY"
+    },
+    {
+        "name": "CINEVERSE CORP COM CL A",
+        "symbol": "CNVS"
     },
     {
         "name": "CNX RES CORP COM",
@@ -4034,6 +4050,10 @@
     {
         "name": "CSX CORP COM",
         "symbol": "CSX"
+    },
+    {
+        "name": "SIMPLIFY EXCHANGE TRADED FUNDS MANAGED FUTURES",
+        "symbol": "CTA"
     },
     {
         "name": "CINTAS CORP COM",
@@ -6224,6 +6244,10 @@
         "symbol": "FEPI"
     },
     {
+        "name": "FERROVIAL SE ORD SHS",
+        "symbol": "FER"
+    },
+    {
         "name": "FERGUSON ENTERPRISES INC COMMON STOCK NEW",
         "symbol": "FERG"
     },
@@ -7748,6 +7772,10 @@
         "symbol": "HAFC"
     },
     {
+        "name": "HAFNIA LTD SHS",
+        "symbol": "HAFN"
+    },
+    {
         "name": "HAIN CELESTIAL GROUP INC COM",
         "symbol": "HAIN"
     },
@@ -8278,10 +8306,6 @@
     {
         "name": "GLOBAL X FDS GBL X HYDROGEN",
         "symbol": "HYDR"
-    },
-    {
-        "name": "HYDROFARM HLDGS GROUP INC COM",
-        "symbol": "HYFM"
     },
     {
         "name": "ISHARES TR IBOXX HI YD ETF",
@@ -9340,6 +9364,10 @@
         "symbol": "JANX"
     },
     {
+        "name": "J P MORGAN EXCHANGE TRADED FD ACTIVE VALUE ETF",
+        "symbol": "JAVA"
+    },
+    {
         "name": "JAZZ PHARMACEUTICALS PLC SHS USD",
         "symbol": "JAZZ"
     },
@@ -10114,6 +10142,10 @@
     {
         "name": "LIFECORE BIOMEDICAL INC COM",
         "symbol": "LFCR"
+    },
+    {
+        "name": "TIDAL TR II YIELDMAX CRYPTO",
+        "symbol": "LFGY"
     },
     {
         "name": "LIFEMD INC COM",
@@ -14536,6 +14568,10 @@
         "symbol": "RNW"
     },
     {
+        "name": "T-Rex 2X Long HOOD Daily Target ETF",
+        "symbol": "ROBN"
+    },
+    {
         "name": "EXCHANGE TRADED CONCEPTS TRUST ROBO GLB ETF",
         "symbol": "ROBO"
     },
@@ -14554,10 +14590,6 @@
     {
         "name": "ROGERS CORP COM",
         "symbol": "ROG"
-    },
-    {
-        "name": "RETAIL OPPORTUNITY INVTS CORP COM",
-        "symbol": "ROIC"
     },
     {
         "name": "ROIVANT SCIENCES LTD SHS",
@@ -15258,6 +15290,10 @@
     {
         "name": "SENSEONICS HLDGS INC COM",
         "symbol": "SENS"
+    },
+    {
+        "name": "SEPTERNA INC COM",
+        "symbol": "SEPN"
     },
     {
         "name": "SERA PROGNOSTICS INC CLASS A COM",
@@ -17352,6 +17388,10 @@
         "symbol": "TSCO"
     },
     {
+        "name": "GRANITESHARES ETF TR 2X SHORT TSLA DA",
+        "symbol": "TSDD"
+    },
+    {
         "name": "TRINSEO PLC SHS",
         "symbol": "TSE"
     },
@@ -17754,6 +17794,10 @@
     {
         "name": "TIDAL TR II YIELDMAX ULTRA O",
         "symbol": "ULTY"
+    },
+    {
+        "name": "UNUSUAL MACHS INC COM SHS",
+        "symbol": "UMAC"
     },
     {
         "name": "UMB FINL CORP COM",
