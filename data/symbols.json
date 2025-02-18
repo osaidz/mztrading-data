@@ -6960,10 +6960,6 @@
         "symbol": "FYBR"
     },
     {
-        "name": "GLOBAL X FDS FINANCIALS COVRD",
-        "symbol": "FYLG"
-    },
-    {
         "name": "GENPACT LIMITED SHS",
         "symbol": "G"
     },
@@ -7984,7 +7980,7 @@
         "symbol": "HIBS"
     },
     {
-        "name": "HARTFORD FINL SVCS GROUP INC COM",
+        "name": "HARTFORD INSURANCE GROUP INC/T",
         "symbol": "HIG"
     },
     {
@@ -8308,6 +8304,10 @@
         "symbol": "HYDR"
     },
     {
+        "name": "HYDROFARM HLDGS GROUP INC COM",
+        "symbol": "HYFM"
+    },
+    {
         "name": "ISHARES TR IBOXX HI YD ETF",
         "symbol": "HYG"
     },
@@ -8318,10 +8318,6 @@
     {
         "name": "DBX ETF TR XTRACK USD HIGH",
         "symbol": "HYLB"
-    },
-    {
-        "name": "GLOBAL X FDS HEALTH CARE COVR",
-        "symbol": "HYLG"
     },
     {
         "name": "HYLIION HOLDINGS CORP COMMON STOCK",
@@ -11764,10 +11760,6 @@
         "symbol": "NEXA"
     },
     {
-        "name": "NEXXEN INTERNATIONAL LTD SPON ADR",
-        "symbol": "NEXN"
-    },
-    {
         "name": "NEXTDECADE CORP COM",
         "symbol": "NEXT"
     },
@@ -14092,10 +14084,6 @@
         "symbol": "QYLD"
     },
     {
-        "name": "GLOBAL X FDS NASDAQ 100 ESG",
-        "symbol": "QYLE"
-    },
-    {
         "name": "GLOBAL X FDS NASDQ 100 CVRDGW",
         "symbol": "QYLG"
     },
@@ -15360,6 +15348,10 @@
         "symbol": "SGHT"
     },
     {
+        "name": "SOMNIGROUP INTERNATIONAL INC",
+        "symbol": "SGI"
+    },
+    {
         "name": "SIGMA LITHIUM CORPORATION COM",
         "symbol": "SGML"
     },
@@ -15502,10 +15494,6 @@
     {
         "name": "AMPLIFY ETF TR AMPLIFY JUNIOR S",
         "symbol": "SILJ"
-    },
-    {
-        "name": "SILVERCREST METALS INC COM",
-        "symbol": "SILV"
     },
     {
         "name": "SILICON MOTION TECHNOLOGY CORP SPONSORED ADR",
@@ -17234,10 +17222,6 @@
     {
         "name": "TRIPLEPOINT VENTURE GROWTH BDC COM",
         "symbol": "TPVG"
-    },
-    {
-        "name": "TEMPUR SEALY INTL INC COM",
-        "symbol": "TPX"
     },
     {
         "name": "MANAGED PORTFOLIO SERIES TORTOISE NRAM PI",
@@ -19654,10 +19638,6 @@
     {
         "name": "ZUMIEZ INC COM",
         "symbol": "ZUMZ"
-    },
-    {
-        "name": "ZUORA INC COM CL A",
-        "symbol": "ZUO"
     },
     {
         "name": "ZEVRA THERAPEUTICS INC COM NEW",
