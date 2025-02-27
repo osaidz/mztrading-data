@@ -1792,6 +1792,10 @@
         "symbol": "BBCA"
     },
     {
+        "name": "CONCRETE PUMPING HLDGS INC COM",
+        "symbol": "BBCP"
+    },
+    {
         "name": "BANCO BRADESCO S A SP ADR PFD NEW",
         "symbol": "BBD"
     },
@@ -2024,10 +2028,6 @@
         "symbol": "BGS"
     },
     {
-        "name": "BRIGHT GREEN CORP COMMON STOCK",
-        "symbol": "BGXX"
-    },
-    {
         "name": "BAR HBR BANKSHARES COM",
         "symbol": "BHB"
     },
@@ -2042,10 +2042,6 @@
     {
         "name": "BRIGHTHOUSE FINL INC COM",
         "symbol": "BHF"
-    },
-    {
-        "name": "BENSON HILL INC COM NEW",
-        "symbol": "BHIL"
     },
     {
         "name": "BHP GROUP LTD SPONSORED ADS",
@@ -2776,6 +2772,10 @@
         "symbol": "CADE"
     },
     {
+        "name": "CANDEL THERAPEUTICS INC COM",
+        "symbol": "CADL"
+    },
+    {
         "name": "CAE INC COM",
         "symbol": "CAE"
     },
@@ -3050,6 +3050,10 @@
     {
         "name": "CADRE HLDGS INC COM",
         "symbol": "CDRE"
+    },
+    {
+        "name": "CIDARA THERAPEUTICS INC COM NEW",
+        "symbol": "CDTX"
     },
     {
         "name": "CDW CORP COM",
@@ -3552,7 +3556,7 @@
         "symbol": "CNA"
     },
     {
-        "name": "AMPLIFY ETF TR SEYMOUR CANNBS",
+        "name": "AMPLIFY ETF TR SEYMOUR CANB ETF",
         "symbol": "CNBS"
     },
     {
@@ -4098,10 +4102,6 @@
     {
         "name": "CASTOR MARITIME INC SHS",
         "symbol": "CTRM"
-    },
-    {
-        "name": "CITI TRENDS INC COM",
-        "symbol": "CTRN"
     },
     {
         "name": "CTS CORP COM",
@@ -5776,10 +5776,6 @@
         "symbol": "EVEX"
     },
     {
-        "name": "EVOGENE LTD SHS NEW",
-        "symbol": "EVGN"
-    },
-    {
         "name": "EVGO INC CL A COM",
         "symbol": "EVGO"
     },
@@ -6084,10 +6080,6 @@
         "symbol": "FBRT"
     },
     {
-        "name": "FORTE BIOSCIENCES INC COM NEW",
-        "symbol": "FBRX"
-    },
-    {
         "name": "FIRST TR EXCHANGE-TRADED FD NY ARCA BIOTECH",
         "symbol": "FBT"
     },
@@ -6212,7 +6204,7 @@
         "symbol": "FE"
     },
     {
-        "name": "5E ADVANCED MATERIALS INC COMMON STOCK",
+        "name": "5E ADVANCED MATERIALS INC COM NEW",
         "symbol": "FEAM"
     },
     {
@@ -7380,6 +7372,10 @@
         "symbol": "GNL"
     },
     {
+        "name": "GENELUX CORPORATION COM",
+        "symbol": "GNLX"
+    },
+    {
         "name": "GLOBAL X FDS GENOMIC BIOTECH",
         "symbol": "GNOM"
     },
@@ -7530,6 +7526,10 @@
     {
         "name": "GRAB HOLDINGS LIMITED CLASS A ORD",
         "symbol": "GRAB"
+    },
+    {
+        "name": "GRAIL INC COM",
+        "symbol": "GRAL"
     },
     {
         "name": "GREEN BRICK PARTNERS INC COM",
@@ -7980,7 +7980,7 @@
         "symbol": "HIBS"
     },
     {
-        "name": "HARTFORD INSURANCE GROUP INC/T",
+        "name": "HARTFORD INSURANCE GROUP INC COM",
         "symbol": "HIG"
     },
     {
@@ -9824,7 +9824,7 @@
         "symbol": "KOS"
     },
     {
-        "name": "KARYOPHARM THERAPEUTICS INC COM",
+        "name": "KARYOPHARM THERAPEUTICS INC COM NEW",
         "symbol": "KPTI"
     },
     {
@@ -10200,10 +10200,6 @@
         "symbol": "LI"
     },
     {
-        "name": "LI-CYCLE HOLDINGS CORP COM NEW",
-        "symbol": "LICY"
-    },
-    {
         "name": "LENNOX INTL INC COM",
         "symbol": "LII"
     },
@@ -10332,7 +10328,7 @@
         "symbol": "LOCO"
     },
     {
-        "name": "COMSTOCK INC COM NEW",
+        "name": "COMSTOCK INC COM SHS",
         "symbol": "LODE"
     },
     {
@@ -11004,7 +11000,7 @@
         "symbol": "MITT"
     },
     {
-        "name": "AMPLIFY ETF TR AMPLIFY ALTERNAT",
+        "name": "AMPLIFY ETF TR ALTRNTV HARV ETF",
         "symbol": "MJ"
     },
     {
@@ -11134,6 +11130,10 @@
     {
         "name": "MONRO INC COM",
         "symbol": "MNRO"
+    },
+    {
+        "name": "GRAYSCALE FUNDS TRUST BITCOIN MINERS",
+        "symbol": "MNRS"
     },
     {
         "name": "MINISO GROUP HLDG LTD SPONSORED ADS",
@@ -11274,6 +11274,10 @@
     {
         "name": "MODERNA INC COM",
         "symbol": "MRNA"
+    },
+    {
+        "name": "MILLROSE PPTYS INC COM CL A",
+        "symbol": "MRP"
     },
     {
         "name": "MERSANA THERAPEUTICS INC COM",
@@ -11624,10 +11628,6 @@
         "symbol": "NANR"
     },
     {
-        "name": "INARI MED INC COM",
-        "symbol": "NARI"
-    },
-    {
         "name": "NORDIC AMERICAN TANKERS LIMITE COM",
         "symbol": "NAT"
     },
@@ -11760,6 +11760,10 @@
         "symbol": "NEXA"
     },
     {
+        "name": "NEXXEN INTL LTD SHS NEW",
+        "symbol": "NEXN"
+    },
+    {
         "name": "NEXTDECADE CORP COM",
         "symbol": "NEXT"
     },
@@ -11857,7 +11861,7 @@
     },
     {
         "name": "NIKOLA CORP COM NEW",
-        "symbol": "NKLA"
+        "symbol": "NKLAQ"
     },
     {
         "name": "NEKTAR THERAPEUTICS COM",
@@ -12124,10 +12128,6 @@
         "symbol": "NUS"
     },
     {
-        "name": "NEOS ETF TRUST NASDAQ 100 HDGD",
-        "symbol": "NUSI"
-    },
-    {
         "name": "NUVATION BIO INC COM CL A",
         "symbol": "NUVB"
     },
@@ -12174,10 +12174,6 @@
     {
         "name": "DIREXION SHS ETF TR DAILY NVDA 2X SH",
         "symbol": "NVDU"
-    },
-    {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 1.75X LNG",
-        "symbol": "NVDW"
     },
     {
         "name": "T-Rex 2X Long NVIDIA Daily Target ETF",
@@ -12521,15 +12517,11 @@
     },
     {
         "name": "OMEGA THERAPEUTICS INC COMMON STOCK",
-        "symbol": "OMGA"
+        "symbol": "OMGAQ"
     },
     {
         "name": "OWENS & MINOR INC NEW COM",
         "symbol": "OMI"
-    },
-    {
-        "name": "SINGULAR GENOMICS SYSTEMS INC COM NEW",
-        "symbol": "OMIC"
     },
     {
         "name": "ON SEMICONDUCTOR CORP COM",
@@ -12838,6 +12830,14 @@
     {
         "name": "PAGSEGURO DIGITAL LTD COM CL A",
         "symbol": "PAGS"
+    },
+    {
+        "name": "PHIBRO ANIMAL HEALTH CORP CL A COM",
+        "symbol": "PAHC"
+    },
+    {
+        "name": "PROFICIENT AUTO LOGISTICS INC COM",
+        "symbol": "PAL"
     },
     {
         "name": "PACER FDS TR LUNT LRGCP MULTI",
@@ -13484,10 +13484,6 @@
         "symbol": "POWW"
     },
     {
-        "name": "TIDAL TR II THE MEET KEVIN",
-        "symbol": "PP"
-    },
-    {
         "name": "INVESCO EXCHANGE TRADED FD TR AEROSPACE DEFN",
         "symbol": "PPA"
     },
@@ -13976,6 +13972,10 @@
         "symbol": "QQQE"
     },
     {
+        "name": "NEOS ETF TRUST NASDAQ 100 HDGD",
+        "symbol": "QQQH"
+    },
+    {
         "name": "NEOS ETF TRUST NASDAQ 100 HIGH",
         "symbol": "QQQI"
     },
@@ -13992,10 +13992,6 @@
         "symbol": "QQQP"
     },
     {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LONG TR",
-        "symbol": "QQQW"
-    },
-    {
         "name": "TIDAL TR II DEFIANCE NASDAQ",
         "symbol": "QQQY"
     },
@@ -14010,10 +14006,6 @@
     {
         "name": "GLOBAL X FDS NASDAQ 100 RIS",
         "symbol": "QRMI"
-    },
-    {
-        "name": "QURATE RETAIL INC COM SER A",
-        "symbol": "QRTEA"
     },
     {
         "name": "QORVO INC COM",
@@ -14070,6 +14062,10 @@
     {
         "name": "UNIQURE NV SHS",
         "symbol": "QURE"
+    },
+    {
+        "name": "QVC GROUP INC COM SER A",
+        "symbol": "QVCGA"
     },
     {
         "name": "SPDR INDEX SHS FDS MSCI WRLD STRGIC",
@@ -14924,6 +14920,10 @@
         "symbol": "SAIC"
     },
     {
+        "name": "SAILPOINT INC COM",
+        "symbol": "SAIL"
+    },
+    {
         "name": "BOSTON BEER INC CL A",
         "symbol": "SAM"
     },
@@ -15348,7 +15348,7 @@
         "symbol": "SGHT"
     },
     {
-        "name": "SOMNIGROUP INTERNATIONAL INC",
+        "name": "SOMNIGROUP INTERNATIONAL INC COM",
         "symbol": "SGI"
     },
     {
@@ -15908,6 +15908,10 @@
         "symbol": "SOFI"
     },
     {
+        "name": "TIDAL TR II DEFIANCE DAILY",
+        "symbol": "SOFX"
+    },
+    {
         "name": "SOUND GROUP INC SPONSORED ADS",
         "symbol": "SOGP"
     },
@@ -15952,20 +15956,12 @@
         "symbol": "SOXL"
     },
     {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LNG SOX",
-        "symbol": "SOXM"
-    },
-    {
         "name": "INVESCO EXCH TRADED FD TR II INVESCO PHLX SM",
         "symbol": "SOXQ"
     },
     {
         "name": "DIREXION SHS ETF TR DAILY SEMICONDUC",
         "symbol": "SOXS"
-    },
-    {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LONG SO",
-        "symbol": "SOXW"
     },
     {
         "name": "ISHARES TR ISHARES SEMICDTR",
@@ -16212,10 +16208,6 @@
         "symbol": "SPY"
     },
     {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LNG SPY",
-        "symbol": "SPYB"
-    },
-    {
         "name": "SPDR SER TR PRTFLO S&P500 HI",
         "symbol": "SPYD"
     },
@@ -16226,10 +16218,6 @@
     {
         "name": "NEOS S&P 500 High Income ETF",
         "symbol": "SPYI"
-    },
-    {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LNG SPY",
-        "symbol": "SPYM"
     },
     {
         "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LNG SPY",
@@ -17412,10 +17400,6 @@
         "symbol": "TSLT"
     },
     {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 1.5X LNG T",
-        "symbol": "TSLW"
-    },
-    {
         "name": "SIXTH STREET SPECIALTY LENDING COM",
         "symbol": "TSLX"
     },
@@ -18096,10 +18080,6 @@
         "symbol": "VANI"
     },
     {
-        "name": "INNOVATE CORP COM NEW",
-        "symbol": "VATE"
-    },
-    {
         "name": "VANGUARD WORLD FD MATERIALS ETF",
         "symbol": "VAW"
     },
@@ -18518,10 +18498,6 @@
     {
         "name": "VAREX IMAGING CORP COM",
         "symbol": "VREX"
-    },
-    {
-        "name": "--Placeholder--",
-        "symbol": "VRMMW"
     },
     {
         "name": "VEREN INC COM NEW",
