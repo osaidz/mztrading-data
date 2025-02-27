@@ -1792,6 +1792,10 @@
         "symbol": "BBCA"
     },
     {
+        "name": "CONCRETE PUMPING HLDGS INC COM",
+        "symbol": "BBCP"
+    },
+    {
         "name": "BANCO BRADESCO S A SP ADR PFD NEW",
         "symbol": "BBD"
     },
@@ -2768,6 +2772,10 @@
         "symbol": "CADE"
     },
     {
+        "name": "CANDEL THERAPEUTICS INC COM",
+        "symbol": "CADL"
+    },
+    {
         "name": "CAE INC COM",
         "symbol": "CAE"
     },
@@ -3042,6 +3050,10 @@
     {
         "name": "CADRE HLDGS INC COM",
         "symbol": "CDRE"
+    },
+    {
+        "name": "CIDARA THERAPEUTICS INC COM NEW",
+        "symbol": "CDTX"
     },
     {
         "name": "CDW CORP COM",
@@ -7360,6 +7372,10 @@
         "symbol": "GNL"
     },
     {
+        "name": "GENELUX CORPORATION COM",
+        "symbol": "GNLX"
+    },
+    {
         "name": "GLOBAL X FDS GENOMIC BIOTECH",
         "symbol": "GNOM"
     },
@@ -7510,6 +7526,10 @@
     {
         "name": "GRAB HOLDINGS LIMITED CLASS A ORD",
         "symbol": "GRAB"
+    },
+    {
+        "name": "GRAIL INC COM",
+        "symbol": "GRAL"
     },
     {
         "name": "GREEN BRICK PARTNERS INC COM",
@@ -9804,7 +9824,7 @@
         "symbol": "KOS"
     },
     {
-        "name": "KARYOPHARM THERAPEUTICS INC COM",
+        "name": "KARYOPHARM THERAPEUTICS INC COM NEW",
         "symbol": "KPTI"
     },
     {
@@ -10180,10 +10200,6 @@
         "symbol": "LI"
     },
     {
-        "name": "LI-CYCLE HOLDINGS CORP COM NEW",
-        "symbol": "LICY"
-    },
-    {
         "name": "LENNOX INTL INC COM",
         "symbol": "LII"
     },
@@ -10312,7 +10328,7 @@
         "symbol": "LOCO"
     },
     {
-        "name": "COMSTOCK INC COM NEW",
+        "name": "COMSTOCK INC COM SHS",
         "symbol": "LODE"
     },
     {
@@ -11116,6 +11132,10 @@
         "symbol": "MNRO"
     },
     {
+        "name": "GRAYSCALE FUNDS TRUST BITCOIN MINERS",
+        "symbol": "MNRS"
+    },
+    {
         "name": "MINISO GROUP HLDG LTD SPONSORED ADS",
         "symbol": "MNSO"
     },
@@ -11254,6 +11274,10 @@
     {
         "name": "MODERNA INC COM",
         "symbol": "MRNA"
+    },
+    {
+        "name": "MILLROSE PPTYS INC COM CL A",
+        "symbol": "MRP"
     },
     {
         "name": "MERSANA THERAPEUTICS INC COM",
@@ -11837,7 +11861,7 @@
     },
     {
         "name": "NIKOLA CORP COM NEW",
-        "symbol": "NKLA"
+        "symbol": "NKLAQ"
     },
     {
         "name": "NEKTAR THERAPEUTICS COM",
@@ -12493,7 +12517,7 @@
     },
     {
         "name": "OMEGA THERAPEUTICS INC COMMON STOCK",
-        "symbol": "OMGA"
+        "symbol": "OMGAQ"
     },
     {
         "name": "OWENS & MINOR INC NEW COM",
@@ -12806,6 +12830,14 @@
     {
         "name": "PAGSEGURO DIGITAL LTD COM CL A",
         "symbol": "PAGS"
+    },
+    {
+        "name": "PHIBRO ANIMAL HEALTH CORP CL A COM",
+        "symbol": "PAHC"
+    },
+    {
+        "name": "PROFICIENT AUTO LOGISTICS INC COM",
+        "symbol": "PAL"
     },
     {
         "name": "PACER FDS TR LUNT LRGCP MULTI",
@@ -13452,10 +13484,6 @@
         "symbol": "POWW"
     },
     {
-        "name": "TIDAL TR II THE MEET KEVIN",
-        "symbol": "PP"
-    },
-    {
         "name": "INVESCO EXCHANGE TRADED FD TR AEROSPACE DEFN",
         "symbol": "PPA"
     },
@@ -14036,7 +14064,7 @@
         "symbol": "QURE"
     },
     {
-        "name": "QVC GROUP INC",
+        "name": "QVC GROUP INC COM SER A",
         "symbol": "QVCGA"
     },
     {
@@ -15878,6 +15906,10 @@
     {
         "name": "SOFI TECHNOLOGIES INC COM",
         "symbol": "SOFI"
+    },
+    {
+        "name": "TIDAL TR II DEFIANCE DAILY",
+        "symbol": "SOFX"
     },
     {
         "name": "SOUND GROUP INC SPONSORED ADS",
