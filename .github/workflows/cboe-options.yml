@@ -58,14 +58,20 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: cboe-data
+      # - name: Release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "temp/*.parquet"
+      #     tag: ${{ env.RELEASE_NAME }}
+      #     commit: "main"
+      #     allowUpdates: "true"
+      #     artifactErrorsFailBuild: "true"
       - name: Release
-        uses: ncipollo/release-action@v1
+        uses: softprops/action-gh-release@v2
         with:
-          artifacts: "temp/*.parquet"
-          tag: ${{ env.RELEASE_NAME }}
-          commit: "main"
-          allowUpdates: "true"
-          artifactErrorsFailBuild: "true"
+          files: "temp/*.parquet"
+          tag_name: ${{ env.RELEASE_NAME }}
+
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
