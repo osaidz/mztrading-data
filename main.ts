@@ -293,9 +293,9 @@ router.get("/", (context) => {
         context.response.type = "application/json";
     })
     .get("/beta/reports/optionsgreekssummary", async (context) => {
-        const { dt } = getQuery(context);
+        const { dt, dte } = getQuery(context);
         if (!dt) throw new Error("dt parameter is missing!");
-        context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt);
+        context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
         context.response.type = "application/json";
     })
     .get("/beta/symbols/:symbol/exposure", async (context) => {

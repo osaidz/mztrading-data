@@ -58,8 +58,9 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, delta: number, gamma: number, option_type: 'C' | 'P', strike: string, open_interest: number, volume: number }[];
 }
 
-export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string) => {
+export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string, dte: number | undefined) => {
     const conn = await getConnection();
+    const dteFilterExpression =  dte ? `AND expiration < date_add(dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days
     const arrowResult = await conn.send(`
             SELECT
                 option_symbol,
@@ -77,6 +78,7 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string) => {
                 call_volume/put_volume as call_put_volume_ratio
             FROM 'db.parquet' 
             WHERE dt = '${dt}'
+            ${dteFilterExpression}
             GROUP BY option_symbol
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
