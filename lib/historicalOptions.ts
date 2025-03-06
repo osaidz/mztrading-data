@@ -42,6 +42,13 @@ export const getHistoricalSnapshotDatesFromParquet = async (symbol: string) => {
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
 }
 
+//find a way to parametrize the query
+export const getHistoricalSnapshotDates = async () => {
+    const conn = await getConnection();
+    const arrowResult = await conn.send(`SELECT DISTINCT CAST(dt as STRING) as dt FROM 'db.parquet'`);
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
+}
+
 export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: string) => {
     const conn = await getConnection();
     const arrowResult = await conn.send(`SELECT cast(expiration as string) as expiration, delta, option_type, gamma, cast(strike as string) strike, open_interest, volume 
