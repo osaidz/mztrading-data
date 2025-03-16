@@ -16,7 +16,7 @@ import {
 } from "./lib/data.ts";
 
 import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet, getLiveCboeOptionsPricingData, getHistoricalSnapshotDates } from "./lib/historicalOptions.ts";
+import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet, getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
 
@@ -298,17 +298,17 @@ router.get("/", (context) => {
         context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
         context.response.type = "application/json";
     })
-    .get("/beta/symbols/:symbol/exposure", async (context) => {
+    .get("/beta/symbols/:symbol/exposure", async (context) => {             //remove it
         const { symbol } = context.params;
         context.response.body = await getExposureData(symbol, 'LIVE');
         context.response.type = "application/json";
     })
-    .get("/beta/symbols/:symbol/optionspricing", async (context) => {
+    .get("/beta/symbols/:symbol/optionspricing", async (context) => {   //remove it
         const { symbol } = context.params;
         context.response.body = await getLiveCboeOptionsPricingData(symbol);
         context.response.type = "application/json";
     })
-    .post("/beta/tools/exposure", async (context) => {
+    .post("/beta/tools/exposure", async (context) => {                   //remove it
         if (!context.request.hasBody) {
             context.throw(415);
         }
@@ -320,12 +320,41 @@ router.get("/", (context) => {
         const { symbol } = context.params;
         const { q } = getQuery(context);
         const indicators = q.split(',');
-
+        
         context.response.body = await getIndicatorValues(symbol, indicators)
+        context.response.type = "application/json";
+    })
+    .get("/api/options/:symbol/exposure", async (context) => {
+        const { symbol } = context.params;
+        context.response.body = await getExposureData(symbol, 'LIVE');
+        context.response.type = "application/json";
+    })
+    .get("/api/options/:symbol/pricing", async (context) => {
+        const { symbol } = context.params;
+        context.response.body = await getLiveCboeOptionsPricingData(symbol);
+        context.response.type = "application/json";
+    })
+    .post("/api/options/exposure/calculate", async (context) => {
+        if (!context.request.hasBody) {
+            context.throw(415);
+        }
+        const { data, spotPrice, spotDate } = await context.request.body().value as ExposureDataRequest;
+        context.response.body = calculateExpsoure(spotPrice, data, spotDate);
         context.response.type = "application/json";
     })
     .get("/api/options/exposures/dates", async (context) => {
         context.response.body = await getHistoricalSnapshotDates();
+        context.response.type = "application/json";
+    })
+    .get("/api/options/report/greeks", async(context) => {
+        const { dt, dte } = getQuery(context);
+        if (!dt) throw new Error("dt parameter is missing!");
+        context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
+        context.response.type = "application/json";
+    })
+    .get("/api/options/:symbol/report/greeks", async(context) => {
+        const { symbol } = context.params;        
+        context.response.body = await getHistoricalGreeksSummaryDataBySymbolFromParquet(symbol);
         context.response.type = "application/json";
     });
 
