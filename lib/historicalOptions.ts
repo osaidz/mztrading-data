@@ -13,7 +13,7 @@ const logger = new ConsoleLogger();
 const JSDELIVR_BUNDLES = getJsDelivrBundles();
 
 const initialize = async () => {
-    const { assetUrl, name } = optionsRollingSummary;
+    const { assetUrl, name, stockUrl } = optionsRollingSummary;
     // const ds = 'https://github.com/mnsrulz/mztrading-data/releases/download/archives/output_test_all.parquet';
 
     //HTTP paths are not supported due to xhr not available in deno.
@@ -22,9 +22,12 @@ const initialize = async () => {
     console.log(`initializing duckdb with ${assetUrl} and name: ${name}`);
     const db = await createDuckDB(JSDELIVR_BUNDLES, logger, DEFAULT_RUNTIME);
     await db.instantiate(() => { });
-    const arrayBuffer = await fetch(assetUrl)    //let's initialize the data set in memory
+    const optionsDataBuffer = await fetch(assetUrl)    //let's initialize the data set in memory
         .then(r => r.arrayBuffer());
-    db.registerFileBuffer('db.parquet', new Uint8Array(arrayBuffer));
+    const stocksDataBuffer = await fetch(stockUrl)    //let's initialize the data set in memory
+        .then(r => r.arrayBuffer());
+    db.registerFileBuffer('db.parquet', new Uint8Array(optionsDataBuffer));
+    db.registerFileBuffer('stocks.parquet', new Uint8Array(stocksDataBuffer));
     return db;
 }
 
@@ -92,6 +95,8 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
     // const dteFilterExpression =  dte ? `AND expiration < date_add(dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days
     const arrowResult = await conn.send(`
             SELECT
+                CAST(O.dt as STRING) as dt,
+                P.close as price,
                 round(SUM(IF(option_type = 'C', open_interest * delta, 0))) as call_delta,
                 round(SUM(IF(option_type = 'P', open_interest * abs(delta), 0))) as put_delta,
                 round(SUM(IF(option_type = 'C', open_interest * gamma, 0))) as call_gamma,
@@ -104,9 +109,11 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
                 call_gamma-put_gamma as net_gamma,
                 call_oi/put_oi as call_put_oi_ratio,
                 call_volume/put_volume as call_put_volume_ratio
-            FROM 'db.parquet' 
+            FROM 'db.parquet' O
+            JOIN 'stocks.parquet' P ON O.dt = P.dt AND O.option_symbol = P.symbol
             WHERE option_symbol = '${symbol}'
-            GROUP BY dt
+            GROUP BY O.dt, P.close
+            ORDER BY 1
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
         option_symbol: string, call_delta: number, put_delta: number, call_gamma: number, put_gamma: number, call_oi: number,
