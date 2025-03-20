@@ -1,5 +1,5 @@
 {
-    "name": "CBOE_ROLLING_2025-03-19-12-50-29",
-    "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_ROLLING_2025-03-19-12-50-29/options_cboe_rolling_30.parquet",
-    "stockUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_ROLLING_2025-03-19-12-50-29/stocks_cboe_rolling_30.parquet"
+    "name": "CBOE_ROLLING_2025-03-20-12-48-20",
+    "assetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_ROLLING_2025-03-20-12-48-20/options_cboe_rolling_30.parquet",
+    "stockUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_ROLLING_2025-03-20-12-48-20/stocks_cboe_rolling_30.parquet"
 }
