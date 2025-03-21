@@ -7,6 +7,7 @@ import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
 import ky from "https://esm.sh/ky@1.2.3";
 import {
+AvailableSnapshotDates,
     CboeOptionsRawSummary,
     getOptionsDataSummary,
     mapDataToLegacy,
@@ -346,14 +347,18 @@ router.get("/", (context) => {
         context.response.body = await getHistoricalSnapshotDates();
         context.response.type = "application/json";
     })
-    .get("/api/options/report/greeks", async(context) => {
+    .get("/api/options/exposures/snapshot-dates", (context) => {
+        context.response.body = AvailableSnapshotDates;
+        context.response.type = "application/json";
+    })
+    .get("/api/options/report/greeks", async (context) => {
         const { dt, dte } = getQuery(context);
         if (!dt) throw new Error("dt parameter is missing!");
         context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
         context.response.type = "application/json";
     })
-    .get("/api/options/:symbol/report/greeks", async(context) => {
-        const { symbol } = context.params;        
+    .get("/api/options/:symbol/report/greeks", async (context) => {
+        const { symbol } = context.params;
         context.response.body = await getHistoricalGreeksSummaryDataBySymbolFromParquet(symbol);
         context.response.type = "application/json";
     });
