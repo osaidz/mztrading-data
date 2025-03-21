@@ -1,6 +1,6 @@
 
 // @deno-types="https://esm.sh/v135/@duckdb/duckdb-wasm@1.28.0/dist/duckdb-browser-blocking.d.ts"
-import { createDuckDB, getJsDelivrBundles, ConsoleLogger, DEFAULT_RUNTIME } from 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.28.0/dist/duckdb-browser-blocking.mjs/+esm';
+import { createDuckDB, getJsDelivrBundles, ConsoleLogger, DEFAULT_RUNTIME, DuckDBBindings } from 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.28.0/dist/duckdb-browser-blocking.mjs/+esm';
 
 import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
     type: "json",
@@ -31,9 +31,10 @@ const initialize = async () => {
     return db;
 }
 
-const dbPromise = initialize();
+let dbPromise: Promise<DuckDBBindings>;
 
 export const getConnection = async () => {
+    if (dbPromise == null) dbPromise = initialize();
     const dbPromiseVal = await dbPromise;
     return dbPromiseVal.connect();
 }
@@ -63,7 +64,7 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
 
 export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string, dte: number | undefined) => {
     const conn = await getConnection();
-    const dteFilterExpression =  dte ? `AND expiration < date_add(dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days
+    const dteFilterExpression = dte ? `AND expiration < date_add(dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days
     const arrowResult = await conn.send(`
             SELECT
                 option_symbol,
@@ -264,10 +265,10 @@ async function getLiveCboeOptionData(symbol: string) {
     return { spotPrice: currentPrice, indexedObject };
 }
 
-export async function getLiveCboeOptionsPricingData(symbol: string) {    
+export async function getLiveCboeOptionsPricingData(symbol: string) {
     const { data, currentPrice } = await getOptionsChain(symbol);
     const options = data.reduce((previous, current) => {
-        previous[current.expiration] = previous[current.expiration] || {c: {}, p: {}};        
+        previous[current.expiration] = previous[current.expiration] || { c: {}, p: {} };
         if (current.option_type == 'C') {
             previous[current.expiration].c[current.strike] = { oi: current.open_interest, v: current.volume, l: current.last_trade_price, a: current.ask, b: current.bid };
         } else if (current.option_type == 'P') {
