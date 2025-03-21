@@ -57,7 +57,7 @@ export const getOptionsSnapshotSummary = () => {
 
 export const OptionsSnapshotSummary= (optionsSnapshotSummary as OptionsSnapshotSummary);
 
-export const AvailableSnapshotDates = Object.values(OptionsSnapshotSummary).map(k=> k.displayName);
+export const AvailableSnapshotDates = Object.values(OptionsSnapshotSummary).map(k=> ({dt: k.displayName}));
 
 export const OptionsSnapshotSummaryLegacy = Object.fromEntries(Object.keys(OptionsSnapshotSummary).map(j=> [OptionsSnapshotSummary[j].displayName, { symbols: OptionsSnapshotSummary[j].symbols} ]));
 
