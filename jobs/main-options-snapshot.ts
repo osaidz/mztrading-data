@@ -7,7 +7,7 @@ import { chunk } from "jsr:@std/collections";
 
 const maxBatches = 10;
 
-import { getOptionsDataSummary, getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol } from "../lib/data.ts";
+import { getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol, getCboeLatestDateAndSymbols } from "../lib/data.ts";
 const dataFolder = `temp/options-snapshots`;
 await ensureDir(dataFolder);
 const data = getOptionsSnapshotSummary();
@@ -22,13 +22,12 @@ data[releaseName] = {
 };
 const currentRelease = data[releaseName];
 
-const dataSummary = getOptionsDataSummary()
-const latestObject = Object.keys(dataSummary).pop() || '';
-const latestDate = dataSummary[latestObject].displayName;
+const latestDateAndSymbols = getCboeLatestDateAndSymbols();
 let totalSymbols = 0;
 let processingCounter = 0;
-if (latestDate) {
-    const allSymbols = Object.keys(dataSummary[latestObject].symbols);//.slice(0, 30); //for testing work only with 3 items
+if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
+    console.log(`Latest date: ${latestDateAndSymbols.latestDate}`);
+    const allSymbols = latestDateAndSymbols.symbols;//.slice(0, 30); //for testing work only with 3 items
     console.log(`Found ${allSymbols.length} tickers...`);
     totalSymbols = allSymbols.length;
 
@@ -46,14 +45,14 @@ if (latestDate) {
 
     console.log(`Summary file generated successfully!`);
 } else {
-    console.log(`Unable to find any latest date in the data summary file!`);
+    throw new Error(`Unable to find any latest date in the data summary file!`);    
 }
 
 async function processBatch(batchSymbols: string[]) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(
-        `https://mztrading.netlify.app/tools/snapshot?showDexGex=true&dgextab=DEX&print=true&datamode=${encodeURIComponent(latestDate)}`,
+        `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
         {
             waitUntil: "networkidle2",
         },
@@ -95,12 +94,14 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
 
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
     let varurlname = `urldex${allSymbols.indexOf(symbol)}${new Date().getTime()}`
-    await page.evaluate(`
+    const scriptToRun = `
             let ${varurlname} = new URL(location.href);
             ${varurlname}.searchParams.set("dgextab", "DEX");
             ${varurlname}.searchParams.set("symbol", "${symbol}");
             history.replaceState(null, "", ${varurlname});
-        `);
+        `;
+    // console.log(`Script: ${scriptToRun}`);
+    await page.evaluate(scriptToRun);
 
     console.log(`Generating high definition DEX snapshot page for ${symbol}`);
 
@@ -115,11 +116,12 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
     await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.sdFileName}`); // take a screenshot and save it to a file
 
     varurlname = `urlgex${allSymbols.indexOf(symbol)}${new Date().getTime()}`
-    await page.evaluate(`
+    const scriptToRunGex = `
         let ${varurlname} = new URL(location.href);
         ${varurlname}.searchParams.set("dgextab", "GEX");
         history.replaceState(null, "", ${varurlname});
-        `);
+        `;
+    await page.evaluate(scriptToRunGex);
     console.log(`Generating standard definition GEX snapshot page for ${symbol}`);
 
     await captureScreenshot(page, `${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file

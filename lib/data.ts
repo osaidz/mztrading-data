@@ -12,6 +12,10 @@ import cboeOptionsSummary from "./../data/cboe-options-summary.json" with {
     type: "json",
 };
 
+import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
+    type: "json",
+};
+
 import symbols from "./../data/symbols.json" with {
     type: "json",
 };
@@ -130,3 +134,14 @@ export const searchTicker = (q: string) => {
 }
 
 export const CboeOptionsRawSummary = (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl }) => ({ name, optionsAssetUrl, dt: name.replace('CBOE_OPTIONS_DATA_', '').substring(0, 10) }));
+
+export const getCboeLatestDateAndSymbols = () => {
+    const latestDate = optionsRollingSummary.symbolsSummary.map(k => k.dt).sort().pop();
+    if (latestDate) {
+        return {
+            latestDate,
+            symbols: optionsRollingSummary.symbolsSummary.filter(k => k.dt = latestDate).map(k => k.symbol)
+        }
+    }
+    return null;
+} 
