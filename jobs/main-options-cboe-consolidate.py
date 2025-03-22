@@ -67,6 +67,8 @@ print(f"File size after compression: {file_size_mb:.2f} MB")
 # file_size_mb = file_size_bytes / (1024 * 1024)
 # print(f"File size after compression: {file_size_mb:.2f} MB")
 
+symbols_summary_df = duckdb.sql("SELECT distinct symbol, cast(dt as string) as dt FROM STOCKSDATA").to_df()
+symbols_summary = symbols_summary_df.to_json(orient='records')
 
 summary_file = "data/cboe-options-rolling.json"
 # Write updated summary back to the JSON file
@@ -74,7 +76,8 @@ with open(summary_file, "w") as file:
     json.dump({
         "name": release_name, 
         "assetUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/options_cboe_rolling_30.parquet", 
-        "stockUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/stocks_cboe_rolling_30.parquet"
+        "stockUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/stocks_cboe_rolling_30.parquet",
+        "symbolsSummary": json.loads(symbols_summary)
     }, file, indent=4)
 
 print(f"Updated summary file: {summary_file}")
