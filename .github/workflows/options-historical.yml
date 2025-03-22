@@ -3,7 +3,7 @@ name: Publish ticker options data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 11 * * 1-6'
+    - cron: '0 10 * * 1-6'
 
 permissions:
   contents: write
