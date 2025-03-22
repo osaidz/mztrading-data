@@ -2,7 +2,7 @@ name: Publish snapshots
 
 on:
   workflow_run:
-    workflows: ["Publish ticker options data"]
+    workflows: ["CBOE options rolling parquet"]
     branches: [main]
     types: 
       - completed
