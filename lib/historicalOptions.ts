@@ -97,7 +97,7 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
     const arrowResult = await conn.send(`
             SELECT
                 CAST(O.dt as STRING) as dt,
-                round(P.close, 2) as price,
+                round(CAST(P.close as double), 2) as price,
                 round(SUM(IF(option_type = 'C', open_interest * delta, 0))) as call_delta,
                 round(SUM(IF(option_type = 'P', open_interest * abs(delta), 0))) as put_delta,
                 round(SUM(IF(option_type = 'C', open_interest * gamma, 0))) as call_gamma,
@@ -117,8 +117,9 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
             ORDER BY 1
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
-        option_symbol: string, call_delta: number, put_delta: number, call_gamma: number, put_gamma: number, call_oi: number,
-        put_oi: number, call_volume: number, put_volume: number, call_put_dex_ratio: number, net_gamma: number, call_put_oi_ratio: number, call_put_volume_ratio: number
+        dt: string, price: number, call_delta: number, put_delta: number, call_gamma: number, put_gamma: number, call_oi: number,
+        put_oi: number, call_volume: number, put_volume: number, call_put_dex_ratio: number, net_gamma: number, 
+        call_put_oi_ratio: number, call_put_volume_ratio: number
     }[];
 }
 
