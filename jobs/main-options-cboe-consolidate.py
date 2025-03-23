@@ -8,6 +8,10 @@ file_path = './data/cboe-options-summary.json'
 
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
+with open("data/cboe-exception-symbols.json", "r") as file:
+    exception_symbols = json.load(file)
+    print(f"Loaded {len(exception_symbols)} exception symbols: {exception_symbols}")
+
 with open(file_path, 'r') as file:
     data = json.load(file)
 
@@ -17,7 +21,7 @@ options_data = [(item['optionsAssetUrl'], item['stocksAssetUrl'], item['name']) 
 # Take the last 30 entries
 last_30_entries = options_data[-30:]
 
-duckdb.sql(f"""CREATE OR REPLACE TABLE OPDATA (dt DATE, option string, option_symbol string, expiration string, option_type string, strike float, open_interest int, volume int, delta float, gamma float)""")
+duckdb.sql(f"""CREATE OR REPLACE TABLE OPDATA (dt DATE, option string, symbol string, option_symbol string, expiration string, option_type string, strike float, open_interest int, volume int, delta float, gamma float)""")
 duckdb.sql(f"""CREATE OR REPLACE TABLE STOCKSDATA (dt DATE, symbol string, current_price float, price_change float, price_change_percent float, open float, high float, low float, close float, prev_day_close float)""")
 
 # Print the extracted data
@@ -29,12 +33,24 @@ for optionsAssetUrl, stocksAssetUrl, name in last_30_entries:
     date = datetime.strptime(date_str, '%Y-%m-%d').date()
     print(f"Parsed Date: {date}")
     
-    duckdb.sql(f"""INSERT INTO OPDATA SELECT '{date}' AS dt, option, UNNEST(regexp_extract(option, '(\w+)(\d{{6}})([CP])(\d+)', ['option_symbol', 'expiration', 'option_type', 'strike'])), open_interest, volume, delta,gamma fROM read_parquet('{optionsAssetUrl}')""")
-    duckdb.sql(f"""INSERT INTO STOCKSDATA SELECT '{date}' AS dt, symbol, current_price, price_change, price_change_percent, open, high, low, close, prev_day_close FROM read_parquet('{stocksAssetUrl}')""")
+    # _ ^ symbols are ones with index options like spx, vix etc
+    duckdb.sql(f"""INSERT INTO OPDATA SELECT '{date}' AS dt, replace(symbol,'_', '') as symbol, option, UNNEST(regexp_extract(option, '(\w+)(\d{{6}})([CP])(\d+)', ['option_symbol', 'expiration', 'option_type', 'strike'])), open_interest, volume, delta,gamma fROM read_parquet('{optionsAssetUrl}')""")
+    duckdb.sql(f"""INSERT INTO STOCKSDATA SELECT '{date}' AS dt, replace(symbol,'^', '') symbol, current_price, price_change, price_change_percent, open, high, low, close, prev_day_close FROM read_parquet('{stocksAssetUrl}')""")
   else:
     raise ValueError(f"Unable to parse date from name: {name}")
   
 duckdb.sql("UPDATE OPDATA SET strike = strike/1000, expiration='20'|| expiration")
+
+# Update the option symbol for exception symbols like spx, vix, etc
+for exception_symbol in exception_symbols:
+  print(f"Updating exception symbol options: {exception_symbol}")
+  duckdb.sql(f"""
+    UPDATE OPDATA
+    SET option_symbol = '{exception_symbol}'
+    WHERE symbol = '{exception_symbol}'
+  """)
+
+# print(duckdb.sql("SELECT DISTINCT option_symbol FROM OPDATA ORDER BY 1").to_df())
 
 os.makedirs("temp", exist_ok=True)  # Ensure the 'data' folder exists
 output_file = "temp/options_cboe_rolling_30.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
