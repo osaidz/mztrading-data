@@ -21,7 +21,7 @@ options_data = [(item['optionsAssetUrl'], item['stocksAssetUrl'], item['name']) 
 # Take the last 30 entries
 last_30_entries = options_data[-30:]
 
-duckdb.sql(f"""CREATE OR REPLACE TABLE OPDATA (dt DATE, option string, symbol string, option_symbol string, expiration string, option_type string, strike float, open_interest int, volume int, delta float, gamma float)""")
+duckdb.sql(f"""CREATE OR REPLACE TABLE OPDATA (dt DATE, symbol string, option string, option_symbol string, expiration string, option_type string, strike float, open_interest int, volume int, delta float, gamma float)""")
 duckdb.sql(f"""CREATE OR REPLACE TABLE STOCKSDATA (dt DATE, symbol string, current_price float, price_change float, price_change_percent float, open float, high float, low float, close float, prev_day_close float)""")
 
 # Print the extracted data
