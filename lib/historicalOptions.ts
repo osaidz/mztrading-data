@@ -76,10 +76,10 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string, dte:
                 round(SUM(IF(option_type = 'P', open_interest, 0))) as put_oi,
                 round(SUM(IF(option_type = 'C', volume, 0))) as call_volume,
                 round(SUM(IF(option_type = 'P', volume, 0))) as put_volume,
-                call_delta/put_delta as call_put_dex_ratio,
                 call_gamma-put_gamma as net_gamma,
-                call_oi/put_oi as call_put_oi_ratio,
-                call_volume/put_volume as call_put_volume_ratio
+                round(call_delta/put_delta, 2) as call_put_dex_ratio,
+                round(call_oi/put_oi, 2) as call_put_oi_ratio,
+                round(call_volume/put_volume, 2) as call_put_volume_ratio
             FROM 'db.parquet' 
             WHERE dt = '${dt}'
             ${dteFilterExpression}
@@ -97,7 +97,7 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
     const arrowResult = await conn.send(`
             SELECT
                 CAST(O.dt as STRING) as dt,
-                P.close as price,
+                round(P.close, 2) as price,
                 round(SUM(IF(option_type = 'C', open_interest * delta, 0))) as call_delta,
                 round(SUM(IF(option_type = 'P', open_interest * abs(delta), 0))) as put_delta,
                 round(SUM(IF(option_type = 'C', open_interest * gamma, 0))) as call_gamma,
@@ -106,10 +106,10 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
                 round(SUM(IF(option_type = 'P', open_interest, 0))) as put_oi,
                 round(SUM(IF(option_type = 'C', volume, 0))) as call_volume,
                 round(SUM(IF(option_type = 'P', volume, 0))) as put_volume,
-                call_delta/put_delta as call_put_dex_ratio,
                 call_gamma-put_gamma as net_gamma,
-                call_oi/put_oi as call_put_oi_ratio,
-                call_volume/put_volume as call_put_volume_ratio
+                round(call_delta/put_delta, 2) as call_put_dex_ratio,
+                round(call_oi/put_oi, 2) as call_put_oi_ratio,
+                round(call_volume/put_volume, 2) as call_put_volume_ratio
             FROM 'db.parquet' O
             JOIN 'stocks.parquet' P ON O.dt = P.dt AND O.option_symbol = P.symbol
             WHERE option_symbol = '${symbol}'
