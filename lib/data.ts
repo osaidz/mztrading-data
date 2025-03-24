@@ -140,7 +140,7 @@ export const getCboeLatestDateAndSymbols = () => {
     if (latestDate) {
         return {
             latestDate,
-            symbols: optionsRollingSummary.symbolsSummary.filter(k => k.dt = latestDate).map(k => k.symbol)
+            symbols: optionsRollingSummary.symbolsSummary.filter(k => k.dt == latestDate).map(k => k.symbol)
         }
     }
     return null;
