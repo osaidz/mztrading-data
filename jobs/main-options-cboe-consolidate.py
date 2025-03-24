@@ -91,7 +91,7 @@ duckdb.sql(f"""
           COPY 
             (SELECT
                 CAST(O.dt as STRING) as dt,
-                O.symbol,
+                P.symbol,
                 round(CAST(P.close as double), 2) as price,
                 round(SUM(IF(option_type = 'C', open_interest * delta, 0))) as call_delta,
                 round(SUM(IF(option_type = 'P', open_interest * abs(delta), 0))) as put_delta,
@@ -102,7 +102,7 @@ duckdb.sql(f"""
                 round(SUM(IF(option_type = 'C', volume, 0))) as call_volume,
                 round(SUM(IF(option_type = 'P', volume, 0))) as put_volume,
                 call_gamma-put_gamma as net_gamma,
-                IF(call_delta = 0 OR put_delta = 0, round(call_delta/put_delta, 2), 0) as call_put_dex_ratio,
+                IF(call_delta = 0 OR put_delta = 0, 0, round(call_delta/put_delta, 2)) as call_put_dex_ratio,
                 IF(call_oi=0 OR put_oi = 0, 0, round(call_oi/put_oi, 2)) as call_put_oi_ratio,
                 IF(call_volume = 0 or put_volume = 0, 0, round(call_volume/put_volume, 2)) as call_put_volume_ratio
             FROM OPDATA O
