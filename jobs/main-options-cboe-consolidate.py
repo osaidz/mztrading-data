@@ -86,6 +86,32 @@ print(f"File size after compression: {file_size_mb:.2f} MB")
 symbols_summary_df = duckdb.sql("SELECT distinct symbol, cast(dt as string) as dt FROM STOCKSDATA").to_df()
 symbols_summary = symbols_summary_df.to_json(orient='records')
 
+summary_report_file = "temp/all_symbols_summary_report.csv"
+duckdb.sql(f"""
+          COPY 
+            (SELECT
+                CAST(O.dt as STRING) as dt,
+                O.symbol,
+                round(CAST(P.close as double), 2) as price,
+                round(SUM(IF(option_type = 'C', open_interest * delta, 0))) as call_delta,
+                round(SUM(IF(option_type = 'P', open_interest * abs(delta), 0))) as put_delta,
+                round(SUM(IF(option_type = 'C', open_interest * gamma, 0))) as call_gamma,
+                round(SUM(IF(option_type = 'P', open_interest * gamma, 0))) as put_gamma,
+                round(SUM(IF(option_type = 'C', open_interest, 0))) as call_oi,
+                round(SUM(IF(option_type = 'P', open_interest, 0))) as put_oi,
+                round(SUM(IF(option_type = 'C', volume, 0))) as call_volume,
+                round(SUM(IF(option_type = 'P', volume, 0))) as put_volume,
+                call_gamma-put_gamma as net_gamma,
+                round(call_delta/put_delta, 2) as call_put_dex_ratio,
+                round(call_oi/put_oi, 2) as call_put_oi_ratio,
+                round(call_volume/put_volume, 2) as call_put_volume_ratio
+            FROM OPDATA O
+            JOIN STOCKSDATA P ON O.dt = P.dt AND O.option_symbol = P.symbol            
+            GROUP BY O.dt, O.symbol, P.close
+            ORDER BY 1)
+          TO '{summary_report_file}' (HEADER, DELIMITER ',')
+""")
+
 summary_file = "data/cboe-options-rolling.json"
 # Write updated summary back to the JSON file
 with open(summary_file, "w") as file:
@@ -93,6 +119,7 @@ with open(summary_file, "w") as file:
         "name": release_name, 
         "assetUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/options_cboe_rolling_30.parquet", 
         "stockUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/stocks_cboe_rolling_30.parquet",
+        "greeksReportCsv":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/all_symbols_summary_report.csv",
         "symbolsSummary": json.loads(symbols_summary)
     }, file, indent=4)
 
