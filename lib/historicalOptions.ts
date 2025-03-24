@@ -62,11 +62,13 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, delta: number, gamma: number, option_type: 'C' | 'P', strike: string, open_interest: number, volume: number }[];
 }
 
-export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string, dte: number | undefined) => {
+export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | undefined, dte: number | undefined) => {
     const conn = await getConnection();
+    const dtFilterExpression = dt ? `AND dt = '${dt}'` : '';
     const dteFilterExpression = dte ? `AND expiration < date_add(dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days
     const arrowResult = await conn.send(`
             SELECT
+                dt,
                 option_symbol,
                 round(SUM(IF(option_type = 'C', open_interest * delta, 0))) as call_delta,
                 round(SUM(IF(option_type = 'P', open_interest * abs(delta), 0))) as put_delta,
@@ -77,13 +79,14 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string, dte:
                 round(SUM(IF(option_type = 'C', volume, 0))) as call_volume,
                 round(SUM(IF(option_type = 'P', volume, 0))) as put_volume,
                 call_gamma-put_gamma as net_gamma,
-                round(call_delta/put_delta, 2) as call_put_dex_ratio,
-                round(call_oi/put_oi, 2) as call_put_oi_ratio,
-                round(call_volume/put_volume, 2) as call_put_volume_ratio
+                IF(call_delta = 0 OR put_delta = 0, round(call_delta/put_delta, 2), 0) as call_put_dex_ratio,
+                IF(call_oi=0 OR put_oi = 0, 0, round(call_oi/put_oi, 2)) as call_put_oi_ratio,
+                IF(call_volume = 0 or put_volume = 0, 0, round(call_volume/put_volume, 2)) as call_put_volume_ratio
             FROM 'db.parquet' 
-            WHERE dt = '${dt}'
+            WHERE 1 = 1
+            ${dtFilterExpression}
             ${dteFilterExpression}
-            GROUP BY option_symbol
+            GROUP BY dt, option_symbol
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
         option_symbol: string, call_delta: number, put_delta: number, call_gamma: number, put_gamma: number, call_oi: number,
@@ -107,9 +110,9 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
                 round(SUM(IF(option_type = 'C', volume, 0))) as call_volume,
                 round(SUM(IF(option_type = 'P', volume, 0))) as put_volume,
                 call_gamma-put_gamma as net_gamma,
-                round(call_delta/put_delta, 2) as call_put_dex_ratio,
-                round(call_oi/put_oi, 2) as call_put_oi_ratio,
-                round(call_volume/put_volume, 2) as call_put_volume_ratio
+                IF(call_delta = 0 OR put_delta = 0, round(call_delta/put_delta, 2), 0) as call_put_dex_ratio,
+                IF(call_oi=0 OR put_oi = 0, 0, round(call_oi/put_oi, 2)) as call_put_oi_ratio,
+                IF(call_volume = 0 or put_volume = 0, 0, round(call_volume/put_volume, 2)) as call_put_volume_ratio
             FROM 'db.parquet' O
             JOIN 'stocks.parquet' P ON O.dt = P.dt AND O.option_symbol = P.symbol
             WHERE option_symbol = '${symbol}'

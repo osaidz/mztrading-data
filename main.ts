@@ -6,6 +6,7 @@ import {
 import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
 import ky from "https://esm.sh/ky@1.2.3";
+import { stringify } from "jsr:@std/csv";
 import {
     AvailableSnapshotDates,
     CboeOptionsRawSummary,
@@ -253,6 +254,13 @@ router.get("/", (context) => {
         if (!dt) throw new Error("dt parameter is missing!");
         context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
         context.response.type = "application/json";
+    })
+    .get("/api/options/report/greeks.txt", async (context) => {
+        const { dt, dte } = getQuery(context);        
+        const result = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
+        if(result.length == 0) throw new Error("No data found for the given date range");
+        context.response.body = stringify(result, {columns: Object.keys(result.at(0) || {})});
+        context.response.type = "text/csv";
     })
     .get("/api/options/:symbol/exposure", async (context) => {
         const { symbol } = context.params;
