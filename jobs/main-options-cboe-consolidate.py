@@ -107,7 +107,7 @@ duckdb.sql(f"""
                 IF(call_volume = 0 or put_volume = 0, 0, round(call_volume/put_volume, 2)) as call_put_volume_ratio
             FROM OPDATA O
             JOIN STOCKSDATA P ON O.dt = P.dt AND O.option_symbol = P.symbol            
-            GROUP BY O.dt, O.symbol, P.close
+            GROUP BY O.dt, P.symbol, P.close
             ORDER BY 1)
           TO '{summary_report_file}' (HEADER, DELIMITER ',')
 """)
