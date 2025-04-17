@@ -20,7 +20,7 @@ import {
 } from "./lib/data.ts";
 
 import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet, getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet } from "./lib/historicalOptions.ts";
+import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet, getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet, getHistoricalGreeksAvailableExpirationsBySymbolFromParquet } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
 
@@ -293,6 +293,11 @@ router.get("/", (context) => {
     .get("/api/options/:symbol/report/greeks", async (context) => {
         const { symbol } = context.params;
         context.response.body = await getHistoricalGreeksSummaryDataBySymbolFromParquet(symbol);
+        context.response.type = "application/json";
+    })
+    .get("/api/options/:symbol/report/greeks/expirations", async (context) => {
+        const { symbol } = context.params;
+        context.response.body = await getHistoricalGreeksAvailableExpirationsBySymbolFromParquet(symbol);
         context.response.type = "application/json";
     });
 

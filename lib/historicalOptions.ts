@@ -128,6 +128,17 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
     }[];
 }
 
+export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async (symbol: string) => {
+    const conn = await getConnection();
+    const arrowResult = await conn.send(`
+            SELECT
+                DISTINCT CAST(expiration as STRING) as expiration
+            FROM 'db.parquet'
+            WHERE option_symbol = '${symbol}'
+        `);
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string }[];
+}
+
 export const lastHistoricalOptionDataFromParquet = () => {
     return optionsRollingSummary;
 }
