@@ -7,7 +7,7 @@ from datetime import datetime
 file_path = './data/cboe-options-summary.json'
 
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
-rolling_days = os.getenv("ROLLING_DAYS", 30)
+rolling_days = int(os.getenv("ROLLING_DAYS", 30))
 
 with open("data/cboe-exception-symbols.json", "r") as file:
     exception_symbols = json.load(file)
