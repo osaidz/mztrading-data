@@ -7,6 +7,11 @@ on:
     types: 
       - completed
   workflow_dispatch: # Allow manual trigger from GitHub Actions UI
+    inputs:
+      rolling_days:
+        description: 'Number of rolling days'
+        required: false
+        default: '30'
 
 permissions:
   contents: write
@@ -26,6 +31,7 @@ jobs:
     needs: set-release-vars
     env:
       RELEASE_NAME: ${{needs.set-release-vars.outputs.cboerolling-tag}}
+      ROLLING_DAYS: ${{ github.event.inputs.rolling_days }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -63,14 +69,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: cboe-rolling-data
-      # - name: Release
-      #   uses: ncipollo/release-action@v1
-      #   with:
-      #     artifacts: "temp/*.parquet"
-      #     tag: ${{ env.RELEASE_NAME }}
-      #     commit: "main"
-      #     allowUpdates: "true"
-      #     artifactErrorsFailBuild: "true"
       - name: Release
         uses: mnsrulz/action-gh-release@master
         with:

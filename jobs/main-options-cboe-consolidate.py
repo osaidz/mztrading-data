@@ -7,6 +7,7 @@ from datetime import datetime
 file_path = './data/cboe-options-summary.json'
 
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
+rolling_days = os.getenv("ROLLING_DAYS", 30)
 
 with open("data/cboe-exception-symbols.json", "r") as file:
     exception_symbols = json.load(file)
@@ -19,7 +20,7 @@ with open(file_path, 'r') as file:
 options_data = [(item['optionsAssetUrl'], item['stocksAssetUrl'], item['name']) for item in data if 'optionsAssetUrl' in item and 'stocksAssetUrl' in item and 'name' in item]
 
 # Take the last 30 entries
-last_30_entries = options_data[-30:]
+last_30_entries = options_data[-rolling_days:]
 
 duckdb.sql(f"""CREATE OR REPLACE TABLE OPDATA (dt DATE, symbol string, option string, option_symbol string, expiration string, option_type string, strike float, open_interest int, volume int, delta float, gamma float)""")
 duckdb.sql(f"""CREATE OR REPLACE TABLE STOCKSDATA (dt DATE, symbol string, current_price float, price_change float, price_change_percent float, open float, high float, low float, close float, prev_day_close float)""")
