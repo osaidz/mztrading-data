@@ -9,6 +9,8 @@ file_path = './data/cboe-options-summary.json'
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
 rolling_days = int(os.getenv("ROLLING_DAYS", "30") or "30")
 
+print(f"Rolling days: {rolling_days}")
+
 with open("data/cboe-exception-symbols.json", "r") as file:
     exception_symbols = json.load(file)
     print(f"Loaded {len(exception_symbols)} exception symbols: {exception_symbols}")
@@ -57,11 +59,16 @@ os.makedirs("temp", exist_ok=True)  # Ensure the 'data' folder exists
 output_file = "temp/options_cboe_rolling_30.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
 stocks_output_file = "temp/stocks_cboe_rolling_30.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
 
-duckdb.sql(f"""COPY (select dt, option_symbol, CAST(strptime(expiration, '%Y%m%d') as date) expiration, delta, gamma, option_type, strike, open_interest, volume  from OPDATA) to '{output_file}' (FORMAT PARQUET)""")
+duckdb.sql(f"""COPY (select dt, option, option_symbol, CAST(strptime(expiration, '%Y%m%d') as date) expiration, DATE_DIFF('day', dt, CAST(strptime(expiration, '%Y%m%d') as date)) AS dte, delta, gamma, option_type, strike, open_interest, volume  from OPDATA) to '{output_file}' (FORMAT PARQUET)""")
 duckdb.sql(f"""COPY (select dt, symbol, current_price, price_change, price_change_percent, open, high, low, close, prev_day_close from STOCKSDATA) to '{stocks_output_file}' (FORMAT PARQUET)""")
 
 
 print(f"Printing stats for Options Data file")
+# Get the file size in bytes
+file_size_bytes = os.path.getsize(output_file)
+file_size_mb = file_size_bytes / (1024 * 1024)
+print(f"File size before compression: {file_size_mb:.2f} MB")
+
 # Let's use some magic of parquet compression.
 df = pd.read_parquet(output_file)
 df = df.sort_values(by=['option_symbol', 'dt', 'expiration', 'option_type'])
