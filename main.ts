@@ -20,7 +20,7 @@ import {
 } from "./lib/data.ts";
 
 import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet, getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet, getHistoricalGreeksAvailableExpirationsBySymbolFromParquet } from "./lib/historicalOptions.ts";
+import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, getHistoricalOptionDataFromParquet, getHistoricalSnapshotDatesFromParquet, lastHistoricalOptionDataFromParquet, getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet, getHistoricalGreeksAvailableExpirationsBySymbolFromParquet, getOIAnomalyDataFromParquet } from "./lib/historicalOptions.ts";
 import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
 
@@ -253,6 +253,12 @@ router.get("/", (context) => {
         const { dt, dte } = getQuery(context);
         if (!dt) throw new Error("dt parameter is missing!");
         context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
+        context.response.type = "application/json";
+    })
+    .get("/api/options/report/oi-anomaly", async (context) => {
+        const { dt, dteFrom, dteTo, symbols } = getQuery(context);
+        
+        context.response.body = await getOIAnomalyDataFromParquet(dt, dteFrom, dteTo, (symbols || '').split(',').map(k=> k.trim()));
         context.response.type = "application/json";
     })
     .get("/api/options/report/greeks.txt", async (context) => {

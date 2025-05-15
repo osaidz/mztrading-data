@@ -96,6 +96,49 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | und
     }[];
 }
 
+export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFrom: number | undefined, dteTo: number | undefined, symbols: string[]) => {
+    const conn = await getConnection();
+    const dtFilterExpression = dt ? `AND dt = '${dt}'` : '';
+    const dteFromFilterExpression = dteFrom ? `AND dte > ${dteFrom}` : '';
+    const dteToFilterExpression = dteTo ? `AND dte < ${dteTo}` : '';
+    const symbolsCsv = (symbols && symbols.length > 0) ? symbols.map(k => `'${k.toUpperCase()}'`).join(',') : '';
+    const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
+
+    const arrowResult = await conn.send(`
+            WITH T AS (
+                SELECT *, 
+                LAG(open_interest) OVER (
+                        PARTITION BY option
+                        ORDER BY dt
+                    ) AS prev_open_interest  
+                FROM 'db.parquet' O
+                WHERE open_interest > 1000  --make it parameterized later
+            ),
+            scored AS (
+                SELECT *,
+                    open_interest - COALESCE(prev_open_interest, 0) AS oi_change,
+                    (open_interest * 1.0 / NULLIF(COALESCE(prev_open_interest, 1), 0)) AS oi_ratio,
+                    (open_interest - COALESCE(prev_open_interest, 0)) * LOG(open_interest + 1) AS anomaly_score
+                FROM T
+                WHERE prev_open_interest > 0
+            )
+
+            SELECT dt, option_symbol, expiration, dte, option_type, strike, open_interest, volume, prev_open_interest, oi_change, oi_ratio, anomaly_score FROM scored
+            WHERE 1=1            
+            ${symbolsFilterExpression}
+            ${dtFilterExpression}
+            ${dteFromFilterExpression}
+            ${dteToFilterExpression}
+            ORDER BY 
+            anomaly_score desc
+            LIMIT 10            
+        `);
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
+        symbol: string, call_delta: number, put_delta: number, call_gamma: number, put_gamma: number, call_oi: number,
+        put_oi: number, call_volume: number, put_volume: number, call_put_dex_ratio: number, net_gamma: number, call_put_oi_ratio: number, call_put_volume_ratio: number
+    }[];
+}
+
 export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: string) => {
     const conn = await getConnection();
     // const dteFilterExpression =  dte ? `AND expiration < date_add(dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days
@@ -123,7 +166,7 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
         dt: string, price: number, call_delta: number, put_delta: number, call_gamma: number, put_gamma: number, call_oi: number,
-        put_oi: number, call_volume: number, put_volume: number, call_put_dex_ratio: number, net_gamma: number, 
+        put_oi: number, call_volume: number, put_volume: number, call_put_dex_ratio: number, net_gamma: number,
         call_put_oi_ratio: number, call_put_volume_ratio: number
     }[];
 }
