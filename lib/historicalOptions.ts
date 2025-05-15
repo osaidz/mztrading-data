@@ -31,11 +31,30 @@ const initialize = async () => {
     return db;
 }
 
+const initializeOIAnomalyDb = async () => {
+    const { name, openInterestAnomalyUrl } = optionsRollingSummary;
+
+    console.log(`initializing anomaly duckdb with ${openInterestAnomalyUrl} and name: ${name}`);
+    const db = await createDuckDB(JSDELIVR_BUNDLES, logger, DEFAULT_RUNTIME);
+    await db.instantiate(() => { });
+    const oiAnomalyDataBuffer = await fetch(openInterestAnomalyUrl)    //let's initialize the data set in memory
+        .then(r => r.arrayBuffer());
+    db.registerFileBuffer('oianomaly.parquet', new Uint8Array(oiAnomalyDataBuffer));
+    return db;
+}
+
 let dbPromise: Promise<DuckDBBindings>;
+let anomalyDbPromise: Promise<DuckDBBindings>;
 
 export const getConnection = async () => {
     if (dbPromise == null) dbPromise = initialize();
     const dbPromiseVal = await dbPromise;
+    return dbPromiseVal.connect();
+}
+
+export const getOIAnomalyConnection = async () => {
+    if (anomalyDbPromise == null) anomalyDbPromise = initializeOIAnomalyDb();
+    const dbPromiseVal = await anomalyDbPromise;
     return dbPromiseVal.connect();
 }
 
@@ -97,7 +116,7 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | und
 }
 
 export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFrom: number | undefined, dteTo: number | undefined, symbols: string[]) => {
-    const conn = await getConnection();
+    const conn = await getOIAnomalyConnection();
     const dtFilterExpression = dt ? `AND dt = '${dt}'` : '';
     const dteFromFilterExpression = dteFrom ? `AND dte > ${dteFrom}` : '';
     const dteToFilterExpression = dteTo ? `AND dte < ${dteTo}` : '';
@@ -105,25 +124,8 @@ export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFro
     const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
 
     const arrowResult = await conn.send(`
-            WITH T AS (
-                SELECT *, 
-                LAG(open_interest) OVER (
-                        PARTITION BY option
-                        ORDER BY dt
-                    ) AS prev_open_interest  
-                FROM 'db.parquet' O
-                WHERE open_interest > 1000  --make it parameterized later
-            ),
-            scored AS (
-                SELECT *,
-                    open_interest - COALESCE(prev_open_interest, 0) AS oi_change,
-                    (open_interest * 1.0 / NULLIF(COALESCE(prev_open_interest, 1), 0)) AS oi_ratio,
-                    (open_interest - COALESCE(prev_open_interest, 0)) * LOG(open_interest + 1) AS anomaly_score
-                FROM T
-                WHERE prev_open_interest > 0
-            )
-
-            SELECT dt, option_symbol, expiration, dte, option_type, strike, open_interest, volume, prev_open_interest, oi_change, oi_ratio, anomaly_score FROM scored
+            SELECT dt, option_symbol, expiration, dte, option_type, strike, open_interest, volume, prev_open_interest, oi_change, oi_ratio, anomaly_score 
+            FROM 'oianomaly.parquet'
             WHERE 1=1            
             ${symbolsFilterExpression}
             ${dtFilterExpression}
