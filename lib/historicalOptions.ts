@@ -122,7 +122,7 @@ export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFro
     const dteToFilterExpression = dteTo ? `AND dte < ${dteTo}` : '';
     const symbolsCsv = (symbols && symbols.length > 0) ? symbols.map(k => `'${k.toUpperCase()}'`).join(',') : '';
     const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
-
+    
     const arrowResult = await conn.send(`
             SELECT dt, option_symbol, expiration, dte, option_type, strike, open_interest, volume, prev_open_interest, oi_change, oi_ratio, anomaly_score 
             FROM 'oianomaly.parquet'
