@@ -124,7 +124,16 @@ export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFro
     const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
     
     const arrowResult = await conn.send(`
-            SELECT dt, option_symbol, expiration, dte, option_type, strike, open_interest, volume, prev_open_interest, oi_change, oi_ratio, anomaly_score 
+            SELECT CAST(dt as STRING) as dt, 
+            option, option_symbol, 
+            CAST(expiration as STRING) as expiration, 
+            dte, option_type, 
+            strike, 
+            open_interest, 
+            volume, 
+            prev_open_interest, 
+            oi_change, 
+            anomaly_score 
             FROM 'oianomaly.parquet'
             WHERE 1=1            
             ${symbolsFilterExpression}
@@ -133,11 +142,11 @@ export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFro
             ${dteToFilterExpression}
             ORDER BY 
             anomaly_score desc
-            LIMIT 10            
+            LIMIT 100
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
-        symbol: string, call_delta: number, put_delta: number, call_gamma: number, put_gamma: number, call_oi: number,
-        put_oi: number, call_volume: number, put_volume: number, call_put_dex_ratio: number, net_gamma: number, call_put_oi_ratio: number, call_put_volume_ratio: number
+        dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number,
+        open_interest: number, volume: number, prev_open_interest: number, oi_change: number, anomaly_score: number
     }[];
 }
 
