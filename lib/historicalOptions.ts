@@ -199,6 +199,7 @@ export const getHistoricalDataForOptionContractFromParquet = async (contractId: 
             SELECT CAST(dt as STRING) as dt, option, option_symbol, CAST(expiration as STRING) as expiration, dte, option_type, strike, open_interest, volume
             FROM 'db.parquet'
             WHERE option = '${contractId}'
+            ORDER BY 1
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
         dt: string, option: string, option_symbol: string, expiration: string, dte: number, delta: number, gamma: number, option_type: string, strike: number, open_interest: number, volume: number
