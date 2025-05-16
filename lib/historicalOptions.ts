@@ -122,7 +122,7 @@ export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFro
     const dteToFilterExpression = dteTo ? `AND dte < ${dteTo}` : '';
     const symbolsCsv = (symbols && symbols.length > 0) ? symbols.map(k => `'${k.toUpperCase()}'`).join(',') : '';
     const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
-    
+
     const arrowResult = await conn.send(`
             SELECT CAST(dt as STRING) as dt, 
             option, option_symbol, 
@@ -191,6 +191,18 @@ export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async 
             WHERE option_symbol = '${symbol}'
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string }[];
+}
+
+export const getHistoricalDataForOptionContractFromParquet = async (contractId: string) => {
+    const conn = await getConnection();
+    const arrowResult = await conn.send(`
+            SELECT CAST(dt as STRING) as dt, option, option_symbol, CAST(expiration as STRING) as expiration, dte, option_type, strike, open_interest, volume
+            FROM 'db.parquet'
+            WHERE option = '${contractId}'
+        `);
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
+        dt: string, option: string, option_symbol: string, expiration: string, dte: number, delta: number, gamma: number, option_type: string, strike: number, open_interest: number, volume: number
+    }[];
 }
 
 export const lastHistoricalOptionDataFromParquet = () => {
