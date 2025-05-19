@@ -57512,5 +57512,6 @@
             "symbol": "VIK",
             "dt": "2025-05-19"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-05-19-11-31-20/options_cboe_oi_anomaly.parquet"
 }
