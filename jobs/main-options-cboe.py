@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 import time
 from http import HTTPStatus
 from requests.exceptions import HTTPError
-DATA_STALE_THRESHOLD = 15  # minutes
+DATA_STALE_THRESHOLD = 60  # minutes
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
 # Function to normalize and extract stock data
