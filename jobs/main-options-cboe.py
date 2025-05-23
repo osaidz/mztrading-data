@@ -2,12 +2,12 @@ import os
 import requests
 import pandas as pd
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 import time
 from http import HTTPStatus
 from requests.exceptions import HTTPError
-
+DATA_STALE_THRESHOLD = 15  # minutes
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
 # Function to normalize and extract stock data
@@ -40,6 +40,8 @@ print(f"Found {len(symbols)} symbols: {symbols}")
 all_stock_data = []
 all_options_data = []
 retries = 5
+processed_symbols_success_count = 0
+processed_symbols_failed_count = 0
 retry_codes = [
     HTTPStatus.TOO_MANY_REQUESTS,
     HTTPStatus.INTERNAL_SERVER_ERROR,
@@ -52,6 +54,8 @@ with open("data/cboe-exception-symbols.json", "r") as file:
     exception_symbols = json.load(file)
     print(f"Loaded {len(exception_symbols)} exception symbols: {exception_symbols}")
 # exception_symbols = ['VIX', 'SPX', 'NDX', 'RUT']    # Symbols that need to be prefixed with "_" Perhaps load it from a file
+
+# symbols = ['SPX', 'XSP', 'ZI', 'AAPL']
 
 # Loop through each symbol and fetch data
 for symbol in symbols:
@@ -67,6 +71,27 @@ for symbol in symbols:
                 response = requests.get(url_to_fetch)
                 response.raise_for_status()
                 json_data = response.json()
+
+                timestamp_str = json_data["timestamp"]  # Parse the timestamp
+                timestamp = datetime.strptime(timestamp_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)                
+                current_time = datetime.now(timezone.utc)   # Get the current utc time
+                time_difference = (current_time - timestamp).total_seconds()    # Calculate the difference in minutes
+
+                time_difference_minutes = time_difference / 60
+                print(f"Time difference in minutes: {time_difference_minutes}")
+
+                if(time_difference_minutes > DATA_STALE_THRESHOLD):
+                    print(f"Timestamp is older than {DATA_STALE_THRESHOLD} minutes. Fetching latest data for symbol: {symbol}")
+                    # Call the latest data API
+                    url_to_fetch = f"https://www.cboe.com/delayed_quote/api/options/{symbol}"
+                    if symbol in exception_symbols:
+                        url_to_fetch = f"https://www.cboe.com/delayed_quote/api/options/^{symbol}"
+                    response = requests.get(url_to_fetch)
+                    response.raise_for_status()                    
+                    sleep_time = 10*(n+1)   # retry after n seconds
+                    print(f"Sleeping for {sleep_time} seconds before retrying...")
+                    time.sleep(sleep_time)
+                    continue
                 
                 # Parse stock and options data
                 stock_data = parse_stock_data(json_data)
@@ -77,6 +102,7 @@ for symbol in symbols:
                 
                 # Append options data to the list
                 all_options_data.append(options_df)
+                processed_symbols_success_count += 1
                 break
             except HTTPError as exc:
                 code = exc.response.status_code            
@@ -92,7 +118,12 @@ for symbol in symbols:
                     time.sleep(sleep_time)
                     continue    
                 raise
+        #CHECK IF retry limit reached
+        if n == retries - 1:
+            print(f"Max retries reached for symbol: {symbol}. Skipping...")
+            processed_symbols_failed_count += 1              
     except Exception as e:
+        processed_symbols_failed_count += 1
         print(f"Error fetching data for {symbol}: {e}")
 
 # Combine all stock and options data into DataFrames
@@ -128,3 +159,5 @@ with open(summary_file, "w") as file:
     json.dump(summary_data, file, indent=4)
 
 print(f"Updated summary file: {summary_file}")
+print(f"Processed {processed_symbols_success_count} symbols successfully.")
+print(f"Failed to process {processed_symbols_failed_count} symbol(s).")
