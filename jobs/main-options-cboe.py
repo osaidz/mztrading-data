@@ -34,7 +34,7 @@ watchlist_response.raise_for_status()
 watchlist = watchlist_response.json()  # Expected format: { items: [{ symbol: str, name: str }] }
 
 symbols = [item["symbol"] for item in watchlist["items"]]
-print(f"Found {len(symbols)} symbols: {symbols}")
+print(f"Found {len(symbols)} symbols: {symbols}", flush=True)
 
 # Initialize lists to collect all stock and options data
 all_stock_data = []
@@ -52,7 +52,7 @@ retry_codes = [
 
 with open("data/cboe-exception-symbols.json", "r") as file:
     exception_symbols = json.load(file)
-    print(f"Loaded {len(exception_symbols)} exception symbols: {exception_symbols}")
+    print(f"Loaded {len(exception_symbols)} exception symbols: {exception_symbols}", flush=True)
 # exception_symbols = ['VIX', 'SPX', 'NDX', 'RUT']    # Symbols that need to be prefixed with "_" Perhaps load it from a file
 
 # symbols = ['SPX', 'XSP', 'ZI', 'AAPL']
@@ -62,7 +62,7 @@ for symbol in symbols:
     try:
         for n in range(retries):
             try:
-                print(f"Fetching data for symbol: {symbol}")
+                print(f"Fetching data for symbol: {symbol}", flush=True)
                 
                 # if the symbol is one of the exception_symbols, then prefix it with _                
                 url_to_fetch = f"https://cdn.cboe.com/api/global/delayed_quotes/options/{symbol}.json"
@@ -81,15 +81,15 @@ for symbol in symbols:
                 # print(f"Time difference in minutes: {time_difference_minutes}")
 
                 if(time_difference_minutes > DATA_STALE_THRESHOLD):
-                    print(f"Timestamp {timestamp_str} is older than {DATA_STALE_THRESHOLD} minutes. Fetching latest data for symbol: {symbol}")
+                    print(f"Timestamp {timestamp_str} is older than {DATA_STALE_THRESHOLD} minutes. Fetching latest data for symbol: {symbol}", flush=True)
                     # Call the latest data API
                     url_to_fetch = f"https://www.cboe.com/delayed_quote/api/options/{symbol}"
                     if symbol in exception_symbols:
                         url_to_fetch = f"https://www.cboe.com/delayed_quote/api/options/^{symbol}"
                     response = requests.get(url_to_fetch)
                     response.raise_for_status()                    
-                    sleep_time = 10*(n+1)   # retry after n seconds
-                    print(f"Sleeping for {sleep_time} seconds before retrying...")
+                    sleep_time = (n+1)   # retry after n seconds
+                    print(f"Sleeping for {sleep_time} seconds before retrying...", flush=True)
                     time.sleep(sleep_time)
                     continue
                 
@@ -109,22 +109,22 @@ for symbol in symbols:
                 if code in retry_codes:                    
                     retry_after = exc.response.headers.get('Retry-After')
                     if retry_after:
-                        print(f"Retry-After header present with value: {retry_after}")
+                        print(f"Retry-After header present with value: {retry_after}", flush=True)
                         sleep_time = int(retry_after)
                     else:
                         sleep_time = 10*(n+1)
                     # retry after n seconds
-                    print(f"Http error '{code}' occurred while fetching data for symbol: {symbol}... Sleeping for {sleep_time} seconds")
+                    print(f"Http error '{code}' occurred while fetching data for symbol: {symbol}... Sleeping for {sleep_time} seconds", flush=True)
                     time.sleep(sleep_time)
                     continue    
                 raise
         #CHECK IF retry limit reached
         if n == retries - 1:
-            print(f"Max retries reached for symbol: {symbol}. Skipping...")
+            print(f"Max retries reached for symbol: {symbol}. Skipping...", flush=True)
             processed_symbols_failed_count += 1              
     except Exception as e:
         processed_symbols_failed_count += 1
-        print(f"Error fetching data for {symbol}: {e}")
+        print(f"Error fetching data for {symbol}: {e}", flush=True)
 
 # Combine all stock and options data into DataFrames
 stock_df = pd.DataFrame(all_stock_data)
@@ -138,8 +138,8 @@ options_file = "temp/options_data.parquet"
 stock_df.to_parquet(stock_file, index=False)
 options_df.to_parquet(options_file, index=False)
 
-print(f"Saved stock data to {stock_file}")
-print(f"Saved options data to {options_file}")
+print(f"Saved stock data to {stock_file}", flush=True)
+print(f"Saved options data to {options_file}", flush=True)
 
 # Update JSON summary file
 summary_file = "data/cboe-options-summary.json"
@@ -158,6 +158,6 @@ summary_data.append({"name": release_name, "optionsAssetUrl":f"https://github.co
 with open(summary_file, "w") as file:
     json.dump(summary_data, file, indent=4)
 
-print(f"Updated summary file: {summary_file}")
-print(f"Processed {processed_symbols_success_count} symbols successfully.")
-print(f"Failed to process {processed_symbols_failed_count} symbol(s).")
+print(f"Updated summary file: {summary_file}", flush=True)
+print(f"Processed {processed_symbols_success_count} symbols successfully.", flush=True)
+print(f"Failed to process {processed_symbols_failed_count} symbol(s).", flush=True)
