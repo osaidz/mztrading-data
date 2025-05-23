@@ -88,10 +88,15 @@ for symbol in symbols:
                         url_to_fetch = f"https://www.cboe.com/delayed_quote/api/options/^{symbol}"
                     response = requests.get(url_to_fetch)
                     response.raise_for_status()                    
-                    sleep_time = ((5*n)+3)   # retry after n+3 seconds
-                    print(f"Sleeping for {sleep_time} seconds before retrying...", flush=True)
-                    time.sleep(sleep_time)
-                    continue
+                    # Only sleep if this is the last element in the list
+                    if symbol == symbols[-1]:
+                        sleep_time = 10   # retry after 10 seconds
+                        print(f"Sleeping for {sleep_time} seconds before retrying...", flush=True)
+                        time.sleep(sleep_time)
+                    # Push the symbol to the end of the list for later processing
+                    symbols.append(symbol)
+                    print(f"Pushed symbol {symbol} to the end of the list for later processing.", flush=True)
+                    break  # Exit the retry loop for this symbol
                 
                 # Parse stock and options data
                 stock_data = parse_stock_data(json_data)
