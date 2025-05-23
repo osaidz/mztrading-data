@@ -78,10 +78,10 @@ for symbol in symbols:
                 time_difference = (current_time - timestamp).total_seconds()    # Calculate the difference in minutes
 
                 time_difference_minutes = time_difference / 60
-                print(f"Time difference in minutes: {time_difference_minutes}")
+                # print(f"Time difference in minutes: {time_difference_minutes}")
 
                 if(time_difference_minutes > DATA_STALE_THRESHOLD):
-                    print(f"Timestamp is older than {DATA_STALE_THRESHOLD} minutes. Fetching latest data for symbol: {symbol}")
+                    print(f"Timestamp {timestamp_str} is older than {DATA_STALE_THRESHOLD} minutes. Fetching latest data for symbol: {symbol}")
                     # Call the latest data API
                     url_to_fetch = f"https://www.cboe.com/delayed_quote/api/options/{symbol}"
                     if symbol in exception_symbols:
