@@ -222,15 +222,16 @@ export type ExposureDataRequest = { data: Record<string, Record<string, MicroOpt
 
 export const getExposureData = async (symbol: string, dt: string | 'LIVE') => {
     const spotDate = (dt == 'LIVE' ? dayjs() : dayjs(dt)).format('YYYY-MM-DD');
-    const { spotPrice, indexedObject } = dt == 'LIVE' ? await getLiveCboeOptionData(symbol) : await getHistoricalOptionData(symbol, dt);
+    const { spotPrice, indexedObject, timestamp } = dt == 'LIVE' ? await getLiveCboeOptionData(symbol) : await getHistoricalOptionData(symbol, dt);
 
-    return calculateExpsoure(spotPrice, indexedObject, spotDate);
+    return calculateExpsoure(spotPrice, indexedObject, spotDate, timestamp);
 }
 
-export const calculateExpsoure = (spotPrice: number, indexedObject: Record<string, Record<string, MicroOptionContract>>, spotDate: string) => {
+export const calculateExpsoure = (spotPrice: number, indexedObject: Record<string, Record<string, MicroOptionContract>>, spotDate: string, timestamp?: Date) => {
     const dataToPersist = {
         data: [] as ExposureDataType[],
-        spotPrice: spotPrice
+        spotPrice: spotPrice,
+        timestamp
     };
 
     const expirations = Object.keys(indexedObject);
@@ -328,11 +329,11 @@ async function getHistoricalOptionData(symbol: string, dt: string) {
     const _spotPrice = await getPriceAtDate(symbol, dt, true);
     if (!_spotPrice || Number.isNaN(_spotPrice)) throw new Error("Invalid spot price");
     const spotPrice = Number(_spotPrice);
-    return { spotPrice, indexedObject };
+    return { spotPrice, indexedObject, timestamp: dayjs(dt).toDate() };    //timestamp not really needed, but keeping it for consistency
 }
 
 async function getLiveCboeOptionData(symbol: string) {
-    const { data, currentPrice } = await getOptionsChain(symbol);
+    const { data, currentPrice, timestamp } = await getOptionsChain(symbol);
     const indexedObject = data.reduce((previous, current) => {
         previous[current.expiration] = previous[current.expiration] || {};
         previous[current.expiration][current.strike] = previous[current.expiration][current.strike] || {};
@@ -346,7 +347,7 @@ async function getLiveCboeOptionData(symbol: string) {
         }
         return previous;
     }, {} as Record<string, Record<string, MicroOptionContract>>);
-    return { spotPrice: currentPrice, indexedObject };
+    return { spotPrice: currentPrice, indexedObject, timestamp };
 }
 
 export async function getLiveCboeOptionsPricingData(symbol: string) {

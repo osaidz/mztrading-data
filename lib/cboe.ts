@@ -49,19 +49,21 @@ const fetchOptionChainFromCboe = async (symbol: string) => {
                 bid: number
             }[],
             close: number
-        }
+        },
+        timestamp: string
     }>();
 }
+const optionRegex = /(\w+)(\d{6})([CP])(\d+)/;
 
 export const getOptionsChain = async (symbol: string) => {
     symbol = symbol.toUpperCase();
     const optionChain = await fetchOptionChainFromCboe(symbol);
     const currentPrice = optionChain.data.close;    //TODO: is this the close price which remains same if the market is open??
-
+    const ts = new Date(optionChain.timestamp + 'Z');  //convert to UTC
     console.time(`getOptionsChain-mapping-${symbol}`)
     const mappedOptions = optionChain.data.options.map(({ option, open_interest, volume, delta, gamma, last_trade_price, ask, bid }) => {
         //implement mem cache for regex match??
-        const rxMatch = /(\w+)(\d{6})([CP])(\d+)/.exec(option);
+        const rxMatch = optionRegex.exec(option);
         if (!rxMatch) throw new Error('error parsing option')
 
         return {
@@ -78,7 +80,7 @@ export const getOptionsChain = async (symbol: string) => {
         }
     });
     console.timeEnd(`getOptionsChain-mapping-${symbol}`)
-    return { data: mappedOptions, currentPrice }
+    return { data: mappedOptions, currentPrice, timestamp: ts };
 }
 
 export const getOptionsAnalytics = async () => {
