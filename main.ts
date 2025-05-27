@@ -258,7 +258,8 @@ router.get("/", (context) => {
     .get("/api/options/report/oi-anomaly", async (context) => {
         const { dt, dteFrom, dteTo, symbols } = getQuery(context);
         const symbolList = (symbols || '').split(',').map(k=> k.trim()).filter(k => k);
-        context.response.body = await getOIAnomalyDataFromParquet(dt, dteFrom, dteTo, symbolList);
+        const dtList = (dt || '').split(',').map(k=> k.trim()).filter(k => k);
+        context.response.body = await getOIAnomalyDataFromParquet(dtList, dteFrom, dteTo, symbolList);
         context.response.type = "application/json";
     })
     .get("/api/options/report/greeks.txt", async (context) => {

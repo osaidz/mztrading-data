@@ -115,13 +115,16 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | und
     }[];
 }
 
-export const getOIAnomalyDataFromParquet = async (dt: string | undefined, dteFrom: number | undefined, dteTo: number | undefined, symbols: string[]) => {
+export const getOIAnomalyDataFromParquet = async (dt: string[], dteFrom: number | undefined, dteTo: number | undefined, symbols: string[]) => {
     const conn = await getOIAnomalyConnection();
-    const dtFilterExpression = dt ? `AND dt = '${dt}'` : '';
+    // const dtFilterExpression = (dt && dt.length>0) ? `AND dt IN ('${dt.map(k=> k).join(',')}'` : '';
     const dteFromFilterExpression = dteFrom ? `AND dte > ${dteFrom}` : '';
     const dteToFilterExpression = dteTo ? `AND dte < ${dteTo}` : '';
     const symbolsCsv = (symbols && symbols.length > 0) ? symbols.map(k => `'${k.toUpperCase()}'`).join(',') : '';
     const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
+    
+    const dtCsv = (dt && dt.length > 0) ? dt.map(k => `'${k.toUpperCase()}'`).join(',') : '';
+    const dtFilterExpression = dtCsv ? `AND dt IN (${dtCsv})` : '';
 
     const arrowResult = await conn.send(`
             SELECT CAST(dt as STRING) as dt, 
