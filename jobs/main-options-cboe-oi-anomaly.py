@@ -16,8 +16,8 @@ assetUrl = data['assetUrl']
 
 print(assetUrl)
 
-os.makedirs("temp", exist_ok=True)  # Ensure the 'data' folder exists
-output_file = "temp/options_cboe_oi_anomaly.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
+os.makedirs("temp", exist_ok=True)  
+output_file = "temp/options_cboe_oi_anomaly.parquet"
 
 duckdb.sql(f"""
 COPY (
@@ -39,7 +39,7 @@ COPY (
     WHERE prev_open_interest > 0
     )
 
-    SELECT dt, option, option_symbol, expiration, dte, option_type, strike, open_interest, volume, prev_open_interest, oi_change, oi_ratio, anomaly_score FROM scored
+    SELECT dt, option, option_symbol, expiration, dte, delta, gamma, option_type, strike, open_interest, volume, prev_open_interest, oi_change, oi_ratio, anomaly_score FROM scored
     WHERE anomaly_score > 1000 --WE WILL ADJUST THIS AT A LATER POINT
     
 ) TO '{output_file}' (FORMAT PARQUET)
