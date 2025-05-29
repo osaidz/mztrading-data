@@ -59788,5 +59788,6 @@
             "symbol": "MDB",
             "dt": "2025-05-28"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-05-29-11-37-47/options_cboe_oi_anomaly.parquet"
 }
