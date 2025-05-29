@@ -132,6 +132,8 @@ export const getOIAnomalyDataFromParquet = async (dt: string[], dteFrom: number 
             CAST(expiration as STRING) as expiration, 
             dte, option_type, 
             strike, 
+            delta, 
+            gamma,
             open_interest, 
             volume, 
             prev_open_interest, 
@@ -145,10 +147,10 @@ export const getOIAnomalyDataFromParquet = async (dt: string[], dteFrom: number 
             ${dteToFilterExpression}
             ORDER BY 
             anomaly_score desc
-            LIMIT 100
+            LIMIT 1000
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
-        dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number,
+        dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number, delta: number, gamma: number,
         open_interest: number, volume: number, prev_open_interest: number, oi_change: number, anomaly_score: number
     }[];
 }
