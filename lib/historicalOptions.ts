@@ -43,19 +43,31 @@ const initializeOIAnomalyDb = async () => {
     return db;
 }
 
-let dbPromise: Promise<DuckDBBindings>;
-let anomalyDbPromise: Promise<DuckDBBindings>;
+let dbPromise: Promise<DuckDBBindings> | null;
+let anomalyDbPromise: Promise<DuckDBBindings> | null;
 
 export const getConnection = async () => {
-    if (dbPromise == null) dbPromise = initialize();
-    const dbPromiseVal = await dbPromise;
-    return dbPromiseVal.connect();
+    try {
+        if (dbPromise == null) dbPromise = initialize();
+        const dbPromiseVal = await dbPromise;
+        return dbPromiseVal.connect();
+    } catch (error) {
+        console.error("Error initializing DuckDB:", error);
+        dbPromise = null; //reset the promise if there is an error
+        throw new Error('error initializing DuckDB. Check the logs to see details about the error'); //rethrow the error to be handled by the caller        
+    }
 }
 
 export const getOIAnomalyConnection = async () => {
-    if (anomalyDbPromise == null) anomalyDbPromise = initializeOIAnomalyDb();
-    const dbPromiseVal = await anomalyDbPromise;
-    return dbPromiseVal.connect();
+    try {
+        if (anomalyDbPromise == null) anomalyDbPromise = initializeOIAnomalyDb();
+        const dbPromiseVal = await anomalyDbPromise;
+        return dbPromiseVal.connect();
+    } catch (error) {
+        console.error("Error initializing OI Anomaly DB:", error);
+        anomalyDbPromise = null; //reset the promise if there is an error
+        throw new Error('error initializing OI Anomaly DB. Check the logs to see details about the error'); //rethrow the error to be handled by the caller
+    }
 }
 
 //find a way to parametrize the query
@@ -122,7 +134,7 @@ export const getOIAnomalyDataFromParquet = async (dt: string[], dteFrom: number 
     const dteToFilterExpression = dteTo ? `AND dte < ${dteTo}` : '';
     const symbolsCsv = (symbols && symbols.length > 0) ? symbols.map(k => `'${k.toUpperCase()}'`).join(',') : '';
     const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
-    
+
     const dtCsv = (dt && dt.length > 0) ? dt.map(k => `'${k.toUpperCase()}'`).join(',') : '';
     const dtFilterExpression = dtCsv ? `AND dt IN (${dtCsv})` : '';
 
