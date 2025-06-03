@@ -130,8 +130,8 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | und
 export const getOIAnomalyDataFromParquet = async (dt: string[], dteFrom: number | undefined, dteTo: number | undefined, symbols: string[]) => {
     const conn = await getOIAnomalyConnection();
     // const dtFilterExpression = (dt && dt.length>0) ? `AND dt IN ('${dt.map(k=> k).join(',')}'` : '';
-    const dteFromFilterExpression = dteFrom ? `AND dte > ${dteFrom}` : '';
-    const dteToFilterExpression = dteTo ? `AND dte < ${dteTo}` : '';
+    const dteFromFilterExpression = dteFrom ? `AND dte >= ${dteFrom}` : '';
+    const dteToFilterExpression = dteTo ? `AND dte <= ${dteTo}` : '';
     const symbolsCsv = (symbols && symbols.length > 0) ? symbols.map(k => `'${k.toUpperCase()}'`).join(',') : '';
     const symbolsFilterExpression = symbolsCsv ? `AND option_symbol IN (${symbolsCsv})` : '';
 
