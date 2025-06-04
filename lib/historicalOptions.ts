@@ -368,7 +368,7 @@ async function getLiveCboeOptionData(symbol: string) {
 }
 
 export async function getLiveCboeOptionsPricingData(symbol: string) {
-    const { data, currentPrice } = await getOptionsChain(symbol);
+    const { data, currentPrice, timestamp } = await getOptionsChain(symbol);
     const options = data.reduce((previous, current) => {
         previous[current.expiration] = previous[current.expiration] || { c: {}, p: {} };
         if (current.option_type == 'C') {
@@ -380,5 +380,5 @@ export async function getLiveCboeOptionsPricingData(symbol: string) {
         }
         return previous;
     }, {} as Record<string, MicroOptionPricingContract>);
-    return { spotPrice: currentPrice, options };
+    return { spotPrice: currentPrice, options, timestamp};
 }
