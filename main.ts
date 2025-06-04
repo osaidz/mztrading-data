@@ -231,7 +231,7 @@ router.get("/", (context) => {
             context.throw(415);
         }
         const { data, spotPrice, spotDate } = await context.request.body().value as ExposureDataRequest;
-        context.response.body = calculateExpsoure(spotPrice, data, spotDate);
+        context.response.body = calculateExpsoure(spotPrice, data, spotDate, new Date());
         context.response.type = "application/json";
     })
     .get("/api/options/exposures/dates", async (context) => {
