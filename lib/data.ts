@@ -1,8 +1,8 @@
 import Fuse from "https://esm.sh/fuse.js@7.0.0";
 
-import optionsDataSummary from "./../data/options-data.summary.json" with {
-    type: "json",
-};
+// import optionsDataSummary from "./../data/options-data.summary.json" with {
+//     type: "json",
+// };
 
 import optionsSnapshotSummary from "./../data/options-snapshot.summary.json" with {
     type: "json",
@@ -20,14 +20,14 @@ import symbols from "./../data/symbols.json" with {
     type: "json",
 };
 
-type OptionsDataSummary = Record<string, {
-    displayName: string;
-    created: Date | string;
-    symbols: Record<string, {
-        fileName: string;
-        assetUrl: string;
-    }>;
-}>;
+// type OptionsDataSummary = Record<string, {
+//     displayName: string;
+//     created: Date | string;
+//     symbols: Record<string, {
+//         fileName: string;
+//         assetUrl: string;
+//     }>;
+// }>;
 
 type OptionsSnapshotSummaryFileType = {
     hdFileName: string;
@@ -51,9 +51,9 @@ type CboeOptionSummaryType = {
 
 type TickerSymbol = { name: string, symbol: string }
 
-export const getOptionsDataSummary = () => {
-    return optionsDataSummary as OptionsDataSummary;
-};
+// export const getOptionsDataSummary = () => {
+//     return optionsDataSummary as OptionsDataSummary;
+// };
 
 export const getOptionsSnapshotSummary = () => {
     return optionsSnapshotSummary as OptionsSnapshotSummary;
@@ -107,15 +107,15 @@ export const getSnapshotsAvailableForSymbol = (symbol: string) => {
     return result;
 }
 
-export const mapDataToLegacy = () => {
-    const intermediateData = getOptionsDataSummary();
-    return Object.keys(intermediateData).flatMap((j) => {
-        return Object.keys(intermediateData[j].symbols).map((k) => ({
-            symbol: k,
-            dt: intermediateData[j].displayName,
-        }));
-    });
-};
+// export const mapDataToLegacy = () => {
+//     const intermediateData = getOptionsDataSummary();
+//     return Object.keys(intermediateData).flatMap((j) => {
+//         return Object.keys(intermediateData[j].symbols).map((k) => ({
+//             symbol: k,
+//             dt: intermediateData[j].displayName,
+//         }));
+//     });
+// };
 
 export const ghRepoBaseUrl = 'https://github.com/mnsrulz/mztrading-data/releases/download';
 
