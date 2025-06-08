@@ -25,9 +25,11 @@ import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalG
     getHistoricalSnapshotDatesFromParquet, 
     // lastHistoricalOptionDataFromParquet, 
     getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet, getHistoricalGreeksAvailableExpirationsBySymbolFromParquet, 
-    getOIAnomalyDataFromParquet, getHistoricalDataForOptionContractFromParquet } from "./lib/historicalOptions.ts";
+    getOIAnomalyDataFromParquet, getHistoricalDataForOptionContractFromParquet, 
+    } from "./lib/historicalOptions.ts";
 // import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
+import { OIAnomalySearchRequest, queryOIAnomalySearch } from "./lib/oianomalySearchClient.ts";
 
 // const token = Deno.env.get("ghtoken") || '';
 const router = new Router();
@@ -265,6 +267,17 @@ router.get("/", (context) => {
         const symbolList = (symbols || '').split(',').map(k=> k.trim()).filter(k => k);
         const dtList = (dt || '').split(',').map(k=> k.trim()).filter(k => k);
         context.response.body = await getOIAnomalyDataFromParquet(dtList, dteFrom, dteTo, symbolList);
+        context.response.type = "application/json";
+    })
+    .post("/api/search/oi-anomaly/", async (context) => {
+        if (!context.request.hasBody) {
+            context.throw(415);
+        }
+        const searchRequest = await context.request.body().value as OIAnomalySearchRequest[];
+        if (!searchRequest || searchRequest.length == 0) {
+            throw new Error("Search request is empty!");
+        }        
+        context.response.body = await queryOIAnomalySearch(searchRequest);
         context.response.type = "application/json";
     })
     .get("/api/options/report/greeks.txt", async (context) => {
