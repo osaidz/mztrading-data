@@ -37,22 +37,27 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
     for (const req of request) {
         const { params } = req;
         if (typeof params.facets === 'string') {
-            const query = params.facetFilters.map(f => {
+
+            const query = params.facetFilters && params.facetFilters.map(f => {
                 f.map(k => {
                     const [key, value] = k.split(':');
                     return `${key} = '${value}'`;
                 }).join(' OR ');
             }).join(' AND ');
-            const result = await conn.send(`SELECT ${params.facets}, COUNT(1) FROM 'oianomaly.parquet' WHERE ${query} GROUP BY ${params.facets}`);
+            console.log(`executing query: ${query}`);
+            const result = await conn.send(`SELECT ${params.facets}, COUNT(1) FROM 'oianomaly.parquet' 
+                ${query && 'WHERE ' + query} 
+                GROUP BY ${params.facets}`);
             facetValues[params.facets] = result;
         }
         else if (Array.isArray(params.facets)) {
-            const query = params.facetFilters.map(f => {
+            const query = params.facetFilters && params.facetFilters.map(f => {
                 f.map(k => {
                     const [key, value] = k.split(':');
                     return `${key} = '${value}'`;
                 }).join(' OR ');
             }).join(' AND ');
+            console.log(`executing query: ${query}`);
 
             const arrowResult = await conn.send(`
                 SELECT CAST(dt as STRING) as dt, 
@@ -68,7 +73,7 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
                 oi_change, 
                 anomaly_score 
                 FROM 'oianomaly.parquet'
-                WHERE ${query}
+                ${query && 'WHERE ' + query}
                 ORDER BY 
                 anomaly_score desc
                 LIMIT 1000
@@ -91,7 +96,7 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
                 // hitsPerPage: 20,
                 // processingTimeMS: 100,
 
-                
+
                 // exhaustiveFacetsCount: true,
                 // exhaustiveNbHits: true,
                 // query: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params && searchMethodParams[0].params.query) || "",

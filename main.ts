@@ -20,13 +20,14 @@ import {
 } from "./lib/data.ts";
 
 // import { getPriceAtDate } from './lib/historicalPrice.ts'
-import { calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet, 
+import {
+    calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet,
     // getHistoricalOptionDataFromParquet, 
-    getHistoricalSnapshotDatesFromParquet, 
+    getHistoricalSnapshotDatesFromParquet,
     // lastHistoricalOptionDataFromParquet, 
-    getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet, getHistoricalGreeksAvailableExpirationsBySymbolFromParquet, 
-    getOIAnomalyDataFromParquet, getHistoricalDataForOptionContractFromParquet, 
-    } from "./lib/historicalOptions.ts";
+    getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet, getHistoricalGreeksAvailableExpirationsBySymbolFromParquet,
+    getOIAnomalyDataFromParquet, getHistoricalDataForOptionContractFromParquet,
+} from "./lib/historicalOptions.ts";
 // import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
 import { OIAnomalySearchRequest, queryOIAnomalySearch } from "./lib/oianomalySearchClient.ts";
@@ -143,7 +144,7 @@ router.get("/", (context) => {
         const items = searchTicker(q);
         context.response.body = items;
     })
-    
+
     .get("/symbols/:symbol/historical/snapshots", (context) => {
         const { symbol } = context.params;
         const result = Object.keys(OptionsSnapshotSummaryLegacy)
@@ -264,8 +265,8 @@ router.get("/", (context) => {
     })
     .get("/api/options/report/oi-anomaly", async (context) => {
         const { dt, dteFrom, dteTo, symbols } = getQuery(context);
-        const symbolList = (symbols || '').split(',').map(k=> k.trim()).filter(k => k);
-        const dtList = (dt || '').split(',').map(k=> k.trim()).filter(k => k);
+        const symbolList = (symbols || '').split(',').map(k => k.trim()).filter(k => k);
+        const dtList = (dt || '').split(',').map(k => k.trim()).filter(k => k);
         context.response.body = await getOIAnomalyDataFromParquet(dtList, dteFrom, dteTo, symbolList);
         context.response.type = "application/json";
     })
@@ -273,25 +274,24 @@ router.get("/", (context) => {
         if (!context.request.hasBody) {
             context.throw(415);
         }
-
         try {
             const searchRequest = await context.request.body().value as OIAnomalySearchRequest[];
             if (!searchRequest || searchRequest.length == 0) {
                 throw new Error("Search request is empty!");
-            }        
+            }
             context.response.body = await queryOIAnomalySearch(searchRequest);
         } catch (error) {
             console.error(error);
             context.response.body = error;
             context.response.status = 500;
         }
-        context.response.type = "application/json";            
+        context.response.type = "application/json";
     })
     .get("/api/options/report/greeks.txt", async (context) => {
-        const { dt, dte } = getQuery(context);        
+        const { dt, dte } = getQuery(context);
         const result = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
-        if(result.length == 0) throw new Error("No data found for the given date range");
-        context.response.body = stringify(result, {columns: Object.keys(result.at(0) || {})});
+        if (result.length == 0) throw new Error("No data found for the given date range");
+        context.response.body = stringify(result, { columns: Object.keys(result.at(0) || {}) });
         context.response.type = "text/plain";
     })
     .get("/api/options/:symbol/exposure", async (context) => {
