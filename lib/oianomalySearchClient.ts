@@ -12,13 +12,13 @@ export type OIAnomalySearchRequest = {
 export type OIAnomalySearchResponse = {
     results: {
         hits: {}[],
-        // nbHits: number,
-        // nbPages: number,
-        // page: number,
-        // hitsPerPage: number,
+        nbHits: number,
+        nbPages: number,
+        page: number,
+        hitsPerPage: number,
         // exhaustiveNbHits: boolean,
         // exhaustiveFacetsCount: boolean,
-        // processingTimeMS: number,
+        processingTimeMS: number,
         facets: Record<string, { name: string, count: number }[]>,
         // facetFilters: string[],
         // query: string,
@@ -43,13 +43,11 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
             {
                 hits: hits,
                 facets: facetValues,
-                // page: 0,
-                // nbHits: 123,
-                // nbPages: Math.ceil(123 / 20),
-                // hitsPerPage: 20,
-                // processingTimeMS: 100,
-
-
+                page: 0,
+                nbHits: 10,
+                nbPages: 1,
+                hitsPerPage: 20,
+                processingTimeMS: 100,
                 // exhaustiveFacetsCount: true,
                 // exhaustiveNbHits: true,
                 // query: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params && searchMethodParams[0].params.query) || "",
@@ -86,7 +84,7 @@ async function executeMainQuery(request: OIAnomalySearchRequest) {
                 ${query && 'WHERE ' + query}
                 ORDER BY 
                 anomaly_score desc
-                LIMIT 1000
+                LIMIT 10
             `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
         dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number, delta: number, gamma: number,
@@ -108,19 +106,53 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
                     return `${key} = '${value}'`;
                 }).join(' OR ');
             }).join(' AND ');
-            const result = await conn.send(`SELECT ${params.facets}, COUNT(1) FROM 'oianomaly.parquet' 
+            const result = await conn.send(`
+                WITH T AS (
+                    SELECT CAST(dt as STRING) as dt, 
+                    option, option_symbol, 
+                    CAST(expiration as STRING) as expiration, 
+                    dte, option_type, 
+                    strike, 
+                    delta, 
+                    gamma,
+                    open_interest, 
+                    volume, 
+                    prev_open_interest, 
+                    oi_change, 
+                    anomaly_score 
+                    FROM 'oianomaly.parquet'
+                )
+                SELECT ${params.facets}, COUNT(1) cnt FROM 
+                T
                 ${query && 'WHERE ' + query} 
                 GROUP BY ${params.facets}`);
-            facetValues[params.facets] = result;
+            facetValues[params.facets] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r,c)=> {r[c[params.facets as string]] = c['cnt']; return r;}, {})
             processedFacets.push(params.facets);
         }
     }
 
     for (const facet of availableFacets) {
-        if(processedFacets.includes(facet)) continue;
-        
-        const result = await conn.send(`SELECT ${facet}, COUNT(1) FROM 'oianomaly.parquet' GROUP BY ${facet}`);
-        facetValues[facet] = result;
+        if (processedFacets.includes(facet)) continue;
+        const result = await conn.send(`
+            WITH T AS (
+                SELECT CAST(dt as STRING) as dt, 
+                option, option_symbol, 
+                CAST(expiration as STRING) as expiration, 
+                dte, option_type, 
+                strike, 
+                delta, 
+                gamma,
+                open_interest, 
+                volume, 
+                prev_open_interest, 
+                oi_change, 
+                anomaly_score 
+                FROM 'oianomaly.parquet'
+            )
+            SELECT ${facet}, COUNT(1) cnt FROM 
+            T
+            GROUP BY ${facet}`);
+        facetValues[facet] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r,c)=> {r[c[facet]] = c['cnt']; return r;}, {})
     }
 
     return facetValues;
