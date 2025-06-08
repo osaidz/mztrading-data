@@ -270,7 +270,7 @@ router.get("/", (context) => {
         context.response.body = await getOIAnomalyDataFromParquet(dtList, dteFrom, dteTo, symbolList);
         context.response.type = "application/json";
     })
-    .post("/api/search/oi-anomaly/", async (context) => {
+    .post("/api/search/oi-anomaly", async (context) => {
         if (!context.request.hasBody) {
             context.throw(415);
         }
