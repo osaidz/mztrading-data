@@ -60,12 +60,15 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
 async function executeMainQuery(request: OIAnomalySearchRequest) {
     const conn = await getOIAnomalyConnection();
     const query = request.params.facetFilters && request.params.facetFilters.map(f => {
-        f.map(k => {
+        const innerk = f.map(k => {
             const [key, value] = k.split(':');
             return `${key} = '${value}'`;
         }).join(' OR ');
+        if (innerk) {
+            return `(${innerk})`
+        }
     }).join(' AND ');
-    console.log(`executing query: ${query}`);
+    console.log(`executing main query: ${query}`);
 
     const arrowResult = await conn.send(`
                 SELECT CAST(dt as STRING) as dt, 
@@ -101,10 +104,13 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
         const { params } = req;
         if (typeof params.facets === 'string') {
             const query = params.facetFilters && params.facetFilters.map(f => {
-                f.map(k => {
+                const innerk = f.map(k => {
                     const [key, value] = k.split(':');
                     return `${key} = '${value}'`;
                 }).join(' OR ');
+                if (innerk) {
+                    return `(${innerk})`
+                }
             }).join(' AND ');
             const result = await conn.send(`
                 WITH T AS (
@@ -135,12 +141,15 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
         if (processedFacets.includes(facet)) continue;
 
         const query = mainRequest.params.facetFilters && mainRequest.params.facetFilters.map(f => {
-            f.map(k => {
+            const innerk = f.map(k => {
                 const [key, value] = k.split(':');
                 return `${key} = '${value}'`;
             }).join(' OR ');
+            if (innerk) {
+                return `(${innerk})`
+            }
         }).join(' AND ');
-        console.log(`executing query: ${query}`);
+        console.log(`executing query for facet: ${facet}: ${query}`);
 
         const result = await conn.send(`
             WITH T AS (
