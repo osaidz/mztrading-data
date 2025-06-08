@@ -342,6 +342,7 @@ const app = new Application();
 
 app.use(async (context, next) => {
     try {
+        context.response.headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         context.response.headers.set("Access-Control-Allow-Origin", "*");
         await next();
     } catch (err) {
