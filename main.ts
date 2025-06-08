@@ -273,12 +273,19 @@ router.get("/", (context) => {
         if (!context.request.hasBody) {
             context.throw(415);
         }
-        const searchRequest = await context.request.body().value as OIAnomalySearchRequest[];
-        if (!searchRequest || searchRequest.length == 0) {
-            throw new Error("Search request is empty!");
-        }        
-        context.response.body = await queryOIAnomalySearch(searchRequest);
-        context.response.type = "application/json";
+
+        try {
+            const searchRequest = await context.request.body().value as OIAnomalySearchRequest[];
+            if (!searchRequest || searchRequest.length == 0) {
+                throw new Error("Search request is empty!");
+            }        
+            context.response.body = await queryOIAnomalySearch(searchRequest);
+        } catch (error) {
+            console.error(error);
+            context.response.body = error;
+            context.response.status = 500;
+        }
+        context.response.type = "application/json";            
     })
     .get("/api/options/report/greeks.txt", async (context) => {
         const { dt, dte } = getQuery(context);        
