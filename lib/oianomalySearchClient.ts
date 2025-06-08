@@ -7,6 +7,7 @@ export type OIAnomalySearchRequest = {
         query: string,
         page: number,
         hitsPerPage: number,
+        numericFilters: string[]
     }
 }
 export type OIAnomalySearchResponse = {
@@ -59,7 +60,7 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
 
 async function executeMainQuery(request: OIAnomalySearchRequest) {
     const conn = await getOIAnomalyConnection();
-    const query = request.params.facetFilters && request.params.facetFilters.map(f => {
+    let query = request.params.facetFilters && request.params.facetFilters.map(f => {
         const innerk = f.map(k => {
             const [key, value] = k.split(':');
             return `${key} = '${value}'`;
@@ -68,21 +69,27 @@ async function executeMainQuery(request: OIAnomalySearchRequest) {
             return `(${innerk})`
         }
     }).join(' AND ');
-    console.log(`executing main query: ${query}`);
+
+    if (request.params.numericFilters && request.params.numericFilters.length > 0) {
+        const numericQuery = request.params.numericFilters.join(' AND ');
+        query = query ? `${query} AND ${numericQuery}` : numericQuery;
+    }
+
+    console.log(`executing main query: ${query} `);
 
     const arrowResult = await conn.send(`
-                SELECT CAST(dt as STRING) as dt, 
-                option, option_symbol, 
-                CAST(expiration as STRING) as expiration, 
-                dte, option_type, 
-                strike, 
-                delta, 
-                gamma,
-                open_interest, 
-                volume, 
-                prev_open_interest, 
-                oi_change, 
-                anomaly_score 
+                SELECT CAST(dt as STRING) as dt,
+        option, option_symbol,
+        CAST(expiration as STRING) as expiration,
+        dte, option_type,
+        strike,
+        delta,
+        gamma,
+        open_interest,
+        volume,
+        prev_open_interest,
+        oi_change,
+        anomaly_score 
                 FROM 'oianomaly.parquet'
                 ${query && 'WHERE ' + query}
                 ORDER BY 
@@ -103,7 +110,7 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
     for (const req of request) {
         const { params } = req;
         if (typeof params.facets === 'string') {
-            const query = params.facetFilters && params.facetFilters.map(f => {
+            let query = params.facetFilters && params.facetFilters.map(f => {
                 const innerk = f.map(k => {
                     const [key, value] = k.split(':');
                     return `${key} = '${value}'`;
@@ -112,26 +119,31 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
                     return `(${innerk})`
                 }
             }).join(' AND ');
+
+            if (params.numericFilters && params.numericFilters.length > 0) {
+                const numericQuery = params.numericFilters.join(' AND ');
+                query = query ? `${query} AND ${numericQuery}` : numericQuery;
+            }
             const result = await conn.send(`
-                WITH T AS (
-                    SELECT CAST(dt as STRING) as dt, 
-                    option, option_symbol, 
-                    CAST(expiration as STRING) as expiration, 
-                    dte, option_type, 
-                    strike, 
-                    delta, 
-                    gamma,
-                    open_interest, 
-                    volume, 
-                    prev_open_interest, 
-                    oi_change, 
-                    anomaly_score 
+                WITH T AS(
+            SELECT CAST(dt as STRING) as dt,
+            option, option_symbol,
+            CAST(expiration as STRING) as expiration,
+            dte, option_type,
+            strike,
+            delta,
+            gamma,
+            open_interest,
+            volume,
+            prev_open_interest,
+            oi_change,
+            anomaly_score 
                     FROM 'oianomaly.parquet'
-                )
-                SELECT ${params.facets}, COUNT(1) cnt FROM 
-                T
+        )
+                SELECT ${params.facets}, COUNT(1) cnt FROM
+    T
                 ${query && 'WHERE ' + query} 
-                GROUP BY ${params.facets}`);
+                GROUP BY ${params.facets} `);
             facetValues[params.facets] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r, c) => { r[c[params.facets as string]] = c['cnt']; return r; }, {})
             processedFacets.push(params.facets);
         }
@@ -140,7 +152,7 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
     for (const facet of availableFacets) {
         if (processedFacets.includes(facet)) continue;
 
-        const query = mainRequest.params.facetFilters && mainRequest.params.facetFilters.map(f => {
+        let query = mainRequest.params.facetFilters && mainRequest.params.facetFilters.map(f => {
             const innerk = f.map(k => {
                 const [key, value] = k.split(':');
                 return `${key} = '${value}'`;
@@ -149,28 +161,32 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
                 return `(${innerk})`
             }
         }).join(' AND ');
-        console.log(`executing query for facet: ${facet}: ${query}`);
+        if (mainRequest.params.numericFilters && mainRequest.params.numericFilters.length > 0) {
+            const numericQuery = mainRequest.params.numericFilters.join(' AND ');
+            query = query ? `${query} AND ${numericQuery}` : numericQuery;
+        }
+        console.log(`executing query for facet: ${facet}: ${query} `);
 
         const result = await conn.send(`
-            WITH T AS (
-                SELECT CAST(dt as STRING) as dt, 
-                option, option_symbol, 
-                CAST(expiration as STRING) as expiration, 
-                dte, option_type, 
-                strike, 
-                delta, 
-                gamma,
-                open_interest, 
-                volume, 
-                prev_open_interest, 
-                oi_change, 
-                anomaly_score 
+            WITH T AS(
+        SELECT CAST(dt as STRING) as dt,
+        option, option_symbol,
+        CAST(expiration as STRING) as expiration,
+        dte, option_type,
+        strike,
+        delta,
+        gamma,
+        open_interest,
+        volume,
+        prev_open_interest,
+        oi_change,
+        anomaly_score 
                 FROM 'oianomaly.parquet'
-            )
-            SELECT ${facet}, COUNT(1) cnt FROM 
-            T
+    )
+            SELECT ${facet}, COUNT(1) cnt FROM
+    T
             ${query && 'WHERE ' + query} 
-            GROUP BY ${facet}`);
+            GROUP BY ${facet} `);
         facetValues[facet] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r, c) => { r[c[facet]] = c['cnt']; return r; }, {})
     }
 
