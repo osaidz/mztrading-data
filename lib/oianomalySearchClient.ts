@@ -31,59 +31,12 @@ export type OIAnomalySearchResponse = {
 
 export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): Promise<OIAnomalySearchResponse> => {
     const conn = await getOIAnomalyConnection();
-    const facetValues: Record<string, any> = {};
-    let hits = [] as any;
 
-    for (const req of request) {
-        const { params } = req;
-        if (typeof params.facets === 'string') {
-
-            const query = params.facetFilters && params.facetFilters.map(f => {
-                f.map(k => {
-                    const [key, value] = k.split(':');
-                    return `${key} = '${value}'`;
-                }).join(' OR ');
-            }).join(' AND ');
-            console.log(`executing query: ${query}`);
-            const result = await conn.send(`SELECT ${params.facets}, COUNT(1) FROM 'oianomaly.parquet' 
-                ${query && 'WHERE ' + query} 
-                GROUP BY ${params.facets}`);
-            facetValues[params.facets] = result;
-        }
-        else if (Array.isArray(params.facets)) {
-            const query = params.facetFilters && params.facetFilters.map(f => {
-                f.map(k => {
-                    const [key, value] = k.split(':');
-                    return `${key} = '${value}'`;
-                }).join(' OR ');
-            }).join(' AND ');
-            console.log(`executing query: ${query}`);
-
-            const arrowResult = await conn.send(`
-                SELECT CAST(dt as STRING) as dt, 
-                option, option_symbol, 
-                CAST(expiration as STRING) as expiration, 
-                dte, option_type, 
-                strike, 
-                delta, 
-                gamma,
-                open_interest, 
-                volume, 
-                prev_open_interest, 
-                oi_change, 
-                anomaly_score 
-                FROM 'oianomaly.parquet'
-                ${query && 'WHERE ' + query}
-                ORDER BY 
-                anomaly_score desc
-                LIMIT 1000
-            `);
-            hits = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
-                dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number, delta: number, gamma: number,
-                open_interest: number, volume: number, prev_open_interest: number, oi_change: number, anomaly_score: number
-            }[];
-        }
-    }
+    const mainRequest = request.find(k => Array.isArray(k.params.facets));
+    if (!mainRequest) throw new Error(`no main request found!`);
+    const availableFacets = mainRequest.params.facets as string[];
+    const hits = await executeMainQuery(mainRequest);
+    const facetValues = await executeFacet(request, mainRequest);
 
     return {
         results: [
@@ -104,4 +57,71 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
             }
         ]
     }
+}
+
+async function executeMainQuery(request: OIAnomalySearchRequest) {
+    const conn = await getOIAnomalyConnection();
+    const query = request.params.facetFilters && request.params.facetFilters.map(f => {
+        f.map(k => {
+            const [key, value] = k.split(':');
+            return `${key} = '${value}'`;
+        }).join(' OR ');
+    }).join(' AND ');
+    console.log(`executing query: ${query}`);
+
+    const arrowResult = await conn.send(`
+                SELECT CAST(dt as STRING) as dt, 
+                option, option_symbol, 
+                CAST(expiration as STRING) as expiration, 
+                dte, option_type, 
+                strike, 
+                delta, 
+                gamma,
+                open_interest, 
+                volume, 
+                prev_open_interest, 
+                oi_change, 
+                anomaly_score 
+                FROM 'oianomaly.parquet'
+                ${query && 'WHERE ' + query}
+                ORDER BY 
+                anomaly_score desc
+                LIMIT 1000
+            `);
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
+        dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number, delta: number, gamma: number,
+        open_interest: number, volume: number, prev_open_interest: number, oi_change: number, anomaly_score: number
+    }[];
+}
+
+async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAnomalySearchRequest) {
+    const facetValues: Record<string, any> = {};
+    const conn = await getOIAnomalyConnection();
+    const availableFacets = mainRequest.params.facets as string[];
+    const processedFacets = [];
+    for (const req of request) {
+        const { params } = req;
+        if (typeof params.facets === 'string') {
+            const query = params.facetFilters && params.facetFilters.map(f => {
+                f.map(k => {
+                    const [key, value] = k.split(':');
+                    return `${key} = '${value}'`;
+                }).join(' OR ');
+            }).join(' AND ');
+            const result = await conn.send(`SELECT ${params.facets}, COUNT(1) FROM 'oianomaly.parquet' 
+                ${query && 'WHERE ' + query} 
+                GROUP BY ${params.facets}`);
+            facetValues[params.facets] = result;
+            processedFacets.push(params.facets);
+        }
+    }
+
+    for (const facet of availableFacets) {
+        if(processedFacets.includes(facet)) continue;
+        
+        const result = await conn.send(`SELECT ${facet}, COUNT(1) FROM 'oianomaly.parquet' GROUP BY ${facet}`);
+        facetValues[facet] = result;
+    }
+
+    return facetValues;
 }
