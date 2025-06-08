@@ -126,13 +126,22 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
                 T
                 ${query && 'WHERE ' + query} 
                 GROUP BY ${params.facets}`);
-            facetValues[params.facets] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r,c)=> {r[c[params.facets as string]] = c['cnt']; return r;}, {})
+            facetValues[params.facets] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r, c) => { r[c[params.facets as string]] = c['cnt']; return r; }, {})
             processedFacets.push(params.facets);
         }
     }
 
     for (const facet of availableFacets) {
         if (processedFacets.includes(facet)) continue;
+
+        const query = mainRequest.params.facetFilters && mainRequest.params.facetFilters.map(f => {
+            f.map(k => {
+                const [key, value] = k.split(':');
+                return `${key} = '${value}'`;
+            }).join(' OR ');
+        }).join(' AND ');
+        console.log(`executing query: ${query}`);
+
         const result = await conn.send(`
             WITH T AS (
                 SELECT CAST(dt as STRING) as dt, 
@@ -151,8 +160,9 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
             )
             SELECT ${facet}, COUNT(1) cnt FROM 
             T
+            ${query && 'WHERE ' + query} 
             GROUP BY ${facet}`);
-        facetValues[facet] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r,c)=> {r[c[facet]] = c['cnt']; return r;}, {})
+        facetValues[facet] = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())).reduce((r, c) => { r[c[facet]] = c['cnt']; return r; }, {})
     }
 
     return facetValues;
