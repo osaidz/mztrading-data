@@ -15,6 +15,7 @@ const client = ky.create({
 const kvindexmap = 'cboe-options-index-map';
 const kvcboeanalytics = 'cboe-options-analytics';
 
+// const kv = await Deno.openKv(":memory:");
 const kv = await Deno.openKv();
 const indexMap = new Set<string>(['SPX']);    //store the symbols which requires _ to be prefixed in the url. Add a job later on which will fetch the list of symbols from the kv store and persist in json file.
 for await (const res of kv.list<string>({ prefix: [kvindexmap] })) indexMap.add(res.value);
