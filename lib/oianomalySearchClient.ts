@@ -44,23 +44,21 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
     const mainRequest = request.find(k => Array.isArray(k.params.facets));
     if (!mainRequest) throw new Error(`no main request found!`);
     const availableFacets = mainRequest.params.facets as string[];
-    const hits = await executeMainQuery(mainRequest);
-    const facetValues = await executeFacet(request, mainRequest);
+    const perPage = mainRequest.params.hitsPerPage || 12;
+    const offset = (mainRequest.params.page || 0) * perPage;
 
+    const { items, count } = await executeMainQuery(mainRequest, perPage, offset);
+    const facetValues = await executeFacet(request, mainRequest);
     return {
         results: [
             {
-                hits: hits,
+                hits: items,
                 facets: facetValues,
                 page: 0,
-                nbHits: 10,
-                nbPages: 1,
-                hitsPerPage: 20,
-                processingTimeMS: 100,
-                // exhaustiveFacetsCount: true,
-                // exhaustiveNbHits: true,
-                // query: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params && searchMethodParams[0].params.query) || "",
-                // params: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params) ? Object.entries(searchMethodParams[0].params).map(([k, v]) => `${k}=${v}`).join('&') : ""
+                nbHits: count,
+                nbPages: Math.ceil((count / perPage)),
+                hitsPerPage: perPage,
+                processingTimeMS: 100
             }
         ]
     }
@@ -99,7 +97,7 @@ export const queryOIAnomalyFacetSearch = async (request: OIAnomalyFacetSearchReq
 
 }
 
-async function executeMainQuery(request: OIAnomalySearchRequest) {
+async function executeMainQuery(request: OIAnomalySearchRequest, perPage: number, offset: number) {
     const conn = await getOIAnomalyConnection();
     let query = request.params.facetFilters && request.params.facetFilters.map(f => {
         const innerk = f.map(k => {
@@ -118,6 +116,25 @@ async function executeMainQuery(request: OIAnomalySearchRequest) {
 
     console.log(`executing main query: ${query} `);
 
+    const countsResult = await conn.send(`
+        WITH T AS (
+                SELECT CAST(dt as STRING) as dt,
+        option, option_symbol,
+        CAST(expiration as STRING) as expiration,
+        dte, option_type,
+        strike,
+        delta,
+        gamma,
+        open_interest,
+        volume,
+        prev_open_interest,
+        oi_change,
+        anomaly_score 
+                FROM 'oianomaly.parquet'
+                ${query && 'WHERE ' + query}
+    )
+    SELECT COUNT(1) as count FROM T
+            `);
     const arrowResult = await conn.send(`
                 SELECT CAST(dt as STRING) as dt,
         option, option_symbol,
@@ -135,12 +152,15 @@ async function executeMainQuery(request: OIAnomalySearchRequest) {
                 ${query && 'WHERE ' + query}
                 ORDER BY 
                 anomaly_score desc
-                LIMIT 10
+                LIMIT ${perPage} OFFSET ${offset}
             `);
-    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
-        dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number, delta: number, gamma: number,
-        open_interest: number, volume: number, prev_open_interest: number, oi_change: number, anomaly_score: number
-    }[];
+    return {
+        items: arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
+            dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number, delta: number, gamma: number,
+            open_interest: number, volume: number, prev_open_interest: number, oi_change: number, anomaly_score: number
+        }[],
+        count: (countsResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { count: number }[])[0].count
+    };
 }
 
 async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAnomalySearchRequest) {
