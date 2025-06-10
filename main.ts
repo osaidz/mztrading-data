@@ -18,7 +18,7 @@ import {
     getSnapshotsAvailableForDate,
     getSnapshotsAvailableForSymbol
 } from "./lib/data.ts";
-
+import { logger } from './lib/logger.ts'
 // import { getPriceAtDate } from './lib/historicalPrice.ts'
 import {
     calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet,
@@ -342,6 +342,16 @@ const app = new Application();
 
 app.use(async (context, next) => {
     try {
+        const req = context.request;
+        logger.info(`${req.method} ${req.url.pathname}`, {
+            path: req.url.pathname,
+            method: req.method,
+            referer: req.headers.get('referer'),
+            auth: req.headers.get('authorization'),
+            ip: req.headers.get('X-Forwarded-For') || req.headers.get('x-real-ip'),
+            userAgent: req.headers.get('user-agent'),
+            service: "mztrading-data"
+        });
         context.response.headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         context.response.headers.set("Access-Control-Allow-Origin", "*");
         await next();
