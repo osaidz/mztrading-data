@@ -68,15 +68,30 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
 
 export const queryOIAnomalyFacetSearch = async (request: OIAnomalyFacetSearchRequestType) => {
     const result = await executeFacetSearch(request);
+
+    /*
+    
+    "facetHits": data.map(({ value, count }) => ({ value, count, highlighted: `${value}` })),
+                        "exhaustiveFacetsCount": true,
+                        "exhaustive": {
+                            "facetsCount": true
+                        },
+                        "processingTimeMS": 1
+                        */
+
     return {
         // hits: hits,
-        facetHits: result
+        facetHits: result.map(({ value, count }) => ({ value, count, highlighted: `${value}` })),
+        exhaustiveFacetsCount: true,
+        processingTimeMS: 100,
+        "exhaustive": {
+            "facetsCount": true
+        },
+
         // page: 0,
         // nbHits: 10,
         // nbPages: 1,
         // hitsPerPage: 20,
-        // processingTimeMS: 100,
-        // exhaustiveFacetsCount: true,
         // exhaustiveNbHits: true,
         // query: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params && searchMethodParams[0].params.query) || "",
         // params: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params) ? Object.entries(searchMethodParams[0].params).map(([k, v]) => `${k}=${v}`).join('&') : ""
@@ -263,9 +278,11 @@ async function executeFacetSearch(request: OIAnomalyFacetSearchRequestType) {
     T
                 ${query && 'WHERE ' + query} 
                 GROUP BY ${params.facetName} `);
-    const resultSet = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
+    const resultSet = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { value: string, count: number }[];
 
     /*
+
+
     "facetHits": [
             {
                 "value": "Mobile phones",
