@@ -135,6 +135,8 @@ async function executeMainQuery(request: OIAnomalySearchRequest, perPage: number
     )
     SELECT COUNT(1) as count FROM T
             `);
+    const counts = countsResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { count: number }[];
+
     const arrowResult = await conn.send(`
                 SELECT CAST(dt as STRING) as dt,
         option, option_symbol,
@@ -154,12 +156,15 @@ async function executeMainQuery(request: OIAnomalySearchRequest, perPage: number
                 anomaly_score desc
                 LIMIT ${perPage} OFFSET ${offset}
             `);
-    return {
-        items: arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
+    const items = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
             dt: string, option: string, option_symbol: string, expiration: string, dte: number, strike: number, delta: number, gamma: number,
             open_interest: number, volume: number, prev_open_interest: number, oi_change: number, anomaly_score: number
-        }[],
-        count: (countsResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { count: number }[])[0].count
+        }[];
+    
+    console.log(`counts: ${JSON.stringify(counts)}`);
+    return {
+        items,
+        count: counts[0].count
     };
 }
 

@@ -14,3 +14,8 @@ The `mztrading-data` repository is designed to facilitate the mztrading site for
 - `jobs/`: Scripts and configurations for scheduled tasks and data processing jobs.
 - `lib/`: Library modules and utilities used across the project.
 - `main.ts`: The main TypeScript entry point for serving the services in Deno platform.
+
+## For local debugging
+```
+deno --allow-all  --unstable-kv main.ts
+```
