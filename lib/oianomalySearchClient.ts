@@ -259,10 +259,10 @@ async function executeFacetSearch(request: OIAnomalyFacetSearchRequestType) {
             anomaly_score 
                     FROM 'oianomaly.parquet'
         )
-                SELECT ${params.facets} AS value, COUNT(1) AS count FROM
+                SELECT ${params.facetName} AS value, COUNT(1) AS count FROM
     T
                 ${query && 'WHERE ' + query} 
-                GROUP BY ${params.facets} `);
+                GROUP BY ${params.facetName} `);
     const resultSet = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
 
     /*
