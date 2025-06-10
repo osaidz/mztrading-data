@@ -30,7 +30,7 @@ import {
 } from "./lib/historicalOptions.ts";
 // import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
-import { OIAnomalySearchRequest, queryOIAnomalySearch } from "./lib/oianomalySearchClient.ts";
+import { OIAnomalyFacetSearchRequestType, OIAnomalySearchRequest, queryOIAnomalyFacetSearch, queryOIAnomalySearch } from "./lib/oianomalySearchClient.ts";
 
 // const token = Deno.env.get("ghtoken") || '';
 const router = new Router();
@@ -280,6 +280,23 @@ router.get("/", (context) => {
                 throw new Error("Search request is empty!");
             }
             context.response.body = await queryOIAnomalySearch(searchRequest);
+        } catch (error) {
+            console.error(error);
+            context.response.body = error;
+            context.response.status = 500;
+        }
+        context.response.type = "application/json";
+    })
+    .post("/api/search/oi-anomaly/facet", async (context) => {
+        if (!context.request.hasBody) {
+            context.throw(415);
+        }
+        try {
+            const searchRequest = await context.request.body().value as OIAnomalyFacetSearchRequestType;
+            if (!searchRequest) {
+                throw new Error("Facet search request is empty!");
+            }
+            context.response.body = await queryOIAnomalyFacetSearch(searchRequest);
         } catch (error) {
             console.error(error);
             context.response.body = error;

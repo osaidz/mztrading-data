@@ -10,6 +10,14 @@ export type OIAnomalySearchRequest = {
         numericFilters: string[]
     }
 }
+
+export type OIAnomalyFacetSearchRequestType = Omit<OIAnomalySearchRequest, "params"> & {
+    params: OIAnomalySearchRequest["params"] & {
+        facetName: string,
+        facetQuery: string
+    };
+};
+
 export type OIAnomalySearchResponse = {
     results: {
         hits: {}[],
@@ -56,6 +64,24 @@ export const queryOIAnomalySearch = async (request: OIAnomalySearchRequest[]): P
             }
         ]
     }
+}
+
+export const queryOIAnomalyFacetSearch = async (request: OIAnomalyFacetSearchRequestType) => {
+    const result = await executeFacetSearch(request);
+    return {
+        // hits: hits,
+        facetHits: result
+        // page: 0,
+        // nbHits: 10,
+        // nbPages: 1,
+        // hitsPerPage: 20,
+        // processingTimeMS: 100,
+        // exhaustiveFacetsCount: true,
+        // exhaustiveNbHits: true,
+        // query: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params && searchMethodParams[0].params.query) || "",
+        // params: (searchMethodParams && searchMethodParams[0] && searchMethodParams[0].params) ? Object.entries(searchMethodParams[0].params).map(([k, v]) => `${k}=${v}`).join('&') : ""
+    }
+
 }
 
 async function executeMainQuery(request: OIAnomalySearchRequest) {
@@ -106,7 +132,7 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
     const facetValues: Record<string, any> = {};
     const conn = await getOIAnomalyConnection();
     const availableFacets = mainRequest.params.facets as string[];
-    const processedFacets = [];
+    const processedFacets: string[] = [];
     for (const req of request) {
         const { params } = req;
         if (typeof params.facets === 'string') {
@@ -191,4 +217,69 @@ async function executeFacet(request: OIAnomalySearchRequest[], mainRequest: OIAn
     }
 
     return facetValues;
+}
+
+async function executeFacetSearch(request: OIAnomalyFacetSearchRequestType) {
+    const conn = await getOIAnomalyConnection();
+    const { params } = request;
+
+    let query = params.facetFilters && params.facetFilters.map(f => {
+        const innerk = f.map(k => {
+            const [key, value] = k.split(':');
+            return `${key} = '${value}'`;
+        }).join(' OR ');
+        if (innerk) {
+            return `(${innerk})`
+        }
+    }).join(' AND ');
+
+    if (params.numericFilters && params.numericFilters.length > 0) {
+        const numericQuery = params.numericFilters.join(' AND ');
+        query = query ? `${query} AND ${numericQuery}` : numericQuery;
+    }
+
+    if (params.facetName && params.facetQuery) {
+        const facetQuery = `${params.facetName} LIKE '%${params.facetQuery}%'`;
+        query = query ? `${query} AND ${facetQuery}` : facetQuery;
+    }
+
+    const result = await conn.send(`
+                WITH T AS(
+            SELECT CAST(dt as STRING) as dt,
+            option, option_symbol,
+            CAST(expiration as STRING) as expiration,
+            dte, option_type,
+            strike,
+            delta,
+            gamma,
+            open_interest,
+            volume,
+            prev_open_interest,
+            oi_change,
+            anomaly_score 
+                    FROM 'oianomaly.parquet'
+        )
+                SELECT ${params.facets} AS value, COUNT(1) AS count FROM
+    T
+                ${query && 'WHERE ' + query} 
+                GROUP BY ${params.facets} `);
+    const resultSet = result.readAll().flatMap(k => k.toArray().map((row) => row.toJSON()));
+
+    /*
+    "facetHits": [
+            {
+                "value": "Mobile phones",
+                "highlighted": "Mobile <em>phone</em>s",
+                "count": 507
+            },
+            {
+                "value": "Phone cases",
+                "highlighted": "<em>Phone</em> cases",
+                "count": 63
+            }
+        ]
+    */
+
+
+    return resultSet;
 }
