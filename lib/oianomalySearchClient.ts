@@ -108,6 +108,8 @@ async function executeMainQuery(request: OIAnomalySearchRequest, perPage: number
 
     const arrowResult = await conn.send(`
                 ${baseQuery}
+
+                SELECT * FROM T1
                 ORDER BY anomaly_score desc
                 LIMIT ${perPage} OFFSET ${offset}
             `);
