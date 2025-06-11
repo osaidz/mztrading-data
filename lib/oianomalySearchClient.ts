@@ -33,6 +33,7 @@ type OIAnomalyFacetSearchRequestParams = OIAnomalySearchRequestParams & {
 };
 
 export type OIAnomalySearchRequest = {
+    indexName: string,
     params: OIAnomalySearchRequestParams
 }
 
@@ -89,8 +90,8 @@ export const queryOIAnomalyFacetSearch = async (request: OIAnomalyFacetSearchReq
 
 async function executeMainQuery(request: OIAnomalySearchRequest, perPage: number, offset: number) {
     const conn = await getOIAnomalyConnection();
-    const {params} = request;
-    const query = buildFacetQuery(params);    
+    const { params, indexName } = request;
+    const query = buildFacetQuery(params);
     console.log(`executing main query: ${query} `);
     const baseQuery = `
     ${baseCte},
@@ -110,7 +111,7 @@ async function executeMainQuery(request: OIAnomalySearchRequest, perPage: number
                 ${baseQuery}
 
                 SELECT * FROM T1
-                ORDER BY anomaly_score desc
+                ORDER BY ${indexName} desc
                 LIMIT ${perPage} OFFSET ${offset}
             `);
     const items = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
@@ -187,23 +188,7 @@ function buildFacetQuery(params: OIAnomalySearchRequestParams | OIAnomalyFacetSe
 async function executeFacetSearch(request: OIAnomalyFacetSearchRequestType) {
     const conn = await getOIAnomalyConnection();
     const { params } = request;
-
-    let query = params.facetFilters && params.facetFilters.map(f => {
-        const innerk = f.map(k => {
-            const [key, value] = k.split(':');
-            return `${key} = '${value}'`;
-        }).join(' OR ');
-        if (innerk) {
-            return `(${innerk})`
-        }
-    }).join(' AND ');
-
-    if (params.numericFilters && params.numericFilters.length > 0) {
-        const numericQuery = params.numericFilters.join(' AND ');
-        query = query ? `${query} AND ${numericQuery}` : numericQuery;
-    }
-
-
+    const query = buildFacetQuery(params);
     const result = await conn.send(`
                 ${baseCte}
                 SELECT ${params.facetName} AS value, COUNT(1) AS count FROM T
