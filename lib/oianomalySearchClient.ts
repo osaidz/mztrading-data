@@ -178,7 +178,7 @@ function buildFacetQuery(params: OIAnomalySearchRequestParams | OIAnomalyFacetSe
 
     const t = params as OIAnomalyFacetSearchRequestParams;
     if (t && t.facetName && t.facetQuery) {
-        const facetQuery = `${t.facetName} LIKE '%${t.facetQuery}%'`;
+        const facetQuery = `${t.facetName} ILIKE '%${t.facetQuery}%'`;
         query = query ? `${query} AND ${facetQuery}` : facetQuery;
     }
 
