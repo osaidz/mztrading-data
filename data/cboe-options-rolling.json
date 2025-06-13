@@ -64052,5 +64052,6 @@
             "symbol": "STZ",
             "dt": "2025-06-13"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-06-13-11-05-06/options_cboe_oi_anomaly.parquet"
 }
