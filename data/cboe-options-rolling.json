@@ -65528,5 +65528,6 @@
             "symbol": "MODG",
             "dt": "2025-06-19"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-06-19-11-14-18/options_cboe_oi_anomaly.parquet"
 }
