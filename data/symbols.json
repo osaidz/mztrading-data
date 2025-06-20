@@ -1124,6 +1124,10 @@
         "symbol": "ARCT"
     },
     {
+        "name": "Tradr 2X Long ACHR Daily ETF",
+        "symbol": "ARCX"
+    },
+    {
         "name": "ARDENT HEALTH INC",
         "symbol": "ARDT"
     },
@@ -2896,6 +2900,10 @@
         "symbol": "CBAT"
     },
     {
+        "name": "CRESCENT BIOPHARMA INC. COM",
+        "symbol": "CBIO"
+    },
+    {
         "name": "CBL & ASSOC PPTYS INC COMMON STOCK",
         "symbol": "CBL"
     },
@@ -3286,6 +3294,10 @@
     {
         "name": "CHAMPIONX CORPORATION COM",
         "symbol": "CHX"
+    },
+    {
+        "name": "CHIME FINL INC COM SHS CL A",
+        "symbol": "CHYM"
     },
     {
         "name": "THE CIGNA GROUP COM",
@@ -4358,10 +4370,6 @@
     {
         "name": "DANAOS CORPORATION SHS",
         "symbol": "DAC"
-    },
-    {
-        "name": "DADA NEXUS LTD ADS",
-        "symbol": "DADA"
     },
     {
         "name": "DATA I O CORP COM",
@@ -6320,7 +6328,7 @@
         "symbol": "FG"
     },
     {
-        "name": "FIBROGEN INC COM",
+        "name": "FIBROGEN INC COM NEW",
         "symbol": "FGEN"
     },
     {
@@ -7336,7 +7344,7 @@
         "symbol": "GLDD"
     },
     {
-        "name": "PROSHARES TR II ULTRASHRT NEW",
+        "name": "PROSHARES TR II ULTRASHORT GOLD",
         "symbol": "GLL"
     },
     {
@@ -7378,10 +7386,6 @@
     {
         "name": "GALAXY DIGITAL INC. CL A",
         "symbol": "GLXY"
-    },
-    {
-        "name": "GLYCOMIMETICS INC COM",
-        "symbol": "GLYC"
     },
     {
         "name": "GENERAL MTRS CO COM",
@@ -13112,7 +13116,7 @@
         "symbol": "PDFS"
     },
     {
-        "name": "PIEDMONT REALTY TRUST INC COM CL A",
+        "name": "PIEDMONT REALTY TRUST INC",
         "symbol": "PDM"
     },
     {
@@ -13482,10 +13486,6 @@
     {
         "name": "PLEXUS CORP COM",
         "symbol": "PLXS"
-    },
-    {
-        "name": "PLAYA HOTELS & RESORTS NV SHS",
-        "symbol": "PLYA"
     },
     {
         "name": "PLYMOUTH INDL REIT INC COM",
@@ -14212,7 +14212,7 @@
         "symbol": "RAPP"
     },
     {
-        "name": "RAPT THERAPEUTICS INC COM",
+        "name": "RAPT THERAPEUTICS INC COM NEW",
         "symbol": "RAPT"
     },
     {
@@ -15102,6 +15102,10 @@
     {
         "name": "SEACOAST BKG CORP FLA COM NEW",
         "symbol": "SBCF"
+    },
+    {
+        "name": "SHARPLINK GAMING INC COM NEW",
+        "symbol": "SBET"
     },
     {
         "name": "SPLASH BEVERAGE GROUP INC COM SHS",
@@ -18008,6 +18012,10 @@
         "symbol": "UPST"
     },
     {
+        "name": "Tradr 2X Long UPST Daily ETF",
+        "symbol": "UPSX"
+    },
+    {
         "name": "PROSHARES TR PSHS ULTRA UTIL",
         "symbol": "UPW"
     },
@@ -19310,10 +19318,6 @@
     {
         "name": "WYNN RESORTS LTD COM",
         "symbol": "WYNN"
-    },
-    {
-        "name": "UNITED STATES STL CORP NEW COM",
-        "symbol": "X"
     },
     {
         "name": "BEYOND AIR INC COM",
