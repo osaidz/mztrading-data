@@ -66152,5 +66152,6 @@
             "symbol": "APGE",
             "dt": "2025-06-23"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-06-23-10-48-07/options_cboe_oi_anomaly.parquet"
 }
