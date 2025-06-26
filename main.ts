@@ -27,6 +27,7 @@ import {
     // lastHistoricalOptionDataFromParquet, 
     getLiveCboeOptionsPricingData, getHistoricalSnapshotDates, getHistoricalGreeksSummaryDataBySymbolFromParquet, getHistoricalGreeksAvailableExpirationsBySymbolFromParquet,
     getOIAnomalyDataFromParquet, getHistoricalDataForOptionContractFromParquet,
+    getHistoricalOIDataBySymbolFromParquet,
 } from "./lib/historicalOptions.ts";
 // import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
@@ -342,6 +343,11 @@ router.get("/", (context) => {
     .get("/api/options/:symbol/report/greeks", async (context) => {
         const { symbol } = context.params;
         context.response.body = await getHistoricalGreeksSummaryDataBySymbolFromParquet(symbol);
+        context.response.type = "application/json";
+    })
+    .get("/api/options/:symbol/report/oi", async (context) => {
+        const { symbol } = context.params;
+        context.response.body = await getHistoricalOIDataBySymbolFromParquet(symbol);
         context.response.type = "application/json";
     })
     .get("/options/contracts/:contractId/historical-data", async (context) => {
