@@ -205,12 +205,12 @@ export const getHistoricalOIDataBySymbolFromParquet = async (symbol: string) => 
     const arrowResult = await conn.send(`            
                 SELECT CAST(O.dt as STRING) as dt, 
                 round(CAST(P.close as double), 2) as price,
-                O.option_type, O.strike , SUM(O.open_interest) as total_open_interest
+                O.option_type, O.strike , round(SUM(O.open_interest), 0) as total_open_interest
                 FROM 'db.parquet' O
                 JOIN 'stocks.parquet' P ON O.dt = P.dt AND O.option_symbol = P.symbol
                 WHERE option_symbol = '${symbol}'
-                GROUP BY dt, option_type, strike
-                ORDER BY dt, option_type, strike        
+                GROUP BY O.dt, P.close, O.option_type, O.strike
+                ORDER BY 1
         `);
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
         dt: string, price: number, option_type: 'C' | 'P', strike: number, total_open_interest: number
