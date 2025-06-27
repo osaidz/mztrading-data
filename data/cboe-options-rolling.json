@@ -67224,5 +67224,6 @@
             "symbol": "NANOS",
             "dt": "2025-06-27"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-06-27-10-49-24/options_cboe_oi_anomaly.parquet"
 }
