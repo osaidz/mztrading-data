@@ -199,9 +199,9 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
     }[];
 }
 
-export const getHistoricalOIDataBySymbolFromParquet = async (symbol: string) => {
+export const getHistoricalOIDataBySymbolFromParquet = async (symbol: string, expirations: string[]) => {
     const conn = await getConnection();
-    // const dteFilterExpression =  dte ? `AND expiration < date_add(dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days
+    const expirationFilterExpression =  expirations.length > 0 ? `AND expiration IN (${expirations.map(k=> `'${k}'`).join(',')})` : '';  //revisit it to get clarity on adding/subtracting days
     const arrowResult = await conn.send(`            
                 SELECT CAST(O.dt as STRING) as dt, 
                 round(CAST(P.close as double), 2) as price,
@@ -209,6 +209,7 @@ export const getHistoricalOIDataBySymbolFromParquet = async (symbol: string) => 
                 FROM 'db.parquet' O
                 JOIN 'stocks.parquet' P ON O.dt = P.dt AND O.option_symbol = P.symbol
                 WHERE option_symbol = '${symbol}'
+                ${expirationFilterExpression}
                 GROUP BY O.dt, P.close, O.option_type, O.strike
                 ORDER BY 1
         `);

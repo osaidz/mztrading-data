@@ -36,109 +36,9 @@ import { OIAnomalyFacetSearchRequestType, OIAnomalySearchRequest, queryOIAnomaly
 // const token = Deno.env.get("ghtoken") || '';
 const router = new Router();
 
-// const getHistoricalOptionsData = async (s: string, dt: string) => {
-//     const memData = getOptionsDataSummary();
-//     const assetUrl = Object.values(memData).find((j) => j.displayName == dt)
-//         ?.symbols[s.toUpperCase()].assetUrl;
-//     if (assetUrl) {
-//         return await ky(assetUrl).json();
-//     }
-
-//     const data = await ky(
-//         `https://raw.githubusercontent.com/mnsrulz/mytradingview-data/main/data/dt=${dt}/symbol=${s.toUpperCase()}/data.json`,
-//         {
-//             headers: {
-//                 Authorization: `Bearer ${token}`,
-//             },
-//         },
-//     ).json();
-//     return data;
-// };
-
 router.get("/", (context) => {
     context.response.body = "hello";
-})
-    // .get("/releases", async (context) => {
-    //     const newReleases = Object.values(OptionsSnapshotSummary).map((j) => ({
-    //         name: j.displayName,
-    //     })).reverse();
-    //     const releases = await ky(
-    //         `https://api.github.com/repos/mnsrulz/mytradingview-data/tags`,
-    //         {
-    //             headers: {
-    //                 Authorization: `Bearer ${token}`,
-    //             },
-    //         },
-    //     ).json<{ name: string }[]>();
-
-    //     const finalResponse = [...newReleases, ...releases].map((j) => ({
-    //         name: j.name,
-    //     }));
-    //     context.response.body = finalResponse;
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/optionsdatasummary", (context) => {
-    //     const data = getOptionsDataSummary();
-    //     context.response.body = Object.keys(data).map((j) => ({
-    //         name: j,
-    //         displayName: data[j].displayName,
-    //     }));
-    // })
-    // .get("/beta/optionsdata", async (context) => {
-    //     const { s, r } = getQuery(context);
-    //     const data = getOptionsDataSummary();
-    //     const { assetUrl } = data[r].symbols[s];
-    //     console.log(`making http call to access: ${assetUrl}`);
-    //     const assetData = await ky(assetUrl).json<{}>();
-    //     context.response.body = assetData;
-    //     context.response.type = "application/json";
-    // })
-    // .get("/summary", async (context) => {
-    //     const { s } = getQuery(context);
-    //     const data = await ky(
-    //         `https://raw.githubusercontent.com/mnsrulz/mytradingview-data/main/summary/data.json`,
-    //         {
-    //             headers: {
-    //                 Authorization: `Bearer ${token}`,
-    //             },
-    //         },
-    //     ).json<{ symbol: string; dt: string }[]>();
-    //     const newReleaseData = mapDataToLegacy();
-
-    //     const mergedDataset = [...data, ...newReleaseData];
-
-    //     const filteredData = s
-    //         ? mergedDataset.filter((j) =>
-    //             j.symbol.toUpperCase() == s.toUpperCase()
-    //         )
-    //         : mergedDataset;
-
-    //     const sortedByDates = sortBy(filteredData, (it) => it.dt, {
-    //         order: "desc",
-    //     });
-
-    //     context.response.body = sortedByDates;
-    //     context.response.type = "application/json";
-    // })
-    // .get("/data", async (context) => {
-    //     const { dt, s } = getQuery(context);
-    //     if (!dt || !s) {
-    //         throw new Error(
-    //             `empty query provided. Use with ?dt=YOUR_QUERY&s=aapl`,
-    //         );
-    //     }
-    //     // const cu = await yf.historical(s, {
-    //     //     period1: dayjs(dt.substr(0, 10)).toDate(),
-    //     //     interval: '1d',
-    //     //     period2: dayjs(dt.substr(0, 10)).add(1, 'days').toDate()
-    //     // })
-    //     // const currentPrice = cu.at(0)?.open;
-
-    //     const data = await getHistoricalOptionsData(s, dt);
-    //     const priceAtDate = await getPriceAtDate(s, dt)
-    //     context.response.body = { data, price: priceAtDate };
-    //     context.response.type = "application/json";
-    // })
+})    
     .get("/symbols", (context) => {
         //api/symbols/search?q=t
         const { q } = getQuery(context);
@@ -168,59 +68,7 @@ router.get("/", (context) => {
             }));
         context.response.body = { items: result };
         context.response.type = "application/json";
-    })
-    // .get("/beta/historical/cboesummary", (context) => {        //make the resource name more appropriate
-    //     context.response.body = CboeOptionsRawSummary;
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/symbols/:symbol/historical/snapshots", async (context) => {        //make the resource name more appropriate
-    //     const { symbol } = context.params;
-    //     context.response.body = await getHistoricalSnapshotDatesFromParquet(symbol);
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/symbols/:symbol/historical/snapshots/:dt", async (context) => {        //make the resource name more appropriate
-    //     const { symbol, dt } = context.params;
-    //     context.response.body = await getHistoricalOptionDataFromParquet(symbol, dt);
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/misc/last30rolling.parquet", (context) => {        //make the resource name more appropriate
-    //     const { assetUrl } = lastHistoricalOptionDataFromParquet();
-    //     context.response.redirect(assetUrl);
-    // })
-    // .get("/beta/symbols/:symbol/cboeoptionchain", async (context) => {        //make the resource name more appropriate
-    //     const { symbol } = context.params;
-    //     const data = await getOptionsChain(symbol);
-    //     context.response.body = data;
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/cboeoptionchainanalytics", async (context) => {        //make the resource name more appropriate
-    //     const data = await getOptionsAnalytics();
-    //     context.response.body = data;
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/symbols/:symbol/historical/snapshots/:dt/exposure", async (context) => {
-    //     const { symbol, dt } = context.params;
-    //     context.response.body = await getExposureData(symbol, dt);
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/symbols/:symbol/exposure", async (context) => {             //remove it
-    //     const { symbol } = context.params;
-    //     context.response.body = await getExposureData(symbol, 'LIVE');
-    //     context.response.type = "application/json";
-    // })
-    // .get("/beta/symbols/:symbol/optionspricing", async (context) => {   //remove it
-    //     const { symbol } = context.params;
-    //     context.response.body = await getLiveCboeOptionsPricingData(symbol);
-    //     context.response.type = "application/json";
-    // })
-    // .post("/beta/tools/exposure", async (context) => {                   //remove it
-    //     if (!context.request.hasBody) {
-    //         context.throw(415);
-    //     }
-    //     const { data, spotPrice, spotDate } = await context.request.body().value as ExposureDataRequest;
-    //     context.response.body = calculateExpsoure(spotPrice, data, spotDate);
-    //     context.response.type = "application/json";
-    // })
+    })    
     .get("/api/symbols", (context) => {
         //api/symbols/search?q=t
         const { q } = getQuery(context);
@@ -347,7 +195,9 @@ router.get("/", (context) => {
     })
     .get("/api/options/:symbol/report/oi", async (context) => {
         const { symbol } = context.params;
-        context.response.body = await getHistoricalOIDataBySymbolFromParquet(symbol);
+        const { expirationDates } = getQuery(context);
+        const expirations = expirationDates ? expirationDates.split(',').map(k => k.trim()).filter(k => k) : [];
+        context.response.body = await getHistoricalOIDataBySymbolFromParquet(symbol, expirations);
         context.response.type = "application/json";
     })
     .get("/options/contracts/:contractId/historical-data", async (context) => {
