@@ -67968,5 +67968,6 @@
             "symbol": "GDX",
             "dt": "2025-07-03"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-07-03-11-23-02/options_cboe_oi_anomaly.parquet"
 }
