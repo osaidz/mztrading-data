@@ -68828,5 +68828,6 @@
             "symbol": "DG",
             "dt": "2025-07-10"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-07-10-10-49-19/options_cboe_oi_anomaly.parquet"
 }
