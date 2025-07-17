@@ -69620,5 +69620,6 @@
             "symbol": "CIFR",
             "dt": "2025-07-17"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-07-17-10-51-42/options_cboe_oi_anomaly.parquet"
 }
