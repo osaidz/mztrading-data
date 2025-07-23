@@ -24,7 +24,12 @@ jobs:
       snapshot-data-tag: ${{ steps.snapshotimages.outputs.RELEASE_NAME }}
     steps:
       - id: snapshotimages
-        run: echo "RELEASE_NAME=DEX_GEX_SNAPSHOT_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
+        run: |
+          if [ -n "${{ github.event.inputs.forceDayId }}" ]; then
+            echo "RELEASE_NAME=DEX_GEX_SNAPSHOT_${{ github.event.inputs.forceDayId }}" >> ${GITHUB_OUTPUT}
+          else
+            echo "RELEASE_NAME=DEX_GEX_SNAPSHOT_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
+          fi
 
   publish_options_snapshot_images:
     runs-on: ubuntu-22.04
