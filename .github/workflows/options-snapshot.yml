@@ -7,6 +7,11 @@ on:
     types: 
       - completed
   workflow_dispatch: # Allow manual trigger from GitHub Actions UI
+    inputs:
+      forceDayId:
+        description: 'Optional day ID to force the snapshot for a specific date. Format: YYYY-MM-DD e.g. 2023-10-01'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -26,6 +31,7 @@ jobs:
     needs: set-release-vars
     env:
       RELEASE_NAME: ${{needs.set-release-vars.outputs.snapshot-data-tag}}
+      FORCE_DAY_ID: ${{ github.event.inputs.forceDayId }}
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
@@ -42,6 +48,9 @@ jobs:
         run: PUPPETEER_PRODUCT=chrome deno run -A https://deno.land/x/puppeteer@16.2.0/install.ts
       - name: Run
         run: deno run --allow-all jobs/main-options-snapshot.ts
+      - name: Zip snapshot images
+        run: |
+          zip -j temp/options-snapshots.zip temp/options-snapshots/*
       - name: Upload artifacts 
         uses: actions/upload-artifact@v4
         with:
@@ -50,6 +59,7 @@ jobs:
           path: |
             ${{ github.workspace}}/data/options-snapshot.summary.json
             ${{ github.workspace}}/temp/options-snapshots/*.png
+            ${{ github.workspace}}/temp/options-snapshots.zip
 
   release-snapshot-data:
     runs-on: ubuntu-latest
@@ -77,7 +87,7 @@ jobs:
       - name: Release
         uses: mnsrulz/action-gh-release@master
         with:
-          files: "temp/options-snapshots/*.png"
+          files: "temp/options-snapshots.zip"
           tag_name: ${{ env.RELEASE_NAME }}
       - name: Commit and push changes
         run: |
