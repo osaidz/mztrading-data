@@ -58,14 +58,19 @@ if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
 async function processBatch(batchSymbols: string[]) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(
-        `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
-        {
-            waitUntil: "networkidle2",
-        },
-    ); // replace
 
-
+    await pretry(async (n: number) => {
+            if (n > 1) console.log(`processBatch initial page navigation retry attempt: ${n}`)
+            await page.goto(
+                `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
+                {
+                    waitUntil: "networkidle2",
+                },
+            ); // replace
+        }, {
+        retries: 3
+    })
+    
     for (const symbol of batchSymbols) {
         await pretry(async (n: number) => {
             if (n > 1) console.log(`Main retry attempt: ${n}`)
