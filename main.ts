@@ -227,6 +227,7 @@ app.use(async (context, next) => {
         });
         context.response.headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         context.response.headers.set("Access-Control-Allow-Origin", "*");
+        context.response.headers.set("Access-Control-Max-Age", "86400");
         await next();
     } catch (err) {
         if (isHttpError(err)) {
