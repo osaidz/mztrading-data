@@ -127,6 +127,39 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | und
     }[];
 }
 
+export const getHistoricalExposureWallsFromParquet = async (dt: string | undefined, dte: number | undefined) => {
+    const conn = await getConnection();
+    const dtFilterExpression = dt ? `AND O.dt = '${dt}'` : '';
+    const dteFilterExpression = dte ? `AND expiration < date_add(O.dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days 
+    const arrowResult = await conn.send(`            
+            WITH T AS (
+                SELECT 
+                CAST(O.dt as STRING) as dt,
+                round(CAST(P.close as double), 2) as price,
+                P.symbol,
+                O.strike, round(SUM(IF(option_type = 'C', O.open_interest *100.0 * O.gamma , 0))) as call_gamma,
+                round(SUM(IF(option_type = 'P', O.open_interest * 100.0 * O.gamma, 0))) as put_gamma,                                
+                RANK() OVER (PARTITION BY O.dt, P.symbol ORDER BY call_gamma DESC) AS call_gamma_rank,
+                RANK() OVER (PARTITION BY O.dt, P.symbol ORDER BY put_gamma DESC) AS put_gamma_rank
+                FROM 'db.parquet' O
+                JOIN 'stocks.parquet' P ON O.dt = P.dt AND O.option_symbol = P.symbol
+                WHERE 1=1
+                ${dtFilterExpression}
+                ${dteFilterExpression}                
+                GROUP BY O.dt, P.symbol, P.close, O.strike
+            )
+            SELECT dt, symbol, price,
+                MAX(IF(call_gamma_rank = 1, strike, NULL)) AS call_wall_strike,
+                MAX(IF(put_gamma_rank = 1, strike, NULL)) AS put_wall_strike
+            FROM T        
+            GROUP BY dt, symbol, price
+            ORDER BY dt, symbol            
+        `);
+    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as {
+        dt: string, price: number, symbol: string, call_wall_strike: number, put_wall_strike: number
+    }[];
+}
+
 export const getOIAnomalyDataFromParquet = async (dt: string[], dteFrom: number | undefined, dteTo: number | undefined, symbols: string[]) => {
     const conn = await getOIAnomalyConnection();
     // const dtFilterExpression = (dt && dt.length>0) ? `AND dt IN ('${dt.map(k=> k).join(',')}'` : '';

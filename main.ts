@@ -22,6 +22,7 @@ import { logger } from './lib/logger.ts'
 // import { getPriceAtDate } from './lib/historicalPrice.ts'
 import {
     calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet,
+    getHistoricalExposureWallsFromParquet,
     // getHistoricalOptionDataFromParquet, 
     getHistoricalSnapshotDatesFromParquet,
     // lastHistoricalOptionDataFromParquet, 
@@ -110,6 +111,12 @@ router.get("/", (context) => {
         const { dt, dte } = getQuery(context);
         if (!dt) throw new Error("dt parameter is missing!");
         context.response.body = await getHistoricalGreeksSummaryDataFromParquet(dt, dte);
+        context.response.type = "application/json";
+    })
+    .get("/api/options/report/exposure-walls", async (context) => {
+        const { dt, dte } = getQuery(context);
+        // if (!dt) throw new Error("dt parameter is missing!");
+        context.response.body = await getHistoricalExposureWallsFromParquet(dt, dte);
         context.response.type = "application/json";
     })
     .get("/api/options/report/oi-anomaly", async (context) => {
