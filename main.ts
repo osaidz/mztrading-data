@@ -114,9 +114,9 @@ router.get("/", (context) => {
         context.response.type = "application/json";
     })
     .get("/api/options/report/exposure-walls", async (context) => {
-        const { dt, dte } = getQuery(context);
+        const { dt, dte, symbol } = getQuery(context);
         // if (!dt) throw new Error("dt parameter is missing!");
-        context.response.body = await getHistoricalExposureWallsFromParquet(dt, dte);
+        context.response.body = await getHistoricalExposureWallsFromParquet(dt, dte, symbol);
         context.response.type = "application/json";
     })
     .get("/api/options/report/oi-anomaly", async (context) => {

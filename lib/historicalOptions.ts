@@ -127,8 +127,9 @@ export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | und
     }[];
 }
 
-export const getHistoricalExposureWallsFromParquet = async (dt: string | undefined, dte: number | undefined) => {
+export const getHistoricalExposureWallsFromParquet = async (dt: string | undefined, dte: number | undefined, symbol: string | undefined) => {
     const conn = await getConnection();
+    const symbolFilterExpression = symbol ? `AND P.symbol = '${symbol}'` : '';
     const dtFilterExpression = dt ? `AND O.dt = '${dt}'` : '';
     const dteFilterExpression = dte ? `AND expiration < date_add(O.dt, INTERVAL ${dte} DAYS)` : '';  //revisit it to get clarity on adding/subtracting days 
     const arrowResult = await conn.send(`            
@@ -144,6 +145,7 @@ export const getHistoricalExposureWallsFromParquet = async (dt: string | undefin
                 FROM 'db.parquet' O
                 JOIN 'stocks.parquet' P ON O.dt = P.dt AND O.option_symbol = P.symbol
                 WHERE 1=1
+                ${symbolFilterExpression}
                 ${dtFilterExpression}
                 ${dteFilterExpression}                
                 GROUP BY O.dt, P.symbol, P.close, O.strike
