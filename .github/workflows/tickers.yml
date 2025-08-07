@@ -46,16 +46,22 @@ jobs:
           else
             echo "Changes detected."
           fi
+      
+      - name: Count changed lines
+        id: count-lines
+        run: |
+          CHANGED_LINES=$(git diff --numstat | awk '{sum += $1 + $2} END {print sum}')
+          echo "changed_lines=$CHANGED_LINES" >> $GITHUB_ENV
 
-    #   - name: Commit and push changes
-    #     if: steps.check-changes.outcome == 'success'
-    #     run: |
-    #       git add .
-    #       git commit -m "Update cboe symbols"
-    #       git push origin "$branch_name"
+      - name: Commit and push changes (auto-merge if <= 100 lines)
+        if: steps.check-changes.outcome == 'success' && env.changed_lines != '' && env.changed_lines <= 100
+        run: |
+          git add .
+          git commit -m "Auto-update cboe symbols"
+          git push
 
-      - name: Create pull request
-        if: steps.check-changes.outcome == 'success'
+      - name: Create pull request (if > 100 lines)
+        if: steps.check-changes.outcome == 'success' && env.changed_lines != '' && env.changed_lines > 100
         uses: peter-evans/create-pull-request@v5
         with:
           branch: ${{ env.branch_name }}
