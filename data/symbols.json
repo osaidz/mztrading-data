@@ -1116,7 +1116,7 @@
         "symbol": "ARCX"
     },
     {
-        "name": "ARDENT HEALTH INC",
+        "name": "ARDENT HEALTH INC COM",
         "symbol": "ARDT"
     },
     {
@@ -10428,6 +10428,10 @@
         "symbol": "LODE"
     },
     {
+        "name": "CONTEXTLOGIC HOLDINGS INC",
+        "symbol": "LOGC"
+    },
+    {
         "name": "LOGITECH INTL S A SHS",
         "symbol": "LOGI"
     },
@@ -12988,14 +12992,6 @@
         "symbol": "PAR"
     },
     {
-        "name": "PARAMOUNT GLOBAL CLASS B COM",
-        "symbol": "PARA"
-    },
-    {
-        "name": "PARAMOUNT GLOBAL CLASS A COM",
-        "symbol": "PARAA"
-    },
-    {
         "name": "PAR PAC HOLDINGS INC COM NEW",
         "symbol": "PARR"
     },
@@ -13818,6 +13814,10 @@
     {
         "name": "SPDR SERIES TRUST ICE PFD SEC ETF",
         "symbol": "PSK"
+    },
+    {
+        "name": "PARAMOUNT SKYDANCE CORP COM CL B",
+        "symbol": "PSKY"
     },
     {
         "name": "PRICESMART INC COM",
@@ -16288,7 +16288,7 @@
         "symbol": "SPR"
     },
     {
-        "name": "SPRUCE BIOSCIENCES INC COM",
+        "name": "SPRUCE BIOSCIENCES INC COM NEW",
         "symbol": "SPRBD"
     },
     {
