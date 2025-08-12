@@ -260,6 +260,10 @@
         "symbol": "ACWX"
     },
     {
+        "name": "ARRAY DIGITAL INFRASTRUCTURE I",
+        "symbol": "AD"
+    },
+    {
         "name": "ADAPTIMMUNE THERAPEUTICS PLC SPONDS ADS",
         "symbol": "ADAP"
     },
@@ -844,6 +848,10 @@
         "symbol": "AMRX"
     },
     {
+        "name": "AMRIZE LTD SHS",
+        "symbol": "AMRZ"
+    },
+    {
         "name": "AMERICAN SUPERCONDUCTOR CORP SHS NEW",
         "symbol": "AMSC"
     },
@@ -1208,12 +1216,20 @@
         "symbol": "ARMK"
     },
     {
+        "name": "ARIS MNG CORP COM",
+        "symbol": "ARMN"
+    },
+    {
         "name": "T-REX 2X Long ARM Daily Target ETF",
         "symbol": "ARMU"
     },
     {
         "name": "ARCHROCK INC COM",
         "symbol": "AROC"
+    },
+    {
+        "name": "ARQ INC COM",
+        "symbol": "ARQ"
     },
     {
         "name": "ARQIT QUANTUM INC COM NEW",
@@ -2992,6 +3008,10 @@
         "symbol": "CCI"
     },
     {
+        "name": "COHEN CIRCLE ACQUISITION CORP SHS CL A",
+        "symbol": "CCIR"
+    },
+    {
         "name": "CAMECO CORP COM",
         "symbol": "CCJ"
     },
@@ -3034,6 +3054,10 @@
     {
         "name": "COMPANIA CERVECERIAS UNIDAS S SPONSORED ADR",
         "symbol": "CCU"
+    },
+    {
+        "name": "T-REX 2X Long CRCL Daily Target ETF",
+        "symbol": "CCUP"
     },
     {
         "name": "VICTORY PORTFOLIOS II VCSHS US EQ INCM",
@@ -4378,6 +4402,10 @@
     {
         "name": "CORECIVIC INC COM",
         "symbol": "CXW"
+    },
+    {
+        "name": "CYBIN INC COM NEW",
+        "symbol": "CYBN"
     },
     {
         "name": "CYBERARK SOFTWARE LTD SHS",
@@ -7414,6 +7442,10 @@
     {
         "name": "CORNING INC COM",
         "symbol": "GLW"
+    },
+    {
+        "name": "T-REX 2X Long GLXY Daily Target ETF",
+        "symbol": "GLXU"
     },
     {
         "name": "GALAXY DIGITAL INC. CL A",
@@ -11496,7 +11528,7 @@
         "symbol": "MSOX"
     },
     {
-        "name": "MICROSTRATEGY INC CL A NEW",
+        "name": "STRATEGY INC",
         "symbol": "MSTR"
     },
     {
@@ -12642,10 +12674,6 @@
     {
         "name": "ONEMAIN HLDGS INC COM",
         "symbol": "OMF"
-    },
-    {
-        "name": "OMEGA THERAPEUTICS INC COMMON STOCK",
-        "symbol": "OMGAQ"
     },
     {
         "name": "OWENS & MINOR INC NEW COM",
@@ -13921,7 +13949,7 @@
     },
     {
         "name": "PALATIN TECHNOLOGIES INC COM NEW",
-        "symbol": "PTNT"
+        "symbol": "PTNTD"
     },
     {
         "name": "PELOTON INTERACTIVE INC CL A COM",
@@ -16096,6 +16124,10 @@
         "symbol": "SOL"
     },
     {
+        "name": "VOLATILITY SHS TR 2X SOLANA ETF",
+        "symbol": "SOLT"
+    },
+    {
         "name": "SOLVENTUM CORP COM SHS",
         "symbol": "SOLV"
     },
@@ -18048,6 +18080,10 @@
         "symbol": "UPAR"
     },
     {
+        "name": "UPSTREAM BIO INC COM",
+        "symbol": "UPB"
+    },
+    {
         "name": "UPBOUND GROUP INC COM",
         "symbol": "UPBD"
     },
@@ -18174,10 +18210,6 @@
     {
         "name": "UNITED STS LIME & MINERALS INC COM",
         "symbol": "USLM"
-    },
-    {
-        "name": "UNITED STATES CELLULAR CORP COM",
-        "symbol": "USM"
     },
     {
         "name": "PRINCIPAL EXCHANGE TRADED FDS US MEGA CP ETF",
@@ -18412,7 +18444,7 @@
         "symbol": "VERS"
     },
     {
-        "name": "VERU INC COM",
+        "name": "VERU INC COM NEW",
         "symbol": "VERU"
     },
     {
