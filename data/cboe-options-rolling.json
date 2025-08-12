@@ -72296,5 +72296,6 @@
             "symbol": "CHTR",
             "dt": "2025-08-12"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-08-12-10-50-33/options_cboe_oi_anomaly.parquet"
 }
