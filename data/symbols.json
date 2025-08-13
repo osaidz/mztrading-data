@@ -260,7 +260,7 @@
         "symbol": "ACWX"
     },
     {
-        "name": "ARRAY DIGITAL INFRASTRUCTURE I",
+        "name": "ARRAY DIGITAL INFRASTRUCTURE I COM",
         "symbol": "AD"
     },
     {
@@ -11528,7 +11528,7 @@
         "symbol": "MSOX"
     },
     {
-        "name": "STRATEGY INC",
+        "name": "STRATEGY INC CL A NEW",
         "symbol": "MSTR"
     },
     {
@@ -14368,6 +14368,10 @@
         "symbol": "RDNT"
     },
     {
+        "name": "RIDENOW GROUP INC",
+        "symbol": "RDNW"
+    },
+    {
         "name": "Roundhill Russell 2000 0DTE Covered Call Strategy ETF",
         "symbol": "RDTE"
     },
@@ -14666,10 +14670,6 @@
     {
         "name": "RE MAX HLDGS INC CL A",
         "symbol": "RMAX"
-    },
-    {
-        "name": "RUMBLEON INC COM CL B",
-        "symbol": "RMBL"
     },
     {
         "name": "RAMBUS INC DEL COM",
