@@ -72500,5 +72500,6 @@
             "symbol": "ADT",
             "dt": "2025-08-13"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-08-13-10-50-15/options_cboe_oi_anomaly.parquet"
 }
