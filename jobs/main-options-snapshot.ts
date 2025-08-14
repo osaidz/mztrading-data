@@ -3,6 +3,7 @@ import { format } from "https://deno.land/std@0.224.0/datetime/format.ts";
 import puppeteer, { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import pretry from "https://esm.sh/p-retry@6.2.1";
 import pMap from "https://esm.sh/p-map@7.0.3";
+import pTimeout from "https://esm.sh/p-timeout@6.1.4";
 import { chunk } from "jsr:@std/collections";
 
 const maxBatches = 10;
@@ -84,8 +85,7 @@ async function processBatch(batchSymbols: string[]) {
 
 async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
     async function captureScreenshot(path: string) {
-        await pretry(async (n: number) => {
-            if (n > 1) console.log(`Retry attempt: ${n}`)
+        async function captureScreenshotCore() {
             console.log(`${symbol} - captureScreenshot - waiting for network idle...`);
             await page.waitForNetworkIdle({
                 timeout: timeoutInMS
@@ -98,6 +98,13 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
             }); // take a screenshot and save it to a file
 
             console.log(`${symbol} - Screenshot saved successfully to path ${path}`);
+        }
+        await pretry(async (n: number) => {
+            if (n > 1) console.log(`Retry attempt: ${n}`)
+            await pTimeout(captureScreenshotCore(), {
+                milliseconds: timeoutInMS,
+                message: `Timeout while capturing screenshot for symbol ${symbol} at path ${path}`
+            });
         }, {
             retries: 3
         })
