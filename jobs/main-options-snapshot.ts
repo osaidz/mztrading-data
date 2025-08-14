@@ -52,7 +52,7 @@ if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
 
     console.log(`Summary file generated successfully!`);
 } else {
-    throw new Error(`Unable to find any latest date in the data summary file!`);    
+    throw new Error(`Unable to find any latest date in the data summary file!`);
 }
 
 async function processBatch(batchSymbols: string[]) {
@@ -60,17 +60,17 @@ async function processBatch(batchSymbols: string[]) {
     const page = await browser.newPage();
 
     await pretry(async (n: number) => {
-            if (n > 1) console.log(`processBatch initial page navigation retry attempt: ${n}`)
-            await page.goto(
-                `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
-                {
-                    waitUntil: "networkidle2",
-                },
-            ); // replace
-        }, {
+        if (n > 1) console.log(`processBatch initial page navigation retry attempt: ${n}`)
+        await page.goto(
+            `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
+            {
+                waitUntil: "networkidle2",
+            },
+        ); // replace
+    }, {
         retries: 3
     })
-    
+
     for (const symbol of batchSymbols) {
         await pretry(async (n: number) => {
             if (n > 1) console.log(`Main retry attempt: ${n}`)
@@ -83,18 +83,38 @@ async function processBatch(batchSymbols: string[]) {
 }
 
 async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
+    async function captureScreenshot(path: string) {
+        await pretry(async (n: number) => {
+            if (n > 1) console.log(`Retry attempt: ${n}`)
+            console.log(`${symbol} - captureScreenshot - waiting for network idle...`);
+            await page.waitForNetworkIdle({
+                timeout: timeoutInMS
+            });
+
+            console.log(`${symbol} - Taking screenshot and saving to ${path}`);
+            await page.screenshot({
+                path: path,
+
+            }); // take a screenshot and save it to a file
+
+            console.log(`${symbol} - Screenshot saved successfully to path ${path}`);
+        }, {
+            retries: 3
+        })
+    }
+
     const cleanedSymbol = cleanSymbol(symbol)
-    
+
     console.log(`(${++processingCounter}/${totalSymbols}) Fetching dex/gex page for ${symbol}`);
 
     currentRelease.symbols[symbol] = {
         dex: {
             sdFileName: `${cleanedSymbol}_DEX_620.png`,
-            hdFileName: `${cleanedSymbol}_DEX_1240.png`,            
+            hdFileName: `${cleanedSymbol}_DEX_1240.png`,
         },
         gex: {
             sdFileName: `${cleanedSymbol}_GEX_620.png`,
-            hdFileName: `${cleanedSymbol}_GEX_1240.png`           
+            hdFileName: `${cleanedSymbol}_GEX_1240.png`
         }
     }
 
@@ -111,17 +131,17 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
     // console.log(`Script: ${scriptToRun}`);
     await page.evaluate(scriptToRun);
 
-    console.log(`Generating high definition DEX snapshot page for ${symbol}`);
+    console.log(`${symbol} - Generating high definition DEX snapshot page`);
 
     await page.waitForNetworkIdle({
         timeout: timeoutInMS
     });
-    await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.hdFileName}`); // take a screenshot and save it to a file
+    await captureScreenshot(`${dataFolder}/${currentSymbol.dex.hdFileName}`); // take a screenshot and save it to a file
 
-    console.log(`Generating standard definition DEX snapshot page for ${symbol}`);
+    console.log(`${symbol} - Generating standard definition DEX snapshot page`);
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 1 }); // set the viewport size
 
-    await captureScreenshot(page, `${dataFolder}/${currentSymbol.dex.sdFileName}`); // take a screenshot and save it to a file
+    await captureScreenshot(`${dataFolder}/${currentSymbol.dex.sdFileName}`); // take a screenshot and save it to a file
 
     varurlname = `urlgex${allSymbols.indexOf(symbol)}${new Date().getTime()}`
     const scriptToRunGex = `
@@ -130,26 +150,15 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
         history.replaceState(null, "", ${varurlname});
         `;
     await page.evaluate(scriptToRunGex);
-    console.log(`Generating standard definition GEX snapshot page for ${symbol}`);
+    console.log(`${symbol} - Generating standard definition GEX snapshot page`);
 
-    await captureScreenshot(page, `${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file
+    await captureScreenshot(`${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file
 
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
-    console.log(`Generating high definition GEX snapshot page for ${symbol}`);
+    console.log(`${symbol} - Generating high definition GEX snapshot page`);
 
-    await captureScreenshot(page, `${dataFolder}/${currentSymbol.gex.hdFileName}`); // take a screenshot and save it to a file      
+    await captureScreenshot(`${dataFolder}/${currentSymbol.gex.hdFileName}`); // take a screenshot and save it to a file      
+
+    console.log(`Finished processing symbol: ${symbol}`);
 }
 
-async function captureScreenshot(page: Page, path: string) {
-    await pretry(async (n: number) => {
-        if (n > 1) console.log(`Retry attempt: ${n}`)
-        await page.waitForNetworkIdle({
-            timeout: timeoutInMS
-        });
-        await page.screenshot({
-            path: path
-        }); // take a screenshot and save it to a file
-    }, {
-        retries: 3
-    })
-}
