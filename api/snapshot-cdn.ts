@@ -22,16 +22,20 @@ Deno.serve(async (req) => {
             const assetUrl = `${zipServiceUrl}?f=${f}&q=${zipAssetUrl}`;
             const cached = await cache.match(assetUrl);
             if (cached) {
+                console.log(`Serving from cache: ${assetUrl}`);
                 return cached;
             }
+
+            console.log(`Fetching from network: ${assetUrl}`);
             const res = await fetch(assetUrl);
             if (!res.ok) return res;
 
             await cache.put(assetUrl, res.clone());
             return res;
         }
+        return new Response("Not Found", { status: 404 });
     }
-    return new Response("Not Found", { status: 404 });
+    return new Response("/api/snapshots?symbol=<symbol>&dt=<dt>&f=<f>");
 });
 
 // router.get("/api/snapshots", async (context) => {
