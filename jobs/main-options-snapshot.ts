@@ -41,7 +41,7 @@ if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
     console.log(`Found ${allSymbols.length} tickers...`);
     totalSymbols = allSymbols.length;
 
-    const chunkSize = Math.ceil(allSymbols.length / dop);
+    const chunkSize = Math.ceil(allSymbols.length / dop);  //keep it small to avoid any issues with puppeteer?
     console.log(`chunking symbols with ${chunkSize} size...`);
     const batches = chunk(allSymbols, chunkSize);
     console.log(`Processing in ${batches.length} batches with ${dop} symbols each...`);
@@ -64,66 +64,63 @@ if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
 
 async function processBatch(batchSymbols: string[]) {
     const batchId = nanoid(10);
-    console.log(`Processing batch ${batchId} with ${batchSymbols.length} symbols...`);
+    console.log(`🚗 Processing batch ${batchId} with ${batchSymbols.length} symbols...`);
     runners.push(batchId);
     const browser = await puppeteer.launch();
-    const page = await browser.newPage();
+    let page: Page;
+    async function initializePage() {
+        console.log(`🔄 Initializing page for batch ${batchId}...`);
+        page = await browser.newPage();
+        await pretry(async (n: number) => {
+            if (n > 1) console.warn(`🚧 Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`)
+            await page.goto(
+                `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
+                {
+                    waitUntil: "networkidle2",
+                },
+            ); // replace
+        }, {
+            retries: 3
+        });
+    }
 
-    await pretry(async (n: number) => {
-        if (n > 1) console.warn(`🟡 Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`)
-        await page.goto(
-            `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
-            {
-                waitUntil: "networkidle2",
-            },
-        ); // replace
-    }, {
-        retries: 3
-    })
+    await initializePage();
 
     for (const symbol of batchSymbols) {
         processingCounter++;
         console.log(`Processing symbol: ${symbol} in batch ${batchId}. Progress: ${processingCounter}/${totalSymbols}`);
         await pretry(async (n: number) => {
-            if (n > 1) console.warn(`🟡 Batch: ${batchId} - Main retry attempt: ${n}`)
+            if (n > 1) {
+                await initializePage();
+                console.warn(`🚧 Retrying the batch: ${batchId}, attempt: ${n}/3`);
+            }
             await processSymbol(page, batchSymbols, symbol, batchId);
         }, {
             retries: 3
         })
     }
     await browser.close();
+    console.log(`🚀 Finished processing batch ${batchId} with ${batchSymbols.length} symbols...`);
 }
 
 async function processSymbol(page: Page, allSymbols: string[], symbol: string, batchId: string) {
     async function captureScreenshot(path: string) {
-        async function captureScreenshotCore() {
-            console.log(`${symbol} - captureScreenshot - waiting for network idle...`);
-            await page.waitForNetworkIdle({
-                timeout: timeoutInMS
-            });
+        console.log(`⏳ ${symbol} - captureScreenshot - waiting for network idle...`);
+        await page.waitForNetworkIdle({
+            timeout: timeoutInMS
+        });
 
-            console.log(`${symbol} - Taking screenshot and saving to ${path}`);
-            await page.screenshot({
-                path: path,
+        console.log(`🪓 ${symbol} - Taking screenshot and saving to ${path}`);
+        await page.screenshot({
+            path: path
+        }); // take a screenshot and save it to a file
 
-            }); // take a screenshot and save it to a file
-
-            console.log(`${symbol} - Screenshot saved successfully to path ${path}`);
-        }
-        await pretry(async (n: number) => {
-            if (n > 1) console.log(`Retry attempt: ${n}`)
-            await pTimeout(captureScreenshotCore(), {
-                milliseconds: timeoutInMS,
-                message: `Timeout while capturing screenshot for symbol ${symbol} at path ${path}`
-            });
-        }, {
-            retries: 3
-        })
+        console.log(`⚡ ${symbol} - Screenshot saved successfully to path ${path}`);
     }
 
     const cleanedSymbol = cleanSymbol(symbol)
 
-    console.log(`Fetching dex/gex page for ${symbol}`);
+    console.log(`🎁 Fetching dex/gex page for ${symbol}`);
 
     currentRelease.symbols[symbol] = {
         dex: {
