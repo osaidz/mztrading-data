@@ -13,7 +13,7 @@ import { getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol, getCboeLatestDat
 const dataFolder = `temp/options-snapshots`;
 await ensureDir(dataFolder);
 const data = getOptionsSnapshotSummary();
-
+let pageFetchCounter = 0;
 const timeoutInMS = 3000;
 const releaseName = Deno.env.get("RELEASE_NAME") ||
     `DEX_GEX_SNAPSHOT_${format(new Date(), "yyyy-MM-dd")}`;
@@ -44,13 +44,14 @@ if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
     const chunkSize = Math.ceil(allSymbols.length / dop);  //keep it small to avoid any issues with puppeteer?
     console.log(`chunking symbols with ${chunkSize} size...`);
     const batches = chunk(allSymbols, chunkSize);
-    console.log(`Processing in ${batches.length} batches with ${chunkSize} symbols each...`);
+    console.log(`Processing in ${batches.length} batches with ${chunkSize} symbols each and dop ${dop}...`);
     console.log(`Total symbols to process: ${totalSymbols}`);
     await pMap(batches, processBatch, {
         concurrency: dop
     });
 
     console.log(`🟢 Finished generating snapshot files!`);
+    console.log(`🟢 Page fetch count: ${pageFetchCounter}`);
 
     Deno.writeTextFileSync(
         "./data/options-snapshot.summary.json",
@@ -78,7 +79,8 @@ async function processBatch(batchSymbols: string[]) {
         browser = await puppeteer.launch();
         page = await browser.newPage();
         await pretry(async (n: number) => {
-            if (n > 1) console.warn(`🚧 Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`)
+            if (n > 1) console.warn(`🚧 Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`);
+            pageFetchCounter++;
             await page.goto(
                 `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
                 {
@@ -86,7 +88,7 @@ async function processBatch(batchSymbols: string[]) {
                 },
             ); // replace
 
-            await delay(5000); // wait for a second to ensure the page is loaded properly
+            await delay(5000); // wait for a few seconds to ensure the page is loaded properly
         }, {
             retries: 3
         });
@@ -121,7 +123,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
                 timeout: timeoutInMS
             });
             
-            console.log(`🪓 ${symbol} - Taking screenshot and saving to ${path}`);
+            console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
             await page.screenshot({
                 path: path
             }); // take a screenshot and save it to a file
