@@ -1,6 +1,6 @@
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 import { format } from "https://deno.land/std@0.224.0/datetime/format.ts";
-import puppeteer, { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import puppeteer, { Page, Browser } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import pretry from "https://esm.sh/p-retry@6.2.1";
 import pMap from "https://esm.sh/p-map@7.0.3";
 import pTimeout from "https://esm.sh/p-timeout@6.1.4";
@@ -66,10 +66,16 @@ async function processBatch(batchSymbols: string[]) {
     const batchId = nanoid(10);
     console.log(`🚗 Processing batch ${batchId} with ${batchSymbols.length} symbols...`);
     runners.push(batchId);
-    const browser = await puppeteer.launch();
+    let browser: Browser;
     let page: Page;
     async function initializePage() {
         console.log(`🔄 Initializing page for batch ${batchId}...`);
+        if (browser) {
+            console.log(`🔄 Closing existing browser instance for batch ${batchId}...`);
+            await browser.close();
+            console.log(`🔄 Closed existing browser instance for batch ${batchId}...`);
+        }
+        browser = await puppeteer.launch();
         page = await browser.newPage();
         await pretry(async (n: number) => {
             if (n > 1) console.warn(`🚧 Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`)
@@ -88,18 +94,20 @@ async function processBatch(batchSymbols: string[]) {
 
     for (const symbol of batchSymbols) {
         processingCounter++;
-        console.log(`Processing symbol: ${symbol} in batch ${batchId}. Progress: ${processingCounter}/${totalSymbols}`);
+        console.log(`🔄 Processing symbol: ${symbol} in batch ${batchId}. Progress: ${processingCounter}/${totalSymbols}`);
         await pretry(async (n: number) => {
             if (n > 1) {
-                await initializePage();
                 console.warn(`🚧 Retrying the batch: ${batchId}, attempt: ${n}/3`);
+                await initializePage();
             }
             await processSymbol(page, batchSymbols, symbol, batchId);
         }, {
             retries: 3
         })
     }
-    await browser.close();
+    if (browser) {
+        await browser.close();
+    }
     console.log(`🚀 Finished processing batch ${batchId} with ${batchSymbols.length} symbols...`);
 }
 
@@ -120,7 +128,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
 
     const cleanedSymbol = cleanSymbol(symbol)
 
-    console.log(`🎁 Fetching dex/gex page for ${symbol}`);
+    console.log(`🎁  ${symbol} - Batch - ${batchId}. Fetching dex/gex page`);
 
     currentRelease.symbols[symbol] = {
         dex: {
@@ -146,7 +154,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
     // console.log(`Script: ${scriptToRun}`);
     await page.evaluate(scriptToRun);
 
-    console.log(`⬆️ ${symbol} - Generating high definition DEX snapshot page`);
+    console.log(`📖 ${symbol} - Generating high definition DEX snapshot page`);
 
     await page.waitForNetworkIdle({
         timeout: timeoutInMS
