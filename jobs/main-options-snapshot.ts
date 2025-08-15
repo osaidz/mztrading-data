@@ -5,8 +5,9 @@ import pretry from "https://esm.sh/p-retry@6.2.1";
 import pMap from "https://esm.sh/p-map@7.0.3";
 import pTimeout from "https://esm.sh/p-timeout@6.1.4";
 import { chunk } from "jsr:@std/collections";
+import { nanoid } from "https://esm.sh/nanoid@5.1.5";
 
-const maxBatches = 10;
+const maxBatches = 4;
 
 import { getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol, getCboeLatestDateAndSymbols } from "../lib/data.ts";
 const dataFolder = `temp/options-snapshots`;
@@ -33,6 +34,7 @@ const currentRelease = data[releaseName];
 const latestDateAndSymbols = getCboeLatestDateAndSymbols(forceDayId);
 let totalSymbols = 0;
 let processingCounter = 0;
+const runners = [];
 if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
     console.log(`Latest date: ${latestDateAndSymbols.latestDate}`);
     const allSymbols = latestDateAndSymbols.symbols;//.slice(0, 30); //for testing work only with 3 items
@@ -57,11 +59,14 @@ if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
 }
 
 async function processBatch(batchSymbols: string[]) {
+    const batchId = nanoid(10);
+    console.log(`Processing batch ${batchId} with ${batchSymbols.length} symbols...`);
+    runners.push(batchId);
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     await pretry(async (n: number) => {
-        if (n > 1) console.log(`processBatch initial page navigation retry attempt: ${n}`)
+        if (n > 1) console.log(`Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`)
         await page.goto(
             `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
             {
@@ -73,9 +78,11 @@ async function processBatch(batchSymbols: string[]) {
     })
 
     for (const symbol of batchSymbols) {
+        processingCounter++;
+        console.log(`Processing symbol: ${symbol} in batch ${batchId}. Progress: ${processingCounter}/${totalSymbols}`);
         await pretry(async (n: number) => {
-            if (n > 1) console.log(`Main retry attempt: ${n}`)
-            await processSymbol(page, batchSymbols, symbol);
+            if (n > 1) console.log(`Batch: ${batchId} - Main retry attempt: ${n}`)
+            await processSymbol(page, batchSymbols, symbol, batchId);
         }, {
             retries: 3
         })
@@ -83,7 +90,7 @@ async function processBatch(batchSymbols: string[]) {
     await browser.close();
 }
 
-async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
+async function processSymbol(page: Page, allSymbols: string[], symbol: string, batchId: string) {
     async function captureScreenshot(path: string) {
         async function captureScreenshotCore() {
             console.log(`${symbol} - captureScreenshot - waiting for network idle...`);
@@ -112,7 +119,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string) {
 
     const cleanedSymbol = cleanSymbol(symbol)
 
-    console.log(`(${++processingCounter}/${totalSymbols}) Fetching dex/gex page for ${symbol}`);
+    console.log(`Fetching dex/gex page for ${symbol}`);
 
     currentRelease.symbols[symbol] = {
         dex: {
