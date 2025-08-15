@@ -67,6 +67,7 @@ export const AvailableSnapshotDates = Object.values(OptionsSnapshotSummary).map(
 export const OptionsSnapshotSummaryLegacy = Object.fromEntries(Object.keys(OptionsSnapshotSummary).map(j => [OptionsSnapshotSummary[j].displayName, { zipAssetUrl: OptionsSnapshotSummary[j].zipAssetUrl, symbols: OptionsSnapshotSummary[j].symbols }]));
 
 export const zipServiceUrl = 'https://zipservice-deno.deno.dev/download';//?f=AAOI_GEX_620.png&q=https://github.com/mnsrulz/mztrading-data/releases/download/DEX_GEX_SNAPSHOT_2025-07-08/options-snapshots.zip';
+const snapshotCdnUrl = 'https://mztradingsnapshotcdn.deno.dev/api/snapshots'; //?dt=2025-08-14&f=AAPL_DEX_620.png&symbol=AAPL'
 export const getSnapshotsAvailableForDate = (dt: string) => {
     const result = Object.values(OptionsSnapshotSummary).find(k => k.displayName == dt);
     if (result) {
@@ -74,12 +75,12 @@ export const getSnapshotsAvailableForDate = (dt: string) => {
             return {
                 symbol: k,
                 dex: {
-                    hdAssetUrl: result.zipAssetUrl ? `${zipServiceUrl}?f=${result.symbols[k].dex.hdFileName}&q=${result.zipAssetUrl}` : result.symbols[k].dex.hdAssetUrl,
-                    sdAssetUrl: result.zipAssetUrl ? `${zipServiceUrl}?f=${result.symbols[k].dex.sdFileName}&q=${result.zipAssetUrl}` : result.symbols[k].dex.sdAssetUrl
+                    hdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].dex.hdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].dex.hdAssetUrl,
+                    sdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].dex.sdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].dex.sdAssetUrl
                 },
                 gex: {
-                    hdAssetUrl: result.zipAssetUrl ? `${zipServiceUrl}?f=${result.symbols[k].gex.sdFileName}&q=${result.zipAssetUrl}` : result.symbols[k].gex.hdAssetUrl,
-                    sdAssetUrl: result.zipAssetUrl ? `${zipServiceUrl}?f=${result.symbols[k].gex.sdFileName}&q=${result.zipAssetUrl}` : result.symbols[k].gex.sdAssetUrl
+                    hdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].gex.hdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].gex.hdAssetUrl,
+                    sdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].gex.sdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].gex.sdAssetUrl
                 },
             }
         });
