@@ -776,10 +776,6 @@
         "symbol": "AME"
     },
     {
-        "name": "AMEDISYS INC COM",
-        "symbol": "AMED"
-    },
-    {
         "name": "AFFILIATED MANAGERS GROUP INC COM",
         "symbol": "AMG"
     },
@@ -3006,10 +3002,6 @@
     {
         "name": "CROWN CASTLE INC COM",
         "symbol": "CCI"
-    },
-    {
-        "name": "COHEN CIRCLE ACQUISITION CORP SHS CL A",
-        "symbol": "CCIR"
     },
     {
         "name": "CAMECO CORP COM",
@@ -8764,10 +8756,6 @@
         "symbol": "IGM"
     },
     {
-        "name": "IGM BIOSCIENCES INC COM",
-        "symbol": "IGMS"
-    },
-    {
         "name": "ISHARES TR INTL TREA BD ETF",
         "symbol": "IGOV"
     },
@@ -10094,6 +10082,10 @@
     {
         "name": "QUAKER HOUGHTON COM",
         "symbol": "KWR"
+    },
+    {
+        "name": "KYIVSTAR GROUP LTD",
+        "symbol": "KYIV"
     },
     {
         "name": "KYMERA THERAPEUTICS INC COM",
