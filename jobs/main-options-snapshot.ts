@@ -7,7 +7,7 @@ import pTimeout from "https://esm.sh/p-timeout@6.1.4";
 import { chunk } from "jsr:@std/collections";
 import { nanoid } from "https://esm.sh/nanoid@5.1.5";
 
-const maxBatches = 4;
+const dop = 4;  //degree of parallelism, how many symbols to process in parallel
 
 import { getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol, getCboeLatestDateAndSymbols } from "../lib/data.ts";
 const dataFolder = `temp/options-snapshots`;
@@ -21,7 +21,7 @@ const forceDayId = Deno.env.get("FORCE_DAY_ID")
 
 forceDayId && console.log(`Force day id for this release: ${forceDayId}`);
 
-console.log(`Generating options snapshot for release: ${releaseName}`);
+console.log(`🔄 Generating options snapshot for release: ${releaseName}`);
 
 data[releaseName] = {
     displayName: forceDayId || format(new Date(), "yyyy-MM-dd"),
@@ -41,19 +41,23 @@ if (latestDateAndSymbols && latestDateAndSymbols.latestDate) {
     console.log(`Found ${allSymbols.length} tickers...`);
     totalSymbols = allSymbols.length;
 
-    const batches = chunk(allSymbols, maxBatches);
+    const chunkSize = Math.ceil(allSymbols.length / dop);
+    console.log(`chunking symbols with ${chunkSize} size...`);
+    const batches = chunk(allSymbols, chunkSize);
+    console.log(`Processing in ${batches.length} batches with ${dop} symbols each...`);
+    console.log(`Total symbols to process: ${totalSymbols}`);
     await pMap(batches, processBatch, {
-        concurrency: maxBatches
+        concurrency: dop
     });
 
-    console.log(`Finished generating snapshot files!`);
+    console.log(`🟢 Finished generating snapshot files!`);
 
     Deno.writeTextFileSync(
         "./data/options-snapshot.summary.json",
         JSON.stringify(data, null, 2),
     );
 
-    console.log(`Summary file generated successfully!`);
+    console.log(`🟢 Summary file generated successfully!`);
 } else {
     throw new Error(`Unable to find any latest date in the data summary file!`);
 }
@@ -66,7 +70,7 @@ async function processBatch(batchSymbols: string[]) {
     const page = await browser.newPage();
 
     await pretry(async (n: number) => {
-        if (n > 1) console.log(`Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`)
+        if (n > 1) console.warn(`🟡 Batch: ${batchId} - ProcessBatch initial page navigation retry attempt: ${n}`)
         await page.goto(
             `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
             {
@@ -81,7 +85,7 @@ async function processBatch(batchSymbols: string[]) {
         processingCounter++;
         console.log(`Processing symbol: ${symbol} in batch ${batchId}. Progress: ${processingCounter}/${totalSymbols}`);
         await pretry(async (n: number) => {
-            if (n > 1) console.log(`Batch: ${batchId} - Main retry attempt: ${n}`)
+            if (n > 1) console.warn(`🟡 Batch: ${batchId} - Main retry attempt: ${n}`)
             await processSymbol(page, batchSymbols, symbol, batchId);
         }, {
             retries: 3
@@ -145,14 +149,14 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
     // console.log(`Script: ${scriptToRun}`);
     await page.evaluate(scriptToRun);
 
-    console.log(`${symbol} - Generating high definition DEX snapshot page`);
+    console.log(`⬆️ ${symbol} - Generating high definition DEX snapshot page`);
 
     await page.waitForNetworkIdle({
         timeout: timeoutInMS
     });
     await captureScreenshot(`${dataFolder}/${currentSymbol.dex.hdFileName}`); // take a screenshot and save it to a file
 
-    console.log(`${symbol} - Generating standard definition DEX snapshot page`);
+    console.log(`⬆️ ${symbol} - Generating standard definition DEX snapshot page`);
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 1 }); // set the viewport size
 
     await captureScreenshot(`${dataFolder}/${currentSymbol.dex.sdFileName}`); // take a screenshot and save it to a file
@@ -164,15 +168,15 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
         history.replaceState(null, "", ${varurlname});
         `;
     await page.evaluate(scriptToRunGex);
-    console.log(`${symbol} - Generating standard definition GEX snapshot page`);
+    console.log(`⬆️ ${symbol} - Generating standard definition GEX snapshot page`);
 
     await captureScreenshot(`${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file
 
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
-    console.log(`${symbol} - Generating high definition GEX snapshot page`);
+    console.log(`⬆️ ${symbol} - Generating high definition GEX snapshot page`);
 
     await captureScreenshot(`${dataFolder}/${currentSymbol.gex.hdFileName}`); // take a screenshot and save it to a file      
 
-    console.log(`Finished processing symbol: ${symbol}`);
+    console.log(`✅ Finished processing symbol: ${symbol}`);
 }
 
