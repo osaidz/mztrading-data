@@ -66,7 +66,7 @@ export const AvailableSnapshotDates = Object.values(OptionsSnapshotSummary).map(
 
 export const OptionsSnapshotSummaryLegacy = Object.fromEntries(Object.keys(OptionsSnapshotSummary).map(j => [OptionsSnapshotSummary[j].displayName, { zipAssetUrl: OptionsSnapshotSummary[j].zipAssetUrl, symbols: OptionsSnapshotSummary[j].symbols }]));
 
-const zipServiceUrl = 'https://zipservice-deno.deno.dev/download';//?f=AAOI_GEX_620.png&q=https://github.com/mnsrulz/mztrading-data/releases/download/DEX_GEX_SNAPSHOT_2025-07-08/options-snapshots.zip';
+export const zipServiceUrl = 'https://zipservice-deno.deno.dev/download';//?f=AAOI_GEX_620.png&q=https://github.com/mnsrulz/mztrading-data/releases/download/DEX_GEX_SNAPSHOT_2025-07-08/options-snapshots.zip';
 export const getSnapshotsAvailableForDate = (dt: string) => {
     const result = Object.values(OptionsSnapshotSummary).find(k => k.displayName == dt);
     if (result) {
@@ -85,6 +85,18 @@ export const getSnapshotsAvailableForDate = (dt: string) => {
         });
     }
     throw new Error('No data found for this date');
+}
+
+export const getZipAssetUrlForSymbol = (symbol: string, dt: string) => { 
+    const result = Object.values(OptionsSnapshotSummary).find(k => k.displayName == dt);
+    if (result) {
+        if (result.symbols[symbol]) {
+            return result.zipAssetUrl;
+        } else {
+            throw new Error(`No data found for symbol ${symbol} on date ${dt}`);
+        }
+    }
+    throw new Error(`No data found for date ${dt}`);
 }
 
 export const getSnapshotsAvailableForSymbol = (symbol: string) => {
