@@ -111,12 +111,12 @@ export const getSnapshotsAvailableForSymbol = (symbol: string) => {
         .map(({ data, date, zipAssetUrl }) => ({
             date: date,
             dex: {
-                hdAssetUrl: zipAssetUrl ? `${zipServiceUrl}?f=${data.dex.hdFileName}&q=${zipAssetUrl}` : data.dex.hdAssetUrl,
-                sdAssetUrl: zipAssetUrl ? `${zipServiceUrl}?f=${data.dex.sdFileName}&q=${zipAssetUrl}` : data.dex.sdAssetUrl
+                hdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.dex.hdFileName}&dt=${date}&symbol=${symbol}` : data.dex.hdAssetUrl,
+                sdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.dex.sdFileName}&dt=${date}&symbol=${symbol}` : data.dex.sdAssetUrl
             },
             gex: {
-                hdAssetUrl: zipAssetUrl ? `${zipServiceUrl}?f=${data.gex.hdFileName}&q=${zipAssetUrl}` : data.gex.hdAssetUrl,
-                sdAssetUrl: zipAssetUrl ? `${zipServiceUrl}?f=${data.gex.sdFileName}&q=${zipAssetUrl}` : data.gex.sdAssetUrl
+                hdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.gex.hdFileName}&dt=${date}&symbol=${symbol}` : data.gex.hdAssetUrl,
+                sdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.gex.sdFileName}&dt=${date}&symbol=${symbol}` : data.gex.sdAssetUrl
             },
         }));
     return result;
