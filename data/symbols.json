@@ -128,10 +128,6 @@
         "symbol": "ABT"
     },
     {
-        "name": "ABITS GROUP INC SHS NEW",
-        "symbol": "ABTS"
-    },
-    {
         "name": "ARBUTUS BIOPHARMA CORP COM",
         "symbol": "ABUS"
     },
@@ -702,10 +698,6 @@
     {
         "name": "ALT5 SIGMA CORP COM",
         "symbol": "ALTS"
-    },
-    {
-        "name": "ALLURION TECHNOLOGIES INC COMMON STOCK",
-        "symbol": "ALUR"
     },
     {
         "name": "AUTOLIV INC COM",
@@ -2288,6 +2280,10 @@
         "symbol": "BLOK"
     },
     {
+        "name": "BULLISH ORD SHS",
+        "symbol": "BLSH"
+    },
+    {
         "name": "VANGUARD BD INDEX FDS LONG TERM BOND",
         "symbol": "BLV"
     },
@@ -2358,10 +2354,6 @@
     {
         "name": "BARNES & NOBLE ED INC COM NEW",
         "symbol": "BNED"
-    },
-    {
-        "name": "BIONANO GENOMICS INC COM",
-        "symbol": "BNGO"
     },
     {
         "name": "BROADSTONE NET LEASE INC COM",
@@ -7104,10 +7096,6 @@
         "symbol": "GAU"
     },
     {
-        "name": "GLOBAL BLUE GROUP HOLDING AG ORD SHS",
-        "symbol": "GB"
-    },
-    {
         "name": "GLACIER BANCORP INC NEW COM",
         "symbol": "GBCI"
     },
@@ -8462,10 +8450,6 @@
     {
         "name": "HYCROFT MINING HOLDING CORP CL A NEW",
         "symbol": "HYMC"
-    },
-    {
-        "name": "HYPERION DEFI INC COM NEW",
-        "symbol": "HYPD"
     },
     {
         "name": "HYPERFINE INC COM CL A",
@@ -10084,7 +10068,7 @@
         "symbol": "KWR"
     },
     {
-        "name": "KYIVSTAR GROUP LTD",
+        "name": "KYIVSTAR GROUP LTD ORD SHS",
         "symbol": "KYIV"
     },
     {
@@ -17762,10 +17746,6 @@
     {
         "name": "GRUPO TELEVISA S A B SPON ADR REP ORD",
         "symbol": "TV"
-    },
-    {
-        "name": "TVARDI THERAPEUTICS INC COM",
-        "symbol": "TVRD"
     },
     {
         "name": "TRAVERE THERAPEUTICS INC COM",
