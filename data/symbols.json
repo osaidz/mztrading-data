@@ -3024,10 +3024,6 @@
         "symbol": "CCRN"
     },
     {
-        "name": "ISHARES U S ETF TR COMMODITY CURVE",
-        "symbol": "CCRV"
-    },
-    {
         "name": "CENTURY CMNTYS INC COM",
         "symbol": "CCS"
     },
@@ -9276,10 +9272,6 @@
         "symbol": "IVE"
     },
     {
-        "name": "ISHARES TR EMERGNT FD & AGT",
-        "symbol": "IVEG"
-    },
-    {
         "name": "ISHARES TR MSCI INTL VLU FT",
         "symbol": "IVLU"
     },
@@ -9502,10 +9494,6 @@
     {
         "name": "JBS N.V. CL A SHS",
         "symbol": "JBS"
-    },
-    {
-        "name": "SANFILIPPO JOHN B & SON INC COM",
-        "symbol": "JBSS"
     },
     {
         "name": "JBT MAREL CORPORATION COM",
@@ -10418,10 +10406,6 @@
     {
         "name": "LIGHT & WONDER INC COM",
         "symbol": "LNW"
-    },
-    {
-        "name": "LANZATECH GLOBAL INC COM",
-        "symbol": "LNZA"
     },
     {
         "name": "LOAR HOLDINGS INC COM SHS",
@@ -16636,10 +16620,6 @@
         "symbol": "STPZ"
     },
     {
-        "name": "SITIO ROYALTIES CORP CLASS A COM",
-        "symbol": "STR"
-    },
-    {
         "name": "STRATEGIC ED INC COM",
         "symbol": "STRA"
     },
@@ -18564,10 +18544,6 @@
         "symbol": "VKTX"
     },
     {
-        "name": "VELO3D INC COM NEW",
-        "symbol": "VLDXD"
-    },
-    {
         "name": "VALENS SEMICONDUCTOR LTD ORDINARY SHARES",
         "symbol": "VLN"
     },
@@ -18618,10 +18594,6 @@
     {
         "name": "VORNADO RLTY TR SH BEN INT",
         "symbol": "VNO"
-    },
-    {
-        "name": "VIPER ENERGY INC CL A",
-        "symbol": "VNOM"
     },
     {
         "name": "VANGUARD INDEX FDS REAL ESTATE ETF",
