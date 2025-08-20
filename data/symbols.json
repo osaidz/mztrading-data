@@ -256,10 +256,6 @@
         "symbol": "ACWX"
     },
     {
-        "name": "ARRAY DIGITAL INFRASTRUCTURE I COM",
-        "symbol": "AD"
-    },
-    {
         "name": "ADAPTIMMUNE THERAPEUTICS PLC SPONDS ADS",
         "symbol": "ADAP"
     },
@@ -3948,10 +3944,6 @@
         "symbol": "CRESY"
     },
     {
-        "name": "CARGO THERAPEUTICS INC COM",
-        "symbol": "CRGX"
-    },
-    {
         "name": "CRESCENT ENERGY COMPANY CL A COM",
         "symbol": "CRGY"
     },
@@ -4906,6 +4898,10 @@
     {
         "name": "PROSHARES TR PSHS SHORT DOW30",
         "symbol": "DOG"
+    },
+    {
+        "name": "Tradr 2X Long DDOG Daily ETF",
+        "symbol": "DOGD"
     },
     {
         "name": "DOLE PLC ORD SHS",
@@ -9496,6 +9492,10 @@
         "symbol": "JBS"
     },
     {
+        "name": "SANFILIPPO JOHN B & SON INC COM",
+        "symbol": "JBSS"
+    },
+    {
         "name": "JBT MAREL CORPORATION COM",
         "symbol": "JBTM"
     },
@@ -10092,6 +10092,10 @@
         "symbol": "LABU"
     },
     {
+        "name": "Tradr 2X Long ALAB Daily ETF",
+        "symbol": "LABX"
+    },
+    {
         "name": "LITHIUM AMERS CORP NEW COM SHS",
         "symbol": "LAC"
     },
@@ -10406,6 +10410,10 @@
     {
         "name": "LIGHT & WONDER INC COM",
         "symbol": "LNW"
+    },
+    {
+        "name": "LANZATECH GLOBAL INC COM NEW",
+        "symbol": "LNZA"
     },
     {
         "name": "LOAR HOLDINGS INC COM SHS",
@@ -13604,10 +13612,6 @@
         "symbol": "PPBT"
     },
     {
-        "name": "PILGRIMS PRIDE CORP COM",
-        "symbol": "PPC"
-    },
-    {
         "name": "PPG INDS INC COM",
         "symbol": "PPG"
     },
@@ -16492,6 +16496,10 @@
         "symbol": "SSG"
     },
     {
+        "name": "REX-Osprey SOL + Staking ETF",
+        "symbol": "SSK"
+    },
+    {
         "name": "SASOL LTD SPONSORED ADR",
         "symbol": "SSL"
     },
@@ -17390,10 +17398,6 @@
     {
         "name": "TRI POINTE HOMES INC COM",
         "symbol": "TPH"
-    },
-    {
-        "name": "TPI COMPOSITES INC COM",
-        "symbol": "TPIC"
     },
     {
         "name": "TEXAS PACIFIC LAND CORPORATION COM",
@@ -18594,6 +18598,10 @@
     {
         "name": "VORNADO RLTY TR SH BEN INT",
         "symbol": "VNO"
+    },
+    {
+        "name": "VIPER ENERGY INC CL A",
+        "symbol": "VNOM"
     },
     {
         "name": "VANGUARD INDEX FDS REAL ESTATE ETF",
