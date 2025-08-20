@@ -1,8 +1,9 @@
 import ky from "https://esm.sh/ky@1.8.2";
 const logtail_token = Deno.env.get("LOGTAIL_SOURCE_TOKEN");
+const logtail_ingest_url = Deno.env.get("LOGTAIL_INGEST_URL");  // || "https://in.logs.betterstack.com/";
 
 const _logger = () => {
-    if (!logtail_token) {
+    if (!logtail_token || !logtail_ingest_url) {
         return {
             info: (message: string, data: any) => console.info(message, data),
             error: (message: string, data: any) => console.error(message, data),
@@ -12,7 +13,7 @@ const _logger = () => {
     }
 
     const kyInstance = ky.extend({
-        prefixUrl: 'https://in.logs.betterstack.com/',
+        prefixUrl: logtail_ingest_url,
         headers: {
             Authorization: `Bearer ${logtail_token}`,
         }        
