@@ -73500,5 +73500,6 @@
             "symbol": "FLO",
             "dt": "2025-08-20"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-08-20-10-48-32/options_cboe_oi_anomaly.parquet"
 }
