@@ -1,4 +1,4 @@
-// import ky from "https://esm.sh/ky@1.2.3";
+// import ky from "https://esm.sh/ky@1.8.2";
 // import { format } from "https://deno.land/std@0.224.0/datetime/format.ts";
 // import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 // import { getOptionsDataSummary, cleanSymbol } from "../lib/data.ts";

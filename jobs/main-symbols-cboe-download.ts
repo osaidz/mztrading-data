@@ -1,4 +1,4 @@
-import ky from "https://esm.sh/ky@1.2.3";
+import ky from "https://esm.sh/ky@1.8.2";
 import { parse } from "jsr:@std/csv";
 
 console.log(`Downloading symbols from cboe.`);

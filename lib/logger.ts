@@ -1,4 +1,4 @@
-import ky from "https://esm.sh/ky@1.2.3";
+import ky from "https://esm.sh/ky@1.8.2";
 const logtail_token = Deno.env.get("LOGTAIL_SOURCE_TOKEN");
 
 const _logger = () => {

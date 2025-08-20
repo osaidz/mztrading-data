@@ -5,7 +5,7 @@ import {
 } from "https://deno.land/x/oak@v12.6.1/mod.ts";
 import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
-// import ky from "https://esm.sh/ky@1.2.3";
+// import ky from "https://esm.sh/ky@1.8.2";
 import { stringify } from "jsr:@std/csv";
 import {
     AvailableSnapshotDates,
