@@ -256,6 +256,10 @@
         "symbol": "ACWX"
     },
     {
+        "name": "ARRAY DIGITAL INFRASTRUCTURE I COM",
+        "symbol": "AD"
+    },
+    {
         "name": "ADAPTIMMUNE THERAPEUTICS PLC SPONDS ADS",
         "symbol": "ADAP"
     },
@@ -5548,10 +5552,6 @@
         "symbol": "ENVX"
     },
     {
-        "name": "ENZO BIOCHEM INC COM",
-        "symbol": "ENZB"
-    },
-    {
         "name": "ISHARES TR NEW ZEALAND ETF",
         "symbol": "ENZL"
     },
@@ -7506,10 +7506,6 @@
     {
         "name": "GLOBAL X FDS GLOBAL X GOLD EX",
         "symbol": "GOEX"
-    },
-    {
-        "name": "GOLDEN OCEAN GROUP LTD SHS NEW",
-        "symbol": "GOGL"
     },
     {
         "name": "GOGO INC COM",
@@ -13612,6 +13608,10 @@
         "symbol": "PPBT"
     },
     {
+        "name": "PILGRIMS PRIDE CORP COM",
+        "symbol": "PPC"
+    },
+    {
         "name": "PPG INDS INC COM",
         "symbol": "PPG"
     },
@@ -17400,6 +17400,10 @@
         "symbol": "TPH"
     },
     {
+        "name": "TPI COMPOSITES INC COM",
+        "symbol": "TPICQ"
+    },
+    {
         "name": "TEXAS PACIFIC LAND CORPORATION COM",
         "symbol": "TPL"
     },
@@ -18386,6 +18390,10 @@
     {
         "name": "VELOCITY FINL INC COM",
         "symbol": "VEL"
+    },
+    {
+        "name": "VELO3D INC COM NEW",
+        "symbol": "VELO"
     },
     {
         "name": "VERA THERAPEUTICS INC CL A",
