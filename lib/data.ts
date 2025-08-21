@@ -100,6 +100,17 @@ export const getZipAssetUrlForSymbol = (symbol: string, dt: string) => {
     throw new Error(`No data found for date ${dt}`);
 }
 
+export const getZipAssetInfoByDate = (dt: string) => {
+    const result = Object.values(OptionsSnapshotSummary).find(k => k.displayName == dt);
+    if (result) {
+        return {
+            zipAssetUrl: result.zipAssetUrl,
+            dex: Object.values(result.symbols).map(k => k.dex),
+            gex: Object.values(result.symbols).map(k => k.gex)
+        };
+    }
+}
+
 export const getSnapshotsAvailableForSymbol = (symbol: string) => {
     const result = Object.keys(OptionsSnapshotSummaryLegacy)
         .filter((j) =>

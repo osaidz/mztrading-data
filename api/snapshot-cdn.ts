@@ -1,10 +1,10 @@
-import { getZipAssetUrlForSymbol, zipServiceUrl } from "../lib/data.ts";
+import { getZipAssetInfoByDate, getZipAssetUrlForSymbol, zipServiceUrl } from "../lib/data.ts";
 const cache = await caches.open("default");
 import { Hono } from 'https://esm.sh/hono'
 
 const app = new Hono()
 
-app.use('/api/snapshots', async ({ req }) => {
+app.get('/api/snapshots', async ({ req }) => {
     const dt = req.query('dt');;
     const symbol = req.query('symbol');
     const f = req.query('f');
@@ -23,13 +23,36 @@ app.use('/api/snapshots', async ({ req }) => {
 
         await cache.put(assetUrl, res.clone());
         return res;
-    }    
+    }
     return new Response("Use /api/snapshots?symbol=<symbol>&dt=<dt>&f=<f> to fetch snapshot files.");
 });
 
-app.use('/api/cachekeys', async ()=> {
-    const allKeys = await cache.keys();
-    return new Response(allKeys);
+app.delete('/api/snapshots/cache', async (c) => {
+    const dt = c.req.query('dt');
+    if (!dt) return new Response("Missing dt parameter", { status: 400 });
+    const info = getZipAssetInfoByDate(dt);
+    if (info?.zipAssetUrl) {
+        const allDexFiles = info?.dex.flatMap(k => [k.hdFileName, k.sdFileName]);
+        const allGexFiles = info?.gex.flatMap(k => [k.hdFileName, k.sdFileName]);
+
+        const allCacheKeys = [...allDexFiles, ...allGexFiles].map(f => `${zipServiceUrl}?f=${f}&q=${info.zipAssetUrl}`);
+        const deleteCacheKeys = [];
+        for (const key of allCacheKeys) {
+            const cached = await cache.match(key);
+            if (cached) {
+                console.log(`Deleting cache for key: ${key}`);
+                await cache.delete(key);
+                deleteCacheKeys.push(key);
+            } else {
+                console.log(`No cache found for key: ${key}`);
+            }
+        }
+        return c.json({
+            message: `Cache invalidated for date: ${dt}`,
+            deleted: deleteCacheKeys
+        });
+    }
+    return c.notFound();
 });
 
 Deno.serve(app.fetch)
