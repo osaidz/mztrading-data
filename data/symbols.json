@@ -1564,6 +1564,10 @@
         "symbol": "AVIR"
     },
     {
+        "name": "DIREXION SHS ETF TR DAILY AVGO BULL",
+        "symbol": "AVL"
+    },
+    {
         "name": "AMERICAN CENTY ETF TR AVANTIS US LARG",
         "symbol": "AVLC"
     },
@@ -1650,10 +1654,6 @@
     {
         "name": "AXOS FINANCIAL INC COM",
         "symbol": "AX"
-    },
-    {
-        "name": "ACCELERATE DIAGNOSTICS INC COM NEW",
-        "symbol": "AXDXQ"
     },
     {
         "name": "AXOGEN INC COM",
@@ -5992,6 +5992,10 @@
         "symbol": "EWZ"
     },
     {
+        "name": "ISHARES TR BRAZIL SM-CP ETF",
+        "symbol": "EWZS"
+    },
+    {
         "name": "EXACT SCIENCES CORP COM",
         "symbol": "EXAS"
     },
@@ -6142,6 +6146,10 @@
     {
         "name": "FRANKLIN BSP RLTY TR INC COMMON STOCK",
         "symbol": "FBRT"
+    },
+    {
+        "name": "FORTE BIOSCIENCES INC COM NEW",
+        "symbol": "FBRX"
     },
     {
         "name": "FIRST TR EXCHANGE-TRADED FD NY ARCA BIOTECH",
@@ -7744,6 +7752,10 @@
         "symbol": "GSM"
     },
     {
+        "name": "GSR III ACQUISITION CORP CL A",
+        "symbol": "GSRT"
+    },
+    {
         "name": "INVESCO ACTIVELY MANAGED EXCHA ULTRA SHRT DUR",
         "symbol": "GSY"
     },
@@ -8194,6 +8206,10 @@
     {
         "name": "HONEYWELL INTL INC COM",
         "symbol": "HON"
+    },
+    {
+        "name": "HCM II ACQUISITION CORP SHS CL A",
+        "symbol": "HOND"
     },
     {
         "name": "HARBORONE BANCORP INC NEW COM NEW",
@@ -9262,6 +9278,10 @@
     {
         "name": "ISHARES TR S&P 500 VAL ETF",
         "symbol": "IVE"
+    },
+    {
+        "name": "WEDBUSH SER TR DAN IVES WEDBUSH",
+        "symbol": "IVES"
     },
     {
         "name": "ISHARES TR MSCI INTL VLU FT",
@@ -10508,6 +10528,10 @@
         "symbol": "LQIG"
     },
     {
+        "name": "Tradr 2X Long LRCX Daily ETF",
+        "symbol": "LRCU"
+    },
+    {
         "name": "LAM RESEARCH CORP COM NEW",
         "symbol": "LRCX"
     },
@@ -10796,6 +10820,10 @@
         "symbol": "MBLY"
     },
     {
+        "name": "MICROBOT MED INC COM NEW",
+        "symbol": "MBOT"
+    },
+    {
         "name": "Cboe Mini Bitcoin Index",
         "symbol": "MBTX"
     },
@@ -10856,6 +10884,10 @@
         "symbol": "MCS"
     },
     {
+        "name": "MILL CITY VENTURES III LTD COM NEW",
+        "symbol": "MCVT"
+    },
+    {
         "name": "MISTER CAR WASH INC COM",
         "symbol": "MCW"
     },
@@ -10870,6 +10902,10 @@
     {
         "name": "MONGODB INC CL A",
         "symbol": "MDB"
+    },
+    {
+        "name": "Tradr 2X Long MDB Daily ETF",
+        "symbol": "MDBX"
     },
     {
         "name": "MADRIGAL PHARMACEUTICALS INC COM",
@@ -11062,6 +11098,10 @@
     {
         "name": "M/I HOMES INC COM",
         "symbol": "MHO"
+    },
+    {
+        "name": "MIAMI INTL HLDGS INC COM",
+        "symbol": "MIAX"
     },
     {
         "name": "MIDDLEBY CORP COM",
@@ -12626,6 +12666,10 @@
     {
         "name": "OMNICELL COM COM",
         "symbol": "OMCL"
+    },
+    {
+        "name": "OMADA HEALTH INC COM",
+        "symbol": "OMDA"
     },
     {
         "name": "OMEROS CORP COM",
@@ -14236,6 +14280,10 @@
         "symbol": "RAIL"
     },
     {
+        "name": "RALLIANT CORP COM",
+        "symbol": "RAL"
+    },
+    {
         "name": "LIVERAMP HLDGS INC COM",
         "symbol": "RAMP"
     },
@@ -15006,6 +15054,10 @@
     {
         "name": "REZOLUTE INC COM NEW",
         "symbol": "RZLT"
+    },
+    {
+        "name": "REZOLVE AI PLC ORD SHS",
+        "symbol": "RZLV"
     },
     {
         "name": "INVESCO EXCHANGE TRADED FD TR S&P SML600 VAL",
@@ -15814,6 +15866,10 @@
     {
         "name": "SOLENO THERAPEUTICS INC COM",
         "symbol": "SLNO"
+    },
+    {
+        "name": "PROSHARES TR ULTRA SOLANA ETF",
+        "symbol": "SLON"
     },
     {
         "name": "SIMULATIONS PLUS INC COM",
@@ -17356,6 +17412,10 @@
         "symbol": "TNYA"
     },
     {
+        "name": "THE ONCOLOGY INSTITUTE INC COM",
+        "symbol": "TOI"
+    },
+    {
         "name": "Cambria Cannabis ETF",
         "symbol": "TOKE"
     },
@@ -18008,6 +18068,10 @@
         "symbol": "UNH"
     },
     {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "UNHG"
+    },
+    {
         "name": "UNITI GROUP LLC COM SHS",
         "symbol": "UNIT"
     },
@@ -18274,6 +18338,10 @@
     {
         "name": "Roundhill Uranium ETF",
         "symbol": "UX"
+    },
+    {
+        "name": "PROSHARES TR ULTRA XRP ETF",
+        "symbol": "UXRP"
     },
     {
         "name": "PROSHARES TR ULTRA FNCLS NEW",
@@ -18602,6 +18670,10 @@
     {
         "name": "VNET GROUP INC SPONSORED ADS A",
         "symbol": "VNET"
+    },
+    {
+        "name": "VanEck Vietnam ETF",
+        "symbol": "VNM"
     },
     {
         "name": "VORNADO RLTY TR SH BEN INT",
