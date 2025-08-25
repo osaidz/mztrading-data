@@ -548,7 +548,7 @@
         "symbol": "AIVL"
     },
     {
-        "name": "TIDAL TR II YIELDMAX AI OPT",
+        "name": "TIDAL TRUST II YIELDMAX AI OPT",
         "symbol": "AIYY"
     },
     {
@@ -760,7 +760,7 @@
         "symbol": "AMDW"
     },
     {
-        "name": "TIDAL TR II YIELDMAX AMD OPT",
+        "name": "TIDAL TRUST II YIELDMAX AMD OPT",
         "symbol": "AMDY"
     },
     {
@@ -892,7 +892,7 @@
         "symbol": "AMZW"
     },
     {
-        "name": "TIDAL TR II YIELDMAX AMZN OP",
+        "name": "TIDAL TRUST II YIELDMAX AMZN OP",
         "symbol": "AMZY"
     },
     {
@@ -1556,7 +1556,7 @@
         "symbol": "AVGW"
     },
     {
-        "name": "TIDAL TR II DEF DLY TGT AVGO",
+        "name": "TIDAL TRUST II DEF DLY TGT AVGO",
         "symbol": "AVGX"
     },
     {
@@ -1888,6 +1888,10 @@
         "symbol": "BCI"
     },
     {
+        "name": "BCP INVESTMENT CORP",
+        "symbol": "BCIC"
+    },
+    {
         "name": "ABRDN ETFS BBG INDUSTRL MET",
         "symbol": "BCIM"
     },
@@ -2056,7 +2060,7 @@
         "symbol": "BIDU"
     },
     {
-        "name": "TIDAL TR II YIELDMAX TRGT12",
+        "name": "TIDAL TRUST II YIELDMAX TRGT12",
         "symbol": "BIGY"
     },
     {
@@ -3240,7 +3244,7 @@
         "symbol": "CGW"
     },
     {
-        "name": "TIDAL TR II ROUNDHILL GENER",
+        "name": "TIDAL TRUST II ROUNDHILL GENER",
         "symbol": "CHAT"
     },
     {
@@ -3760,7 +3764,7 @@
         "symbol": "CONL"
     },
     {
-        "name": "TIDAL TR II YIELDMAX COIN OP",
+        "name": "TIDAL TRUST II YIELDMAX COIN OP",
         "symbol": "CONY"
     },
     {
@@ -6160,7 +6164,7 @@
         "symbol": "FBTC"
     },
     {
-        "name": "TIDAL TR II YIELDMAX META",
+        "name": "TIDAL TRUST II YIELDMAX META",
         "symbol": "FBY"
     },
     {
@@ -6396,7 +6400,7 @@
         "symbol": "FI"
     },
     {
-        "name": "TIDAL TR II YIELDMAX SHORT",
+        "name": "TIDAL TRUST II YIELDMAX SHORT",
         "symbol": "FIAT"
     },
     {
@@ -7184,7 +7188,7 @@
         "symbol": "GDXJ"
     },
     {
-        "name": "TIDAL TR II YIELDMAX GOLD MI",
+        "name": "TIDAL TRUST II YIELDMAX GOLD MI",
         "symbol": "GDXY"
     },
     {
@@ -7552,7 +7556,7 @@
         "symbol": "GOOX"
     },
     {
-        "name": "TIDAL TR II YIELDMAX GOOGL",
+        "name": "TIDAL TRUST II YIELDMAX GOOGL",
         "symbol": "GOOY"
     },
     {
@@ -7628,7 +7632,7 @@
         "symbol": "GPRO"
     },
     {
-        "name": "TIDAL TR II YIELDMAX AI & T",
+        "name": "TIDAL TRUST II YIELDMAX AI & T",
         "symbol": "GPTY"
     },
     {
@@ -8088,7 +8092,7 @@
         "symbol": "HIMX"
     },
     {
-        "name": "TIDAL TR II DEFIANCE DAILY",
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
         "symbol": "HIMZ"
     },
     {
@@ -9344,7 +9348,7 @@
         "symbol": "IWMI"
     },
     {
-        "name": "TIDAL TR II DEFIANCE R2000",
+        "name": "TIDAL TRUST II DEFIANCE R2000",
         "symbol": "IWMY"
     },
     {
@@ -10264,7 +10268,7 @@
         "symbol": "LFCR"
     },
     {
-        "name": "TIDAL TR II YIELDMAX CRYPTO",
+        "name": "TIDAL TRUST II YIELDMAX CRYPTO",
         "symbol": "LFGY"
     },
     {
@@ -10376,7 +10380,7 @@
         "symbol": "LLYVK"
     },
     {
-        "name": "TIDAL TR II DEFIANCE DAILY",
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
         "symbol": "LLYX"
     },
     {
@@ -11488,7 +11492,7 @@
         "symbol": "MSFL"
     },
     {
-        "name": "TIDAL TR II YIELDMAX MSFT OP",
+        "name": "TIDAL TRUST II YIELDMAX MSFT OP",
         "symbol": "MSFO"
     },
     {
@@ -11544,11 +11548,11 @@
         "symbol": "MSTW"
     },
     {
-        "name": "TIDAL TR II DEF DLY TGT 2X L",
+        "name": "TIDAL TRUST II DEF DLY TGT 2X L",
         "symbol": "MSTX"
     },
     {
-        "name": "TIDAL TR II YIELDMAX MSTR OP",
+        "name": "TIDAL TRUST II YIELDMAX MSTR OP",
         "symbol": "MSTY"
     },
     {
@@ -11956,7 +11960,7 @@
         "symbol": "NFLX"
     },
     {
-        "name": "TIDAL TR II YIELDMAX NFLX",
+        "name": "TIDAL TRUST II YIELDMAX NFLX",
         "symbol": "NFLY"
     },
     {
@@ -12356,7 +12360,7 @@
         "symbol": "NVDX"
     },
     {
-        "name": "TIDAL TR II YIELDMAX NVDA",
+        "name": "TIDAL TRUST II YIELDMAX NVDA",
         "symbol": "NVDY"
     },
     {
@@ -12376,7 +12380,7 @@
         "symbol": "NVO"
     },
     {
-        "name": "TIDAL TR II DEFIANCE DLY TRG",
+        "name": "TIDAL TRUST II DEFIANCE DLY TRG",
         "symbol": "NVOX"
     },
     {
@@ -12484,7 +12488,7 @@
         "symbol": "OACP"
     },
     {
-        "name": "TIDAL TR II YIELDMAX INNOVAT",
+        "name": "TIDAL TRUST II YIELDMAX INNOVAT",
         "symbol": "OARK"
     },
     {
@@ -12548,7 +12552,7 @@
         "symbol": "OEF"
     },
     {
-        "name": "ORION ENERGY SYS INC COM",
+        "name": "ORION ENERGY SYS INC COM NEW",
         "symbol": "OESX"
     },
     {
@@ -13540,7 +13544,7 @@
         "symbol": "PLTW"
     },
     {
-        "name": "TIDAL TR II YIELDMAX PLTR OP",
+        "name": "TIDAL TRUST II YIELDMAX PLTR OP",
         "symbol": "PLTY"
     },
     {
@@ -13916,10 +13920,6 @@
         "symbol": "PTCT"
     },
     {
-        "name": "GLOBAL X FDS PROPTECH ETF",
-        "symbol": "PTEC"
-    },
-    {
         "name": "PATTERSON-UTI ENERGY INC COM",
         "symbol": "PTEN"
     },
@@ -13946,10 +13946,6 @@
     {
         "name": "PORTILLOS INC COM CL A",
         "symbol": "PTLO"
-    },
-    {
-        "name": "PORTMAN RIDGE FIN CORP COM NEW",
-        "symbol": "PTMN"
     },
     {
         "name": "PACER FDS TR TRENDPILOT 100",
@@ -14168,7 +14164,7 @@
         "symbol": "QQQP"
     },
     {
-        "name": "TIDAL TR II DEFIANCE NASDAQ",
+        "name": "TIDAL TRUST II DEFIANCE NASDAQ",
         "symbol": "QQQY"
     },
     {
@@ -15932,11 +15928,11 @@
         "symbol": "SMCI"
     },
     {
-        "name": "TIDAL TR II DEFIANCE DT 2X L",
+        "name": "TIDAL TRUST II DEFIANCE DT 2X L",
         "symbol": "SMCX"
     },
     {
-        "name": "TIDAL TR II YIELDMAX SMCI",
+        "name": "TIDAL TRUST II YIELDMAX SMCI",
         "symbol": "SMCY"
     },
     {
@@ -16008,7 +16004,7 @@
         "symbol": "SMSI"
     },
     {
-        "name": "TIDAL TR II DEFIANCE DAILY T",
+        "name": "TIDAL TRUST II DEFIANCE DAILY T",
         "symbol": "SMST"
     },
     {
@@ -16128,7 +16124,7 @@
         "symbol": "SOFI"
     },
     {
-        "name": "TIDAL TR II DEFIANCE DAILY",
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
         "symbol": "SOFX"
     },
     {
@@ -16192,7 +16188,7 @@
         "symbol": "SOXX"
     },
     {
-        "name": "TIDAL TR II YIELDMAX TARGET",
+        "name": "TIDAL TRUST II YIELDMAX TARGET",
         "symbol": "SOXY"
     },
     {
@@ -16456,7 +16452,7 @@
         "symbol": "SPYQ"
     },
     {
-        "name": "TIDAL TR II DEFIANCE S&P 500",
+        "name": "TIDAL TRUST II DEFIANCE S&P 500",
         "symbol": "SPYT"
     },
     {
@@ -17260,7 +17256,7 @@
         "symbol": "TIMB"
     },
     {
-        "name": "TIDAL TR II CLOCKWISE CORE E",
+        "name": "TIDAL TRUST II CLOCKWISE CORE E",
         "symbol": "TIME"
     },
     {
@@ -17684,7 +17680,7 @@
         "symbol": "TSLX"
     },
     {
-        "name": "TIDAL TR II YIELDMAX TSLA OP",
+        "name": "TIDAL TRUST II YIELDMAX TSLA OP",
         "symbol": "TSLY"
     },
     {
@@ -17700,7 +17696,7 @@
         "symbol": "TSMU"
     },
     {
-        "name": "TIDAL TR II YIELDMAX TSM OPT",
+        "name": "TIDAL TRUST II YIELDMAX TSM OPT",
         "symbol": "TSMY"
     },
     {
@@ -18036,7 +18032,7 @@
         "symbol": "ULTA"
     },
     {
-        "name": "TIDAL TR II YIELDMAX ULTRA O",
+        "name": "TIDAL TRUST II YIELDMAX ULTRA O",
         "symbol": "ULTY"
     },
     {
@@ -18256,7 +18252,7 @@
         "symbol": "USO"
     },
     {
-        "name": "TIDAL TR II DEFIANCE OIL ENH",
+        "name": "TIDAL TRUST II DEFIANCE OIL ENH",
         "symbol": "USOY"
     },
     {
@@ -19108,7 +19104,7 @@
         "symbol": "WDS"
     },
     {
-        "name": "TIDAL TR II DEFIANCE S&P 500",
+        "name": "TIDAL TRUST II DEFIANCE S&P 500",
         "symbol": "WDTE"
     },
     {
@@ -19266,10 +19262,6 @@
     {
         "name": "WABASH NATL CORP COM",
         "symbol": "WNC"
-    },
-    {
-        "name": "GLOBAL X FDS WIND ENERGY ETF",
-        "symbol": "WNDY"
     },
     {
         "name": "WNS HLDGS LTD COM SHS",
@@ -19552,7 +19544,7 @@
         "symbol": "XLY"
     },
     {
-        "name": "TIDAL TR II DEFIANCE LARGE",
+        "name": "TIDAL TRUST II DEFIANCE LARGE",
         "symbol": "XMAG"
     },
     {
@@ -19768,11 +19760,11 @@
         "symbol": "YMAB"
     },
     {
-        "name": "TIDAL TR II YIELDMAX MAGNIFI",
+        "name": "TIDAL TRUST II YIELDMAX MAGNIFI",
         "symbol": "YMAG"
     },
     {
-        "name": "TIDAL TR II YIELDMAX UNIVERS",
+        "name": "TIDAL TRUST II YIELDMAX UNIVERS",
         "symbol": "YMAX"
     },
     {
