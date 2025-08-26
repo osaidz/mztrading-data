@@ -1888,7 +1888,7 @@
         "symbol": "BCI"
     },
     {
-        "name": "BCP INVESTMENT CORP",
+        "name": "BCP INVESTMENT CORPORATION COM NEW",
         "symbol": "BCIC"
     },
     {
@@ -4858,10 +4858,6 @@
     {
         "name": "GINKGO BIOWORKS HOLDINGS INC CL A NEW",
         "symbol": "DNA"
-    },
-    {
-        "name": "DUN & BRADSTREET HLDGS INC COM",
-        "symbol": "DNB"
     },
     {
         "name": "WISDOMTREE TR GLB US QTLY DIV",
@@ -10888,10 +10884,6 @@
         "symbol": "MCS"
     },
     {
-        "name": "MILL CITY VENTURES III LTD COM NEW",
-        "symbol": "MCVT"
-    },
-    {
         "name": "MISTER CAR WASH INC COM",
         "symbol": "MCW"
     },
@@ -16734,6 +16726,10 @@
     {
         "name": "SUN CMNTYS INC COM",
         "symbol": "SUI"
+    },
+    {
+        "name": "SUI GROUP HOLDINGS LTD",
+        "symbol": "SUIG"
     },
     {
         "name": "SUNOCO LP/SUNOCO FIN CORP COM UT REP LP",
