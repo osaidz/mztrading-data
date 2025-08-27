@@ -74376,5 +74376,6 @@
             "symbol": "HRMY",
             "dt": "2025-08-27"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-08-27-10-49-00/options_cboe_oi_anomaly.parquet"
 }
