@@ -74540,5 +74540,6 @@
             "symbol": "SKYT",
             "dt": "2025-08-28"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-08-28-10-49-54/options_cboe_oi_anomaly.parquet"
 }
