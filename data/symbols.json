@@ -4120,6 +4120,10 @@
         "symbol": "CTBI"
     },
     {
+        "name": "GLOBAL X FDS CLEANTECH ETF",
+        "symbol": "CTEC"
+    },
+    {
         "name": "CLARITEV CORPORATION CL A NEW",
         "symbol": "CTEV"
     },
@@ -5454,6 +5458,10 @@
     {
         "name": "ENLIVEN THERAPEUTICS INC COM",
         "symbol": "ELVN"
+    },
+    {
+        "name": "SAYONA MNG LTD SPONSORED ADS",
+        "symbol": "ELVR"
     },
     {
         "name": "EMERA INC COM",
@@ -7492,6 +7500,10 @@
         "symbol": "GNLX"
     },
     {
+        "name": "GLOBAL X FDS GENOMIC BIOTECH",
+        "symbol": "GNOM"
+    },
+    {
         "name": "SPDR INDEX SHS FDS GLB NAT RESRCE",
         "symbol": "GNR"
     },
@@ -7994,6 +8006,10 @@
     {
         "name": "HAWAIIAN ELEC INDUSTRIES COM",
         "symbol": "HE"
+    },
+    {
+        "name": "GLOBAL X FDS HEALTHTECH ETF",
+        "symbol": "HEAL"
     },
     {
         "name": "WISDOMTREE TR EUROPE HEDGED EQ",
@@ -10000,6 +10016,10 @@
         "symbol": "KRO"
     },
     {
+        "name": "GLOBAL X FDS AGTECH AND FOOD",
+        "symbol": "KROP"
+    },
+    {
         "name": "KEROS THERAPEUTICS INC COM",
         "symbol": "KROS"
     },
@@ -10190,6 +10210,10 @@
     {
         "name": "LENDINGCLUB CORP COM NEW",
         "symbol": "LC"
+    },
+    {
+        "name": "LUCID GROUP INC COM",
+        "symbol": "LCID"
     },
     {
         "name": "LCI INDS COM",
@@ -12122,6 +12146,10 @@
     {
         "name": "NOMAD FOODS LTD USD ORD SHS",
         "symbol": "NOMD"
+    },
+    {
+        "name": "FISCALNOTE HOLDINGS INC COM CL A",
+        "symbol": "NOTE"
     },
     {
         "name": "INOTIV INC COM",
@@ -17410,6 +17438,10 @@
     {
         "name": "TOLL BROTHERS INC COM",
         "symbol": "TOL"
+    },
+    {
+        "name": "TON STRATEGY CO",
+        "symbol": "TONX"
     },
     {
         "name": "KARTOON STUDIOS INC. COM NEW",
