@@ -1800,6 +1800,10 @@
         "symbol": "BBAR"
     },
     {
+        "name": "BED BATH & BEYOND INC COM",
+        "symbol": "BBBY"
+    },
+    {
         "name": "ETFIS SER TR I VIRTUS LIFESC CT",
         "symbol": "BBC"
     },
@@ -2240,10 +2244,6 @@
         "symbol": "BLD"
     },
     {
-        "name": "BLADE AIR MOBILITY INC CL A COM",
-        "symbol": "BLDE"
-    },
-    {
         "name": "BALLARD PWR SYS INC NEW COM",
         "symbol": "BLDP"
     },
@@ -2456,10 +2456,6 @@
         "symbol": "BRCC"
     },
     {
-        "name": "BRIDGE INVT GROUP HLDGS INC COM CL A",
-        "symbol": "BRDG"
-    },
-    {
         "name": "VANECK ETF TRUST BRAZIL SMALL CAP",
         "symbol": "BRF"
     },
@@ -2570,6 +2566,10 @@
     {
         "name": "GRAYSCALE BITCOIN MINI TR ETF SHS NEW",
         "symbol": "BTC"
+    },
+    {
+        "name": "NEOS Bitcoin High Income ETF",
+        "symbol": "BTCI"
     },
     {
         "name": "T-Rex 2X Long Bitcoin Daily Target ETF",
@@ -2730,10 +2730,6 @@
     {
         "name": "BEYOND MEAT INC COM",
         "symbol": "BYND"
-    },
-    {
-        "name": "BEYOND INC COM",
-        "symbol": "BYON"
     },
     {
         "name": "BYRNA TECHNOLOGIES INC COM NEW",
@@ -4980,7 +4976,7 @@
         "symbol": "DRI"
     },
     {
-        "name": "DARIOHEALTH CORP COM NEW",
+        "name": "DARIOHEALTH CORP COM",
         "symbol": "DRIO"
     },
     {
@@ -5188,7 +5184,7 @@
         "symbol": "EA"
     },
     {
-        "name": "GRAFTECH INTL LTD COM",
+        "name": "GRAFTECH INTL LTD COM NEW",
         "symbol": "EAF"
     },
     {
@@ -5462,6 +5458,10 @@
     {
         "name": "ENLIVEN THERAPEUTICS INC COM",
         "symbol": "ELVN"
+    },
+    {
+        "name": "SAYONA MNG LTD SPONSORED ADS",
+        "symbol": "ELVR"
     },
     {
         "name": "EMERA INC COM",
@@ -6208,6 +6208,14 @@
         "symbol": "FCX"
     },
     {
+        "name": "Fidelity Emerging Markets Multifactor ETF",
+        "symbol": "FDEM"
+    },
+    {
+        "name": "Fidelity International Multifactor ETF",
+        "symbol": "FDEV"
+    },
+    {
         "name": "Fidelity Digital Health ETF",
         "symbol": "FDHT"
     },
@@ -6342,6 +6350,18 @@
     {
         "name": "FIRST FINL BANCORP OH COM",
         "symbol": "FFBC"
+    },
+    {
+        "name": "Fidelity Fundamental Developed International ETF",
+        "symbol": "FFDI"
+    },
+    {
+        "name": "Fidelity Fundamental Emerging Markets ETF",
+        "symbol": "FFEM"
+    },
+    {
+        "name": "Fidelity Fundamental Global ex-U.S. ETF",
+        "symbol": "FFGX"
     },
     {
         "name": "FIRST FINL BANKSHARES INC COM",
@@ -8156,10 +8176,6 @@
         "symbol": "HMC"
     },
     {
-        "name": "HOMESTREET INC COM",
-        "symbol": "HMST"
-    },
-    {
         "name": "HARMONY GOLD MINING CO LTD SPONSORED ADR",
         "symbol": "HMY"
     },
@@ -8506,6 +8522,10 @@
     {
         "name": "ISHARES GOLD TR ISHARES NEW",
         "symbol": "IAU"
+    },
+    {
+        "name": "NEOS Gold High Income ETF",
+        "symbol": "IAUI"
     },
     {
         "name": "ISHARES TR ISHARES BIOTECH",
@@ -9232,10 +9252,6 @@
         "symbol": "ITGR"
     },
     {
-        "name": "ITEOS THERAPEUTICS INC COM",
-        "symbol": "ITOS"
-    },
-    {
         "name": "ISHARES TR CORE S&P TTL STK",
         "symbol": "ITOT"
     },
@@ -9422,6 +9438,10 @@
     {
         "name": "ISHARES TR U.S. REAL ES ETF",
         "symbol": "IYR"
+    },
+    {
+        "name": "NEOS Real Estate High Income ETF",
+        "symbol": "IYRI"
     },
     {
         "name": "iShares U.S. Transportation ETF",
@@ -9996,7 +10016,7 @@
         "symbol": "KRO"
     },
     {
-        "name": "GLOBAL X FDS GLOBAL X AGTECH",
+        "name": "GLOBAL X FDS AGTECH AND FOOD",
         "symbol": "KROP"
     },
     {
@@ -11310,10 +11330,6 @@
     {
         "name": "TOPGOLF CALLAWAY BRANDS CORP COM",
         "symbol": "MODG"
-    },
-    {
-        "name": "MODIVCARE INC COM",
-        "symbol": "MODV"
     },
     {
         "name": "MIDWESTONE FINL GROUP INC NEW COM",
@@ -13498,10 +13514,6 @@
     {
         "name": "PLATINUM GROUP METALS LTD COM",
         "symbol": "PLG"
-    },
-    {
-        "name": "PIEDMONT LITHIUM INC COM",
-        "symbol": "PLL"
     },
     {
         "name": "PALOMAR HLDGS INC COM",
@@ -16436,6 +16448,10 @@
         "symbol": "SPYG"
     },
     {
+        "name": "NEOS S&P 500 Hedged Equity Income ETF",
+        "symbol": "SPYH"
+    },
+    {
         "name": "NEOS S&P 500 High Income ETF",
         "symbol": "SPYI"
     },
@@ -16516,6 +16532,10 @@
         "symbol": "SRS"
     },
     {
+        "name": "STRATA CRITICAL MEDICAL INC CL A COM",
+        "symbol": "SRTA"
+    },
+    {
         "name": "SENSUS HEALTHCARE INC COM",
         "symbol": "SRTS"
     },
@@ -16528,7 +16548,7 @@
         "symbol": "SRVR"
     },
     {
-        "name": "SOUTHSTATE CORPORATION COM",
+        "name": "SOUTHSTATE BANK CORP",
         "symbol": "SSB"
     },
     {
@@ -17320,6 +17340,10 @@
         "symbol": "TLT"
     },
     {
+        "name": "NEOS Enhanced Income 20+ Year Treasury Bond ETF",
+        "symbol": "TLTI"
+    },
+    {
         "name": "TILLYS INC CL A",
         "symbol": "TLYS"
     },
@@ -17414,6 +17438,10 @@
     {
         "name": "TOLL BROTHERS INC COM",
         "symbol": "TOL"
+    },
+    {
+        "name": "TON STRATEGY CO",
+        "symbol": "TONX"
     },
     {
         "name": "KARTOON STUDIOS INC. COM NEW",
@@ -19046,10 +19074,6 @@
     {
         "name": "WEIBO CORP SPONSORED ADR",
         "symbol": "WB"
-    },
-    {
-        "name": "WALGREENS BOOTS ALLIANCE INC COM",
-        "symbol": "WBA"
     },
     {
         "name": "WARNER BROS DISCOVERY INC COM SER A",
