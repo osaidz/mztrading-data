@@ -2468,10 +2468,6 @@
         "symbol": "BRK.B"
     },
     {
-        "name": "BROOKLINE BANCORP INC DEL COM",
-        "symbol": "BRKL"
-    },
-    {
         "name": "BRUKER CORP COM",
         "symbol": "BRKR"
     },
@@ -4120,7 +4116,7 @@
         "symbol": "CTBI"
     },
     {
-        "name": "GLOBAL X FDS CLEANTECH ETF",
+        "name": "GLOBAL X FDS CLEANTECH ETF NW",
         "symbol": "CTEC"
     },
     {
@@ -4906,10 +4902,6 @@
     {
         "name": "DOLE PLC ORD SHS",
         "symbol": "DOLE"
-    },
-    {
-        "name": "DOMINARI HOLDINGS INC COM NEW",
-        "symbol": "DOMH"
     },
     {
         "name": "DOMO INC COM CL B",
@@ -7500,7 +7492,7 @@
         "symbol": "GNLX"
     },
     {
-        "name": "GLOBAL X FDS GENOMIC BIOTECH",
+        "name": "GLOBAL X FDS GENOMICS AND BIO",
         "symbol": "GNOM"
     },
     {
@@ -10212,7 +10204,7 @@
         "symbol": "LC"
     },
     {
-        "name": "LUCID GROUP INC COM",
+        "name": "LUCID GROUP INC COM NEW",
         "symbol": "LCID"
     },
     {
@@ -12148,7 +12140,7 @@
         "symbol": "NOMD"
     },
     {
-        "name": "FISCALNOTE HOLDINGS INC COM CL A",
+        "name": "FISCALNOTE HOLDINGS INC CL A NEW",
         "symbol": "NOTE"
     },
     {
@@ -16548,7 +16540,7 @@
         "symbol": "SRVR"
     },
     {
-        "name": "SOUTHSTATE BANK CORP",
+        "name": "SOUTHSTATE BK CORP COM",
         "symbol": "SSB"
     },
     {
@@ -17440,7 +17432,7 @@
         "symbol": "TOL"
     },
     {
-        "name": "TON STRATEGY CO",
+        "name": "TON STRATEGY CO COM",
         "symbol": "TONX"
     },
     {
