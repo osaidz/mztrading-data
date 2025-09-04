@@ -1840,6 +1840,10 @@
         "symbol": "BBSI"
     },
     {
+        "name": "BEACON FINANCIAL CORP. COM",
+        "symbol": "BBT"
+    },
+    {
         "name": "BROOKFIELD BUSINESS PARTNERS L UNIT LTD L P",
         "symbol": "BBU"
     },
@@ -3636,7 +3640,7 @@
         "symbol": "CNTA"
     },
     {
-        "name": "CONNECT BIOPHARMA HLDGS LTD ADS",
+        "name": "CONNECT BIOPHARMA HLDGS LTD SHS",
         "symbol": "CNTB"
     },
     {
@@ -4902,6 +4906,10 @@
     {
         "name": "DOLE PLC ORD SHS",
         "symbol": "DOLE"
+    },
+    {
+        "name": "DOMINARI HOLDINGS INC COM NEW",
+        "symbol": "DOMH"
     },
     {
         "name": "DOMO INC COM CL B",
@@ -9108,10 +9116,6 @@
         "symbol": "IP"
     },
     {
-        "name": "IMMUNOPRECISE ANTIBODIES LTD COM NEW",
-        "symbol": "IPA"
-    },
-    {
         "name": "ISHARES TR CORE MSCI PAC",
         "symbol": "IPAC"
     },
@@ -10720,10 +10724,6 @@
         "symbol": "MAC"
     },
     {
-        "name": "MAG SILVER CORP COM",
-        "symbol": "MAG"
-    },
-    {
         "name": "Point Bridge America First ETF",
         "symbol": "MAGA"
     },
@@ -10866,6 +10866,10 @@
     {
         "name": "MCDONALDS CORP COM",
         "symbol": "MCD"
+    },
+    {
+        "name": "MECHANICS BANCORP CL A",
+        "symbol": "MCHB"
     },
     {
         "name": "ISHARES TR MSCI CHINA ETF",
