@@ -7480,10 +7480,6 @@
         "symbol": "GMRE"
     },
     {
-        "name": "GMS INC COM",
-        "symbol": "GMS"
-    },
-    {
         "name": "GENIE ENERGY LTD CL B",
         "symbol": "GNE"
     },
@@ -8446,6 +8442,10 @@
     {
         "name": "HYDROFARM HLDGS GROUP INC COM",
         "symbol": "HYFM"
+    },
+    {
+        "name": "MINDWALK HOLDINGS CORP COM",
+        "symbol": "HYFT"
     },
     {
         "name": "ISHARES TR IBOXX HI YD ETF",
@@ -16341,7 +16341,7 @@
     },
     {
         "name": "SPRUCE BIOSCIENCES INC COM NEW",
-        "symbol": "SPRBD"
+        "symbol": "SPRB"
     },
     {
         "name": "SPRUCE POWER HOLDING CORP COM NEW",
