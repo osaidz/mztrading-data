@@ -75668,5 +75668,6 @@
             "symbol": "SE",
             "dt": "2025-09-10"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-09-10-10-39-39/options_cboe_oi_anomaly.parquet"
 }
