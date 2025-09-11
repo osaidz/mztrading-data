@@ -5452,7 +5452,7 @@
         "symbol": "ELTX"
     },
     {
-        "name": "ELEVANCE HEALTH INC COM",
+        "name": "ELEVANCE HEALTH INC FORMERLY A COM",
         "symbol": "ELV"
     },
     {
@@ -10976,10 +10976,6 @@
         "symbol": "MEI"
     },
     {
-        "name": "MEI PHARMA INC COM",
-        "symbol": "MEIP"
-    },
-    {
         "name": "MERCADOLIBRE INC COM",
         "symbol": "MELI"
     },
@@ -13946,6 +13942,10 @@
     {
         "name": "PACER FDS TR TRENDPILOT 100",
         "symbol": "PTNQ"
+    },
+    {
+        "name": "PALATIN TECHNOLOGIES INC COM NEW",
+        "symbol": "PTNT"
     },
     {
         "name": "PELOTON INTERACTIVE INC CL A COM",
