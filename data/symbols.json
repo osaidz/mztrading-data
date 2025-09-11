@@ -8912,6 +8912,10 @@
         "symbol": "IMVT"
     },
     {
+        "name": "INTERNATIONAL MNY EXPRESS INC COM",
+        "symbol": "IMXI"
+    },
+    {
         "name": "FIRST INTERNET BANCORP COM",
         "symbol": "INBK"
     },
@@ -10364,6 +10368,10 @@
         "symbol": "LITE"
     },
     {
+        "name": "LITE STRATEGY INC",
+        "symbol": "LITS"
+    },
+    {
         "name": "LIVANOVA PLC SHS",
         "symbol": "LIVN"
     },
@@ -10974,10 +10982,6 @@
     {
         "name": "METHODE ELECTRS INC COM",
         "symbol": "MEI"
-    },
-    {
-        "name": "MEI PHARMA INC COM",
-        "symbol": "MEIP"
     },
     {
         "name": "MERCADOLIBRE INC COM",
@@ -19294,6 +19298,10 @@
     {
         "name": "WIDEOPENWEST INC COM",
         "symbol": "WOW"
+    },
+    {
+        "name": "Roundhill WeeklyPay Universe ETF",
+        "symbol": "WPAY"
     },
     {
         "name": "WP CAREY INC COM",
