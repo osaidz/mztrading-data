@@ -2528,10 +2528,6 @@
         "symbol": "BSET"
     },
     {
-        "name": "BIOSIG TECHNOLOGIES INC COM",
-        "symbol": "BSGM"
-    },
-    {
         "name": "BLACK STONE MINERALS L P COM UNIT",
         "symbol": "BSM"
     },
@@ -4994,10 +4990,6 @@
     {
         "name": "DIREXION SHS ETF TR DAILY REAL EST B",
         "symbol": "DRN"
-    },
-    {
-        "name": "DURECT CORP COM NEW",
-        "symbol": "DRRX"
     },
     {
         "name": "LEONARDO DRS INC COM",
@@ -10368,7 +10360,7 @@
         "symbol": "LITE"
     },
     {
-        "name": "LITE STRATEGY INC",
+        "name": "LITE STRATEGY INC COM",
         "symbol": "LITS"
     },
     {
@@ -12646,10 +12638,6 @@
     {
         "name": "OLIN CORP COM PAR $1",
         "symbol": "OLN"
-    },
-    {
-        "name": "OLO INC CL A",
-        "symbol": "OLO"
     },
     {
         "name": "ONE LIBERTY PPTYS INC COM",
@@ -15782,10 +15770,6 @@
     {
         "name": "SKYWARD SPECIALTY INS GROUP IN COM",
         "symbol": "SKWD"
-    },
-    {
-        "name": "SKECHERS U S A INC CL A",
-        "symbol": "SKX"
     },
     {
         "name": "CHAMPION HOMES INC COM",
