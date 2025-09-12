@@ -2528,10 +2528,6 @@
         "symbol": "BSET"
     },
     {
-        "name": "BIOSIG TECHNOLOGIES INC COM",
-        "symbol": "BSGM"
-    },
-    {
         "name": "BLACK STONE MINERALS L P COM UNIT",
         "symbol": "BSM"
     },
@@ -4994,10 +4990,6 @@
     {
         "name": "DIREXION SHS ETF TR DAILY REAL EST B",
         "symbol": "DRN"
-    },
-    {
-        "name": "DURECT CORP COM NEW",
-        "symbol": "DRRX"
     },
     {
         "name": "LEONARDO DRS INC COM",
@@ -8912,6 +8904,10 @@
         "symbol": "IMVT"
     },
     {
+        "name": "INTERNATIONAL MNY EXPRESS INC COM",
+        "symbol": "IMXI"
+    },
+    {
         "name": "FIRST INTERNET BANCORP COM",
         "symbol": "INBK"
     },
@@ -10362,6 +10358,10 @@
     {
         "name": "LUMENTUM HLDGS INC COM",
         "symbol": "LITE"
+    },
+    {
+        "name": "MEI PHARMA INC COM",
+        "symbol": "LITS"
     },
     {
         "name": "LIVANOVA PLC SHS",
@@ -19290,6 +19290,10 @@
     {
         "name": "WIDEOPENWEST INC COM",
         "symbol": "WOW"
+    },
+    {
+        "name": "Roundhill WeeklyPay Universe ETF",
+        "symbol": "WPAY"
     },
     {
         "name": "WP CAREY INC COM",
