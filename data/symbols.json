@@ -1024,6 +1024,10 @@
         "symbol": "APLS"
     },
     {
+        "name": "Tradr 2X Long APLD Daily ETF",
+        "symbol": "APLX"
+    },
+    {
         "name": "APOLLO GLOBAL MGMT INC COM",
         "symbol": "APO"
     },
@@ -1336,7 +1340,7 @@
         "symbol": "ASRT"
     },
     {
-        "name": "ASSET ENTITIES INC CL B NEW",
+        "name": "STRIVE INC",
         "symbol": "ASST"
     },
     {
@@ -2764,7 +2768,7 @@
         "symbol": "CAAP"
     },
     {
-        "name": "CHINA AUTOMOTIVE SYS INC COM",
+        "name": "CHINA AUTOMOTIVE SYS INC SHS",
         "symbol": "CAAS"
     },
     {
@@ -4278,6 +4282,10 @@
     {
         "name": "CARVANA CO CL A",
         "symbol": "CVNA"
+    },
+    {
+        "name": "TIDAL TRUST II YIELDMAX CVNA OP",
+        "symbol": "CVNY"
     },
     {
         "name": "CVRX INC COM",
@@ -8228,6 +8236,10 @@
         "symbol": "HOOW"
     },
     {
+        "name": "TIDAL TRUST II YIELDMAX HOOD OP",
+        "symbol": "HOOY"
+    },
+    {
         "name": "HOPE BANCORP INC COM",
         "symbol": "HOPE"
     },
@@ -9616,6 +9628,10 @@
         "symbol": "JNUG"
     },
     {
+        "name": "Tradr 2X Long JOBY Daily ETF",
+        "symbol": "JOBX"
+    },
+    {
         "name": "JOBY AVIATION INC COMMON STOCK",
         "symbol": "JOBY"
     },
@@ -9842,6 +9858,10 @@
     {
         "name": "KLA CORP COM NEW",
         "symbol": "KLAC"
+    },
+    {
+        "name": "KLARNA GROUP PLC SHS",
+        "symbol": "KLAR"
     },
     {
         "name": "KINDERCARE LEARNING COMPANIES COM",
@@ -10768,6 +10788,10 @@
         "symbol": "MARA"
     },
     {
+        "name": "TIDAL TRUST II YIELDMAX MARA OP",
+        "symbol": "MARO"
+    },
+    {
         "name": "MASCO CORP COM",
         "symbol": "MAS"
     },
@@ -11166,6 +11190,10 @@
     {
         "name": "MARKETAXESS HLDGS INC COM",
         "symbol": "MKTX"
+    },
+    {
+        "name": "MOUNT LOGAN CAP INC COM",
+        "symbol": "MLCI"
     },
     {
         "name": "MELCO RESORTS AND ENTMNT LTD ADR",
@@ -11868,6 +11896,10 @@
         "symbol": "NEAR"
     },
     {
+        "name": "Tradr 2X Long NBIS Daily ETF",
+        "symbol": "NEBX"
+    },
+    {
         "name": "NORTHEAST CMNTY BANCORP INC COM",
         "symbol": "NECB"
     },
@@ -12398,6 +12430,10 @@
     {
         "name": "NAVITAS SEMICONDUCTOR CORP COM",
         "symbol": "NVTS"
+    },
+    {
+        "name": "Tradr 2X Long NVTS Daily ETF",
+        "symbol": "NVTX"
     },
     {
         "name": "NORTHWESTERN ENERGY GROUP INC COM NEW",
@@ -13606,6 +13642,10 @@
     {
         "name": "POET TECHNOLOGIES INC COM NEW",
         "symbol": "POET"
+    },
+    {
+        "name": "Tradr 2X Long PONY Daily ETF",
+        "symbol": "PONX"
     },
     {
         "name": "PONY AI INC SPONSORED ADS",
@@ -16612,6 +16652,10 @@
         "symbol": "STEP"
     },
     {
+        "name": "STREAMEX CORP COM",
+        "symbol": "STEX"
+    },
+    {
         "name": "STAGWELL INC COM CL A",
         "symbol": "STGW"
     },
@@ -17776,10 +17820,6 @@
         "symbol": "TUR"
     },
     {
-        "name": "180 DEGREE CAP CORP COM NEW",
-        "symbol": "TURN"
-    },
-    {
         "name": "MAMMOTH ENERGY SVCS INC COM",
         "symbol": "TUSK"
     },
@@ -18748,6 +18788,10 @@
         "symbol": "VOYG"
     },
     {
+        "name": "Tradr 2X Long VOYG Daily ETF",
+        "symbol": "VOYX"
+    },
+    {
         "name": "VISHAY PRECISION GROUP INC COM",
         "symbol": "VPG"
     },
@@ -19262,6 +19306,10 @@
     {
         "name": "WNS HLDGS LTD COM SHS",
         "symbol": "WNS"
+    },
+    {
+        "name": "TIDAL TRUST II YIELDMAX MSTR SH",
+        "symbol": "WNTR"
     },
     {
         "name": "WOLFSPEED INC COM",
