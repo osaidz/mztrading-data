@@ -1340,7 +1340,7 @@
         "symbol": "ASRT"
     },
     {
-        "name": "STRIVE INC",
+        "name": "STRIVE INC CL A COM",
         "symbol": "ASST"
     },
     {
@@ -3460,7 +3460,7 @@
         "symbol": "CLS"
     },
     {
-        "name": "CLEARSIDE BIOMEDICAL INC COM",
+        "name": "CLEARSIDE BIOMEDICAL INC COM NEW",
         "symbol": "CLSD"
     },
     {
@@ -14518,10 +14518,6 @@
     {
         "name": "PROSHARES TR ULTRASHORT TECHN",
         "symbol": "REW"
-    },
-    {
-        "name": "REX AMERICAN RES CORP COM",
-        "symbol": "REX"
     },
     {
         "name": "REXFORD INDL RLTY INC COM",
