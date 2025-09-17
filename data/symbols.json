@@ -1744,6 +1744,10 @@
         "symbol": "BAI"
     },
     {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "BAIG"
+    },
+    {
         "name": "iShares Advantage Large Cap Income ETF",
         "symbol": "BALI"
     },
@@ -3974,6 +3978,10 @@
     {
         "name": "CORMEDIX INC COM",
         "symbol": "CRMD"
+    },
+    {
+        "name": "CRITICAL METALS CORP PUBCO ORD SHS",
+        "symbol": "CRML"
     },
     {
         "name": "CERENCE INC COM",
@@ -6440,6 +6448,10 @@
         "symbol": "FIG"
     },
     {
+        "name": "FIGURE TECHNOLOGY SOLUTIO COM CL A",
+        "symbol": "FIGR"
+    },
+    {
         "name": "FIGS INC CL A",
         "symbol": "FIGS"
     },
@@ -7398,6 +7410,10 @@
     {
         "name": "GREAT LAKES DREDGE & DOCK CORP COM",
         "symbol": "GLDD"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "GLGG"
     },
     {
         "name": "PROSHARES TR II ULTRASHORT GOLD",
@@ -14520,6 +14536,10 @@
         "symbol": "REW"
     },
     {
+        "name": "REX AMERICAN RES CORP COM",
+        "symbol": "REX"
+    },
+    {
         "name": "REXFORD INDL RLTY INC COM",
         "symbol": "REXR"
     },
@@ -16486,10 +16506,6 @@
     {
         "name": "SOCIEDAD QUIMICA Y MINERA DE SPON ADR SER B",
         "symbol": "SQM"
-    },
-    {
-        "name": "SEQUANS COMMUNICATIONS S A SPONSORED ADS",
-        "symbol": "SQNS"
     },
     {
         "name": "PROSHARES TR ULTRAPRO SHT QQQ",
@@ -19472,6 +19488,10 @@
         "symbol": "XAIR"
     },
     {
+        "name": "DBX ETF TR XTRACKERS ARTIFI",
+        "symbol": "XAIX"
+    },
+    {
         "name": "SPDR SERIES TRUST AEROSPACE DEF",
         "symbol": "XAR"
     },
@@ -19798,10 +19818,6 @@
     {
         "name": "PRINCIPAL EXCHANGE TRADED FDS ACTIVE HIGH YL",
         "symbol": "YLD"
-    },
-    {
-        "name": "Y-MABS THERAPEUTICS INC COM",
-        "symbol": "YMAB"
     },
     {
         "name": "TIDAL TRUST II YIELDMAX MAGNIFI",
