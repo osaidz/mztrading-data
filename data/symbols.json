@@ -1400,10 +1400,6 @@
         "symbol": "ATGE"
     },
     {
-        "name": "ATHIRA PHARMA INC COM",
-        "symbol": "ATHA"
-    },
-    {
         "name": "AUTOHOME INC SP ADS RP CL A",
         "symbol": "ATHM"
     },
@@ -6268,10 +6264,6 @@
         "symbol": "FDT"
     },
     {
-        "name": "FIDUS INVT CORP COM",
-        "symbol": "FDUS"
-    },
-    {
         "name": "FEDERATED HERMES ETF TRUST US STRATEGIC DIV",
         "symbol": "FDV"
     },
@@ -7238,6 +7230,10 @@
     {
         "name": "GOLDMAN SACHS ETF TR ACTIVEBETA EME",
         "symbol": "GEM"
+    },
+    {
+        "name": "GEMINI SPACE STA INC CL A COM",
+        "symbol": "GEMI"
     },
     {
         "name": "GEN DIGITAL INC COM",
@@ -14864,6 +14860,10 @@
         "symbol": "RPV"
     },
     {
+        "name": "RICHTECH ROBOTICS INC CL B",
+        "symbol": "RR"
+    },
+    {
         "name": "RANGE RES CORP COM",
         "symbol": "RRC"
     },
@@ -16136,7 +16136,7 @@
         "symbol": "SNX"
     },
     {
-        "name": "SANOFI SPONSORED ADR",
+        "name": "SANOFI SA SPONSORED ADR",
         "symbol": "SNY"
     },
     {
@@ -16506,6 +16506,10 @@
     {
         "name": "SOCIEDAD QUIMICA Y MINERA DE SPON ADR SER B",
         "symbol": "SQM"
+    },
+    {
+        "name": "SEQUANS COMMUNICATIONS S A SPONSORED ADS",
+        "symbol": "SQNS"
     },
     {
         "name": "PROSHARES TR ULTRAPRO SHT QQQ",
