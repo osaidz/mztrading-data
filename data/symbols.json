@@ -1400,6 +1400,10 @@
         "symbol": "ATGE"
     },
     {
+        "name": "ATHIRA PHARMA INC COM",
+        "symbol": "ATHA"
+    },
+    {
         "name": "AUTOHOME INC SP ADS RP CL A",
         "symbol": "ATHM"
     },
@@ -6264,6 +6268,10 @@
         "symbol": "FDT"
     },
     {
+        "name": "FIDUS INVT CORP COM",
+        "symbol": "FDUS"
+    },
+    {
         "name": "FEDERATED HERMES ETF TRUST US STRATEGIC DIV",
         "symbol": "FDV"
     },
@@ -7522,10 +7530,6 @@
     {
         "name": "GENTEX CORP COM",
         "symbol": "GNTX"
-    },
-    {
-        "name": "GUARANTY BANCSHARES INC TEX COM",
-        "symbol": "GNTY"
     },
     {
         "name": "GENWORTH FINL INC COM SHS",
@@ -10766,10 +10770,6 @@
     {
         "name": "Roundhill Magnificent Seven Covered Call ETF",
         "symbol": "MAGY"
-    },
-    {
-        "name": "MAIN STR CAP CORP COM",
-        "symbol": "MAIN"
     },
     {
         "name": "MAMAS CREATIONS INC COM",
@@ -18782,10 +18782,6 @@
     {
         "name": "VANGUARD ADMIRAL FDS INC 500 VAL IDX FD",
         "symbol": "VOOV"
-    },
-    {
-        "name": "VOR BIOPHARMA INC COM",
-        "symbol": "VOR"
     },
     {
         "name": "VANGUARD INDEX FDS MCAP GR IDXVIP",
