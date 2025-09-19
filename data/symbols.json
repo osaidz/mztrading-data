@@ -400,6 +400,10 @@
         "symbol": "AFRM"
     },
     {
+        "name": "T-REX 2X Long AFRM Daily Target ETF",
+        "symbol": "AFRU"
+    },
+    {
         "name": "AFYA LTD CL A COM",
         "symbol": "AFYA"
     },
@@ -1400,6 +1404,10 @@
         "symbol": "ATGE"
     },
     {
+        "name": "ATHIRA PHARMA INC COM",
+        "symbol": "ATHA"
+    },
+    {
         "name": "AUTOHOME INC SP ADS RP CL A",
         "symbol": "ATHM"
     },
@@ -1686,6 +1694,10 @@
     {
         "name": "AXT INC COM",
         "symbol": "AXTI"
+    },
+    {
+        "name": "T-REX 2X Long AXON Daily Target ETF",
+        "symbol": "AXUP"
     },
     {
         "name": "ACUITY INC COM",
@@ -2214,6 +2226,10 @@
     {
         "name": "BOOKING HOLDINGS INC COM",
         "symbol": "BKNG"
+    },
+    {
+        "name": "T-REX 2X Long BKNG Daily Target ETF",
+        "symbol": "BKNU"
     },
     {
         "name": "BAKER HUGHES COMPANY CL A",
@@ -3468,6 +3484,10 @@
         "symbol": "CLSK"
     },
     {
+        "name": "Tradr 2X Long CLSK Daily ETF",
+        "symbol": "CLSX"
+    },
+    {
         "name": "CLARIVATE PLC ORD SHS",
         "symbol": "CLVT"
     },
@@ -3942,6 +3962,10 @@
     {
         "name": "CREDO TECHNOLOGY GROUP HOLDING ORDINARY SHARES",
         "symbol": "CRDO"
+    },
+    {
+        "name": "Tradr 2X Long CRDO Daily ETF",
+        "symbol": "CRDU"
     },
     {
         "name": "CRESUD S A C I F Y A SPONSORED ADR",
@@ -5524,6 +5548,10 @@
         "symbol": "ENPH"
     },
     {
+        "name": "Tradr 2X Long ENPH Daily ETF",
+        "symbol": "ENPX"
+    },
+    {
         "name": "ENERGIZER HLDGS INC NEW COM",
         "symbol": "ENR"
     },
@@ -6262,6 +6290,10 @@
     {
         "name": "FIRST TR EXCH TRD ALPHDX FD II DEV MRK EX US",
         "symbol": "FDT"
+    },
+    {
+        "name": "FIDUS INVT CORP COM",
+        "symbol": "FDUS"
     },
     {
         "name": "FEDERATED HERMES ETF TRUST US STRATEGIC DIV",
@@ -7212,7 +7244,7 @@
         "symbol": "GDYN"
     },
     {
-        "name": "GENERAL AEROSPACE CO",
+        "name": "GE AEROSPACE COM NEW",
         "symbol": "GE"
     },
     {
@@ -7778,6 +7810,10 @@
     {
         "name": "GSR III ACQUISITION CORP CL A",
         "symbol": "GSRT"
+    },
+    {
+        "name": "Tradr 2X Long GS Daily ETF",
+        "symbol": "GSX"
     },
     {
         "name": "INVESCO ACTIVELY MANAGED EXCHA ULTRA SHRT DUR",
@@ -10078,6 +10114,10 @@
     {
         "name": "KRATOS DEFENSE & SEC SOLUTIONS COM NEW",
         "symbol": "KTOS"
+    },
+    {
+        "name": "T-REX 2X Long KTOS Daily Target ETF",
+        "symbol": "KTUP"
     },
     {
         "name": "KULR TECHNOLOGY GROUP INC COM",
@@ -14048,6 +14088,10 @@
         "symbol": "PXH"
     },
     {
+        "name": "T-REX 2X Long UPXI Daily Target ETF",
+        "symbol": "PXIU"
+    },
+    {
         "name": "INVESCO EXCHANGE TRADED FD TR OIL & GAS SERVIC",
         "symbol": "PXJ"
     },
@@ -14634,10 +14678,6 @@
     {
         "name": "B. RILEY FINANCIAL INC COM",
         "symbol": "RILY"
-    },
-    {
-        "name": "INVESTMENT MANAGERS SER TR II AXS REAL ESTATE",
-        "symbol": "RINC"
     },
     {
         "name": "ISHARES INC MSCI GBL GOLD MN",
@@ -16756,6 +16796,10 @@
         "symbol": "STTK"
     },
     {
+        "name": "STUBHUB HLDGS INC CL A",
+        "symbol": "STUB"
+    },
+    {
         "name": "STEVANATO GROUP S P A ORD SHS",
         "symbol": "STVN"
     },
@@ -17788,6 +17832,10 @@
         "symbol": "TTD"
     },
     {
+        "name": "T-REX 2X Long TTD Daily Target ETF",
+        "symbol": "TTDU"
+    },
+    {
         "name": "TOTALENERGIES SE SPONSORED ADS",
         "symbol": "TTE"
     },
@@ -18142,6 +18190,10 @@
     {
         "name": "UNITY BANCORP INC COM",
         "symbol": "UNTY"
+    },
+    {
+        "name": "Tradr 2X Long U Daily ETF",
+        "symbol": "UNX"
     },
     {
         "name": "URBAN ONE INC CL A",
