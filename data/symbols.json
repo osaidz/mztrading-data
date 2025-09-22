@@ -6312,10 +6312,6 @@
         "symbol": "FE"
     },
     {
-        "name": "5E ADVANCED MATERIALS INC COM NEW",
-        "symbol": "FEAM"
-    },
-    {
         "name": "FRANKLIN ELEC INC COM",
         "symbol": "FELE"
     },
@@ -8486,10 +8482,6 @@
     {
         "name": "GLOBAL X FDS GBL X HYDROGEN",
         "symbol": "HYDR"
-    },
-    {
-        "name": "HYDROFARM HLDGS GROUP INC COM",
-        "symbol": "HYFM"
     },
     {
         "name": "MINDWALK HOLDINGS CORP COM",
@@ -12352,6 +12344,10 @@
         "symbol": "NTRS"
     },
     {
+        "name": "NETSKOPE INC CL A",
+        "symbol": "NTSK"
+    },
+    {
         "name": "NETSTREIT CORP COM",
         "symbol": "NTST"
     },
@@ -15398,10 +15394,6 @@
     {
         "name": "STEPAN CO COM",
         "symbol": "SCL"
-    },
-    {
-        "name": "SCILEX HOLDING CO COM NEW",
-        "symbol": "SCLX"
     },
     {
         "name": "STELLUS CAP INVT CORP COM",
@@ -18708,10 +18700,6 @@
         "symbol": "VIV"
     },
     {
-        "name": "VIVOSIM LABS INC COM",
-        "symbol": "VIVS"
-    },
-    {
         "name": "CBOE Volatility Index",
         "symbol": "VIX"
     },
@@ -18836,7 +18824,7 @@
         "symbol": "VOOV"
     },
     {
-        "name": "VOR BIOPHARMA INC COM",
+        "name": "VOR BIOPHARMA INC COM NEW",
         "symbol": "VOR"
     },
     {
@@ -19328,10 +19316,6 @@
         "symbol": "WKHS"
     },
     {
-        "name": "WORKSPORT LTD COM NEW",
-        "symbol": "WKSP"
-    },
-    {
         "name": "WILLDAN GROUP INC COM",
         "symbol": "WLDN"
     },
@@ -19800,7 +19784,7 @@
         "symbol": "XSW"
     },
     {
-        "name": "ISHARES TR EXPONENTIAL TECH",
+        "name": "ISHARES FUTURE EXPONENTIAL TEC",
         "symbol": "XT"
     },
     {
