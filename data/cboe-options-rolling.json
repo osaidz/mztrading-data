@@ -75892,5 +75892,6 @@
             "symbol": "LAES",
             "dt": "2025-09-23"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-09-23-10-40-36/options_cboe_oi_anomaly.parquet"
 }
