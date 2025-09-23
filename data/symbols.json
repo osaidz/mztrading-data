@@ -2484,10 +2484,6 @@
         "symbol": "BRF"
     },
     {
-        "name": "BRF SA SPONSORED ADR",
-        "symbol": "BRFS"
-    },
-    {
         "name": "BERKSHIRE HATHAWAY INC DEL CL B NEW",
         "symbol": "BRK.B"
     },
@@ -16452,10 +16448,6 @@
         "symbol": "SPTM"
     },
     {
-        "name": "SPARTANNASH CO COM",
-        "symbol": "SPTN"
-    },
-    {
         "name": "SPDR SERIES TRUST PORTFOLIO SH TSR",
         "symbol": "SPTS"
     },
@@ -19784,7 +19776,7 @@
         "symbol": "XSW"
     },
     {
-        "name": "ISHARES FUTURE EXPONENTIAL TEC",
+        "name": "ISHARES TR FUTURE EXPONENTI",
         "symbol": "XT"
     },
     {
