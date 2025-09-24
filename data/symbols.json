@@ -1552,6 +1552,10 @@
         "symbol": "AVGE"
     },
     {
+        "name": "THEMES ETF TR LEVERAGE 2X LONG",
+        "symbol": "AVGG"
+    },
+    {
         "name": "BROADCOM INC COM",
         "symbol": "AVGO"
     },
@@ -3940,6 +3944,10 @@
         "symbol": "CRC"
     },
     {
+        "name": "PROSHARES TR ULTRA CRCL",
+        "symbol": "CRCA"
+    },
+    {
         "name": "CIRCLE INTERNET GROUP INC COM CL A",
         "symbol": "CRCL"
     },
@@ -3994,6 +4002,10 @@
     {
         "name": "CORMEDIX INC COM",
         "symbol": "CRMD"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "CRMG"
     },
     {
         "name": "CRITICAL METALS CORP PUBCO ORD SHS",
@@ -4932,6 +4944,10 @@
         "symbol": "DOGD"
     },
     {
+        "name": "REX-Osprey DOGE ETF",
+        "symbol": "DOJE"
+    },
+    {
         "name": "DOLE PLC ORD SHS",
         "symbol": "DOLE"
     },
@@ -5178,6 +5194,10 @@
     {
         "name": "DXP ENTERPRISES INC COM NEW",
         "symbol": "DXPE"
+    },
+    {
+        "name": "DIMENSIONAL ETF TRUST DIMENSIONAL US",
+        "symbol": "DXUV"
     },
     {
         "name": "DYCOM INDS INC COM",
@@ -5462,6 +5482,10 @@
     {
         "name": "E L F BEAUTY INC COM",
         "symbol": "ELF"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DAILY LLY BULL",
+        "symbol": "ELIL"
     },
     {
         "name": "ELME COMMUNITIES SH BEN INT",
@@ -6308,8 +6332,20 @@
         "symbol": "FE"
     },
     {
+        "name": "FIDELITY COVINGTON TRUST ENHANCED LARGE",
+        "symbol": "FELC"
+    },
+    {
         "name": "FRANKLIN ELEC INC COM",
         "symbol": "FELE"
+    },
+    {
+        "name": "FIDELITY COVINGTON TRUST ENHANCED LARGE",
+        "symbol": "FELG"
+    },
+    {
+        "name": "FIDELITY COVINGTON TRUST ENHANCED LARGE",
+        "symbol": "FELV"
     },
     {
         "name": "FIRST TR EXCH TRD ALPHDX FD II EMERG MKT ALPH",
@@ -6322,6 +6358,10 @@
     {
         "name": "FENNEC PHARMACEUTICALS INC COM",
         "symbol": "FENC"
+    },
+    {
+        "name": "FIDELITY COVINGTON TRUST ENHANCED INTL",
+        "symbol": "FENI"
     },
     {
         "name": "FIDELITY COVINGTON TRUST MSCI ENERGY IDX",
@@ -6646,6 +6686,10 @@
     {
         "name": "FMC CORP COM NEW",
         "symbol": "FMC"
+    },
+    {
+        "name": "FIDELITY COVINGTON TRUST ENHANCED MID",
+        "symbol": "FMDE"
     },
     {
         "name": "FIDELITY COVINGTON TRUST METAVERSE ETF",
@@ -13600,6 +13644,10 @@
         "symbol": "PLSE"
     },
     {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "PLTG"
+    },
+    {
         "name": "PLAYTIKA HLDG CORP COM",
         "symbol": "PLTK"
     },
@@ -19738,6 +19786,10 @@
     {
         "name": "VOLATILITY SHS TR XRP ETF",
         "symbol": "XRPI"
+    },
+    {
+        "name": "REX-Osprey XRP ETF",
+        "symbol": "XRPR"
     },
     {
         "name": "VOLATILITY SHS TR 2X XRP ETF",
