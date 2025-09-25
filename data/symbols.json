@@ -128,6 +128,10 @@
         "symbol": "ABT"
     },
     {
+        "name": "AMERICAN BITCOIN CORP. COM CL A",
+        "symbol": "ABTC"
+    },
+    {
         "name": "ARBUTUS BIOPHARMA CORP COM",
         "symbol": "ABUS"
     },
@@ -1790,10 +1794,6 @@
     {
         "name": "BARK INC COM",
         "symbol": "BARK"
-    },
-    {
-        "name": "COUCHBASE INC COM",
-        "symbol": "BASE"
     },
     {
         "name": "ATLANTA BRAVES HLDGS INC COM SER A",
@@ -10940,6 +10940,10 @@
         "symbol": "MBOT"
     },
     {
+        "name": "MARFRIG GLOBAL FOODS SA SPONSORED ADR",
+        "symbol": "MBRFY"
+    },
+    {
         "name": "Cboe Mini Bitcoin Index",
         "symbol": "MBTX"
     },
@@ -18600,6 +18604,10 @@
         "symbol": "VELO"
     },
     {
+        "name": "VENU HLDG CORP COM",
+        "symbol": "VENU"
+    },
+    {
         "name": "VERA THERAPEUTICS INC CL A",
         "symbol": "VERA"
     },
@@ -18614,6 +18622,10 @@
     {
         "name": "VERU INC COM NEW",
         "symbol": "VERU"
+    },
+    {
+        "name": "VERTEX INC CL A",
+        "symbol": "VERX"
     },
     {
         "name": "VERMILION ENERGY INC COM",
@@ -19196,6 +19208,10 @@
         "symbol": "WBD"
     },
     {
+        "name": "WATERBRIDGE INFRASTRUCTURE LLC CL A SHS REPSTG",
+        "symbol": "WBI"
+    },
+    {
         "name": "WEBSTER FINL CORP COM",
         "symbol": "WBS"
     },
@@ -19558,6 +19574,10 @@
     {
         "name": "WEYERHAEUSER CO MTN BE COM NEW",
         "symbol": "WY"
+    },
+    {
+        "name": "WHITEFIBER INC SHS",
+        "symbol": "WYFI"
     },
     {
         "name": "WYNN RESORTS LTD COM",
