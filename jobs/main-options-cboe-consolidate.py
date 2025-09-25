@@ -24,7 +24,7 @@ options_data = [(item['optionsAssetUrl'], item['stocksAssetUrl'], item['name']) 
 # Take the last 30 entries
 last_30_entries = options_data[-rolling_days:]
 
-duckdb.sql(f"""CREATE OR REPLACE TABLE OPDATA (dt DATE, symbol string, option string, option_symbol string, expiration string, option_type string, strike float, open_interest int, volume int, delta float, gamma float)""")
+duckdb.sql(f"""CREATE OR REPLACE TABLE OPDATA (dt DATE, symbol string, option string, option_symbol string, expiration string, option_type string, strike float, open_interest int, volume int, delta float, gamma float, iv float)""")
 duckdb.sql(f"""CREATE OR REPLACE TABLE STOCKSDATA (dt DATE, symbol string, current_price float, price_change float, price_change_percent float, open float, high float, low float, close float, prev_day_close float)""")
 
 # Print the extracted data
@@ -37,7 +37,7 @@ for optionsAssetUrl, stocksAssetUrl, name in last_30_entries:
     print(f"Parsed Date: {date}")
     
     # _ ^ symbols are ones with index options like spx, vix etc
-    duckdb.sql(f"""INSERT INTO OPDATA SELECT '{date}' AS dt, replace(symbol,'_', '') as symbol, option, UNNEST(regexp_extract(option, '(\w+)(\d{{6}})([CP])(\d+)', ['option_symbol', 'expiration', 'option_type', 'strike'])), open_interest, volume, delta,gamma fROM read_parquet('{optionsAssetUrl}')""")
+    duckdb.sql(f"""INSERT INTO OPDATA SELECT '{date}' AS dt, replace(symbol,'_', '') as symbol, option, UNNEST(regexp_extract(option, '(\w+)(\d{{6}})([CP])(\d+)', ['option_symbol', 'expiration', 'option_type', 'strike'])), open_interest, volume, delta, gamma, iv fROM read_parquet('{optionsAssetUrl}')""")
     duckdb.sql(f"""INSERT INTO STOCKSDATA SELECT '{date}' AS dt, replace(symbol,'^', '') symbol, current_price, price_change, price_change_percent, open, high, low, close, prev_day_close FROM read_parquet('{stocksAssetUrl}')""")
   else:
     raise ValueError(f"Unable to parse date from name: {name}")
@@ -57,9 +57,10 @@ for exception_symbol in exception_symbols:
 
 os.makedirs("temp", exist_ok=True)  # Ensure the 'data' folder exists
 output_file = "temp/options_cboe_rolling_30.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
+output_iv_file = "temp/options_cboe_rolling_iv_30.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
 stocks_output_file = "temp/stocks_cboe_rolling_30.parquet" #let see if 30 days we can handle, since deno has a limit of memory. 10 days worth is 30MB, so 30 days should be 90MB.
 
-duckdb.sql(f"""COPY (select dt, option, option_symbol, CAST(strptime(expiration, '%Y%m%d') as date) expiration, DATE_DIFF('day', dt, CAST(strptime(expiration, '%Y%m%d') as date)) AS dte, delta, gamma, option_type, strike, open_interest, volume  from OPDATA) to '{output_file}' (FORMAT PARQUET)""")
+duckdb.sql(f"""COPY (select dt, option, option_symbol, CAST(strptime(expiration, '%Y%m%d') as date) expiration, DATE_DIFF('day', dt, CAST(strptime(expiration, '%Y%m%d') as date)) AS dte, delta, gamma, option_type, strike, open_interest, volume, iv from OPDATA) to '{output_file}' (FORMAT PARQUET)""")
 duckdb.sql(f"""COPY (select dt, symbol, current_price, price_change, price_change_percent, open, high, low, close, prev_day_close from STOCKSDATA) to '{stocks_output_file}' (FORMAT PARQUET)""")
 
 
@@ -72,12 +73,17 @@ print(f"File size before compression: {file_size_mb:.2f} MB")
 # Let's use some magic of parquet compression.
 df = pd.read_parquet(output_file)
 df = df.sort_values(by=['option_symbol', 'dt', 'expiration', 'option_type'])
-df.to_parquet(output_file, compression='zstd', index=False)
+
+# First DataFrame: remove iv
+df.drop(columns=["iv"]).to_parquet(output_file, compression='zstd', index=False)
+
+# Second DataFrame: remove delta, open_interest, volume and gamma
+df.drop(columns=["delta", "gamma", "open_interest", "volume"]).to_parquet(output_iv_file, compression='zstd', index=False)
 
 # Get the file size in bytes
-file_size_bytes = os.path.getsize(output_file)
-file_size_mb = file_size_bytes / (1024 * 1024)
-print(f"File size after compression: {file_size_mb:.2f} MB")
+file_size_mb = os.path.getsize(output_file) / (1024 * 1024)
+file_size_iv_mb = os.path.getsize(output_iv_file) / (1024 * 1024)
+print(f"File size after compression. Main Options: {file_size_mb:.2f} MB, IV: {file_size_iv_mb:.2f} MB")
 
 # compression not really needed for stocks data
 # print(f"Printing stats for Stocks Data file")
@@ -126,6 +132,7 @@ with open(summary_file, "w") as file:
     json.dump({
         "name": release_name, 
         "assetUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/options_cboe_rolling_30.parquet", 
+        "assetIVUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/options_cboe_rolling_iv_30.parquet", 
         "stockUrl":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/stocks_cboe_rolling_30.parquet",
         "greeksReportCsv":f"https://github.com/mnsrulz/mztrading-data/releases/download/{release_name}/all_symbols_summary_report.csv",
         "symbolsSummary": json.loads(symbols_summary)
