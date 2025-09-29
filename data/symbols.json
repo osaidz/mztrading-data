@@ -5516,7 +5516,7 @@
         "symbol": "ELVN"
     },
     {
-        "name": "ELEVRA LITHIUM LTD",
+        "name": "ELEVRA LITHIUM LTD SPONSORED ADS",
         "symbol": "ELVR"
     },
     {
@@ -5770,6 +5770,10 @@
     {
         "name": "ELEMENT SOLUTIONS INC COM",
         "symbol": "ESI"
+    },
+    {
+        "name": "REX-Osprey ETH + Staking ETF",
+        "symbol": "ESK"
     },
     {
         "name": "iShares ESG Aware MSCI USA Small-Cap ETF",
@@ -8416,6 +8420,10 @@
         "symbol": "HSBC"
     },
     {
+        "name": "HELIUS MED TECHNOLOGIES INC COM CL A NEW",
+        "symbol": "HSDT"
+    },
+    {
         "name": "HENRY SCHEIN INC COM",
         "symbol": "HSIC"
     },
@@ -10740,7 +10748,7 @@
         "symbol": "LVLU"
     },
     {
-        "name": "LIVEONE INC COM",
+        "name": "LIVEONE INC COM NEW",
         "symbol": "LVO"
     },
     {
@@ -19434,10 +19442,6 @@
     {
         "name": "TIDAL TRUST II YIELDMAX MSTR SH",
         "symbol": "WNTR"
-    },
-    {
-        "name": "WOLFSPEED INC COM",
-        "symbol": "WOLF"
     },
     {
         "name": "ISHARES TR GL TIMB FORE ETF",
