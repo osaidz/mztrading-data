@@ -1996,6 +1996,10 @@
         "symbol": "BEPC"
     },
     {
+        "name": "BETTER HOME & FINANCE HOLDING COM NEW CL A",
+        "symbol": "BETR"
+    },
+    {
         "name": "LISTED FDS TR ROUNDHILL SPORTS",
         "symbol": "BETZ"
     },
@@ -2366,6 +2370,10 @@
     {
         "name": "BROOKFIELD CORP CL A LTD VT SH",
         "symbol": "BN"
+    },
+    {
+        "name": "CEA INDUSTRIES INC COM",
+        "symbol": "BNC"
     },
     {
         "name": "VANGUARD BD INDEX FDS TOTAL BND MRKT",
@@ -5508,7 +5516,7 @@
         "symbol": "ELVN"
     },
     {
-        "name": "SAYONA MNG LTD SPONSORED ADS",
+        "name": "ELEVRA LITHIUM LTD SPONSORED ADS",
         "symbol": "ELVR"
     },
     {
@@ -5762,6 +5770,10 @@
     {
         "name": "ELEMENT SOLUTIONS INC COM",
         "symbol": "ESI"
+    },
+    {
+        "name": "REX-Osprey ETH + Staking ETF",
+        "symbol": "ESK"
     },
     {
         "name": "iShares ESG Aware MSCI USA Small-Cap ETF",
@@ -6778,6 +6790,10 @@
     {
         "name": "FORESTAR GROUP INC COM",
         "symbol": "FOR"
+    },
+    {
+        "name": "FORWARD INDS INC N Y COM NEW",
+        "symbol": "FORD"
     },
     {
         "name": "FORMFACTOR INC COM",
@@ -8404,6 +8420,10 @@
         "symbol": "HSBC"
     },
     {
+        "name": "HELIUS MED TECHNOLOGIES INC COM CL A NEW",
+        "symbol": "HSDT"
+    },
+    {
         "name": "HENRY SCHEIN INC COM",
         "symbol": "HSIC"
     },
@@ -9948,10 +9968,6 @@
         "symbol": "KLC"
     },
     {
-        "name": "WK KELLOGG CO COM SHS",
-        "symbol": "KLG"
-    },
-    {
         "name": "KULICKE & SOFFA INDS INC COM",
         "symbol": "KLIC"
     },
@@ -10730,6 +10746,10 @@
     {
         "name": "LULUS FASHION LOUNGE HOLDINGS COM NEW",
         "symbol": "LVLU"
+    },
+    {
+        "name": "LIVEONE INC COM NEW",
+        "symbol": "LVO"
     },
     {
         "name": "LAS VEGAS SANDS CORP COM",
@@ -14444,6 +14464,10 @@
         "symbol": "RBLX"
     },
     {
+        "name": "TIDAL TRUST II YIELDMAX RBLX OP",
+        "symbol": "RBLY"
+    },
+    {
         "name": "RUBRIK INC. CL A",
         "symbol": "RBRK"
     },
@@ -17356,10 +17380,6 @@
         "symbol": "THS"
     },
     {
-        "name": "THERATECHNOLOGIES INC COM NEW",
-        "symbol": "THTX"
-    },
-    {
         "name": "ACUREN CORP COM",
         "symbol": "TIC"
     },
@@ -18408,6 +18428,10 @@
         "symbol": "UST"
     },
     {
+        "name": "ETFIS SER TR I VIRTUS REAVES UT",
+        "symbol": "UTES"
+    },
+    {
         "name": "UNITED THERAPEUTICS CORP DEL COM",
         "symbol": "UTHR"
     },
@@ -19160,6 +19184,10 @@
         "symbol": "VZ"
     },
     {
+        "name": "VIZSLA SILVER CORP COM NEW",
+        "symbol": "VZLA"
+    },
+    {
         "name": "WAYFAIR INC CL A",
         "symbol": "W"
     },
@@ -19414,10 +19442,6 @@
     {
         "name": "TIDAL TRUST II YIELDMAX MSTR SH",
         "symbol": "WNTR"
-    },
-    {
-        "name": "WOLFSPEED INC COM",
-        "symbol": "WOLF"
     },
     {
         "name": "ISHARES TR GL TIMB FORE ETF",
