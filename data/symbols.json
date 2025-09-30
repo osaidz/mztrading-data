@@ -5336,7 +5336,7 @@
         "symbol": "EDV"
     },
     {
-        "name": "DIREXION SHS ETF TR DAILY MSCI EMERG",
+        "name": "DIREXION SHS ETF TR DAILY MSCI EMER",
         "symbol": "EDZ"
     },
     {
@@ -7818,10 +7818,6 @@
     {
         "name": "GREAT SOUTHN BANCORP INC COM",
         "symbol": "GSBC"
-    },
-    {
-        "name": "GOLDMAN SACHS BDC INC SHS",
-        "symbol": "GSBD"
     },
     {
         "name": "Goldman Sachs Equal Weight U.S. Large Cap Equity ETF",
@@ -14612,10 +14608,6 @@
         "symbol": "REMX"
     },
     {
-        "name": "LUNAI BIOWORKS INC COM",
-        "symbol": "RENB"
-    },
-    {
         "name": "REPLIMUNE GROUP INC COM",
         "symbol": "REPL"
     },
@@ -16552,7 +16544,7 @@
         "symbol": "SPXN"
     },
     {
-        "name": "DIREXION SHS ETF TR DLY S&P500 BR 3X",
+        "name": "DIREXION SHS ETF TR DAILY S&P 500 B",
         "symbol": "SPXS"
     },
     {
@@ -19442,6 +19434,10 @@
     {
         "name": "TIDAL TRUST II YIELDMAX MSTR SH",
         "symbol": "WNTR"
+    },
+    {
+        "name": "WOLFSPEED INC COMMON STOCK",
+        "symbol": "WOLF"
     },
     {
         "name": "ISHARES TR GL TIMB FORE ETF",
