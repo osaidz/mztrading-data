@@ -2352,6 +2352,10 @@
         "symbol": "BMNR"
     },
     {
+        "name": "T-REX 2X Long BMNR Daily Target ETF",
+        "symbol": "BMNU"
+    },
+    {
         "name": "BANK MONTREAL QUE COM",
         "symbol": "BMO"
     },
@@ -3816,6 +3820,10 @@
         "symbol": "COR"
     },
     {
+        "name": "T-REX 2X Inverse CRWV Daily Target ETF",
+        "symbol": "CORD"
+    },
+    {
         "name": "TEUCRIUM COMMODITY TR CORN FD SHS",
         "symbol": "CORN"
     },
@@ -3842,6 +3850,10 @@
     {
         "name": "COURSERA INC COM",
         "symbol": "COUR"
+    },
+    {
+        "name": "PACER FDS TR US LRG CP CASH",
+        "symbol": "COWG"
     },
     {
         "name": "AMPLIFY ETF TR CASH FLOW DIVID",
@@ -3954,6 +3966,10 @@
     {
         "name": "PROSHARES TR ULTRA CRCL",
         "symbol": "CRCA"
+    },
+    {
+        "name": "T-REX 2X Inverse CRCL Daily Target ETF",
+        "symbol": "CRCD"
     },
     {
         "name": "CIRCLE INTERNET GROUP INC COM CL A",
@@ -5010,10 +5026,6 @@
     {
         "name": "DAQO NEW ENERGY CORP SPNSRD ADS NEW",
         "symbol": "DQ"
-    },
-    {
-        "name": "Roundhill China Dragons ETF",
-        "symbol": "DRAG"
     },
     {
         "name": "DRDGOLD LIMITED SPON ADR REPSTG",
@@ -7818,6 +7830,10 @@
     {
         "name": "GREAT SOUTHN BANCORP INC COM",
         "symbol": "GSBC"
+    },
+    {
+        "name": "GOLDMAN SACHS BDC INC SHS",
+        "symbol": "GSBD"
     },
     {
         "name": "Goldman Sachs Equal Weight U.S. Large Cap Equity ETF",
@@ -12952,6 +12968,10 @@
         "symbol": "ORCL"
     },
     {
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
+        "symbol": "ORCX"
+    },
+    {
         "name": "ORIGIN MATERIALS INC COM",
         "symbol": "ORGN"
     },
@@ -16254,10 +16274,6 @@
     {
         "name": "TIDAL TRUST II DEFIANCE DAILY",
         "symbol": "SOFX"
-    },
-    {
-        "name": "SOUND GROUP INC SPONSORED ADS",
-        "symbol": "SOGP"
     },
     {
         "name": "SOHU COM LTD SPONSORED ADS",
