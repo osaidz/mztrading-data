@@ -1820,10 +1820,6 @@
         "symbol": "BBAR"
     },
     {
-        "name": "BED BATH & BEYOND INC COM",
-        "symbol": "BBBY"
-    },
-    {
         "name": "ETFIS SER TR I VIRTUS LIFESC CT",
         "symbol": "BBC"
     },
@@ -3802,10 +3798,6 @@
     {
         "name": "TRAEGER INC COMMON STOCK",
         "symbol": "COOK"
-    },
-    {
-        "name": "MR COOPER GROUP INC COM",
-        "symbol": "COOP"
     },
     {
         "name": "CONOCOPHILLIPS COM",
@@ -7620,10 +7612,6 @@
         "symbol": "GNTX"
     },
     {
-        "name": "GUARANTY BANCSHARES INC TEX COM",
-        "symbol": "GNTY"
-    },
-    {
         "name": "GENWORTH FINL INC COM SHS",
         "symbol": "GNW"
     },
@@ -8432,7 +8420,7 @@
         "symbol": "HSBC"
     },
     {
-        "name": "HELIUS MED TECHNOLOGIES INC COM CL A NEW",
+        "name": "SOLANA CO COM CL A NEW",
         "symbol": "HSDT"
     },
     {
@@ -10548,6 +10536,10 @@
         "symbol": "LMT"
     },
     {
+        "name": "LUNAI BIOWORKS INC COM SHS",
+        "symbol": "LNAI"
+    },
+    {
         "name": "LINCOLN NATL CORP IND COM",
         "symbol": "LNC"
     },
@@ -10854,6 +10846,10 @@
     {
         "name": "Point Bridge America First ETF",
         "symbol": "MAGA"
+    },
+    {
+        "name": "Roundhill China Magnificent Seven ETF",
+        "symbol": "MAGC"
     },
     {
         "name": "MAGNERA CORP COM SHS",
@@ -12044,7 +12040,7 @@
         "symbol": "NEON"
     },
     {
-        "name": "LISTED FDS TR ROUNDHILL VIDEO",
+        "name": "Roundhill Video Games ETF",
         "symbol": "NERD"
     },
     {
@@ -16274,6 +16270,10 @@
     {
         "name": "TIDAL TRUST II DEFIANCE DAILY",
         "symbol": "SOFX"
+    },
+    {
+        "name": "SOUND GROUP INC SPONSORED ADS",
+        "symbol": "SOGP"
     },
     {
         "name": "SOHU COM LTD SPONSORED ADS",
