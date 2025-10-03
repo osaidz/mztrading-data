@@ -1820,6 +1820,10 @@
         "symbol": "BBAR"
     },
     {
+        "name": "BED BATH & BEYOND INC COM",
+        "symbol": "BBBY"
+    },
+    {
         "name": "ETFIS SER TR I VIRTUS LIFESC CT",
         "symbol": "BBC"
     },
@@ -2042,10 +2046,6 @@
     {
         "name": "BGC GROUP INC CL A",
         "symbol": "BGC"
-    },
-    {
-        "name": "BIG 5 SPORTING GOODS CORP COM",
-        "symbol": "BGFV"
     },
     {
         "name": "B & G FOODS INC NEW COM",
@@ -2602,6 +2602,10 @@
     {
         "name": "BIT MINING LIMITED SPON ADR",
         "symbol": "BTCM"
+    },
+    {
+        "name": "BTCS INC COM NEW",
+        "symbol": "BTCS"
     },
     {
         "name": "T-Rex 2X Inverse Bitcoin Daily Target ETF",
@@ -4736,6 +4740,10 @@
         "symbol": "DGII"
     },
     {
+        "name": "DIGINEX LTD ORD SHS",
+        "symbol": "DGNX"
+    },
+    {
         "name": "ISHARES TR CORE DIV GRWTH",
         "symbol": "DGRO"
     },
@@ -5550,6 +5558,10 @@
     {
         "name": "EASTMAN CHEM CO COM",
         "symbol": "EMN"
+    },
+    {
+        "name": "EMPERY DIGITAL INC COM NEW",
+        "symbol": "EMPD"
     },
     {
         "name": "EXCHANGE TRADED CONCEPTS TRUST EMQQ THE EMERGIN",
@@ -7552,10 +7564,6 @@
         "symbol": "GM"
     },
     {
-        "name": "GAMESTOP CORP NEW CL A",
-        "symbol": "GME"
-    },
-    {
         "name": "GLOBUS MED INC CL A",
         "symbol": "GMED"
     },
@@ -9328,6 +9336,10 @@
         "symbol": "ISRG"
     },
     {
+        "name": "INNOVATIVE SOLUTIONS & SUPPORT COM",
+        "symbol": "ISSC"
+    },
+    {
         "name": "ISHARES TR CORE 1 5 YR USD",
         "symbol": "ISTB"
     },
@@ -10108,6 +10120,10 @@
         "symbol": "KRMD"
     },
     {
+        "name": "KARMAN HLDGS INC COMMON STOCK",
+        "symbol": "KRMN"
+    },
+    {
         "name": "KORNIT DIGITAL LTD SHS",
         "symbol": "KRNT"
     },
@@ -10636,6 +10652,10 @@
         "symbol": "LPSN"
     },
     {
+        "name": "LIGHTPATH TECHNOLOGIES INC COM CL A",
+        "symbol": "LPTH"
+    },
+    {
         "name": "LEAP THERAPEUTICS INC COM NEW",
         "symbol": "LPTX"
     },
@@ -10826,6 +10846,10 @@
     {
         "name": "LA Z BOY INC COM",
         "symbol": "LZB"
+    },
+    {
+        "name": "LIFEZONE METALS LIMITED ORD SHS",
+        "symbol": "LZM"
     },
     {
         "name": "MACYS INC COM",
@@ -11170,6 +11194,10 @@
     {
         "name": "MIZUHO FINANCIAL GROUP INC SPONSORED ADR",
         "symbol": "MFG"
+    },
+    {
+        "name": "MERCURITY FINTECH HOLDING INC ORDINARY SHARES",
+        "symbol": "MFH"
     },
     {
         "name": "MIDCAP FINANCIAL INVSTMNT CORP COM NEW",
@@ -12954,6 +12982,10 @@
     {
         "name": "ORMAT TECHNOLOGIES INC COM",
         "symbol": "ORA"
+    },
+    {
+        "name": "EIGHTCO HOLDINGS INC COM",
+        "symbol": "ORBS"
     },
     {
         "name": "ORCHID IS CAP INC COM NEW",
@@ -16290,6 +16322,10 @@
     {
         "name": "SOLVENTUM CORP COM SHS",
         "symbol": "SOLV"
+    },
+    {
+        "name": "VOLATILITY SHS TR SOLANA ETF",
+        "symbol": "SOLZ"
     },
     {
         "name": "SONOCO PRODS CO COM",
@@ -19910,6 +19946,10 @@
     {
         "name": "BLOCK INC CL A",
         "symbol": "XYZ"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "XYZG"
     },
     {
         "name": "YALLA GROUP LTD ADS",
