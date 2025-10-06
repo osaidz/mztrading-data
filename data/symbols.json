@@ -6888,6 +6888,10 @@
         "symbol": "FRI"
     },
     {
+        "name": "FERMI INC COM",
+        "symbol": "FRMI"
+    },
+    {
         "name": "Fidelity Clean Energy ETF",
         "symbol": "FRNW"
     },
@@ -7562,6 +7566,10 @@
     {
         "name": "GENERAL MTRS CO COM",
         "symbol": "GM"
+    },
+    {
+        "name": "GAMESTOP CORP NEW CL A",
+        "symbol": "GME"
     },
     {
         "name": "GLOBUS MED INC CL A",
