@@ -5728,7 +5728,7 @@
         "symbol": "EQTY"
     },
     {
-        "name": "EQUINOX GOLD CORP COM",
+        "name": "CALIBRE MNG CORP COM",
         "symbol": "EQX"
     },
     {
@@ -12952,10 +12952,6 @@
         "symbol": "OPFI"
     },
     {
-        "name": "OFFICE PPTYS INCOME TR COM SHS BEN INT",
-        "symbol": "OPI"
-    },
-    {
         "name": "OPKO HEALTH INC COM",
         "symbol": "OPK"
     },
@@ -15520,10 +15516,6 @@
         "symbol": "SCO"
     },
     {
-        "name": "SCPHARMACEUTICALS INC COM",
-        "symbol": "SCPH"
-    },
-    {
         "name": "STEELCASE INC CL A",
         "symbol": "SCS"
     },
@@ -16004,7 +15996,7 @@
         "symbol": "SLAB"
     },
     {
-        "name": "SCHLUMBERGER LTD COM STK",
+        "name": "SLB LTD",
         "symbol": "SLB"
     },
     {
@@ -19010,10 +19002,6 @@
     {
         "name": "VAREX IMAGING CORP COM",
         "symbol": "VREX"
-    },
-    {
-        "name": "VERONA PHARMA PLC SPONSORED ADS",
-        "symbol": "VRNA"
     },
     {
         "name": "VARONIS SYS INC COM",
