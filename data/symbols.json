@@ -196,6 +196,10 @@
         "symbol": "ACIC"
     },
     {
+        "name": "AC IMMUNE SA SHS",
+        "symbol": "ACIU"
+    },
+    {
         "name": "ACI WORLDWIDE INC COM",
         "symbol": "ACIW"
     },
@@ -262,6 +266,10 @@
     {
         "name": "ARRAY DIGITAL INFRASTRUCTURE I COM",
         "symbol": "AD"
+    },
+    {
+        "name": "ADAMAS TRUST INC. COM",
+        "symbol": "ADAM"
     },
     {
         "name": "ADAPTIMMUNE THERAPEUTICS PLC SPONDS ADS",
@@ -530,6 +538,10 @@
     {
         "name": "AIRGAIN INC COM",
         "symbol": "AIRG"
+    },
+    {
+        "name": "AIRSCULPT TECHNOLOGIES INC COM",
+        "symbol": "AIRS"
     },
     {
         "name": "AIRSHIP AI HLDGS INC COM",
@@ -946,6 +958,10 @@
     {
         "name": "ANI PHARMACEUTICALS INC COM",
         "symbol": "ANIP"
+    },
+    {
+        "name": "ANIXA BIOSCIENCES INC COM",
+        "symbol": "ANIX"
     },
     {
         "name": "ANNEXON INC COM",
@@ -1944,6 +1960,10 @@
         "symbol": "BCS"
     },
     {
+        "name": "BAIN CAP SPECIALTY FIN INC COM STK",
+        "symbol": "BCSF"
+    },
+    {
         "name": "BICYCLE THERAPEUTICS PLC SPONSORED ADS",
         "symbol": "BCYC"
     },
@@ -1962,6 +1982,10 @@
     {
         "name": "BIODESIX INC COM",
         "symbol": "BDSX"
+    },
+    {
+        "name": "BLACK DIAMOND THERAPEUTICS INC COM",
+        "symbol": "BDTX"
     },
     {
         "name": "BECTON DICKINSON & CO COM",
@@ -2368,10 +2392,6 @@
         "symbol": "BMY"
     },
     {
-        "name": "BROOKFIELD CORP CL A LTD VT SH",
-        "symbol": "BN"
-    },
-    {
         "name": "CEA INDUSTRIES INC COM",
         "symbol": "BNC"
     },
@@ -2406,10 +2426,6 @@
     {
         "name": "BANK NOVA SCOTIA HALIFAX COM",
         "symbol": "BNS"
-    },
-    {
-        "name": "BROOKFIELD WEALTH SOL LTD CL A EXCHANGEAB",
-        "symbol": "BNT"
     },
     {
         "name": "BENITEC BIOPHARMA INC COM NEW",
@@ -2534,6 +2550,10 @@
     {
         "name": "BRIXMOR PPTY GROUP INC COM",
         "symbol": "BRX"
+    },
+    {
+        "name": "BERRY CORP COM",
+        "symbol": "BRY"
     },
     {
         "name": "BRAZE INC COM CL A",
@@ -3034,6 +3054,10 @@
     {
         "name": "CARNIVAL CORP PAIRED CTF",
         "symbol": "CCL"
+    },
+    {
+        "name": "CARECLOUD INC COM",
+        "symbol": "CCLD"
     },
     {
         "name": "CLEAR CHANNEL OUTDOOR HLDGS IN COM",
@@ -4196,6 +4220,10 @@
         "symbol": "CTLP"
     },
     {
+        "name": "CYTOMX THERAPEUTICS INC COM",
+        "symbol": "CTMX"
+    },
+    {
         "name": "CONTINEUM THERAPEUTICS INC CL A",
         "symbol": "CTNM"
     },
@@ -4642,6 +4670,10 @@
     {
         "name": "ETF SER SOLUTIONS ACQUIRERS SMALL",
         "symbol": "DEEP"
+    },
+    {
+        "name": "DEFI TECHNOLOGIES INC COM",
+        "symbol": "DEFT"
     },
     {
         "name": "DOUGLAS EMMETT INC COM",
@@ -5664,10 +5696,6 @@
         "symbol": "EPI"
     },
     {
-        "name": "ESSA PHARMA INC COM NEW",
-        "symbol": "EPIX"
-    },
-    {
         "name": "EVOLUTION PETE CORP COM",
         "symbol": "EPM"
     },
@@ -5790,6 +5818,10 @@
     {
         "name": "REX-Osprey ETH + Staking ETF",
         "symbol": "ESK"
+    },
+    {
+        "name": "ELBIT SYS LTD ORD",
+        "symbol": "ESLT"
     },
     {
         "name": "iShares ESG Aware MSCI USA Small-Cap ETF",
@@ -7876,10 +7908,6 @@
         "symbol": "GSM"
     },
     {
-        "name": "GSR III ACQUISITION CORP CL A",
-        "symbol": "GSRT"
-    },
-    {
         "name": "Tradr 2X Long GS Daily ETF",
         "symbol": "GSX"
     },
@@ -9692,6 +9720,10 @@
         "symbol": "JETS"
     },
     {
+        "name": "JIAYIN GROUP INC SPONSORED ADS",
+        "symbol": "JFIN"
+    },
+    {
         "name": "JANUS HENDERSON GROUP PLC ORD SHS",
         "symbol": "JHG"
     },
@@ -10008,6 +10040,10 @@
         "symbol": "KMB"
     },
     {
+        "name": "KAMADA LTD SHS",
+        "symbol": "KMDA"
+    },
+    {
         "name": "KINDER MORGAN INC DEL COM",
         "symbol": "KMI"
     },
@@ -10294,6 +10330,10 @@
     {
         "name": "LITHIUM ARGENTINA AG COM SHS",
         "symbol": "LAR"
+    },
+    {
+        "name": "LASER PHOTONICS CORP COM",
+        "symbol": "LASE"
     },
     {
         "name": "NLIGHT INC COM",
@@ -10744,6 +10784,10 @@
         "symbol": "LTPZ"
     },
     {
+        "name": "LANTRONIX INC COM NEW",
+        "symbol": "LTRX"
+    },
+    {
         "name": "LUFAX HOLDING LTD SPONSORED ADR",
         "symbol": "LU"
     },
@@ -11030,6 +11074,10 @@
     {
         "name": "MCDONALDS CORP COM",
         "symbol": "MCD"
+    },
+    {
+        "name": "YORKVILLE ACQUISITION CORP. SHS CL A",
+        "symbol": "MCGA"
     },
     {
         "name": "MECHANICS BANCORP CL A",
@@ -12700,6 +12748,10 @@
         "symbol": "OCFC"
     },
     {
+        "name": "ONECONNECT FINL TECHNOLOGY CO SPONSORED ADS",
+        "symbol": "OCFT"
+    },
+    {
         "name": "OCUGEN INC COM",
         "symbol": "OCGN"
     },
@@ -14046,6 +14098,10 @@
     {
         "name": "INVESCO EXCHANGE TRADED FD TR SEMICONDUCTORS",
         "symbol": "PSI"
+    },
+    {
+        "name": "POWER SOLUTIONS INTL INC COM NEW",
+        "symbol": "PSIX"
     },
     {
         "name": "SPDR SERIES TRUST ICE PFD SEC ETF",
@@ -15808,10 +15864,6 @@
         "symbol": "SHOP"
     },
     {
-        "name": "SAFETY SHOT INC COM NEW",
-        "symbol": "SHOT"
-    },
-    {
         "name": "ISHARES TR SHORT TREAS BD",
         "symbol": "SHV"
     },
@@ -16090,6 +16142,10 @@
     {
         "name": "SM ENERGY CO COM",
         "symbol": "SM"
+    },
+    {
+        "name": "SMARTSTOP SELF STORAG REIT INC COMMON STOCK",
+        "symbol": "SMA"
     },
     {
         "name": "VanEck Short Muni ETF",
@@ -17540,6 +17596,10 @@
         "symbol": "TMC"
     },
     {
+        "name": "TREACE MED CONCEPTS INC COM",
+        "symbol": "TMCI"
+    },
+    {
         "name": "ProShares Russell US Dividend Growers ETF",
         "symbol": "TMDV"
     },
@@ -17844,6 +17904,10 @@
         "symbol": "TSEM"
     },
     {
+        "name": "TAYSHA GENE THERAPIES INC COM SHS",
+        "symbol": "TSHA"
+    },
+    {
         "name": "GRANITESHARES ETF TR 1.25X LNG TESLA",
         "symbol": "TSL"
     },
@@ -17874,6 +17938,10 @@
     {
         "name": "T-Rex 2X Long Tesla Daily Target ETF",
         "symbol": "TSLT"
+    },
+    {
+        "name": "Azoria TSLA Convexity ETF",
+        "symbol": "TSLV"
     },
     {
         "name": "Roundhill TSLA WeeklyPay ETF",
@@ -19652,6 +19720,10 @@
         "symbol": "WYNN"
     },
     {
+        "name": "WIDEPOINT CORP COMMON",
+        "symbol": "WYY"
+    },
+    {
         "name": "BEYOND AIR INC COM NEW",
         "symbol": "XAIR"
     },
@@ -19710,6 +19782,10 @@
     {
         "name": "X4 PHARMACEUTICALS INC COM NEW",
         "symbol": "XFOR"
+    },
+    {
+        "name": "EXAGEN INC COM",
+        "symbol": "XGN"
     },
     {
         "name": "SPDR SERIES TRUST S&P HOMEBUILD",
@@ -19840,6 +19916,10 @@
         "symbol": "XPEL"
     },
     {
+        "name": "XPERI INC COMMON STOCK",
+        "symbol": "XPER"
+    },
+    {
         "name": "XPENG INC ADS",
         "symbol": "XPEV"
     },
@@ -19930,6 +20010,10 @@
     {
         "name": "22ND CENTY GROUP INC COM NEW",
         "symbol": "XXII"
+    },
+    {
+        "name": "LISTED FDS TR TEUCRIUM 2X LONG",
+        "symbol": "XXRP"
     },
     {
         "name": "XYLEM INC COM",
