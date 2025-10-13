@@ -75729,5 +75729,6 @@
             "symbol": "GENI",
             "dt": "2025-10-13"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2025-10-13-10-53-03/options_cboe_oi_anomaly.parquet"
 }
