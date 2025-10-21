@@ -4996,7 +4996,7 @@
         "symbol": "DNA"
     },
     {
-        "name": "WISDOMTREE TR GLB US QTLY DIV",
+        "name": "WISDOMTREE GLOBAL EX-US QUALIT",
         "symbol": "DNL"
     },
     {
@@ -5944,7 +5944,7 @@
         "symbol": "ETHW"
     },
     {
-        "name": "ETHZILLA CORPORATION COM",
+        "name": "ETHZILLA CORPORATION COM SHS",
         "symbol": "ETHZ"
     },
     {
@@ -6704,7 +6704,7 @@
         "symbol": "FLEX"
     },
     {
-        "name": "FLAGSTAR FINANCIAL INC COM NEW",
+        "name": "FLAGSTAR BANK NATIONAL ASSOCIA COM NEW",
         "symbol": "FLG"
     },
     {
@@ -16148,7 +16148,7 @@
         "symbol": "SLAB"
     },
     {
-        "name": "SOLAI LTD",
+        "name": "SOLAI LIMITED SPON ADR",
         "symbol": "SLAI"
     },
     {
@@ -18776,10 +18776,6 @@
         "symbol": "VBR"
     },
     {
-        "name": "VERITEX HLDGS INC COM",
-        "symbol": "VBTX"
-    },
-    {
         "name": "VISTEON CORP COM NEW",
         "symbol": "VC"
     },
@@ -20302,10 +20298,6 @@
     {
         "name": "ZIM INTEGRATED SHIPPING SERV SHS",
         "symbol": "ZIM"
-    },
-    {
-        "name": "ZIMVIE INC COM",
-        "symbol": "ZIMV"
     },
     {
         "name": "ZIONS BANCORPORATION N A COM",
