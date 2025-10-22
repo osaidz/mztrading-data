@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to mztrading-parquetfiles
 on:
   push:
     branches: main
