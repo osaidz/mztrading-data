@@ -4,6 +4,7 @@ on:
     branches: main
   pull_request:
     branches: main
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 jobs:
   deploy:
@@ -22,4 +23,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "mztradingsnapshotcdn"
+
           entrypoint: "api/snapshot-cdn.ts"
