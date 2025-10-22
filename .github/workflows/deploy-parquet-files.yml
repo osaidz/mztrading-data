@@ -2,8 +2,7 @@ name: Deploy to mztrading-parquetfiles
 on:
   push:
     branches: main
-  pull_request:
-    branches: main
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 jobs:
   deploy:
@@ -22,4 +21,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "mztrading-parquetfiles"
+
           entrypoint: "api/parquet-files.tsx"
