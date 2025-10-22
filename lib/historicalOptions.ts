@@ -22,10 +22,21 @@ const initialize = async () => {
     console.log(`initializing duckdb with ${assetUrl} and name: ${name}`);
     const db = await createDuckDB(JSDELIVR_BUNDLES, logger, DEFAULT_RUNTIME);
     await db.instantiate(() => { });
-    const optionsDataBuffer = await fetch(assetUrl)    //let's initialize the data set in memory
-        .then(r => r.arrayBuffer());
-    const stocksDataBuffer = await fetch(stockUrl)    //let's initialize the data set in memory
-        .then(r => r.arrayBuffer());
+    
+    // Fetch options data
+    console.log(`Fetching options data from ${assetUrl}...`);
+    const optionsStart = performance.now();
+    const optionsDataBuffer = await fetch(assetUrl).then(r => r.arrayBuffer());
+    const optionsEnd = performance.now();
+    console.log(`✅ Options data fetched in ${(optionsEnd - optionsStart).toFixed(2)} ms`);
+
+    // Fetch stocks data
+    console.log(`Fetching stocks data from ${stockUrl}...`);
+    const stocksStart = performance.now();
+    const stocksDataBuffer = await fetch(stockUrl).then(r => r.arrayBuffer());
+    const stocksEnd = performance.now();
+    console.log(`✅ Stocks data fetched in ${(stocksEnd - stocksStart).toFixed(2)} ms`);
+    
     db.registerFileBuffer('db.parquet', new Uint8Array(optionsDataBuffer));
     db.registerFileBuffer('stocks.parquet', new Uint8Array(stocksDataBuffer));
     return db;
