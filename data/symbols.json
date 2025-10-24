@@ -1796,6 +1796,10 @@
         "symbol": "BABA"
     },
     {
+        "name": "GRANITESHARES ETF TR 2X LONG BABA DAI",
+        "symbol": "BABX"
+    },
+    {
         "name": "BANK AMERICA CORP COM",
         "symbol": "BAC"
     },
@@ -4804,6 +4808,10 @@
         "symbol": "DFAX"
     },
     {
+        "name": "DEFI DEVELOPMENT CORP COM",
+        "symbol": "DFDV"
+    },
+    {
         "name": "WISDOMTREE TR EUROPE SMCP DV",
         "symbol": "DFE"
     },
@@ -4878,6 +4886,10 @@
     {
         "name": "QUEST DIAGNOSTICS INC COM",
         "symbol": "DGX"
+    },
+    {
+        "name": "DIGI PWR X INC COM SUB VTG",
+        "symbol": "DGXX"
     },
     {
         "name": "DEFINITIVE HEALTHCARE CORP CLASS A COM",
@@ -7712,6 +7724,10 @@
         "symbol": "GM"
     },
     {
+        "name": "GENMAB A/S SPONSORED ADS",
+        "symbol": "GMAB"
+    },
+    {
         "name": "GAMESTOP CORP NEW CL A",
         "symbol": "GME"
     },
@@ -9072,6 +9088,10 @@
         "symbol": "IHY"
     },
     {
+        "name": "INFORMATION SVCS GROUP INC COM",
+        "symbol": "III"
+    },
+    {
         "name": "INSTEEL INDS INC COM",
         "symbol": "IIIN"
     },
@@ -10328,6 +10348,10 @@
         "symbol": "KRYS"
     },
     {
+        "name": "KASPI KZ JSC SPONSORED ADS",
+        "symbol": "KSPI"
+    },
+    {
         "name": "KRANESHARES TRUST HEDGEYE HEDGED E",
         "symbol": "KSPY"
     },
@@ -10902,6 +10926,10 @@
     {
         "name": "LIGHTBRIDGE CORP COM",
         "symbol": "LTBR"
+    },
+    {
+        "name": "LTC PPTYS INC COM",
+        "symbol": "LTC"
     },
     {
         "name": "LIFE TIME GROUP HOLDINGS INC COMMON STOCK",
@@ -11550,10 +11578,6 @@
     {
         "name": "VanEck Long Muni ETF",
         "symbol": "MLN"
-    },
-    {
-        "name": "MERIDIANLINK INC COMMON STOCK",
-        "symbol": "MLNK"
     },
     {
         "name": "GLOBAL X FDS GLBL X MLP ETF",
@@ -13104,6 +13128,10 @@
         "symbol": "ONEW"
     },
     {
+        "name": "ONITY GROUP INC COM NEW",
+        "symbol": "ONIT"
+    },
+    {
         "name": "ORION PROPERTIES INC COM",
         "symbol": "ONL"
     },
@@ -13500,10 +13528,6 @@
         "symbol": "PBI"
     },
     {
-        "name": "POTBELLY CORP COM",
-        "symbol": "PBPB"
-    },
-    {
         "name": "PETROLEO BRASILEIRO SA PETROBR SPONSORED ADR",
         "symbol": "PBR"
     },
@@ -13654,6 +13678,10 @@
     {
         "name": "PERION NETWORK LTD SHS NEW",
         "symbol": "PERI"
+    },
+    {
+        "name": "PERMA-FIX ENVIRONMENTAL SVCS COM NEW",
+        "symbol": "PESI"
     },
     {
         "name": "PETMED EXPRESS INC COM",
@@ -14270,6 +14298,10 @@
     {
         "name": "PARSONS CORP DEL COM",
         "symbol": "PSN"
+    },
+    {
+        "name": "PERSONALIS INC COM",
+        "symbol": "PSNL"
     },
     {
         "name": "POLESTAR AUTOMOTIVE HLDG UK ADS A",
@@ -15646,6 +15678,10 @@
     {
         "name": "SIBANYE STILLWATER LTD SPONSORED ADR",
         "symbol": "SBSW"
+    },
+    {
+        "name": "T-REX 2X Long SBET Daily Target ETF",
+        "symbol": "SBTU"
     },
     {
         "name": "STARBUCKS CORP COM",
