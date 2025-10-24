@@ -2,8 +2,11 @@ name: Deploy to mztradingsnapshotcdn
 on:
   push:
     branches: main
-  pull_request:
-    branches: main
+  workflow_run:
+    workflows: ["Publish snapshots"]
+    branches: [main]
+    types: 
+      - completed
   workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 jobs:

@@ -2,6 +2,11 @@ name: Deploy to mztrading-parquetfiles
 on:
   push:
     branches: main
+  workflow_run:
+    workflows: ["CBOE options daily parquet"]
+    branches: [main]
+    types: 
+      - completed
   workflow_dispatch: # Allow manual trigger from GitHub Actions UI
 
 jobs:
