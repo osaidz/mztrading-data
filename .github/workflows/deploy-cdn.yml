@@ -16,7 +16,7 @@ jobs:
 
     # permissions:
     #   id-token: write # Needed for auth with Deno Deploy
-    #   contents: read # Needed to clone the repository
+    #   contents: read # Needed to clone the repository     ## due to issues related to github action job trigger this, the token is not available
 
     steps:
       - name: Clone repository
