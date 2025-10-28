@@ -31,6 +31,6 @@ jobs:
         env:
           DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
         run: |
-          deployctl deploy \
+          deployctl deploy --prod \
             --project=mztrading-parquetfiles \
             --entrypoint=api/parquet-files.tsx
