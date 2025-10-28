@@ -272,10 +272,6 @@
         "symbol": "ADAM"
     },
     {
-        "name": "ADAPTIMMUNE THERAPEUTICS PLC SPONDS ADS",
-        "symbol": "ADAP"
-    },
-    {
         "name": "ADOBE INC COM",
         "symbol": "ADBE"
     },
@@ -2222,6 +2218,10 @@
     {
         "name": "PROSHARES TR BITCOIN ETF",
         "symbol": "BITO"
+    },
+    {
+        "name": "BITWISE FUNDS TRUST CRYPTO INDUSTRY",
+        "symbol": "BITQ"
     },
     {
         "name": "GLOBAL X FDS BLOCKCHAIN & BIT",
