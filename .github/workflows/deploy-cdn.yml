@@ -25,10 +25,12 @@ jobs:
         uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x  # or pin to specific like v1.46.3          
+      - name: Install deployctl
+        run: deno install -gArf jsr:@deno/deployctl
       - name: Deploy to Deno Deploy
         env:
           DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
         run: |
-          deno run -A https://deno.land/x/deployctl@v1.13.0/cli.ts deploy \
+          deployctl deploy \
             --project=mztradingsnapshotcdn \
             --entrypoint=api/snapshot-cdn.ts
