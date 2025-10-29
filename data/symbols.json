@@ -272,7 +272,7 @@
         "symbol": "ADAM"
     },
     {
-        "name": "--Placeholder--",
+        "name": "ADAPTIMMUNE THERAPEUTICS PLC SPONDS ADS",
         "symbol": "ADAPY"
     },
     {
@@ -6724,10 +6724,6 @@
         "symbol": "FIGS"
     },
     {
-        "name": "ISHARES INC GLB ENR PROD ETF",
-        "symbol": "FILL"
-    },
-    {
         "name": "FINVOLUTION GROUP SPONSORED ADS",
         "symbol": "FINV"
     },
@@ -8540,10 +8536,6 @@
         "symbol": "HON"
     },
     {
-        "name": "HCM II ACQUISITION CORP SHS CL A",
-        "symbol": "HOND"
-    },
-    {
         "name": "HARBORONE BANCORP INC NEW COM NEW",
         "symbol": "HONE"
     },
@@ -9238,6 +9230,10 @@
     {
         "name": "IMMUNEERING CORP CLASS A COM",
         "symbol": "IMRX"
+    },
+    {
+        "name": "TERRESTRIAL ENERGY INC",
+        "symbol": "IMSR"
     },
     {
         "name": "IMMATICS N.V SHS",
@@ -14140,6 +14136,10 @@
         "symbol": "POWL"
     },
     {
+        "name": "ISHARES US POWER INFRASTRUCTUR",
+        "symbol": "POWR"
+    },
+    {
         "name": "OUTDOOR HOLDING CO COM",
         "symbol": "POWW"
     },
@@ -18110,10 +18110,6 @@
     {
         "name": "TRUSTMARK CORP COM",
         "symbol": "TRMK"
-    },
-    {
-        "name": "TOURMALINE BIO INC COM",
-        "symbol": "TRML"
     },
     {
         "name": "TRINITY INDS INC COM",
