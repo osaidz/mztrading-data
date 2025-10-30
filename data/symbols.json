@@ -140,6 +140,10 @@
         "symbol": "ABVC"
     },
     {
+        "name": "ABOVE FOOD INGREDIENTS INC COM",
+        "symbol": "ABVE"
+    },
+    {
         "name": "ARCOSA INC COM",
         "symbol": "ACA"
     },
@@ -914,6 +918,10 @@
     {
         "name": "AMERICA MOVIL SAB DE CV SPON ADS RP CL B",
         "symbol": "AMX"
+    },
+    {
+        "name": "ETFIS SER TR I INFRAC ACT MLP",
+        "symbol": "AMZA"
     },
     {
         "name": "DIREXION SHS ETF TR DAILY AMZN BR 1X",
@@ -1696,6 +1704,10 @@
         "symbol": "AVTX"
     },
     {
+        "name": "AMERICAN CENTY ETF TR US SML CP VALU",
+        "symbol": "AVUV"
+    },
+    {
         "name": "ANAVEX LIFE SCIENCES CORP COM NEW",
         "symbol": "AVXL"
     },
@@ -1862,6 +1874,10 @@
     {
         "name": "ATLANTA BRAVES HLDGS INC COM SER A",
         "symbol": "BATRA"
+    },
+    {
+        "name": "ATLANTA BRAVES HLDGS INC COM SER C",
+        "symbol": "BATRK"
     },
     {
         "name": "AMPLIFY ETF TR AMPLIFY LITHIUM",
@@ -5056,6 +5072,10 @@
         "symbol": "DLS"
     },
     {
+        "name": "DULUTH HLDGS INC COM CL B",
+        "symbol": "DLTH"
+    },
+    {
         "name": "DOLLAR TREE INC COM",
         "symbol": "DLTR"
     },
@@ -5678,6 +5698,10 @@
     {
         "name": "COMPANHIA PARANAENSE DE ENERGI SPON ADS",
         "symbol": "ELP"
+    },
+    {
+        "name": "EQUITY LIFESTYLE PPTYS INC COM",
+        "symbol": "ELS"
     },
     {
         "name": "ELICIO THERAPEUTICS INC COM",
@@ -6380,6 +6404,10 @@
         "symbol": "FBIO"
     },
     {
+        "name": "FB FINL CORP COM",
+        "symbol": "FBK"
+    },
+    {
         "name": "GRANITESHARES ETF TR 2X LONG META DAI",
         "symbol": "FBL"
     },
@@ -6418,6 +6446,10 @@
     {
         "name": "TIDAL TRUST II YIELDMAX META",
         "symbol": "FBY"
+    },
+    {
+        "name": "FRANKLIN COVEY CO COM",
+        "symbol": "FC"
     },
     {
         "name": "FIRST TR EXCH TRD ALPHDX FD II CHINA ALPHADEX",
@@ -7240,7 +7272,7 @@
         "symbol": "FTXO"
     },
     {
-        "name": "FUBOTV INC COM",
+        "name": "FUBOTV INC",
         "symbol": "FUBO"
     },
     {
@@ -9072,6 +9104,10 @@
         "symbol": "IGIB"
     },
     {
+        "name": "INTL GNRL INSURANCE HLDNGS LTD SHS",
+        "symbol": "IGIC"
+    },
+    {
         "name": "ISHARES TR 10+ YR INVST GRD",
         "symbol": "IGLB"
     },
@@ -9188,10 +9224,6 @@
         "symbol": "ILPT"
     },
     {
-        "name": "I MAB SPONSORED ADS",
-        "symbol": "IMAB"
-    },
-    {
         "name": "IMAX CORP COM",
         "symbol": "IMAX"
     },
@@ -9232,7 +9264,7 @@
         "symbol": "IMRX"
     },
     {
-        "name": "TERRESTRIAL ENERGY INC",
+        "name": "TERRESTRIAL ENERGY INC COM SHS",
         "symbol": "IMSR"
     },
     {
@@ -9934,6 +9966,10 @@
     {
         "name": "J P MORGAN EXCHANGE TRADED FD INTRNL RES EQT",
         "symbol": "JIRE"
+    },
+    {
+        "name": "J & J SNACK FOODS CORP COM",
+        "symbol": "JJSF"
     },
     {
         "name": "HENRY JACK & ASSOC INC COM",
@@ -10824,6 +10860,10 @@
         "symbol": "LNN"
     },
     {
+        "name": "LENSAR INC COM",
+        "symbol": "LNSR"
+    },
+    {
         "name": "ALLIANT ENERGY CORP COM",
         "symbol": "LNT"
     },
@@ -10994,6 +11034,10 @@
     {
         "name": "PIMCO ETF TR 15+ YR US TIPS",
         "symbol": "LTPZ"
+    },
+    {
+        "name": "LANTERN PHARMA INC COM",
+        "symbol": "LTRN"
     },
     {
         "name": "LANTRONIX INC COM NEW",
@@ -11712,6 +11756,10 @@
         "symbol": "MNOV"
     },
     {
+        "name": "MACH NATURAL RESOURCES LP COM UNIT LTD PAR",
+        "symbol": "MNR"
+    },
+    {
         "name": "MONRO INC COM",
         "symbol": "MNRO"
     },
@@ -12268,6 +12316,10 @@
         "symbol": "NBIX"
     },
     {
+        "name": "NOVABRIDGE BIOSCIENCES",
+        "symbol": "NBP"
+    },
+    {
         "name": "NABORS INDUSTRIES LTD SHS",
         "symbol": "NBR"
     },
@@ -12740,6 +12792,10 @@
         "symbol": "NU"
     },
     {
+        "name": "NEW ERA ENERGY & DIGITAL INC COM",
+        "symbol": "NUAI"
+    },
+    {
         "name": "NUCOR CORP COM",
         "symbol": "NUE"
     },
@@ -12862,6 +12918,10 @@
     {
         "name": "Tradr 2X Long NVTS Daily ETF",
         "symbol": "NVTX"
+    },
+    {
+        "name": "NOVONIX LIMITED SPONSORED ADS",
+        "symbol": "NVX"
     },
     {
         "name": "GRANITESHARES ETF TR YIELDBOOST NVDA",
@@ -14136,7 +14196,7 @@
         "symbol": "POWL"
     },
     {
-        "name": "ISHARES US POWER INFRASTRUCTUR",
+        "name": "ISHARES INC US POWER INFRAST",
         "symbol": "POWR"
     },
     {
@@ -14914,6 +14974,10 @@
     {
         "name": "FT Vest Rising Dividend Achievers Target Income ETF",
         "symbol": "RDVI"
+    },
+    {
+        "name": "RED VIOLET INC COM",
+        "symbol": "RDVT"
     },
     {
         "name": "REDWIRE CORPORATION COM",
@@ -17536,6 +17600,10 @@
         "symbol": "TCBK"
     },
     {
+        "name": "TACTILE SYS TECHNOLOGY INC COM",
+        "symbol": "TCMD"
+    },
+    {
         "name": "TRIP COM GROUP LTD ADS",
         "symbol": "TCOM"
     },
@@ -17998,6 +18066,10 @@
     {
         "name": "ISHARES TR TOP 20 U S STOCK",
         "symbol": "TOPT"
+    },
+    {
+        "name": "TORO CORP COM",
+        "symbol": "TORO"
     },
     {
         "name": "TOAST INC CL A",
@@ -19798,6 +19870,10 @@
     {
         "name": "WYNDHAM HOTELS & RESORTS INC COM",
         "symbol": "WH"
+    },
+    {
+        "name": "CACTUS INC CL A",
+        "symbol": "WHD"
     },
     {
         "name": "WHITEHORSE FIN INC COM",
