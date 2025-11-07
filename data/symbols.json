@@ -2088,6 +2088,10 @@
         "symbol": "BEPC"
     },
     {
+        "name": "BETA TECHNOLOGIES INC COM SHS CL A",
+        "symbol": "BETA"
+    },
+    {
         "name": "BETTER HOME & FINANCE HOLDING COM NEW CL A",
         "symbol": "BETR"
     },
@@ -2578,10 +2582,6 @@
     {
         "name": "BELLRING BRANDS INC COMMON STOCK",
         "symbol": "BRBR"
-    },
-    {
-        "name": "BLUE RIDGE BANKSHARES INC VA COM",
-        "symbol": "BRBS"
     },
     {
         "name": "BRADY CORP CL A",
@@ -11918,10 +11918,6 @@
     {
         "name": "EVERSPIN TECHNOLOGIES INC COM",
         "symbol": "MRAM"
-    },
-    {
-        "name": "MRC GLOBAL INC COM",
-        "symbol": "MRC"
     },
     {
         "name": "MONROE CAP CORP COM",
