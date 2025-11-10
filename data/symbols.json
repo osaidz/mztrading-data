@@ -144,6 +144,10 @@
         "symbol": "ABVE"
     },
     {
+        "name": "ABIVAX SA SPONSORED ADS",
+        "symbol": "ABVX"
+    },
+    {
         "name": "ARCOSA INC COM",
         "symbol": "ACA"
     },
@@ -198,6 +202,10 @@
     {
         "name": "AMERICAN COASTAL INS CORP COM",
         "symbol": "ACIC"
+    },
+    {
+        "name": "Aptus Collared Investment Opportunity ETF",
+        "symbol": "ACIO"
     },
     {
         "name": "AC IMMUNE SA SHS",
@@ -1560,6 +1568,10 @@
         "symbol": "AUDC"
     },
     {
+        "name": "AURA MINERALS INC SHS NEW",
+        "symbol": "AUGO"
+    },
+    {
         "name": "AURINIA PHARMACEUTICALS INC COM",
         "symbol": "AUPH"
     },
@@ -1706,6 +1718,10 @@
     {
         "name": "AVALO THERAPEUTICS INC COM NEW",
         "symbol": "AVTX"
+    },
+    {
+        "name": "AMERICAN CENTY ETF TR US EQT ETF",
+        "symbol": "AVUS"
     },
     {
         "name": "AMERICAN CENTY ETF TR US SML CP VALU",
@@ -1862,6 +1878,10 @@
     {
         "name": "BANDWIDTH INC COM CL A",
         "symbol": "BAND"
+    },
+    {
+        "name": "BANCFIRST CORP COM",
+        "symbol": "BANF"
     },
     {
         "name": "BANNER CORP COM NEW",
@@ -2582,6 +2602,10 @@
     {
         "name": "BELLRING BRANDS INC COMMON STOCK",
         "symbol": "BRBR"
+    },
+    {
+        "name": "BLUE RIDGE BANKSHARES INC VA COM",
+        "symbol": "BRBS"
     },
     {
         "name": "BRADY CORP CL A",
@@ -4032,6 +4056,10 @@
         "symbol": "COYY"
     },
     {
+        "name": "Tradr 2X Long CORZ Daily ETF",
+        "symbol": "COZX"
+    },
+    {
         "name": "CANADIAN PACIFIC KANSAS CITY COM",
         "symbol": "CP"
     },
@@ -4584,6 +4612,10 @@
         "symbol": "CWI"
     },
     {
+        "name": "REX CRWV Growth & Income ETF",
+        "symbol": "CWII"
+    },
+    {
         "name": "CUSHMAN WAKEFIELD PLC SHS",
         "symbol": "CWK"
     },
@@ -4862,6 +4894,14 @@
     {
         "name": "DIMENSIONAL ETF TRUST US REAL ESTATE E",
         "symbol": "DFAR"
+    },
+    {
+        "name": "DIMENSIONAL ETF TRUST US SMALL CAP ETF",
+        "symbol": "DFAS"
+    },
+    {
+        "name": "DIMENSIONAL ETF TRUST US TARGETED VLU",
+        "symbol": "DFAT"
     },
     {
         "name": "DIMENSIONAL ETF TRUST US CORE EQT MKT",
@@ -5230,6 +5270,10 @@
     {
         "name": "DRDGOLD LIMITED SPON ADR REPSTG",
         "symbol": "DRD"
+    },
+    {
+        "name": "Themes China Generative Artificial Intelligence ETF",
+        "symbol": "DRGN"
     },
     {
         "name": "DIAMONDROCK HOSPITALITY CO COM",
@@ -8588,6 +8632,10 @@
         "symbol": "HOG"
     },
     {
+        "name": "REX HOOD Growth & Income ETF",
+        "symbol": "HOII"
+    },
+    {
         "name": "HOLOGIC INC COM",
         "symbol": "HOLX"
     },
@@ -9832,6 +9880,10 @@
         "symbol": "IYH"
     },
     {
+        "name": "iShares U.S. Industrials ETF",
+        "symbol": "IYJ"
+    },
+    {
         "name": "ISHARES TR U.S. BAS MTL ETF",
         "symbol": "IYM"
     },
@@ -10076,7 +10128,7 @@
         "symbol": "JQUA"
     },
     {
-        "name": "JAMES RIV GROUP LTD COM",
+        "name": "JAMES RIVER GROUP HOLDINGS INC",
         "symbol": "JRVR"
     },
     {
@@ -10460,6 +10512,10 @@
         "symbol": "KRP"
     },
     {
+        "name": "KORRO BIO INC COM",
+        "symbol": "KRRO"
+    },
+    {
         "name": "KRYSTAL BIOTECH INC COM",
         "symbol": "KRYS"
     },
@@ -10834,6 +10890,10 @@
     {
         "name": "LKQ CORP COM",
         "symbol": "LKQ"
+    },
+    {
+        "name": "REX LLY Growth & Income ETF",
+        "symbol": "LLII"
     },
     {
         "name": "ELI LILLY & CO COM",
@@ -12544,6 +12604,10 @@
         "symbol": "NI"
     },
     {
+        "name": "NICOLET BANKSHARES INC COM",
+        "symbol": "NIC"
+    },
+    {
         "name": "NICE LTD SPONSORED ADR",
         "symbol": "NICE"
     },
@@ -12582,6 +12646,10 @@
     {
         "name": "NET LEASE OFFICE PROPERTIES COM",
         "symbol": "NLOP"
+    },
+    {
+        "name": "VANECK ETF TRUST URANIUM AND NUCL",
+        "symbol": "NLR"
     },
     {
         "name": "ANNALY CAPITAL MANAGEMENT INC COM NEW",
@@ -13980,6 +14048,10 @@
         "symbol": "PHUN"
     },
     {
+        "name": "PHARVARIS N V COM",
+        "symbol": "PHVS"
+    },
+    {
         "name": "IMPINJ INC COM",
         "symbol": "PI"
     },
@@ -14114,6 +14186,10 @@
     {
         "name": "THEMES ETF TR LEVERAGE SHS 2X",
         "symbol": "PLTG"
+    },
+    {
+        "name": "REX PLTR Growth & Income ETF",
+        "symbol": "PLTI"
     },
     {
         "name": "PLAYTIKA HLDG CORP COM",
@@ -16952,6 +17028,10 @@
         "symbol": "SPMD"
     },
     {
+        "name": "INVESCO EXCH TRADED FD TR II S&P 500 MOMNTM",
+        "symbol": "SPMO"
+    },
+    {
         "name": "Invesco S&P 500 Minimum Variance ETF",
         "symbol": "SPMV"
     },
@@ -17290,6 +17370,10 @@
     {
         "name": "ISHARES TR 0-5 YR TIPS ETF",
         "symbol": "STIP"
+    },
+    {
+        "name": "SOL STRATEGIES INC COM",
+        "symbol": "STKE"
     },
     {
         "name": "SUNOPTA INC COM",
@@ -18904,7 +18988,7 @@
         "symbol": "URTY"
     },
     {
-        "name": "USA COMPRESSION PARTNERS LP COMUNIT LTDPAR",
+        "name": "USA COMPRESSION PARTNERS LP COM UNIT LTDPAR",
         "symbol": "USAC"
     },
     {
@@ -20002,6 +20086,10 @@
     {
         "name": "WALMART INC COM",
         "symbol": "WMT"
+    },
+    {
+        "name": "REX WMT Growth & Income ETF",
+        "symbol": "WMTI"
     },
     {
         "name": "WABASH NATL CORP COM",
