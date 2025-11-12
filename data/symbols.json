@@ -6840,6 +6840,10 @@
         "symbol": "FISI"
     },
     {
+        "name": "FISERV INC COM",
+        "symbol": "FISV"
+    },
+    {
         "name": "FIFTH THIRD BANCORP COM",
         "symbol": "FITB"
     },
@@ -11198,6 +11202,10 @@
     {
         "name": "LUXFER HLDGS PLC SHS",
         "symbol": "LXFR"
+    },
+    {
+        "name": "LXP INDUSTRIAL TRUST COM",
+        "symbol": "LXP"
     },
     {
         "name": "LEXICON PHARMACEUTICALS INC COM NEW",
