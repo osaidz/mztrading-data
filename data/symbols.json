@@ -3256,6 +3256,10 @@
         "symbol": "CCUP"
     },
     {
+        "name": "MERCURITY FINTECH HOLDING INC ORDINARY SHARES",
+        "symbol": "CD"
+    },
+    {
         "name": "VICTORY PORTFOLIOS II VCSHS US EQ INCM",
         "symbol": "CDC"
     },
@@ -4700,6 +4704,10 @@
         "symbol": "CYH"
     },
     {
+        "name": "CYPHERPUNK TECHNOLOGIES INC COM NEW",
+        "symbol": "CYPH"
+    },
+    {
         "name": "CRYOPORT INC COM PAR $0.001",
         "symbol": "CYRX"
     },
@@ -5876,10 +5884,6 @@
         "symbol": "EMR"
     },
     {
-        "name": "EMX RTY CORP COM",
-        "symbol": "EMX"
-    },
-    {
         "name": "ENBRIDGE INC COM",
         "symbol": "ENB"
     },
@@ -6614,6 +6618,10 @@
     {
         "name": "Fidelity International Multifactor ETF",
         "symbol": "FDEV"
+    },
+    {
+        "name": "Fidelity Digital Health ETF",
+        "symbol": "FDHT"
     },
     {
         "name": "FIDELITY COVINGTON TRUST CRYPTO IND & DIG",
@@ -8422,10 +8430,6 @@
     {
         "name": "HORIZON BANCORP INC COM",
         "symbol": "HBNC"
-    },
-    {
-        "name": "CANARY CAPITAL GROUP LLX CANARY HBAR ETF",
-        "symbol": "HBR"
     },
     {
         "name": "HBT FINL INC. COM",
@@ -11176,10 +11180,6 @@
         "symbol": "LTC"
     },
     {
-        "name": "CANARY LITECOIN ETF LITECOIN ETF",
-        "symbol": "LTCC"
-    },
-    {
         "name": "LIFE TIME GROUP HOLDINGS INC COMMON STOCK",
         "symbol": "LTH"
     },
@@ -12248,10 +12248,6 @@
         "symbol": "MTSI"
     },
     {
-        "name": "METSERA INC COM",
-        "symbol": "MTSR"
-    },
-    {
         "name": "iShares MSCI USA Momentum Factor ETF",
         "symbol": "MTUM"
     },
@@ -13156,7 +13152,7 @@
         "symbol": "NXST"
     },
     {
-        "name": "NEXTRACKER INC CLASS A COM",
+        "name": "NEXTPOWER INC",
         "symbol": "NXT"
     },
     {
