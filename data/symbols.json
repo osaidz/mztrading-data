@@ -1568,10 +1568,6 @@
         "symbol": "ATS"
     },
     {
-        "name": "ALTICE USA INC CL A",
-        "symbol": "ATUS"
-    },
-    {
         "name": "ASTRIA THERAPEUTICS INC COM",
         "symbol": "ATXS"
     },
@@ -5476,6 +5472,10 @@
         "symbol": "DUOL"
     },
     {
+        "name": "DUOS TECHNOLOGIES GROUP INC COM",
+        "symbol": "DUOT"
+    },
+    {
         "name": "Davis Select U.S. Equity ETF",
         "symbol": "DUSA"
     },
@@ -7104,6 +7104,10 @@
         "symbol": "FLYW"
     },
     {
+        "name": "Fidelity Magellan ETF",
+        "symbol": "FMAG"
+    },
+    {
         "name": "FARMERS & MERCHANTS BANCORP IN COM",
         "symbol": "FMAO"
     },
@@ -7250,6 +7254,10 @@
     {
         "name": "FARMLAND PARTNERS INC COM",
         "symbol": "FPI"
+    },
+    {
+        "name": "Fidelity Real Estate Investment ETF",
+        "symbol": "FPRO"
     },
     {
         "name": "FIRST TR EXCHANGE-TRADED FD US EQTY OPPT ETF",
@@ -9540,10 +9548,6 @@
         "symbol": "INDV"
     },
     {
-        "name": "INFORMATICA INC COM CL A",
-        "symbol": "INFA"
-    },
-    {
         "name": "LISTED FDS TR HORIZON KINETICS",
         "symbol": "INFL"
     },
@@ -9648,6 +9652,10 @@
         "symbol": "INTW"
     },
     {
+        "name": "INNVENTURE INC COM",
+        "symbol": "INV"
+    },
+    {
         "name": "INNOVIVA INC COM",
         "symbol": "INVA"
     },
@@ -9682,6 +9690,10 @@
     {
         "name": "TIDAL TRUST II DEFIANCE DAILY",
         "symbol": "IONX"
+    },
+    {
+        "name": "TIDAL TRUST II DEFIANCE DILY TG",
+        "symbol": "IONZ"
     },
     {
         "name": "ISHARES TR GLOBAL 100 ETF",
@@ -13428,6 +13440,10 @@
         "symbol": "OKE"
     },
     {
+        "name": "TIDAL TRUST II DEFIANCE DAILY T",
+        "symbol": "OKLL"
+    },
+    {
         "name": "OKLO INC COM CL A",
         "symbol": "OKLO"
     },
@@ -13574,6 +13590,10 @@
     {
         "name": "OPTION CARE HEALTH INC COM NEW",
         "symbol": "OPCH"
+    },
+    {
+        "name": "OPENDOOR TECHNOLOGIES INC COM",
+        "symbol": "OPEN"
     },
     {
         "name": "Tradr 2X Long OPEN Daily ETF",
@@ -14368,6 +14388,10 @@
         "symbol": "PLSE"
     },
     {
+        "name": "DIREXION SHS ETF TR DAILY PLTR BEAR",
+        "symbol": "PLTD"
+    },
+    {
         "name": "THEMES ETF TR LEVERAGE SHS 2X",
         "symbol": "PLTG"
     },
@@ -14994,6 +15018,10 @@
     {
         "name": "ISHARES TR NASDAQ-100 EX",
         "symbol": "QNXT"
+    },
+    {
+        "name": "TIDAL TRUST II DEFIANCE 2X DAIL",
+        "symbol": "QPUX"
     },
     {
         "name": "ADVISORSHARES TR Q DYNAMIC GROWTH",
@@ -17064,6 +17092,10 @@
         "symbol": "SOL"
     },
     {
+        "name": "SOLSTICE ADVANCED MATLS INC COM SHS",
+        "symbol": "SOLS"
+    },
+    {
         "name": "VOLATILITY SHS TR 2X SOLANA ETF",
         "symbol": "SOLT"
     },
@@ -17958,6 +17990,10 @@
     {
         "name": "TORONTO DOMINION BK ONT COM NEW",
         "symbol": "TD"
+    },
+    {
+        "name": "GANNETT CO INC COM",
+        "symbol": "TDAY"
     },
     {
         "name": "TERADATA CORP DEL COM",
