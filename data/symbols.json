@@ -792,10 +792,6 @@
         "symbol": "AMBA"
     },
     {
-        "name": "AMBAC FINL GROUP INC COM NEW",
-        "symbol": "AMBC"
-    },
-    {
         "name": "ARDAGH METAL PACKAGING S A SHS",
         "symbol": "AMBP"
     },
@@ -2976,10 +2972,6 @@
         "symbol": "BZH"
     },
     {
-        "name": "PROSHARES TR ULT MSCI BR CAPP",
-        "symbol": "BZQ"
-    },
-    {
         "name": "BAOZUN INC SPONSORED ADR",
         "symbol": "BZUN"
     },
@@ -4916,10 +4908,6 @@
         "symbol": "DDD"
     },
     {
-        "name": "PROSHARES TR PSHS ULTRA DOW30",
-        "symbol": "DDM"
-    },
-    {
         "name": "DATADOG INC CL A COM",
         "symbol": "DDOG"
     },
@@ -5724,10 +5712,6 @@
         "symbol": "EETH"
     },
     {
-        "name": "PROSHARES TR SHT MSCI NEW",
-        "symbol": "EEV"
-    },
-    {
         "name": "EMERALD HOLDING INC COM",
         "symbol": "EEX"
     },
@@ -6186,10 +6170,6 @@
     {
         "name": "ISHARES ETHEREUM TR SHS",
         "symbol": "ETHA"
-    },
-    {
-        "name": "PROSHARES TR ULTRASHORT ETHER",
-        "symbol": "ETHD"
     },
     {
         "name": "GRAYSCALE ETHEREUM TRUST ETF SHS",
@@ -7566,10 +7546,6 @@
     {
         "name": "FIRST TR EXCHANGE TRADED FD II ENERGY ALPHADX",
         "symbol": "FXN"
-    },
-    {
-        "name": "PROSHARES TR ULTSHT FT CH 50",
-        "symbol": "FXP"
     },
     {
         "name": "FIRST TR EXCHANGE TRADED FD II INDLS PROD DUR",
@@ -11288,10 +11264,6 @@
         "symbol": "LTH"
     },
     {
-        "name": "PROSHARES TR ULTRA COMMUNICTN",
-        "symbol": "LTL"
-    },
-    {
         "name": "LATAM AIRLINES GROUP SA SPONSORED ADR",
         "symbol": "LTM"
     },
@@ -13636,6 +13608,10 @@
         "symbol": "OPTT"
     },
     {
+        "name": "OPTIMUM COMMUNICATIONS INC CL A",
+        "symbol": "OPTU"
+    },
+    {
         "name": "OR ROYALTIES INC. COM SHS",
         "symbol": "OR"
     },
@@ -14996,10 +14972,6 @@
         "symbol": "QIPT"
     },
     {
-        "name": "PROSHARES TR PSHS ULTRA QQQ",
-        "symbol": "QLD"
-    },
-    {
         "name": "QUALYS INC COM",
         "symbol": "QLYS"
     },
@@ -15410,10 +15382,6 @@
     {
         "name": "REV GROUP INC COM",
         "symbol": "REVG"
-    },
-    {
-        "name": "PROSHARES TR ULTRASHORT TECHN",
-        "symbol": "REW"
     },
     {
         "name": "REX AMERICAN RES CORP COM",
@@ -16332,10 +16300,6 @@
         "symbol": "SDRL"
     },
     {
-        "name": "PROSHARES TR ULTRASHRT S&P500",
-        "symbol": "SDS"
-    },
-    {
         "name": "FIRST TR EXCHANGE-TRADED FD VI SMID RISNG ETF",
         "symbol": "SDVY"
     },
@@ -16414,10 +16378,6 @@
     {
         "name": "SES AI CORPORATION CL A COM",
         "symbol": "SES"
-    },
-    {
-        "name": "PROSHARES TR SHORT ETHER ETF",
-        "symbol": "SETH"
     },
     {
         "name": "APTERA MOTORS CORP COM CL B",
@@ -17452,10 +17412,6 @@
         "symbol": "SRCE"
     },
     {
-        "name": "SURMODICS INC COM",
-        "symbol": "SRDX"
-    },
-    {
         "name": "SEMPRA COM",
         "symbol": "SRE"
     },
@@ -17500,10 +17456,6 @@
         "symbol": "SRTS"
     },
     {
-        "name": "PROSHARES TR ULTPRO SHT 2017",
-        "symbol": "SRTY"
-    },
-    {
         "name": "PACER FDS TR DATA AND INFRAST",
         "symbol": "SRVR"
     },
@@ -17516,10 +17468,6 @@
         "symbol": "SSD"
     },
     {
-        "name": "PROSHARES TR ULTRASHORT SEMIC",
-        "symbol": "SSG"
-    },
-    {
         "name": "REX-Osprey SOL + Staking ETF",
         "symbol": "SSK"
     },
@@ -17530,10 +17478,6 @@
     {
         "name": "SS&C TECHNOLOGIES HLDGS INC COM",
         "symbol": "SSNC"
-    },
-    {
-        "name": "PROSHARES TR PSHS ULT S&P 500",
-        "symbol": "SSO"
     },
     {
         "name": "SCRIPPS E W CO OHIO CL A NEW",
@@ -18508,10 +18452,6 @@
         "symbol": "TPYP"
     },
     {
-        "name": "PROSHARES TR ULTRAPRO QQQ",
-        "symbol": "TQQQ"
-    },
-    {
         "name": "GRANITESHARES ETF TR YIELD BOOST QQQ",
         "symbol": "TQQY"
     },
@@ -19004,10 +18944,6 @@
         "symbol": "UDN"
     },
     {
-        "name": "PROSHARES TR ULTRPRO DOW30",
-        "symbol": "UDOW"
-    },
-    {
         "name": "UDR INC COM",
         "symbol": "UDR"
     },
@@ -19200,10 +19136,6 @@
         "symbol": "UPSX"
     },
     {
-        "name": "PROSHARES TR PSHS ULTRA UTIL",
-        "symbol": "UPW"
-    },
-    {
         "name": "UPWORK INC COM",
         "symbol": "UPWK"
     },
@@ -19274,10 +19206,6 @@
     {
         "name": "UNITED STS COMMODITY INDEX FD COMM IDX FND",
         "symbol": "USCI"
-    },
-    {
-        "name": "PROSHARES TR PSHS ULT SEMICDT",
-        "symbol": "USD"
     },
     {
         "name": "WISDOMTREE TR BLMBG US BULL",
@@ -20958,10 +20886,6 @@
     {
         "name": "YUM CHINA HLDGS INC COM",
         "symbol": "YUMC"
-    },
-    {
-        "name": "PROSHARES TR SHT FTSE CHIN 50",
-        "symbol": "YXI"
     },
     {
         "name": "ZILLOW GROUP INC CL C CAP STK",
