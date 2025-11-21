@@ -2972,6 +2972,10 @@
         "symbol": "BZH"
     },
     {
+        "name": "PROSHARES TR ULT MSCI BR CAPP",
+        "symbol": "BZQ"
+    },
+    {
         "name": "BAOZUN INC SPONSORED ADR",
         "symbol": "BZUN"
     },
@@ -4908,6 +4912,10 @@
         "symbol": "DDD"
     },
     {
+        "name": "PROSHARES TR PSHS ULTRA DOW30",
+        "symbol": "DDM"
+    },
+    {
         "name": "DATADOG INC CL A COM",
         "symbol": "DDOG"
     },
@@ -5712,6 +5720,10 @@
         "symbol": "EETH"
     },
     {
+        "name": "PROSHARES TR SHT MSCI NEW",
+        "symbol": "EEV"
+    },
+    {
         "name": "EMERALD HOLDING INC COM",
         "symbol": "EEX"
     },
@@ -6170,6 +6182,10 @@
     {
         "name": "ISHARES ETHEREUM TR SHS",
         "symbol": "ETHA"
+    },
+    {
+        "name": "PROSHARES TR ULTRASHORT ETHER",
+        "symbol": "ETHD"
     },
     {
         "name": "GRAYSCALE ETHEREUM TRUST ETF SHS",
@@ -7546,6 +7562,10 @@
     {
         "name": "FIRST TR EXCHANGE TRADED FD II ENERGY ALPHADX",
         "symbol": "FXN"
+    },
+    {
+        "name": "PROSHARES TR ULTSHT FT CH 50",
+        "symbol": "FXP"
     },
     {
         "name": "FIRST TR EXCHANGE TRADED FD II INDLS PROD DUR",
@@ -11264,6 +11284,10 @@
         "symbol": "LTH"
     },
     {
+        "name": "PROSHARES TR ULTRA COMMUNICTN",
+        "symbol": "LTL"
+    },
+    {
         "name": "LATAM AIRLINES GROUP SA SPONSORED ADR",
         "symbol": "LTM"
     },
@@ -13304,10 +13328,6 @@
         "symbol": "OCFC"
     },
     {
-        "name": "ONECONNECT FINL TECHNOLOGY CO SPONSORED ADS",
-        "symbol": "OCFT"
-    },
-    {
         "name": "OCUGEN INC COM",
         "symbol": "OCGN"
     },
@@ -13686,6 +13706,10 @@
     {
         "name": "OSCAR HEALTH INC CL A",
         "symbol": "OSCR"
+    },
+    {
+        "name": "AMBAC FINL GROUP INC COM NEW",
+        "symbol": "OSG"
     },
     {
         "name": "OSI SYSTEMS INC COM",
@@ -14600,10 +14624,6 @@
         "symbol": "PRIM"
     },
     {
-        "name": "PARK NATL CORP COM",
-        "symbol": "PRK"
-    },
-    {
         "name": "UNITED PARKS & RESORTS INC COM",
         "symbol": "PRKS"
     },
@@ -14970,6 +14990,10 @@
     {
         "name": "QUIPT HOME MEDICAL CORP COM",
         "symbol": "QIPT"
+    },
+    {
+        "name": "PROSHARES TR PSHS ULTRA QQQ",
+        "symbol": "QLD"
     },
     {
         "name": "QUALYS INC COM",
@@ -15382,6 +15406,10 @@
     {
         "name": "REV GROUP INC COM",
         "symbol": "REVG"
+    },
+    {
+        "name": "PROSHARES TR ULTRASHORT TECHN",
+        "symbol": "REW"
     },
     {
         "name": "REX AMERICAN RES CORP COM",
@@ -16300,6 +16328,10 @@
         "symbol": "SDRL"
     },
     {
+        "name": "PROSHARES TR ULTRASHRT S&P500",
+        "symbol": "SDS"
+    },
+    {
         "name": "FIRST TR EXCHANGE-TRADED FD VI SMID RISNG ETF",
         "symbol": "SDVY"
     },
@@ -16378,6 +16410,10 @@
     {
         "name": "SES AI CORPORATION CL A COM",
         "symbol": "SES"
+    },
+    {
+        "name": "PROSHARES TR SHORT ETHER ETF",
+        "symbol": "SETH"
     },
     {
         "name": "APTERA MOTORS CORP COM CL B",
@@ -17396,7 +17432,7 @@
         "symbol": "SQNS"
     },
     {
-        "name": "PROSHARES TR ULTRAPRO SHT QQQ",
+        "name": "PROSHARES TR ULTRAPRO SHORT",
         "symbol": "SQQQ"
     },
     {
@@ -17456,6 +17492,10 @@
         "symbol": "SRTS"
     },
     {
+        "name": "PROSHARES TR ULTPRO SHT 2017",
+        "symbol": "SRTY"
+    },
+    {
         "name": "PACER FDS TR DATA AND INFRAST",
         "symbol": "SRVR"
     },
@@ -17468,6 +17508,10 @@
         "symbol": "SSD"
     },
     {
+        "name": "PROSHARES TR ULTRASHORT SEMIC",
+        "symbol": "SSG"
+    },
+    {
         "name": "REX-Osprey SOL + Staking ETF",
         "symbol": "SSK"
     },
@@ -17478,6 +17522,10 @@
     {
         "name": "SS&C TECHNOLOGIES HLDGS INC COM",
         "symbol": "SSNC"
+    },
+    {
+        "name": "PROSHARES TR PSHS ULT S&P 500",
+        "symbol": "SSO"
     },
     {
         "name": "SCRIPPS E W CO OHIO CL A NEW",
@@ -18452,6 +18500,10 @@
         "symbol": "TPYP"
     },
     {
+        "name": "PROSHARES TR ULTRAPRO QQQ",
+        "symbol": "TQQQ"
+    },
+    {
         "name": "GRANITESHARES ETF TR YIELD BOOST QQQ",
         "symbol": "TQQY"
     },
@@ -18944,6 +18996,10 @@
         "symbol": "UDN"
     },
     {
+        "name": "PROSHARES TR ULTRPRO DOW30",
+        "symbol": "UDOW"
+    },
+    {
         "name": "UDR INC COM",
         "symbol": "UDR"
     },
@@ -19136,6 +19192,10 @@
         "symbol": "UPSX"
     },
     {
+        "name": "PROSHARES TR PSHS ULTRA UTIL",
+        "symbol": "UPW"
+    },
+    {
         "name": "UPWORK INC COM",
         "symbol": "UPWK"
     },
@@ -19206,6 +19266,10 @@
     {
         "name": "UNITED STS COMMODITY INDEX FD COMM IDX FND",
         "symbol": "USCI"
+    },
+    {
+        "name": "PROSHARES TR PSHS ULT SEMICDT",
+        "symbol": "USD"
     },
     {
         "name": "WISDOMTREE TR BLMBG US BULL",
@@ -20886,6 +20950,10 @@
     {
         "name": "YUM CHINA HLDGS INC COM",
         "symbol": "YUMC"
+    },
+    {
+        "name": "PROSHARES TR SHT FTSE CHIN 50",
+        "symbol": "YXI"
     },
     {
         "name": "ZILLOW GROUP INC CL C CAP STK",
