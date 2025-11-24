@@ -1244,7 +1244,7 @@
         "symbol": "ARKB"
     },
     {
-        "name": "ARK Fintech Innovation ETF",
+        "name": "ARK Blockchain & Fintech Innovation ETF",
         "symbol": "ARKF"
     },
     {
@@ -1268,7 +1268,7 @@
         "symbol": "ARKW"
     },
     {
-        "name": "ARK Space Exploration & Innovation ETF",
+        "name": "ARK Space & Defense Innovation ETF",
         "symbol": "ARKX"
     },
     {
@@ -5720,7 +5720,7 @@
         "symbol": "EETH"
     },
     {
-        "name": "PROSHARES TR SHT MSCI NEW",
+        "name": "PROSHARES TR ULTRASHORT MSCI",
         "symbol": "EEV"
     },
     {
@@ -7408,10 +7408,6 @@
         "symbol": "FTEK"
     },
     {
-        "name": "FUTURE FINTECH GROUP INC COM NEW",
-        "symbol": "FTFT"
-    },
-    {
         "name": "FIRST TR EXCHANGE TRAD FD VII FST TR GLB FD",
         "symbol": "FTGC"
     },
@@ -8976,10 +8972,6 @@
         "symbol": "HURN"
     },
     {
-        "name": "HOUSTON AMERN ENERGY CORP COM SHS",
-        "symbol": "HUSA"
-    },
-    {
         "name": "HUT 8 CORP COM",
         "symbol": "HUT"
     },
@@ -10444,10 +10436,6 @@
         "symbol": "KFY"
     },
     {
-        "name": "KESTREL GROUP LTD COM",
-        "symbol": "KG"
-    },
-    {
         "name": "KINROSS GOLD CORP COM",
         "symbol": "KGC"
     },
@@ -10884,7 +10872,7 @@
         "symbol": "LCII"
     },
     {
-        "name": "BLACKROCK ETF TRUST WORLD EX US CARB",
+        "name": "BLACKROCK ETF TRUST ISHARES WORLD EX",
         "symbol": "LCTD"
     },
     {
@@ -13708,7 +13696,7 @@
         "symbol": "OSCR"
     },
     {
-        "name": "AMBAC FINL GROUP INC COM NEW",
+        "name": "OCTAVE SPECIALTY GROUP INC COM NEW",
         "symbol": "OSG"
     },
     {
@@ -14624,6 +14612,10 @@
         "symbol": "PRIM"
     },
     {
+        "name": "PARK NATL CORP COM",
+        "symbol": "PRK"
+    },
+    {
         "name": "UNITED PARKS & RESORTS INC COM",
         "symbol": "PRKS"
     },
@@ -14896,10 +14888,6 @@
         "symbol": "PXJ"
     },
     {
-        "name": "PIXELWORKS INC COM",
-        "symbol": "PXLW"
-    },
-    {
         "name": "THEMES ETF TR LEVERAGE SHS 2X",
         "symbol": "PYPG"
     },
@@ -15060,7 +15048,7 @@
         "symbol": "QQQP"
     },
     {
-        "name": "TIDAL TRUST II DEFIANCE NASDAQ",
+        "name": "DEFIANCE NASDAQ 100 TARGET 30",
         "symbol": "QQQY"
     },
     {
@@ -16108,16 +16096,8 @@
         "symbol": "SBCF"
     },
     {
-        "name": "SOLO BRANDS INC COM CL A NEW",
-        "symbol": "SBDS"
-    },
-    {
         "name": "SHARPLINK GAMING INC COM NEW",
         "symbol": "SBET"
-    },
-    {
-        "name": "SPLASH BEVERAGE GROUP INC COM SHS",
-        "symbol": "SBEV"
     },
     {
         "name": "SINCLAIR INC CL A",
@@ -16780,10 +16760,6 @@
         "symbol": "SLG"
     },
     {
-        "name": "SOL GEL TECHNOLOGIES SHS NEW",
-        "symbol": "SLGL"
-    },
-    {
         "name": "SILGAN HLDGS INC COM",
         "symbol": "SLGN"
     },
@@ -17109,7 +17085,7 @@
     },
     {
         "name": "SONDER HOLDINGS INC CL A NEW",
-        "symbol": "SOND"
+        "symbol": "SONDQ"
     },
     {
         "name": "SONOS INC COM",
@@ -17492,7 +17468,7 @@
         "symbol": "SRTS"
     },
     {
-        "name": "PROSHARES TR ULTPRO SHT 2017",
+        "name": "PROSHARES TR ULTRAPRO SHRT RU",
         "symbol": "SRTY"
     },
     {
@@ -17538,10 +17514,6 @@
     {
         "name": "SURO CAPITAL CORP COM NEW",
         "symbol": "SSSS"
-    },
-    {
-        "name": "SYSTEM1 INC CL A COM",
-        "symbol": "SST"
     },
     {
         "name": "SOUNDTHINKING INC COM",
@@ -17984,7 +17956,7 @@
         "symbol": "TD"
     },
     {
-        "name": "GANNETT CO INC COM",
+        "name": "USA TODAY CO INC COM",
         "symbol": "TDAY"
     },
     {
