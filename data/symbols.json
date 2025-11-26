@@ -3596,6 +3596,10 @@
         "symbol": "CIFR"
     },
     {
+        "name": "T-REX 2X Long CIFR Daily Target ETF",
+        "symbol": "CIFU"
+    },
+    {
         "name": "CIA ENERGETICA DE MINAS GERAIS SP ADR N-V PFD",
         "symbol": "CIG"
     },
@@ -5836,6 +5840,10 @@
         "symbol": "ELDN"
     },
     {
+        "name": "ELEMENTAL RTY CORP COM NEW",
+        "symbol": "ELE"
+    },
+    {
         "name": "E L F BEAUTY INC COM",
         "symbol": "ELF"
     },
@@ -7934,10 +7942,6 @@
     {
         "name": "THEMES ETF TR LEVERAGE SHS 2X",
         "symbol": "GLGG"
-    },
-    {
-        "name": "GCI LIBERTY INC COM SER C",
-        "symbol": "GLIBK"
     },
     {
         "name": "PROSHARES TR II ULTRASHORT GOLD",
@@ -11712,10 +11716,6 @@
         "symbol": "MERC"
     },
     {
-        "name": "MESA AIR GROUP INC COM NEW",
-        "symbol": "MESA"
-    },
-    {
         "name": "MESOBLAST LTD SPONS ADR",
         "symbol": "MESO"
     },
@@ -14258,10 +14258,6 @@
     {
         "name": "INVESCO INDIA EXCHANGE-TRADED INDIA ETF",
         "symbol": "PIN"
-    },
-    {
-        "name": "PREMIER INC CL A",
-        "symbol": "PINC"
     },
     {
         "name": "ALPINE INCOME PPTY TR INC COM",
@@ -18712,6 +18708,10 @@
         "symbol": "TSSI"
     },
     {
+        "name": "Roundhill Treasury Bond WeeklyPay ETF",
+        "symbol": "TSYW"
+    },
+    {
         "name": "GRANITESHARES ETF TR YIELDBOOST TSLA",
         "symbol": "TSYY"
     },
@@ -20162,6 +20162,10 @@
     {
         "name": "TIDAL TRUST II DEFIANCE S&P 500",
         "symbol": "WDTE"
+    },
+    {
+        "name": "TEUCRIUM COMMODITY TR WHEAT FD",
+        "symbol": "WEAT"
     },
     {
         "name": "WEAVE COMMUNICATIONS INC COM",
