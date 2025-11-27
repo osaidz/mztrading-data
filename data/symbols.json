@@ -4256,10 +4256,6 @@
         "symbol": "CRDU"
     },
     {
-        "name": "CRESUD S A C I F Y A SPONSORED ADR",
-        "symbol": "CRESY"
-    },
-    {
         "name": "CRESCENT ENERGY COMPANY CL A COM",
         "symbol": "CRGY"
     },
@@ -9380,10 +9376,6 @@
         "symbol": "III"
     },
     {
-        "name": "INSTEEL INDS INC COM",
-        "symbol": "IIIN"
-    },
-    {
         "name": "I3 VERTICALS INC COM CL A",
         "symbol": "IIIV"
     },
@@ -9710,10 +9702,6 @@
     {
         "name": "INTERPARFUMS INC COM",
         "symbol": "IPAR"
-    },
-    {
-        "name": "INTERPUBLIC GROUP COS INC COM",
-        "symbol": "IPG"
     },
     {
         "name": "IPG PHOTONICS CORP COM",
@@ -15040,7 +15028,7 @@
         "symbol": "QQQP"
     },
     {
-        "name": "DEFIANCE NASDAQ 100 TARGET 30",
+        "name": "TIDAL TRUST II DEFIANCE NASDAQ",
         "symbol": "QQQY"
     },
     {
@@ -15532,6 +15520,10 @@
         "symbol": "RIVN"
     },
     {
+        "name": "REPUBLIC AWYS HLDGS INC COM SHS",
+        "symbol": "RJET"
+    },
+    {
         "name": "RAYMOND JAMES FINL INC COM",
         "symbol": "RJF"
     },
@@ -15558,10 +15550,6 @@
     {
         "name": "RADIANT LOGISTICS INC COM",
         "symbol": "RLGT"
-    },
-    {
-        "name": "RLI CORP COM",
-        "symbol": "RLI"
     },
     {
         "name": "RLJ LODGING TR COM",
@@ -19838,10 +19826,6 @@
     {
         "name": "VARONIS SYS INC COM",
         "symbol": "VRNS"
-    },
-    {
-        "name": "VERINT SYS INC COM",
-        "symbol": "VRNT"
     },
     {
         "name": "INVESCO EXCH TRADED FD TR II VAR RATE PFD",
