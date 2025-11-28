@@ -4256,6 +4256,10 @@
         "symbol": "CRDU"
     },
     {
+        "name": "CRESUD S A C I F Y A SPONSORED ADR",
+        "symbol": "CRESY"
+    },
+    {
         "name": "CRESCENT ENERGY COMPANY CL A COM",
         "symbol": "CRGY"
     },
@@ -4680,7 +4684,7 @@
         "symbol": "CWII"
     },
     {
-        "name": "CUSHMAN WAKEFIELD PLC SHS",
+        "name": "CUSHMAN & WAKEFIELD LTD",
         "symbol": "CWK"
     },
     {
@@ -7940,6 +7944,14 @@
         "symbol": "GLGG"
     },
     {
+        "name": "GCI LIBERTY INC COM SER C",
+        "symbol": "GLIBK"
+    },
+    {
+        "name": "GCI LIBERTY INC RT C EXP 121725",
+        "symbol": "GLIBR"
+    },
+    {
         "name": "PROSHARES TR II ULTRASHORT GOLD",
         "symbol": "GLL"
     },
@@ -8396,7 +8408,7 @@
         "symbol": "GWRS"
     },
     {
-        "name": "GRAINGER W W INC COM",
+        "name": "WW GRAINGER INC COM",
         "symbol": "GWW"
     },
     {
@@ -9374,6 +9386,10 @@
     {
         "name": "INFORMATION SVCS GROUP INC COM",
         "symbol": "III"
+    },
+    {
+        "name": "INSTEEL INDS INC COM",
+        "symbol": "IIIN"
     },
     {
         "name": "I3 VERTICALS INC COM CL A",
@@ -15550,6 +15566,10 @@
     {
         "name": "RADIANT LOGISTICS INC COM",
         "symbol": "RLGT"
+    },
+    {
+        "name": "RLI CORP COM",
+        "symbol": "RLI"
     },
     {
         "name": "RLJ LODGING TR COM",
