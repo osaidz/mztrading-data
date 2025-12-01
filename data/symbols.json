@@ -3716,8 +3716,8 @@
         "symbol": "CLS"
     },
     {
-        "name": "CLEARSIDE BIOMEDICAL INC COM NEW",
-        "symbol": "CLSD"
+        "name": "--Placeholder--",
+        "symbol": "CLSDQ"
     },
     {
         "name": "CLEANSPARK INC COM NEW",
@@ -4684,7 +4684,7 @@
         "symbol": "CWII"
     },
     {
-        "name": "CUSHMAN & WAKEFIELD LTD",
+        "name": "CUSHMAN AND WAKEFIELD LTD COMMON SHARES",
         "symbol": "CWK"
     },
     {
@@ -7948,7 +7948,7 @@
         "symbol": "GLIBK"
     },
     {
-        "name": "GCI LIBERTY INC RT C EXP 121725",
+        "name": "GCI LIBERTY INC RT EXP 121725 C",
         "symbol": "GLIBR"
     },
     {
@@ -8494,10 +8494,6 @@
     {
         "name": "HOME BANCORP INC COM",
         "symbol": "HBCP"
-    },
-    {
-        "name": "HANESBRANDS INC COM",
-        "symbol": "HBI"
     },
     {
         "name": "HARVARD BIOSCIENCE INC COM",
@@ -20592,19 +20588,19 @@
         "symbol": "XIFR"
     },
     {
-        "name": "SELECT SECTOR SPDR TR SBI MATERIALS",
+        "name": "STATE STREET MATERIALS SELECT",
         "symbol": "XLB"
     },
     {
-        "name": "SELECT SECTOR SPDR TR COMMUNICATION",
+        "name": "STATE STREET COMMUNICATION SER",
         "symbol": "XLC"
     },
     {
-        "name": "SELECT SECTOR SPDR TR ENERGY",
+        "name": "STATE STREET ENERGY SELECT SEC",
         "symbol": "XLE"
     },
     {
-        "name": "SELECT SECTOR SPDR TR FINANCIAL",
+        "name": "STATE STREET FINANCIAL SELECT",
         "symbol": "XLF"
     },
     {
@@ -20612,19 +20608,19 @@
         "symbol": "XLG"
     },
     {
-        "name": "SELECT SECTOR SPDR TR INDL",
+        "name": "STATE STREET INDUSTRIAL SELECT",
         "symbol": "XLI"
     },
     {
-        "name": "SELECT SECTOR SPDR TR TECHNOLOGY",
+        "name": "STATE STREET TECHNOLOGY SELECT",
         "symbol": "XLK"
     },
     {
-        "name": "SELECT SECTOR SPDR TR SBI CONS STPLS",
+        "name": "STATE STREET CONSUMER STAPLES",
         "symbol": "XLP"
     },
     {
-        "name": "SELECT SECTOR SPDR TR RL EST SEL SEC",
+        "name": "STATE STREET REAL ESTATE SELEC",
         "symbol": "XLRE"
     },
     {
@@ -20632,15 +20628,15 @@
         "symbol": "XLSR"
     },
     {
-        "name": "SELECT SECTOR SPDR TR SBI INT-UTILS",
+        "name": "STATE STREET UTILITIES SELECT",
         "symbol": "XLU"
     },
     {
-        "name": "SELECT SECTOR SPDR TR SBI HEALTHCARE",
+        "name": "STATE STREET HEALTH CARE SELEC",
         "symbol": "XLV"
     },
     {
-        "name": "SELECT SECTOR SPDR TR SBI CONS DISCR",
+        "name": "STATE STREET CONSUMER DISCRETI",
         "symbol": "XLY"
     },
     {
