@@ -604,6 +604,10 @@
         "symbol": "AIVL"
     },
     {
+        "name": "TIDAL TRUST II YIELDMAX AI OPT",
+        "symbol": "AIYY"
+    },
+    {
         "name": "ASSURANT INC COM",
         "symbol": "AIZ"
     },
@@ -1186,6 +1190,10 @@
     {
         "name": "ARCTURUS THERAPEUTICS HLDGS COM",
         "symbol": "ARCT"
+    },
+    {
+        "name": "Tradr 2X Long ACHR Daily ETF",
+        "symbol": "ARCX"
     },
     {
         "name": "ARDENT HEALTH INC COM",
@@ -3132,6 +3140,10 @@
         "symbol": "CBAT"
     },
     {
+        "name": "CENTRAL BANCOMPANY COM CL A",
+        "symbol": "CBC"
+    },
+    {
         "name": "CRESCENT BIOPHARMA INC. COM",
         "symbol": "CBIO"
     },
@@ -3154,6 +3166,10 @@
     {
         "name": "CRACKER BARREL OLD CTRY STORE COM",
         "symbol": "CBRL"
+    },
+    {
+        "name": "COMMERCE BANCSHARES INC COM",
+        "symbol": "CBSH"
     },
     {
         "name": "CABOT CORP COM",
@@ -4012,6 +4028,10 @@
         "symbol": "CONL"
     },
     {
+        "name": "TIDAL TRUST II YIELDMAX COIN OP",
+        "symbol": "CONY"
+    },
+    {
         "name": "COOPER COS INC COM",
         "symbol": "COO"
     },
@@ -4042,6 +4062,10 @@
     {
         "name": "TEUCRIUM COMMODITY TR CORN FD SHS",
         "symbol": "CORN"
+    },
+    {
+        "name": "BLACKROCK ETF TRUST ISHARES INTL CTR",
+        "symbol": "CORO"
     },
     {
         "name": "CORCEPT THERAPEUTICS INC COM",
@@ -4670,6 +4694,10 @@
     {
         "name": "CALIFORNIA WTR SVC GROUP COM",
         "symbol": "CWT"
+    },
+    {
+        "name": "Tradr 2X Long CRWV Daily ETF",
+        "symbol": "CWVX"
     },
     {
         "name": "CEMEX SAB DE CV SPON ADR NEW",
@@ -6864,6 +6892,10 @@
         "symbol": "FHTX"
     },
     {
+        "name": "TIDAL TRUST II YIELDMAX SHORT",
+        "symbol": "FIAT"
+    },
+    {
         "name": "FIRST INTST BANCSYSTEM INC COM",
         "symbol": "FIBK"
     },
@@ -8048,6 +8080,10 @@
         "symbol": "GOGO"
     },
     {
+        "name": "GOLDCOM COM USD0.001",
+        "symbol": "GOLD"
+    },
+    {
         "name": "ACUSHNET HLDGS CORP COM",
         "symbol": "GOLF"
     },
@@ -8568,6 +8604,10 @@
         "symbol": "HESM"
     },
     {
+        "name": "ISHARES TR HDG MSCI JAPAN",
+        "symbol": "HEWJ"
+    },
+    {
         "name": "ISHARES TR CUR HD EURZN ETF",
         "symbol": "HEZU"
     },
@@ -8794,6 +8834,10 @@
     {
         "name": "HIGHPEAK ENERGY INC COM",
         "symbol": "HPK"
+    },
+    {
+        "name": "HUDSON PAC PPTYS INC COM",
+        "symbol": "HPP"
     },
     {
         "name": "HP INC COM",
@@ -12224,10 +12268,6 @@
         "symbol": "MSTR"
     },
     {
-        "name": "T-Rex 2X Long MSTR Daily Target ETF",
-        "symbol": "MSTU"
-    },
-    {
         "name": "Roundhill MSTR WeeklyPay ETF",
         "symbol": "MSTW"
     },
@@ -13238,6 +13278,10 @@
     {
         "name": "UNIFIED SER TR ONEASCENT CORE P",
         "symbol": "OACP"
+    },
+    {
+        "name": "TIDAL TRUST II YIELDMAX INNOVAT",
+        "symbol": "OARK"
     },
     {
         "name": "BLUE OWL CAPITAL CORPORATION COM",
@@ -14844,6 +14888,10 @@
         "symbol": "PZZA"
     },
     {
+        "name": "QNITY ELECTRONICS INC COMMON STOCK",
+        "symbol": "Q"
+    },
+    {
         "name": "FIRST TR EXCHANGE-TRADED FD UT COM SHS ETF",
         "symbol": "QABA"
     },
@@ -15058,6 +15106,10 @@
     {
         "name": "QUANTUM COMPUTING INC COM",
         "symbol": "QUBT"
+    },
+    {
+        "name": "Tradr 2X Long QUBT Daily ETF",
+        "symbol": "QUBX"
     },
     {
         "name": "QUICKLOGIC CORP COM NEW",
@@ -15996,6 +16048,10 @@
         "symbol": "SAP"
     },
     {
+        "name": "SARATOGA INVT CORP COM NEW",
+        "symbol": "SAR"
+    },
+    {
         "name": "INVESTMENT MANAGERS SER TR II TRADR 1X SHORT",
         "symbol": "SARK"
     },
@@ -16872,6 +16928,10 @@
         "symbol": "SMTC"
     },
     {
+        "name": "Tradr 2X Long SMR Daily ETF",
+        "symbol": "SMU"
+    },
+    {
         "name": "T-REX 2X Long SMR Daily Target ETF",
         "symbol": "SMUP"
     },
@@ -16998,6 +17058,10 @@
     {
         "name": "EMEREN GROUP LTD SPONSORED ADS",
         "symbol": "SOL"
+    },
+    {
+        "name": "CANARY MARINADE SOLANA ETF SHS OF BEN",
+        "symbol": "SOLC"
     },
     {
         "name": "SOLSTICE ADVANCED MATLS INC COM SHS",
@@ -17566,10 +17630,6 @@
     {
         "name": "STERLING INFRASTRUCTURE INC COM",
         "symbol": "STRL"
-    },
-    {
-        "name": "SUTRO BIOPHARMA INC COM",
-        "symbol": "STRO"
     },
     {
         "name": "EA SERIES TRUST STRIVE 500 ETF",
@@ -18210,6 +18270,10 @@
     {
         "name": "TALPHERA INC COM NEW",
         "symbol": "TLPH"
+    },
+    {
+        "name": "TILRAY BRANDS INC COM",
+        "symbol": "TLRY"
     },
     {
         "name": "TELOS CORP MD COM",
@@ -19096,6 +19160,10 @@
         "symbol": "UPST"
     },
     {
+        "name": "Tradr 2X Long UPST Daily ETF",
+        "symbol": "UPSX"
+    },
+    {
         "name": "PROSHARES TR PSHS ULTRA UTIL",
         "symbol": "UPW"
     },
@@ -19826,6 +19894,10 @@
     {
         "name": "VISHAY INTERTECHNOLOGY INC COM",
         "symbol": "VSH"
+    },
+    {
+        "name": "VANECK SOLANA TR COM SHS BEN INT",
+        "symbol": "VSOL"
     },
     {
         "name": "VANGUARD INTL EQUITY INDEX FDS FTSE SMCAP ETF",
