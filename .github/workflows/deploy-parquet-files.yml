@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Fetch all commits to ensure the latest state is available
+          ref: main        # Ensure the latest state from the main branch is checked out
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
