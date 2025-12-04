@@ -8080,7 +8080,7 @@
         "symbol": "GOGO"
     },
     {
-        "name": "GOLDCOM COM USD0.001",
+        "name": "GOLD COM INC COM USD0.001",
         "symbol": "GOLD"
     },
     {
@@ -12268,6 +12268,10 @@
         "symbol": "MSTR"
     },
     {
+        "name": "T-Rex 2X Long MSTR Daily Target ETF",
+        "symbol": "MSTU"
+    },
+    {
         "name": "Roundhill MSTR WeeklyPay ETF",
         "symbol": "MSTW"
     },
@@ -12798,10 +12802,6 @@
     {
         "name": "NKARTA INC COM",
         "symbol": "NKTX"
-    },
-    {
-        "name": "NET LEASE OFFICE PROPERTIES COM",
-        "symbol": "NLOP"
     },
     {
         "name": "VANECK ETF TRUST URANIUM AND NUCL",
@@ -17630,6 +17630,10 @@
     {
         "name": "STERLING INFRASTRUCTURE INC COM",
         "symbol": "STRL"
+    },
+    {
+        "name": "SUTRO BIOPHARMA INC COM SHS",
+        "symbol": "STRO"
     },
     {
         "name": "EA SERIES TRUST STRIVE 500 ETF",
