@@ -2044,10 +2044,6 @@
         "symbol": "BCIC"
     },
     {
-        "name": "ABRDN ETFS BBG INDUSTRL MET",
-        "symbol": "BCIM"
-    },
-    {
         "name": "BAYCOM CORP COM",
         "symbol": "BCML"
     },
@@ -12500,6 +12496,10 @@
         "symbol": "NAK"
     },
     {
+        "name": "KINDLY MD INC COM",
+        "symbol": "NAKA"
+    },
+    {
         "name": "NEWAMSTERDAM PHARMA COMPANY NV ORDINARY SHARES",
         "symbol": "NAMS"
     },
@@ -12802,6 +12802,10 @@
     {
         "name": "NKARTA INC COM",
         "symbol": "NKTX"
+    },
+    {
+        "name": "NET LEASE OFFICE PROPERTIES COM",
+        "symbol": "NLOP"
     },
     {
         "name": "VANECK ETF TRUST URANIUM AND NUCL",
@@ -13334,6 +13338,10 @@
     {
         "name": "THE ODP CORP COM",
         "symbol": "ODP"
+    },
+    {
+        "name": "OSISKO DEVELOPMENT CORP COM NEW",
+        "symbol": "ODV"
     },
     {
         "name": "ORION S.A. COM",
@@ -16912,6 +16920,10 @@
         "symbol": "SMPL"
     },
     {
+        "name": "Tradr 1X Short Innovation 100 Monthly ETF",
+        "symbol": "SMQ"
+    },
+    {
         "name": "NUSCALE PWR CORP CL A COM",
         "symbol": "SMR"
     },
@@ -17626,6 +17638,10 @@
     {
         "name": "STRATEGIC ED INC COM",
         "symbol": "STRA"
+    },
+    {
+        "name": "STRATEGY INC VAR RT SER A PFD",
+        "symbol": "STRC"
     },
     {
         "name": "STERLING INFRASTRUCTURE INC COM",
@@ -19352,10 +19368,6 @@
         "symbol": "UUUU"
     },
     {
-        "name": "UNIVERSAL INS HLDGS INC COM",
-        "symbol": "UVE"
-    },
-    {
         "name": "2x Long VIX Futures ETF ",
         "symbol": "UVIX"
     },
@@ -20288,6 +20300,10 @@
         "symbol": "WKHS"
     },
     {
+        "name": "WILLOW LANE ACQUISITION CORP. ORD SHS CL A",
+        "symbol": "WLAC"
+    },
+    {
         "name": "WILLDAN GROUP INC COM",
         "symbol": "WLDN"
     },
@@ -20596,16 +20612,8 @@
         "symbol": "XIFR"
     },
     {
-        "name": "SELECT SECTOR SPDR TR STATE STREET MAT",
-        "symbol": "XLB"
-    },
-    {
         "name": "SELECT SECTOR SPDR TR STATE STREET COM",
         "symbol": "XLC"
-    },
-    {
-        "name": "SELECT SECTOR SPDR TR STATE STREET ENE",
-        "symbol": "XLE"
     },
     {
         "name": "SELECT SECTOR SPDR TR STATE STREET FIN",
@@ -20620,10 +20628,6 @@
         "symbol": "XLI"
     },
     {
-        "name": "SELECT SECTOR SPDR TR STATE STREET TEC",
-        "symbol": "XLK"
-    },
-    {
         "name": "SELECT SECTOR SPDR TR STATE STREET CON",
         "symbol": "XLP"
     },
@@ -20636,16 +20640,8 @@
         "symbol": "XLSR"
     },
     {
-        "name": "SELECT SECTOR SPDR TR STATE STREET UTI",
-        "symbol": "XLU"
-    },
-    {
         "name": "SELECT SECTOR SPDR TR STATE STREET HEA",
         "symbol": "XLV"
-    },
-    {
-        "name": "SELECT SECTOR SPDR TR STATE STREET CON",
-        "symbol": "XLY"
     },
     {
         "name": "TIDAL TRUST II DEFIANCE LARGE",
