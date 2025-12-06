@@ -60,6 +60,7 @@ jobs:
         with:
           name: symbol-batches
           path: |
+            ${{ github.workspace}}/data/options-snapshot.summary.json
             ${{ github.workspace}}/temp/batches/*.json
             ${{ github.workspace}}/temp/batch-manifest.json
   
