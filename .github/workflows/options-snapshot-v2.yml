@@ -48,7 +48,7 @@ jobs:
         run: |
           # run the helper that writes JSON files to temp/symbol-batches and prints a JSON array of filenames
           deno run --allow-all jobs/main-split-batches.ts
-          echo "batches=$(cat /temp/batches/batch-manifest.json)" >> $GITHUB_OUTPUT
+          echo "batches=$(cat temp/batches/batch-manifest.json)" >> $GITHUB_OUTPUT
       - name: Upload batch files artifact
         uses: actions/upload-artifact@v4
         with:
