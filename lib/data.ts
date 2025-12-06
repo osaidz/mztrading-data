@@ -81,7 +81,7 @@ export const getSnapshotsAvailableForDate = (dt: string) => {
 
     if (result) {
         //FLR_DEX_620.png
-        return Object.keys(result.tickers).map(k => {
+        return result.tickers.map(k => {
             const dexHdFileName = getFileName(k, 'dex', result.hdResolution);
             const dexSdFileName = getFileName(k, 'dex', result.sdResolution);
             const gexHdFileName = getFileName(k, 'gex', result.hdResolution);
