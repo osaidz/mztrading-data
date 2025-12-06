@@ -39,10 +39,14 @@ type OptionsSnapshotSummary = Record<string, {
     displayName: string;
     created: Date | string;
     zipAssetUrl?: string;
-    symbols: Record<string, {
-        "gex": OptionsSnapshotSummaryFileType;
-        "dex": OptionsSnapshotSummaryFileType;
-    }>;
+    releasesBaseUrl: string;
+    sdResolution: string;
+    hdResolution: string;
+    // symbols: Record<string, {
+    //     "gex": OptionsSnapshotSummaryFileType;
+    //     "dex": OptionsSnapshotSummaryFileType;
+    // }>;
+    tickers: string[];
 }>;
 
 type CboeOptionSummaryType = {
@@ -64,23 +68,33 @@ export const OptionsSnapshotSummary = (optionsSnapshotSummary as OptionsSnapshot
 
 export const AvailableSnapshotDates = Object.values(OptionsSnapshotSummary).map(k => ({ dt: k.displayName }));
 
-export const OptionsSnapshotSummaryLegacy = Object.fromEntries(Object.keys(OptionsSnapshotSummary).map(j => [OptionsSnapshotSummary[j].displayName, { zipAssetUrl: OptionsSnapshotSummary[j].zipAssetUrl, symbols: OptionsSnapshotSummary[j].symbols }]));
+//export const OptionsSnapshotSummaryLegacy = Object.fromEntries(Object.keys(OptionsSnapshotSummary).map(j => [OptionsSnapshotSummary[j].displayName, { zipAssetUrl: OptionsSnapshotSummary[j].zipAssetUrl, symbols: OptionsSnapshotSummary[j].symbols }]));
 
 export const zipServiceUrl = 'https://zipservice-deno.deno.dev/download';//?f=AAOI_GEX_620.png&q=https://github.com/mnsrulz/mztrading-data/releases/download/DEX_GEX_SNAPSHOT_2025-07-08/options-snapshots.zip';
 const snapshotCdnUrl = 'https://mztradingsnapshotcdn.deno.dev/api/snapshots'; //?dt=2025-08-14&f=AAPL_DEX_620.png&symbol=AAPL'
+
+const getFileName = (symbol: string, type: 'dex' | 'gex', resolution: string) => `${symbol.toUpperCase()}_${type.toUpperCase()}_${resolution}.png`;
+
 export const getSnapshotsAvailableForDate = (dt: string) => {
     const result = Object.values(OptionsSnapshotSummary).find(k => k.displayName == dt);
+    const releaseName = Object.keys(OptionsSnapshotSummary).find(k => OptionsSnapshotSummary[k].displayName == dt);
+
     if (result) {
-        return Object.keys(result.symbols).map(k => {            
+        //FLR_DEX_620.png
+        return Object.keys(result.tickers).map(k => {
+            const dexHdFileName = getFileName(k, 'dex', result.hdResolution);
+            const dexSdFileName = getFileName(k, 'dex', result.sdResolution);
+            const gexHdFileName = getFileName(k, 'gex', result.hdResolution);
+            const gexSdFileName = getFileName(k, 'gex', result.sdResolution);
             return {
                 symbol: k,
                 dex: {
-                    hdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].dex.hdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].dex.hdAssetUrl,
-                    sdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].dex.sdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].dex.sdAssetUrl
+                    hdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${dexHdFileName}&dt=${dt}&symbol=${k}` : `${result.releasesBaseUrl}/download/${releaseName}/${dexHdFileName}`,
+                    sdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${dexSdFileName}&dt=${dt}&symbol=${k}` : `${result.releasesBaseUrl}/download/${releaseName}/${dexSdFileName}`
                 },
                 gex: {
-                    hdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].gex.hdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].gex.hdAssetUrl,
-                    sdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${result.symbols[k].gex.sdFileName}&dt=${dt}&symbol=${k}` : result.symbols[k].gex.sdAssetUrl
+                    hdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${gexHdFileName}&dt=${dt}&symbol=${k}` : `${result.releasesBaseUrl}/download/${releaseName}/${gexHdFileName}`,
+                    sdAssetUrl: result.zipAssetUrl ? `${snapshotCdnUrl}?f=${gexSdFileName}&dt=${dt}&symbol=${k}` : `${result.releasesBaseUrl}/download/${releaseName}/${gexSdFileName}`
                 },
             }
         });
@@ -88,10 +102,10 @@ export const getSnapshotsAvailableForDate = (dt: string) => {
     throw new Error('No data found for this date');
 }
 
-export const getZipAssetUrlForSymbol = (symbol: string, dt: string) => { 
+export const getZipAssetUrlForSymbol = (symbol: string, dt: string) => {
     const result = Object.values(OptionsSnapshotSummary).find(k => k.displayName == dt);
     if (result) {
-        if (result.symbols[symbol]) {
+        if (result.tickers.includes(symbol)) {
             return result.zipAssetUrl;
         } else {
             throw new Error(`No data found for symbol ${symbol} on date ${dt}`);
@@ -105,31 +119,40 @@ export const getZipAssetInfoByDate = (dt: string) => {
     if (result) {
         return {
             zipAssetUrl: result.zipAssetUrl,
-            dex: Object.values(result.symbols).map(k => k.dex),
-            gex: Object.values(result.symbols).map(k => k.gex)
+            fileNames: result.tickers.flatMap(symbol => ([
+                getFileName(symbol, 'dex', result.hdResolution),
+                getFileName(symbol, 'dex', result.sdResolution),
+                getFileName(symbol, 'gex', result.hdResolution),
+                getFileName(symbol, 'gex', result.sdResolution),
+            ]))
         };
     }
 }
 
 export const getSnapshotsAvailableForSymbol = (symbol: string) => {
-    const result = Object.keys(OptionsSnapshotSummaryLegacy)
+    const result = Object.keys(OptionsSnapshotSummary)
         .filter((j) =>
-            Object.keys(OptionsSnapshotSummaryLegacy[j].symbols).includes(
-                symbol,
-            )
+            Object.keys(OptionsSnapshotSummary[j].tickers).includes(symbol)
         )
-        .map((k) => ({ date: k, data: OptionsSnapshotSummaryLegacy[k].symbols[symbol], zipAssetUrl: OptionsSnapshotSummaryLegacy[k].zipAssetUrl }))
-        .map(({ data, date, zipAssetUrl }) => ({
-            date: date,
-            dex: {
-                hdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.dex.hdFileName}&dt=${date}&symbol=${symbol}` : data.dex.hdAssetUrl,
-                sdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.dex.sdFileName}&dt=${date}&symbol=${symbol}` : data.dex.sdAssetUrl
-            },
-            gex: {
-                hdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.gex.hdFileName}&dt=${date}&symbol=${symbol}` : data.gex.hdAssetUrl,
-                sdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${data.gex.sdFileName}&dt=${date}&symbol=${symbol}` : data.gex.sdAssetUrl
-            },
-        }));
+        .map((releaseName) => {
+            const { zipAssetUrl, displayName: date, hdResolution, sdResolution, releasesBaseUrl } = OptionsSnapshotSummary[releaseName];
+            const dexHdFileName = getFileName(symbol, 'dex', hdResolution);
+            const dexSdFileName = getFileName(symbol, 'dex', sdResolution);
+            const gexHdFileName = getFileName(symbol, 'gex', hdResolution);
+            const gexSdFileName = getFileName(symbol, 'gex', sdResolution);
+
+            return {
+                date,
+                dex: {
+                    hdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${dexHdFileName}&dt=${date}&symbol=${symbol}` : `${releasesBaseUrl}/download/${releaseName}/${dexHdFileName}`,
+                    sdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${dexSdFileName}&dt=${date}&symbol=${symbol}` : `${releasesBaseUrl}/download/${releaseName}/${dexSdFileName}`
+                },
+                gex: {
+                    hdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${gexHdFileName}&dt=${date}&symbol=${symbol}` : `${releasesBaseUrl}/download/${releaseName}/${gexHdFileName}`,
+                    sdAssetUrl: zipAssetUrl ? `${snapshotCdnUrl}?f=${gexSdFileName}&dt=${date}&symbol=${symbol}` : `${releasesBaseUrl}/download/${releaseName}/${gexSdFileName}`
+                },
+            }
+        });
     return result;
 }
 

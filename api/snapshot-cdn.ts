@@ -1,6 +1,6 @@
 import { getZipAssetInfoByDate, getZipAssetUrlForSymbol, zipServiceUrl } from "../lib/data.ts";
 const cache = await caches.open("default");
-import { Hono } from 'https://esm.sh/hono'
+import { Hono } from "https://esm.sh/hono@4.10.7"
 
 const app = new Hono()
 
@@ -32,10 +32,7 @@ app.delete('/api/snapshots/cache', async (c) => {
     if (!dt) return new Response("Missing dt parameter", { status: 400 });
     const info = getZipAssetInfoByDate(dt);
     if (info?.zipAssetUrl) {
-        const allDexFiles = info?.dex.flatMap(k => [k.hdFileName, k.sdFileName]);
-        const allGexFiles = info?.gex.flatMap(k => [k.hdFileName, k.sdFileName]);
-
-        const allCacheKeys = [...allDexFiles, ...allGexFiles].map(f => `${zipServiceUrl}?f=${f}&q=${info.zipAssetUrl}`);
+        const allCacheKeys = info.fileNames.map(f => `${zipServiceUrl}?f=${f}&q=${info.zipAssetUrl}`);
         const deleteCacheKeys = [];
         for (const key of allCacheKeys) {
             const cached = await cache.match(key);

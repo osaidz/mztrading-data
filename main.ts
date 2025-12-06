@@ -13,7 +13,7 @@ import {
     // getOptionsDataSummary,
     // mapDataToLegacy,
     // OptionsSnapshotSummary,
-    OptionsSnapshotSummaryLegacy,
+    //OptionsSnapshotSummaryLegacy,
     searchTicker,
     getSnapshotsAvailableForDate,
     getSnapshotsAvailableForSymbol
@@ -47,29 +47,29 @@ router.get("/", (context) => {
         context.response.body = items;
     })
 
-    .get("/symbols/:symbol/historical/snapshots", (context) => {
-        const { symbol } = context.params;
-        const result = Object.keys(OptionsSnapshotSummaryLegacy)
-            .filter((j) =>
-                Object.keys(OptionsSnapshotSummaryLegacy[j].symbols).includes(
-                    symbol,
-                )
-            )
-            .map((k) => ({ date: k, data: OptionsSnapshotSummaryLegacy[k].symbols[symbol] }))
-            .map(({ data, date }) => ({
-                date: date,
-                dex: {
-                    hdAssetUrl: data.dex.hdAssetUrl,
-                    sdAssetUrl: data.dex.sdAssetUrl
-                },
-                gex: {
-                    hdAssetUrl: data.gex.hdAssetUrl,
-                    sdAssetUrl: data.gex.sdAssetUrl
-                },
-            }));
-        context.response.body = { items: result };
-        context.response.type = "application/json";
-    })    
+    // .get("/symbols/:symbol/historical/snapshots", (context) => {
+    //     const { symbol } = context.params;
+    //     const result = Object.keys(OptionsSnapshotSummaryLegacy)
+    //         .filter((j) =>
+    //             Object.keys(OptionsSnapshotSummaryLegacy[j].symbols).includes(
+    //                 symbol,
+    //             )
+    //         )
+    //         .map((k) => ({ date: k, data: OptionsSnapshotSummaryLegacy[k].symbols[symbol] }))
+    //         .map(({ data, date }) => ({
+    //             date: date,
+    //             dex: {
+    //                 hdAssetUrl: data.dex.hdAssetUrl,
+    //                 sdAssetUrl: data.dex.sdAssetUrl
+    //             },
+    //             gex: {
+    //                 hdAssetUrl: data.gex.hdAssetUrl,
+    //                 sdAssetUrl: data.gex.sdAssetUrl
+    //             },
+    //         }));
+    //     context.response.body = { items: result };
+    //     context.response.type = "application/json";
+    // })    
     .get("/api/symbols", (context) => {
         //api/symbols/search?q=t
         const { q } = getQuery(context);
