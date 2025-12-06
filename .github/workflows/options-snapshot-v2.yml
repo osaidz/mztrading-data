@@ -48,7 +48,7 @@ jobs:
         run: |
           # run the helper that writes JSON files to temp/symbol-batches and prints a JSON array of filenames
           deno run --allow-all jobs/main-split-batches.ts
-          json_content="$(cat "$GITHUB_WORKSPACE/temp/batches/batch-manifest.json")"
+          json_content="$(cat "$GITHUB_WORKSPACE/temp/batch-manifest.json")"
 
           {
             echo "batches<<EOF"
@@ -59,7 +59,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: symbol-batches
-          path: ${{ github.workspace}}/temp/batches/*.json
+          path: |
+            ${{ github.workspace}}/temp/batches/*.json
+            ${{ github.workspace}}/temp/batch-manifest.json
   
   publish_options_snapshot_images:
     runs-on: ubuntu-22.04

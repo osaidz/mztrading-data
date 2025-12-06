@@ -1,7 +1,7 @@
 import { chunk } from "jsr:@std/collections";
 import { getCboeLatestDateAndSymbols } from "../lib/data.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
-const dataFolder = `temp/batches`;
+const dataFolder = `temp`;
 await ensureDir(dataFolder);
 
 const forceDayId = Deno.env.get("FORCE_DAY_ID")
@@ -13,7 +13,7 @@ const batchManifestFileName = `${dataFolder}/batch-manifest.json`;
 if (latestDateAndSymbols?.symbols && latestDateAndSymbols.symbols.length > 0) {
     chunk(latestDateAndSymbols.symbols, 100).forEach((batch, index) => {
         //console.log(`Batch ${index + 1}}`);
-        const batchFileName = `${dataFolder}/batch-${index + 1}.json`;
+        const batchFileName = `${dataFolder}/batches/batch-${index + 1}.json`;
         console.log(`Writing ${batchFileName} with ${batch.length} symbols...`);
         Deno.writeTextFileSync(`${batchFileName}`, JSON.stringify(batch, null, 2));
         batches.push(batchFileName);
