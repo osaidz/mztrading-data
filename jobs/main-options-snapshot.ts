@@ -27,7 +27,10 @@ data[releaseName] = {
     displayName: forceDayId || format(new Date(), "yyyy-MM-dd"),
     created: new Date(),
     zipAssetUrl: `${ghRepoBaseUrl}/${releaseName}/options-snapshots.zip`,
-    symbols: {},
+    releasesBaseUrl: `https://github.com/mnsrulz/mztrading-data/releases`,
+    sdResolution: "620",
+    hdResolution: "1240",
+    tickers: []
 };
 const currentRelease = data[releaseName];
 
@@ -117,17 +120,17 @@ async function processBatch(batchSymbols: string[]) {
 
 async function processSymbol(page: Page, allSymbols: string[], symbol: string, batchId: string) {
     async function captureScreenshot(path: string) {
-        async function captureScreenshotCore(){
+        async function captureScreenshotCore() {
             console.log(`⏳ ${symbol} - captureScreenshot - waiting for network idle...`);
             await page.waitForNetworkIdle({
                 timeout: timeoutInMS
             });
-            
+
             console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
             await page.screenshot({
                 path: path
             }); // take a screenshot and save it to a file
-            
+
             console.log(`⚡ ${symbol} - Screenshot saved successfully to path ${path}`);
         }
 
@@ -140,7 +143,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
 
     console.log(`🎁  ${symbol} - Batch - ${batchId}. Fetching dex/gex page`);
 
-    currentRelease.symbols[symbol] = {
+    const currentSymbol = {
         dex: {
             sdFileName: `${cleanedSymbol}_DEX_620.png`,
             hdFileName: `${cleanedSymbol}_DEX_1240.png`,
@@ -151,7 +154,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
         }
     }
 
-    const currentSymbol = currentRelease.symbols[symbol];
+    // const currentSymbol = currentRelease.symbols[symbol];
 
     await page.setViewport({ width: 620, height: 620, deviceScaleFactor: 2 }); // set the viewport size
     let varurlname = `urldex${allSymbols.indexOf(symbol)}${new Date().getTime()}`
@@ -192,6 +195,7 @@ async function processSymbol(page: Page, allSymbols: string[], symbol: string, b
 
     await captureScreenshot(`${dataFolder}/${currentSymbol.gex.hdFileName}`); // take a screenshot and save it to a file      
 
+    currentRelease.tickers.push(symbol);
     console.log(`✅ Finished processing symbol: ${symbol}`);
 }
 
