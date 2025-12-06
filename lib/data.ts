@@ -132,7 +132,7 @@ export const getZipAssetInfoByDate = (dt: string) => {
 export const getSnapshotsAvailableForSymbol = (symbol: string) => {
     const result = Object.keys(OptionsSnapshotSummary)
         .filter((j) =>
-            Object.keys(OptionsSnapshotSummary[j].tickers).includes(symbol)
+            OptionsSnapshotSummary[j].tickers.includes(symbol)
         )
         .map((releaseName) => {
             const { zipAssetUrl, displayName: date, hdResolution, sdResolution, releasesBaseUrl } = OptionsSnapshotSummary[releaseName];
