@@ -2,7 +2,7 @@ import { chunk } from "jsr:@std/collections";
 import { getCboeLatestDateAndSymbols } from "../lib/data.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 const dataFolder = `temp`;
-await ensureDir(dataFolder);
+await ensureDir(`${dataFolder}/batches`);
 
 const forceDayId = Deno.env.get("FORCE_DAY_ID")
 
