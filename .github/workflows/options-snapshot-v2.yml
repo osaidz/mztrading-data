@@ -47,7 +47,7 @@ jobs:
         id: make_batches
         run: |
           # run the helper that writes JSON files to temp/symbol-batches and prints a JSON array of filenames
-          deno run --allow-all jobs/main-split-batches.ts
+          deno run --allow-all jobs/generate-snapshots/split-batches.ts
           json_content="$(cat "$GITHUB_WORKSPACE/temp/batch-manifest.json")"
 
           {
@@ -96,7 +96,7 @@ jobs:
       - name: Setup puppeteer
         run: PUPPETEER_PRODUCT=chrome deno run -A https://deno.land/x/puppeteer@16.2.0/install.ts
       - name: Run
-        run: deno run --allow-all jobs/main-options-snapshot-v2.ts
+        run: deno run --allow-all jobs/generate-snapshots/generate-snapshot.ts
       # - name: Zip snapshot images
       #   run: |
       #     zip -j temp/options-snapshots.zip temp/options-snapshots/*

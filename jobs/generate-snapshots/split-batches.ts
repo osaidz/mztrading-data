@@ -1,5 +1,5 @@
 import { chunk } from "jsr:@std/collections";
-import { getCboeLatestDateAndSymbols } from "../lib/data.ts";
+import { getCboeLatestDateAndSymbols } from "../../lib/data.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 const dataFolder = `temp`;
 await ensureDir(`${dataFolder}/batches`);
