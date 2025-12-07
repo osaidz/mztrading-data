@@ -3,7 +3,7 @@ import { getCboeLatestDateAndSymbols } from "../../lib/data.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 const dataFolder = `temp`;
 await ensureDir(`${dataFolder}/batches`);
-
+const batchChunkSize = parseInt(Deno.env.get("BATCH_CHUNK_SIZE") || '100');
 const forceDayId = Deno.env.get("FORCE_DAY_ID")
 
 forceDayId && console.log(`Force day id for this release: ${forceDayId}`);
@@ -12,7 +12,7 @@ const batches = [] as string[];
 const batchManifestFileName = `${dataFolder}/batch-manifest.json`;
 const allSymbolsFileName = `${dataFolder}/all-symbols.json`;
 if (latestDateAndSymbols?.symbols && latestDateAndSymbols.symbols.length > 0) {
-    chunk(latestDateAndSymbols.symbols, 100).forEach((batch, index) => {
+    chunk(latestDateAndSymbols.symbols, batchChunkSize).forEach((batch, index) => {
         //console.log(`Batch ${index + 1}}`);
         const batchFileName = `${dataFolder}/batches/batch-${index + 1}.json`;
         console.log(`Writing ${batchFileName} with ${batch.length} symbols...`);
