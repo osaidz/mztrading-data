@@ -41,7 +41,9 @@ await page.goto(
     },
 );
 
-await delay(5000); // wait for a few seconds to ensure the page is loaded properly
+await page.waitForSelector('[data-testid="EXPOSURE-TOOLS"]', { visible: true, timeout: timeoutInMS });
+
+//await delay(5000); // wait for a few seconds to ensure the page is loaded properly
 
 for (const symbol of symbols) {
     console.log(`Processing symbol: ${symbol}...`);
@@ -55,23 +57,26 @@ console.log(`🚀 Finished generating snapshot files with ${symbols.length} symb
 
 async function processSymbol(symbol: string) {
     async function captureScreenshot(path: string) {
-        async function captureScreenshotCore() {
-            console.log(`⏳ ${symbol} - captureScreenshot - waiting for network idle...`);
-            await page.waitForNetworkIdle({
-                timeout: timeoutInMS
-            });
+        // async function captureScreenshotCore() {
+        //     console.log(`⏳ ${symbol} - captureScreenshot - waiting for network idle...`);
+        //     await page.waitForNetworkIdle({
+        //         timeout: timeoutInMS
+        //     });
 
-            console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
-            await page.screenshot({
-                path: path
-            }); // take a screenshot and save it to a file
-
-            console.log(`⚡ ${symbol} - Screenshot saved successfully to path ${path}`);
-        }
-
-        await pTimeout(captureScreenshotCore(), {
-            milliseconds: timeoutInMS
-        });
+        //     console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
+            
+        //     console.log(`⚡ ${symbol} - Screenshot saved successfully to path ${path}`);
+        // }
+        
+        // await page.waitForSelector('');
+        
+        await page.screenshot({
+            path: path
+        }); // take a screenshot and save it to a file
+        
+        // await pTimeout(captureScreenshotCore(), {
+        //     milliseconds: timeoutInMS
+        // });
     }
 
     const cleanedSymbol = cleanSymbol(symbol)
@@ -104,9 +109,11 @@ async function processSymbol(symbol: string) {
 
     console.log(`⬆️ ${symbol} - Generating high definition DEX snapshot page`);
 
-    await page.waitForNetworkIdle({
-        timeout: timeoutInMS
-    });
+    // await page.waitForNetworkIdle({
+    //     timeout: timeoutInMS
+    // });
+    await page.waitForSelector(`[data-testid="EXPSOURE-CHART-${symbol}-DEX"]`, { visible: true, timeout: timeoutInMS });
+
     await captureScreenshot(`${dataFolder}/${currentSymbol.dex.hdFileName}`); // take a screenshot and save it to a file
 
     console.log(`⬆️ ${symbol} - Generating standard definition DEX snapshot page`);
@@ -122,6 +129,8 @@ async function processSymbol(symbol: string) {
         `;
     await page.evaluate(scriptToRunGex);
     console.log(`⬆️ ${symbol} - Generating standard definition GEX snapshot page`);
+    
+    await page.waitForSelector(`[data-testid="EXPSOURE-CHART-${symbol}-GEX"]`, { visible: true, timeout: timeoutInMS });
 
     await captureScreenshot(`${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file
 
