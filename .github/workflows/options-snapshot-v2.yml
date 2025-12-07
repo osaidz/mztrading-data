@@ -63,7 +63,7 @@ jobs:
             ${{ github.workspace}}/data/options-snapshot.summary.json
             ${{ github.workspace}}/temp/batches/*.json
             ${{ github.workspace}}/temp/batch-manifest.json
-            ${{ github.workspace}}/temp/all-symbols.json.json
+            ${{ github.workspace}}/temp/all-symbols.json
   
   publish_options_snapshot_images:
     runs-on: ubuntu-22.04
