@@ -47,7 +47,14 @@ await page.waitForSelector('[data-testid="EXPOSURE-TOOLS"]', { visible: true, ti
 
 for (const symbol of symbols) {
     console.log(`Processing symbol: ${symbol}...`);
-    await processSymbol(symbol)
+    try {
+        await processSymbol(symbol);
+    } catch (err) {
+        console.error(`❌ Error processing symbol ${symbol}: ${(err as Error).message}`);
+        await page.screenshot({
+            path: `${dataFolder}/${symbol}_ERROR.png`
+        });
+    }
 }
 
 if (browser) {
