@@ -124,9 +124,13 @@ jobs:
           path: temp/options-snapshots
         # with:
         #   name: snapshot-data ## CHANGED TO DOWNLOAD ALL ARTIFACTS
+      - name: List all files before zipping
+        run: |
+          echo "Listing all files and subdirectories in temp/options-snapshots:"
+          ls -lR temp/options-snapshots
       - name: Zip snapshot images
         run: |
-          zip -j temp/options-snapshots.zip temp/options-snapshots/*
+          zip -j temp/options-snapshots.zip temp/options-snapshots/**/* 
       - name: Upload artifacts 
         uses: actions/upload-artifact@v4
         with:
