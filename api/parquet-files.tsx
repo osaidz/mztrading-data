@@ -47,7 +47,7 @@ const FilePage = ({ dt, fileUrl }: { dt: string; fileUrl: string }) => (
 
 // --- Middlewares ---
 app.use(async (c, next) => {
-  console.log("request received", c.req.path);
+  console.log(`request received: ${c.req.method} ${c.req.path}`);
   await next();
 });
 
