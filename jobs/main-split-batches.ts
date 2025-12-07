@@ -10,6 +10,7 @@ forceDayId && console.log(`Force day id for this release: ${forceDayId}`);
 const latestDateAndSymbols = getCboeLatestDateAndSymbols(forceDayId);
 const batches = [] as string[];
 const batchManifestFileName = `${dataFolder}/batch-manifest.json`;
+const allSymbolsFileName = `${dataFolder}/all-symbols.json`;
 if (latestDateAndSymbols?.symbols && latestDateAndSymbols.symbols.length > 0) {
     chunk(latestDateAndSymbols.symbols, 100).forEach((batch, index) => {
         //console.log(`Batch ${index + 1}}`);
@@ -20,6 +21,8 @@ if (latestDateAndSymbols?.symbols && latestDateAndSymbols.symbols.length > 0) {
     });
     console.log(`Writing batch manifest file: ${batchManifestFileName} with ${batches.length} batches...`);
     Deno.writeTextFileSync(`${batchManifestFileName}`, JSON.stringify(batches, null, 2));
+    console.log(`Writing all symbols file: ${allSymbolsFileName} with ${latestDateAndSymbols.symbols.length} symbols...`);
+    Deno.writeTextFileSync(`${allSymbolsFileName}`, JSON.stringify(latestDateAndSymbols.symbols, null, 2));
 } else {
     throw new Error(`Unable to find any latest date in the data summary file!`);
 }
