@@ -81,7 +81,7 @@ app.get("/files/", (c) => {
   return c.html(html);
 });
 
-app.get("/files/:dt/options_data.parquet", (c) => {
+app.get("/files/:dt/options_data.parquet", async (c) => {
   const dtParam = c.req.param("dt");
   const dtMatch = dtParam.match(/dt=(\d{4}-\d{2}-\d{2})/);
   if (!dtMatch) return c.text("Not found", 404);
@@ -89,7 +89,14 @@ app.get("/files/:dt/options_data.parquet", (c) => {
   const dt = dtMatch[1];
   const match = optionsSummary.find((k) => k.dt === dt);
 
-  return match ? c.redirect(match.optionsAssetUrl) : c.text("Custom 404 Message", 404);
+  if (match) {
+    if (c.req.method === "HEAD") {
+      return await fetch(match.optionsAssetUrl);
+    }
+    return c.redirect(match.optionsAssetUrl);
+  } else {
+    return c.text("Custom 404 Message", 404);
+  }
 });
 
 app.get("/files/:dt", (c) => c.redirect(`${c.req.path}/`));
