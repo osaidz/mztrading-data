@@ -1,8 +1,6 @@
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
-import puppeteer, {  } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
-import pTimeout from "https://esm.sh/p-timeout@6.1.4";
-import delay from "https://esm.sh/delay@6.0.0";
-
+import puppeteer, { Browser, Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
+import pretry from "https://esm.sh/p-retry@6.2.1";
 import { cleanSymbol, getCboeLatestDateAndSymbols } from "../../lib/data.ts";
 
 const MATRIX_ID = Deno.env.get("MATRIX_ID");
@@ -27,34 +25,44 @@ const forceDayId = Deno.env.get("FORCE_DAY_ID")
 forceDayId && console.log(`Force day id for this release: ${forceDayId}`);
 const latestDateAndSymbols = getCboeLatestDateAndSymbols(forceDayId);
 
-if(latestDateAndSymbols == null || latestDateAndSymbols.latestDate == null) {
+if (latestDateAndSymbols == null || latestDateAndSymbols.latestDate == null) {
     throw new Error(`Unable to find any latest date in the data summary file!`);
 }
 
-const browser = await puppeteer.launch();
-const page = await browser.newPage();
+let browser: Browser;
+let page: Page;
 
-await page.goto(
-    `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
-    {
-        waitUntil: "networkidle2",
-    },
-);
+async function initializePage() {
+    browser = await puppeteer.launch();
+    page = await browser.newPage();
 
-await page.waitForSelector('[data-testid="EXPOSURE-TOOLS"]', { visible: true, timeout: timeoutInMS });
+    await page.goto(
+        `https://mztrading.netlify.app/tools/snapshot?dgextab=DEX&print=true&mode=HISTORICAL&historical=${encodeURIComponent(latestDateAndSymbols.latestDate)}`,
+        {
+            waitUntil: "networkidle2",
+        },
+    );
+    await page.waitForSelector('[data-testid="EXPOSURE-TOOLS"]', { visible: true, timeout: timeoutInMS });
+}
 
-//await delay(5000); // wait for a few seconds to ensure the page is loaded properly
+await initializePage();
 
 for (const symbol of symbols) {
     console.log(`Processing symbol: ${symbol}...`);
-    try {
-        await processSymbol(symbol);
-    } catch (err) {
-        console.error(`❌ Error processing symbol ${symbol}: ${(err as Error).message}`);
-        await page.screenshot({
-            path: `${dataFolder}/${symbol}_ERROR.png`
-        });
-    }
+    await pretry(async (n: number) => {
+        if (n > 1) {
+            console.warn(`🚧 retry attempt: ${n}`);
+            await initializePage();
+        }
+        try {
+            await processSymbol(symbol);
+        } catch (err) {
+            console.error(`❌ Error processing symbol ${symbol}: ${(err as Error).message}`);
+            throw err;
+        }
+    }, {
+        retries: 3
+    });
 }
 
 if (browser) {
@@ -71,16 +79,16 @@ async function processSymbol(symbol: string) {
         //     });
 
         //     console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
-            
+
         //     console.log(`⚡ ${symbol} - Screenshot saved successfully to path ${path}`);
         // }
-        
+
         // await page.waitForSelector('');
-        
+
         await page.screenshot({
             path: path
         }); // take a screenshot and save it to a file
-        
+
         // await pTimeout(captureScreenshotCore(), {
         //     milliseconds: timeoutInMS
         // });
@@ -136,7 +144,7 @@ async function processSymbol(symbol: string) {
         `;
     await page.evaluate(scriptToRunGex);
     console.log(`⬆️ ${symbol} - Generating standard definition GEX snapshot page`);
-    
+
     await page.waitForSelector(`[data-testid="EXPSOURE-CHART-${symbol}-GEX"]`, { visible: true, timeout: timeoutInMS });
 
     await captureScreenshot(`${dataFolder}/${currentSymbol.gex.sdFileName}`); // take a screenshot and save it to a file
