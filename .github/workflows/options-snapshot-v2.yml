@@ -59,6 +59,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: symbol-batches
+          if-no-files-found: error
           path: |
             ${{ github.workspace}}/data/options-snapshot.summary.json
             ${{ github.workspace}}/temp/batches/*.json
