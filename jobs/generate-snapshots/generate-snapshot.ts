@@ -51,13 +51,15 @@ for (const symbol of symbols) {
     console.log(`Processing symbol: ${symbol}...`);
     await pretry(async (n: number) => {
         if (n > 1) {
-            console.warn(`🚧 retry attempt: ${n}`);
+            console.warn(`♻️ Retrying processing symbol: ${symbol}. Attempt #${n}`);
             await initializePage();
         }
         try {
             await processSymbol(symbol);
         } catch (err) {
             console.error(`❌ Error processing symbol ${symbol}: ${(err as Error).message}`);
+            await browser.close();
+            console.log(`Closed browser after error...`);
             throw err;
         }
     }, {

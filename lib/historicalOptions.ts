@@ -104,6 +104,16 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, delta: number, gamma: number, option_type: 'C' | 'P', strike: string, open_interest: number, volume: number }[];
 }
 
+export const getStockPriceDataFromParquet = async (symbol: string, dt: string) => {
+    const conn = await getConnection();
+    const arrowResult = await conn.send(`SELECT round(CAST(close as double), 2) as price
+            FROM 'stocks.parquet' 
+            WHERE symbol = '${symbol.toUpperCase()}' 
+            AND dt = '${dt}'`);
+    const jsonResult = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { price: number }[];
+    return jsonResult.length > 0 ? jsonResult[0].price : null;
+}
+
 export const getHistoricalGreeksSummaryDataFromParquet = async (dt: string | undefined, dte: number | undefined) => {
     const conn = await getConnection();
     const dtFilterExpression = dt ? `AND O.dt = '${dt}'` : '';
@@ -408,7 +418,8 @@ async function getHistoricalOptionData(symbol: string, dt: string) {
     }, {} as Record<string, Record<string, MicroOptionContract>>);
     console.timeEnd(`getHistoricalOptionData-${symbol}-${dt}`)
 
-    const _spotPrice = await getPriceAtDate(symbol, dt, true);
+    //const _spotPrice = await getPriceAtDate(symbol, dt, true);
+    const _spotPrice = await getStockPriceDataFromParquet(symbol, dt);
     if (!_spotPrice || Number.isNaN(_spotPrice)) throw new Error("Invalid spot price");
     const spotPrice = Number(_spotPrice);
     return { spotPrice, indexedObject, timestamp: dayjs(dt).toDate() };    //timestamp not really needed, but keeping it for consistency
