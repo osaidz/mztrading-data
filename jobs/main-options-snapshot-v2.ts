@@ -10,7 +10,9 @@ import delay from "https://esm.sh/delay@6.0.0";
 const dop = 4;  //degree of parallelism, how many symbols to process in parallel
 
 import { getOptionsSnapshotSummary, ghRepoBaseUrl, cleanSymbol, getCboeLatestDateAndSymbols } from "../lib/data.ts";
-const dataFolder = `temp/options-snapshots`;
+
+const MATRIX_ID = Deno.env.get("MATRIX_ID");
+const dataFolder = `temp/options-snapshots/batch-${MATRIX_ID}`;
 await ensureDir(dataFolder);
 const data = getOptionsSnapshotSummary();
 let pageFetchCounter = 0;
@@ -28,5 +30,13 @@ const symbols: string[] = JSON.parse(batchContent);
 console.log(`Processing ${symbols.length} symbols from batch file: ${batchFileName}...`);
 
 console.log(`${JSON.stringify(symbols, null, 2)}`);
+
+for (const symbol of symbols) {
+    console.log(`Processing symbol: ${symbol}...`);
+    Deno.writeTextFileSync(
+        `${dataFolder}/options-snapshot-${cleanSymbol(symbol)}.png`,
+        `PNG DATA FOR ${symbol}`
+    );
+}
 
 console.log(`🟢 Finished generating snapshot files!`);
