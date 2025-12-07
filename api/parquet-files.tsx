@@ -27,7 +27,7 @@ const App = ({ options }: { options: OptionsSummary[] }) => (
     <ul>
       {options.map((item) => (
         <li key={item.dt}>
-          <a href={`./dt=${item.dt}/`} target="_blank">
+          <a href={`dt=${item.dt}/`} target="_blank">
             dt={item.dt}
           </a>
         </li>
@@ -39,7 +39,7 @@ const App = ({ options }: { options: OptionsSummary[] }) => (
 const FilePage = ({ dt, fileUrl }: { dt: string; fileUrl: string }) => (
   <div>
     <h1>Options Data for {dt}</h1>
-    <a href="./options_data.parquet" target="_blank">
+    <a href="options_data.parquet" target="_blank">
       Download parquet
     </a>
   </div>
