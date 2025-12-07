@@ -3,7 +3,7 @@ on:
   push:
     branches: main
   workflow_run:
-    workflows: ["Publish snapshots"]
+    workflows: ["Publish snapshots v2"]
     branches: [main]
     types: 
       - completed

@@ -12,6 +12,8 @@ forceDayId && console.log(`Force day id for this release: ${forceDayId}`);
 
 console.log(`🔄 Generating options snapshot for release: ${releaseName}`);
 
+const allSymbols = JSON.parse(Deno.readTextFileSync(`temp/all-symbols.json`)) as string[];
+
 data[releaseName] = {
     displayName: forceDayId || format(new Date(), "yyyy-MM-dd"),
     created: new Date(),
@@ -19,7 +21,7 @@ data[releaseName] = {
     releasesBaseUrl: `https://github.com/mnsrulz/mztrading-data/releases`,
     sdResolution: "620",
     hdResolution: "1240",
-    tickers: []
+    tickers: allSymbols
 };
 
 Deno.writeTextFileSync(

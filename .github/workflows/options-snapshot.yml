@@ -1,11 +1,12 @@
+## DEPRECATED: Use options-snapshot-v2.yml instead. WILL BE REMOVED SOON.
 name: Publish snapshots
 
 on:
-  workflow_run:
-    workflows: ["CBOE options rolling parquet"]
-    branches: [main]
-    types: 
-      - completed
+  # workflow_run:
+  #   workflows: ["CBOE options rolling parquet"]
+  #   branches: [main]
+  #   types: 
+  #     - completed
   workflow_dispatch: # Allow manual trigger from GitHub Actions UI
     inputs:
       forceDayId:
