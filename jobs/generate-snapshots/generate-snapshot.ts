@@ -8,7 +8,7 @@ import { cleanSymbol, getCboeLatestDateAndSymbols } from "../../lib/data.ts";
 const MATRIX_ID = Deno.env.get("MATRIX_ID");
 const dataFolder = `temp/options-snapshots/batch-${MATRIX_ID}`;
 await ensureDir(dataFolder);
-const timeoutInMS = 3000;
+const timeoutInMS = 10000;
 const batchFileName = Deno.env.get("BATCH_FILE");
 
 if (!batchFileName) {

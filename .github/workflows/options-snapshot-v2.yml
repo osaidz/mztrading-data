@@ -72,6 +72,7 @@ jobs:
     strategy:
       matrix:
         batchFile: ${{ fromJson(needs.split-batches.outputs.batches) }}
+      fail-fast: false
     env:
       RELEASE_NAME: ${{needs.set-release-vars.outputs.snapshot-data-tag}}
       FORCE_DAY_ID: ${{ github.event.inputs.forceDayId }}
