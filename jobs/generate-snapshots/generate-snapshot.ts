@@ -2,6 +2,7 @@ import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 import puppeteer, { Browser, Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import pretry from "https://esm.sh/p-retry@6.2.1";
 import { cleanSymbol, getCboeLatestDateAndSymbols } from "../../lib/data.ts";
+import pTimeout from "https://esm.sh/p-timeout@6.1.4";
 
 const MATRIX_ID = Deno.env.get("MATRIX_ID");
 const dataFolder = `temp/options-snapshots/batch-${MATRIX_ID}`;
@@ -55,15 +56,15 @@ for (const symbol of symbols) {
             await initializePage();
         }
         try {
-            await processSymbol(symbol);
+            await pTimeout(processSymbol(symbol), {
+                milliseconds: timeoutInMS * 3
+            });
         } catch (err) {
             console.error(`❌ Error processing symbol ${symbol}: ${(err as Error).message}`);
             await browser.close();
             console.log(`Closed browser after error...`);
             throw err;
         }
-    }, {
-        retries: 3
     });
 }
 
@@ -80,16 +81,18 @@ async function processSymbol(symbol: string) {
         //         timeout: timeoutInMS
         //     });
 
-        //     console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
 
-        //     console.log(`⚡ ${symbol} - Screenshot saved successfully to path ${path}`);
         // }
 
         // await page.waitForSelector('');
 
+        console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
+
         await page.screenshot({
             path: path
         }); // take a screenshot and save it to a file
+
+        console.log(`⚡ ${symbol} - Screenshot saved successfully to path ${path}`);
 
         // await pTimeout(captureScreenshotCore(), {
         //     milliseconds: timeoutInMS
