@@ -36,6 +36,9 @@ jobs:
     needs: set-release-vars
     outputs:
       batches: ${{ steps.make_batches.outputs.batches }}
+    env:
+      FORCE_DAY_ID: ${{ github.event.inputs.forceDayId }}
+      BATCH_CHUNK_SIZE: 100
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,9 +48,6 @@ jobs:
           deno-version: v1.x
       - name: Create batch files
         id: make_batches
-        env:
-          FORCE_DAY_ID: ${{ github.event.inputs.forceDayId }}
-          BATCH_CHUNK_SIZE: 100
         run: |
           # run the helper that writes JSON files to temp/symbol-batches and prints a JSON array of filenames
           deno run --allow-all jobs/generate-snapshots/split-batches.ts
@@ -84,9 +84,6 @@ jobs:
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
-        # with:
-        #   fetch-depth: 0   # Fetch all commits to ensure the latest state is available
-        #   ref: main        # Ensure the latest state from the main branch is checked out
       - name: Download batch files
         uses: actions/download-artifact@v4
         with:
@@ -101,9 +98,6 @@ jobs:
         run: PUPPETEER_PRODUCT=chrome deno run -A https://deno.land/x/puppeteer@16.2.0/install.ts
       - name: Run
         run: deno run --allow-all jobs/generate-snapshots/generate-snapshot.ts
-      # - name: Zip snapshot images
-      #   run: |
-      #     zip -j temp/options-snapshots.zip temp/options-snapshots/*
       - name: Upload artifacts 
         uses: actions/upload-artifact@v4
         with:
