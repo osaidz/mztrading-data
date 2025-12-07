@@ -157,6 +157,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: snapshot-data
+          path: temp
       - name: List all files before zipping
         run: |
           echo "Listing all files and subdirectories in workspace:"
