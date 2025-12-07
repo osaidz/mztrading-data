@@ -130,7 +130,7 @@ jobs:
           ls -lR temp/options-snapshots
       - name: Zip snapshot images
         run: |
-          zip -j temp/options-snapshots.zip temp/options-snapshots/**/* 
+          zip -rj temp/options-snapshots.zip temp/options-snapshots -i '*.png'
       - name: Upload artifacts 
         uses: actions/upload-artifact@v4
         with:
