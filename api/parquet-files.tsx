@@ -36,11 +36,11 @@ const App = ({ options }: { options: OptionsSummary[] }) => (
   </div>
 );
 
-const FilePage = ({ dt, fileUrl }: { dt: string; fileUrl: string }) => (
+const FilePage = ({ dt, fileName }: { dt: string; fileName: string }) => (
   <div>
     <h1>Options Data for {dt}</h1>
-    <a href="options_data.parquet" target="_blank">
-      Download parquet
+    <a href={fileName} target="_blank">
+      {fileName}
     </a>
   </div>
 );
@@ -81,7 +81,7 @@ app.get("/files/", (c) => {
   return c.html(html);
 });
 
-app.get("/files/:dt/options_data.parquet", async (c) => {
+app.get("/files/:dt/*.parquet", async (c) => {
   const dtParam = c.req.param("dt");
   const dtMatch = dtParam.match(/dt=(\d{4}-\d{2}-\d{2})/);
   if (!dtMatch) return c.text("Not found", 404);
@@ -114,7 +114,7 @@ app.get("/files/:dt/", (c) => {
   if (match) {
     const html =
       "<!DOCTYPE html>" +
-      renderToString(<Html><FilePage dt={dt} fileUrl={match.optionsAssetUrl} /></Html>);
+      renderToString(<Html><FilePage dt={dt} fileName={new URL(match.optionsAssetUrl).pathname.split("/").pop()} /></Html>);
     return c.html(html);
   }
 
