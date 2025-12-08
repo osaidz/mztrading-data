@@ -5305,7 +5305,7 @@
     },
     {
         "name": "BRP INC COM SUN VTG",
-        "symbol": "DOOO"
+        "symbol": "DOO"
     },
     {
         "name": "DORMAN PRODS INC COM",
@@ -12380,10 +12380,6 @@
         "symbol": "MUR"
     },
     {
-        "name": "MURAL ONCOLOGY PUB LTD CO ORD SHS",
-        "symbol": "MURA"
-    },
-    {
         "name": "MURPHY USA INC COM",
         "symbol": "MUSA"
     },
@@ -17280,10 +17276,6 @@
         "symbol": "SPOT"
     },
     {
-        "name": "SPIRIT AEROSYSTEMS HLDGS INC COM CL A",
-        "symbol": "SPR"
-    },
-    {
         "name": "SPRUCE BIOSCIENCES INC COM NEW",
         "symbol": "SPRB"
     },
@@ -18764,10 +18756,6 @@
         "symbol": "TTDU"
     },
     {
-        "name": "TOTALENERGIES SE SPONSORED ADS",
-        "symbol": "TTE"
-    },
-    {
         "name": "TTEC HLDGS INC COM",
         "symbol": "TTEC"
     },
@@ -19120,6 +19108,10 @@
         "symbol": "UNHG"
     },
     {
+        "name": "Roundhill UNH WeeklyPay ETF",
+        "symbol": "UNHW"
+    },
+    {
         "name": "UNITI GROUP LLC COM SHS",
         "symbol": "UNIT"
     },
@@ -19366,6 +19358,10 @@
     {
         "name": "ENERGY FUELS INC COM NEW",
         "symbol": "UUUU"
+    },
+    {
+        "name": "UNIVERSAL INS HLDGS INC COM",
+        "symbol": "UVE"
     },
     {
         "name": "2x Long VIX Futures ETF ",
@@ -20612,8 +20608,16 @@
         "symbol": "XIFR"
     },
     {
+        "name": "SELECT SECTOR SPDR TR STATE STREET MAT",
+        "symbol": "XLB"
+    },
+    {
         "name": "SELECT SECTOR SPDR TR STATE STREET COM",
         "symbol": "XLC"
+    },
+    {
+        "name": "SELECT SECTOR SPDR TR STATE STREET ENE",
+        "symbol": "XLE"
     },
     {
         "name": "SELECT SECTOR SPDR TR STATE STREET FIN",
@@ -20628,6 +20632,10 @@
         "symbol": "XLI"
     },
     {
+        "name": "SELECT SECTOR SPDR TR STATE STREET TEC",
+        "symbol": "XLK"
+    },
+    {
         "name": "SELECT SECTOR SPDR TR STATE STREET CON",
         "symbol": "XLP"
     },
@@ -20640,8 +20648,16 @@
         "symbol": "XLSR"
     },
     {
+        "name": "SELECT SECTOR SPDR TR STATE STREET UTI",
+        "symbol": "XLU"
+    },
+    {
         "name": "SELECT SECTOR SPDR TR STATE STREET HEA",
         "symbol": "XLV"
+    },
+    {
+        "name": "SELECT SECTOR SPDR TR STATE STREET CON",
+        "symbol": "XLY"
     },
     {
         "name": "TIDAL TRUST II DEFIANCE LARGE",
