@@ -91,7 +91,9 @@ app.get("/files/:dt/options_data.parquet", async (c) => {
 
   if (match) {
     if (c.req.method === "HEAD") {
-      return await fetch(match.optionsAssetUrl);
+      return await fetch(match.optionsAssetUrl, {
+        method: "HEAD"
+      });
     }
     return c.redirect(match.optionsAssetUrl);
   } else {
