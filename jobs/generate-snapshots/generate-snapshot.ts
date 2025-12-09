@@ -3,6 +3,7 @@ import puppeteer, { Browser, Page } from "https://deno.land/x/puppeteer@16.2.0/m
 import pretry from "https://esm.sh/p-retry@6.2.1";
 import { cleanSymbol, getCboeLatestDateAndSymbols } from "../../lib/data.ts";
 import pTimeout from "https://esm.sh/p-timeout@6.1.4";
+import delay from "https://esm.sh/delay@7.0.0/index.js";
 
 const MATRIX_ID = Deno.env.get("MATRIX_ID");
 const dataFolder = `temp/options-snapshots/batch-${MATRIX_ID}`;
@@ -88,6 +89,7 @@ async function processSymbol(symbol: string) {
 
         console.log(`📷 ${symbol} - Taking screenshot and saving to ${path}`);
 
+        await delay(250); // slight delay to ensure rendering is complete (hopefully)
         await page.screenshot({
             path: path
         }); // take a screenshot and save it to a file
