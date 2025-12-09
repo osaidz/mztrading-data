@@ -1,0 +1,22 @@
+name: rc
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Rclone
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          version: 1.69.1
+        
+      - run: 'rclone sync --http-url https://mztrading-parquetfiles.deno.dev/files/ :http: ./options-data --progress'
+        
