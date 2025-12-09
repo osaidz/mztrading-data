@@ -16,7 +16,7 @@ jobs:
       - name: Setup Rclone
         uses: AnimMouse/setup-rclone@v1
         with:
-          version: 1.69.1
+          version: v1.69.1
         
       - run: 'rclone sync --http-url https://mztrading-parquetfiles.deno.dev/files/ :http: ./options-data --progress'
         
