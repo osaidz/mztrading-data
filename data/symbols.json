@@ -2672,7 +2672,7 @@
         "symbol": "BROS"
     },
     {
-        "name": "COLUMBUS CIRCLE CAP CORP. I SHS CL A",
+        "name": "COLUMBUS CIRCLE CAP CORP. I COM SHS",
         "symbol": "BRR"
     },
     {
@@ -3374,10 +3374,6 @@
     {
         "name": "CENTURY ALUM CO COM",
         "symbol": "CENX"
-    },
-    {
-        "name": "CANTOR EQUITY PARTNERS INC SHS CL A",
-        "symbol": "CEP"
     },
     {
         "name": "ETF OPPORTUNITIES TRUST REX CRYPTO EQUIT",
@@ -8804,10 +8800,6 @@
         "symbol": "HOOW"
     },
     {
-        "name": "TIDAL TRUST II DEFIANCE DAILY",
-        "symbol": "HOOX"
-    },
-    {
         "name": "TIDAL TRUST II YIELDMAX HOOD OP",
         "symbol": "HOOY"
     },
@@ -9674,14 +9666,6 @@
     {
         "name": "IONIS PHARMACEUTICALS INC COM",
         "symbol": "IONS"
-    },
-    {
-        "name": "TIDAL TRUST II DEFIANCE DAILY",
-        "symbol": "IONX"
-    },
-    {
-        "name": "TIDAL TRUST II DEFIANCE DILY TG",
-        "symbol": "IONZ"
     },
     {
         "name": "ISHARES TR GLOBAL 100 ETF",
@@ -11804,6 +11788,10 @@
         "symbol": "MGPI"
     },
     {
+        "name": "CBOE Magnificent 10 Index",
+        "symbol": "MGTN"
+    },
+    {
         "name": "MEIRAGTX HLDGS PLC COM",
         "symbol": "MGTX"
     },
@@ -13154,10 +13142,6 @@
     {
         "name": "NOVO-NORDISK A S ADR",
         "symbol": "NVO"
-    },
-    {
-        "name": "TIDAL TRUST II DEFIANCE DLY TRG",
-        "symbol": "NVOX"
     },
     {
         "name": "ENVIRI CORP COM",
@@ -14740,10 +14724,6 @@
         "symbol": "PSNL"
     },
     {
-        "name": "POLESTAR AUTOMOTIVE HLDG UK ADS A",
-        "symbol": "PSNY"
-    },
-    {
         "name": "PEARSON PLC SPONSORED ADR",
         "symbol": "PSO"
     },
@@ -15476,10 +15456,6 @@
         "symbol": "RGTU"
     },
     {
-        "name": "TIDAL TRUST II DEFIANCE DAILY",
-        "symbol": "RGTX"
-    },
-    {
         "name": "RH COM",
         "symbol": "RH"
     },
@@ -15546,10 +15522,6 @@
     {
         "name": "ROCKET LAB CORP COM",
         "symbol": "RKLB"
-    },
-    {
-        "name": "TIDAL TRUST II DEFIANCE DAILY",
-        "symbol": "RKLX"
     },
     {
         "name": "ROCKET COS INC COM CL A",
