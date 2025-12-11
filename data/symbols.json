@@ -360,10 +360,6 @@
         "symbol": "ADV"
     },
     {
-        "name": "ADVERUM BIOTECHNOLOGIES INC COM NEW",
-        "symbol": "ADVM"
-    },
-    {
         "name": "AEBI SCHMIDT HLDG AG COM",
         "symbol": "AEBI"
     },
@@ -622,10 +618,6 @@
     {
         "name": "AKEBIA THERAPEUTICS INC COM",
         "symbol": "AKBA"
-    },
-    {
-        "name": "AKERO THERAPEUTICS INC COM",
-        "symbol": "AKRO"
     },
     {
         "name": "AIR LEASE CORP CL A",
@@ -2540,10 +2532,6 @@
         "symbol": "BNED"
     },
     {
-        "name": "BONK INC COM NEW",
-        "symbol": "BNKK"
-    },
-    {
         "name": "BROADSTONE NET LEASE INC COM",
         "symbol": "BNL"
     },
@@ -2672,7 +2660,7 @@
         "symbol": "BROS"
     },
     {
-        "name": "COLUMBUS CIRCLE CAP CORP. I COM SHS",
+        "name": "PROCAP FINL INC COM SHS",
         "symbol": "BRR"
     },
     {
@@ -6364,7 +6352,7 @@
         "symbol": "EWI"
     },
     {
-        "name": "ISHARES INC MSCI JPN ETF NEW",
+        "name": "ISHARES INC MSCI JAPAN ETF",
         "symbol": "EWJ"
     },
     {
@@ -6492,7 +6480,7 @@
         "symbol": "EYE"
     },
     {
-        "name": "EYEPOINT PHARMACEUTICALS INC COM NEW",
+        "name": "EYEPOINT INC COM NEW",
         "symbol": "EYPT"
     },
     {
@@ -8800,6 +8788,10 @@
         "symbol": "HOOW"
     },
     {
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
+        "symbol": "HOOX"
+    },
+    {
         "name": "TIDAL TRUST II YIELDMAX HOOD OP",
         "symbol": "HOOY"
     },
@@ -8886,10 +8878,6 @@
     {
         "name": "HENRY SCHEIN INC COM",
         "symbol": "HSIC"
-    },
-    {
-        "name": "HEIDRICK & STRUGGLES INTL INC COM",
-        "symbol": "HSII"
     },
     {
         "name": "HOST HOTELS & RESORTS INC COM",
@@ -9666,6 +9654,14 @@
     {
         "name": "IONIS PHARMACEUTICALS INC COM",
         "symbol": "IONS"
+    },
+    {
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
+        "symbol": "IONX"
+    },
+    {
+        "name": "TIDAL TRUST II DEFIANCE DAILY T",
+        "symbol": "IONZ"
     },
     {
         "name": "ISHARES TR GLOBAL 100 ETF",
@@ -13144,6 +13140,10 @@
         "symbol": "NVO"
     },
     {
+        "name": "TIDAL TRUST II DEFIANCE DLY TRG",
+        "symbol": "NVOX"
+    },
+    {
         "name": "ENVIRI CORP COM",
         "symbol": "NVRI"
     },
@@ -13314,10 +13314,6 @@
     {
         "name": "OLD DOMINION FREIGHT LINE INC COM",
         "symbol": "ODFL"
-    },
-    {
-        "name": "THE ODP CORP COM",
-        "symbol": "ODP"
     },
     {
         "name": "OSISKO DEVELOPMENT CORP COM NEW",
@@ -14620,10 +14616,6 @@
         "symbol": "PRNT"
     },
     {
-        "name": "PROS HOLDINGS INC COM",
-        "symbol": "PRO"
-    },
-    {
         "name": "PROFOUND MED CORP COM NEW",
         "symbol": "PROF"
     },
@@ -14722,6 +14714,10 @@
     {
         "name": "PERSONALIS INC COM",
         "symbol": "PSNL"
+    },
+    {
+        "name": "POLESTAR AUTOMOTIVE HLDG UK SPONSORED ADS",
+        "symbol": "PSNY"
     },
     {
         "name": "PEARSON PLC SPONSORED ADR",
@@ -15456,6 +15452,10 @@
         "symbol": "RGTU"
     },
     {
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
+        "symbol": "RGTX"
+    },
+    {
         "name": "RH COM",
         "symbol": "RH"
     },
@@ -15522,6 +15522,10 @@
     {
         "name": "ROCKET LAB CORP COM",
         "symbol": "RKLB"
+    },
+    {
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
+        "symbol": "RKLX"
     },
     {
         "name": "ROCKET COS INC COM CL A",
@@ -16008,7 +16012,7 @@
         "symbol": "SAMG"
     },
     {
-        "name": "BANCO SANTANDER S.A. ADR",
+        "name": "BANCO SANTANDER SA ADR",
         "symbol": "SAN"
     },
     {
@@ -16214,10 +16218,6 @@
     {
         "name": "PROSHARES TR II ULSHT BLOOMB OIL",
         "symbol": "SCO"
-    },
-    {
-        "name": "STEELCASE INC CL A",
-        "symbol": "SCS"
     },
     {
         "name": "SCANSOURCE INC COM",
@@ -16516,7 +16516,7 @@
         "symbol": "SHOP"
     },
     {
-        "name": "ISHARES TR SHORT TREAS BD",
+        "name": "ISHARES TR TRUST ISHARE 0-1",
         "symbol": "SHV"
     },
     {
@@ -17498,10 +17498,6 @@
     {
         "name": "SHUTTERSTOCK INC COM",
         "symbol": "SSTK"
-    },
-    {
-        "name": "SUPERIOR INDS INTL INC COM",
-        "symbol": "SSUP"
     },
     {
         "name": "STRATASYS LTD SHS",
@@ -18648,10 +18644,6 @@
         "symbol": "TSLT"
     },
     {
-        "name": "Azoria TSLA Convexity ETF",
-        "symbol": "TSLV"
-    },
-    {
         "name": "Roundhill TSLA WeeklyPay ETF",
         "symbol": "TSLW"
     },
@@ -18726,6 +18718,10 @@
     {
         "name": "T-REX 2X Long TTD Daily Target ETF",
         "symbol": "TTDU"
+    },
+    {
+        "name": "TOTALENERGIES SE ACT",
+        "symbol": "TTE"
     },
     {
         "name": "TTEC HLDGS INC COM",
@@ -20786,6 +20782,10 @@
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
         "symbol": "XTN"
+    },
+    {
+        "name": "TWENTY ONE CAP INC COM SHS CL A",
+        "symbol": "XXI"
     },
     {
         "name": "22ND CENTY GROUP INC COM NEW",
