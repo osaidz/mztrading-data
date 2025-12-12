@@ -44,10 +44,6 @@
         "symbol": "AAPL"
     },
     {
-        "name": "DIREXION SHS ETF TR DLY AAPL BULL 2X",
-        "symbol": "AAPU"
-    },
-    {
         "name": "Roundhill AAPL WeeklyPay ETF",
         "symbol": "AAPW"
     },
@@ -948,10 +944,6 @@
         "symbol": "AMZP"
     },
     {
-        "name": "DIREXION SHS ETF TR DIREXION 2X SHAR",
-        "symbol": "AMZU"
-    },
-    {
         "name": "Roundhill AMZN WeeklyPay ETF",
         "symbol": "AMZW"
     },
@@ -1658,10 +1650,6 @@
     {
         "name": "ATEA PHARMACEUTICALS INC COM",
         "symbol": "AVIR"
-    },
-    {
-        "name": "DIREXION SHS ETF TR DAILY AVGO BULL",
-        "symbol": "AVL"
     },
     {
         "name": "AMERICAN CENTY ETF TR AVANTIS US LARG",
@@ -4984,10 +4972,6 @@
         "symbol": "DFE"
     },
     {
-        "name": "DIREXION SHS ETF TR DLY AEROSPC 3X",
-        "symbol": "DFEN"
-    },
-    {
         "name": "DREAM FINDERS HOMES INC COM CL A",
         "symbol": "DFH"
     },
@@ -5464,10 +5448,6 @@
         "symbol": "DUSA"
     },
     {
-        "name": "DIREXION SHS ETF TR DLY INDL BU 3X",
-        "symbol": "DUSL"
-    },
-    {
         "name": "DIREXION SHS ETF TR DAILY GOLD MINER",
         "symbol": "DUST"
     },
@@ -5830,10 +5810,6 @@
     {
         "name": "E L F BEAUTY INC COM",
         "symbol": "ELF"
-    },
-    {
-        "name": "DIREXION SHS ETF TR DAILY LLY BULL",
-        "symbol": "ELIL"
     },
     {
         "name": "ELECTROMED INC COM",
@@ -6536,10 +6512,6 @@
         "symbol": "FANG"
     },
     {
-        "name": "DIREXION SHS ETF TR DLY FIN BULL NEW",
-        "symbol": "FAS"
-    },
-    {
         "name": "FASTENAL CO COM",
         "symbol": "FAST"
     },
@@ -7162,10 +7134,6 @@
     {
         "name": "FIDELITY NATIONAL FINANCIAL IN COM SHS",
         "symbol": "FNF"
-    },
-    {
-        "name": "DIREXION SHS ETF TR DAILY NYSE FANG",
-        "symbol": "FNGG"
     },
     {
         "name": "FINGERMOTION INC COM",
@@ -7816,10 +7784,6 @@
         "symbol": "GGG"
     },
     {
-        "name": "DIREXION SHS ETF TR DAILY GOOGL 2X S",
-        "symbol": "GGLL"
-    },
-    {
         "name": "DIREXION SHS ETF TR DAILY GOOGL BR1X",
         "symbol": "GGLS"
     },
@@ -8380,10 +8344,6 @@
         "symbol": "GVIP"
     },
     {
-        "name": "TIDAL TRUST I GOTHAM 1000 VALU",
-        "symbol": "GVLU"
-    },
-    {
         "name": "GUIDEWIRE SOFTWARE INC COM",
         "symbol": "GWRE"
     },
@@ -8626,10 +8586,6 @@
     {
         "name": "HILLENBRAND INC COM",
         "symbol": "HI"
-    },
-    {
-        "name": "DIREXION SHS ETF TR DAILY S&P BULL",
-        "symbol": "HIBL"
     },
     {
         "name": "DIREXION SHS ETF TR DAILY S&P 500 HI",
@@ -12204,10 +12160,6 @@
         "symbol": "MSFT"
     },
     {
-        "name": "DIREXION SHS ETF TR DAILY MSFT 2X SH",
-        "symbol": "MSFU"
-    },
-    {
         "name": "Roundhill MSFT WeeklyPay ETF",
         "symbol": "MSFW"
     },
@@ -13106,10 +13058,6 @@
     {
         "name": "INVESTMENT MANAGERS SER TR II TRADR 1.5X SHORT",
         "symbol": "NVDS"
-    },
-    {
-        "name": "DIREXION SHS ETF TR DAILY NVDA 2X SH",
-        "symbol": "NVDU"
     },
     {
         "name": "Roundhill NVDA WeeklyPay ETF",
@@ -15448,6 +15396,10 @@
         "symbol": "RGTX"
     },
     {
+        "name": "TIDAL TRUST II DEFIANCE DAILY",
+        "symbol": "RGTX"
+    },
+    {
         "name": "RH COM",
         "symbol": "RH"
     },
@@ -17284,10 +17236,6 @@
         "symbol": "SPTS"
     },
     {
-        "name": "DIREXION SHS ETF TR DLY S&P500 2XS",
-        "symbol": "SPUU"
-    },
-    {
         "name": "INVESCO EXCH TRADED FD TR II S&P 500 ENHNCD",
         "symbol": "SPVU"
     },
@@ -17988,10 +17936,6 @@
         "symbol": "TECK"
     },
     {
-        "name": "DIREXION SHS ETF TR DLY TECH BULL 3X",
-        "symbol": "TECL"
-    },
-    {
         "name": "DIREXION SHS ETF TR DAILY TECHNOLOGY",
         "symbol": "TECS"
     },
@@ -18610,10 +18554,6 @@
     {
         "name": "THEMES ETF TR LEVERAGE SHARES",
         "symbol": "TSLG"
-    },
-    {
-        "name": "DIREXION SHS ETF TR DAILY TSLA 2X SH",
-        "symbol": "TSLL"
     },
     {
         "name": "INVESTMENT MANAGERS SER TR II TRADR 2X SHORT",
