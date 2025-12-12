@@ -1164,10 +1164,6 @@
         "symbol": "ARBE"
     },
     {
-        "name": "ARGO BLOCKCHAIN PLC ADS",
-        "symbol": "ARBK"
-    },
-    {
         "name": "ARCBEST CORP COM",
         "symbol": "ARCB"
     },
@@ -2356,6 +2352,10 @@
         "symbol": "BKKT"
     },
     {
+        "name": "BAKKT HOLDINGS INC COM CL A NEW",
+        "symbol": "BKKT"
+    },
+    {
         "name": "INVESCO EXCH TRADED FD TR II SR LN ETF",
         "symbol": "BKLN"
     },
@@ -2530,6 +2530,10 @@
     {
         "name": "BARNES & NOBLE ED INC COM NEW",
         "symbol": "BNED"
+    },
+    {
+        "name": "BONK INC COM",
+        "symbol": "BNKK"
     },
     {
         "name": "BROADSTONE NET LEASE INC COM",
@@ -10280,10 +10284,6 @@
         "symbol": "JYNT"
     },
     {
-        "name": "KELLANOVA COM",
-        "symbol": "K"
-    },
-    {
         "name": "KADANT INC COM",
         "symbol": "KAI"
     },
@@ -14884,10 +14884,6 @@
         "symbol": "QBTS"
     },
     {
-        "name": "Tradr 2X Long QBTS Daily ETF",
-        "symbol": "QBTX"
-    },
-    {
         "name": "FIRST TR EXCHANGE-TRADED FD NAS CLNEDG GREEN",
         "symbol": "QCLN"
     },
@@ -15448,10 +15444,6 @@
         "symbol": "RGTI"
     },
     {
-        "name": "Tradr 2X Long RGTI Daily ETF",
-        "symbol": "RGTU"
-    },
-    {
         "name": "TIDAL TRUST II DEFIANCE DAILY",
         "symbol": "RGTX"
     },
@@ -15694,10 +15686,6 @@
     {
         "name": "RAPID7 INC COM",
         "symbol": "RPD"
-    },
-    {
-        "name": "Regents Park Hedged Market Strategy ETF",
-        "symbol": "RPHS"
     },
     {
         "name": "RPM INTL INC COM",
