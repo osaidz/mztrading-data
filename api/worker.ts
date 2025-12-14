@@ -69,24 +69,3 @@ socket.on("reconnect", () => {
   console.log(`Reconnected successfully! Socket ID: ${socket.id}`);
   socket.emit("register-worker", {});
 });
-
-// Function to wait until a signal is received
-function waitForTermination(): Promise<void> {
-  return new Promise((resolve) => {
-    const signals = ["SIGINT", "SIGTERM"];
-    for (const sig of signals) {
-      Deno.addSignalListener(sig, () => {
-        console.log(`Received ${sig}, shutting down gracefully...`);
-        resolve();  // resolve the promise to exit main await
-      });
-    }
-  });
-}
-
-// Keep the process alive but listen for termination
-await waitForTermination();
-
-// Cleanup logic here
-console.log("Cleaning up resources...");
-// e.g., close sockets, DB connections, etc.
-socket.disconnect();
