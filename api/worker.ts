@@ -60,3 +60,12 @@ socket.on("worker-volatility-request", async (args) => {
 });
 
 socket.on("register-worker-success", a => { console.log("worker registration succeeded", JSON.stringify(a)) })
+
+socket.on("reconnect_attempt", (attempt) => {
+  console.log(`Reconnection attempt #${attempt}`);
+});
+
+socket.on("reconnect", () => {
+  console.log(`Reconnected successfully! Socket ID: ${socket.id}`);
+  socket.emit("register-worker", {});
+});
