@@ -44,6 +44,10 @@
         "symbol": "AAPL"
     },
     {
+        "name": "DIREXION SHS ETF TR DLY AAPL BULL 2X",
+        "symbol": "AAPU"
+    },
+    {
         "name": "Roundhill AAPL WeeklyPay ETF",
         "symbol": "AAPW"
     },
@@ -636,10 +640,6 @@
         "symbol": "ALDX"
     },
     {
-        "name": "ALLETE INC COM NEW",
-        "symbol": "ALE"
-    },
-    {
         "name": "ALECTOR INC COM",
         "symbol": "ALEC"
     },
@@ -944,6 +944,10 @@
         "symbol": "AMZP"
     },
     {
+        "name": "DIREXION SHS ETF TR DIREXION 2X SHAR",
+        "symbol": "AMZU"
+    },
+    {
         "name": "Roundhill AMZN WeeklyPay ETF",
         "symbol": "AMZW"
     },
@@ -1154,6 +1158,10 @@
     {
         "name": "ARBE ROBOTICS LTD ORDINARY SHARES",
         "symbol": "ARBE"
+    },
+    {
+        "name": "ARGO BLOCKCHAIN PLC SPONSORED ADS",
+        "symbol": "ARBK"
     },
     {
         "name": "ARCBEST CORP COM",
@@ -1650,6 +1658,10 @@
     {
         "name": "ATEA PHARMACEUTICALS INC COM",
         "symbol": "AVIR"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DAILY AVGO BULL",
+        "symbol": "AVL"
     },
     {
         "name": "AMERICAN CENTY ETF TR AVANTIS US LARG",
@@ -2334,10 +2346,6 @@
     {
         "name": "BLACK HILLS CORP COM",
         "symbol": "BKH"
-    },
-    {
-        "name": "BAKKT HOLDINGS INC COM CL A NEW",
-        "symbol": "BKKT"
     },
     {
         "name": "BAKKT HOLDINGS INC COM CL A NEW",
@@ -4972,6 +4980,10 @@
         "symbol": "DFE"
     },
     {
+        "name": "DIREXION SHS ETF TR DLY AEROSPC 3X",
+        "symbol": "DFEN"
+    },
+    {
         "name": "DREAM FINDERS HOMES INC COM CL A",
         "symbol": "DFH"
     },
@@ -5448,6 +5460,10 @@
         "symbol": "DUSA"
     },
     {
+        "name": "DIREXION SHS ETF TR DLY INDL BU 3X",
+        "symbol": "DUSL"
+    },
+    {
         "name": "DIREXION SHS ETF TR DAILY GOLD MINER",
         "symbol": "DUST"
     },
@@ -5810,6 +5826,10 @@
     {
         "name": "E L F BEAUTY INC COM",
         "symbol": "ELF"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DAILY LLY BULL",
+        "symbol": "ELIL"
     },
     {
         "name": "ELECTROMED INC COM",
@@ -6512,6 +6532,10 @@
         "symbol": "FANG"
     },
     {
+        "name": "DIREXION SHS ETF TR DLY FIN BULL NEW",
+        "symbol": "FAS"
+    },
+    {
         "name": "FASTENAL CO COM",
         "symbol": "FAST"
     },
@@ -7134,6 +7158,10 @@
     {
         "name": "FIDELITY NATIONAL FINANCIAL IN COM SHS",
         "symbol": "FNF"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DAILY NYSE FANG",
+        "symbol": "FNGG"
     },
     {
         "name": "FINGERMOTION INC COM",
@@ -7784,6 +7812,10 @@
         "symbol": "GGG"
     },
     {
+        "name": "DIREXION SHS ETF TR DAILY GOOGL 2X S",
+        "symbol": "GGLL"
+    },
+    {
         "name": "DIREXION SHS ETF TR DAILY GOOGL BR1X",
         "symbol": "GGLS"
     },
@@ -8028,7 +8060,7 @@
         "symbol": "GOGO"
     },
     {
-        "name": "GOLD COM INC COM USD0.001",
+        "name": "GOLD COM INC COM",
         "symbol": "GOLD"
     },
     {
@@ -8344,6 +8376,10 @@
         "symbol": "GVIP"
     },
     {
+        "name": "TIDAL TRUST I GOTHAM 1000 VALU",
+        "symbol": "GVLU"
+    },
+    {
         "name": "GUIDEWIRE SOFTWARE INC COM",
         "symbol": "GWRE"
     },
@@ -8586,6 +8622,10 @@
     {
         "name": "HILLENBRAND INC COM",
         "symbol": "HI"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DAILY S&P BULL",
+        "symbol": "HIBL"
     },
     {
         "name": "DIREXION SHS ETF TR DAILY S&P 500 HI",
@@ -12160,6 +12200,10 @@
         "symbol": "MSFT"
     },
     {
+        "name": "DIREXION SHS ETF TR DAILY MSFT 2X SH",
+        "symbol": "MSFU"
+    },
+    {
         "name": "Roundhill MSFT WeeklyPay ETF",
         "symbol": "MSFW"
     },
@@ -13058,6 +13102,10 @@
     {
         "name": "INVESTMENT MANAGERS SER TR II TRADR 1.5X SHORT",
         "symbol": "NVDS"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DAILY NVDA 2X SH",
+        "symbol": "NVDU"
     },
     {
         "name": "Roundhill NVDA WeeklyPay ETF",
@@ -14832,6 +14880,10 @@
         "symbol": "QBTS"
     },
     {
+        "name": "Tradr 2X Long QBTS Daily ETF",
+        "symbol": "QBTX"
+    },
+    {
         "name": "FIRST TR EXCHANGE-TRADED FD NAS CLNEDG GREEN",
         "symbol": "QCLN"
     },
@@ -15392,8 +15444,8 @@
         "symbol": "RGTI"
     },
     {
-        "name": "TIDAL TRUST II DEFIANCE DAILY",
-        "symbol": "RGTX"
+        "name": "Tradr 2X Long RGTI Daily ETF",
+        "symbol": "RGTU"
     },
     {
         "name": "TIDAL TRUST II DEFIANCE DAILY",
@@ -15638,6 +15690,10 @@
     {
         "name": "RAPID7 INC COM",
         "symbol": "RPD"
+    },
+    {
+        "name": "Regents Park Hedged Market Strategy ETF",
+        "symbol": "RPHS"
     },
     {
         "name": "RPM INTL INC COM",
@@ -16976,10 +17032,6 @@
         "symbol": "SOHU"
     },
     {
-        "name": "EMEREN GROUP LTD SPONSORED ADS",
-        "symbol": "SOL"
-    },
-    {
         "name": "CANARY MARINADE SOLANA ETF SHS OF BEN",
         "symbol": "SOLC"
     },
@@ -17234,6 +17286,10 @@
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
         "symbol": "SPTS"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DLY S&P500 2XS",
+        "symbol": "SPUU"
     },
     {
         "name": "INVESCO EXCH TRADED FD TR II S&P 500 ENHNCD",
@@ -17936,6 +17992,10 @@
         "symbol": "TECK"
     },
     {
+        "name": "DIREXION SHS ETF TR DLY TECH BULL 3X",
+        "symbol": "TECL"
+    },
+    {
         "name": "DIREXION SHS ETF TR DAILY TECHNOLOGY",
         "symbol": "TECS"
     },
@@ -18554,6 +18614,10 @@
     {
         "name": "THEMES ETF TR LEVERAGE SHARES",
         "symbol": "TSLG"
+    },
+    {
+        "name": "DIREXION SHS ETF TR DAILY TSLA 2X SH",
+        "symbol": "TSLL"
     },
     {
         "name": "INVESTMENT MANAGERS SER TR II TRADR 2X SHORT",
@@ -19862,10 +19926,6 @@
     {
         "name": "VANGUARD MALVERN FDS STRM INFPROIDX",
         "symbol": "VTIP"
-    },
-    {
-        "name": "VITAL ENERGY INC COM",
-        "symbol": "VTLE"
     },
     {
         "name": "BRISTOW GROUP INC COM",
