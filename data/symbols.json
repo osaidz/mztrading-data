@@ -520,10 +520,6 @@
         "symbol": "AI"
     },
     {
-        "name": "ISHARES TR ASIA 50 ETF",
-        "symbol": "AIA"
-    },
-    {
         "name": "AIFU INC USD CL A ORD SHS",
         "symbol": "AIFU"
     },
@@ -6352,10 +6348,6 @@
         "symbol": "EWI"
     },
     {
-        "name": "ISHARES INC MSCI JAPAN ETF",
-        "symbol": "EWJ"
-    },
-    {
         "name": "ISHARES INC MSCI BELGIUM ETF",
         "symbol": "EWK"
     },
@@ -6382,10 +6374,6 @@
     {
         "name": "ISHARES INC MSCI SINGPOR ETF",
         "symbol": "EWS"
-    },
-    {
-        "name": "ISHARES INC MSCI TAIWAN ETF",
-        "symbol": "EWT"
     },
     {
         "name": "EDGEWISE THERAPEUTICS INC COM",
@@ -9884,10 +9872,6 @@
         "symbol": "IVR"
     },
     {
-        "name": "ISHARES TR FUTURE METAVERSE",
-        "symbol": "IVRS"
-    },
-    {
         "name": "INVENTRUST PPTYS CORP COM NEW",
         "symbol": "IVT"
     },
@@ -9974,10 +9958,6 @@
     {
         "name": "ISHARES TR GLOB HLTHCRE ETF",
         "symbol": "IXJ"
-    },
-    {
-        "name": "ISHARES TR GLOBAL TECH ETF",
-        "symbol": "IXN"
     },
     {
         "name": "ISHARES TR GBL COMM SVC ETF",
@@ -14472,10 +14452,6 @@
         "symbol": "POWL"
     },
     {
-        "name": "ISHARES INC US POWER INFRAST",
-        "symbol": "POWR"
-    },
-    {
         "name": "OUTDOOR HOLDING CO COM",
         "symbol": "POWW"
     },
@@ -18736,10 +18712,6 @@
         "symbol": "TTMI"
     },
     {
-        "name": "TILE SHOP HLDGS INC COM",
-        "symbol": "TTSH"
-    },
-    {
         "name": "PROSHARES TR ULSH 20YRTRE NEW",
         "symbol": "TTT"
     },
@@ -18858,10 +18830,6 @@
     {
         "name": "DIREXION SHS ETF TR DAILY SM CP BEAR",
         "symbol": "TZA"
-    },
-    {
-        "name": "THUMZUP MEDIA CORPORATION COM",
-        "symbol": "TZUP"
     },
     {
         "name": "UNITY SOFTWARE INC COM",
@@ -20758,10 +20726,6 @@
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
         "symbol": "XSW"
-    },
-    {
-        "name": "ISHARES TR FUTURE EXPONENTI",
-        "symbol": "XT"
     },
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
