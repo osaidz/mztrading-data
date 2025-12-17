@@ -277,7 +277,7 @@ export const getHistoricalOIDataBySymbolFromParquet = async (symbol: string, exp
 export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async (symbol: string) => {
     const conn = await getConnection();
     const arrowResult = await conn.send(`
-        SELECT expiration, json_group_array(strike) AS strikes
+        SELECT expiration --, json_group_array(strike) AS strikes
         FROM (
             SELECT
                 DISTINCT CAST(expiration as STRING) as expiration, strike
