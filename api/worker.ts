@@ -82,7 +82,7 @@ socket.on("worker-volatility-request", async (args: { symbol: string, lookbackDa
                 WHERE rn = 1
             ) t`;
             const result = await connection.runAndReadAll(queryToExecute)
-            rows = result.getRows().map(r => JSON.parse(r[0]));
+            rows = result.getRows().map(r => JSON.parse(r[0]))[0];  //takes first row and first column
         }
         catch (err) {
             console.log(`error occurred while processing request`);
