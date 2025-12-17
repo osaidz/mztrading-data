@@ -520,6 +520,10 @@
         "symbol": "AI"
     },
     {
+        "name": "ISHARES TR ASIA 50 ETF",
+        "symbol": "AIA"
+    },
+    {
         "name": "AIFU INC USD CL A ORD SHS",
         "symbol": "AIFU"
     },
@@ -2774,10 +2778,6 @@
     {
         "name": "VALKYRIE ETF TRUST II COINSHARES BITCN",
         "symbol": "BTF"
-    },
-    {
-        "name": "VALKYRIE ETF TRUST II COINSHARES BITCN",
-        "symbol": "BTFX"
     },
     {
         "name": "B2GOLD CORP COM",
@@ -5412,6 +5412,10 @@
         "symbol": "DTCR"
     },
     {
+        "name": "DATACENTREX INC COM",
+        "symbol": "DTCX"
+    },
+    {
         "name": "DTE ENERGY CO COM",
         "symbol": "DTE"
     },
@@ -6348,6 +6352,10 @@
         "symbol": "EWI"
     },
     {
+        "name": "ISHARES INC MSCI JAPAN ETF",
+        "symbol": "EWJ"
+    },
+    {
         "name": "ISHARES INC MSCI BELGIUM ETF",
         "symbol": "EWK"
     },
@@ -6374,6 +6382,10 @@
     {
         "name": "ISHARES INC MSCI SINGPOR ETF",
         "symbol": "EWS"
+    },
+    {
+        "name": "ISHARES INC MSCI TAIWAN ETF",
+        "symbol": "EWT"
     },
     {
         "name": "EDGEWISE THERAPEUTICS INC COM",
@@ -7142,10 +7154,6 @@
     {
         "name": "SCHWAB STRATEGIC TR FUNDAMENTAL US L",
         "symbol": "FNDX"
-    },
-    {
-        "name": "FIDELITY NATIONAL FINANCIAL IN COM SHS",
-        "symbol": "FNF"
     },
     {
         "name": "DIREXION SHS ETF TR DAILY NYSE FANG",
@@ -9744,10 +9752,6 @@
         "symbol": "IRM"
     },
     {
-        "name": "IRADIMED CORP COM",
-        "symbol": "IRMD"
-    },
-    {
         "name": "DISC MEDICINE INC COM",
         "symbol": "IRON"
     },
@@ -9872,6 +9876,10 @@
         "symbol": "IVR"
     },
     {
+        "name": "ISHARES TR FUTURE METAVERSE",
+        "symbol": "IVRS"
+    },
+    {
         "name": "INVENTRUST PPTYS CORP COM NEW",
         "symbol": "IVT"
     },
@@ -9958,6 +9966,10 @@
     {
         "name": "ISHARES TR GLOB HLTHCRE ETF",
         "symbol": "IXJ"
+    },
+    {
+        "name": "ISHARES TR GLOBAL TECH ETF",
+        "symbol": "IXN"
     },
     {
         "name": "ISHARES TR GBL COMM SVC ETF",
@@ -11008,11 +11020,11 @@
         "symbol": "LLY"
     },
     {
-        "name": "LIBERTY MEDIA CORP DEL COM LBTY LIV S A",
+        "name": "LIBERTY LIVE HOLDINGS INC COM SER A",
         "symbol": "LLYVA"
     },
     {
-        "name": "LIBERTY MEDIA CORP DEL COM LBTY LIV S C",
+        "name": "LIBERTY LIVE HOLDINGS INC COM SHS SER C",
         "symbol": "LLYVK"
     },
     {
@@ -13140,10 +13152,6 @@
         "symbol": "NVTS"
     },
     {
-        "name": "Tradr 2X Long NVTS Daily ETF",
-        "symbol": "NVTX"
-    },
-    {
         "name": "NOVONIX LIMITED SPONSORED ADS",
         "symbol": "NVX"
     },
@@ -14450,6 +14458,10 @@
     {
         "name": "POWELL INDS INC COM",
         "symbol": "POWL"
+    },
+    {
+        "name": "ISHARES INC US POWER INFRAST",
+        "symbol": "POWR"
     },
     {
         "name": "OUTDOOR HOLDING CO COM",
@@ -18712,6 +18724,10 @@
         "symbol": "TTMI"
     },
     {
+        "name": "TILE SHOP HLDGS INC COM SHS",
+        "symbol": "TTSH"
+    },
+    {
         "name": "PROSHARES TR ULSH 20YRTRE NEW",
         "symbol": "TTT"
     },
@@ -20726,6 +20742,10 @@
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
         "symbol": "XSW"
+    },
+    {
+        "name": "ISHARES TR FUTURE EXPONENTI",
+        "symbol": "XT"
     },
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
