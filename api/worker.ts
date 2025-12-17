@@ -86,7 +86,7 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
                 WITH I AS (
                     SELECT DISTINCT dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, 
                     abs(delta) AS abs_delta,
-                    abs(delta) - ${delta} AS delta_diff
+                    abs(abs(delta) - ${delta}) AS delta_diff
                     FROM '${DATA_DIR}/symbol=${symbol}/*.parquet'
                     WHERE expiration = '${expiration}' AND dt >= current_date - ${lookbackDays} ${ strikeFilter }
                 ), M AS (
