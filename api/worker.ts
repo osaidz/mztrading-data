@@ -1,4 +1,5 @@
 import { io } from "https://esm.sh/socket.io-client";
+import { z } from "https://esm.sh/zod@4.2.1";
 const socketUrl = `https://mztrading-socket.deno.dev`
 const DATA_DIR = Deno.env.get("DATA_DIR") || '/data';
 
@@ -25,47 +26,89 @@ socket.on("hello", (args) => {
     console.log(`hello response: ${JSON.stringify(args)}`);
 });
 
-socket.on("worker-volatility-request", async (args) => {
-    console.log("Worker volatility request received:", JSON.stringify(args));
-    using stack = new DisposableStack();
-    const instance = await DuckDBInstance.create(":memory:");
-    stack.defer(() => instance.closeSync());
-    const connection = await instance.connect();
-    stack.defer(() => connection.closeSync());
 
-    let rows = [];
-    let hasError = false;
+export const OptionsVolRequestSchema = z.object({
+    symbol: z.string()
+        .nonempty()
+        .regex(/^[a-zA-Z0-9]+$/, "Symbol must be alphanumeric"),
+    lookbackDays: z.number()
+        .int()
+        .positive(),
+    delta: z.number()
+        .nonnegative(),
+    expiration: z.string()
+        .regex(/^\d{4}-\d{2}-\d{2}$/, "Expiration must be in YYYY-MM-DD format"),
+    mode: z.enum(["delta", "strike"]),
+    requestId: z.string().uuid(),
+});
+
+/*
+ {"symbol":"AAPL","lookbackDays":180,"delta":25,"expiration":"2025-11-07","mode":"delta","requestId":"977c5c7b-7e96-45d1-991b-db70992d0846"}       
+*/
+socket.on("worker-volatility-request", async (args: { symbol: string, lookbackDays: number, delta: number, expiration: string, mode: 'delta' | 'strike', requestId: string }) => {
     try {
-        const queryToExecute = `SELECT to_json(t)    
-            FROM (
-                SELECT *
-                FROM '${DATA_DIR}/symbol=${args.symbol}/*.parquet'
-                LIMIT 10
-            ) t`;
-        const result = await connection.runAndReadAll(queryToExecute)
-        rows = result.getRows().map(r => JSON.parse(r[0]));
-    }
-    catch (err) {
-        console.log(`error occurred while processing request`);
-        hasError = true;
-    }
-    socket.emit(`worker-volatility-response`, {
-        symbol: args.symbol,
-        requestId: args.requestId,
-        hasError,
-        value: rows
-    });
 
-    console.log("Worker volatility request completed! ", JSON.stringify(args));
+        console.log("Worker volatility request received:", JSON.stringify(args));
+        using stack = new DisposableStack();
+        const instance = await DuckDBInstance.create(":memory:");
+        stack.defer(() => instance.closeSync());
+        const connection = await instance.connect();
+        stack.defer(() => connection.closeSync());
+        const { symbol, lookbackDays, delta, expiration, mode, requestId } = OptionsVolRequestSchema.parse(args);
+
+        let rows = [];
+        let hasError = false;
+        try {
+
+            const queryToExecute = `
+            SELECT to_json(t)    
+            FROM (
+                WITH I AS (
+                    SELECT dt, iv, option_type, option_symbol, expiration, 
+                    abs(delta) AS abs_delta,
+                    abs(delta) - ${delta} AS delta_diff
+                    FROM '${DATA_DIR}/symbol=${symbol}/*.parquet'
+                    WHERE expiration = '${expiration}' AND dt >= current_date - ${lookbackDays}
+                ), M AS (
+                    SELECT *,
+                    ROW_NUMBER() OVER (PARTITION BY dt, option_type ORDER BY delta_diff ASC) AS rn
+                    FROM I
+                )
+                SELECT 
+                    array_agg(dt ORDER BY dt) AS dt,
+                    array_agg(iv ORDER BY dt) FILTER (WHERE option_type='C') AS cv,
+                    array_agg(iv ORDER BY dt) FILTER (WHERE option_type='P') AS pv
+                FROM M
+                WHERE rn = 1
+            ) t`;
+            const result = await connection.runAndReadAll(queryToExecute)
+            rows = result.getRows().map(r => JSON.parse(r[0]));
+        }
+        catch (err) {
+            console.log(`error occurred while processing request`);
+            hasError = true;
+        }
+        socket.emit(`worker-volatility-response`, {
+            symbol: symbol,
+            requestId: requestId,
+            hasError,
+            value: rows
+        });
+
+        console.log("Worker volatility request completed! ", JSON.stringify(args));
+
+    } catch (error) {
+        console.error("Error processing worker-volatility-request:", error);
+    }
 });
 
 socket.on("register-worker-success", a => { console.log("worker registration succeeded", JSON.stringify(a)) })
 
 socket.on("reconnect_attempt", (attempt) => {
-  console.log(`Reconnection attempt #${attempt}`);
+    console.log(`Reconnection attempt #${attempt}`);
 });
 
 socket.on("reconnect", () => {
-  console.log(`Reconnected successfully! Socket ID: ${socket.id}`);
-  socket.emit("register-worker", {});
+    console.log(`Reconnected successfully! Socket ID: ${socket.id}`);
+    socket.emit("register-worker", {});
 });
