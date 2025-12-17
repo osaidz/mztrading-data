@@ -84,7 +84,7 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
             SELECT to_json(t)    
             FROM (
                 WITH I AS (
-                    SELECT DISTINCT dt, iv, option_type, option_symbol, expiration, strike,
+                    SELECT DISTINCT dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, 
                     abs(delta) AS abs_delta,
                     abs(delta) - ${delta} AS delta_diff
                     FROM '${DATA_DIR}/symbol=${symbol}/*.parquet'
@@ -97,7 +97,9 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
                 SELECT 
                     array_agg(DISTINCT dt ORDER BY dt) AS dt,
                     array_agg(iv ORDER BY dt) FILTER (WHERE option_type='C') AS cv,
-                    array_agg(iv ORDER BY dt) FILTER (WHERE option_type='P') AS pv
+                    array_agg(iv ORDER BY dt) FILTER (WHERE option_type='P') AS pv,
+                    array_agg(mid_price ORDER BY dt) FILTER (WHERE option_type='C') AS cp,
+                    array_agg(mid_price ORDER BY dt) FILTER (WHERE option_type='P') AS pp
                 FROM M
                 ${ mode == 'delta' ? 'WHERE rn = 1' : '' }
             ) t`;
