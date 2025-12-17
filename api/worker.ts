@@ -84,7 +84,7 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
             SELECT to_json(t)    
             FROM (
                 WITH I AS (
-                    SELECT DISTINCT dt, iv, option_type, option_symbol, expiration, strike
+                    SELECT DISTINCT dt, iv, option_type, option_symbol, expiration, strike,
                     abs(delta) AS abs_delta,
                     abs(delta) - ${delta} AS delta_diff
                     FROM '${DATA_DIR}/symbol=${symbol}/*.parquet'
