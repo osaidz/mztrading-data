@@ -75,7 +75,7 @@ socket.on("worker-volatility-request", async (args: { symbol: string, lookbackDa
                     FROM I
                 )
                 SELECT 
-                    array_agg(dt ORDER BY dt) AS dt,
+                    array_agg(DISTINCT dt ORDER BY dt) AS dt,
                     array_agg(iv ORDER BY dt) FILTER (WHERE option_type='C') AS cv,
                     array_agg(iv ORDER BY dt) FILTER (WHERE option_type='P') AS pv
                 FROM M
