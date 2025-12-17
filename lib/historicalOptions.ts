@@ -282,7 +282,20 @@ export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async 
             FROM 'db.parquet'
             WHERE option_symbol = '${symbol}'
         `);
-    return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string }[];
+    const expirations = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string }[];
+
+    const monthlyExpiryMap = new Map<string, string>();
+    for (const { expiration } of expirations) {
+        const expirationDayjs = dayjs(expiration);
+        if (expirationDayjs.date() >= 15 && expirationDayjs.date() <= 21) { //third week of the month
+            const k = `${expirationDayjs.year()}-${expirationDayjs.month()}`;
+            if(monthlyExpiryMap.get(k)! > expiration) continue;
+            monthlyExpiryMap.set(k, expiration);
+        }
+    }
+
+    const monthlyExpirations = new Set([...monthlyExpiryMap.values()]);
+    return expirations.map(k=> ({...k, isMonthly: monthlyExpirations.has(k.expiration)}));
 }
 
 export const getHistoricalDataForOptionContractFromParquet = async (contractId: string) => {
