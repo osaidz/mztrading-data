@@ -35,13 +35,12 @@ os.makedirs(CONSOLIDATED_DATA_DIR, exist_ok=True)
 
 dirs = os.listdir(PARQUET_SRC_DIR)
 
-last_date = "2025-12-15"
 dt_dirs = []
 for name in os.listdir(PARQUET_SRC_DIR):
     if name.startswith("dt="):
         dt_str = name.split("=")[1]
-        if dt_str > last_date:
-            print(f"""{dt_str} is greater than {last_date}""")
+        if dt_str > lastDateProcessed:
+            print(f"""{dt_str} is greater than {lastDateProcessed}""")
             dt_dirs.append(dt_str)
 dt_dirs.sort()  # ensure sorting the directory
 print(dt_dirs)
