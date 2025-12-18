@@ -277,17 +277,22 @@ export const getHistoricalOIDataBySymbolFromParquet = async (symbol: string, exp
 export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async (symbol: string) => {
     const conn = await getConnection();
     const arrowResult = await conn.send(`
-        SELECT expiration, list_aggregate(strike) AS strikes
-        FROM (
             SELECT
                 DISTINCT CAST(expiration as STRING) as expiration, strike
             FROM 'db.parquet'
             WHERE option_symbol = '${symbol}'
-        ) 
-        GROUP BY expiration
-        ORDER BY expiration
+            ORDER BY expiration
         `);
-    const expirations = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, strikes: number[] }[];
+    const data = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, strike: number }[];
+
+    //for some reason array_agg intermittently failing
+    const expirations = Object.values(
+        data.reduce((acc, { expiration, strike }) => {
+            if (!acc[expiration]) acc[expiration] = { expiration, strikes: [] };
+            acc[expiration].strikes.push(strike);
+            return acc;
+        }, {} as Record<string, { expiration: string; strikes: number[] }>)
+    );
 
     const monthlyExpiryMap = new Map<string, string>();
     for (const { expiration } of expirations) {
