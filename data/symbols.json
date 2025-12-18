@@ -7156,6 +7156,10 @@
         "symbol": "FNDX"
     },
     {
+        "name": "FIDELITY NATIONAL FINANCIAL IN COM SHS",
+        "symbol": "FNF"
+    },
+    {
         "name": "DIREXION SHS ETF TR DAILY NYSE FANG",
         "symbol": "FNGG"
     },
@@ -9752,6 +9756,10 @@
         "symbol": "IRM"
     },
     {
+        "name": "IRADIMED CORP COM",
+        "symbol": "IRMD"
+    },
+    {
         "name": "DISC MEDICINE INC COM",
         "symbol": "IRON"
     },
@@ -11020,11 +11028,11 @@
         "symbol": "LLY"
     },
     {
-        "name": "LIBERTY LIVE HOLDINGS INC COM SER A",
+        "name": "LIBERTY LIVE HOLDINGS INC",
         "symbol": "LLYVA"
     },
     {
-        "name": "LIBERTY LIVE HOLDINGS INC COM SHS SER C",
+        "name": "LIBERTY LIVE HOLDINGS INC",
         "symbol": "LLYVK"
     },
     {
@@ -12896,10 +12904,6 @@
         "symbol": "NOVT"
     },
     {
-        "name": "SERVICENOW INC COM",
-        "symbol": "NOW"
-    },
-    {
         "name": "NEUROPACE INC COM",
         "symbol": "NPCE"
     },
@@ -13150,6 +13154,10 @@
     {
         "name": "NAVITAS SEMICONDUCTOR CORP COM",
         "symbol": "NVTS"
+    },
+    {
+        "name": "Tradr 2X Long NVTS Daily ETF",
+        "symbol": "NVTX"
     },
     {
         "name": "NOVONIX LIMITED SPONSORED ADS",
@@ -17212,10 +17220,6 @@
         "symbol": "SPMV"
     },
     {
-        "name": "SAPIENS INTL CORP N V SHS",
-        "symbol": "SPNS"
-    },
-    {
         "name": "SIRIUSPOINT LTD COM",
         "symbol": "SPNT"
     },
@@ -19762,10 +19766,6 @@
     {
         "name": "VANGUARD INTL EQUITY INDEX FDS FTSE PACIFIC ETF",
         "symbol": "VPL"
-    },
-    {
-        "name": "VANGUARD MALVERN FDS CORE-PLUS BD ETF",
-        "symbol": "VPLS"
     },
     {
         "name": "VANGUARD WORLD FD UTILITIES ETF",
