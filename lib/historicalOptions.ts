@@ -8,6 +8,7 @@ import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
 import { getPriceAtDate } from './historicalPrice.ts';
 import dayjs from "https://esm.sh/dayjs@1.11.13";
 import { getOptionsChain } from './cboe.ts';
+import { getWeekOfMonth } from './utils.ts';
 
 const logger = new ConsoleLogger();
 const JSDELIVR_BUNDLES = getJsDelivrBundles();
@@ -296,8 +297,8 @@ export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async 
 
     const monthlyExpiryMap = new Map<string, string>();
     for (const { expiration } of expirations) {
-        const expirationDayjs = dayjs(expiration);
-        if (expirationDayjs.date() >= 15 && expirationDayjs.date() <= 21) { //third week of the month
+        const expirationDayjs = dayjs(expiration, 'YYYY-MM-DD', true);
+        if (expirationDayjs.date() >= 15 && expirationDayjs.date() <= 21 && getWeekOfMonth(expirationDayjs.date(), expirationDayjs.month(), expirationDayjs.year()) == 3) { //third week of the month
             const k = `${expirationDayjs.year()}-${expirationDayjs.month()}`;
             if(monthlyExpiryMap.get(k)! > expiration) continue;
             monthlyExpiryMap.set(k, expiration);
