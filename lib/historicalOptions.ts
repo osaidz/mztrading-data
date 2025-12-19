@@ -23,7 +23,7 @@ const initialize = async () => {
     console.log(`initializing duckdb with ${assetUrl} and name: ${name}`);
     const db = await createDuckDB(JSDELIVR_BUNDLES, logger, DEFAULT_RUNTIME);
     await db.instantiate(() => { });
-    
+
     // Fetch options data
     console.log(`Fetching options data from ${assetUrl}...`);
     const optionsStart = performance.now();
@@ -37,7 +37,7 @@ const initialize = async () => {
     const stocksDataBuffer = await fetch(stockUrl).then(r => r.arrayBuffer());
     const stocksEnd = performance.now();
     console.log(`✅ Stocks data fetched in ${(stocksEnd - stocksStart).toFixed(2)} ms`);
-    
+
     db.registerFileBuffer('db.parquet', new Uint8Array(optionsDataBuffer));
     db.registerFileBuffer('stocks.parquet', new Uint8Array(stocksDataBuffer));
     return db;
@@ -258,7 +258,7 @@ export const getHistoricalGreeksSummaryDataBySymbolFromParquet = async (symbol: 
 
 export const getHistoricalOIDataBySymbolFromParquet = async (symbol: string, expirations: string[]) => {
     const conn = await getConnection();
-    const expirationFilterExpression =  expirations.length > 0 ? `AND expiration IN (${expirations.map(k=> `'${k}'`).join(',')})` : '';  //revisit it to get clarity on adding/subtracting days
+    const expirationFilterExpression = expirations.length > 0 ? `AND expiration IN (${expirations.map(k => `'${k}'`).join(',')})` : '';  //revisit it to get clarity on adding/subtracting days
     const arrowResult = await conn.send(`            
                 SELECT CAST(O.dt as STRING) as dt, 
                 round(CAST(P.close as double), 2) as price,
@@ -282,7 +282,7 @@ export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async 
                 DISTINCT CAST(expiration as STRING) as expiration, strike
             FROM 'db.parquet'
             WHERE option_symbol = '${symbol}'
-            ORDER BY expiration
+            ORDER BY expiration, strike
         `);
     const data = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, strike: number }[];
 
@@ -295,18 +295,20 @@ export const getHistoricalGreeksAvailableExpirationsBySymbolFromParquet = async 
         }, {} as Record<string, { expiration: string; strikes: number[] }>)
     );
 
+    //expirations.forEach(k => k.strikes.sort((a, b) => a - b));    //db handling this
+
     const monthlyExpiryMap = new Map<string, string>();
     for (const { expiration } of expirations) {
         const expirationDayjs = dayjs(expiration, 'YYYY-MM-DD', true);
         if (expirationDayjs.date() >= 15 && expirationDayjs.date() <= 21 && getWeekOfMonth(expirationDayjs.date(), expirationDayjs.month(), expirationDayjs.year()) == 3) { //third week of the month
             const k = `${expirationDayjs.year()}-${expirationDayjs.month()}`;
-            if(monthlyExpiryMap.get(k)! > expiration) continue;
+            if (monthlyExpiryMap.get(k)! > expiration) continue;
             monthlyExpiryMap.set(k, expiration);
         }
     }
 
     const monthlyExpirations = new Set([...monthlyExpiryMap.values()]);
-    return expirations.map(k=> ({...k, isMonthly: monthlyExpirations.has(k.expiration)}));
+    return expirations.map(k => ({ ...k, isMonthly: monthlyExpirations.has(k.expiration) }));
 }
 
 export const getHistoricalDataForOptionContractFromParquet = async (contractId: string) => {
@@ -480,5 +482,5 @@ export async function getLiveCboeOptionsPricingData(symbol: string) {
         }
         return previous;
     }, {} as Record<string, MicroOptionPricingContract>);
-    return { spotPrice: currentPrice, options, timestamp};
+    return { spotPrice: currentPrice, options, timestamp };
 }
