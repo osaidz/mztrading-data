@@ -2680,10 +2680,6 @@
         "symbol": "BRX"
     },
     {
-        "name": "BERRY CORP COM",
-        "symbol": "BRY"
-    },
-    {
         "name": "BRAZE INC COM CL A",
         "symbol": "BRZE"
     },
@@ -11028,11 +11024,11 @@
         "symbol": "LLY"
     },
     {
-        "name": "LIBERTY LIVE HOLDINGS INC",
+        "name": "LIBERTY LIVE HOLDINGS INC COM SER A",
         "symbol": "LLYVA"
     },
     {
-        "name": "LIBERTY LIVE HOLDINGS INC",
+        "name": "LIBERTY LIVE HOLDINGS INC COM SHS SER C",
         "symbol": "LLYVK"
     },
     {
@@ -12904,6 +12900,10 @@
         "symbol": "NOVT"
     },
     {
+        "name": "SERVICENOW INC COM",
+        "symbol": "NOW"
+    },
+    {
         "name": "NEUROPACE INC COM",
         "symbol": "NPCE"
     },
@@ -13926,10 +13926,6 @@
     {
         "name": "PUMA BIOTECHNOLOGY INC COM",
         "symbol": "PBYI"
-    },
-    {
-        "name": "PACCAR INC COM",
-        "symbol": "PCAR"
     },
     {
         "name": "PCB BANCORP COM",
@@ -15012,7 +15008,7 @@
         "symbol": "QQQP"
     },
     {
-        "name": "TIDAL TRUST II DEFIANCE NASDAQ",
+        "name": "DEFIANCE NASDAQ 100 WEEKLY DIS",
         "symbol": "QQQY"
     },
     {
@@ -15546,10 +15542,6 @@
     {
         "name": "RELMADA THERAPEUTICS INC COM",
         "symbol": "RLMD"
-    },
-    {
-        "name": "Russell 1000 Value Index",
-        "symbol": "RLV"
     },
     {
         "name": "RLX TECHNOLOGY INC SPONSORED ADS",
@@ -16846,10 +16838,6 @@
     {
         "name": "ISHARES TR US SML CAP EQT",
         "symbol": "SMLF"
-    },
-    {
-        "name": "HARBOR ETF TRUST ACTIVE SMALL CAP",
-        "symbol": "SMLL"
     },
     {
         "name": "SEMLER SCIENTIFIC INC COM",
@@ -19766,6 +19754,10 @@
     {
         "name": "VANGUARD INTL EQUITY INDEX FDS FTSE PACIFIC ETF",
         "symbol": "VPL"
+    },
+    {
+        "name": "VANGUARD MALVERN FDS CORE-PLUS BD ETF",
+        "symbol": "VPLS"
     },
     {
         "name": "VANGUARD WORLD FD UTILITIES ETF",
