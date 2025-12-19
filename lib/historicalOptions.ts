@@ -111,6 +111,7 @@ export const getStockPriceDataFromParquet = async (symbol: string, dt: string, f
     const arrowResult = await conn.send(`SELECT round(CAST(close as double), 2) as price
             FROM 'stocks.parquet' 
             WHERE symbol = '${symbol.toUpperCase()}' 
+            AND close > 0
             ${dtFilter}
             ORDER BY dt DESC LIMIT 1
             `);
