@@ -105,12 +105,15 @@ export const getHistoricalOptionDataFromParquet = async (symbol: string, dt: str
     return arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { expiration: string, delta: number, gamma: number, option_type: 'C' | 'P', strike: string, open_interest: number, volume: number }[];
 }
 
-export const getStockPriceDataFromParquet = async (symbol: string, dt: string) => {
+export const getStockPriceDataFromParquet = async (symbol: string, dt: string, fallbackToPreviousDayWhenNoPriceFound: boolean = false) => {
     const conn = await getConnection();
+    const dtFilter = fallbackToPreviousDayWhenNoPriceFound ? ` AND dt <= '${dt}'` : ` AND dt = '${dt}'`
     const arrowResult = await conn.send(`SELECT round(CAST(close as double), 2) as price
             FROM 'stocks.parquet' 
             WHERE symbol = '${symbol.toUpperCase()}' 
-            AND dt = '${dt}'`);
+            ${dtFilter}
+            ORDER BY dt DESC LIMIT 1
+            `);
     const jsonResult = arrowResult.readAll().flatMap(k => k.toArray().map((row) => row.toJSON())) as { price: number }[];
     return jsonResult.length > 0 ? jsonResult[0].price : null;
 }
@@ -449,7 +452,10 @@ async function getHistoricalOptionData(symbol: string, dt: string) {
     if (!_spotPrice || Number.isNaN(_spotPrice)) {
         _spotPrice = await getPriceAtDate(symbol, dt, true, true);    //fallback to yf pricing
         if (!_spotPrice || Number.isNaN(_spotPrice)) {
-            throw new Error("Invalid spot price");
+            _spotPrice = await getStockPriceDataFromParquet(symbol, dt, true);
+            if (!_spotPrice || Number.isNaN(_spotPrice)) {
+                throw new Error("Invalid spot price");
+            }
         }
     }
     const spotPrice = Number(_spotPrice);
