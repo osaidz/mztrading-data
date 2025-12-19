@@ -444,9 +444,14 @@ async function getHistoricalOptionData(symbol: string, dt: string) {
     }, {} as Record<string, Record<string, MicroOptionContract>>);
     console.timeEnd(`getHistoricalOptionData-${symbol}-${dt}`)
 
-    //const _spotPrice = await getPriceAtDate(symbol, dt, true);
-    const _spotPrice = await getStockPriceDataFromParquet(symbol, dt);
-    if (!_spotPrice || Number.isNaN(_spotPrice)) throw new Error("Invalid spot price");
+
+    let _spotPrice: number | null | undefined | string = await getStockPriceDataFromParquet(symbol, dt);
+    if (!_spotPrice || Number.isNaN(_spotPrice)) {
+        _spotPrice = await getPriceAtDate(symbol, dt, true);    //fallback to yf pricing
+        if (!_spotPrice || Number.isNaN(_spotPrice)) {
+            throw new Error("Invalid spot price");
+        }
+    }
     const spotPrice = Number(_spotPrice);
     return { spotPrice, indexedObject, timestamp: dayjs(dt).toDate() };    //timestamp not really needed, but keeping it for consistency
 }
