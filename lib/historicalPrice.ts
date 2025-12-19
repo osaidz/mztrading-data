@@ -16,7 +16,21 @@ const EXCEPTION_SYMBOLS = {
     'VIX': '^VIX',
 } as Record<string, string>
 
-export const getPriceAtDate = async (symbol: string, dt: string, keepOriginalValue: boolean = false) => {
+export async function getPriceAtDate(
+  symbol: string,
+  dt: string,
+  fallbackToPreviousDayWhenNoPriceFound: boolean,
+  keepOriginalValue: true,
+): Promise<number | undefined | null>;
+
+export async function getPriceAtDate(
+  symbol: string,
+  dt: string,
+  fallbackToPreviousDayWhenNoPriceFound: boolean,
+  keepOriginalValue?: false
+): Promise<string | undefined | null>;
+
+export async function getPriceAtDate(symbol: string, dt: string, fallbackToPreviousDayWhenNoPriceFound: boolean, keepOriginalValue = true) {
     try {
         const start = dayjs(dt.substring(0, 10)).format('YYYY-MM-DD');
         const resp = await yf.chart(EXCEPTION_SYMBOLS[symbol.toUpperCase()] || symbol, {
@@ -24,8 +38,10 @@ export const getPriceAtDate = async (symbol: string, dt: string, keepOriginalVal
             period1: dayjs(start).add(-7, 'day').toDate(),
             period2: dayjs(start).toDate()
         })
-        return keepOriginalValue ? resp.quotes.at(-1)?.close : resp.quotes.at(-1)?.close?.toFixed(2);
+        const priceToReturn = fallbackToPreviousDayWhenNoPriceFound ? resp.quotes.reverse().find(k=> k.close != null)?.close : resp.quotes.at(-1)?.close;
+        return keepOriginalValue ? priceToReturn : priceToReturn?.toFixed(2);
     } catch (error) {
+        console.error(`Error fetching price for ${symbol} on ${dt}:`, error);
         return null;
     }
 }
