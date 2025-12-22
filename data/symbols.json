@@ -360,10 +360,6 @@
         "symbol": "ADV"
     },
     {
-        "name": "AEBI SCHMIDT HLDG AG COM",
-        "symbol": "AEBI"
-    },
-    {
         "name": "AMEREN CORP COM",
         "symbol": "AEE"
     },
@@ -3120,10 +3116,6 @@
         "symbol": "CBC"
     },
     {
-        "name": "CRESCENT BIOPHARMA INC. COM",
-        "symbol": "CBIO"
-    },
-    {
         "name": "CBL & ASSOC PPTYS INC COMMON STOCK",
         "symbol": "CBL"
     },
@@ -5790,10 +5782,6 @@
     {
         "name": "EDISON INTL COM",
         "symbol": "EIX"
-    },
-    {
-        "name": "EKSO BIONICS HLDGS INC COM NEW",
-        "symbol": "EKSO"
     },
     {
         "name": "LAUDER ESTEE COS INC CL A",
@@ -8912,6 +8900,10 @@
         "symbol": "HTOO"
     },
     {
+        "name": "HIGH TEMPLAR TECH LIMITED",
+        "symbol": "HTT"
+    },
+    {
         "name": "HERTZ GLOBAL HLDGS INC COM NEW",
         "symbol": "HTZ"
     },
@@ -9726,10 +9718,6 @@
     {
         "name": "INGERSOLL RAND INC COM",
         "symbol": "IR"
-    },
-    {
-        "name": "IROBOT CORP COM",
-        "symbol": "IRBT"
     },
     {
         "name": "OPUS GENETICS INC COM",
@@ -11614,6 +11602,10 @@
     {
         "name": "MADRIGAL PHARMACEUTICALS INC COM",
         "symbol": "MDGL"
+    },
+    {
+        "name": "MEDLINE INC COM CL A",
+        "symbol": "MDLN"
     },
     {
         "name": "MONDELEZ INTL INC CL A",
@@ -13844,10 +13836,6 @@
         "symbol": "PARR"
     },
     {
-        "name": "PASSAGE BIO INC COM NEW",
-        "symbol": "PASG"
-    },
-    {
         "name": "UIPATH INC CL A",
         "symbol": "PATH"
     },
@@ -13926,6 +13914,10 @@
     {
         "name": "PUMA BIOTECHNOLOGY INC COM",
         "symbol": "PBYI"
+    },
+    {
+        "name": "PACCAR INC COM",
+        "symbol": "PCAR"
     },
     {
         "name": "PCB BANCORP COM",
@@ -14150,10 +14142,6 @@
     {
         "name": "PROGRESSIVE CORP COM",
         "symbol": "PGR"
-    },
-    {
-        "name": "PARAMOUNT GROUP INC COM",
-        "symbol": "PGRE"
     },
     {
         "name": "INVESCO EXCH TRADED FD TR II PFD ETF",
@@ -14888,10 +14876,6 @@
         "symbol": "QCOM"
     },
     {
-        "name": "QUDIAN INC ADR",
-        "symbol": "QD"
-    },
-    {
         "name": "FLEXSHARES TR QLT DIV DEF IDX",
         "symbol": "QDEF"
     },
@@ -14972,7 +14956,7 @@
         "symbol": "QPX"
     },
     {
-        "name": "FIRST TR EXCHANGE-TRADED FD SHS",
+        "name": "FIRST TRUST NASDAQ-100 SELECT",
         "symbol": "QQEW"
     },
     {
@@ -15008,7 +14992,7 @@
         "symbol": "QQQP"
     },
     {
-        "name": "DEFIANCE NASDAQ 100 WEEKLY DIS",
+        "name": "TIDAL TRUST II DEFIANCE NASDAQ",
         "symbol": "QQQY"
     },
     {
@@ -16640,10 +16624,6 @@
         "symbol": "SKIN"
     },
     {
-        "name": "SKILLZ INC COM CL A",
-        "symbol": "SKLZ"
-    },
-    {
         "name": "SK TELECOM CO LTD SPONSORED ADR",
         "symbol": "SKM"
     },
@@ -16838,6 +16818,10 @@
     {
         "name": "ISHARES TR US SML CAP EQT",
         "symbol": "SMLF"
+    },
+    {
+        "name": "HARBOR ETF TRUST ACTIVE SMALL CAP",
+        "symbol": "SMLL"
     },
     {
         "name": "SEMLER SCIENTIFIC INC COM",
@@ -17218,10 +17202,6 @@
     {
         "name": "SPOTIFY TECHNOLOGY S A SHS",
         "symbol": "SPOT"
-    },
-    {
-        "name": "SPRUCE BIOSCIENCES INC COM NEW",
-        "symbol": "SPRB"
     },
     {
         "name": "SPRUCE POWER HOLDING CORP COM NEW",
@@ -20938,10 +20918,6 @@
     {
         "name": "ZIPRECRUITER INC CL A",
         "symbol": "ZIP"
-    },
-    {
-        "name": "ZEEKR INTELLIGENT TECHNOLOGY SPON ADS",
-        "symbol": "ZK"
     },
     {
         "name": "ZAI LAB LTD ADR",
