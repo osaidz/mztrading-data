@@ -7216,10 +7216,6 @@
         "symbol": "FPH"
     },
     {
-        "name": "FARMLAND PARTNERS INC COM",
-        "symbol": "FPI"
-    },
-    {
         "name": "Fidelity Real Estate Investment ETF",
         "symbol": "FPRO"
     },
@@ -8900,7 +8896,7 @@
         "symbol": "HTOO"
     },
     {
-        "name": "HIGH TEMPLAR TECH LIMITED",
+        "name": "HIGH TEMPLAR TECHNOLOGY LTD SPON ADS",
         "symbol": "HTT"
     },
     {
@@ -12084,10 +12080,6 @@
         "symbol": "MQ"
     },
     {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LONG IN",
-        "symbol": "MQQQ"
-    },
-    {
         "name": "GRANITESHARES ETF TR 2X LONG MARA",
         "symbol": "MRAL"
     },
@@ -12262,10 +12254,6 @@
     {
         "name": "M & T BK CORP COM",
         "symbol": "MTB"
-    },
-    {
-        "name": "SIMPLIFY EXCHANGE TRADED FUNDS MBS ETF",
-        "symbol": "MTBA"
     },
     {
         "name": "MATCH GROUP INC NEW COM",
@@ -13728,10 +13716,6 @@
         "symbol": "OVLH"
     },
     {
-        "name": "Overlay Shares Short Term Bond ETF",
-        "symbol": "OVT"
-    },
-    {
         "name": "OVINTIV INC COM",
         "symbol": "OVV"
     },
@@ -14098,10 +14082,6 @@
     {
         "name": "PERFORMANCE FOOD GROUP CO COM",
         "symbol": "PFGC"
-    },
-    {
-        "name": "SIMPLIFY EXCHANGE TRADED FUNDS SIMPLIFY INTERST",
-        "symbol": "PFIX"
     },
     {
         "name": "PENNANTPARK FLOATING RATE CAP COM",
@@ -14604,7 +14584,7 @@
         "symbol": "PROP"
     },
     {
-        "name": "PROPHASE LABS INC COM",
+        "name": "PROPHASE LABS INC COM SHS",
         "symbol": "PRPH"
     },
     {
@@ -14956,7 +14936,7 @@
         "symbol": "QPX"
     },
     {
-        "name": "FIRST TRUST NASDAQ-100 SELECT",
+        "name": "FIRST TR EXCHANGE-TRADED FD NASDAQ-100 SEL",
         "symbol": "QQEW"
     },
     {
@@ -17312,10 +17292,6 @@
         "symbol": "SPYM"
     },
     {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LONG SP",
-        "symbol": "SPYQ"
-    },
-    {
         "name": "TIDAL TRUST II DEFIANCE S&P 500",
         "symbol": "SPYT"
     },
@@ -17808,10 +17784,6 @@
         "symbol": "TARA"
     },
     {
-        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LONG IN",
-        "symbol": "TARK"
-    },
-    {
         "name": "TARSUS PHARMACEUTICALS INC COM",
         "symbol": "TARS"
     },
@@ -17980,10 +17952,6 @@
         "symbol": "TEM"
     },
     {
-        "name": "Tradr 2X Long TEM Daily ETF",
-        "symbol": "TEMT"
-    },
-    {
         "name": "TSAKOS ENERGY NAVIGATION LTD SHS",
         "symbol": "TEN"
     },
@@ -18002,10 +17970,6 @@
     {
         "name": "TERNS PHARMACEUTICALS INC COM",
         "symbol": "TERN"
-    },
-    {
-        "name": "SIMPLIFY EXCHANGE TRADED FUNDS VOLT TSLA REVOLU",
-        "symbol": "TESL"
     },
     {
         "name": "21Shares Ethereum ETF",
@@ -18378,10 +18342,6 @@
     {
         "name": "TPI COMPOSITES INC COM",
         "symbol": "TPICQ"
-    },
-    {
-        "name": "TEXAS PACIFIC LAND CORPORATION COM",
-        "symbol": "TPL"
     },
     {
         "name": "DIREXION SHS ETF TR DAILY TRANS 3X",
