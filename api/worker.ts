@@ -133,6 +133,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
 
 let abortController = new AbortController();
 socket.on("worker-notification", () => {
+    console.log("Worker notification received.");
     abortController.abort();
 });
 
@@ -153,6 +154,7 @@ async function startWorker() {
     isWorkerStarted = true;
     while (true) {
         try {
+            console.log("Requesting work item from server...");
             const item = await socket.timeout(3000).emitWithAck("receive-message");
             if (item) {
                 const parsed = WorkerRequestSchema.parse(item); //will add more handlers here later
@@ -162,6 +164,8 @@ async function startWorker() {
                 } else {
                     console.log(`Unknown request type: ${parsed.requestType}`);
                 }
+            } else {
+                console.log("No work items available, waiting for notification...");
             }
         } catch (error) {
             console.error("Error handling worker request:", error);
