@@ -1116,6 +1116,10 @@
         "symbol": "APPS"
     },
     {
+        "name": "INVESTMENT MANAGERS SER TR II TRADR 2X LONG",
+        "symbol": "APPX"
+    },
+    {
         "name": "ALPHA PRO TECH LTD COM",
         "symbol": "APT"
     },
@@ -1406,6 +1410,10 @@
     {
         "name": "GRUPO AEROPORTUARIO DEL SUREST SPON ADR SER B",
         "symbol": "ASR"
+    },
+    {
+        "name": "ASSERTIO HOLDINGS INC COM NEW",
+        "symbol": "ASRT"
     },
     {
         "name": "STRIVE INC CL A COM",
@@ -5814,6 +5822,10 @@
     {
         "name": "ELME COMMUNITIES SH BEN INT",
         "symbol": "ELME"
+    },
+    {
+        "name": "COMPANHIA PARANAENSE DE ENERGI SPONSORED ADS",
+        "symbol": "ELPC"
     },
     {
         "name": "EQUITY LIFESTYLE PPTYS INC COM",
@@ -11808,7 +11820,7 @@
         "symbol": "MITK"
     },
     {
-        "name": "AG MTG INVT TR INC COM NEW",
+        "name": "TPG MORTGAGE INVESTMENT TRUST",
         "symbol": "MITT"
     },
     {
@@ -12728,10 +12740,6 @@
         "symbol": "NKE"
     },
     {
-        "name": "NIKOLA CORP COM NEW",
-        "symbol": "NKLAQ"
-    },
-    {
         "name": "TERRA INNOVATUM GLOBAL NV ORD SHS",
         "symbol": "NKLR"
     },
@@ -13526,6 +13534,10 @@
     {
         "name": "OPKO HEALTH INC COM",
         "symbol": "OPK"
+    },
+    {
+        "name": "OPENLANE INC COM",
+        "symbol": "OPLN"
     },
     {
         "name": "WISDOMTREE TR EUROPEAN OPPORTU",
