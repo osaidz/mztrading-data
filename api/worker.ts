@@ -15,6 +15,7 @@ socket.on("connect", () => {
     console.log(`Connected to the server! Socket ID: ${socket.id}`);
 
     socket.emit("register-worker", {});
+    startWorker();
     console.log("Client started, waiting for requests...");
 
 });
@@ -146,23 +147,28 @@ socket.on("reconnect", () => {
     socket.emit("register-worker", {});
 });
 
-while (true) {
-    try {
-        const item = await socket.emitWithAck("receive-message");
-        if (item) {
-            const parsed = WorkerRequestSchema.parse(item); //will add more handlers here later
-            if (parsed.requestType === "volatility-query") {
-                await handleVolatilityMessage({ ...parsed.data, requestId: parsed.requestId });
-                continue;   //let's ask another item right away
-            } else {
-                console.log(`Unknown request type: ${parsed.requestType}`);
+let isWorkerStarted = false;
+async function startWorker() {
+    if (isWorkerStarted) return;
+    isWorkerStarted = true;
+    while (true) {
+        try {
+            const item = await socket.timeout(3000).emitWithAck("receive-message");
+            if (item) {
+                const parsed = WorkerRequestSchema.parse(item); //will add more handlers here later
+                if (parsed.requestType === "volatility-query") {
+                    await handleVolatilityMessage({ ...parsed.data, requestId: parsed.requestId });
+                    continue;   //let's ask another item right away
+                } else {
+                    console.log(`Unknown request type: ${parsed.requestType}`);
+                }
             }
+        } catch (error) {
+            console.error("Error handling worker request:", error);
         }
-    } catch (error) {
-        console.error("Error handling worker request:", error);
-    }
 
-    //may be we will explore async events later, but for now let's use abort controller signal.
-    await delay(30000, { signal: abortController.signal }).catch(() => { console.log('signal must have aborted this') });
-    abortController = new AbortController();
+        //may be we will explore async events later, but for now let's use abort controller signal.
+        await delay(30000, { signal: abortController.signal }).catch(() => { console.log('signal must have aborted this') });
+        abortController = new AbortController();
+    }
 }
