@@ -1,5 +1,6 @@
 import { io } from "https://esm.sh/socket.io-client";
 import { z } from "https://esm.sh/zod@4.2.1";
+import delay from "https://esm.sh/delay@7.0.0";
 const socketUrl = `https://mztrading-socket.deno.dev`
 const DATA_DIR = Deno.env.get("DATA_DIR") || '/data';
 
@@ -26,38 +27,44 @@ socket.on("hello", (args) => {
     console.log(`hello response: ${JSON.stringify(args)}`);
 });
 
+const WorkerRequestSchema = z.object({
+    requestType: z.string(),
+    requestId: z.uuid(),
+    data: z.any()
+});
+
 const BaseSchema = {
-  symbol: z.string()
-    .nonempty()
-    .regex(/^[a-zA-Z0-9]+$/, "Symbol must be alphanumeric"),
+    symbol: z.string()
+        .nonempty()
+        .regex(/^[a-zA-Z0-9]+$/, "Symbol must be alphanumeric"),
 
-  lookbackDays: z.number().int().positive(),
+    lookbackDays: z.number().int().positive(),
 
-  expiration: z.string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, "Expiration must be YYYY-MM-DD format"),
+    expiration: z.string()
+        .regex(/^\d{4}-\d{2}-\d{2}$/, "Expiration must be YYYY-MM-DD format"),
 
-  requestId: z.uuid(),
+    requestId: z.uuid(),
 };
 
 // delta mode
 const DeltaModeSchema = z.object({
-  ...BaseSchema,
-  mode: z.literal("delta"),
-  delta: z.number().max(100).nonnegative(),
-  strike: z.null().optional(),
+    ...BaseSchema,
+    mode: z.literal("delta"),
+    delta: z.number().max(100).nonnegative(),
+    strike: z.null().optional(),
 });
 
 // strike mode
 const StrikeModeSchema = z.object({
-  ...BaseSchema,
-  mode: z.literal("strike"),
-  strike: z.number().positive(),
-  delta: z.null().optional(),
+    ...BaseSchema,
+    mode: z.literal("strike"),
+    strike: z.number().positive(),
+    delta: z.null().optional(),
 });
 
 export const OptionsVolRequestSchema = z.discriminatedUnion("mode", [
-  DeltaModeSchema,
-  StrikeModeSchema,
+    DeltaModeSchema,
+    StrikeModeSchema,
 ]);
 
 type OptionsVolRequest = z.infer<typeof OptionsVolRequestSchema>;
@@ -65,8 +72,9 @@ type OptionsVolRequest = z.infer<typeof OptionsVolRequestSchema>;
 /*
  {"symbol":"AAPL","lookbackDays":180,"delta":25,"expiration":"2025-11-07","mode":"delta","requestId":"977c5c7b-7e96-45d1-991b-db70992d0846"}       
 */
-socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
+const handleVolatilityMessage = async (args: OptionsVolRequest) => {
     try {
+        const { symbol, lookbackDays, delta, expiration, mode, strike, requestId } = OptionsVolRequestSchema.parse(args);
 
         console.log("Worker volatility request received:", JSON.stringify(args));
         using stack = new DisposableStack();
@@ -74,7 +82,6 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
         stack.defer(() => instance.closeSync());
         const connection = await instance.connect();
         stack.defer(() => connection.closeSync());
-        const { symbol, lookbackDays, delta, expiration, mode, strike, requestId } = OptionsVolRequestSchema.parse(args);
         const strikeFilter = mode == 'strike' ? ` AND strike = ${strike}` : '';
         let rows = [];
         let hasError = false;
@@ -86,9 +93,9 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
                 WITH I AS (
                     SELECT DISTINCT dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, 
                     abs(delta) AS abs_delta,
-                    abs(abs(delta) - ${(delta || 0)/100}) AS delta_diff
+                    abs(abs(delta) - ${(delta || 0) / 100}) AS delta_diff
                     FROM '${DATA_DIR}/symbol=${symbol}/*.parquet'
-                    WHERE expiration = '${expiration}' AND dt >= current_date - ${lookbackDays} ${ strikeFilter }
+                    WHERE expiration = '${expiration}' AND dt >= current_date - ${lookbackDays} ${strikeFilter}
                 ), M AS (
                     SELECT *,
                     ROW_NUMBER() OVER (PARTITION BY dt, option_type ORDER BY delta_diff ASC) AS rn
@@ -101,7 +108,7 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
                     array_agg(mid_price ORDER BY dt) FILTER (WHERE option_type='C') AS cp,
                     array_agg(mid_price ORDER BY dt) FILTER (WHERE option_type='P') AS pp
                 FROM M
-                ${ mode == 'delta' ? 'WHERE rn = 1' : '' }
+                ${mode == 'delta' ? 'WHERE rn = 1' : ''}
             ) t`;
             const result = await connection.runAndReadAll(queryToExecute)
             rows = result.getRows().map(r => JSON.parse(r[0]))[0];  //takes first row and first column
@@ -110,8 +117,7 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
             console.log(`error occurred while processing request`, err);
             hasError = true;
         }
-        socket.emit(`worker-volatility-response`, {
-            symbol: symbol,
+        socket.emit(`worker-response`, {
             requestId: requestId,
             hasError,
             value: rows
@@ -122,6 +128,11 @@ socket.on("worker-volatility-request", async (args: OptionsVolRequest) => {
     } catch (error) {
         console.error("Error processing worker-volatility-request:", error);
     }
+};
+
+let abortController = new AbortController();
+socket.on("worker-notification", () => {
+    abortController.abort();
 });
 
 socket.on("register-worker-success", a => { console.log("worker registration succeeded", JSON.stringify(a)) })
@@ -134,3 +145,24 @@ socket.on("reconnect", () => {
     console.log(`Reconnected successfully! Socket ID: ${socket.id}`);
     socket.emit("register-worker", {});
 });
+
+while (true) {
+    try {
+        const item = await socket.emitWithAck("receive-message");
+        if (item) {
+            const parsed = WorkerRequestSchema.parse(item); //will add more handlers here later
+            if (parsed.requestType === "volatility-query") {
+                await handleVolatilityMessage({ ...parsed.data, requestId: parsed.requestId });
+                continue;   //let's ask another item right away
+            } else {
+                console.log(`Unknown request type: ${parsed.requestType}`);
+            }
+        }
+    } catch (error) {
+        console.error("Error handling worker request:", error);
+    }
+
+    //may be we will explore async events later, but for now let's use abort controller signal.
+    await delay(30000, { signal: abortController.signal }).catch(() => { console.log('signal must have aborted this') });
+    abortController = new AbortController();
+}
