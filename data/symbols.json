@@ -100,10 +100,6 @@
         "symbol": "ABG"
     },
     {
-        "name": "ABACUS GLOBAL MGMT INC CL A",
-        "symbol": "ABL"
-    },
-    {
         "name": "ABM INDS INC COM",
         "symbol": "ABM"
     },
@@ -174,10 +170,6 @@
     {
         "name": "ALPS ETF TR CLEAN ENERGY",
         "symbol": "ACES"
-    },
-    {
-        "name": "ADICET BIO INC COM",
-        "symbol": "ACET"
     },
     {
         "name": "ARCH CAP GROUP LTD ORD",
@@ -5096,14 +5088,6 @@
         "symbol": "DIV"
     },
     {
-        "name": "AMPLIFY ETF TR CWP ENHANCED DIV",
-        "symbol": "DIVO"
-    },
-    {
-        "name": "GLOBAL X FDS DOW 30 COVERED C",
-        "symbol": "DJIA"
-    },
-    {
         "name": "BARCLAYS BANK PLC DJUBS CMDT ETN36",
         "symbol": "DJP"
     },
@@ -5530,10 +5514,6 @@
     {
         "name": "DYADIC INTL INC DEL COM",
         "symbol": "DYAI"
-    },
-    {
-        "name": "GLOBAL X FDS GLOBAL X DOW 30",
-        "symbol": "DYLG"
     },
     {
         "name": "DYNE THERAPEUTICS INC COM",
@@ -9912,7 +9892,7 @@
         "symbol": "IWMI"
     },
     {
-        "name": "DEFIANCE R2000 WEEKLY DISTRIBU",
+        "name": "TIDAL TRUST II DEFIANCE R2000 W",
         "symbol": "IWMY"
     },
     {
@@ -10326,10 +10306,6 @@
     {
         "name": "KYNDRYL HLDGS INC COMMON STOCK",
         "symbol": "KD"
-    },
-    {
-        "name": "EXCHANGE LISTED FDS TR PLUS KOREA DEFE",
-        "symbol": "KDEF"
     },
     {
         "name": "KODIAK AI INC. COM",
@@ -13832,10 +13808,6 @@
         "symbol": "PATK"
     },
     {
-        "name": "Global X U.S. Infrastructure Development ETF",
-        "symbol": "PAVE"
-    },
-    {
         "name": "PAVMED INC COM NEW",
         "symbol": "PAVM"
     },
@@ -15080,10 +15052,6 @@
         "symbol": "QYLD"
     },
     {
-        "name": "GLOBAL X FDS NASDQ 100 CVRDGW",
-        "symbol": "QYLG"
-    },
-    {
         "name": "RYDER SYS INC COM",
         "symbol": "R"
     },
@@ -15890,10 +15858,6 @@
     {
         "name": "GLOBAL X FDS RUSSELL 2000",
         "symbol": "RYLD"
-    },
-    {
-        "name": "GLOBAL X FDS RUSSELL 2000 COV",
-        "symbol": "RYLG"
     },
     {
         "name": "RAYONIER INC COM",
@@ -18140,7 +18104,7 @@
         "symbol": "TIMB"
     },
     {
-        "name": "CLOCKWISE U.S. CORE EQUITY ETF",
+        "name": "TIDAL TRUST II CLOCKWISE US COR",
         "symbol": "TIME"
     },
     {
@@ -19294,10 +19258,6 @@
     {
         "name": "UWM HOLDINGS CORPORATION COM CL A",
         "symbol": "UWMC"
-    },
-    {
-        "name": "Roundhill Uranium ETF",
-        "symbol": "UX"
     },
     {
         "name": "PROSHARES TR ULTRA XRP ETF",
@@ -20738,10 +20698,6 @@
     {
         "name": "GLOBAL X FDS S&P 500 COVERED",
         "symbol": "XYLD"
-    },
-    {
-        "name": "GLOBAL X FDS S&P 500 COVERED",
-        "symbol": "XYLG"
     },
     {
         "name": "BLOCK INC CL A",
