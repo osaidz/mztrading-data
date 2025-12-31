@@ -1,10 +1,24 @@
-import { io } from "https://esm.sh/socket.io-client";
+import { io } from "https://esm.sh/socket.io-client@4.8.1";
 import { z } from "https://esm.sh/zod@4.2.1";
 import delay from "https://esm.sh/delay@7.0.0";
+import pino from "https://esm.sh/pino@10.1.0";
+import pretty from "https://esm.sh/pino-pretty@10.3.0";
 const socketUrl = `https://mztrading-socket.deno.dev`
 const DATA_DIR = Deno.env.get("DATA_DIR") || '/data';
 
-import { DuckDBInstance } from "npm:@duckdb/node-api";
+import { DuckDBInstance } from "npm:@duckdb/node-api@1.4.3-r.2";
+
+const stream = pretty({
+    singleLine: true,
+    colorize: true,
+    include: "msg",
+    messageFormat: (log, messageKey) => { return `${log[messageKey]}` },
+});
+
+const logger = pino({
+    //level: "info" 
+}, stream);
+
 
 const socket = io(socketUrl, {
     reconnectionDelayMax: 10000,
@@ -12,20 +26,20 @@ const socket = io(socketUrl, {
 });
 
 socket.on("connect", () => {
-    console.log(`Connected to the server! Socket ID: ${socket.id}`);
+    logger.info(`Connected to the server! Socket ID: ${socket.id}`);
 
     socket.emit("register-worker", {});
     startWorker();
-    console.log("Client started, waiting for requests...");
+    logger.info("Client started, waiting for requests...");
 
 });
 
 socket.on("disconnect", () => {
-    console.log("disconnection");
+    logger.info("disconnection");
 });
 
 socket.on("hello", (args) => {
-    console.log(`hello response: ${JSON.stringify(args)}`);
+    logger.info(`hello response: ${JSON.stringify(args)}`);
 });
 
 const WorkerRequestSchema = z.object({
@@ -77,7 +91,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
     try {
         const { symbol, lookbackDays, delta, expiration, mode, strike, requestId } = OptionsVolRequestSchema.parse(args);
 
-        console.log("Worker volatility request received:", JSON.stringify(args));
+        logger.info(`Worker volatility request received: ${JSON.stringify(args)}`);
         using stack = new DisposableStack();
         const instance = await DuckDBInstance.create(":memory:");
         stack.defer(() => instance.closeSync());
@@ -111,11 +125,16 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
                 FROM M
                 ${mode == 'delta' ? 'WHERE rn = 1' : ''}
             ) t`;
+
+            //log the time it took to complete it
+            const start = performance.now();
             const result = await connection.runAndReadAll(queryToExecute)
+            const end = performance.now();
+            logger.info(`✅ Query completed in ${(end - start).toFixed(2)} ms`);
             rows = result.getRows().map(r => JSON.parse(r[0]))[0];  //takes first row and first column
         }
         catch (err) {
-            console.log(`error occurred while processing request`, err);
+            logger.info(`error occurred while processing request: ${err}`);
             hasError = true;
         }
         socket.emit(`worker-response`, {
@@ -124,27 +143,27 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
             value: rows
         });
 
-        console.log("Worker volatility request completed! ", JSON.stringify(args));
+        logger.info(`Worker volatility request completed! ${JSON.stringify(args)}`, );
 
     } catch (error) {
-        console.error("Error processing worker-volatility-request:", error);
+        logger.info(`Error processing worker-volatility-request: ${JSON.stringify(error)}`);
     }
 };
 
 let abortController = new AbortController();
 socket.on("worker-notification", () => {
-    console.log("Worker notification received.");
+    logger.info("Worker notification received.");
     abortController.abort();
 });
 
-socket.on("register-worker-success", a => { console.log("worker registration succeeded", JSON.stringify(a)) })
+socket.on("register-worker-success", a => { logger.info(`worker registration succeeded, : ${JSON.stringify(a)}`) })
 
 socket.on("reconnect_attempt", (attempt) => {
-    console.log(`Reconnection attempt #${attempt}`);
+    logger.info(`Reconnection attempt #${attempt}`);
 });
 
 socket.on("reconnect", () => {
-    console.log(`Reconnected successfully! Socket ID: ${socket.id}`);
+    logger.info(`Reconnected successfully! Socket ID: ${socket.id}`);
     socket.emit("register-worker", {});
 });
 
@@ -154,7 +173,7 @@ async function startWorker() {
     isWorkerStarted = true;
     while (true) {
         try {
-            console.log("Requesting work item from server...");
+            logger.info("Requesting work item from server...");
             const item = await socket.timeout(3000).emitWithAck("receive-message");
             if (item) {
                 const parsed = WorkerRequestSchema.parse(item); //will add more handlers here later
@@ -162,17 +181,34 @@ async function startWorker() {
                     await handleVolatilityMessage({ ...parsed.data, requestId: parsed.requestId });
                     continue;   //let's ask another item right away
                 } else {
-                    console.log(`Unknown request type: ${parsed.requestType}`);
+                    logger.info(`Unknown request type: ${parsed.requestType}`);
                 }
             } else {
-                console.log("No work items available, waiting for notification...");
+                logger.info("No work items available, waiting for notification...");
             }
         } catch (error) {
             console.error("Error handling worker request:", error);
         }
 
         //may be we will explore async events later, but for now let's use abort controller signal.
-        await delay(30000, { signal: abortController.signal }).catch(() => { console.log('signal must have aborted this') });
+        await delay(30000, { signal: abortController.signal }).catch(() => { logger.info('signal must have aborted this') });
         abortController = new AbortController();
     }
 }
+
+function shutdown() {
+    logger.info(`shutting down...`);
+
+    socket.removeAllListeners();
+    socket.disconnect();
+
+    // Give socket.io time to close cleanly
+    setTimeout(() => {
+        Deno.exit(0);
+    }, 100);
+
+    logger.info("will shut down in 100ms")
+}
+
+Deno.addSignalListener("SIGTERM", shutdown);
+Deno.addSignalListener("SIGINT", shutdown);
