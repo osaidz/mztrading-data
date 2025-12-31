@@ -11,7 +11,7 @@ import { DuckDBInstance } from "npm:@duckdb/node-api@1.4.3-r.2";
 const stream = pretty({
     singleLine: true,
     colorize: true,
-    include: "msg",
+    include: "time,msg",
     messageFormat: (log, messageKey) => { return `${log[messageKey]}` },
 });
 
