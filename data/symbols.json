@@ -144,6 +144,10 @@
         "symbol": "ABVX"
     },
     {
+        "name": "ABACUS GLOBAL MGMT INC CL A",
+        "symbol": "ABX"
+    },
+    {
         "name": "ARCOSA INC COM",
         "symbol": "ACA"
     },
@@ -170,6 +174,10 @@
     {
         "name": "ALPS ETF TR CLEAN ENERGY",
         "symbol": "ACES"
+    },
+    {
+        "name": "ADICET BIO INC COM NEW",
+        "symbol": "ACET"
     },
     {
         "name": "ARCH CAP GROUP LTD ORD",
@@ -2040,10 +2048,6 @@
         "symbol": "BCS"
     },
     {
-        "name": "BAIN CAP SPECIALTY FIN INC COM STK",
-        "symbol": "BCSF"
-    },
-    {
         "name": "BICYCLE THERAPEUTICS PLC SPONSORED ADS",
         "symbol": "BCYC"
     },
@@ -2376,7 +2380,7 @@
         "symbol": "BLBD"
     },
     {
-        "name": "SIREN NEXGEN ECONOMY ETF",
+        "name": "SIREN ETF TR NXGN ECONOMY ETF",
         "symbol": "BLCN"
     },
     {
@@ -5088,6 +5092,14 @@
         "symbol": "DIV"
     },
     {
+        "name": "AMPLIFY ETF TR CWP ENHANCED DIV",
+        "symbol": "DIVO"
+    },
+    {
+        "name": "GLOBAL X FDS DOW 30 COVERED C",
+        "symbol": "DJIA"
+    },
+    {
         "name": "BARCLAYS BANK PLC DJUBS CMDT ETN36",
         "symbol": "DJP"
     },
@@ -5514,6 +5526,10 @@
     {
         "name": "DYADIC INTL INC DEL COM",
         "symbol": "DYAI"
+    },
+    {
+        "name": "GLOBAL X FDS GLOBAL X DOW 30",
+        "symbol": "DYLG"
     },
     {
         "name": "DYNE THERAPEUTICS INC COM",
@@ -8844,10 +8860,6 @@
         "symbol": "HSIC"
     },
     {
-        "name": "HOST HOTELS & RESORTS INC COM",
-        "symbol": "HST"
-    },
-    {
         "name": "HEALTHSTREAM INC COM",
         "symbol": "HSTM"
     },
@@ -10306,6 +10318,10 @@
     {
         "name": "KYNDRYL HLDGS INC COMMON STOCK",
         "symbol": "KD"
+    },
+    {
+        "name": "EXCHANGE LISTED FDS TR PLUS KOREA DEFE",
+        "symbol": "KDEF"
     },
     {
         "name": "KODIAK AI INC. COM",
@@ -12092,10 +12108,6 @@
         "symbol": "MRTN"
     },
     {
-        "name": "MERUS N V COM",
-        "symbol": "MRUS"
-    },
-    {
         "name": "Mini Russell 2000 Index",
         "symbol": "MRUT"
     },
@@ -13300,7 +13312,7 @@
         "symbol": "OGI"
     },
     {
-        "name": "ALPS - O'Shares Global Internet Giants ETF",
+        "name": "ALPS ETF TR OSHS GBL INTER",
         "symbol": "OGIG"
     },
     {
@@ -13672,7 +13684,7 @@
         "symbol": "OUNZ"
     },
     {
-        "name": "ALPS - O'Shares U.S. Quality Dividend ETF",
+        "name": "ALPS ETF TR OSHARES US QUALT",
         "symbol": "OUSA"
     },
     {
@@ -13806,6 +13818,10 @@
     {
         "name": "PATRICK INDS INC COM",
         "symbol": "PATK"
+    },
+    {
+        "name": "Global X U.S. Infrastructure Development ETF",
+        "symbol": "PAVE"
     },
     {
         "name": "PAVMED INC COM NEW",
@@ -15052,6 +15068,10 @@
         "symbol": "QYLD"
     },
     {
+        "name": "GLOBAL X FDS NASDQ 100 CVRDGW",
+        "symbol": "QYLG"
+    },
+    {
         "name": "RYDER SYS INC COM",
         "symbol": "R"
     },
@@ -15636,10 +15656,6 @@
         "symbol": "RPRX"
     },
     {
-        "name": "RITHM PPTY TR INC COM",
-        "symbol": "RPT"
-    },
-    {
         "name": "REPARE THERAPEUTICS INC COM",
         "symbol": "RPTX"
     },
@@ -15858,6 +15874,10 @@
     {
         "name": "GLOBAL X FDS RUSSELL 2000",
         "symbol": "RYLD"
+    },
+    {
+        "name": "GLOBAL X FDS RUSSELL 2000 COV",
+        "symbol": "RYLG"
     },
     {
         "name": "RAYONIER INC COM",
@@ -19260,6 +19280,10 @@
         "symbol": "UWMC"
     },
     {
+        "name": "Roundhill Uranium ETF",
+        "symbol": "UX"
+    },
+    {
         "name": "PROSHARES TR ULTRA XRP ETF",
         "symbol": "UXRP"
     },
@@ -20698,6 +20722,10 @@
     {
         "name": "GLOBAL X FDS S&P 500 COVERED",
         "symbol": "XYLD"
+    },
+    {
+        "name": "GLOBAL X FDS S&P 500 COVERED",
+        "symbol": "XYLG"
     },
     {
         "name": "BLOCK INC CL A",
