@@ -51,7 +51,8 @@ type OptionsSnapshotSummary = Record<string, {
 
 type CboeOptionSummaryType = {
     name: string,
-    optionsAssetUrl: string
+    optionsAssetUrl: string,
+    stocksAssetUrl: string
 }
 
 type TickerSymbol = { name: string, symbol: string }
@@ -182,7 +183,7 @@ export const searchTicker = (q: string) => {
     return filtered;
 }
 
-export const CboeOptionsRawSummary = (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl }) => ({ name, optionsAssetUrl, dt: name.replace('CBOE_OPTIONS_DATA_', '').substring(0, 10) }));
+export const CboeOptionsRawSummary = (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl, stocksAssetUrl }) => ({ name, optionsAssetUrl, stocksAssetUrl, dt: name.replace('CBOE_OPTIONS_DATA_', '').substring(0, 10) }));
 
 export const getCboeLatestDateAndSymbols = (forceDayId?: string) => {
     if (forceDayId) {

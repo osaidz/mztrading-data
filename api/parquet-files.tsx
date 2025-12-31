@@ -3,7 +3,7 @@ import { h } from "npm:preact";
 import { Hono } from "https://esm.sh/hono@4.9.8";
 import { CboeOptionsRawSummary } from "../lib/data.ts";
 
-type OptionsSummary = { name: string; optionsAssetUrl: string; dt: string };
+type OptionsSummary = { name: string; optionsAssetUrl: string; dt: string, stocksAssetUrl: string };
 
 const app = new Hono();
 const optionsSummary: OptionsSummary[] = CboeOptionsRawSummary;
@@ -115,6 +115,56 @@ app.get("/files/:dt/", (c) => {
     const html =
       "<!DOCTYPE html>" +
       renderToString(<Html><FilePage dt={dt} fileName={new URL(match.optionsAssetUrl).pathname.split("/").pop()} /></Html>);
+    return c.html(html);
+  }
+
+  const notFoundHtml = "<!DOCTYPE html>" + renderToString(<Html><body>Not found</body></Html>);
+  return c.html(notFoundHtml, 404);
+});
+
+// --- HTML routes ---
+app.get("/ohlc", (c) => c.redirect("/ohlc/"));
+
+app.get("/ohlc/", (c) => {
+  const html =
+    "<!DOCTYPE html>" + renderToString(<Html><App options={optionsSummary} /></Html>);
+  return c.html(html);
+});
+
+app.get("/ohlc/:dt/*.parquet", async (c) => {
+  const dtParam = c.req.param("dt");
+  const dtMatch = dtParam.match(/dt=(\d{4}-\d{2}-\d{2})/);
+  if (!dtMatch) return c.text("Not found", 404);
+
+  const dt = dtMatch[1];
+  const match = optionsSummary.find((k) => k.dt === dt);
+
+  if (match && match.stocksAssetUrl) {
+    if (c.req.method === "HEAD") {
+      return await fetch(match.stocksAssetUrl, {
+        method: "HEAD"
+      });
+    }
+    return c.redirect(match.stocksAssetUrl);
+  } else {
+    return c.text("Custom 404 Message", 404);
+  }
+});
+
+app.get("/ohlc/:dt", (c) => c.redirect(`${c.req.path}/`));
+
+app.get("/ohlc/:dt/", (c) => {
+  const dtParam = c.req.param("dt");
+  const dtMatch = dtParam.match(/dt=(\d{4}-\d{2}-\d{2})/);
+  if (!dtMatch) return c.text("Not found", 404);
+
+  const dt = dtMatch[1];
+  const match = optionsSummary.find((k) => k.dt === dt);
+
+  if (match) {
+    const html =
+      "<!DOCTYPE html>" +
+      renderToString(<Html><FilePage dt={dt} fileName={new URL(match.stocksAssetUrl).pathname.split("/").pop()} /></Html>);
     return c.html(html);
   }
 
