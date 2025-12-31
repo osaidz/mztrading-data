@@ -24,8 +24,8 @@ const Home = ()=> (
   <div>
     <h1>Home</h1>
     <ul>
-      <li key="ohlc" href="ohlc">ohlc</li>
-      <li key="files" href="files">files</li>
+      <li key="ohlc"><a href="ohlc">ohlc</a></li>
+      <li key="files"><a href="files">files</a></li>
     </ul>
   </div>
 )
