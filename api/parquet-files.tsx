@@ -20,6 +20,16 @@ const Html = ({ children }: { children: preact.ComponentChildren }) => (
   </html>
 );
 
+const Home = ()=> (
+  <div>
+    <h1>Home</h1>
+    <ul>
+      <li key="ohlc" href="ohlc">ohlc</li>
+      <li key="files" href="files">files</li>
+    </ul>
+  </div>
+)
+
 // --- Pages ---
 const App = ({ options }: { options: OptionsSummary[] }) => (
   <div>
@@ -71,6 +81,12 @@ app.get("/api/aria2", async (c) => {
   }));
   return c.json(result);
 });
+
+app.get("/", (c)=> {
+  const html =
+    "<!DOCTYPE html>" + renderToString(<Html><Home /></Html>);
+  return c.html(html);
+})
 
 // --- HTML routes ---
 app.get("/files", (c) => c.redirect("/files/"));
