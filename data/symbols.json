@@ -200,10 +200,6 @@
         "symbol": "ACI"
     },
     {
-        "name": "AMERICAN COASTAL INS CORP COM",
-        "symbol": "ACIC"
-    },
-    {
         "name": "Aptus Collared Investment Opportunity ETF",
         "symbol": "ACIO"
     },
@@ -2046,6 +2042,10 @@
     {
         "name": "BARCLAYS PLC ADR",
         "symbol": "BCS"
+    },
+    {
+        "name": "BAIN CAP SPECIALTY FIN INC COM STK",
+        "symbol": "BCSF"
     },
     {
         "name": "BICYCLE THERAPEUTICS PLC SPONSORED ADS",
@@ -6588,10 +6588,6 @@
         "symbol": "FCA"
     },
     {
-        "name": "FIRST CMNTY BANKSHARES INC VA COM",
-        "symbol": "FCBC"
-    },
-    {
         "name": "FUELCELL ENERGY INC COM NEW",
         "symbol": "FCEL"
     },
@@ -8858,6 +8854,10 @@
     {
         "name": "HENRY SCHEIN INC COM",
         "symbol": "HSIC"
+    },
+    {
+        "name": "HOST HOTELS & RESORTS INC COM",
+        "symbol": "HST"
     },
     {
         "name": "HEALTHSTREAM INC COM",
@@ -11996,10 +11996,6 @@
         "symbol": "MOFG"
     },
     {
-        "name": "MOGO INC COM",
-        "symbol": "MOGO"
-    },
-    {
         "name": "MOLINA HEALTHCARE INC COM",
         "symbol": "MOH"
     },
@@ -12740,10 +12736,6 @@
         "symbol": "NKTX"
     },
     {
-        "name": "NET LEASE OFFICE PROPERTIES COM",
-        "symbol": "NLOP"
-    },
-    {
         "name": "VANECK ETF TRUST URANIUM AND NUCL",
         "symbol": "NLR"
     },
@@ -13424,10 +13416,6 @@
         "symbol": "OMF"
     },
     {
-        "name": "OWENS & MINOR INC NEW COM",
-        "symbol": "OMI"
-    },
-    {
         "name": "ON SEMICONDUCTOR CORP COM",
         "symbol": "ON"
     },
@@ -13586,10 +13574,6 @@
     {
         "name": "ORGANOGENESIS HLDGS INC COM",
         "symbol": "ORGO"
-    },
-    {
-        "name": "OLD REP INTL CORP COM",
-        "symbol": "ORI"
     },
     {
         "name": "ORIC PHARMACEUTICALS INC COM",
@@ -13822,10 +13806,6 @@
     {
         "name": "Global X U.S. Infrastructure Development ETF",
         "symbol": "PAVE"
-    },
-    {
-        "name": "PAVMED INC COM NEW",
-        "symbol": "PAVM"
     },
     {
         "name": "PATRIA INVESTMENTS LIMITED COM CL A",
@@ -15656,6 +15636,10 @@
         "symbol": "RPRX"
     },
     {
+        "name": "RITHM PPTY TR INC COM NEW SHS",
+        "symbol": "RPT"
+    },
+    {
         "name": "REPARE THERAPEUTICS INC COM",
         "symbol": "RPTX"
     },
@@ -16930,10 +16914,6 @@
     {
         "name": "Tradr 2X Long SNPS Daily ETF",
         "symbol": "SNPX"
-    },
-    {
-        "name": "SYNOVUS FINL CORP COM NEW",
-        "symbol": "SNV"
     },
     {
         "name": "TD SYNNEX CORPORATION COM",
@@ -20064,7 +20044,7 @@
         "symbol": "WDS"
     },
     {
-        "name": "DEFIANCE S&P 500 WEEKLY DISTRI",
+        "name": "TIDAL TRUST II DEFIANCE S&P 500",
         "symbol": "WDTE"
     },
     {
@@ -20250,10 +20230,6 @@
     {
         "name": "WORTHINGTON ENTERPRISES INC COM",
         "symbol": "WOR"
-    },
-    {
-        "name": "WIDEOPENWEST INC COM",
-        "symbol": "WOW"
     },
     {
         "name": "Roundhill WeeklyPay Universe ETF",
