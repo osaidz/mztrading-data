@@ -117,7 +117,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
             SELECT to_json(t)    
             FROM (
                 WITH OHLC AS (
-                  SELECT DISTINCT dt, close
+                  SELECT DISTINCT dt, if(close > 0, close, LAG(close) OVER (PARTITION BY symbol ORDER BY dt)) AS close
                   FROM '${OHLC_DATA_DIR}/*.parquet' WHERE symbol = '${symbol}'
                 ), I AS (
                     SELECT DISTINCT opdata.dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, OHLC.close,
