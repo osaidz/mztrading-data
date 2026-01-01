@@ -75457,5 +75457,6 @@
             "symbol": "BMNR",
             "dt": "2026-01-01"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2026-01-01-12-03-42/options_cboe_oi_anomaly.parquet"
 }
