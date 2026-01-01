@@ -143,7 +143,7 @@ app.get("/ohlc", (c) => c.redirect("/ohlc/"));
 
 app.get("/ohlc/", (c) => {
   const html =
-    "<!DOCTYPE html>" + renderToString(<Html><App options={optionsSummary} /></Html>);
+    "<!DOCTYPE html>" + renderToString(<Html><App options={optionsSummary.filter(k=> k.stocksAssetUrl)} /></Html>);
   return c.html(html);
 });
 
