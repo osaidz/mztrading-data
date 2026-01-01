@@ -4,7 +4,8 @@ import delay from "https://esm.sh/delay@7.0.0";
 import pino from "https://esm.sh/pino@10.1.0";
 import pretty from "https://esm.sh/pino-pretty@10.3.0";
 const socketUrl = `https://mztrading-socket.deno.dev`
-const DATA_DIR = Deno.env.get("DATA_DIR") || '/data';
+const DATA_DIR = Deno.env.get("DATA_DIR") || '/data/w2-output';
+const OHLC_DATA_DIR = Deno.env.get("OHLC_DIR") || '/data/ohlc';
 
 import { DuckDBInstance } from "npm:@duckdb/node-api@1.4.3-r.2";
 
@@ -77,9 +78,18 @@ const StrikeModeSchema = z.object({
     delta: z.null().optional(),
 });
 
+// atm mode
+const AtmModeSchema = z.object({
+    ...BaseSchema,
+    mode: z.literal("atm"),
+    strike: z.null().optional(),
+    delta: z.null().optional(),
+});
+
 export const OptionsVolRequestSchema = z.discriminatedUnion("mode", [
     DeltaModeSchema,
     StrikeModeSchema,
+    AtmModeSchema
 ]);
 
 type OptionsVolRequest = z.infer<typeof OptionsVolRequestSchema>;
@@ -98,6 +108,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
         const connection = await instance.connect();
         stack.defer(() => connection.closeSync());
         const strikeFilter = mode == 'strike' ? ` AND strike = ${strike}` : '';
+        const partitionOrderColumn = mode == 'atm' ? 'price_strike_diff' : 'delta_diff';
         let rows = [];
         let hasError = false;
         try {
@@ -105,25 +116,31 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
             const queryToExecute = `
             SELECT to_json(t)    
             FROM (
-                WITH I AS (
-                    SELECT DISTINCT dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, 
+                WITH OHLC AS (
+                  SELECT DISTINCT dt, close
+                  FROM '${OHLC_DATA_DIR}/*.parquet' WHERE symbol = '${symbol}'
+                ), I AS (
+                    SELECT DISTINCT opdata.dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, OHLC.close,
                     abs(delta) AS abs_delta,
+                    abs(strike - OHLC.close) AS price_strike_diff,
                     abs(abs(delta) - ${(delta || 0) / 100}) AS delta_diff
-                    FROM '${DATA_DIR}/symbol=${symbol}/*.parquet'
-                    WHERE expiration = '${expiration}' AND dt >= current_date - ${lookbackDays} ${strikeFilter}
+                    FROM '${DATA_DIR}/symbol=${symbol}/*.parquet' opdata
+                    JOIN OHLC ON OHLC.dt = opdata.dt
+                    WHERE expiration = '${expiration}' AND OHLC.dt >= current_date - ${lookbackDays} ${strikeFilter}
                 ), M AS (
                     SELECT *,
-                    ROW_NUMBER() OVER (PARTITION BY dt, option_type ORDER BY delta_diff ASC) AS rn
+                    ROW_NUMBER() OVER (PARTITION BY dt, option_type ORDER BY ${partitionOrderColumn} ASC) AS rn
                     FROM I
                 )
                 SELECT 
                     array_agg(DISTINCT dt ORDER BY dt) AS dt,
+                    array_agg(close ORDER BY dt) FILTER (WHERE option_type='C') AS close,
                     array_agg(iv ORDER BY dt) FILTER (WHERE option_type='C') AS cv,
                     array_agg(iv ORDER BY dt) FILTER (WHERE option_type='P') AS pv,
                     array_agg(mid_price ORDER BY dt) FILTER (WHERE option_type='C') AS cp,
                     array_agg(mid_price ORDER BY dt) FILTER (WHERE option_type='P') AS pp
                 FROM M
-                ${mode == 'delta' ? 'WHERE rn = 1' : ''}
+                ${ mode == 'strike' ? '' : 'WHERE rn = 1'}
             ) t`;
 
             //log the time it took to complete it
