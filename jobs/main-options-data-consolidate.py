@@ -1,5 +1,5 @@
 import duckdb;
-import shutil, os
+import shutil, os, uuid
 import json
 
 DATA_DIR = os.environ.get("DATA_DIR")
@@ -25,13 +25,18 @@ else:
     }
 
 PARQUET_SRC_DIR = os.path.join(DATA_DIR, "w2")
+OHLC_RAW_DIR = os.path.join(DATA_DIR, "ohlc-raw")
+OHLC_DIR = os.path.join(DATA_DIR, "ohlc")
 
 if not os.path.isdir(PARQUET_SRC_DIR):
      raise FileNotFoundError(f"Directory does not exist: {PARQUET_SRC_DIR}")
 
 CONSOLIDATED_DATA_DIR = os.path.join(TEMP_DIR, "w2-output")
+OHLC_CONSOLIDATED_DATA_DIR = os.path.join(TEMP_DIR, "ohlc")
 shutil.rmtree(CONSOLIDATED_DATA_DIR, ignore_errors=True)    # lets start fresh
+shutil.rmtree(OHLC_CONSOLIDATED_DATA_DIR, ignore_errors=True)    # lets start fresh
 os.makedirs(CONSOLIDATED_DATA_DIR, exist_ok=True)
+os.makedirs(OHLC_CONSOLIDATED_DATA_DIR, exist_ok=True)
 
 dirs = os.listdir(PARQUET_SRC_DIR)
 
@@ -80,3 +85,24 @@ for dt in dt_dirs[:MAX_DATES_LIMIT]:
 print("Processing done, dumping the config file.")
 with open(os.path.join(TEMP_DIR, CONFIG_FILE_NAME), "w") as file:
     json.dump(configData, file, indent=4)
+
+
+print(f"Processing daily ohlc data")
+con.execute(f"""
+COPY (
+  SELECT *
+  FROM read_parquet('{OHLC_RAW_DIR}/*/*.parquet', hive_partitioning=1)
+  EXCEPT
+  SELECT *
+  FROM read_parquet('{OHLC_DIR}/*.parquet')
+)  TO '{OHLC_CONSOLIDATED_DATA_DIR}/{uuid.uuid4()}.parquet'
+  (FORMAT PARQUET, APPEND TRUE);
+""")
+
+df = con.execute(f"""SELECT * FROM '{OHLC_CONSOLIDATED_DATA_DIR}/*.parquet' LIMIT 1""").fetchone()
+
+if df is None:
+    shutil.rmtree(OHLC_CONSOLIDATED_DATA_DIR, ignore_errors=True)
+    print(f"No new data found for ohlc data")
+else:
+    print(f"Processing done for ohlc data")
