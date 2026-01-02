@@ -126,7 +126,9 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
                     abs(abs(delta) - ${(delta || 0) / 100}) AS delta_diff
                     FROM '${DATA_DIR}/symbol=${symbol}/*.parquet' opdata
                     JOIN OHLC ON OHLC.dt = opdata.dt
-                    WHERE expiration = '${expiration}' AND OHLC.dt >= current_date - ${lookbackDays} ${strikeFilter}
+                    WHERE expiration = '${expiration}' 
+                            AND open_interest > 0           --JUST TO MAKE SURE NEW CONTRACTS WON'T APPEAR IN THE DATASET WHICH LIKELY REPRESENTED BY 0 OI
+                            AND OHLC.dt >= current_date - ${lookbackDays} ${strikeFilter} 
                 ), M AS (
                     SELECT *,
                     ROW_NUMBER() OVER (PARTITION BY dt, option_type ORDER BY ${partitionOrderColumn} ASC) AS rn
