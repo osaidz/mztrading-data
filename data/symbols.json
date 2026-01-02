@@ -184,6 +184,10 @@
         "symbol": "ACGL"
     },
     {
+        "name": "ACCENDRA HEALTH INC",
+        "symbol": "ACH"
+    },
+    {
         "name": "ACADIA HEALTHCARE COMPANY INC COM",
         "symbol": "ACHC"
     },
@@ -198,6 +202,10 @@
     {
         "name": "ALBERTSONS COS INC COMMON STOCK",
         "symbol": "ACI"
+    },
+    {
+        "name": "AMERICAN COASTAL INS CORP COM",
+        "symbol": "ACIC"
     },
     {
         "name": "Aptus Collared Investment Opportunity ETF",
@@ -1448,7 +1456,7 @@
         "symbol": "ASYS"
     },
     {
-        "name": "ATAI BECKLEY NV SHS",
+        "name": "ATAIBECKLEY INC",
         "symbol": "ATAI"
     },
     {
@@ -6586,6 +6594,10 @@
     {
         "name": "FIRST TR EXCH TRD ALPHDX FD II CHINA ALPHADEX",
         "symbol": "FCA"
+    },
+    {
+        "name": "FIRST CMNTY BANKSHARES INC VA COM",
+        "symbol": "FCBC"
     },
     {
         "name": "FUELCELL ENERGY INC COM NEW",
@@ -12736,6 +12748,10 @@
         "symbol": "NKTX"
     },
     {
+        "name": "NET LEASE OFFICE PROPERTIES COM",
+        "symbol": "NLOP"
+    },
+    {
         "name": "VANECK ETF TRUST URANIUM AND NUCL",
         "symbol": "NLR"
     },
@@ -13576,8 +13592,16 @@
         "symbol": "ORGO"
     },
     {
+        "name": "OLD REP INTL CORP COM",
+        "symbol": "ORI"
+    },
+    {
         "name": "ORIC PHARMACEUTICALS INC COM",
         "symbol": "ORIC"
+    },
+    {
+        "name": "ORION DIGITAL CORP",
+        "symbol": "ORIO"
     },
     {
         "name": "ORUKA THERAPEUTICS INC COM",
@@ -13806,6 +13830,10 @@
     {
         "name": "Global X U.S. Infrastructure Development ETF",
         "symbol": "PAVE"
+    },
+    {
+        "name": "PAVMED INC COM NEW",
+        "symbol": "PAVM"
     },
     {
         "name": "PATRIA INVESTMENTS LIMITED COM CL A",
@@ -14348,7 +14376,7 @@
         "symbol": "PNC"
     },
     {
-        "name": "PINNACLE FINL PARTNERS INC COM",
+        "name": "PINNACLE FINANCIAL PARTNERS IN",
         "symbol": "PNFP"
     },
     {
