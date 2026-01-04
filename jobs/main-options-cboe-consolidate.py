@@ -5,6 +5,7 @@ import re
 import pandas as pd
 from datetime import datetime
 file_path = './data/cboe-options-summary.json'
+options_expirations_json_file_path = "./data/options-expirations-strikes.json"
 
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
 rolling_days = int(os.getenv("ROLLING_DAYS", "30") or "30")
@@ -139,3 +140,35 @@ with open(summary_file, "w") as file:
     }, file, indent=4)
 
 print(f"Updated summary file: {summary_file}")
+
+
+#### BEGIN --- Merge the expirations and strikes JSON ---
+if os.path.exists(options_expirations_json_file_path):
+    with open(options_expirations_json_file_path, "r") as f:
+        expiry_strikes_data = json.load(f)
+else:
+    expiry_strikes_data = {}
+
+
+rows = duckdb.sql(f"""
+SELECT option_symbol, expiration::VARCHAR, list(DISTINCT strike ORDER BY strike)
+FROM '{output_file}'
+GROUP BY option_symbol, expiration
+ORDER BY option_symbol, expiration
+""").fetchall()
+
+# 3. Merge results
+for symbol, expiration, strikes in rows:
+    symbol_map = expiry_strikes_data.setdefault(symbol, {})
+    existing = json.loads(symbol_map.get(expiration, '[]'))
+
+    # Merge + dedupe + sort
+    merged = sorted(set(existing).union(strikes))
+    symbol_map[expiration] = json.dumps(merged)
+
+# Write to file
+with open(options_expirations_json_file_path, "w") as f:
+    json.dump(expiry_strikes_data, f, indent=2)
+
+print(f"Updated expirations and strikes data file: {options_expirations_json_file_path}")
+#### END --- Merge the expirations and strikes JSON ---
