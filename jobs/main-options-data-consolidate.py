@@ -1,6 +1,7 @@
 import duckdb;
 import shutil, os, uuid
 import json
+from pathlib import Path
 
 DATA_DIR = os.environ.get("DATA_DIR")
 TEMP_DIR = os.environ.get("TEMP_DIR")
@@ -32,10 +33,13 @@ if not os.path.isdir(PARQUET_SRC_DIR):
      raise FileNotFoundError(f"Directory does not exist: {PARQUET_SRC_DIR}")
 
 CONSOLIDATED_DATA_DIR = os.path.join(TEMP_DIR, "w2-output")
+CONSOLIDATED_FLAT_DATA_DIR = os.path.join(TEMP_DIR, "w2-output-flat")
 OHLC_CONSOLIDATED_DATA_DIR = os.path.join(TEMP_DIR, "ohlc")
 shutil.rmtree(CONSOLIDATED_DATA_DIR, ignore_errors=True)    # lets start fresh
+shutil.rmtree(CONSOLIDATED_FLAT_DATA_DIR, ignore_errors=True)    # lets start fresh
 shutil.rmtree(OHLC_CONSOLIDATED_DATA_DIR, ignore_errors=True)    # lets start fresh
 os.makedirs(CONSOLIDATED_DATA_DIR, exist_ok=True)
+os.makedirs(CONSOLIDATED_FLAT_DATA_DIR, exist_ok=True)
 os.makedirs(OHLC_CONSOLIDATED_DATA_DIR, exist_ok=True)
 
 dirs = os.listdir(PARQUET_SRC_DIR)
@@ -81,6 +85,13 @@ for dt in dt_dirs[:MAX_DATES_LIMIT]:
     """)
 
     configData["lastDate"] = dt
+
+## Copy the files in a flat structure directory
+for parquet in Path(CONSOLIDATED_DATA_DIR).rglob("*.parquet"):
+    symbol_dir = parquet.parent.name  # symbol=tsla
+    symbol = symbol_dir.split("=", 1)[1]
+    new_name = f"{symbol}_{parquet.name}"
+    shutil.copy2(parquet, os.path.join(CONSOLIDATED_FLAT_DATA_DIR, new_name))
 
 print("Processing done, dumping the config file.")
 with open(os.path.join(TEMP_DIR, CONFIG_FILE_NAME), "w") as file:

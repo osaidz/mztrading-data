@@ -4,7 +4,7 @@ import delay from "https://esm.sh/delay@7.0.0";
 import pino from "https://esm.sh/pino@10.1.0";
 import pretty from "https://esm.sh/pino-pretty@10.3.0";
 const socketUrl = `https://mztrading-socket.deno.dev`
-const DATA_DIR = Deno.env.get("DATA_DIR") || '/data/w2-output';
+const DATA_DIR = Deno.env.get("DATA_DIR") || '/data/w2-output-flat';
 const OHLC_DATA_DIR = Deno.env.get("OHLC_DIR") || '/data/ohlc';
 
 import { DuckDBInstance } from "npm:@duckdb/node-api@1.4.3-r.2";
@@ -124,7 +124,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
                     abs(delta) AS abs_delta,
                     abs(strike - OHLC.close) AS price_strike_diff,
                     abs(abs(delta) - ${(delta || 0) / 100}) AS delta_diff
-                    FROM '${DATA_DIR}/symbol=${symbol}/*.parquet' opdata
+                    FROM '${DATA_DIR}/${symbol}_*.parquet' opdata
                     JOIN OHLC ON OHLC.dt = opdata.dt
                     WHERE expiration = '${expiration}' 
                             AND open_interest > 0           --JUST TO MAKE SURE NEW CONTRACTS WON'T APPEAR IN THE DATASET WHICH LIKELY REPRESENTED BY 0 OI
