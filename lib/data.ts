@@ -219,7 +219,8 @@ export const getCboeLatestDateAndSymbols = (forceDayId?: string) => {
 
 export const getSymbolExpirations = (symbol: string) => {
     const symbolExpirations = OptionsExpirationStrikes[symbol];
-    return Object.keys(symbolExpirations).map(k => {
+    if (!symbolExpirations) return [];
+    return Object.keys(symbolExpirations).toSorted().map(k => {
         return {
             expiration: k,
             strikes: JSON.parse(symbolExpirations[k])
