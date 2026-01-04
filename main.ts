@@ -16,7 +16,8 @@ import {
     //OptionsSnapshotSummaryLegacy,
     searchTicker,
     getSnapshotsAvailableForDate,
-    getSnapshotsAvailableForSymbol
+    getSnapshotsAvailableForSymbol,
+    getSymbolExpirations
 } from "./lib/data.ts";
 import { logger } from './lib/logger.ts'
 // import { getPriceAtDate } from './lib/historicalPrice.ts'
@@ -187,6 +188,11 @@ router.get("/", (context) => {
     .get("/api/options/:symbol/pricing", async (context) => {
         const { symbol } = context.params;
         context.response.body = await getLiveCboeOptionsPricingData(symbol);
+        context.response.type = "application/json";
+    })
+    .get("/api/options/:symbol/expirations", async (context) => {
+        const { symbol } = context.params;
+        context.response.body = getSymbolExpirations(symbol);
         context.response.type = "application/json";
     })
     .get("/api/options/:symbol/exposures/snapshots", (context) => {

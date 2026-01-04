@@ -12,6 +12,10 @@ import cboeOptionsSummary from "./../data/cboe-options-summary.json" with {
     type: "json",
 };
 
+import optionsExpirationStrikesMap from "./../data/options-expirations-strikes.json" with {
+    type: "json",
+};
+
 import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
     type: "json",
 };
@@ -57,6 +61,9 @@ type CboeOptionSummaryType = {
 
 type TickerSymbol = { name: string, symbol: string }
 
+type OptionsExpirationStrikesType = Record<string, Record<string, string>>
+
+
 // export const getOptionsDataSummary = () => {
 //     return optionsDataSummary as OptionsDataSummary;
 // };
@@ -66,6 +73,8 @@ export const getOptionsSnapshotSummary = () => {
 };
 
 export const OptionsSnapshotSummary = (optionsSnapshotSummary as OptionsSnapshotSummary);
+
+export const OptionsExpirationStrikes = (optionsExpirationStrikesMap as OptionsExpirationStrikesType);
 
 export const AvailableSnapshotDates = Object.values(OptionsSnapshotSummary).map(k => ({ dt: k.displayName }));
 
@@ -205,4 +214,15 @@ export const getCboeLatestDateAndSymbols = (forceDayId?: string) => {
         }
     }
     return null;
-} 
+}
+
+
+export const getSymbolExpirations = (symbol: string) => {
+    const symbolExpirations = OptionsExpirationStrikes[symbol];
+    return Object.keys(symbolExpirations).map(k => {
+        return {
+            expiration: k,
+            strikes: JSON.parse(symbolExpirations[k])
+        }
+    })
+}
