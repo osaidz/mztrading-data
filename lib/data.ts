@@ -1,4 +1,5 @@
 import Fuse from "https://esm.sh/fuse.js@7.0.0";
+import dayjs from "https://esm.sh/dayjs@1.11.13";
 
 // import optionsDataSummary from "./../data/options-data.summary.json" with {
 //     type: "json",
@@ -23,6 +24,7 @@ import optionsRollingSummary from "./../data/cboe-options-rolling.json" with {
 import symbols from "./../data/symbols.json" with {
     type: "json",
 };
+import { getWeekOfMonth } from "./utils.ts";
 
 // type OptionsDataSummary = Record<string, {
 //     displayName: string;
@@ -220,10 +222,23 @@ export const getCboeLatestDateAndSymbols = (forceDayId?: string) => {
 export const getSymbolExpirations = (symbol: string) => {
     const symbolExpirations = OptionsExpirationStrikes[symbol];
     if (!symbolExpirations) return [];
-    return Object.keys(symbolExpirations).toSorted().map(k => {
+    const expirations = Object.keys(symbolExpirations).toSorted().map(k => {
         return {
             expiration: k,
             strikes: JSON.parse(symbolExpirations[k])
         }
     })
+    //dup code. TODO: make it centralized
+    const monthlyExpiryMap = new Map<string, string>();
+    for (const { expiration } of expirations) {
+        const expirationDayjs = dayjs(expiration, 'YYYY-MM-DD', true);
+        if (expirationDayjs.date() >= 15 && expirationDayjs.date() <= 21 && getWeekOfMonth(expirationDayjs.date(), expirationDayjs.month(), expirationDayjs.year()) == 3) { //third week of the month
+            const k = `${expirationDayjs.year()}-${expirationDayjs.month()}`;
+            if (monthlyExpiryMap.get(k)! > expiration) continue;
+            monthlyExpiryMap.set(k, expiration);
+        }
+    }
+
+    const monthlyExpirations = new Set([...monthlyExpiryMap.values()]);
+    return expirations.map(k => ({ ...k, isMonthly: monthlyExpirations.has(k.expiration) }));
 }
