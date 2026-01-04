@@ -127,7 +127,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
                     FROM '${DATA_DIR}/${symbol}_*.parquet' opdata
                     JOIN OHLC ON OHLC.dt = opdata.dt
                     WHERE expiration = '${expiration}' 
-                            AND open_interest > 0           --JUST TO MAKE SURE NEW CONTRACTS WON'T APPEAR IN THE DATASET WHICH LIKELY REPRESENTED BY 0 OI
+                            AND (open_interest > 0 OR bid > 0 OR ask > 0 OR iv > 0)           --JUST TO MAKE SURE NEW CONTRACTS WON'T APPEAR IN THE DATASET WHICH LIKELY REPRESENTED BY 0 OI
                             AND OHLC.dt >= current_date - ${lookbackDays} ${strikeFilter} 
                 ), M AS (
                     SELECT *,
