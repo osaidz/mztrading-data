@@ -184,7 +184,7 @@
         "symbol": "ACGL"
     },
     {
-        "name": "ACCENDRA HEALTH INC",
+        "name": "OWENS & MINOR INC NEW COM",
         "symbol": "ACH"
     },
     {
@@ -1456,7 +1456,7 @@
         "symbol": "ASYS"
     },
     {
-        "name": "ATAIBECKLEY INC",
+        "name": "ATAIBECKLEY INC COM SHS",
         "symbol": "ATAI"
     },
     {
@@ -2138,10 +2138,6 @@
     {
         "name": "BREAD FINANCIAL HOLDINGS INC COM",
         "symbol": "BFH"
-    },
-    {
-        "name": "BANKFINANCIAL CORP COM",
-        "symbol": "BFIN"
     },
     {
         "name": "BUILD FUNDS TRUST BOND INNOVATION",
@@ -4688,10 +4684,6 @@
         "symbol": "CXW"
     },
     {
-        "name": "CYBIN INC COM NEW",
-        "symbol": "CYBN"
-    },
-    {
         "name": "CYBERARK SOFTWARE LTD SHS",
         "symbol": "CYBR"
     },
@@ -6148,7 +6140,7 @@
         "symbol": "ETD"
     },
     {
-        "name": "GRAYSCALE ETHEREUM MINI TR ETF SHS NEW",
+        "name": "GRAYSCALE ETHEREUM STAKING MIN",
         "symbol": "ETH"
     },
     {
@@ -6160,7 +6152,7 @@
         "symbol": "ETHD"
     },
     {
-        "name": "GRAYSCALE ETHEREUM TRUST ETF SHS",
+        "name": "GRAYSCALE ETHEREUM STAKING ETF",
         "symbol": "ETHE"
     },
     {
@@ -8288,7 +8280,7 @@
         "symbol": "GSM"
     },
     {
-        "name": "GRAYSCALE SOLANA TR ETF SHS",
+        "name": "GRAYSCALE SOLANA STAKING ETF",
         "symbol": "GSOL"
     },
     {
@@ -8558,6 +8550,10 @@
     {
         "name": "HELEN OF TROY LTD COM",
         "symbol": "HELE"
+    },
+    {
+        "name": "CYBIN INC COM NEW",
+        "symbol": "HELP"
     },
     {
         "name": "Franklin Genomic Advancements ETF",
@@ -13600,7 +13596,7 @@
         "symbol": "ORIC"
     },
     {
-        "name": "ORION DIGITAL CORP",
+        "name": "ORION DIGITAL CORP COM",
         "symbol": "ORIO"
     },
     {
@@ -13832,7 +13828,7 @@
         "symbol": "PAVE"
     },
     {
-        "name": "PAVMED INC COM NEW",
+        "name": "PAVMED INC COM",
         "symbol": "PAVM"
     },
     {
@@ -14376,7 +14372,7 @@
         "symbol": "PNC"
     },
     {
-        "name": "PINNACLE FINANCIAL PARTNERS IN",
+        "name": "PINNACLE FINL PARTNERS INC COM",
         "symbol": "PNFP"
     },
     {
