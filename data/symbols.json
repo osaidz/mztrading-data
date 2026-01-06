@@ -6140,7 +6140,7 @@
         "symbol": "ETD"
     },
     {
-        "name": "GRAYSCALE ETHEREUM STAKING MIN",
+        "name": "GRAYSCALE ETHEREUM STAKING SHS NEW",
         "symbol": "ETH"
     },
     {
@@ -6152,7 +6152,7 @@
         "symbol": "ETHD"
     },
     {
-        "name": "GRAYSCALE ETHEREUM STAKING ETF",
+        "name": "GRAYSCALE ETHEREUM STAKING ETF SHS",
         "symbol": "ETHE"
     },
     {
@@ -8280,7 +8280,7 @@
         "symbol": "GSM"
     },
     {
-        "name": "GRAYSCALE SOLANA STAKING ETF",
+        "name": "GRAYSCALE SOLANA STAKING ETF SHS",
         "symbol": "GSOL"
     },
     {
@@ -11194,10 +11194,6 @@
     {
         "name": "LIGHTSPEED COMMERCE INC SUB VTG SHS",
         "symbol": "LSPD"
-    },
-    {
-        "name": "LANDSTAR SYS INC COM",
-        "symbol": "LSTR"
     },
     {
         "name": "LIGHTBRIDGE CORP COM",
