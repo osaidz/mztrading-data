@@ -3,10 +3,13 @@ import {
     isHttpError,
     Router,
 } from "https://deno.land/x/oak@v12.6.1/mod.ts";
+import pino from "https://esm.sh/pino@10.1.0";
+import pretty from "https://esm.sh/pino-pretty@10.3.0";
+
 import { sortBy } from "https://deno.land/std@0.224.0/collections/sort_by.ts";
 import { getQuery } from "https://deno.land/x/oak@v12.6.1/helpers.ts";
 // import ky from "https://esm.sh/ky@1.8.2";
-import { stringify } from "jsr:@std/csv";
+import { stringify } from "jsr:@std/csv@1.0.6";
 import {
     AvailableSnapshotDates,
     // CboeOptionsRawSummary,
@@ -19,7 +22,17 @@ import {
     getSnapshotsAvailableForSymbol,
     getSymbolExpirations
 } from "./lib/data.ts";
-import { logger } from './lib/logger.ts'
+const stream = pretty({
+  singleLine: true,
+  colorize: true,
+  include: "msg",
+  messageFormat: (log, messageKey) => { return `${log[messageKey]}` },
+});
+
+const logger = pino({
+  //level: "info" 
+}, stream);
+
 // import { getPriceAtDate } from './lib/historicalPrice.ts'
 import {
     calculateExpsoure, ExposureDataRequest, getExposureData, getHistoricalGreeksSummaryDataFromParquet,
@@ -34,6 +47,7 @@ import {
 // import { getOptionsAnalytics, getOptionsChain } from "./lib/cboe.ts";
 import { getIndicatorValues } from "./lib/ta.ts";
 import { OIAnomalyFacetSearchRequestType, OIAnomalySearchRequest, queryOIAnomalyFacetSearch, queryOIAnomalySearch } from "./lib/oianomalySearchClient.ts";
+import { error } from "node:console";
 
 // const token = Deno.env.get("ghtoken") || '';
 const router = new Router();
@@ -229,15 +243,7 @@ const app = new Application();
 app.use(async (context, next) => {
     try {
         const req = context.request;
-        logger.info(`${req.method} ${req.url.pathname}`, {
-            path: req.url.pathname,
-            method: req.method,
-            referer: req.headers.get('referer'),
-            auth: req.headers.get('authorization'),
-            ip: req.headers.get('X-Forwarded-For') || req.headers.get('x-real-ip'),
-            userAgent: req.headers.get('user-agent'),
-            service: "mztrading-data"
-        });
+        logger.info(`${req.method} ${req.url.pathname} ${req.headers.get('X-Forwarded-For') || req.headers.get('x-real-ip')}`)
         context.response.headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         context.response.headers.set("Access-Control-Allow-Origin", "*");
         context.response.headers.set("Access-Control-Max-Age", "86400");
@@ -251,6 +257,7 @@ app.use(async (context, next) => {
         }
         context.response.body = { error: err.message };
         context.response.type = "json";
+        logger.error(`Error occurred: ${error.message}`);
     }
 });
 
