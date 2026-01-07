@@ -75525,5 +75525,6 @@
             "symbol": "SLS",
             "dt": "2026-01-07"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2026-01-07-12-02-29/options_cboe_oi_anomaly.parquet"
 }
