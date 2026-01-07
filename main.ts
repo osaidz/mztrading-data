@@ -241,9 +241,10 @@ router.get("/", (context) => {
 const app = new Application();
 
 app.use(async (context, next) => {
+    const start = performance.now();
+    const req = context.request;
+    let hasError = false;
     try {
-        const req = context.request;
-        logger.info(`${req.method} ${req.url.pathname} ${req.headers.get('X-Forwarded-For') || req.headers.get('x-real-ip')}`)
         context.response.headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         context.response.headers.set("Access-Control-Allow-Origin", "*");
         context.response.headers.set("Access-Control-Max-Age", "86400");
@@ -257,7 +258,11 @@ app.use(async (context, next) => {
         }
         context.response.body = { error: err.message };
         context.response.type = "json";
-        logger.error(`Error occurred: ${error.message}`);
+        logger.error(`Error occurred: ${err.message}`);
+        hasError = true;
+    } finally {
+        const end = performance.now();
+        logger.info(`${ hasError ? 'ERR':'OK' } ${req.method} ${req.url.pathname} ${req.headers.get('X-Forwarded-For') || req.headers.get('x-real-ip') || ''} ${(end - start).toFixed(2)} ms`)
     }
 });
 

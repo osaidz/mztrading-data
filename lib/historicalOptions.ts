@@ -434,7 +434,7 @@ async function getHistoricalOptionData(symbol: string, dt: string) {
     console.time(`getHistoricalOptionData-${symbol}-${dt}`)
     const historicalData = await getHistoricalOptionDataFromParquet(symbol, dt);
     //throw if empty array
-    if (historicalData.length === 0) throw new Error(`No data found for '${symbol}' and '${dt}'`);
+    if (historicalData.length === 0) throw new Error(`No data found for '${symbol}' on '${dt}'`);
     const indexedObject = historicalData.reduce((previous, current) => {
         previous[current.expiration] = previous[current.expiration] || {};
         previous[current.expiration][current.strike] = previous[current.expiration][current.strike] || {};
