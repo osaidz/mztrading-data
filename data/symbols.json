@@ -4528,10 +4528,6 @@
         "symbol": "CUZ"
     },
     {
-        "name": "CUREVAC N V COM",
-        "symbol": "CVAC"
-    },
-    {
         "name": "CVB FINL CORP COM",
         "symbol": "CVBF"
     },
@@ -11194,6 +11190,10 @@
     {
         "name": "LIGHTSPEED COMMERCE INC SUB VTG SHS",
         "symbol": "LSPD"
+    },
+    {
+        "name": "LANDSTAR SYS INC COM",
+        "symbol": "LSTR"
     },
     {
         "name": "LIGHTBRIDGE CORP COM",
