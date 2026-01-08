@@ -75577,5 +75577,6 @@
             "symbol": "DT",
             "dt": "2026-01-08"
         }
-    ]
+    ],
+    "openInterestAnomalyUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OI_ANOMALY_2026-01-08-12-03-14/options_cboe_oi_anomaly.parquet"
 }
