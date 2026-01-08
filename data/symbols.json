@@ -108,6 +108,10 @@
         "symbol": "ABNB"
     },
     {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "ABNG"
+    },
+    {
         "name": "ACUMEN PHARMACEUTICALS INC COM",
         "symbol": "ABOS"
     },
@@ -858,6 +862,10 @@
     {
         "name": "AMERIPRISE FINL INC COM",
         "symbol": "AMP"
+    },
+    {
+        "name": "AMPLITECH GROUP INC COM NEW",
+        "symbol": "AMPG"
     },
     {
         "name": "AMPHASTAR PHARMACEUTICALS INC COM",
@@ -2436,6 +2444,10 @@
         "symbol": "BLOK"
     },
     {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "BLSG"
+    },
+    {
         "name": "BULLISH ORD SHS",
         "symbol": "BLSH"
     },
@@ -2470,6 +2482,10 @@
     {
         "name": "BADGER METER INC COM",
         "symbol": "BMI"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "BMNG"
     },
     {
         "name": "BITMINE IMMERSION TECNOLOGIES COM NEW",
@@ -3284,10 +3300,6 @@
         "symbol": "CDRE"
     },
     {
-        "name": "CIDARA THERAPEUTICS INC COM NEW",
-        "symbol": "CDTX"
-    },
-    {
         "name": "CDW CORP COM",
         "symbol": "CDW"
     },
@@ -3750,6 +3762,10 @@
     {
         "name": "CHIPOTLE MEXICAN GRILL INC COM",
         "symbol": "CMG"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "CMGG"
     },
     {
         "name": "CUMMINS INC COM",
@@ -5812,10 +5828,6 @@
         "symbol": "ELMD"
     },
     {
-        "name": "ELME COMMUNITIES SH BEN INT",
-        "symbol": "ELME"
-    },
-    {
         "name": "COMPANHIA PARANAENSE DE ENERGI SPONSORED ADS",
         "symbol": "ELPC"
     },
@@ -6816,12 +6828,12 @@
         "symbol": "FG"
     },
     {
-        "name": "FIBROGEN INC COM NEW",
-        "symbol": "FGEN"
-    },
-    {
         "name": "FIRST TR EXCH TRD ALPHDX FD II GERMANY ALPHA",
         "symbol": "FGM"
+    },
+    {
+        "name": "FG NEXUS INC. COM NEW",
+        "symbol": "FGNX"
     },
     {
         "name": "FIRST HAWAIIAN INC COM",
@@ -7312,6 +7324,10 @@
         "symbol": "FSMD"
     },
     {
+        "name": "FIDELITY SOLANA FD BENEFICIAL INT",
+        "symbol": "FSOL"
+    },
+    {
         "name": "FRANKLIN STR PPTYS CORP COM",
         "symbol": "FSP"
     },
@@ -7430,6 +7446,10 @@
     {
         "name": "SIX FLAGS ENTERTAINMENT CORP COM",
         "symbol": "FUN"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "FUTG"
     },
     {
         "name": "FUTU HLDGS LTD SPON ADS CL A",
@@ -7710,6 +7730,10 @@
     {
         "name": "GOLDMAN SACHS ETF TR ACTIVEBETA EME",
         "symbol": "GEM"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHARES",
+        "symbol": "GEMG"
     },
     {
         "name": "GEMINI SPACE STA INC CL A COM",
@@ -12100,10 +12124,6 @@
         "symbol": "MRP"
     },
     {
-        "name": "MERSANA THERAPEUTICS INC COM",
-        "symbol": "MRSN"
-    },
-    {
         "name": "MARTEN TRANS LTD COM",
         "symbol": "MRTN"
     },
@@ -12198,6 +12218,10 @@
     {
         "name": "ADVISORSHARES TR MSOS DAILY LVRGD",
         "symbol": "MSOX"
+    },
+    {
+        "name": "TIDAL TRUST II DEFIANCE LEVERAG",
+        "symbol": "MST"
     },
     {
         "name": "Tuttle Capital MSTR 0DTE Covered Call ETF",
@@ -12494,6 +12518,10 @@
     {
         "name": "NATIONAL BK HLDGS CORP CL A",
         "symbol": "NBHC"
+    },
+    {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "NBIG"
     },
     {
         "name": "NEBIUS GROUP N.V. SHS CLASS A",
@@ -13364,6 +13392,10 @@
         "symbol": "OKTA"
     },
     {
+        "name": "THEMES ETF TR LEVERAGE SHS 2X",
+        "symbol": "OKTG"
+    },
+    {
         "name": "Tradr 2X Long OKTA Daily ETF",
         "symbol": "OKTX"
     },
@@ -13714,6 +13746,10 @@
     {
         "name": "BLUE OWL CAPITAL INC COM CL A",
         "symbol": "OWL"
+    },
+    {
+        "name": "OWLET INC CL A NEW",
+        "symbol": "OWLT"
     },
     {
         "name": "OXFORD INDS INC COM",
@@ -14816,6 +14852,10 @@
         "symbol": "PYPL"
     },
     {
+        "name": "PYXIS ONCOLOGY INC COMMON STOCK",
+        "symbol": "PYXS"
+    },
+    {
         "name": "PAPA JOHNS INTL INC COM",
         "symbol": "PZZA"
     },
@@ -14878,10 +14918,6 @@
     {
         "name": "QFIN HOLDINGS INC AMERICAN DEP",
         "symbol": "QFIN"
-    },
-    {
-        "name": "QIAGEN NV COM SHS",
-        "symbol": "QGEN"
     },
     {
         "name": "AMERICAN CENTY ETF TR US QUALITY GROW",
@@ -15432,7 +15468,7 @@
         "symbol": "RIGL"
     },
     {
-        "name": "B. RILEY FINANCIAL INC COM",
+        "name": "BRC GROUP HOLDINGS INC",
         "symbol": "RILY"
     },
     {
@@ -15922,6 +15958,10 @@
     {
         "name": "SABRE CORP COM",
         "symbol": "SABR"
+    },
+    {
+        "name": "SAB BIOTHERAPEUTICS INC COM NEW",
+        "symbol": "SABS"
     },
     {
         "name": "SACHEM CAP CORP COM",
@@ -16862,6 +16902,10 @@
     {
         "name": "SIMILARWEB LTD SHS",
         "symbol": "SMWB"
+    },
+    {
+        "name": "SMX SEC MATTERS PLC ORD SHS NEW",
+        "symbol": "SMX"
     },
     {
         "name": "SHARKNINJA INC COM SHS",
@@ -20642,6 +20686,10 @@
     {
         "name": "GLOBAL X FDS S&P 500 RISK",
         "symbol": "XRMI"
+    },
+    {
+        "name": "CANARY XRP ETF SHS",
+        "symbol": "XRPC"
     },
     {
         "name": "VOLATILITY SHS TR XRP ETF",
