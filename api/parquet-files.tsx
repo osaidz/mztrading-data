@@ -1,5 +1,5 @@
+/** @jsxImportSource https://esm.sh/preact */
 import { renderToString } from "npm:preact-render-to-string@^6.5.13";
-import { h } from "npm:preact";
 import { Hono } from "https://esm.sh/hono@4.9.8";
 import { CboeOptionsRawSummary } from "../lib/data.ts";
 
@@ -15,12 +15,13 @@ const Html = ({ children }: { children: preact.ComponentChildren }) => (
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Options Data</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/oupala/apaxy@main/apaxy/theme/style.css"></link>
     </head>
     <body>{children}</body>
   </html>
 );
 
-const Home = ()=> (
+const Home = () => (
   <div>
     <h1>Home</h1>
     <ul>
@@ -35,6 +36,7 @@ const App = ({ options }: { options: OptionsSummary[] }) => (
   <div>
     <h1>Options Data</h1>
     <ul>
+      <li><a href="../">...</a></li>
       {options.map((item) => (
         <li key={item.dt}>
           <a href={`dt=${item.dt}/`} target="_blank">
@@ -46,12 +48,17 @@ const App = ({ options }: { options: OptionsSummary[] }) => (
   </div>
 );
 
-const FilePage = ({ dt, fileName }: { dt: string; fileName: string }) => (
+const FilePage = ({ title, fileName }: { title: string, fileName: string }) => (
   <div>
-    <h1>Options Data for {dt}</h1>
-    <a href={fileName} target="_blank">
-      {fileName}
-    </a>
+    <h1>{title}</h1>
+    <ul>
+      <li><a href="../">...</a></li>
+      <li>
+        <a href={fileName} target="_blank">
+          {fileName}
+        </a>
+      </li>
+    </ul>
   </div>
 );
 
@@ -62,27 +69,7 @@ app.use(async (c, next) => {
 });
 
 // --- API routes ---
-app.get("/api/cte", async (c) => {
-  const tableUnion = optionsSummary
-    .map(
-      (k) =>
-        `SELECT '${k.name.match(/(\\d{4}-\\d{2}-\\d{2})/)[1]}' AS dt, * FROM read_parquet('${k.optionsAssetUrl}')`
-    )
-    .join("\n  UNION ALL\n  ");
-
-  const tableCte = `WITH T AS (\n  ${tableUnion}\n)`;
-  return c.json({ cte: tableCte });
-});
-
-app.get("/api/aria2", async (c) => {
-  const result = optionsSummary.map((k) => ({
-    url: `${k.optionsAssetUrl}=${k.name}.parquet`,
-    dt: k.dt,
-  }));
-  return c.json(result);
-});
-
-app.get("/", (c)=> {
+app.get("/", (c) => {
   const html =
     "<!DOCTYPE html>" + renderToString(<Html><Home /></Html>);
   return c.html(html);
@@ -128,9 +115,10 @@ app.get("/files/:dt/", (c) => {
   const match = optionsSummary.find((k) => k.dt === dt);
 
   if (match) {
+    const fileName = new URL(match.optionsAssetUrl).pathname.split("/").pop() || '';
     const html =
       "<!DOCTYPE html>" +
-      renderToString(<Html><FilePage dt={dt} fileName={new URL(match.optionsAssetUrl).pathname.split("/").pop()} /></Html>);
+      renderToString(<Html><FilePage title={`Options Data for ${dt}`} fileName={fileName} /></Html>);
     return c.html(html);
   }
 
@@ -143,7 +131,7 @@ app.get("/ohlc", (c) => c.redirect("/ohlc/"));
 
 app.get("/ohlc/", (c) => {
   const html =
-    "<!DOCTYPE html>" + renderToString(<Html><App options={optionsSummary.filter(k=> k.stocksAssetUrl)} /></Html>);
+    "<!DOCTYPE html>" + renderToString(<Html><App options={optionsSummary.filter(k => k.stocksAssetUrl)} /></Html>);
   return c.html(html);
 });
 
@@ -180,7 +168,7 @@ app.get("/ohlc/:dt/", (c) => {
   if (match) {
     const html =
       "<!DOCTYPE html>" +
-      renderToString(<Html><FilePage dt={dt} fileName={new URL(match.stocksAssetUrl).pathname.split("/").pop()} /></Html>);
+      renderToString(<Html><FilePage title={`Ohlc Data for ${dt}`} fileName={new URL(match.stocksAssetUrl).pathname.split("/").pop() || ''} /></Html>);
     return c.html(html);
   }
 

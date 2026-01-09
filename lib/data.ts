@@ -194,7 +194,7 @@ export const searchTicker = (q: string) => {
     return filtered;
 }
 
-export const CboeOptionsRawSummary = (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl, stocksAssetUrl }) => ({ name, optionsAssetUrl, stocksAssetUrl, dt: name.replace('CBOE_OPTIONS_DATA_', '').substring(0, 10) }));
+export const CboeOptionsRawSummary = (cboeOptionsSummary as CboeOptionSummaryType[]).map(({ name, optionsAssetUrl, stocksAssetUrl }) => ({ name, optionsAssetUrl, stocksAssetUrl, dt: name.substring((name.lastIndexOf('_') + 1)).substring(0, 10) }));
 
 export const getCboeLatestDateAndSymbols = (forceDayId?: string) => {
     if (forceDayId) {
