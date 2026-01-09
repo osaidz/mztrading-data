@@ -26,9 +26,9 @@ jobs:
       - id: snapshotimages
         run: |
           if [ -n "${{ github.event.inputs.forceDayId }}" ]; then
-            echo "RELEASE_NAME=DEX_GEX_SNAPSHOT_${{ github.event.inputs.forceDayId }}" >> ${GITHUB_OUTPUT}
+            echo "RELEASE_NAME=DATA_${{ github.event.inputs.forceDayId }}" >> ${GITHUB_OUTPUT}
           else
-            echo "RELEASE_NAME=DEX_GEX_SNAPSHOT_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
+            echo "RELEASE_NAME=DATA_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
           fi
 
   split-batches:

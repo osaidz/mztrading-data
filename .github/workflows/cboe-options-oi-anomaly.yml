@@ -19,7 +19,7 @@ jobs:
       cboeanomaly-tag: ${{ steps.cboeanomalydata.outputs.RELEASE_NAME }}      
     steps:
       - id: cboeanomalydata
-        run: echo "RELEASE_NAME=CBOE_OI_ANOMALY_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_OUTPUT}
+        run: echo "RELEASE_NAME=DATA_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
 
   cboe-options-oi-anomaly:
     runs-on: ubuntu-latest

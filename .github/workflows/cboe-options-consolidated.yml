@@ -24,7 +24,7 @@ jobs:
       cboerolling-tag: ${{ steps.cboerollingdata.outputs.RELEASE_NAME }}      
     steps:
       - id: cboerollingdata
-        run: echo "RELEASE_NAME=CBOE_ROLLING_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_OUTPUT}
+        run: echo "RELEASE_NAME=DATA_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
 
   cboe-options-rolling-parquet:
     runs-on: ubuntu-latest

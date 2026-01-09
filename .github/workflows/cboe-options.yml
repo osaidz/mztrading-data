@@ -15,7 +15,7 @@ jobs:
       cboe-tag: ${{ steps.cboedata.outputs.RELEASE_NAME }}      
     steps:
       - id: cboedata
-        run: echo "RELEASE_NAME=CBOE_OPTIONS_DATA_$(date '+%Y-%m-%d-%H-%M-%S')" >> ${GITHUB_OUTPUT}
+        run: echo "RELEASE_NAME=DATA_$(date --rfc-3339=date)" >> ${GITHUB_OUTPUT}
 
   cboe-options-daily-parquet:
     runs-on: ubuntu-latest
