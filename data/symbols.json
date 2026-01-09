@@ -5828,6 +5828,10 @@
         "symbol": "ELMD"
     },
     {
+        "name": "ELME COMMUNITIES SH BEN INT",
+        "symbol": "ELME"
+    },
+    {
         "name": "COMPANHIA PARANAENSE DE ENERGI SPONSORED ADS",
         "symbol": "ELPC"
     },
@@ -10592,10 +10596,6 @@
         "symbol": "KREF"
     },
     {
-        "name": "KITE RLTY GROUP TR COM NEW",
-        "symbol": "KRG"
-    },
-    {
         "name": "GLOBAL X FDS CONSCIOUS COS",
         "symbol": "KRMA"
     },
@@ -10718,6 +10718,10 @@
     {
         "name": "KAYNE ANDERSON ENERGY INFRSTR COM",
         "symbol": "KYN"
+    },
+    {
+        "name": "KYNTRA BIO INC COM NEW",
+        "symbol": "KYNB"
     },
     {
         "name": "KYVERNA THERAPEUTICS INC COM",
@@ -14918,6 +14922,10 @@
     {
         "name": "QFIN HOLDINGS INC AMERICAN DEP",
         "symbol": "QFIN"
+    },
+    {
+        "name": "QIAGEN NV ORD SHARES",
+        "symbol": "QGEN"
     },
     {
         "name": "AMERICAN CENTY ETF TR US QUALITY GROW",
