@@ -188,7 +188,7 @@
         "symbol": "ACGL"
     },
     {
-        "name": "OWENS & MINOR INC NEW COM",
+        "name": "ACCENDRA HEALTH INC COM",
         "symbol": "ACH"
     },
     {
@@ -1490,10 +1490,6 @@
     {
         "name": "ADTALEM GLOBAL ED INC COM",
         "symbol": "ATGE"
-    },
-    {
-        "name": "ATHIRA PHARMA INC COM",
-        "symbol": "ATHA"
     },
     {
         "name": "AUTOHOME INC SP ADS RP CL A",
@@ -3424,6 +3420,10 @@
         "symbol": "CG"
     },
     {
+        "name": "CENTERRA GOLD INC COM",
+        "symbol": "CGAU"
+    },
+    {
         "name": "CARLYLE SECURED LENDING INC COM",
         "symbol": "CGBD"
     },
@@ -3594,10 +3594,6 @@
     {
         "name": "CI&T INC COM CL A",
         "symbol": "CINT"
-    },
-    {
-        "name": "CITY OFFICE REIT INC COM",
-        "symbol": "CIO"
     },
     {
         "name": "CION INVT CORP COM",
@@ -4888,6 +4884,10 @@
         "symbol": "DDD"
     },
     {
+        "name": "DINGDONG CAYMAN LTD ADS",
+        "symbol": "DDL"
+    },
+    {
         "name": "PROSHARES TR PSHS ULTRA DOW30",
         "symbol": "DDM"
     },
@@ -5360,6 +5360,10 @@
         "symbol": "DRS"
     },
     {
+        "name": "ALPHA TAU MEDICAL LTD ORDINARY SHARES",
+        "symbol": "DRTS"
+    },
+    {
         "name": "GRANITESHARES ETF TR NASDAQ SELECT DI",
         "symbol": "DRUP"
     },
@@ -5762,6 +5766,10 @@
     {
         "name": "ELDORADO GOLD CORP NEW COM",
         "symbol": "EGO"
+    },
+    {
+        "name": "EASTGROUP PPTYS INC COM",
+        "symbol": "EGP"
     },
     {
         "name": "VAALCO ENERGY INC COM NEW",
@@ -6950,6 +6958,10 @@
     {
         "name": "NATIONAL BEVERAGE CORP COM",
         "symbol": "FIZZ"
+    },
+    {
+        "name": "STARFIGHTERS SPACE INC COMMON STOCK",
+        "symbol": "FJET"
     },
     {
         "name": "FIRST TR EXCH TRD ALPHDX FD II JAPAN ALPHADEX",
@@ -8804,10 +8816,6 @@
         "symbol": "HOOY"
     },
     {
-        "name": "ANYWHERE REAL ESTATE INC COM",
-        "symbol": "HOUS"
-    },
-    {
         "name": "WEREWOLF THERAPEUTICS INC COM",
         "symbol": "HOWL"
     },
@@ -9446,6 +9454,10 @@
     {
         "name": "IMMERSION CORP COM",
         "symbol": "IMMR"
+    },
+    {
+        "name": "IMMIX BIOPHARMA INC COM",
+        "symbol": "IMMX"
     },
     {
         "name": "IMMUNOME INC COM",
@@ -10596,6 +10608,10 @@
         "symbol": "KREF"
     },
     {
+        "name": "KITE RLTY GROUP TR COM NEW",
+        "symbol": "KRG"
+    },
+    {
         "name": "GLOBAL X FDS CONSCIOUS COS",
         "symbol": "KRMA"
     },
@@ -10832,6 +10848,10 @@
         "symbol": "LC"
     },
     {
+        "name": "GRANITESHARES ETF TR 2X LONG LCID DAI",
+        "symbol": "LCDL"
+    },
+    {
         "name": "LUCID GROUP INC COM NEW",
         "symbol": "LCID"
     },
@@ -10934,6 +10954,10 @@
     {
         "name": "LGI HOMES INC COM",
         "symbol": "LGIH"
+    },
+    {
+        "name": "LEGENCE CORP CL A",
+        "symbol": "LGN"
     },
     {
         "name": "LIGAND PHARMACEUTICALS INC COM NEW",
@@ -11118,6 +11142,10 @@
     {
         "name": "LOMA NEGRA C I A S A MTN 144A SPONSORED ADS",
         "symbol": "LOMA"
+    },
+    {
+        "name": "LEONABIO INC",
+        "symbol": "LONA"
     },
     {
         "name": "LOOP INDS INC COM",
@@ -14360,6 +14388,10 @@
         "symbol": "PLTR"
     },
     {
+        "name": "DIREXION SHS ETF TR DAILY PLTR BULL",
+        "symbol": "PLTU"
+    },
+    {
         "name": "Roundhill PLTR WeeklyPay ETF",
         "symbol": "PLTW"
     },
@@ -14708,7 +14740,7 @@
         "symbol": "PSNL"
     },
     {
-        "name": "POLESTAR AUTOMOTIVE HLDG UK SPONSORED ADS",
+        "name": "POLESTAR AUTOMOTIVE HLDG UK PL SPONSORED ADS",
         "symbol": "PSNY"
     },
     {
@@ -19212,6 +19244,10 @@
         "symbol": "USFR"
     },
     {
+        "name": "USCF ETF TR GOLD STRATEGY",
+        "symbol": "USG"
+    },
+    {
         "name": "iShares Broad USD High Yield Corporate Bond ETF",
         "symbol": "USHY"
     },
@@ -20978,6 +21014,10 @@
     {
         "name": "ZUMIEZ INC COM",
         "symbol": "ZUMZ"
+    },
+    {
+        "name": "ZURA BIO LTD CLASS A ORD SHS",
+        "symbol": "ZURA"
     },
     {
         "name": "ZEVRA THERAPEUTICS INC COM NEW",
