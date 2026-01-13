@@ -16,6 +16,9 @@ with open("data/cboe-exception-symbols.json", "r") as file:
     exception_symbols = json.load(file)
     print(f"Loaded {len(exception_symbols)} exception symbols: {exception_symbols}")
 
+## This is a new set of exception symbol which have special char (.) in it.
+exception_symbols.extend(["BRK.B"])
+
 with open(file_path, 'r') as file:
     data = json.load(file)
 
