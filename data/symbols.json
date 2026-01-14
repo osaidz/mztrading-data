@@ -2352,7 +2352,7 @@
         "symbol": "BKKT"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II SR LN ETF",
+        "name": "INVESCO EXCHANGE-TRADED FD TR SR LN ETF",
         "symbol": "BKLN"
     },
     {
@@ -3560,7 +3560,7 @@
         "symbol": "CIB"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II NASDAQ CYB ETF",
+        "name": "FIRST TR EXCHANGE-TRADED FD II NASDAQ CYB ETF",
         "symbol": "CIBR"
     },
     {
@@ -3978,10 +3978,6 @@
     {
         "name": "GRANITESHARES ETF TR BBG COMMD K 1",
         "symbol": "COMB"
-    },
-    {
-        "name": "COMMSCOPE HLDG CO INC COM",
-        "symbol": "COMM"
     },
     {
         "name": "COMPASS INC CL A",
@@ -4532,7 +4528,7 @@
         "symbol": "CURV"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II MSCI GBL TIMBR",
+        "name": "INVESCO EXCHANGE-TRADED FD TR MSCI GBL TIMBR",
         "symbol": "CUT"
     },
     {
@@ -5072,7 +5068,7 @@
         "symbol": "DHX"
     },
     {
-        "name": "SPDR DOW JONES INDL AVERAGE ET UT SER 1",
+        "name": "SPDR DOW JONES INDL AVERAGE UT SER 1",
         "symbol": "DIA"
     },
     {
@@ -7552,7 +7548,7 @@
         "symbol": "FXL"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II ENERGY ALPHADX",
+        "name": "FIRST TR EXCHANGE-TRADED FD II ENERGY ALPHADX",
         "symbol": "FXN"
     },
     {
@@ -7560,7 +7556,7 @@
         "symbol": "FXP"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II INDLS PROD DUR",
+        "name": "FIRST TR EXCHANGE-TRADED FD II INDLS PROD DUR",
         "symbol": "FXR"
     },
     {
@@ -9788,7 +9784,7 @@
         "symbol": "IRT"
     },
     {
-        "name": "IRHYTHM TECHNOLOGIES INC COM",
+        "name": "IRHYTHM HOLDINGS INC",
         "symbol": "IRTC"
     },
     {
@@ -10332,11 +10328,11 @@
         "symbol": "KBR"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II KBW BK ETF",
+        "name": "INVESCO EXCHANGE-TRADED FD TR KBW BK ETF",
         "symbol": "KBWB"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II KBW HIG DV YLD",
+        "name": "INVESCO EXCHANGE-TRADED FD TR KBW HIG DV YLD",
         "symbol": "KBWD"
     },
     {
@@ -11946,10 +11942,6 @@
     {
         "name": "META MATERIALS INC COM NEW",
         "symbol": "MMATQ"
-    },
-    {
-        "name": "MARSH & MCLENNAN COS INC COM",
-        "symbol": "MMC"
     },
     {
         "name": "MARCUS & MILLICHAP INC COM",
@@ -14188,7 +14180,7 @@
         "symbol": "PGR"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II PFD ETF",
+        "name": "INVESCO EXCHANGE-TRADED FD TR PFD ETF",
         "symbol": "PGX"
     },
     {
@@ -14692,7 +14684,7 @@
         "symbol": "PSA"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P SMALLCAP ENE",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P SMALLCAP ENE",
         "symbol": "PSCE"
     },
     {
@@ -14856,7 +14848,7 @@
         "symbol": "PWRD"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II CALIF AMT MUN",
+        "name": "INVESCO EXCHANGE-TRADED FD TR CALIF AMT MUN",
         "symbol": "PWZ"
     },
     {
@@ -14868,7 +14860,7 @@
         "symbol": "PXE"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II RAFI EMRGNG MRKT",
+        "name": "INVESCO EXCHANGE-TRADED FD TR RAFI EMRGNG MRKT",
         "symbol": "PXH"
     },
     {
@@ -15036,7 +15028,7 @@
         "symbol": "QQQJ"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II NASDAQ 100 ETF",
+        "name": "INVESCO EXCHANGE-TRADED FD TR NASDAQ 100 ETF",
         "symbol": "QQQM"
     },
     {
@@ -15876,7 +15868,7 @@
         "symbol": "RWAY"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P SMALLCAP 600",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P SMALLCAP 600",
         "symbol": "RWJ"
     },
     {
@@ -17196,7 +17188,7 @@
         "symbol": "SPH"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P 500 HB ETF",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P 500 HB ETF",
         "symbol": "SPHB"
     },
     {
@@ -17232,7 +17224,7 @@
         "symbol": "SPLB"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P500 LOW VOL",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P500 LOW VOL",
         "symbol": "SPLV"
     },
     {
@@ -17244,7 +17236,7 @@
         "symbol": "SPMD"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P 500 MOMNTM",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P 500 MOMNTM",
         "symbol": "SPMO"
     },
     {
@@ -17524,7 +17516,7 @@
         "symbol": "STAA"
     },
     {
-        "name": "STAG INDL INC COM",
+        "name": "STAG INDUSTRIAL INC COM",
         "symbol": "STAG"
     },
     {
@@ -19744,7 +19736,7 @@
         "symbol": "VOC"
     },
     {
-        "name": "VODAFONE GROUP PLC NEW SPONSORED ADR",
+        "name": "VODAFONE GROUP PLC SPONSORED ADR",
         "symbol": "VOD"
     },
     {
@@ -19836,7 +19828,7 @@
         "symbol": "VRNS"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II VAR RATE PFD",
+        "name": "INVESCO EXCHANGE-TRADED FD TR VAR RATE PFD",
         "symbol": "VRP"
     },
     {
