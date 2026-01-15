@@ -2464,7 +2464,7 @@
         "symbol": "BLZE"
     },
     {
-        "name": "BANCO MACRO SA SPON ADR B",
+        "name": "BANCO MACRO S A SPON ADR B",
         "symbol": "BMA"
     },
     {
@@ -2496,7 +2496,7 @@
         "symbol": "BMO"
     },
     {
-        "name": "BANK MARIN BANCORP COM",
+        "name": "BANK OF MARIN BANCORP COM",
         "symbol": "BMRC"
     },
     {
@@ -5002,6 +5002,10 @@
     {
         "name": "DIMENSIONAL ETF TRUST US SMALL CAP VAL",
         "symbol": "DFSV"
+    },
+    {
+        "name": "--Placeholder--",
+        "symbol": "DFTX"
     },
     {
         "name": "DIMENSIONAL ETF TRUST US EQUITY MARKET",
@@ -7560,7 +7564,7 @@
         "symbol": "FXR"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II UTILITIES ALPH",
+        "name": "FIRST TR EXCHANGE-TRADED FD II UTILITIES ALPH",
         "symbol": "FXU"
     },
     {
@@ -9784,7 +9788,7 @@
         "symbol": "IRT"
     },
     {
-        "name": "IRHYTHM HOLDINGS INC",
+        "name": "IRHYTHM HOLDINGS INC COM",
         "symbol": "IRTC"
     },
     {
@@ -10296,7 +10300,7 @@
         "symbol": "KAI"
     },
     {
-        "name": "KAISER ALUMINUM CORP COM PAR $0.01",
+        "name": "KAISER ALUMINIUM CORPORATION COM PAR $0.01",
         "symbol": "KALU"
     },
     {
@@ -11988,10 +11992,6 @@
         "symbol": "MNKD"
     },
     {
-        "name": "MIND MEDICINE MINDMED INC COM NEW",
-        "symbol": "MNMD"
-    },
-    {
         "name": "MEDICINOVA INC COM NEW",
         "symbol": "MNOV"
     },
@@ -12146,6 +12146,10 @@
     {
         "name": "MILLROSE PPTYS INC COM CL A",
         "symbol": "MRP"
+    },
+    {
+        "name": "MARSH COM",
+        "symbol": "MRSH"
     },
     {
         "name": "MARTEN TRANS LTD COM",
@@ -14156,7 +14160,7 @@
         "symbol": "PFXF"
     },
     {
-        "name": "PROCTER AND GAMBLE CO COM",
+        "name": "PROCTER & GAMBLE CO COM",
         "symbol": "PG"
     },
     {
@@ -15876,7 +15880,7 @@
         "symbol": "RWK"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P 500 REVENUE",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P 500 REVENUE",
         "symbol": "RWL"
     },
     {
@@ -16712,7 +16716,7 @@
         "symbol": "SKYW"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II CLOUD COMPUTING",
+        "name": "FIRST TR EXCHANGE-TRADED FD II CLOUD COMPUTING",
         "symbol": "SKYY"
     },
     {
@@ -17100,7 +17104,7 @@
         "symbol": "SOXL"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II INVESCO PHLX SM",
+        "name": "INVESCO EXCHANGE-TRADED FD TR INVESCO PHLX SM",
         "symbol": "SOXQ"
     },
     {
@@ -19624,6 +19628,10 @@
         "symbol": "VIS"
     },
     {
+        "name": "VISTANCE NETWORKS INC COM",
+        "symbol": "VISN"
+    },
+    {
         "name": "VISTA ENERGY S.A.B. DE C.V. SPONSORED ADS",
         "symbol": "VIST"
     },
@@ -20636,7 +20644,7 @@
         "symbol": "XMHQ"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P MIDCP LOW",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P MIDCP LOW",
         "symbol": "XMLV"
     },
     {
