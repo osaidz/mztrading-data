@@ -796,7 +796,7 @@
         "symbol": "AMC"
     },
     {
-        "name": "AMCOR PLC ORD",
+        "name": "AMCOR PLC COM NEW",
         "symbol": "AMCR"
     },
     {
@@ -2108,7 +2108,7 @@
         "symbol": "BEN"
     },
     {
-        "name": "BROOKFIELD RENEWABLE PARTNERS PARTNERSHIP UNIT",
+        "name": "BROOKFIELD RENEWABLE ENERGY PARTNERSHIP UNIT",
         "symbol": "BEP"
     },
     {
@@ -4268,6 +4268,10 @@
         "symbol": "CRML"
     },
     {
+        "name": "Tradr 2X Long CRML Daily ETF",
+        "symbol": "CRMX"
+    },
+    {
         "name": "CERENCE INC COM",
         "symbol": "CRNC"
     },
@@ -5004,7 +5008,7 @@
         "symbol": "DFSV"
     },
     {
-        "name": "--Placeholder--",
+        "name": "DEFINIUM THERAPEUTICS INC COM SHS",
         "symbol": "DFTX"
     },
     {
@@ -5496,7 +5500,7 @@
         "symbol": "DVYE"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II DORSEY WRGT SMLC",
+        "name": "INVESCO EXCHANGE-TRADED FD TR DORSEY WRGT SMLC",
         "symbol": "DWAS"
     },
     {
@@ -9112,7 +9116,7 @@
         "symbol": "IBM"
     },
     {
-        "name": "ICICI BANK LIMITED ADR",
+        "name": "ICICI BK LTD HONG KONG BRANCH ADR",
         "symbol": "IBN"
     },
     {
@@ -10340,7 +10344,7 @@
         "symbol": "KBWD"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II KBW PPTY CASUT",
+        "name": "INVESCO EXCHANGE-TRADED FD TR KBW PPTY CASUT",
         "symbol": "KBWP"
     },
     {
@@ -12040,10 +12044,6 @@
         "symbol": "MOD"
     },
     {
-        "name": "TOPGOLF CALLAWAY BRANDS CORP COM",
-        "symbol": "MODG"
-    },
-    {
         "name": "MIDWESTONE FINL GROUP INC NEW COM",
         "symbol": "MOFG"
     },
@@ -12438,10 +12438,6 @@
     {
         "name": "MSCI USA Gross Total Return USD Index",
         "symbol": "MXUSA"
-    },
-    {
-        "name": "MSCI World Net Total Return USD Index",
-        "symbol": "MXWLD"
     },
     {
         "name": "MYERS INDS INC COM",
@@ -13500,8 +13496,12 @@
         "symbol": "OND"
     },
     {
-        "name": "ZEV VENTURES INC COM NEW",
+        "name": "ONDAS HOLDINGS INC COM NEW",
         "symbol": "ONDS"
+    },
+    {
+        "name": "Tradr 2X Long ONDS Daily ETF",
+        "symbol": "ONDU"
     },
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
@@ -13882,6 +13882,10 @@
     {
         "name": "PATRICK INDS INC COM",
         "symbol": "PATK"
+    },
+    {
+        "name": "Tradr 2X Long PATH Daily ETF",
+        "symbol": "PATX"
     },
     {
         "name": "Global X U.S. Infrastructure Development ETF",
@@ -15028,7 +15032,7 @@
         "symbol": "QQQI"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II NASDAQNXTGEN100",
+        "name": "INVESCO EXCHANGE-TRADED FD TR NASDAQNXTGEN100",
         "symbol": "QQQJ"
     },
     {
@@ -19214,6 +19218,10 @@
     {
         "name": "U S GOLD CORP COM NEW",
         "symbol": "USAU"
+    },
+    {
+        "name": "Tradr 2X Long USAR Daily ETF",
+        "symbol": "USAX"
     },
     {
         "name": "US BANCORP DEL COM NEW",
