@@ -86,13 +86,6 @@ for dt in dt_dirs[:MAX_DATES_LIMIT]:
 
     configData["lastDate"] = dt
 
-## Copy the files in a flat structure directory
-for parquet in Path(CONSOLIDATED_DATA_DIR).rglob("*.parquet"):
-    symbol_dir = parquet.parent.name  # symbol=tsla
-    symbol = symbol_dir.split("=", 1)[1]
-    new_name = f"{symbol}_{parquet.name}"
-    shutil.copy2(parquet, os.path.join(CONSOLIDATED_FLAT_DATA_DIR, new_name))
-
 print("Processing done, dumping the config file.")
 with open(os.path.join(TEMP_DIR, CONFIG_FILE_NAME), "w") as file:
     json.dump(configData, file, indent=4)
