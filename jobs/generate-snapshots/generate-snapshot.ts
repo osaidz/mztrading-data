@@ -18,7 +18,7 @@ console.log(`🔄 Generating options snapshot for batch file: ${batchFileName}`)
 
 const batchContent = Deno.readTextFileSync(batchFileName);
 const symbols: string[] = JSON.parse(batchContent);
-
+const failedSymbols: string[] = [];
 console.log(`Processing ${symbols.length} symbols from batch file: ${batchFileName}...`);
 
 console.log(`${JSON.stringify(symbols, null, 2)}`);
@@ -66,13 +66,29 @@ for (const symbol of symbols) {
             console.log(`Closed browser after error...`);
             throw err;
         }
+    }).catch((err) => {
+        failedSymbols.push(symbol);
+        console.error(`❌ Failed to process symbol ${symbol} after multiple attempts: ${(err as Error).message}`);
     });
 }
 
 if (browser) {
     await browser.close();
 }
-console.log(`🚀 Finished generating snapshot files with ${symbols.length} symbols...`);
+const successfullyGenerated = symbols.length - failedSymbols.length;
+
+if(successfullyGenerated === 0) {
+    console.error(`❌ No snapshots were generated successfully! Exiting with error code.`);
+    Deno.exit(1);
+}
+
+console.log(`\n\n================ Summary ================`);
+console.log(`Total symbols processed: ${symbols.length}`);
+console.log(`Successfully generated snapshots for: ${successfullyGenerated}`);
+console.log(`Failed symbols: ${failedSymbols.length}`);
+if (failedSymbols.length > 0) {
+    console.log(`Failed symbols list: ${JSON.stringify(failedSymbols, null, 2)}`);
+}
 
 async function processSymbol(symbol: string) {
     async function captureScreenshot(path: string) {
