@@ -284,10 +284,6 @@
         "symbol": "ACWX"
     },
     {
-        "name": "ARRAY DIGITAL INFRASTRUCTURE I COM",
-        "symbol": "AD"
-    },
-    {
         "name": "ADAMAS TRUST INC. COM",
         "symbol": "ADAM"
     },
@@ -1452,7 +1448,7 @@
         "symbol": "ASUR"
     },
     {
-        "name": "ASE INDL HLDG CO LTD SPONSORED ADS",
+        "name": "ASE TECHNOLOGY HLDG CO LTD SPONSORED ADS",
         "symbol": "ASX"
     },
     {
@@ -2340,7 +2336,7 @@
         "symbol": "BKH"
     },
     {
-        "name": "BAKKT HOLDINGS INC COM CL A NEW",
+        "name": "BAKKT INC COM CL A NEW",
         "symbol": "BKKT"
     },
     {
@@ -3762,10 +3758,6 @@
     {
         "name": "COMPASS MINERALS INTL INC COM",
         "symbol": "CMP"
-    },
-    {
-        "name": "COMPOSECURE INC COM CL A",
-        "symbol": "CMPO"
     },
     {
         "name": "CIMPRESS PLC SHS EURO",
@@ -7108,7 +7100,7 @@
         "symbol": "FMS"
     },
     {
-        "name": "FOMENTO ECONOMICO MEXICANO SAB SPON ADR UNITS",
+        "name": "FOMENTO ECONOMICO MEXICANO S A SPON ADR UNITS",
         "symbol": "FMX"
     },
     {
@@ -12432,7 +12424,7 @@
         "symbol": "NAK"
     },
     {
-        "name": "KINDLY MD INC COM",
+        "name": "NAKAMOTO INC COM",
         "symbol": "NAKA"
     },
     {
@@ -13628,7 +13620,7 @@
         "symbol": "OS"
     },
     {
-        "name": "OLD SECOND BANCORP INC ILL COM",
+        "name": "OLD SECOND BANCORP INC DEL COM",
         "symbol": "OSBC"
     },
     {
@@ -14220,7 +14212,7 @@
         "symbol": "PIT"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II DORSEY WRGT DVLP",
+        "name": "INVESCO EXCHANGE-TRADED FD TR DORSEY WRGT DVLP",
         "symbol": "PIZ"
     },
     {
@@ -18504,10 +18496,6 @@
         "symbol": "TRU"
     },
     {
-        "name": "TRUECAR INC COM",
-        "symbol": "TRUE"
-    },
-    {
         "name": "TRUPANION INC COM",
         "symbol": "TRUP"
     },
@@ -19038,10 +19026,6 @@
     {
         "name": "Tradr 2X Long U Daily ETF",
         "symbol": "UNX"
-    },
-    {
-        "name": "URBAN ONE INC CL A",
-        "symbol": "UONE"
     },
     {
         "name": "WHEELS UP EXPERIENCE INC COM CL A",
