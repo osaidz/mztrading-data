@@ -284,6 +284,10 @@
         "symbol": "ACWX"
     },
     {
+        "name": "ARRAY DIGITAL INFRASTRUCTURE I COM",
+        "symbol": "AD"
+    },
+    {
         "name": "ADAMAS TRUST INC. COM",
         "symbol": "ADAM"
     },
@@ -904,7 +908,7 @@
         "symbol": "AMSC"
     },
     {
-        "name": "AMERICAN TOWER CORP NEW COM",
+        "name": "AMERICAN TOWER CORP COM",
         "symbol": "AMT"
     },
     {
@@ -1542,10 +1546,6 @@
     {
         "name": "ATS CORPORATION COM",
         "symbol": "ATS"
-    },
-    {
-        "name": "ASTRIA THERAPEUTICS INC COM",
-        "symbol": "ATXS"
     },
     {
         "name": "ATYR PHARMA INC COM NEW",
@@ -3452,7 +3452,7 @@
         "symbol": "CGUS"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P GBL WATER",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P GBL WATER",
         "symbol": "CGW"
     },
     {
@@ -5656,7 +5656,7 @@
         "symbol": "EEFT"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P EMRNG MKTS",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P EMRNG MKTS",
         "symbol": "EELV"
     },
     {
@@ -5736,7 +5736,7 @@
         "symbol": "EGAN"
     },
     {
-        "name": "EAGLE BANCORP INC MD COM",
+        "name": "EAGLE BANCORPORATION INC COM",
         "symbol": "EGBN"
     },
     {
@@ -7168,7 +7168,7 @@
         "symbol": "FOA"
     },
     {
-        "name": "AMICUS THERAPEUTICS INC COM",
+        "name": "AMICUS THERAPEUTIC COM",
         "symbol": "FOLD"
     },
     {
@@ -7516,7 +7516,7 @@
         "symbol": "FXG"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II HLTH CARE ALPH",
+        "name": "FIRST TR EXCHANGE-TRADED FD II HLTH CARE ALPH",
         "symbol": "FXH"
     },
     {
@@ -7548,7 +7548,7 @@
         "symbol": "FXY"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II MATERIALS ALPH",
+        "name": "FIRST TR EXCHANGE-TRADED FD II MATERIALS ALPH",
         "symbol": "FXZ"
     },
     {
@@ -7746,10 +7746,6 @@
     {
         "name": "GERON CORP COM",
         "symbol": "GERN"
-    },
-    {
-        "name": "GUESS INC COM",
-        "symbol": "GES"
     },
     {
         "name": "GETTY IMAGES HOLDINGS INC CL A COM",
@@ -8110,6 +8106,10 @@
     {
         "name": "STRUCTURE THERAPEUTICS INC SPONSORED ADS",
         "symbol": "GPCR"
+    },
+    {
+        "name": "GPGI INC COM CL A",
+        "symbol": "GPGI"
     },
     {
         "name": "GROUP 1 AUTOMOTIVE INC COM",
@@ -9492,10 +9492,6 @@
         "symbol": "INDS"
     },
     {
-        "name": "INDIVIOR PLC ORD",
-        "symbol": "INDV"
-    },
-    {
         "name": "LISTED FDS TR HORIZON KINETICS",
         "symbol": "INFL"
     },
@@ -9536,7 +9532,7 @@
         "symbol": "INMD"
     },
     {
-        "name": "SUMMIT HOTEL PPTYS INC COM",
+        "name": "SUMMIT HOTEL PPTYS COM",
         "symbol": "INN"
     },
     {
@@ -10408,7 +10404,7 @@
         "symbol": "KIE"
     },
     {
-        "name": "KIMCO RLTY CORP COM",
+        "name": "KIMCO REALTY CORP COM",
         "symbol": "KIM"
     },
     {
@@ -10568,7 +10564,7 @@
         "symbol": "KREF"
     },
     {
-        "name": "KITE RLTY GROUP TR COM NEW",
+        "name": "KITE REALTY GROUP TRUST COM NEW",
         "symbol": "KRG"
     },
     {
@@ -10748,7 +10744,7 @@
         "symbol": "LAKE"
     },
     {
-        "name": "LAMAR ADVERTISING CO NEW CL A",
+        "name": "LAMAR ADVERTISING CO CL A",
         "symbol": "LAMR"
     },
     {
@@ -12092,7 +12088,7 @@
         "symbol": "MRP"
     },
     {
-        "name": "MARSH COM",
+        "name": "MARSH & MCLENNAN COS INC COM",
         "symbol": "MRSH"
     },
     {
@@ -12644,7 +12640,7 @@
         "symbol": "NFTY"
     },
     {
-        "name": "NOVAGOLD RES INC COM NEW",
+        "name": "NOVAGOLD RESOURCES INC COM NEW",
         "symbol": "NG"
     },
     {
@@ -12668,7 +12664,7 @@
         "symbol": "NGS"
     },
     {
-        "name": "NATURAL GROCERS BY VITAMIN COT COM",
+        "name": "NATURAL GROCERS BY VITAMIN COM",
         "symbol": "NGVC"
     },
     {
@@ -12932,7 +12928,7 @@
         "symbol": "NTAP"
     },
     {
-        "name": "BANK OF NT BUTTERFIELD&SON LTD SHS NEW",
+        "name": "BANK OF N T BUTTERFIELD & SON SHS NEW",
         "symbol": "NTB"
     },
     {
@@ -13130,10 +13126,6 @@
     {
         "name": "NEWELL BRANDS INC COM",
         "symbol": "NWL"
-    },
-    {
-        "name": "Tradr 2X Long NEM Daily ETF",
-        "symbol": "NWMX"
     },
     {
         "name": "NORTHWEST NAT HLDG CO COM",
@@ -13354,10 +13346,6 @@
     {
         "name": "THEMES ETF TR LEVERAGE SHS 2X",
         "symbol": "OKTG"
-    },
-    {
-        "name": "Tradr 2X Long OKTA Daily ETF",
-        "symbol": "OKTX"
     },
     {
         "name": "UNIVERSAL DISPLAY CORP COM",
@@ -13864,7 +13852,7 @@
         "symbol": "PBA"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II GBL CLEAN ENRG",
+        "name": "INVESCO EXCHANGE-TRADED FD TR GBL CLEAN ENRG",
         "symbol": "PBD"
     },
     {
@@ -15012,10 +15000,6 @@
         "symbol": "QSR"
     },
     {
-        "name": "Tradr 2X Long QS Daily ETF",
-        "symbol": "QSX"
-    },
-    {
         "name": "FIRST TR EXCHANGE-TRADED FD SHS",
         "symbol": "QTEC"
     },
@@ -15816,7 +15800,7 @@
         "symbol": "RWJ"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P MDCP 400 REV",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P MDCP 400 REV",
         "symbol": "RWK"
     },
     {
@@ -16416,7 +16400,7 @@
         "symbol": "SGRY"
     },
     {
-        "name": "STAR GAS PARTNERS L P / STAR UNIT LTD PARTNR",
+        "name": "STAR GROUP LP UNIT LTD PARTNR",
         "symbol": "SGU"
     },
     {
@@ -17276,7 +17260,7 @@
         "symbol": "SPXU"
     },
     {
-        "name": "SPDR S&P 500 ETF TR TR UNIT",
+        "name": "STATE STREET SPDR S&P 500 ETF",
         "symbol": "SPY"
     },
     {
@@ -19028,6 +19012,10 @@
         "symbol": "UNX"
     },
     {
+        "name": "URBAN ONE INC CL A SHS",
+        "symbol": "UONE"
+    },
+    {
         "name": "WHEELS UP EXPERIENCE INC COM CL A",
         "symbol": "UP"
     },
@@ -20392,7 +20380,7 @@
         "symbol": "WWW"
     },
     {
-        "name": "WEYERHAEUSER CO MTN BE COM NEW",
+        "name": "WEYERHAEUSER CO COM NEW",
         "symbol": "WY"
     },
     {
