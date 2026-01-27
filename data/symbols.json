@@ -9492,6 +9492,10 @@
         "symbol": "INDS"
     },
     {
+        "name": "INDIVIOR PHARMACEUTICALS INC COM",
+        "symbol": "INDV"
+    },
+    {
         "name": "LISTED FDS TR HORIZON KINETICS",
         "symbol": "INFL"
     },
@@ -17044,7 +17048,7 @@
         "symbol": "SPAB"
     },
     {
-        "name": "SPECTRUM BRANDS HLDGS INC NEW COM",
+        "name": "HRG GROUP INC COM",
         "symbol": "SPB"
     },
     {
@@ -17260,7 +17264,7 @@
         "symbol": "SPXU"
     },
     {
-        "name": "STATE STREET SPDR S&P 500 ETF",
+        "name": "STATE STR SPDR S&P 500 ETF TR TR UNIT",
         "symbol": "SPY"
     },
     {
@@ -18408,7 +18412,7 @@
         "symbol": "TRI"
     },
     {
-        "name": "TRINITY BIOTECH PLC SPONS ADR NEW",
+        "name": "TRINITY BIOTECH INVT LTD SPONS ADR NEW",
         "symbol": "TRIB"
     },
     {
