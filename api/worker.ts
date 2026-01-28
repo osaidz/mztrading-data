@@ -118,7 +118,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
             FROM (
                 WITH OHLC AS (
                   SELECT DISTINCT dt, iv30/100  AS iv30, if(close > 0, close, LAG(close) OVER (PARTITION BY symbol ORDER BY dt)) AS close,
-                  PERCENT_RANK() OVER (PARTITION BY symbol ORDER BY iv30) * 100 AS iv_percentile
+                  PERCENT_RANK() OVER (PARTITION BY symbol ORDER BY iv30) AS iv_percentile
                   FROM '${OHLC_DATA_DIR}/*.parquet' WHERE replace(symbol, '^', '') = '${symbol}'
                 ), I AS (
                     SELECT DISTINCT opdata.dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, 
