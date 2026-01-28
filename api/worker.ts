@@ -117,10 +117,12 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
             SELECT to_json(t)    
             FROM (
                 WITH OHLC AS (
-                  SELECT DISTINCT dt, iv30/100  AS iv30, if(close > 0, close, LAG(close) OVER (PARTITION BY symbol ORDER BY dt)) AS close
+                  SELECT DISTINCT dt, iv30/100  AS iv30, if(close > 0, close, LAG(close) OVER (PARTITION BY symbol ORDER BY dt)) AS close,
+                  PERCENT_RANK() OVER (PARTITION BY symbol ORDER BY iv30) * 100 AS iv_percentile
                   FROM '${OHLC_DATA_DIR}/*.parquet' WHERE replace(symbol, '^', '') = '${symbol}'
                 ), I AS (
-                    SELECT DISTINCT opdata.dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, OHLC.close, OHLC.iv30,
+                    SELECT DISTINCT opdata.dt, iv, option_type, option_symbol, expiration, strike, (bid + ask)/2 AS  mid_price, 
+                    OHLC.close, OHLC.iv30, OHLC.iv_percentile,
                     abs(delta) AS abs_delta,
                     abs(strike - OHLC.close) AS price_strike_diff,
                     abs(abs(delta) - ${(delta || 0) / 100}) AS delta_diff
@@ -139,6 +141,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
                     array_agg(DISTINCT dt ORDER BY dt) AS dt,
                     array_agg(close ORDER BY dt) FILTER (WHERE option_type='C') AS close,
                     array_agg(iv30 ORDER BY dt) FILTER (WHERE option_type='C') AS iv30,
+                    array_agg(iv_percentile ORDER BY dt) FILTER (WHERE option_type='C') AS iv_percentile,
                     array_agg(iv ORDER BY dt) FILTER (WHERE option_type='C') AS cv,
                     array_agg(iv ORDER BY dt) FILTER (WHERE option_type='P') AS pv,
                     array_agg(mid_price ORDER BY dt) FILTER (WHERE option_type='C') AS cp,
