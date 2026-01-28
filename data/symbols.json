@@ -1104,6 +1104,10 @@
         "symbol": "APLX"
     },
     {
+        "name": "Tradr 2X Short APLD Daily ETF",
+        "symbol": "APLZ"
+    },
+    {
         "name": "APOLLO GLOBAL MGMT INC COM",
         "symbol": "APO"
     },
@@ -2958,6 +2962,10 @@
     {
         "name": "CABALETTA BIO INC COM",
         "symbol": "CABA"
+    },
+    {
+        "name": "Roundhill Robotaxi, Autonomous Vehicles & Technology ETF",
+        "symbol": "CABZ"
     },
     {
         "name": "CAMDEN NATL CORP COM",
@@ -5956,6 +5964,10 @@
         "symbol": "EOSE"
     },
     {
+        "name": "T-REX 2X Long EOSE Daily Target ETF",
+        "symbol": "EOSU"
+    },
+    {
         "name": "ENERPAC TOOL GROUP CORP CL A COM",
         "symbol": "EPAC"
     },
@@ -6552,7 +6564,7 @@
         "symbol": "FBOT"
     },
     {
-        "name": "FIRST BANCORP P R COM NEW",
+        "name": "FIRST BANCORP CORPORATION COM NEW",
         "symbol": "FBP"
     },
     {
@@ -7512,7 +7524,7 @@
         "symbol": "FXF"
     },
     {
-        "name": "FIRST TR EXCHANGE TRADED FD II CONSUMR STAPLE",
+        "name": "FIRST TR EXCHANGE-TRADED FD II CONSUMR STAPLE",
         "symbol": "FXG"
     },
     {
@@ -7928,7 +7940,7 @@
         "symbol": "GLPG"
     },
     {
-        "name": "GAMING & LEISURE PPTYS INC COM",
+        "name": "GAMING & LEISURE P COM",
         "symbol": "GLPI"
     },
     {
@@ -9728,6 +9740,10 @@
         "symbol": "IREX"
     },
     {
+        "name": "Tradr 2X Short IREN Daily ETF",
+        "symbol": "IREZ"
+    },
+    {
         "name": "IRON MTN INC DEL COM",
         "symbol": "IRM"
     },
@@ -10818,6 +10834,10 @@
     {
         "name": "LCI INDS COM",
         "symbol": "LCII"
+    },
+    {
+        "name": "Tradr 2X Short LCID Daily ETF",
+        "symbol": "LCIZ"
     },
     {
         "name": "BLACKROCK ETF TRUST ISHARES WORLD EX",
@@ -12494,6 +12514,10 @@
     {
         "name": "NEUROCRINE BIOSCIENCES INC COM",
         "symbol": "NBIX"
+    },
+    {
+        "name": "Tradr 2X Short NBIS Daily ETF",
+        "symbol": "NBIZ"
     },
     {
         "name": "NOVABRIDGE BIOSCIENCES SPONSORED ADS",
@@ -14344,10 +14368,6 @@
         "symbol": "PLXS"
     },
     {
-        "name": "PLYMOUTH INDL REIT INC COM",
-        "symbol": "PLYM"
-    },
-    {
         "name": "PHILIP MORRIS INTL INC COM",
         "symbol": "PM"
     },
@@ -15972,7 +15992,7 @@
         "symbol": "SANA"
     },
     {
-        "name": "SANMINA CORPORATION COM",
+        "name": "SANMINA CORP COM",
         "symbol": "SANM"
     },
     {
@@ -17054,10 +17074,6 @@
     {
         "name": "SPDR SERIES TRUST STATE STREET SPD",
         "symbol": "SPBO"
-    },
-    {
-        "name": "TRUST FOR PROFESSIONAL MANAGER CROSSINGBRDG PRE",
-        "symbol": "SPC"
     },
     {
         "name": "VIRGIN GALACTIC HOLDINGS INC COM NEW",
