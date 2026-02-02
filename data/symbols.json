@@ -1236,7 +1236,7 @@
         "symbol": "ARHS"
     },
     {
-        "name": "APOLLO COML REAL EST FIN INC COM",
+        "name": "APOLLO COML REAL ESTATE FIN COM",
         "symbol": "ARI"
     },
     {
@@ -1810,10 +1810,6 @@
     {
         "name": "A2Z CUST2MATE SOLUTIONS CORP COM",
         "symbol": "AZ"
-    },
-    {
-        "name": "ASTRAZENECA PLC SPONSORED ADR",
-        "symbol": "AZN"
     },
     {
         "name": "AUTOZONE INC COM",
@@ -2988,10 +2984,6 @@
         "symbol": "CACI"
     },
     {
-        "name": "CADENCE BANK COM",
-        "symbol": "CADE"
-    },
-    {
         "name": "CANDEL THERAPEUTICS INC COM",
         "symbol": "CADL"
     },
@@ -3228,7 +3220,7 @@
         "symbol": "CCK"
     },
     {
-        "name": "CARNIVAL CORP PAIRED CTF",
+        "name": "CARNIVAL CORP COMMON STOCK",
         "symbol": "CCL"
     },
     {
@@ -3252,7 +3244,7 @@
         "symbol": "CCRN"
     },
     {
-        "name": "CENTURY CMNTYS INC COM",
+        "name": "CENTURY COMMUNITIES INC COM",
         "symbol": "CCS"
     },
     {
@@ -3718,10 +3710,6 @@
     {
         "name": "CANADIAN IMPERIAL BANK OF COMM COM",
         "symbol": "CM"
-    },
-    {
-        "name": "COMERICA INC COM",
-        "symbol": "CMA"
     },
     {
         "name": "CAMBIUM NETWORKS CORP SHS",
@@ -4604,7 +4592,7 @@
         "symbol": "CVS"
     },
     {
-        "name": "CHEVRON CORP NEW COM",
+        "name": "CHEVRON CORPORATION COM",
         "symbol": "CVX"
     },
     {
@@ -4648,7 +4636,7 @@
         "symbol": "CWH"
     },
     {
-        "name": "SPDR INDEX SHS FDS MSCI ACWI EXUS",
+        "name": "STATE STREET SPDR MSCI ACWI EX",
         "symbol": "CWI"
     },
     {
@@ -5500,7 +5488,7 @@
         "symbol": "DWAS"
     },
     {
-        "name": "SPDR INDEX SHS FDS S&P INTL ETF",
+        "name": "STATE STREET SPDR S&P INTERNAT",
         "symbol": "DWX"
     },
     {
@@ -5652,7 +5640,7 @@
         "symbol": "EDIT"
     },
     {
-        "name": "SPDR INDEX SHS FDS S&P EM MKT DIV",
+        "name": "STATE STREET SPDR S&P EMERGING",
         "symbol": "EDIV"
     },
     {
@@ -5688,7 +5676,7 @@
         "symbol": "EEMV"
     },
     {
-        "name": "SPDR INDEX SHS FDS MSCI EMR MKT ETF",
+        "name": "STATE STREET SPDR MSCI EMERGIN",
         "symbol": "EEMX"
     },
     {
@@ -6048,6 +6036,10 @@
         "symbol": "EQNR"
     },
     {
+        "name": "EQUIPMENTSHARE COM INC COM CL A",
+        "symbol": "EQPT"
+    },
+    {
         "name": "EQUITY RESIDENTIAL SH BEN INT",
         "symbol": "EQR"
     },
@@ -6404,7 +6396,7 @@
         "symbol": "EWW"
     },
     {
-        "name": "SPDR INDEX SHS FDS S&P EMKTSC ETF",
+        "name": "STATE STREET SPDR S&P EMERGING",
         "symbol": "EWX"
     },
     {
@@ -6472,7 +6464,7 @@
         "symbol": "EXR"
     },
     {
-        "name": "EXTREME NETWORKS COM",
+        "name": "EXTREME NETWORKS INC COM",
         "symbol": "EXTR"
     },
     {
@@ -6788,7 +6780,7 @@
         "symbol": "FEX"
     },
     {
-        "name": "SPDR INDEX SHS FDS EURO STOXX 50",
+        "name": "STATE STREET SPDR EURO STOXX 5",
         "symbol": "FEZ"
     },
     {
@@ -7856,7 +7848,7 @@
         "symbol": "GIGB"
     },
     {
-        "name": "SPDR INDEX SHS FDS S&P GBLINF ETF",
+        "name": "STATE STREET SPDR S&P GLOBAL I",
         "symbol": "GII"
     },
     {
@@ -7996,7 +7988,7 @@
         "symbol": "GMEU"
     },
     {
-        "name": "SPDR INDEX SHS FDS ASIA PACIF ETF",
+        "name": "STATE STREET SPDR S&P EMERGING",
         "symbol": "GMF"
     },
     {
@@ -8028,7 +8020,7 @@
         "symbol": "GNOM"
     },
     {
-        "name": "SPDR INDEX SHS FDS GLB NAT RESRCE",
+        "name": "STATE STREET SPDR S&P GLOBAL N",
         "symbol": "GNR"
     },
     {
@@ -8396,11 +8388,11 @@
         "symbol": "GWW"
     },
     {
-        "name": "SPDR INDEX SHS FDS S&P INTL SMLCP",
+        "name": "STATE STREET SPDR S&P INTERNAT",
         "symbol": "GWX"
     },
     {
-        "name": "SPDR INDEX SHS FDS S&P CHINA ETF",
+        "name": "STATE STREET SPDR S&P CHINA ET",
         "symbol": "GXC"
     },
     {
@@ -10060,10 +10052,6 @@
         "symbol": "JAKK"
     },
     {
-        "name": "JAMF HLDG CORP COM",
-        "symbol": "JAMF"
-    },
-    {
         "name": "JANUX THERAPEUTICS INC COM",
         "symbol": "JANX"
     },
@@ -10116,7 +10104,7 @@
         "symbol": "JBTM"
     },
     {
-        "name": "JOHNSON CTLS INTL PLC SHS",
+        "name": "JOHNSON CONTROLS INTERNATION SHS",
         "symbol": "JCI"
     },
     {
@@ -12089,7 +12077,7 @@
     },
     {
         "name": "MEDICAL PPTYS TRUST INC COM",
-        "symbol": "MPW"
+        "symbol": "MPT"
     },
     {
         "name": "MONOLITHIC PWR SYS INC COM",
@@ -12496,7 +12484,7 @@
         "symbol": "NANOS"
     },
     {
-        "name": "SPDR INDEX SHS FDS S&P NORTH AMER",
+        "name": "STATE STREET SPDR S&P NORTH AM",
         "symbol": "NANR"
     },
     {
@@ -14696,7 +14684,7 @@
         "symbol": "PSCE"
     },
     {
-        "name": "INVESCO EXCH TRADED FD TR II S&P SMLCP HELT",
+        "name": "INVESCO EXCHANGE-TRADED FD TR S&P SMLCP HELT",
         "symbol": "PSCH"
     },
     {
@@ -15132,7 +15120,7 @@
         "symbol": "QVCGA"
     },
     {
-        "name": "SPDR INDEX SHS FDS MSCI WRLD STRGIC",
+        "name": "STATE STREET SPDR MSCI WORLD S",
         "symbol": "QWLD"
     },
     {
@@ -15388,10 +15376,6 @@
         "symbol": "RETL"
     },
     {
-        "name": "REV GROUP INC COM",
-        "symbol": "REVG"
-    },
-    {
         "name": "PROSHARES TR ULTRASHORT TECHN",
         "symbol": "REW"
     },
@@ -15436,7 +15420,7 @@
         "symbol": "RFV"
     },
     {
-        "name": "REINSURANCE GRP OF AMERICA INC COM NEW",
+        "name": "REINSURANCE GROUP AMER INC COM NEW",
         "symbol": "RGA"
     },
     {
@@ -15888,7 +15872,7 @@
         "symbol": "RWM"
     },
     {
-        "name": "SPDR INDEX SHS FDS DJ GLB RL ES ETF",
+        "name": "STATE STREET SPDR DOW JONES GL",
         "symbol": "RWO"
     },
     {
@@ -15900,7 +15884,7 @@
         "symbol": "RWT"
     },
     {
-        "name": "SPDR INDEX SHS FDS DJ INTL RL ETF",
+        "name": "STATE STREET SPDR DOW JONES IN",
         "symbol": "RWX"
     },
     {
@@ -16812,7 +16796,7 @@
         "symbol": "SLYV"
     },
     {
-        "name": "SM ENERGY CO COM",
+        "name": "SM ENERGY COMPANY COM",
         "symbol": "SM"
     },
     {
@@ -17148,11 +17132,11 @@
         "symbol": "SPDN"
     },
     {
-        "name": "SPDR INDEX SHS FDS PORTFOLIO DEVLPD",
+        "name": "STATE STREET SPDR PORTFOLIO DE",
         "symbol": "SPDW"
     },
     {
-        "name": "SPDR INDEX SHS FDS PORTFOLIO EMG MK",
+        "name": "STATE STREET SPDR PORTFOLIO EM",
         "symbol": "SPEM"
     },
     {
@@ -17176,7 +17160,7 @@
         "symbol": "SPGI"
     },
     {
-        "name": "SPDR INDEX SHS FDS PORTFLI MSCI GBL",
+        "name": "STATE STREET SPDR PORTFOLIO MS",
         "symbol": "SPGM"
     },
     {
@@ -19212,7 +19196,7 @@
         "symbol": "USAX"
     },
     {
-        "name": "US BANCORP DEL COM NEW",
+        "name": "US BANCORP COM NEW",
         "symbol": "USB"
     },
     {
@@ -20890,6 +20874,10 @@
     {
         "name": "YATSEN HLDG LTD SPONSORED ADS",
         "symbol": "YSG"
+    },
+    {
+        "name": "YORK SPACE SYSTEMS INC COM",
+        "symbol": "YSS"
     },
     {
         "name": "YUM BRANDS INC COM",
