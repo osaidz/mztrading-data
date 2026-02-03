@@ -468,7 +468,7 @@
         "symbol": "AGGY"
     },
     {
-        "name": "ALAMOS GOLD INC NEW COM CL A",
+        "name": "ALAMOS GOLD INC COM CL A",
         "symbol": "AGI"
     },
     {
@@ -1068,7 +1068,7 @@
         "symbol": "APA"
     },
     {
-        "name": "ARTISAN PARTNERS ASSET MGMT IN CL A",
+        "name": "ARTISAN PARTNERS ASSET MGMT I CL A",
         "symbol": "APAM"
     },
     {
@@ -1088,7 +1088,7 @@
         "symbol": "APGE"
     },
     {
-        "name": "AMPHENOL CORP NEW CL A",
+        "name": "AMPHENOL CORP CL A",
         "symbol": "APH"
     },
     {
@@ -1810,6 +1810,10 @@
     {
         "name": "A2Z CUST2MATE SOLUTIONS CORP COM",
         "symbol": "AZ"
+    },
+    {
+        "name": "ASTRAZENECA PLC ORD",
+        "symbol": "AZN"
     },
     {
         "name": "AUTOZONE INC COM",
@@ -3536,7 +3540,7 @@
         "symbol": "CHT"
     },
     {
-        "name": "CHARTER COMMUNICATIONS INC NEW CL A",
+        "name": "CHARTER COMMUNICATIONS INC CL A",
         "symbol": "CHTR"
     },
     {
@@ -4132,7 +4136,7 @@
         "symbol": "CPRX"
     },
     {
-        "name": "COOPER STD HLDGS INC COM",
+        "name": "COOPER-STANDARD HOLDINGS INC COM",
         "symbol": "CPS"
     },
     {
@@ -4636,7 +4640,7 @@
         "symbol": "CWH"
     },
     {
-        "name": "STATE STREET SPDR MSCI ACWI EX",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "CWI"
     },
     {
@@ -5488,7 +5492,7 @@
         "symbol": "DWAS"
     },
     {
-        "name": "STATE STREET SPDR S&P INTERNAT",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "DWX"
     },
     {
@@ -5640,7 +5644,7 @@
         "symbol": "EDIT"
     },
     {
-        "name": "STATE STREET SPDR S&P EMERGING",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "EDIV"
     },
     {
@@ -5676,7 +5680,7 @@
         "symbol": "EEMV"
     },
     {
-        "name": "STATE STREET SPDR MSCI EMERGIN",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "EEMX"
     },
     {
@@ -5916,7 +5920,7 @@
         "symbol": "ENPX"
     },
     {
-        "name": "ENERGIZER HLDGS INC NEW COM",
+        "name": "ENERGIZER HLDGS INC COM",
         "symbol": "ENR"
     },
     {
@@ -6396,7 +6400,7 @@
         "symbol": "EWW"
     },
     {
-        "name": "STATE STREET SPDR S&P EMERGING",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "EWX"
     },
     {
@@ -6636,7 +6640,7 @@
         "symbol": "FCOM"
     },
     {
-        "name": "FREEPORT-MCMORAN INC CL B",
+        "name": "FREEPORT MCMORAN INC CL B",
         "symbol": "FCX"
     },
     {
@@ -6780,7 +6784,7 @@
         "symbol": "FEX"
     },
     {
-        "name": "STATE STREET SPDR EURO STOXX 5",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "FEZ"
     },
     {
@@ -7848,7 +7852,7 @@
         "symbol": "GIGB"
     },
     {
-        "name": "STATE STREET SPDR S&P GLOBAL I",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "GII"
     },
     {
@@ -7976,7 +7980,7 @@
         "symbol": "GMAB"
     },
     {
-        "name": "GAMESTOP CORP NEW CL A",
+        "name": "GAMESTOP CORP CL A",
         "symbol": "GME"
     },
     {
@@ -7988,7 +7992,7 @@
         "symbol": "GMEU"
     },
     {
-        "name": "STATE STREET SPDR S&P EMERGING",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "GMF"
     },
     {
@@ -8020,7 +8024,7 @@
         "symbol": "GNOM"
     },
     {
-        "name": "STATE STREET SPDR S&P GLOBAL N",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "GNR"
     },
     {
@@ -8388,11 +8392,11 @@
         "symbol": "GWW"
     },
     {
-        "name": "STATE STREET SPDR S&P INTERNAT",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "GWX"
     },
     {
-        "name": "STATE STREET SPDR S&P CHINA ET",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "GXC"
     },
     {
@@ -9240,7 +9244,7 @@
         "symbol": "IEP"
     },
     {
-        "name": "IES HLDGS INC COM",
+        "name": "IES HOLDINGS INC COM",
         "symbol": "IESC"
     },
     {
@@ -11356,7 +11360,7 @@
         "symbol": "LXU"
     },
     {
-        "name": "LYONDELLBASELL INDUSTRIES N V SHS - A -",
+        "name": "LYONDELLBASELL INDUSTRIES NV SHS - A -",
         "symbol": "LYB"
     },
     {
@@ -12076,7 +12080,7 @@
         "symbol": "MPLX"
     },
     {
-        "name": "MEDICAL PPTYS TRUST INC COM",
+        "name": "MEDICAL PROPERTIES TRUST INC COM",
         "symbol": "MPT"
     },
     {
@@ -12484,7 +12488,7 @@
         "symbol": "NANOS"
     },
     {
-        "name": "STATE STREET SPDR S&P NORTH AM",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "NANR"
     },
     {
@@ -12746,10 +12750,6 @@
     {
         "name": "NICE LTD SPONSORED ADR",
         "symbol": "NICE"
-    },
-    {
-        "name": "NINE ENERGY SERVICE INC COM",
-        "symbol": "NINE"
     },
     {
         "name": "NIO INC SPON ADS",
@@ -13240,7 +13240,7 @@
         "symbol": "NXTE"
     },
     {
-        "name": "NEW YORK TIMES CO CL A",
+        "name": "NEW YORK TIMES CO MTN BE CL A",
         "symbol": "NYT"
     },
     {
@@ -13966,10 +13966,6 @@
     {
         "name": "PG&E CORP COM",
         "symbol": "PCG"
-    },
-    {
-        "name": "POTLATCHDELTIC CORPORATION COM",
-        "symbol": "PCH"
     },
     {
         "name": "PROCORE TECHNOLOGIES INC COM",
@@ -15120,7 +15116,7 @@
         "symbol": "QVCGA"
     },
     {
-        "name": "STATE STREET SPDR MSCI WORLD S",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "QWLD"
     },
     {
@@ -15872,7 +15868,7 @@
         "symbol": "RWM"
     },
     {
-        "name": "STATE STREET SPDR DOW JONES GL",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "RWO"
     },
     {
@@ -15884,7 +15880,7 @@
         "symbol": "RWT"
     },
     {
-        "name": "STATE STREET SPDR DOW JONES IN",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "RWX"
     },
     {
@@ -17132,11 +17128,11 @@
         "symbol": "SPDN"
     },
     {
-        "name": "STATE STREET SPDR PORTFOLIO DE",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "SPDW"
     },
     {
-        "name": "STATE STREET SPDR PORTFOLIO EM",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "SPEM"
     },
     {
@@ -17160,7 +17156,7 @@
         "symbol": "SPGI"
     },
     {
-        "name": "STATE STREET SPDR PORTFOLIO MS",
+        "name": "SPDR INDEX SHS FDS STATE STREET SPD",
         "symbol": "SPGM"
     },
     {
@@ -18788,7 +18784,7 @@
         "symbol": "TWM"
     },
     {
-        "name": "TWO HBRS INVT CORP COM",
+        "name": "TWO HARBORS INVENTMENT CORPOR COM",
         "symbol": "TWO"
     },
     {
@@ -20948,7 +20944,7 @@
         "symbol": "ZIM"
     },
     {
-        "name": "ZIONS BANCORPORATION N A COM",
+        "name": "ZIONS BANCORPORATION NATL ASSN COM",
         "symbol": "ZION"
     },
     {
