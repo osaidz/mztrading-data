@@ -428,7 +428,7 @@
         "symbol": "AFCG"
     },
     {
-        "name": "AMERICAN FINL GROUP INC OHIO COM",
+        "name": "AMERICAN FINANCIAL GROUP INC COM",
         "symbol": "AFG"
     },
     {
@@ -2812,7 +2812,7 @@
         "symbol": "BTU"
     },
     {
-        "name": "ANHEUSER BUSCH INBEV SA/NV SPONSORED ADR",
+        "name": "ANHEUSER BUSCH INBEV SA NV SPONSORED ADR",
         "symbol": "BUD"
     },
     {
@@ -4772,10 +4772,6 @@
         "symbol": "DAWN"
     },
     {
-        "name": "DAYFORCE INC COM",
-        "symbol": "DAY"
-    },
-    {
         "name": "DEUTSCHE BANK A G NAMEN AKT",
         "symbol": "DB"
     },
@@ -5288,7 +5284,7 @@
         "symbol": "DOV"
     },
     {
-        "name": "DOW INC COM",
+        "name": "DOW HLDGS INC COM",
         "symbol": "DOW"
     },
     {
@@ -7164,7 +7160,7 @@
         "symbol": "FNGG"
     },
     {
-        "name": "PROPERTY MGMT CORP AMER COM",
+        "name": "FINGERMOTION INC COM",
         "symbol": "FNGR"
     },
     {
@@ -10232,7 +10228,7 @@
         "symbol": "JPIN"
     },
     {
-        "name": "JPMORGAN CHASE & CO. COM",
+        "name": "JPMORGAN CHASE & CO COM",
         "symbol": "JPM"
     },
     {
@@ -12476,7 +12472,7 @@
         "symbol": "NAMS"
     },
     {
-        "name": "NUVEEN NEW YORK QLT MUN INC FD COM",
+        "name": "NUVEEN NY DIVI ADV COM",
         "symbol": "NAN"
     },
     {
@@ -12750,6 +12746,10 @@
     {
         "name": "NICE LTD SPONSORED ADR",
         "symbol": "NICE"
+    },
+    {
+        "name": "NINE ENERGY SERVICE INC COM",
+        "symbol": "NINEQ"
     },
     {
         "name": "NIO INC SPON ADS",
@@ -16076,7 +16076,7 @@
         "symbol": "SBCF"
     },
     {
-        "name": "SHARPLINK GAMING INC COM NEW",
+        "name": "SHARPLINK INC",
         "symbol": "SBET"
     },
     {
