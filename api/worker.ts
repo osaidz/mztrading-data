@@ -44,9 +44,17 @@ socket.on("hello", (args) => {
 });
 
 const WorkerRequestSchema = z.object({
-    requestType: z.string(),
+    requestType: z.enum(["volatility-query", "options-stat-query"]),
     requestId: z.uuid(),
     data: z.any()
+});
+
+const OptionsStatsSchema = z.object({
+    symbol: z.string()
+        .nonempty()
+        .regex(/^[a-zA-Z0-9]+$/, "Symbol must be alphanumeric"),
+    lookbackDays: z.number().int().positive(),
+    requestId: z.uuid()
 });
 
 const BaseSchema = {
@@ -93,6 +101,7 @@ export const OptionsVolRequestSchema = z.discriminatedUnion("mode", [
 ]);
 
 type OptionsVolRequest = z.infer<typeof OptionsVolRequestSchema>;
+type OptionsStatsRequest = z.infer<typeof OptionsStatsSchema>;
 
 /*
  {"symbol":"AAPL","lookbackDays":180,"delta":25,"expiration":"2025-11-07","mode":"delta","requestId":"977c5c7b-7e96-45d1-991b-db70992d0846"}       
@@ -174,6 +183,78 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
     }
 };
 
+const handleOptionsStatsMessage = async (args: OptionsStatsRequest) => {
+    try {
+        const { symbol, lookbackDays, requestId } = OptionsStatsSchema.parse(args);
+
+        logger.info(`Worker options stats request received: ${JSON.stringify(args)}`);
+        using stack = new DisposableStack();
+        const instance = await DuckDBInstance.create(":memory:");
+        stack.defer(() => instance.closeSync());
+        const connection = await instance.connect();
+        stack.defer(() => connection.closeSync());
+        let rows = [];
+        let hasError = false;
+        try {
+
+            const queryToExecute = `
+            SELECT to_json(t)    
+            FROM (
+                WITH T AS (
+                    SELECT DISTINCT dt, close, symbol
+                    FROM '${OHLC_DATA_DIR}/*.parquet' WHERE replace(symbol, '^', '') = '${symbol}'
+                    AND close > 0
+                ), T2 AS (
+                    SELECT dt, option_type, SUM(open_interest) AS total_oi,
+                    SUM(open_interest * theo)*100 AS total_price,
+                    SUM(open_interest * abs(delta)) AS total_delta,
+                    COUNT(DISTINCT option) AS options_count
+                    FROM '${DATA_DIR}/symbol=${symbol}/*.parquet'
+                    GROUP BY dt, option_type
+                ), M AS (
+                    SELECT T2.*, T.close
+                    FROM T
+                    JOIN T2 ON T.dt = T2.dt
+                    WHERE T.dt >= current_date - ${lookbackDays}
+                )
+                
+                SELECT 
+                    array_agg(DISTINCT dt ORDER BY dt) AS dt,
+                    array_agg(close ORDER BY dt) FILTER (WHERE option_type='C') AS close,
+                    array_agg(options_count ORDER BY dt) FILTER (WHERE option_type='C') AS options_count,
+                    array_agg(total_oi ORDER BY dt) FILTER (WHERE option_type='C') AS co,
+                    array_agg(total_oi ORDER BY dt) FILTER (WHERE option_type='P') AS po,
+                    array_agg(total_price ORDER BY dt) FILTER (WHERE option_type='C') AS cp,
+                    array_agg(total_price ORDER BY dt) FILTER (WHERE option_type='P') AS pp,
+                    array_agg(total_delta ORDER BY dt) FILTER (WHERE option_type='C') AS cd,
+                    array_agg(total_delta ORDER BY dt) FILTER (WHERE option_type='P') AS pd
+                FROM M
+            ) t`;
+
+            //log the time it took to complete it
+            const start = performance.now();
+            const result = await connection.runAndReadAll(queryToExecute)
+            const end = performance.now();
+            logger.info(`✅ Query completed in ${(end - start).toFixed(2)} ms`);
+            rows = result.getRows().map(r => JSON.parse(r[0]))[0];  //takes first row and first column
+        }
+        catch (err) {
+            logger.info(`error occurred while processing request: ${err}`);
+            hasError = true;
+        }
+        socket.emit(`worker-response`, {
+            requestId: requestId,
+            hasError,
+            value: rows
+        });
+
+        logger.info(`Worker volatility request completed! ${JSON.stringify(args)}`, );
+
+    } catch (error) {
+        logger.info(`Error processing worker-volatility-request: ${JSON.stringify(error)}`);
+    }
+};
+
 let abortController = new AbortController();
 socket.on("worker-notification", () => {
     logger.info("Worker notification received.");
@@ -203,6 +284,9 @@ async function startWorker() {
                 const parsed = WorkerRequestSchema.parse(item); //will add more handlers here later
                 if (parsed.requestType === "volatility-query") {
                     await handleVolatilityMessage({ ...parsed.data, requestId: parsed.requestId });
+                    continue;   //let's ask another item right away
+                } else if (parsed.requestType === "options-stat-query") {
+                    await handleOptionsStatsMessage({ ...parsed.data, requestId: parsed.requestId });
                     continue;   //let's ask another item right away
                 } else {
                     logger.info(`Unknown request type: ${parsed.requestType}`);
