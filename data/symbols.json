@@ -1044,7 +1044,7 @@
         "symbol": "ANVS"
     },
     {
-        "name": "SPHERE 3D CORP NEW COM NEW",
+        "name": "SPHERE 3D CORP NEW COM SHS",
         "symbol": "ANY"
     },
     {
@@ -5476,10 +5476,6 @@
         "symbol": "DVA"
     },
     {
-        "name": "DYNAVAX TECHNOLOGIES CORP COM NEW",
-        "symbol": "DVAX"
-    },
-    {
         "name": "WEBS ETF TR INDUSTRIALS XLI",
         "symbol": "DVIN"
     },
@@ -7332,7 +7328,7 @@
         "symbol": "FRGE"
     },
     {
-        "name": "FREEDOM HLDG CORP NEV COM",
+        "name": "FREEDOM HOLDING CORP COM",
         "symbol": "FRHC"
     },
     {
@@ -14932,10 +14928,6 @@
         "symbol": "PWZ"
     },
     {
-        "name": "P10 INC COM CL A",
-        "symbol": "PX"
-    },
-    {
         "name": "INVESCO EXCHANGE TRADED FD TR ENERGY EXPLORATI",
         "symbol": "PXE"
     },
@@ -15790,6 +15782,10 @@
     {
         "name": "REPAY HLDGS CORP COM CL A",
         "symbol": "RPAY"
+    },
+    {
+        "name": "RIDGEPOST CAPITAL INC",
+        "symbol": "RPC"
     },
     {
         "name": "RAPID7 INC COM",
@@ -17212,7 +17208,7 @@
         "symbol": "SPAB"
     },
     {
-        "name": "HRG GROUP INC COM",
+        "name": "SPECTRUM BRANDS HOLDINGS INC COM",
         "symbol": "SPB"
     },
     {
@@ -18260,10 +18256,6 @@
         "symbol": "THRY"
     },
     {
-        "name": "TREEHOUSE FOODS INC COM",
-        "symbol": "THS"
-    },
-    {
         "name": "TIC SOLUTIONS INC COM",
         "symbol": "TIC"
     },
@@ -18748,7 +18740,7 @@
         "symbol": "TSLZ"
     },
     {
-        "name": "TAIWAN SEMICONDUCTOR MFG LTD SPONSORED ADS",
+        "name": "TAIWAN SEMICONDUCTOR MANUFACT SPONSORED ADS",
         "symbol": "TSM"
     },
     {
