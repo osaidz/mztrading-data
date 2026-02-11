@@ -6,6 +6,7 @@ import pretty from "https://esm.sh/pino-pretty@10.3.0";
 const socketUrl = `https://mztrading-socket.deno.dev`
 const DATA_DIR = Deno.env.get("DATA_DIR") || '/data/w2-output-flat';
 const OHLC_DATA_DIR = Deno.env.get("OHLC_DIR") || '/data/ohlc';
+const LOG_LEVEL = Deno.env.get("LOG_LEVEL") || 'info';
 
 import { DuckDBInstance } from "npm:@duckdb/node-api@1.4.3-r.2";
 
@@ -17,9 +18,8 @@ const stream = pretty({
 });
 
 const logger = pino({
-    //level: "info" 
+    level: LOG_LEVEL
 }, stream);
-
 
 const socket = io(socketUrl, {
     reconnectionDelayMax: 10000,
@@ -36,11 +36,11 @@ socket.on("connect", () => {
 });
 
 socket.on("disconnect", () => {
-    logger.info("disconnection");
+    logger.debug("disconnection");
 });
 
 socket.on("hello", (args) => {
-    logger.info(`hello response: ${JSON.stringify(args)}`);
+    logger.debug(`hello response: ${JSON.stringify(args)}`);
 });
 
 const WorkerRequestSchema = z.object({
@@ -167,7 +167,7 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
             rows = result.getRows().map(r => JSON.parse(r[0]))[0];  //takes first row and first column
         }
         catch (err) {
-            logger.info(`error occurred while processing request: ${err}`);
+            logger.error(`error occurred while processing request: ${err}`);
             hasError = true;
         }
         socket.emit(`worker-response`, {
@@ -176,10 +176,10 @@ const handleVolatilityMessage = async (args: OptionsVolRequest) => {
             value: rows
         });
 
-        logger.info(`Worker volatility request completed! ${JSON.stringify(args)}`, );
+        logger.debug(`Worker volatility request completed! ${JSON.stringify(args)}`, );
 
     } catch (error) {
-        logger.info(`Error processing worker-volatility-request: ${JSON.stringify(error)}`);
+        logger.error(`Error processing worker-volatility-request: ${JSON.stringify(error)}`);
     }
 };
 
@@ -239,7 +239,7 @@ const handleOptionsStatsMessage = async (args: OptionsStatsRequest) => {
             rows = result.getRows().map(r => JSON.parse(r[0]))[0];  //takes first row and first column
         }
         catch (err) {
-            logger.info(`error occurred while processing request: ${err}`);
+            logger.error(`error occurred while processing request: ${err}`);
             hasError = true;
         }
         socket.emit(`worker-response`, {
@@ -248,27 +248,27 @@ const handleOptionsStatsMessage = async (args: OptionsStatsRequest) => {
             value: rows
         });
 
-        logger.info(`Worker volatility request completed! ${JSON.stringify(args)}`, );
+        logger.debug(`Worker volatility request completed! ${JSON.stringify(args)}`, );
 
     } catch (error) {
-        logger.info(`Error processing worker-volatility-request: ${JSON.stringify(error)}`);
+        logger.error(`Error processing worker-volatility-request: ${JSON.stringify(error)}`);
     }
 };
 
 let abortController = new AbortController();
 socket.on("worker-notification", () => {
-    logger.info("Worker notification received.");
+    logger.debug("Worker notification received.");
     abortController.abort();
 });
 
-socket.on("register-worker-success", a => { logger.info(`worker registration succeeded, : ${JSON.stringify(a)}`) })
+socket.on("register-worker-success", a => { logger.debug(`worker registration succeeded, : ${JSON.stringify(a)}`) })
 
 socket.on("reconnect_attempt", (attempt) => {
-    logger.info(`Reconnection attempt #${attempt}`);
+    logger.debug(`Reconnection attempt #${attempt}`);
 });
 
 socket.on("reconnect", () => {
-    logger.info(`Reconnected successfully! Socket ID: ${socket.id}`);
+    logger.debug(`Reconnected successfully! Socket ID: ${socket.id}`);
     socket.emit("register-worker", {});
 });
 
@@ -278,7 +278,7 @@ async function startWorker() {
     isWorkerStarted = true;
     while (true) {
         try {
-            logger.info("Requesting work item from server...");
+            logger.debug("Requesting work item from server...");
             const item = await socket.timeout(3000).emitWithAck("receive-message");
             if (item) {
                 const parsed = WorkerRequestSchema.parse(item); //will add more handlers here later
@@ -289,17 +289,17 @@ async function startWorker() {
                     await handleOptionsStatsMessage({ ...parsed.data, requestId: parsed.requestId });
                     continue;   //let's ask another item right away
                 } else {
-                    logger.info(`Unknown request type: ${parsed.requestType}`);
+                    logger.warn(`Unknown request type: ${parsed.requestType}`);
                 }
             } else {
-                logger.info("No work items available, waiting for notification...");
+                logger.debug("No work items available, waiting for notification...");
             }
         } catch (error) {
-            console.error("Error handling worker request:", error);
+            logger.error(`Error handling worker request: ${JSON.stringify(error)}`);
         }
 
         //may be we will explore async events later, but for now let's use abort controller signal.
-        await delay(30000, { signal: abortController.signal }).catch(() => { logger.info('signal must have aborted this') });
+        await delay(30000, { signal: abortController.signal }).catch(() => { logger.debug('signal must have aborted this') });
         abortController = new AbortController();
     }
 }
