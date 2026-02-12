@@ -724,6 +724,10 @@
         "symbol": "ALLY"
     },
     {
+        "name": "ALMONTY INDS INC COM NEW",
+        "symbol": "ALM"
+    },
+    {
         "name": "ALUMIS INC COM",
         "symbol": "ALMS"
     },
@@ -2184,7 +2188,7 @@
         "symbol": "BGC"
     },
     {
-        "name": "B & G FOODS INC NEW COM",
+        "name": "B & G FOODS INC COM",
         "symbol": "BGS"
     },
     {
@@ -2570,6 +2574,10 @@
     {
         "name": "BIONTECH SE SPONSORED ADS",
         "symbol": "BNTX"
+    },
+    {
+        "name": "BOBS DISC FURNITURE INC COM SHS",
+        "symbol": "BOBS"
     },
     {
         "name": "BOSTON OMAHA CORP CL A COM STK",
@@ -3720,6 +3728,10 @@
         "symbol": "CLX"
     },
     {
+        "name": "CLIMB BIO INC COM",
+        "symbol": "CLYM"
+    },
+    {
         "name": "CANADIAN IMPERIAL BANK OF COMM COM",
         "symbol": "CM"
     },
@@ -3860,7 +3872,7 @@
         "symbol": "CNP"
     },
     {
-        "name": "CANADIAN NAT RES LTD COM",
+        "name": "CANADIAN NAT RES LTD MED TERM COM",
         "symbol": "CNQ"
     },
     {
@@ -4018,6 +4030,10 @@
     {
         "name": "SPROTT FDS TR JR COPPER MINERS",
         "symbol": "COPJ"
+    },
+    {
+        "name": "SPROTT FDS TR COPPER MINER ETF",
+        "symbol": "COPP"
     },
     {
         "name": "GLOBAL X FDS GLOBAL X COPPER",
@@ -4692,10 +4708,6 @@
         "symbol": "CXW"
     },
     {
-        "name": "CYBERARK SOFTWARE LTD SHS",
-        "symbol": "CYBR"
-    },
-    {
         "name": "CHINA YUCHAI INTL LTD COM",
         "symbol": "CYD"
     },
@@ -5354,6 +5366,10 @@
     {
         "name": "DIREXION SHS ETF TR DAILY REAL EST B",
         "symbol": "DRN"
+    },
+    {
+        "name": "REX ETF TR DRONE ETF",
+        "symbol": "DRNZ"
     },
     {
         "name": "LEONARDO DRS INC COM",
@@ -7096,7 +7112,7 @@
         "symbol": "FLQL"
     },
     {
-        "name": "FLUOR CORP NEW COM",
+        "name": "FLUOR CORP COM",
         "symbol": "FLR"
     },
     {
@@ -8256,6 +8272,10 @@
         "symbol": "GRC"
     },
     {
+        "name": "GRACE THERAPEUTICS INC COM",
+        "symbol": "GRCE"
+    },
+    {
         "name": "GUARDIAN PHARMACY SVCS INC CL A",
         "symbol": "GRDN"
     },
@@ -8352,7 +8372,7 @@
         "symbol": "GSK"
     },
     {
-        "name": "GLOBAL SHIP LEASE INC NEW COM CL A",
+        "name": "GLOBAL SHIP LEASE INC COM CL A",
         "symbol": "GSL"
     },
     {
@@ -9160,7 +9180,7 @@
         "symbol": "IBM"
     },
     {
-        "name": "ICICI BK LTD HONG KONG BRANCH ADR",
+        "name": "ICICI BANK LTD ADR",
         "symbol": "IBN"
     },
     {
@@ -9640,6 +9660,10 @@
         "symbol": "INOD"
     },
     {
+        "name": "INFINITY NAT RES INC COM CL A",
+        "symbol": "INR"
+    },
+    {
         "name": "INSPIRED ENTMT INC COM",
         "symbol": "INSE"
     },
@@ -9786,6 +9810,10 @@
     {
         "name": "FLEXSHARES TR INTL QLTDV IDX",
         "symbol": "IQDF"
+    },
+    {
+        "name": "WisdomTree International Quality Dividend Growth Fund",
+        "symbol": "IQDG"
     },
     {
         "name": "ISHARES TR MSCI INTL QUALTY",
@@ -10798,6 +10826,10 @@
     {
         "name": "KYVERNA THERAPEUTICS INC COM",
         "symbol": "KYTX"
+    },
+    {
+        "name": "KAZIA THERAPEUTICS LTD SPONSORED ADS",
+        "symbol": "KZIA"
     },
     {
         "name": "KEZAR LIFE SCIENCES INC COM NEW",
@@ -11900,6 +11932,10 @@
         "symbol": "MIAX"
     },
     {
+        "name": "MAGNUM ICE CREAM CO NV ORD SHS",
+        "symbol": "MICC"
+    },
+    {
         "name": "MIDDLEBY CORP COM",
         "symbol": "MIDD"
     },
@@ -12788,6 +12824,10 @@
         "symbol": "NGD"
     },
     {
+        "name": "NERVGEN PHARMA CORP COM",
+        "symbol": "NGEN"
+    },
+    {
         "name": "NATIONAL GRID PLC SPONSORED ADR NE",
         "symbol": "NGG"
     },
@@ -13422,6 +13462,10 @@
     {
         "name": "ORTHOFIX MED INC COM",
         "symbol": "OFIX"
+    },
+    {
+        "name": "ONCE UPON A FARM PBC COM",
+        "symbol": "OFRM"
     },
     {
         "name": "OFS CAP CORP COM",
@@ -15548,6 +15592,10 @@
         "symbol": "RGTX"
     },
     {
+        "name": "TIDAL TRUST II DEFIANCE DLY TRG",
+        "symbol": "RGTZ"
+    },
+    {
         "name": "RH COM",
         "symbol": "RH"
     },
@@ -15784,7 +15832,7 @@
         "symbol": "RPAY"
     },
     {
-        "name": "RIDGEPOST CAPITAL INC",
+        "name": "RIDGEPOST CAP INC CL A COM",
         "symbol": "RPC"
     },
     {
@@ -16874,6 +16922,10 @@
     {
         "name": "iShares MSCI Global Silver and Metals Miners ETF",
         "symbol": "SLVP"
+    },
+    {
+        "name": "SPROTT FDS TR SILVER MINERS",
+        "symbol": "SLVR"
     },
     {
         "name": "VANECK ETF TRUST STEEL ETF",
@@ -19136,6 +19188,10 @@
         "symbol": "UNCY"
     },
     {
+        "name": "UNIFIRST CORP MASS COM",
+        "symbol": "UNF"
+    },
+    {
         "name": "UNITED NAT FOODS INC COM",
         "symbol": "UNFI"
     },
@@ -20288,7 +20344,7 @@
         "symbol": "WFC"
     },
     {
-        "name": "WEST FRASER TIMBER CO LTD COM",
+        "name": "WEST FRASER TIMBER LTD COM",
         "symbol": "WFG"
     },
     {
