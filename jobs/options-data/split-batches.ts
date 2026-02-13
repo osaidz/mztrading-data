@@ -10,7 +10,7 @@ const batches = [] as string[];
 const batchManifestFileName = `${dataFolder}/batch-manifest.json`;
 const allSymbolsFileName = `${dataFolder}/all-symbols.json`;
 if (items && items.length > 0) {
-    const symbols = [...new Set(items.map(item => item.symbol))].sort().slice(0, 30);
+    const symbols = [...new Set(items.map(item => item.symbol))].sort();    //.slice(0, 30);    for debugging
     chunk(symbols, batchChunkSize).forEach((batch, index) => {
         //console.log(`Batch ${index + 1}}`);
         const batchFileName = `${dataFolder}/batches/batch-${index + 1}.json`;
