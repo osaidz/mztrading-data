@@ -3,7 +3,7 @@ import { chunk } from "jsr:@std/collections";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 const dataFolder = `temp`;
 await ensureDir(`${dataFolder}/batches`);
-const batchChunkSize = parseInt(Deno.env.get("BATCH_CHUNK_SIZE") || '5');
+const batchChunkSize = parseInt(Deno.env.get("BATCH_CHUNK_SIZE") || '100');
 const { items } = await ky('https://mztrading.netlify.app/api/watchlist').json<{ items: { symbol: string }[] }>();
 
 const batches = [] as string[];
