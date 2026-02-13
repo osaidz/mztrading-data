@@ -5,13 +5,21 @@ import json
 from datetime import datetime, timezone
 
 release_name = os.getenv("RELEASE_NAME", datetime.now().strftime("%Y-%m-%d %H:%M"))
-base_path = f"temp/options-data"
+base_path = f"temp"
 stock_file = "temp/stock_data.parquet"
 options_file = "temp/options_data.parquet"
 
 root = Path(base_path)
 options_files = list(root.rglob("options_data.parquet"))
 stock_files = list(root.rglob("stock_data.parquet"))
+
+if not options_files:
+    print(f"No options data files found in {base_path}")
+    exit(1)
+if not stock_files:
+    print(f"No stock data files found in {base_path}")
+    exit(1)
+
 print(f"Found {len(options_files)} options data files in {base_path}")
 print(f"Found {len(stock_files)} stock data files in {base_path}")
 
