@@ -44,6 +44,15 @@ jobs:
             echo "$json_content"
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
+      - name: Upload batch files artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: symbol-batches
+          if-no-files-found: error
+          path: |
+            ${{ github.workspace}}/temp/batches/*.json
+            ${{ github.workspace}}/temp/batch-manifest.json
+            ${{ github.workspace}}/temp/all-symbols.json
 
   cboe-options-daily-parquet:
     runs-on: ubuntu-latest
@@ -58,6 +67,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Download batch files
+        uses: actions/download-artifact@v4
+        with:
+          name: symbol-batches
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
