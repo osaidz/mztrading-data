@@ -68,6 +68,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Get Public IP
+        run: |
+          curl https://api.ipify.org?format=json
       - name: Download batch files
         uses: actions/download-artifact@v4
         with:
