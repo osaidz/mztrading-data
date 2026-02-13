@@ -852,7 +852,7 @@
         "symbol": "AME"
     },
     {
-        "name": "AFFILIATED MANAGERS GROUP INC COM",
+        "name": "AFFILIATED MANAGERS GROUP COM",
         "symbol": "AMG"
     },
     {
@@ -1162,6 +1162,10 @@
     {
         "name": "APTIV PLC COM SHS",
         "symbol": "APTV"
+    },
+    {
+        "name": "APYX MEDICAL CORPORATION COM",
+        "symbol": "APYX"
     },
     {
         "name": "ALGONQUIN PWR UTILS CORP COM",
@@ -1638,10 +1642,6 @@
     {
         "name": "AMERICAN CENTY ETF TR INTL EQT ETF",
         "symbol": "AVDE"
-    },
-    {
-        "name": "AVADEL PHARMACEUTICALS PLC COM SHS",
-        "symbol": "AVDL"
     },
     {
         "name": "AMERICAN CENTY ETF TR INTL SMCP VLU",
@@ -2146,6 +2146,10 @@
     {
         "name": "Tradr 2X Long BE Daily ETF",
         "symbol": "BEX"
+    },
+    {
+        "name": "Tradr 2X Short BE Daily ETF",
+        "symbol": "BEZ"
     },
     {
         "name": "BROWN FORMAN CORP CL B",
@@ -4688,7 +4692,7 @@
         "symbol": "CWVX"
     },
     {
-        "name": "CEMEX SAB DE CV SPON ADR NEW",
+        "name": "CEMEX SA EURO MTN BE 144A SPON ADR NEW",
         "symbol": "CX"
     },
     {
@@ -6788,6 +6792,10 @@
         "symbol": "FE"
     },
     {
+        "name": "FREQUENCY ELECTRS INC COM",
+        "symbol": "FEIM"
+    },
+    {
         "name": "FIDELITY COVINGTON TRUST ENHANCED LARGE",
         "symbol": "FELC"
     },
@@ -7266,6 +7274,10 @@
     {
         "name": "FORESTAR GROUP INC COM",
         "symbol": "FOR"
+    },
+    {
+        "name": "FORIAN INC COM",
+        "symbol": "FORA"
     },
     {
         "name": "FORMFACTOR INC COM",
@@ -17066,6 +17078,10 @@
     {
         "name": "SMX SEC MATTERS PLC ORD SHS NEW",
         "symbol": "SMX"
+    },
+    {
+        "name": "Tradr 2X Short SMR Daily ETF",
+        "symbol": "SMZ"
     },
     {
         "name": "SHARKNINJA INC COM SHS",
