@@ -50,6 +50,7 @@ jobs:
           name: symbol-batches
           if-no-files-found: error
           path: |
+            ${{ github.workspace}}/data/options-snapshot.summary.json
             ${{ github.workspace}}/temp/batches/*.json
             ${{ github.workspace}}/temp/batch-manifest.json
             ${{ github.workspace}}/temp/all-symbols.json
