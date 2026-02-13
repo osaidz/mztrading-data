@@ -36,7 +36,7 @@ jobs:
         id: make_batches
         run: |
           # run the helper that writes JSON files to temp/symbol-batches and prints a JSON array of filenames
-          deno run --allow-all jobs/generate-snapshots/split-batches.ts
+          deno run --allow-all jobs/options-data/split-batches.ts
           json_content="$(cat "$GITHUB_WORKSPACE/temp/batch-manifest.json")"
 
           {
