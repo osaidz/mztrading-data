@@ -3220,10 +3220,6 @@
         "symbol": "CCCC"
     },
     {
-        "name": "CHURCHILL CAP CORP X SHS CL A",
-        "symbol": "CCCX"
-    },
-    {
         "name": "CAPITAL CLEAN ENERGY CARRIERS COM",
         "symbol": "CCEC"
     },
@@ -6920,7 +6916,7 @@
         "symbol": "FGM"
     },
     {
-        "name": "FG NEXUS INC. COM NEW",
+        "name": "FG NEXUS INC. COM",
         "symbol": "FGNX"
     },
     {
@@ -7000,7 +6996,7 @@
         "symbol": "FIS"
     },
     {
-        "name": "FINANCIAL INSTNS INC COM",
+        "name": "FINANCIAL INSTITUTIONS INC COM",
         "symbol": "FISI"
     },
     {
@@ -9192,7 +9188,7 @@
         "symbol": "IBM"
     },
     {
-        "name": "ICICI BANK LTD ADR",
+        "name": "ICICI BANK LIMITED ADR",
         "symbol": "IBN"
     },
     {
@@ -10204,7 +10200,7 @@
         "symbol": "JBL"
     },
     {
-        "name": "JETBLUE AWYS CORP COM",
+        "name": "JETBLUE AIRWAYS CORP COM",
         "symbol": "JBLU"
     },
     {
@@ -10944,7 +10940,7 @@
         "symbol": "LBTYK"
     },
     {
-        "name": "LENDINGCLUB CORP COM NEW",
+        "name": "LENDINGCLUB ISSUANCE TR SER COM NEW",
         "symbol": "LC"
     },
     {
@@ -12142,10 +12138,6 @@
     {
         "name": "MODINE MFG CO COM",
         "symbol": "MOD"
-    },
-    {
-        "name": "MIDWESTONE FINL GROUP INC NEW COM",
-        "symbol": "MOFG"
     },
     {
         "name": "MOLINA HEALTHCARE INC COM",
@@ -17076,10 +17068,6 @@
         "symbol": "SMWB"
     },
     {
-        "name": "SMX SEC MATTERS PLC ORD SHS NEW",
-        "symbol": "SMX"
-    },
-    {
         "name": "Tradr 2X Short SMR Daily ETF",
         "symbol": "SMZ"
     },
@@ -17098,10 +17086,6 @@
     {
         "name": "SLEEP NUMBER CORP COM",
         "symbol": "SNBR"
-    },
-    {
-        "name": "SYNCHRONOSS TECHNOLOGIES INC COM NEW",
-        "symbol": "SNCR"
     },
     {
         "name": "SUN CTRY AIRLS HLDGS INC COM",
@@ -21102,10 +21086,6 @@
     {
         "name": "ZETA GLOBAL HOLDINGS CORP CL A",
         "symbol": "ZETA"
-    },
-    {
-        "name": "OLYMPIC STEEL INC COM",
-        "symbol": "ZEUS"
     },
     {
         "name": "ZILLOW GROUP INC CL A",
