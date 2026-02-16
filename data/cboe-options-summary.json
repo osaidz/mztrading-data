@@ -1285,363 +1285,363 @@
         "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-05-10-23-52/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-06-10-24-24",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-06-10-24-24/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-06-10-24-24/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-06-10-06-57",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-06-10-06-57/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-06-10-06-57/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-07-10-23-16",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-07-10-23-16/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-07-10-23-16/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-07-10-06-33",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-07-10-06-33/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-07-10-06-33/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-10-10-25-35",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-10-10-25-35/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-10-10-25-35/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-10-10-06-56",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-10-10-06-56/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-10-10-06-56/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-11-10-24-06",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-11-10-24-06/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-11-10-24-06/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-11-10-06-41",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-11-10-06-41/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-11-10-06-41/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-12-10-24-29",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-12-10-24-29/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-12-10-24-29/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-12-10-06-58",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-12-10-06-58/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-12-10-06-58/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-13-10-24-16",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-13-10-24-16/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-13-10-24-16/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-13-10-06-47",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-13-10-06-47/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-13-10-06-47/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-14-10-23-43",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-14-10-23-43/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-14-10-23-43/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-14-10-06-26",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-14-10-06-26/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-14-10-06-26/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-17-10-25-02",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-17-10-25-02/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-17-10-25-02/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-17-10-06-56",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-17-10-06-56/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-17-10-06-56/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-18-10-25-01",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-18-10-25-01/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-18-10-25-01/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-18-10-07-03",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-18-10-07-03/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-18-10-07-03/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-19-10-24-34",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-19-10-24-34/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-19-10-24-34/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-19-10-06-43",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-19-10-06-43/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-19-10-06-43/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-20-10-23-34",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-20-10-23-34/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-20-10-23-34/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-20-10-06-37",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-20-10-06-37/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-20-10-06-37/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-21-10-22-27",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-21-10-22-27/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-21-10-22-27/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-21-10-06-24",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-21-10-06-24/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-21-10-06-24/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-24-10-25-27",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-24-10-25-27/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-24-10-25-27/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-24-10-06-42",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-24-10-06-42/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-24-10-06-42/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-25-10-26-01",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-25-10-26-01/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-25-10-26-01/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-25-10-06-52",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-25-10-06-52/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-25-10-06-52/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-26-10-24-51",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-26-10-24-51/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-26-10-24-51/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-26-10-06-44",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-26-10-06-44/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-26-10-06-44/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-27-10-24-46",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-27-10-24-46/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-27-10-24-46/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-27-10-06-20",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-27-10-06-20/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-27-10-06-20/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-11-28-10-24-19",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-28-10-24-19/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-28-10-24-19/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-11-28-10-06-20",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-28-10-06-20/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-11-28-10-06-20/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-01-10-26-19",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-01-10-26-19/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-01-10-26-19/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-01-10-06-56",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-01-10-06-56/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-01-10-06-56/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-02-10-25-21",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-02-10-25-21/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-02-10-25-21/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-02-10-06-46",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-02-10-06-46/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-02-10-06-46/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-03-11-13-45",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-03-11-13-45/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-03-11-13-45/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-03-10-06-48",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-03-10-06-48/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-03-10-06-48/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-04-11-14-23",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-04-11-14-23/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-04-11-14-23/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-04-10-06-37",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-04-10-06-37/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-04-10-06-37/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-05-11-13-54",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-05-11-13-54/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-05-11-13-54/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-05-10-06-29",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-05-10-06-29/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-05-10-06-29/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-08-11-13-31",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-08-11-13-31/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-08-11-13-31/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-08-10-06-54",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-08-10-06-54/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-08-10-06-54/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-09-11-13-51",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-09-11-13-51/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-09-11-13-51/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-09-10-07-11",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-09-10-07-11/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-09-10-07-11/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-10-11-13-43",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-10-11-13-43/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-10-11-13-43/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-10-10-06-58",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-10-10-06-58/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-10-10-06-58/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-11-11-14-00",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-11-11-14-00/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-11-11-14-00/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-11-10-06-53",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-11-10-06-53/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-11-10-06-53/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-12-11-14-21",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-12-11-14-21/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-12-11-14-21/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-12-10-06-37",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-12-10-06-37/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-12-10-06-37/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-15-11-13-58",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-15-11-13-58/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-15-11-13-58/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-15-10-07-40",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-15-10-07-40/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-15-10-07-40/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-16-11-14-10",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-16-11-14-10/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-16-11-14-10/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-16-10-07-00",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-16-10-07-00/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-16-10-07-00/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-17-11-14-18",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-17-11-14-18/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-17-11-14-18/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-17-10-06-41",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-17-10-06-41/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-17-10-06-41/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-18-11-13-53",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-18-11-13-53/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-18-11-13-53/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-18-10-06-41",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-18-10-06-41/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-18-10-06-41/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-19-11-13-19",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-19-11-13-19/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-19-11-13-19/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-19-10-06-20",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-19-10-06-20/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-19-10-06-20/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-22-11-13-29",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-22-11-13-29/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-22-11-13-29/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-22-10-06-25",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-22-10-06-25/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-22-10-06-25/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-23-11-13-44",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-23-11-13-44/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-23-11-13-44/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-23-10-06-40",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-23-10-06-40/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-23-10-06-40/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-24-11-13-39",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-24-11-13-39/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-24-11-13-39/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-24-10-06-16",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-24-10-06-16/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-24-10-06-16/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-25-11-12-54",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-25-11-12-54/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-25-11-12-54/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-25-10-06-13",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-25-10-06-13/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-25-10-06-13/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-26-11-13-17",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-26-11-13-17/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-26-11-13-17/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-26-10-06-13",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-26-10-06-13/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-26-10-06-13/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-29-11-13-45",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-29-11-13-45/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-29-11-13-45/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-29-10-06-44",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-29-10-06-44/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-29-10-06-44/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-30-11-13-39",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-30-11-13-39/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-30-11-13-39/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-30-10-06-27",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-30-10-06-27/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-30-10-06-27/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2025-12-31-11-13-59",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-31-11-13-59/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-31-11-13-59/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2025-12-31-10-06-12",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-31-10-06-12/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2025-12-31-10-06-12/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2026-01-01-11-13-09",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-01-11-13-09/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-01-11-13-09/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-01-10-06-27",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-01-10-06-27/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-01-10-06-27/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2026-01-02-11-13-28",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-02-11-13-28/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-02-11-13-28/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-02-10-06-05",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-02-10-06-05/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-02-10-06-05/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2026-01-05-11-14-22",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-05-11-14-22/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-05-11-14-22/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-05-10-07-25",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-05-10-07-25/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-05-10-07-25/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2026-01-06-11-13-39",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-06-11-13-39/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-06-11-13-39/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-06-10-06-42",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-06-10-06-42/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-06-10-06-42/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2026-01-07-11-15-24",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-07-11-15-24/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-07-11-15-24/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-07-10-06-44",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-07-10-06-44/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-07-10-06-44/stock_data.parquet"
     },
     {
-        "name": "CBOE_OPTIONS_DATA_2026-01-08-11-15-37",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-08-11-15-37/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-08-11-15-37/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-08-10-07-08",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-08-10-07-08/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-08-10-07-08/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-09",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-09/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-09/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-09-10-06-34",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-09-10-06-34/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-09-10-06-34/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-12",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-12/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-12/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-12-10-07-56",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-12-10-07-56/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-12-10-07-56/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-13",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-13/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-13/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-13-10-06-47",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-13-10-06-47/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-13-10-06-47/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-14",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-14/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-14/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-14-10-07-34",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-14-10-07-34/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-14-10-07-34/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-15",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-15/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-15/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-15-10-06-37",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-15-10-06-37/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-15-10-06-37/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-16",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-16/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-16/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-16-10-06-35",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-16-10-06-35/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-16-10-06-35/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-19",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-19/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-19/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-19-10-08-52",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-19-10-08-52/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-19-10-08-52/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-20",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-20/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-20/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-20-10-08-35",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-20-10-08-35/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-20-10-08-35/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-21",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-21/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-21/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-21-10-08-03",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-21-10-08-03/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-21-10-08-03/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-22",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-22/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-22/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-22-10-08-32",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-22-10-08-32/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-22-10-08-32/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-23",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-23/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-23/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-23-10-07-09",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-23-10-07-09/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-23-10-07-09/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-26",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-26/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-26/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-26-10-08-01",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-26-10-08-01/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-26-10-08-01/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-27",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-27/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-27/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-27-10-08-09",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-27-10-08-09/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-27-10-08-09/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-28",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-28/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-28/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-28-10-08-21",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-28-10-08-21/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-28-10-08-21/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-29",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-29/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-29/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-29-10-14-53",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-29-10-14-53/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-29-10-14-53/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-01-30",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-30/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-01-30/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-01-30-10-11-47",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-30-10-11-47/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-01-30-10-11-47/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-02",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-02/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-02/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-02-10-19-48",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-02-10-19-48/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-02-10-19-48/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-03",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-03/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-03/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-03-10-15-36",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-03-10-15-36/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-03-10-15-36/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-04",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-04/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-04/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-04-10-16-52",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-04-10-16-52/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-04-10-16-52/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-05",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-05/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-05/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-05-10-17-33",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-05-10-17-33/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-05-10-17-33/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-06",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-06/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-06/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-06-10-16-25",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-06-10-16-25/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-06-10-16-25/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-09",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-09/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-09/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-10-10-22-15",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-10-10-22-15/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-10-10-22-15/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-10",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-10/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-10/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-11-10-20-47",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-11-10-20-47/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-11-10-20-47/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-11",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-11/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-11/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-12-10-19-33",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-12-10-19-33/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-12-10-19-33/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-12",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-12/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-12/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-13-10-17-09",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-13-10-17-09/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-13-10-17-09/stock_data.parquet"
     },
     {
-        "name": "DATA_2026-02-13",
-        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-13/options_data.parquet",
-        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/DATA_2026-02-13/stock_data.parquet"
+        "name": "CBOE_OPTIONS_DATA_2026-02-16-10-22-07",
+        "optionsAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-16-10-22-07/options_data.parquet",
+        "stocksAssetUrl": "https://github.com/mnsrulz/mztrading-data/releases/download/CBOE_OPTIONS_DATA_2026-02-16-10-22-07/stock_data.parquet"
     }
 ]
