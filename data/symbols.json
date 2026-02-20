@@ -1184,7 +1184,7 @@
         "symbol": "AR"
     },
     {
-        "name": "ACCURAY INC COM",
+        "name": "ACCURAY INC DEL COM",
         "symbol": "ARAY"
     },
     {
@@ -1256,6 +1256,10 @@
         "symbol": "ARI"
     },
     {
+        "name": "ARIS MINING CORPORATION COM",
+        "symbol": "ARIS"
+    },
+    {
         "name": "ARK 21Shares Bitcoin ETF",
         "symbol": "ARKB"
     },
@@ -1306,10 +1310,6 @@
     {
         "name": "ARAMARK HOLDINGS CORP COM",
         "symbol": "ARMK"
-    },
-    {
-        "name": "ARIS MNG CORP COM",
-        "symbol": "ARMN"
     },
     {
         "name": "T-REX 2X Long ARM Daily Target ETF",
@@ -2216,7 +2216,7 @@
         "symbol": "BHF"
     },
     {
-        "name": "BHP GROUP LTD SPONSORED ADS",
+        "name": "BHP BILLITON LIMITED SPONSORED ADS",
         "symbol": "BHP"
     },
     {
@@ -7912,6 +7912,10 @@
         "symbol": "GGR"
     },
     {
+        "name": "GLIMPSE GROUP INC COM",
+        "symbol": "GGRP"
+    },
+    {
         "name": "GUARDANT HEALTH INC COM",
         "symbol": "GH"
     },
@@ -8986,6 +8990,10 @@
     {
         "name": "HERSHEY CO COM",
         "symbol": "HSY"
+    },
+    {
+        "name": "HEARTFLOW INC COM",
+        "symbol": "HTFL"
     },
     {
         "name": "HERCULES CAPITAL INC COM",
@@ -10452,6 +10460,10 @@
         "symbol": "KCE"
     },
     {
+        "name": "Kurv Copper & Mining Enhanced Income ETF",
+        "symbol": "KCOP"
+    },
+    {
         "name": "KYNDRYL HLDGS INC COMMON STOCK",
         "symbol": "KD"
     },
@@ -11222,6 +11234,10 @@
     {
         "name": "LANZATECH GLOBAL INC COM NEW",
         "symbol": "LNZA"
+    },
+    {
+        "name": "MANHATTAN BRDG CAP INC COM",
+        "symbol": "LOAN"
     },
     {
         "name": "LOAR HOLDINGS INC COM SHS",
@@ -13200,6 +13216,10 @@
         "symbol": "NUVL"
     },
     {
+        "name": "NOVA MINERALS LTD SPONSORED ADS",
+        "symbol": "NVA"
+    },
+    {
         "name": "NOVAVAX INC COM NEW",
         "symbol": "NVAX"
     },
@@ -14072,7 +14092,7 @@
         "symbol": "PBI"
     },
     {
-        "name": "PETROLEO BRASILEIRO SA PETROBR SPONSORED ADR",
+        "name": "PETROLEO BRASILEIRO S A SPONSORED ADR",
         "symbol": "PBR"
     },
     {
@@ -17844,6 +17864,10 @@
         "symbol": "SUSB"
     },
     {
+        "name": "SUZANO S A SPON ADS",
+        "symbol": "SUZ"
+    },
+    {
         "name": "iShares US Small Cap Value Factor ETF",
         "symbol": "SVAL"
     },
@@ -18220,7 +18244,7 @@
         "symbol": "TFC"
     },
     {
-        "name": "TFI INTL INC COM",
+        "name": "TRANSFORCE INC COM",
         "symbol": "TFII"
     },
     {
@@ -19028,7 +19052,7 @@
         "symbol": "UAMY"
     },
     {
-        "name": "CVR PARTNERS LP COM",
+        "name": "CVR PARTNERS LP/CVR NITROGEN COM",
         "symbol": "UAN"
     },
     {
@@ -19952,10 +19976,6 @@
         "symbol": "VRA"
     },
     {
-        "name": "GLIMPSE GROUP INC COM",
-        "symbol": "VRAR"
-    },
-    {
         "name": "VERRICA PHARMACEUTICALS INC COM SHS",
         "symbol": "VRCA"
     },
@@ -20866,6 +20886,10 @@
     {
         "name": "GLOBAL X FDS S&P 500 RISK",
         "symbol": "XRMI"
+    },
+    {
+        "name": "BITWISE XRP ETF BENEFICIAL INT",
+        "symbol": "XRP"
     },
     {
         "name": "CANARY XRP ETF SHS",
